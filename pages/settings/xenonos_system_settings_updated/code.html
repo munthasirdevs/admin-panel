@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>XenonOS System Configuration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed-dim": "#ffb783",
+                        "secondary-fixed": "#e1e0ff",
+                        "surface-tint": "#c0c1ff",
+                        "surface-container": "#1c1f2a",
+                        "on-secondary-fixed-variant": "#404178",
+                        "surface-container-high": "#262a35",
+                        "inverse-surface": "#dfe2f1",
+                        "surface-dim": "#0f131d",
+                        "outline-variant": "#464554",
+                        "inverse-on-surface": "#2c303b",
+                        "surface-container-highest": "#313540",
+                        "on-tertiary-fixed": "#301400",
+                        "on-error": "#690005",
+                        "inverse-primary": "#494bd6",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "primary": "#c0c1ff",
+                        "surface-bright": "#353944",
+                        "on-primary": "#1000a9",
+                        "secondary-container": "#42447b",
+                        "secondary": "#c0c1ff",
+                        "surface-container-low": "#171b26",
+                        "on-primary-container": "#0d0096",
+                        "primary-fixed": "#e1e0ff",
+                        "surface-variant": "#313540",
+                        "on-surface-variant": "#c7c4d7",
+                        "on-primary-fixed": "#07006c",
+                        "on-secondary": "#292a60",
+                        "on-surface": "#dfe2f1",
+                        "on-tertiary": "#4f2500",
+                        "error-container": "#93000a",
+                        "surface": "#0f131d",
+                        "secondary-fixed-dim": "#c0c1ff",
+                        "on-tertiary-fixed-variant": "#703700",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#dfe2f1",
+                        "background": "#0f131d",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "on-tertiary-container": "#452000",
+                        "on-secondary-container": "#b2b3f2",
+                        "tertiary": "#ffb783",
+                        "surface-container-lowest": "#0a0e18",
+                        "on-secondary-fixed": "#13144a",
+                        "error": "#ffb4ab",
+                        "tertiary-container": "#d97721",
+                        "primary-container": "#8083ff",
+                        "outline": "#908fa0",
+                        "tertiary-fixed": "#ffdcc5"
+                    },
+                    fontFamily: {
+                        "headline": ["Syne", "sans-serif"],
+                        "body": ["Outfit", "sans-serif"],
+                        "label": ["Outfit", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0f131d;
+            color: #dfe2f1;
+            font-family: 'Outfit', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-card {
+            transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            transform: scale(1.02);
+            background-color: #262a35;
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #c0c1ff 0%, #8083ff 100%);
+        }
+        .glass-panel {
+            background: rgba(28, 31, 42, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0e18;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #313540;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+<!-- SideNavBar (Authority: JSON & Design System) -->
+<aside class="h-screen w-64 fixed left-0 top-0 overflow-y-auto bg-[#0a0e18] border-r border-[#c7c4d7]/15 shadow-[32px_0_32px_-4px_rgba(10,14,24,0.5)] z-50 flex flex-col py-6">
+<div class="px-8 mb-10 flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-xl" style="font-variation-settings: 'FILL' 1;">cloud_done</span>
+</div>
+<div class="flex flex-col">
+<span class="font-['Syne'] font-extrabold text-xl tracking-tighter text-[#c0c1ff]">XenonOS</span>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant font-medium">Admin Console</span>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-8 py-3 text-[#c7c4d7] hover:bg-[#1c1f2a] hover:text-[#dfe2f1] hover:scale-[1.02] transition-all duration-400 font-['Outfit'] font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-8 py-3 text-[#c7c4d7] hover:bg-[#1c1f2a] hover:text-[#dfe2f1] hover:scale-[1.02] transition-all duration-400 font-['Outfit'] font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Clients</span>
+</a>
+<a class="flex items-center gap-3 px-8 py-3 text-[#c7c4d7] hover:bg-[#1c1f2a] hover:text-[#dfe2f1] hover:scale-[1.02] transition-all duration-400 font-['Outfit'] font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="folder">folder</span>
+<span>Projects</span>
+</a>
+<a class="flex items-center gap-3 px-8 py-3 text-[#c7c4d7] hover:bg-[#1c1f2a] hover:text-[#dfe2f1] hover:scale-[1.02] transition-all duration-400 font-['Outfit'] font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span>Tasks</span>
+</a>
+<a class="flex items-center gap-3 px-8 py-3 text-[#c7c4d7] hover:bg-[#1c1f2a] hover:text-[#dfe2f1] hover:scale-[1.02] transition-all duration-400 font-['Outfit'] font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="badge">badge</span>
+<span>Team</span>
+</a>
+<a class="flex items-center gap-3 px-8 py-3 text-[#c7c4d7] hover:bg-[#1c1f2a] hover:text-[#dfe2f1] hover:scale-[1.02] transition-all duration-400 font-['Outfit'] font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="folder_shared">folder_shared</span>
+<span>Files</span>
+</a>
+<a class="flex items-center gap-3 px-8 py-3 text-[#c7c4d7] hover:bg-[#1c1f2a] hover:text-[#dfe2f1] hover:scale-[1.02] transition-all duration-400 font-['Outfit'] font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span>Billing</span>
+</a>
+<!-- Active State: System Configuration -->
+<a class="flex items-center gap-3 px-8 py-3 text-[#c0c1ff] bg-[#1c1f2a] border-l-2 border-[#6366f1] font-['Outfit'] font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="settings_input_component">settings_input_component</span>
+<span>System Configuration</span>
+</a>
+</nav>
+<div class="px-8 mt-auto pt-6 border-t border-outline-variant/15">
+<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl">
+<img alt="User Profile" class="w-10 h-10 rounded-lg object-cover" data-alt="portrait of a focused system administrator in a dimly lit office with cool blue ambient light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtn88fKBhog3_-Yna2J7l-YOFSiOy9Q4ftsF1ZyJ8vaK1-kll4hAQeOU-2iArdK516eTQQS40e8czNJXdZ_zEySsXRhePyLcZuAOnArBIvy7049v3jcB_AfpAurGE2LM8iXkIHb53b_kmTs1Ju74r2kUeNzbLuL8mfmpAjtzz39fcWHfMcC3ZgGUslGFf3x1xt8rxjqy6a8ftfxcqGlrnU39tVoxjKg4ql37sdv7SwsNKiODIgWx-vGDjEIdqmBv0eo6DRakm6cec"/>
+<div class="flex flex-col min-w-0">
+<span class="text-xs font-semibold truncate">Alex Vanguard</span>
+<span class="text-[10px] text-on-surface-variant truncate">Lead Architect</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-64 min-h-screen flex flex-col">
+<!-- TopNavBar (Authority: JSON) -->
+<header class="sticky top-0 w-full z-40 bg-[#1c1f2a]/70 backdrop-blur-md border-b border-[#c7c4d7]/15 flex justify-between items-center h-16 px-8 shadow-lg shadow-[#0a0e18]/50">
+<div class="flex items-center gap-4">
+<h1 class="font-['Syne'] font-bold text-lg text-[#dfe2f1]">System Configuration</h1>
+<div class="hidden md:flex items-center bg-surface-container-lowest px-4 py-1.5 rounded-full border border-outline-variant/10">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="search">search</span>
+<input class="bg-transparent border-none text-xs focus:ring-0 w-48 text-on-surface placeholder:text-outline/50" placeholder="Search parameters..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-on-surface-variant">
+<button class="hover:text-[#c0c1ff] transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="hover:text-[#c0c1ff] transition-colors">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+<div class="h-6 w-px bg-outline-variant/20"></div>
+<button class="text-sm font-['Outfit'] text-[#c7c4d7] hover:text-[#c0c1ff] transition-all">Settings</button>
+</div>
+</header>
+<!-- Content Area: Bento Grid Layout -->
+<div class="p-10 space-y-10">
+<!-- Header Section -->
+<div class="flex justify-between items-end">
+<div class="max-w-2xl">
+<h2 class="font-['Syne'] text-4xl font-extrabold tracking-tight mb-2">Architectural <span class="text-primary">Core</span></h2>
+<p class="text-on-surface-variant text-lg font-light leading-relaxed">Refine the global parameters of XenonOS. Every adjustment ripples across the instance, ensuring precision in every interaction.</p>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-3 rounded-xl border border-outline-variant/20 font-medium text-sm hover:bg-surface-container transition-all">Discard Changes</button>
+<button class="px-8 py-3 primary-gradient rounded-xl font-bold text-on-primary text-sm flex items-center gap-2 shadow-xl shadow-primary/10">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">save</span>
+                        Save Changes
+                    </button>
+</div>
+</div>
+<!-- Bento Grid -->
+<div class="grid grid-cols-12 gap-6">
+<!-- General Settings (Large Span) -->
+<div class="col-span-12 lg:col-span-8 bento-card bg-surface-container rounded-2xl p-8 flex flex-col justify-between overflow-hidden relative group">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-20 -mt-20 blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+<div>
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary" data-icon="settings">settings</span>
+<h3 class="font-['Syne'] text-xl font-bold">General Settings</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<label class="block text-sm font-medium text-on-surface-variant">System Name</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary/40 focus:outline-none transition-all" type="text" value="XenonOS Enterprise"/>
+<p class="text-[11px] text-outline/70">The global identifier for this instance.</p>
+</div>
+<div class="space-y-4">
+<label class="block text-sm font-medium text-on-surface-variant">Branding Color</label>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-[#6366f1] cursor-pointer border-4 border-surface-container-high shadow-lg"></div>
+<div class="flex-1">
+<input class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-4 py-3 text-xs font-mono uppercase focus:ring-2 focus:ring-primary/40 focus:outline-none" type="text" value="#6366F1"/>
+</div>
+</div>
+<p class="text-[11px] text-outline/70">Used for primary accents and high-priority states.</p>
+</div>
+</div>
+</div>
+<div class="mt-12 flex items-center gap-6 p-6 bg-surface-container-lowest/50 rounded-2xl border border-outline-variant/10">
+<div class="w-20 h-20 rounded-2xl bg-surface-container-high flex items-center justify-center relative overflow-hidden group/logo">
+<img alt="System Logo" class="w-full h-full object-cover opacity-80" data-alt="abstract geometric logo with minimalist metallic curves on a dark matte background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjaAQZ3ZDRRDGe1COWHzoMjt4kTZzHc8c-bYUTbqqLKdjAXGQetTXmwMHUILsInfrEVlhXWcp0oKp0cyF5rGJQT--vzBM69oWKrL3omowjMkjJ2KaFSx_el9Am0hs4_CvWgHUGuYJYI_-IuwcT44u4RdwTq-9hiU5VDQNLBF5Z-RNCCwfgh4avcn9-lKLTpm-I6ixJOphVvMn0OiipEpVILij3wOJBw-VtBNB7xocYYbzM5EEuXjM9UWCpMuJ8WH5u5LCqMFpNOKY"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover/logo:opacity-100 transition-opacity flex items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined text-white">upload</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-medium">Instance Logo</h4>
+<p class="text-xs text-on-surface-variant max-w-xs leading-relaxed">Recommended 512x512px SVG or PNG. This logo appears in the side navigation and login portals.</p>
+<div class="flex gap-3 mt-2">
+<button class="text-[11px] font-bold text-primary uppercase tracking-wider">Update Image</button>
+<button class="text-[11px] font-bold text-error uppercase tracking-wider opacity-60 hover:opacity-100">Remove</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Localization Card (Narrow Vertical) -->
+<div class="col-span-12 lg:col-span-4 bento-card bg-surface-container rounded-2xl p-8 flex flex-col gap-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="language">language</span>
+<h3 class="font-['Syne'] text-xl font-bold">Localization</h3>
+</div>
+<div class="space-y-6">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant/60">System Language</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-4 py-3 text-sm text-on-surface appearance-none focus:ring-2 focus:ring-primary/40">
+<option>English (United Kingdom)</option>
+<option>English (United States)</option>
+<option>Deutsch (Germany)</option>
+<option>Français (France)</option>
+<option>日本語 (Japan)</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant/60">Global Timezone</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-4 py-3 text-sm text-on-surface appearance-none focus:ring-2 focus:ring-primary/40">
+<option>(UTC+00:00) London</option>
+<option>(UTC-05:00) New York</option>
+<option>(UTC+01:00) Berlin</option>
+<option>(UTC+09:00) Tokyo</option>
+</select>
+</div>
+<div class="p-5 bg-surface-container-high rounded-xl border border-primary/10 mt-4">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-primary text-sm">schedule</span>
+<span class="text-xs font-bold text-primary uppercase tracking-widest">Current System Time</span>
+</div>
+<div class="text-2xl font-mono font-bold">14:23:08 <span class="text-sm font-normal text-on-surface-variant">GMT</span></div>
+</div>
+</div>
+</div>
+<!-- Interface Preferences (Wide Lower) -->
+<div class="col-span-12 lg:col-span-12 bento-card bg-surface-container rounded-2xl p-8">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="palette">palette</span>
+<h3 class="font-['Syne'] text-xl font-bold">Interface Preferences</h3>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-lowest rounded-full">
+<div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+<span class="text-[11px] font-bold uppercase tracking-tighter">Live Preview Active</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<!-- Appearance Mode -->
+<div class="space-y-6">
+<h4 class="text-sm font-bold text-on-surface-variant uppercase tracking-widest">Appearance</h4>
+<div class="grid grid-cols-2 gap-4">
+<div class="border-2 border-primary bg-surface-container-lowest rounded-xl p-4 flex flex-col items-center gap-3 cursor-pointer">
+<div class="w-full h-20 rounded-lg bg-[#0f131d] border border-outline-variant/20 flex flex-col p-2 gap-1">
+<div class="h-2 w-1/2 bg-surface-container-highest rounded-full"></div>
+<div class="h-2 w-3/4 bg-surface-container-highest rounded-full"></div>
+</div>
+<span class="text-xs font-bold">Nocturnal</span>
+</div>
+<div class="border border-outline-variant/20 bg-surface-container-lowest/50 rounded-xl p-4 flex flex-col items-center gap-3 cursor-pointer hover:border-primary/40 transition-all">
+<div class="w-full h-20 rounded-lg bg-[#dfe2f1] border border-outline-variant/20 flex flex-col p-2 gap-1">
+<div class="h-2 w-1/2 bg-white rounded-full"></div>
+<div class="h-2 w-3/4 bg-white rounded-full"></div>
+</div>
+<span class="text-xs font-bold opacity-60">Luminescent</span>
+</div>
+</div>
+</div>
+<!-- Layout Structure -->
+<div class="space-y-6">
+<h4 class="text-sm font-bold text-on-surface-variant uppercase tracking-widest">Layout Architecture</h4>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest border border-outline-variant/10 rounded-xl">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">view_sidebar</span>
+<span class="text-sm font-medium">Fixed Sidebar</span>
+</div>
+<div class="w-10 h-5 bg-primary/20 rounded-full relative">
+<div class="absolute right-0.5 top-0.5 w-4 h-4 bg-primary rounded-full shadow-sm"></div>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest/30 border border-outline-variant/5 rounded-xl opacity-60">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">view_stream</span>
+<span class="text-sm font-medium">Horizontal Navigation</span>
+</div>
+<div class="w-10 h-5 bg-outline-variant/20 rounded-full relative">
+<div class="absolute left-0.5 top-0.5 w-4 h-4 bg-outline-variant/60 rounded-full shadow-sm"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- System Notifications -->
+<div class="space-y-6">
+<h4 class="text-sm font-bold text-on-surface-variant uppercase tracking-widest">Global Notifications</h4>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-sm font-medium">Critical Alerts</span>
+<span class="text-[10px] text-outline/70">Always visible in status bar</span>
+</div>
+<div class="w-10 h-5 bg-primary/20 rounded-full relative">
+<div class="absolute right-0.5 top-0.5 w-4 h-4 bg-primary rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-sm font-medium">Sound Effects</span>
+<span class="text-[10px] text-outline/70">Audible interface cues</span>
+</div>
+<div class="w-10 h-5 bg-outline-variant/20 rounded-full relative">
+<div class="absolute left-0.5 top-0.5 w-4 h-4 bg-outline-variant/60 rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-sm font-medium">Usage Reports</span>
+<span class="text-[10px] text-outline/70">Monthly analytical digests</span>
+</div>
+<div class="w-10 h-5 bg-primary/20 rounded-full relative">
+<div class="absolute right-0.5 top-0.5 w-4 h-4 bg-primary rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Transactional Status Footer (Simulated) -->
+<div class="glass-panel border border-primary/10 rounded-2xl p-6 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-emerald-500" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<h4 class="font-bold text-sm">Synchronized</h4>
+<p class="text-[11px] text-on-surface-variant">Last saved at 14:15:22 — All cloud nodes are healthy.</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs text-on-surface-variant font-medium">Version</span>
+<span class="px-2 py-0.5 bg-surface-container-highest rounded-md text-[10px] font-mono font-bold">v4.0.12-pro</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Success Toast (Visual Reference Only) -->
+<div class="fixed bottom-8 right-8 primary-gradient rounded-2xl p-1 shadow-2xl shadow-primary/20 flex items-center gap-4 animate-bounce">
+<div class="bg-surface-container rounded-xl px-6 py-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">verified</span>
+<span class="text-sm font-bold">Parameters updated successfully</span>
+</div>
+</div>
+</body></html>
