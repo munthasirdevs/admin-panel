@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   IMPORT DESIGN TOKENS
+   ============================================ */
+@import './style.css';
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-surface text-on-surface font-outfit;
+    min-height: 100vh;
+  }
+
+  /* Custom scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-container-highest rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-outline-variant;
+  }
+
+  /* Hide scrollbar utility */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ============================================
+   COMPONENT STYLES
+   ============================================ */
+@layer components {
+  /* Glass Card */
+  .glass-card {
+    @apply bg-surface-container/80 backdrop-blur-20;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Glass Effect */
+  .glass-effect {
+    @apply backdrop-blur-20;
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* Glass Glow */
+  .glass-glow {
+    background: linear-gradient(
+      135deg,
+      rgba(192, 193, 255, 0.05) 0%,
+      rgba(15, 19, 29, 0) 100%
+    );
+  }
+
+  /* Indigo Glow */
+  .indigo-glow {
+    @apply bg-indigo-glow;
+  }
+
+  /* Obsidian Gradient */
+  .bg-obsidian-gradient {
+    @apply bg-obsidian-gradient;
+  }
+
+  /* Glass Gradient */
+  .bg-glass-gradient {
+    @apply bg-glass-gradient;
+  }
+
+  /* Button Variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-4 py-2 rounded-lg 
+           font-medium transition-all duration-300 
+           hover:opacity-90 active:scale-95 
+           focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 
+           focus:ring-offset-surface disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-surface-container-high text-on-surface px-4 py-2 rounded-lg 
+           font-medium transition-all duration-300 
+           hover:bg-surface-container-highest active:scale-95 
+           focus:outline-none focus:ring-2 focus:ring-outline-variant focus:ring-offset-2 
+           focus:ring-offset-surface disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Input Styles */
+  .input-base {
+    @apply bg-surface-container border border-outline-variant 
+           text-on-surface placeholder-on-surface-muted 
+           px-4 py-2 rounded-lg 
+           focus:outline-none focus:ring-2 focus:ring-primary 
+           focus:border-transparent transition-all duration-200;
+  }
+
+  /* Card Styles */
+  .card {
+    @apply bg-surface-container rounded-xl p-6 
+           border border-outline-variant/50;
+  }
+}
+
+/* ============================================
+   UTILITY STYLES
+   ============================================ */
+@layer utilities {
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideInUp 0.3s ease-out;
+  }
+
+  /* Glow effect */
+  .glow {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  }
+
+  .glow-sm {
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.2);
+  }
+
+  /* Sidebar transition */
+  .sidebar-transition {
+    transition: margin-left 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* ============================================
+   KEYFRAMES
+   ============================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px rgba(99, 102, 241, 0.2);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+  }
+}

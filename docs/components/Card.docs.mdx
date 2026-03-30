@@ -1,0 +1,305 @@
+---
+title: Card Component
+description: A versatile container component with multiple variants for the XenonOS Admin Panel.
+---
+
+# Card
+
+A flexible container component that can display content in a structured way with optional header, footer, image, and action slots.
+
+## Installation
+
+```tsx
+import { Card } from '@components';
+```
+
+## Basic Usage
+
+```tsx
+<Card>
+  <p>Card content goes here...</p>
+</Card>
+```
+
+## Variants
+
+### Default
+
+```tsx
+<Card variant="default">
+  <Card.Body>
+    <h3>Default Card</h3>
+    <p>This is the default card style.</p>
+  </Card.Body>
+</Card>
+```
+
+### Glass
+
+A semi-transparent card with a glassmorphism effect.
+
+```tsx
+<Card variant="glass">
+  <Card.Body>
+    <h3>Glass Card</h3>
+    <p>This card has a glass effect.</p>
+  </Card.Body>
+</Card>
+```
+
+### Elevated
+
+A card with shadow that appears elevated from the surface.
+
+```tsx
+<Card variant="elevated">
+  <Card.Body>
+    <h3>Elevated Card</h3>
+    <p>This card appears elevated.</p>
+  </Card.Body>
+</Card>
+```
+
+### Outlined
+
+A card with a visible border outline.
+
+```tsx
+<Card variant="outlined">
+  <Card.Body>
+    <h3>Outlined Card</h3>
+    <p>This card has a border outline.</p>
+  </Card.Body>
+</Card>
+```
+
+## Card Sections
+
+### Header
+
+```tsx
+<Card header={<span>Card Header</span>}>
+  <Card.Body>
+    <p>Card content</p>
+  </Card.Body>
+</Card>
+```
+
+### Header with Title and Subtitle
+
+```tsx
+<Card>
+  <Card.Header title="Card Title" subtitle="Card subtitle" />
+  <Card.Body>
+    <p>Card content</p>
+  </Card.Body>
+</Card>
+```
+
+### Header with Avatar
+
+```tsx
+<Card>
+  <Card.Header
+    title="User Profile"
+    avatar={<img src="/avatar.jpg" alt="User" className="w-10 h-10 rounded-full" />}
+  />
+  <Card.Body>
+    <p>User information</p>
+  </Card.Body>
+</Card>
+```
+
+### Header with Actions
+
+```tsx
+<Card>
+  <Card.Header
+    title="Settings"
+    actions={
+      <Button size="sm" variant="ghost">
+        Edit
+      </Button>
+    }
+  />
+  <Card.Body>
+    <p>Settings content</p>
+  </Card.Body>
+</Card>
+```
+
+### Footer
+
+```tsx
+<Card
+  footer={
+    <>
+      <Button variant="outline">Cancel</Button>
+      <Button variant="primary">Confirm</Button>
+    </>
+  }
+>
+  <Card.Body>
+    <p>Card with footer actions</p>
+  </Card.Body>
+</Card>
+```
+
+### Image
+
+```tsx
+<Card image={<img src="/cover.jpg" alt="Cover" className="w-full h-48 object-cover" />}>
+  <Card.Body>
+    <h3>Card with Image</h3>
+    <p>Content below the image</p>
+  </Card.Body>
+</Card>
+```
+
+## Interactive Cards
+
+### Clickable Card
+
+```tsx
+<Card clickable onClick={() => console.log('Card clicked')}>
+  <Card.Body>
+    <h3>Clickable Card</h3>
+    <p>This card can be clicked</p>
+  </Card.Body>
+</Card>
+```
+
+### Selected State
+
+```tsx
+<Card selected>
+  <Card.Body>
+    <h3>Selected Card</h3>
+    <p>This card is in a selected state</p>
+  </Card.Body>
+</Card>
+```
+
+### Hoverable
+
+```tsx
+<Card hoverable={true}>
+  <Card.Body>
+    <h3>Hoverable Card</h3>
+    <p>This card has hover effects</p>
+  </Card.Body>
+</Card>
+```
+
+## States
+
+### Loading
+
+```tsx
+<Card isLoading>
+  <Card.Body>
+    <p>This card is in a loading state</p>
+  </Card.Body>
+</Card>
+```
+
+## Props
+
+### Card Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `'default' \| 'glass' \| 'elevated' \| 'outlined'` | `'default'` | Visual style of the card |
+| `clickable` | `boolean` | `false` | Makes the card clickable |
+| `onClick` | `() => void` | - | Callback when card is clicked |
+| `header` | `ReactNode` | - | Card header content |
+| `footer` | `ReactNode` | - | Card footer content |
+| `hoverable` | `boolean` | `true` | Enable hover effects |
+| `selected` | `boolean` | `false` | Selected/active state |
+| `isLoading` | `boolean` | `false` | Loading state |
+| `image` | `ReactNode` | - | Image at the top of the card |
+| `avatar` | `ReactNode` | - | Avatar in the header |
+| `actions` | `ReactNode` | - | Action buttons in header |
+| `className` | `string` | - | Additional CSS classes |
+
+### Card.Header Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `title` | `ReactNode` | - | Header title |
+| `subtitle` | `ReactNode` | - | Header subtitle |
+| `avatar` | `ReactNode` | - | Avatar to display |
+| `actions` | `ReactNode` | - | Action buttons |
+| `className` | `string` | - | Additional CSS classes |
+
+### Card.Footer Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `alignEnd` | `boolean` | `true` | Align content to end |
+| `className` | `string` | - | Additional CSS classes |
+
+## Accessibility
+
+- Clickable cards have `role="button"` and proper keyboard support
+- Selected cards have `aria-pressed="true"`
+- Loading cards have `aria-disabled` styling
+- Focus states are clearly visible
+
+## Best Practices
+
+1. **Use appropriate variants**: Match the card style to your content importance
+2. **Consistent structure**: Use header/body/footer consistently across similar cards
+3. **Clear actions**: Make clickable cards obviously interactive
+4. **Loading states**: Show loading state when card content is being fetched
+
+## Examples
+
+### Product Card
+
+```tsx
+<Card variant="elevated" clickable onClick={() => navigate('/product/123')}>
+  <Card image={<img src="/product.jpg" alt="Product" />} />
+  <Card.Body>
+    <h3 className="text-lg font-semibold">Product Name</h3>
+    <p className="text-sm text-on-surface-variant">$99.99</p>
+  </Card.Body>
+  <Card.Footer>
+    <Button variant="primary" size="sm">Add to Cart</Button>
+  </Card.Footer>
+</Card>
+```
+
+### User Profile Card
+
+```tsx
+<Card variant="glass">
+  <Card.Header
+    title="John Doe"
+    subtitle="Software Engineer"
+    avatar={<Avatar src="/avatar.jpg" />}
+    actions={<Button variant="ghost" size="sm">Follow</Button>}
+  />
+  <Card.Body>
+    <p>Bio information goes here...</p>
+  </Card.Body>
+</Card>
+```
+
+### Stats Card
+
+```tsx
+<Card variant="outlined">
+  <Card.Body>
+    <p className="text-sm text-on-surface-variant">Total Revenue</p>
+    <p className="text-3xl font-bold text-primary">$45,231</p>
+    <p className="text-sm text-success">+12.5% from last month</p>
+  </Card.Body>
+</Card>
+```
+
+## Related Components
+
+- [Button](./Button.docs.mdx)
+- [Modal](./Modal.docs.mdx)
+- [Input](./Input.docs.mdx)

@@ -1,0 +1,221 @@
+---
+title: Button Component
+description: A versatile button component with multiple variants, sizes, and states for the XenonOS Admin Panel.
+---
+
+# Button
+
+A flexible and accessible button component with multiple variants, sizes, and states.
+
+## Installation
+
+```bash
+# The Button component is part of the shared components
+import { Button } from '@components';
+```
+
+## Basic Usage
+
+```tsx
+import { Button } from '@components';
+
+function App() {
+  return <Button>Click me</Button>;
+}
+```
+
+## Variants
+
+### Primary (Default)
+
+The primary button is used for main actions.
+
+```tsx
+<Button variant="primary">Primary Action</Button>
+```
+
+### Secondary
+
+Used for secondary actions that don't need as much emphasis.
+
+```tsx
+<Button variant="secondary">Secondary Action</Button>
+```
+
+### Outline
+
+A bordered button style for less prominent actions.
+
+```tsx
+<Button variant="outline">Outline Button</Button>
+```
+
+### Ghost
+
+A minimal button style that appears on hover.
+
+```tsx
+<Button variant="ghost">Ghost Button</Button>
+```
+
+### Danger
+
+Used for destructive actions like delete or remove.
+
+```tsx
+<Button variant="danger">Delete</Button>
+```
+
+## Sizes
+
+### Small
+
+```tsx
+<Button size="sm">Small</Button>
+```
+
+### Medium (Default)
+
+```tsx
+<Button size="md">Medium</Button>
+```
+
+### Large
+
+```tsx
+<Button size="lg">Large</Button>
+```
+
+## States
+
+### Loading
+
+Show a loading spinner when an action is in progress.
+
+```tsx
+<Button isLoading>Loading...</Button>
+```
+
+### Disabled
+
+```tsx
+<Button disabled>Disabled</Button>
+```
+
+### Full Width
+
+```tsx
+<Button fullWidth>Full Width Button</Button>
+```
+
+## With Icons
+
+### Left Icon
+
+```tsx
+import { ArrowLeftIcon } from '@heroicons/react/24/outline';
+
+<Button leftIcon={<ArrowLeftIcon className="w-5 h-5" />}>
+  Go Back
+</Button>
+```
+
+### Right Icon
+
+```tsx
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
+
+<Button rightIcon={<ArrowRightIcon className="w-5 h-5" />}>
+  Continue
+</Button>
+```
+
+### Both Icons
+
+```tsx
+<Button
+  leftIcon={<ArrowLeftIcon className="w-5 h-5" />}
+  rightIcon={<ArrowRightIcon className="w-5 h-5" />}
+>
+  Navigate
+</Button>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `'primary' \| 'secondary' \| 'outline' \| 'ghost' \| 'danger'` | `'primary'` | Visual style of the button |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Size of the button |
+| `isLoading` | `boolean` | `false` | Shows loading spinner |
+| `leftIcon` | `ReactNode` | - | Icon displayed before children |
+| `rightIcon` | `ReactNode` | - | Icon displayed after children |
+| `fullWidth` | `boolean` | `false` | Makes button full width |
+| `disabled` | `boolean` | `false` | Disables the button |
+| `className` | `string` | - | Additional CSS classes |
+| `type` | `'button' \| 'submit' \| 'reset'` | `'button'` | HTML button type |
+
+## Accessibility
+
+- Buttons have proper `role="button"` attribute
+- Disabled buttons have `aria-disabled="true"`
+- Loading buttons are marked as `disabled`
+- Focus states are clearly visible with ring styles
+- Keyboard navigation is supported (Enter and Space keys)
+
+## Best Practices
+
+1. **Use appropriate variants**: Primary for main actions, secondary for less important actions
+2. **Be consistent with sizes**: Use the same size for buttons in the same context
+3. **Provide clear labels**: Button text should clearly describe the action
+4. **Use loading state**: Show loading state for async actions
+5. **Don't disable without reason**: Disabled buttons should have a clear reason
+
+## Examples
+
+### Form Actions
+
+```tsx
+<form onSubmit={handleSubmit}>
+  <div className="flex gap-4 justify-end">
+    <Button type="button" variant="outline" onClick={handleCancel}>
+      Cancel
+    </Button>
+    <Button type="submit" variant="primary">
+      Save Changes
+    </Button>
+  </div>
+</form>
+```
+
+### Icon Button
+
+```tsx
+<Button variant="ghost" size="sm">
+  <TrashIcon className="w-5 h-5" />
+</Button>
+```
+
+### Loading Button
+
+```tsx
+const [isSaving, setIsSaving] = useState(false);
+
+<Button
+  variant="primary"
+  isLoading={isSaving}
+  onClick={async () => {
+    setIsSaving(true);
+    await saveData();
+    setIsSaving(false);
+  }}
+>
+  {isSaving ? 'Saving...' : 'Save'}
+</Button>
+```
+
+## Related Components
+
+- [Input](./Input.docs.mdx)
+- [Card](./Card.docs.mdx)
+- [Modal](./Modal.docs.mdx)
