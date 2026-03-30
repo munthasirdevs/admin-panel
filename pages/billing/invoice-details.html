@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&amp;family=Outfit:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="../../assets/css/components.css" rel="stylesheet"/>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -87,77 +88,10 @@
 <body class="bg-background text-on-background font-body selection:bg-primary/30">
     <!-- Component Containers -->
     <div id="sidebar-container"></div>
-<!-- SideNavBar (Authority: JSON) -->
-<aside class="h-screen w-64 fixed left-0 top-0 overflow-y-auto bg-[#0a0e18] flex flex-col h-full py-8 z-50 hidden md:flex">
-<div class="px-8 mb-10">
-<span class="font-['Syne'] font-extrabold text-2xl text-[#c0c1ff]">XenonOS</span>
-<p class="font-['Outfit'] text-xs text-on-surface-variant opacity-60 mt-1 uppercase tracking-widest">Billing &amp; Finance</p>
-</div>
-<nav class="flex flex-col gap-1">
-<a class="flex items-center gap-3 text-[#c7c4d7] pl-4 py-3 opacity-70 hover:bg-[#1c1f2a] hover:opacity-100 transition-all duration-300 hover:translate-x-1" href="#">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-<span class="font-['Outfit'] text-base tracking-wide">Dashboard</span>
-</a>
-<a class="flex items-center gap-3 text-[#c7c4d7] pl-4 py-3 opacity-70 hover:bg-[#1c1f2a] hover:opacity-100 transition-all duration-300 hover:translate-x-1" href="#">
-<span class="material-symbols-outlined" data-icon="group">group</span>
-<span class="font-['Outfit'] text-base tracking-wide">Clients</span>
-</a>
-<a class="flex items-center gap-3 text-[#c7c4d7] pl-4 py-3 opacity-70 hover:bg-[#1c1f2a] hover:opacity-100 transition-all duration-300 hover:translate-x-1" href="#">
-<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
-<span class="font-['Outfit'] text-base tracking-wide">Projects</span>
-</a>
-<a class="flex items-center gap-3 text-[#c7c4d7] pl-4 py-3 opacity-70 hover:bg-[#1c1f2a] hover:opacity-100 transition-all duration-300 hover:translate-x-1" href="#">
-<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
-<span class="font-['Outfit'] text-base tracking-wide">Tasks</span>
-</a>
-<a class="flex items-center gap-3 text-[#c7c4d7] pl-4 py-3 opacity-70 hover:bg-[#1c1f2a] hover:opacity-100 transition-all duration-300 hover:translate-x-1" href="#">
-<span class="material-symbols-outlined" data-icon="badge">badge</span>
-<span class="font-['Outfit'] text-base tracking-wide">Team</span>
-</a>
-<a class="flex items-center gap-3 text-[#c7c4d7] pl-4 py-3 opacity-70 hover:bg-[#1c1f2a] hover:opacity-100 transition-all duration-300 hover:translate-x-1" href="#">
-<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
-<span class="font-['Outfit'] text-base tracking-wide">Files</span>
-</a>
-<a class="flex items-center gap-3 text-[#c0c1ff] border-l-2 border-[#6366f1] pl-4 py-3 bg-gradient-to-r from-[#6366f1]/10 to-transparent transition-all duration-300" href="#">
-<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
-<span class="font-['Outfit'] text-base tracking-wide">Billing</span>
-</a>
-<a class="flex items-center gap-3 text-[#c7c4d7] pl-4 py-3 opacity-70 hover:bg-[#1c1f2a] hover:opacity-100 transition-all duration-300 hover:translate-x-1" href="#">
-<span class="material-symbols-outlined" data-icon="chat">chat</span>
-<span class="font-['Outfit'] text-base tracking-wide">Communication</span>
-</a>
-<a class="flex items-center gap-3 text-[#c7c4d7] pl-4 py-3 opacity-70 hover:bg-[#1c1f2a] hover:opacity-100 transition-all duration-300 hover:translate-x-1" href="#">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
-<span class="font-['Outfit'] text-base tracking-wide">Settings</span>
-</a>
-</nav>
-</aside>
 <!-- Main Canvas -->
 <main class="md:ml-64 min-h-screen bg-surface-dim">
         <!-- Header Container -->
         <div id="header-container"></div>
-<!-- TopAppBar (Authority: JSON) -->
-<header class="fixed top-0 right-0 left-0 md:left-64 z-40 bg-[#0f131d]/70 backdrop-blur-xl flex justify-between items-center w-full px-8 py-4 shadow-[0_32px_32px_-4px_rgba(10,14,24,0.5)]">
-<div class="flex items-center gap-6">
-<h1 class="font-['Syne'] font-extrabold text-xl tracking-tighter text-[#c0c1ff]">Invoice #INV-2024-082</h1>
-<span class="px-3 py-1 rounded-full bg-secondary-container/30 text-secondary text-[10px] font-bold uppercase tracking-widest flex items-center gap-1.5 border border-primary/10">
-<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-                    Pending Payment
-                </span>
-</div>
-<div class="flex items-center gap-4">
-<div class="hidden lg:flex items-center gap-2 bg-surface-container-lowest px-4 py-2 rounded-xl border border-outline-variant/10">
-<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="search">search</span>
-<input class="bg-transparent border-none focus:ring-0 text-sm text-on-surface w-48" placeholder="Quick search..." type="text"/>
-</div>
-<button class="p-2 rounded-xl text-on-surface-variant hover:bg-[#313540] transition-colors duration-200">
-<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
-</button>
-<div class="w-8 h-8 rounded-full overflow-hidden border border-primary/20">
-<img alt="User avatar" data-alt="Portrait of a professional man in a dark studio setting with soft side lighting and modern aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCilmR9TmYfM26RYIvzpA2qdMqzhdJyIf4x0NGImo7sQxvcaB_IfPu7HRnlktIj6FEn2F_EEclmBdkO5JtscDiOqADGuK8vG76i0idzG0LwD0k8Fg7BUAMXCvYqKwXcVdrCZDkkiRJUsXgNjaj63Y4T1a-qWnl6eitiP6cPdl5s2qJ0W59zW8qhthgNk4vPCfNNUdAGc8M4JD48b_EM1Xa-2376UXpCo8Ov26nc_qF0ORQWbWLy1K3RqQjHnAtt7RQS25L0olDOq6Y"/>
-</div>
-</div>
-</header>
 <!-- Content Body -->
 <div class="pt-24 pb-12 px-8 max-w-7xl mx-auto">
 <!-- Actions Toolbar -->

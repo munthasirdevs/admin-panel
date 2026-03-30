@@ -8,112 +8,143 @@
 (function() {
   'use strict';
 
-  // Component path resolution
+  // Component path resolution - dynamically calculates correct path based on URL depth
   const getComponentPath = () => {
     const currentPath = window.location.pathname;
-    const depth = (currentPath.match(/\//g) || []).length - 1;
+    const pathParts = currentPath.split('/').filter(part => part !== '');
     
-    // Determine path prefix based on URL structure
-    if (currentPath.includes('/pages/')) {
+    // Count depth from 'pages' directory
+    const pagesIndex = pathParts.indexOf('pages');
+    if (pagesIndex === -1) {
+      // Not in pages directory, use default
       return '../assets/components/';
     }
-    return '../assets/components/';
+    
+    // Calculate depth after 'pages' (e.g., pages/billing/invoices.html = depth 2)
+    const depth = pathParts.length - pagesIndex - 1;
+    
+    // Build relative path prefix based on depth
+    let prefix = '';
+    for (let i = 0; i < depth; i++) {
+      prefix += '../';
+    }
+    
+    return prefix + 'assets/components/';
   };
 
   const COMPONENT_PATH = getComponentPath();
 
-  // Navigation configuration - All pages mapped
+  // Get path prefix for navigation based on current page depth
+  const getNavPathPrefix = () => {
+    const currentPath = window.location.pathname;
+    const pathParts = currentPath.split('/').filter(part => part !== '');
+    const pagesIndex = pathParts.indexOf('pages');
+    
+    if (pagesIndex === -1) {
+      return '../pages/';
+    }
+    
+    const depth = pathParts.length - pagesIndex - 1;
+    let prefix = '';
+    for (let i = 0; i < depth; i++) {
+      prefix += '../';
+    }
+    
+    return prefix + 'pages/';
+  };
+
+  // Navigation configuration - All pages mapped (paths are relative to pages root)
   const navigationConfig = {
     dashboard: [
-      { name: 'Dashboard', icon: 'dashboard', path: '../pages/dashboard/index.html' }
+      { name: 'Dashboard', icon: 'dashboard', path: 'dashboard/index.html' }
     ],
     billing: [
-      { name: 'Billing Overview', icon: 'account_balance', path: '../pages/billing/index.html' },
-      { name: 'Invoices', icon: 'receipt', path: '../pages/billing/invoices.html' },
-      { name: 'Subscriptions', icon: 'repeat', path: '../pages/billing/subscriptions.html' },
-      { name: 'Transactions', icon: 'swap_horiz', path: '../pages/billing/transactions.html' },
-      { name: 'Invoice Details', icon: 'description', path: '../pages/billing/invoice-details.html' }
+      { name: 'Billing Overview', icon: 'account_balance', path: 'billing/index.html' },
+      { name: 'Invoices', icon: 'receipt', path: 'billing/invoices.html' },
+      { name: 'Subscriptions', icon: 'repeat', path: 'billing/subscriptions.html' },
+      { name: 'Transactions', icon: 'swap_horiz', path: 'billing/transactions.html' },
+      { name: 'Invoice Details', icon: 'description', path: 'billing/invoice-details.html' }
     ],
     clients: [
-      { name: 'Client List', icon: 'group', path: '../pages/clients/index.html' },
-      { name: 'Client Management', icon: 'manage_accounts', path: '../pages/clients/management.html' },
-      { name: 'Client Overview', icon: 'person', path: '../pages/clients/client-overview.html' },
-      { name: 'Activity Log', icon: 'history', path: '../pages/clients/activity-log.html' },
-      { name: 'Document Vault', icon: 'folder', path: '../pages/clients/document-vault.html' },
-      { name: 'Projects Grid', icon: 'grid_view', path: '../pages/clients/projects-grid.html' },
-      { name: 'Client Details', icon: 'person_outline', path: '../pages/clients/details.html' }
+      { name: 'Client List', icon: 'group', path: 'clients/index.html' },
+      { name: 'Client Management', icon: 'manage_accounts', path: 'clients/management.html' },
+      { name: 'Client Overview', icon: 'person', path: 'clients/client-overview.html' },
+      { name: 'Activity Log', icon: 'history', path: 'clients/activity-log.html' },
+      { name: 'Document Vault', icon: 'folder', path: 'clients/document-vault.html' },
+      { name: 'Projects Grid', icon: 'grid_view', path: 'clients/projects-grid.html' },
+      { name: 'Client Details', icon: 'person_outline', path: 'clients/details.html' }
     ],
     projects: [
-      { name: 'All Projects', icon: 'folder_open', path: '../pages/projects/index.html' },
-      { name: 'Projects Hub', icon: 'business_center', path: '../pages/projects/hub.html' },
-      { name: 'My Assigned', icon: 'assignment', path: '../pages/projects/my-assigned.html' },
-      { name: 'Assigned Projects', icon: 'assignment_ind', path: '../pages/projects/assigned.html' },
-      { name: 'Project Overview', icon: 'visibility', path: '../pages/projects/overview.html' },
-      { name: 'Team', icon: 'people', path: '../pages/projects/team.html' },
-      { name: 'Timeline', icon: 'schedule', path: '../pages/projects/timeline.html' },
-      { name: 'Files', icon: 'folder_shared', path: '../pages/projects/files-workspace.html' },
-      { name: 'Tasks', icon: 'task', path: '../pages/projects/tasks-workspace.html' },
-      { name: 'Project Details', icon: 'description', path: '../pages/projects/details.html' }
+      { name: 'All Projects', icon: 'folder_open', path: 'projects/index.html' },
+      { name: 'Projects Hub', icon: 'business_center', path: 'projects/hub.html' },
+      { name: 'My Assigned', icon: 'assignment', path: 'projects/my-assigned.html' },
+      { name: 'Assigned Projects', icon: 'assignment_ind', path: 'projects/assigned.html' },
+      { name: 'Project Overview', icon: 'visibility', path: 'projects/overview.html' },
+      { name: 'Team', icon: 'people', path: 'projects/team.html' },
+      { name: 'Timeline', icon: 'schedule', path: 'projects/timeline.html' },
+      { name: 'Files', icon: 'folder_shared', path: 'projects/files-workspace.html' },
+      { name: 'Tasks', icon: 'task', path: 'projects/tasks-workspace.html' },
+      { name: 'Project Details', icon: 'description', path: 'projects/details.html' }
     ],
     tasks: [
-      { name: 'Task List', icon: 'format_list_bulleted', path: '../pages/tasks/index.html' },
-      { name: 'Tasks Hub', icon: 'list_alt', path: '../pages/tasks/hub.html' },
-      { name: 'Task Details', icon: 'assignment', path: '../pages/tasks/details.html' },
-      { name: 'Assign New', icon: 'add_task', path: '../pages/tasks/assign-new.html' },
-      { name: 'Task Calendar', icon: 'calendar_today', path: '../pages/tasks/calendar.html' },
-      { name: 'Task Analytics', icon: 'insights', path: '../pages/tasks/analytics.html' },
-      { name: 'Task Management', icon: 'manage_accounts', path: '../pages/tasks/manage.html' },
-      { name: 'Assign Task', icon: 'post_add', path: '../pages/tasks/assign.html' }
+      { name: 'Task List', icon: 'format_list_bulleted', path: 'tasks/index.html' },
+      { name: 'Tasks Hub', icon: 'list_alt', path: 'tasks/hub.html' },
+      { name: 'Task Details', icon: 'assignment', path: 'tasks/details.html' },
+      { name: 'Assign New', icon: 'add_task', path: 'tasks/assign-new.html' },
+      { name: 'Task Calendar', icon: 'calendar_today', path: 'tasks/calendar.html' },
+      { name: 'Task Analytics', icon: 'insights', path: 'tasks/analytics.html' },
+      { name: 'Task Management', icon: 'manage_accounts', path: 'tasks/manage.html' },
+      { name: 'Assign Task', icon: 'post_add', path: 'tasks/assign.html' }
     ],
     communication: [
-      { name: 'Communication Hub', icon: 'forum', path: '../pages/communication/index.html' },
-      { name: 'Chat Control', icon: 'chat', path: '../pages/communication/control.html' }
+      { name: 'Communication Hub', icon: 'forum', path: 'communication/index.html' },
+      { name: 'Chat Control', icon: 'chat', path: 'communication/control.html' }
     ],
     files: [
-      { name: 'File Manager', icon: 'folder_shared', path: '../pages/files/index.html' },
-      { name: 'File Details', icon: 'insert_drive_file', path: '../pages/files/details.html' }
+      { name: 'File Manager', icon: 'folder_shared', path: 'files/index.html' },
+      { name: 'File Details', icon: 'insert_drive_file', path: 'files/details.html' }
     ],
     payment: [
-      { name: 'Payment Center', icon: 'payments', path: '../pages/payment/index.html' }
+      { name: 'Payment Center', icon: 'payments', path: 'payment/index.html' }
     ],
     team: [
-      { name: 'Team Members', icon: 'badge', path: '../pages/team/index.html' },
-      { name: 'Team Assign', icon: 'person_add', path: '../pages/team/assign.html' }
+      { name: 'Team Members', icon: 'badge', path: 'team/index.html' },
+      { name: 'Team Assign', icon: 'person_add', path: 'team/assign.html' }
     ],
     analytics: [
-      { name: 'Executive Analytics', icon: 'analytics', path: '../pages/analytics/executive.html' },
-      { name: 'Marketing Analytics', icon: 'trending_up', path: '../pages/analytics/marketing.html' },
-      { name: 'Operations Analytics', icon: 'operations', path: '../pages/analytics/operations.html' }
+      { name: 'Executive Analytics', icon: 'analytics', path: 'analytics/executive.html' },
+      { name: 'Marketing Analytics', icon: 'trending_up', path: 'analytics/marketing.html' },
+      { name: 'Operations Analytics', icon: 'operations', path: 'analytics/operations.html' }
     ],
     reports: [
-      { name: 'Report Insights', icon: 'insights', path: '../pages/reports/insights.html' },
-      { name: 'Saved Reports', icon: 'bookmark', path: '../pages/reports/saved.html' },
-      { name: 'Report Builder', icon: 'build', path: '../pages/reports/builder.html' },
-      { name: 'Financial Reports', icon: 'receipt_long', path: '../pages/reports/financial.html' },
-      { name: 'Sales Reports', icon: 'bar_chart', path: '../pages/reports/sales.html' },
-      { name: 'Support Reports', icon: 'support_agent', path: '../pages/reports/support.html' }
+      { name: 'Report Insights', icon: 'insights', path: 'reports/insights.html' },
+      { name: 'Saved Reports', icon: 'bookmark', path: 'reports/saved.html' },
+      { name: 'Report Builder', icon: 'build', path: 'reports/builder.html' },
+      { name: 'Financial Reports', icon: 'receipt_long', path: 'reports/financial.html' },
+      { name: 'Sales Reports', icon: 'bar_chart', path: 'reports/sales.html' },
+      { name: 'Support Reports', icon: 'support_agent', path: 'reports/support.html' }
     ],
     activity: [
-      { name: 'Activity Logs', icon: 'history', path: '../pages/activity/index.html' }
+      { name: 'Activity Logs', icon: 'history', path: 'activity/index.html' }
     ],
     settings: [
-      { name: 'System Settings', icon: 'settings', path: '../pages/settings/index.html' },
-      { name: 'System Config', icon: 'tune', path: '../pages/settings/system.html' },
-      { name: 'Integrations', icon: 'api', path: '../pages/settings/integrations.html' }
+      { name: 'System Settings', icon: 'settings', path: 'settings/index.html' },
+      { name: 'System Config', icon: 'tune', path: 'settings/system.html' },
+      { name: 'Integrations', icon: 'api', path: 'settings/integrations.html' }
     ],
     profile: [
-      { name: 'User Profile', icon: 'account_circle', path: '../pages/profile/index.html' },
-      { name: 'Profile Details', icon: 'person', path: '../pages/profile/profile.html' },
-      { name: 'Login Sessions', icon: 'security', path: '../pages/profile/sessions.html' },
-      { name: 'Security Settings', icon: 'lock', path: '../pages/profile/security.html' }
+      { name: 'User Profile', icon: 'account_circle', path: 'profile/index.html' },
+      { name: 'Profile Details', icon: 'person', path: 'profile/profile.html' },
+      { name: 'Login Sessions', icon: 'security', path: 'profile/sessions.html' },
+      { name: 'Security Settings', icon: 'lock', path: 'profile/security.html' }
     ],
     roles: [
-      { name: 'Roles & Permissions', icon: 'admin_panel_settings', path: '../pages/roles/index.html' },
-      { name: 'Add New Role', icon: 'add_circle', path: '../pages/roles/add.html' }
+      { name: 'Roles & Permissions', icon: 'admin_panel_settings', path: 'roles/index.html' },
+      { name: 'Add New Role', icon: 'add_circle', path: 'roles/add.html' }
     ],
     notifications: [
-      { name: 'Notification Center', icon: 'notifications', path: '../pages/notifications/index.html' },
-      { name: 'Notification Details', icon: 'notifications_active', path: '../pages/notifications/details.html' }
+      { name: 'Notification Center', icon: 'notifications', path: 'notifications/index.html' },
+      { name: 'Notification Details', icon: 'notifications_active', path: 'notifications/details.html' }
     ]
   };
 
@@ -125,9 +156,10 @@
     return fileName ? fileName.replace('.html', '') : 'index';
   };
 
-  // Generate sidebar HTML
+  // Generate sidebar HTML with dynamic path prefix
   const generateSidebar = () => {
     const currentPage = getCurrentPage();
+    const navPathPrefix = getNavPathPrefix();
     
     const sidebarHTML = `
       <!-- Branding -->
@@ -145,62 +177,62 @@
       <nav class="flex-1 space-y-1">
         <!-- Dashboard -->
         <div class="sidebar-section">
-          ${navigationConfig.dashboard.map(item => createNavItem(item, currentPage)).join('')}
+          ${navigationConfig.dashboard.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
         </div>
 
         <!-- Billing -->
         <div class="sidebar-section">
-          ${navigationConfig.billing.map(item => createNavItem(item, currentPage)).join('')}
+          ${navigationConfig.billing.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
         </div>
 
         <!-- Clients -->
         <div class="sidebar-section">
-          ${navigationConfig.clients.map(item => createNavItem(item, currentPage)).join('')}
+          ${navigationConfig.clients.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
         </div>
 
         <!-- Projects -->
         <div class="sidebar-section">
-          ${navigationConfig.projects.map(item => createNavItem(item, currentPage)).join('')}
+          ${navigationConfig.projects.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
         </div>
 
         <!-- Tasks -->
         <div class="sidebar-section">
-          ${navigationConfig.tasks.map(item => createNavItem(item, currentPage)).join('')}
+          ${navigationConfig.tasks.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
         </div>
 
         <!-- Communication -->
         <div class="sidebar-section">
-          ${navigationConfig.communication.map(item => createNavItem(item, currentPage)).join('')}
+          ${navigationConfig.communication.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
         </div>
 
         <!-- Files -->
         <div class="sidebar-section">
-          ${navigationConfig.files.map(item => createNavItem(item, currentPage)).join('')}
+          ${navigationConfig.files.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
         </div>
 
         <!-- Payment -->
         <div class="sidebar-section">
-          ${navigationConfig.payment.map(item => createNavItem(item, currentPage)).join('')}
+          ${navigationConfig.payment.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
         </div>
 
         <!-- Team -->
         <div class="sidebar-section">
-          ${navigationConfig.team.map(item => createNavItem(item, currentPage)).join('')}
+          ${navigationConfig.team.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
         </div>
 
         <!-- Analytics -->
         <div class="sidebar-section">
-          ${navigationConfig.analytics.map(item => createNavItem(item, currentPage)).join('')}
+          ${navigationConfig.analytics.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
         </div>
 
         <!-- Reports -->
         <div class="sidebar-section">
-          ${navigationConfig.reports.map(item => createNavItem(item, currentPage)).join('')}
+          ${navigationConfig.reports.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
         </div>
 
         <!-- Activity -->
         <div class="sidebar-section">
-          ${navigationConfig.activity.map(item => createNavItem(item, currentPage)).join('')}
+          ${navigationConfig.activity.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
         </div>
 
         <!-- Divider -->
@@ -208,10 +240,10 @@
 
         <!-- Settings & Profile -->
         <div class="sidebar-section">
-          ${navigationConfig.settings.map(item => createNavItem(item, currentPage)).join('')}
-          ${navigationConfig.profile.map(item => createNavItem(item, currentPage)).join('')}
-          ${navigationConfig.roles.map(item => createNavItem(item, currentPage)).join('')}
-          ${navigationConfig.notifications.map(item => createNavItem(item, currentPage)).join('')}
+          ${navigationConfig.settings.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
+          ${navigationConfig.profile.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
+          ${navigationConfig.roles.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
+          ${navigationConfig.notifications.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
         </div>
       </nav>
 
@@ -224,16 +256,16 @@
     return sidebarHTML;
   };
 
-  // Create nav item HTML
-  const createNavItem = (item, currentPage) => {
-    const isActive = currentPage.includes(item.name.toLowerCase().split(' ')[0]) || 
+  // Create nav item HTML with path prefix
+  const createNavItem = (item, currentPage, navPathPrefix = '') => {
+    const isActive = currentPage.includes(item.name.toLowerCase().split(' ')[0]) ||
                      (currentPage === 'index' && item.name === 'Dashboard') ||
                      (currentPage === item.name.toLowerCase().replace(/\s+/g, '-'));
-    
+
     const activeClass = isActive ? 'active' : '';
-    
+
     return `
-      <a href="${item.path}" class="nav-item ${activeClass}" data-tooltip="${item.name}">
+      <a href="${navPathPrefix}${item.path}" class="nav-item ${activeClass}" data-tooltip="${item.name}">
         <span class="material-symbols-outlined">${item.icon}</span>
         <span class="nav-label text-sm">${item.name}</span>
       </a>

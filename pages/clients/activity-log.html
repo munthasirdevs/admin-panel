@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600&amp;family=Space+Grotesk:wght@700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="../../assets/css/components.css" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
           darkMode: "class",
@@ -84,81 +85,6 @@
 <body class="bg-background text-on-surface font-body selection:bg-primary/30">
     <!-- Component Containers -->
     <div id="sidebar-container"></div>
-<!-- Sidebar Navigation -->
-<aside class="fixed left-0 h-full w-64 z-40 bg-[#0a0e18] flex flex-col pt-24 pb-8">
-<div class="px-6 mb-8">
-<h1 class="text-xl font-['Syne'] font-black text-[#c0c1ff]">XenonOS</h1>
-<p class="text-xs text-on-surface-variant font-medium mt-1">Management Module</p>
-</div>
-<nav class="flex-1 space-y-1">
-<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-6 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-<span class="text-sm font-medium">Dashboard</span>
-</a>
-<a class="flex items-center gap-4 text-[#c0c1ff] bg-[#1c1f2a] border-l-2 border-[#6366f1] py-3 px-6" href="#">
-<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
-<span class="text-sm font-medium">Clients</span>
-</a>
-<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-6 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
-<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
-<span class="text-sm font-medium">Projects</span>
-</a>
-<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-6 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
-<span class="material-symbols-outlined" data-icon="assignment_turned_in">assignment_turned_in</span>
-<span class="text-sm font-medium">Tasks</span>
-</a>
-<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-6 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
-<span class="material-symbols-outlined" data-icon="group_work">group_work</span>
-<span class="text-sm font-medium">Team</span>
-</a>
-<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-6 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
-<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
-<span class="text-sm font-medium">Files</span>
-</a>
-<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-6 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
-<span class="material-symbols-outlined" data-icon="payments">payments</span>
-<span class="text-sm font-medium">Billing</span>
-</a>
-<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-6 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
-<span class="material-symbols-outlined" data-icon="chat_bubble_outline">chat_bubble_outline</span>
-<span class="text-sm font-medium">Communication</span>
-</a>
-<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-6 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
-<span class="text-sm font-medium">Settings</span>
-</a>
-</nav>
-<div class="px-6 mt-auto">
-<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-semibold py-3 px-4 rounded-xl flex items-center justify-center gap-2 hover:shadow-[0_0_20px_rgba(192,193,255,0.4)] transition-all duration-300">
-<span class="material-symbols-outlined" data-icon="add">add</span>
-                New Project
-            </button>
-</div>
-</aside>
-<!-- Top Navigation -->
-<header class="fixed top-0 w-full z-50 bg-[#1c1f2a]/70 backdrop-blur-md flex justify-between items-center px-8 h-20 ml-0 md:pl-72 transition-all">
-<div class="flex items-center gap-4">
-<div class="relative group">
-<span class="absolute inset-y-0 left-3 flex items-center text-on-surface-variant group-focus-within:text-primary transition-colors">
-<span class="material-symbols-outlined text-lg" data-icon="search">search</span>
-</span>
-<input class="bg-surface-container-lowest border-none rounded-full pl-10 pr-4 py-2 text-sm w-64 focus:ring-1 focus:ring-primary/40 transition-all" placeholder="Quick search..." type="text"/>
-</div>
-</div>
-<div class="flex items-center gap-6">
-<button class="relative text-[#c7c4d7] hover:text-primary transition-colors">
-<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
-<span class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full border-2 border-surface-container"></span>
-</button>
-<div class="flex items-center gap-3 pl-6 border-l border-outline-variant/20">
-<div class="text-right hidden sm:block">
-<p class="text-xs font-bold text-on-surface">Alex Thorne</p>
-<p class="text-[10px] text-on-surface-variant">Admin</p>
-</div>
-<img alt="User avatar" class="w-10 h-10 rounded-full border border-primary/20 p-0.5" data-alt="Close up portrait of a professional male designer with glasses and minimalist aesthetic against a dark moody background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJy0xkQRzspdf66VDQjPIS3x5NDmF7OBnyOlg1JLgC1pmveUU-N6DoA7HooucKirfoGfcwyMGWFioWB65c8o-qySC2Tcxy-88TT_Eyq8VwDws9OESZ6xW9Op_CwGBlEl80UZYAlFbLUYrFsNC3fEiH9U9Rqvn4V2szKW6CnFYpIWcntEr1orGxf23i8_XFcuqEzzAqOsOvXOQYFzLn5lUju84ijR8LsrpsU8zGlecD-pjU1a0iS_m-EMDJgW7yjVUxJl4UTXSP0_o"/>
-</div>
-</div>
-</header>
 <!-- Main Content -->
 <main class="pt-28 pb-12 ml-64 px-12 max-w-7xl">
         <!-- Header Container -->

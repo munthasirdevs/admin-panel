@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="../../assets/css/components.css" rel="stylesheet"/>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
@@ -91,81 +92,6 @@
 <body class="font-body selection:bg-primary-container selection:text-on-primary-container">
     <!-- Component Containers -->
     <div id="sidebar-container"></div>
-<!-- Sidebar Navigation -->
-<aside class="fixed left-0 h-full w-64 z-40 bg-[#0a0e18] flex flex-col pt-24 pb-8">
-<div class="px-8 mb-12">
-<h1 class="text-xl font-['Syne'] font-black text-[#c0c1ff]">XenonOS</h1>
-<p class="text-xs text-on-surface-variant font-medium mt-1 uppercase tracking-widest">Management Module</p>
-</div>
-<nav class="flex-1 space-y-1">
-<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-8 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-<span class="text-sm font-medium">Dashboard</span>
-</a>
-<a class="flex items-center gap-4 text-[#c0c1ff] bg-[#1c1f2a] border-l-2 border-[#6366f1] py-3 px-8" href="#">
-<span class="material-symbols-outlined" data-icon="group">group</span>
-<span class="text-sm font-medium">Clients</span>
-</a>
-<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-8 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
-<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
-<span class="text-sm font-medium">Projects</span>
-</a>
-<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-8 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
-<span class="material-symbols-outlined" data-icon="assignment_turned_in">assignment_turned_in</span>
-<span class="text-sm font-medium">Tasks</span>
-</a>
-<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-8 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
-<span class="material-symbols-outlined" data-icon="group_work">group_work</span>
-<span class="text-sm font-medium">Team</span>
-</a>
-<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-8 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
-<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
-<span class="text-sm font-medium">Files</span>
-</a>
-<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-8 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
-<span class="material-symbols-outlined" data-icon="payments">payments</span>
-<span class="text-sm font-medium">Billing</span>
-</a>
-<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-8 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
-<span class="material-symbols-outlined" data-icon="chat_bubble_outline">chat_bubble_outline</span>
-<span class="text-sm font-medium">Communication</span>
-</a>
-<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-8 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
-<span class="text-sm font-medium">Settings</span>
-</a>
-</nav>
-<div class="px-6 mt-auto">
-<button class="w-full py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl font-bold shadow-[0_8px_16px_-4px_rgba(99,102,241,0.4)] flex items-center justify-center gap-2 scale-100 hover:scale-[1.02] transition-transform">
-<span class="material-symbols-outlined text-lg" data-icon="add_circle">add_circle</span>
-                New Project
-            </button>
-</div>
-</aside>
-<!-- Top Navigation Bar -->
-<header class="fixed top-0 w-full z-50 bg-[#1c1f2a]/70 backdrop-blur-md shadow-[0_32px_32px_-4px_rgba(10,14,24,0.5)] flex justify-between items-center px-8 h-20 ml-64" style="width: calc(100% - 16rem);">
-<div class="flex items-center gap-6">
-<div class="relative">
-<span class="absolute inset-y-0 left-4 flex items-center text-on-surface-variant">
-<span class="material-symbols-outlined" data-icon="search">search</span>
-</span>
-<input class="bg-surface-container-lowest border-none rounded-full py-2.5 pl-12 pr-6 text-sm focus:ring-2 focus:ring-primary/40 w-80 text-on-surface placeholder:text-on-surface-variant/50 transition-all" placeholder="Search systems..." type="text"/>
-</div>
-</div>
-<div class="flex items-center gap-6">
-<button class="relative p-2 text-on-surface-variant hover:text-primary transition-colors">
-<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
-<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full border-2 border-surface-container"></span>
-</button>
-<div class="flex items-center gap-3 pl-4 border-l border-outline-variant/20">
-<div class="text-right">
-<p class="text-sm font-bold text-on-surface">Alex Mercer</p>
-<p class="text-[10px] text-on-surface-variant font-medium tracking-wider uppercase">Lead Architect</p>
-</div>
-<img alt="User avatar with status indicator" class="w-10 h-10 rounded-full border-2 border-primary/20 object-cover" data-alt="Close up portrait of a professional male architect in a dark studio setting with soft side lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEX6jgdYMMRKh1FTneOI_js3tzNdgilWlOr9GdZuuwaX5M3eotglULFOQglJTOUNOKN7nDL1zjLTQkI4mLZNI_oWvIRGR_IO_8bulxXL33vuEkSj0LQYX3Rtqn87wrA83HBFVyns7c-lgHjW8hud_tloKYLvbAtb8pbnz84C5iwYVfPhtkmIiDDYWMFw_f6rddiUPad53GYXksARBighoPs-3WQUbfv-Ou_QqNBHkZe3FCWUt7K_KHEXZ0wJ8kpkrRwrzl57PeIsY"/>
-</div>
-</div>
-</header>
 <!-- Main Content Area -->
 <main class="ml-64 pt-28 px-12 pb-20">
         <!-- Header Container -->
