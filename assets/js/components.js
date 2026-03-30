@@ -27,19 +27,43 @@
     dashboard: [
       { name: 'Dashboard', icon: 'dashboard', path: '../pages/dashboard/index.html' }
     ],
+    billing: [
+      { name: 'Billing Overview', icon: 'account_balance', path: '../pages/billing/index.html' },
+      { name: 'Invoices', icon: 'receipt', path: '../pages/billing/invoices.html' },
+      { name: 'Subscriptions', icon: 'repeat', path: '../pages/billing/subscriptions.html' },
+      { name: 'Transactions', icon: 'swap_horiz', path: '../pages/billing/transactions.html' },
+      { name: 'Invoice Details', icon: 'description', path: '../pages/billing/invoice-details.html' }
+    ],
     clients: [
       { name: 'Client List', icon: 'group', path: '../pages/clients/index.html' },
-      { name: 'Client Details', icon: 'person', path: '../pages/clients/details.html' }
+      { name: 'Client Management', icon: 'manage_accounts', path: '../pages/clients/management.html' },
+      { name: 'Client Overview', icon: 'person', path: '../pages/clients/client-overview.html' },
+      { name: 'Activity Log', icon: 'history', path: '../pages/clients/activity-log.html' },
+      { name: 'Document Vault', icon: 'folder', path: '../pages/clients/document-vault.html' },
+      { name: 'Projects Grid', icon: 'grid_view', path: '../pages/clients/projects-grid.html' },
+      { name: 'Client Details', icon: 'person_outline', path: '../pages/clients/details.html' }
     ],
     projects: [
       { name: 'All Projects', icon: 'folder_open', path: '../pages/projects/index.html' },
-      { name: 'Assigned Projects', icon: 'assignment', path: '../pages/projects/assigned.html' },
+      { name: 'Projects Hub', icon: 'business_center', path: '../pages/projects/hub.html' },
+      { name: 'My Assigned', icon: 'assignment', path: '../pages/projects/my-assigned.html' },
+      { name: 'Assigned Projects', icon: 'assignment_ind', path: '../pages/projects/assigned.html' },
+      { name: 'Project Overview', icon: 'visibility', path: '../pages/projects/overview.html' },
+      { name: 'Team', icon: 'people', path: '../pages/projects/team.html' },
+      { name: 'Timeline', icon: 'schedule', path: '../pages/projects/timeline.html' },
+      { name: 'Files', icon: 'folder_shared', path: '../pages/projects/files-workspace.html' },
+      { name: 'Tasks', icon: 'task', path: '../pages/projects/tasks-workspace.html' },
       { name: 'Project Details', icon: 'description', path: '../pages/projects/details.html' }
     ],
     tasks: [
       { name: 'Task List', icon: 'format_list_bulleted', path: '../pages/tasks/index.html' },
+      { name: 'Tasks Hub', icon: 'list_alt', path: '../pages/tasks/hub.html' },
+      { name: 'Task Details', icon: 'assignment', path: '../pages/tasks/details.html' },
+      { name: 'Assign New', icon: 'add_task', path: '../pages/tasks/assign-new.html' },
+      { name: 'Task Calendar', icon: 'calendar_today', path: '../pages/tasks/calendar.html' },
+      { name: 'Task Analytics', icon: 'insights', path: '../pages/tasks/analytics.html' },
       { name: 'Task Management', icon: 'manage_accounts', path: '../pages/tasks/manage.html' },
-      { name: 'Assign Task', icon: 'add_task', path: '../pages/tasks/assign.html' }
+      { name: 'Assign Task', icon: 'post_add', path: '../pages/tasks/assign.html' }
     ],
     communication: [
       { name: 'Communication Hub', icon: 'forum', path: '../pages/communication/index.html' },
@@ -62,6 +86,9 @@
       { name: 'Operations Analytics', icon: 'operations', path: '../pages/analytics/operations.html' }
     ],
     reports: [
+      { name: 'Report Insights', icon: 'insights', path: '../pages/reports/insights.html' },
+      { name: 'Saved Reports', icon: 'bookmark', path: '../pages/reports/saved.html' },
+      { name: 'Report Builder', icon: 'build', path: '../pages/reports/builder.html' },
       { name: 'Financial Reports', icon: 'receipt_long', path: '../pages/reports/financial.html' },
       { name: 'Sales Reports', icon: 'bar_chart', path: '../pages/reports/sales.html' },
       { name: 'Support Reports', icon: 'support_agent', path: '../pages/reports/support.html' }
@@ -70,10 +97,15 @@
       { name: 'Activity Logs', icon: 'history', path: '../pages/activity/index.html' }
     ],
     settings: [
-      { name: 'System Settings', icon: 'settings', path: '../pages/settings/index.html' }
+      { name: 'System Settings', icon: 'settings', path: '../pages/settings/index.html' },
+      { name: 'System Config', icon: 'tune', path: '../pages/settings/system.html' },
+      { name: 'Integrations', icon: 'api', path: '../pages/settings/integrations.html' }
     ],
     profile: [
-      { name: 'User Profile', icon: 'account_circle', path: '../pages/profile/index.html' }
+      { name: 'User Profile', icon: 'account_circle', path: '../pages/profile/index.html' },
+      { name: 'Profile Details', icon: 'person', path: '../pages/profile/profile.html' },
+      { name: 'Login Sessions', icon: 'security', path: '../pages/profile/sessions.html' },
+      { name: 'Security Settings', icon: 'lock', path: '../pages/profile/security.html' }
     ],
     roles: [
       { name: 'Roles & Permissions', icon: 'admin_panel_settings', path: '../pages/roles/index.html' },
@@ -114,6 +146,11 @@
         <!-- Dashboard -->
         <div class="sidebar-section">
           ${navigationConfig.dashboard.map(item => createNavItem(item, currentPage)).join('')}
+        </div>
+
+        <!-- Billing -->
+        <div class="sidebar-section">
+          ${navigationConfig.billing.map(item => createNavItem(item, currentPage)).join('')}
         </div>
 
         <!-- Clients -->
