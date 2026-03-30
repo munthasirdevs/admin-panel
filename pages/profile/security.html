@@ -87,61 +87,8 @@
     </style>
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-primary/30">
-    <!-- Component Containers -->
-    <div id="sidebar-container"></div>
-<!-- SideNavBar Component -->
-<aside class="h-screen w-64 fixed left-0 top-0 z-40 bg-[#1c1f2a] flex flex-col py-6 hidden md:flex">
-<div class="px-6 mb-10">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-xl bg-indigo-glow flex items-center justify-center shadow-lg shadow-primary/20">
-<span class="material-symbols-outlined text-on-primary-fixed text-2xl" style="font-variation-settings: 'FILL' 1;">shield</span>
-</div>
-<div>
-<h1 class="font-['Syne'] font-bold text-lg text-[#6366f1] leading-tight">XenonOS</h1>
-<p class="font-['Outfit'] text-xs tracking-wide text-on-surface-variant">Premium Management</p>
-</div>
-</div>
-</div>
-<nav class="flex-1 px-2 space-y-1">
-<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 opacity-70 hover:bg-[#313540] hover:opacity-100 transition-all duration-400 font-['Outfit'] text-sm tracking-wide" href="#">
-<span class="material-symbols-outlined" data-icon="person">person</span>
-<span>Profile</span>
-</a>
-<a class="flex items-center gap-3 bg-[#313540] text-[#c0c1ff] border-l-4 border-[#6366f1] px-4 py-3 rounded-r-lg font-['Outfit'] text-sm tracking-wide translate-x-1 duration-300" href="#">
-<span class="material-symbols-outlined" data-icon="security" style="font-variation-settings: 'FILL' 1;">security</span>
-<span>Security</span>
-</a>
-<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 opacity-70 hover:bg-[#313540] hover:opacity-100 transition-all duration-400 font-['Outfit'] text-sm tracking-wide" href="#">
-<span class="material-symbols-outlined" data-icon="history">history</span>
-<span>Sessions</span>
-</a>
-<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 opacity-70 hover:bg-[#313540] hover:opacity-100 transition-all duration-400 font-['Outfit'] text-sm tracking-wide" href="#">
-<span class="material-symbols-outlined" data-icon="devices">devices</span>
-<span>Devices</span>
-</a>
-<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 opacity-70 hover:bg-[#313540] hover:opacity-100 transition-all duration-400 font-['Outfit'] text-sm tracking-wide" href="#">
-<span class="material-symbols-outlined" data-icon="lock">lock</span>
-<span>Privacy</span>
-</a>
-</nav>
-<div class="px-6 mb-6">
-<button class="w-full py-3 rounded-xl bg-indigo-glow text-on-primary font-bold text-sm shadow-lg shadow-primary/10 hover:shadow-primary/25 transition-all active:scale-95">
-                Upgrade Pro
-            </button>
-</div>
-<div class="px-2 border-t border-outline-variant/10 pt-4">
-<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 opacity-70 hover:bg-[#313540] hover:opacity-100 transition-all duration-400 font-['Outfit'] text-sm tracking-wide" href="#">
-<span class="material-symbols-outlined" data-icon="help">help</span>
-<span>Support</span>
-</a>
-<a class="flex items-center gap-3 text-error/80 px-4 py-3 opacity-70 hover:bg-error-container/10 hover:opacity-100 transition-all duration-400 font-['Outfit'] text-sm tracking-wide" href="#">
-<span class="material-symbols-outlined" data-icon="logout">logout</span>
-<span>Logout</span>
-</a>
-</div>
-</aside>
-<!-- Main Canvas -->
-<main class="md:ml-64 min-h-screen">
+    <!-- Main Canvas -->
+    <main class="min-h-screen flex flex-col">
         <!-- Header Container -->
         <div id="header-container"></div>
 <!-- TopNavBar Component -->

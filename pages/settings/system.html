@@ -109,66 +109,8 @@
     </style>
 </head>
 <body class="min-h-screen">
-    <!-- Component Containers -->
-    <div id="sidebar-container"></div>
-<!-- SideNavBar (Authority: JSON & Design System) -->
-<aside class="h-screen w-64 fixed left-0 top-0 overflow-y-auto bg-[#0a0e18] border-r border-[#c7c4d7]/15 shadow-[32px_0_32px_-4px_rgba(10,14,24,0.5)] z-50 flex flex-col py-6">
-<div class="px-8 mb-10 flex items-center gap-3">
-<div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center">
-<span class="material-symbols-outlined text-on-primary-container text-xl" style="font-variation-settings: 'FILL' 1;">cloud_done</span>
-</div>
-<div class="flex flex-col">
-<span class="font-['Syne'] font-extrabold text-xl tracking-tighter text-[#c0c1ff]">XenonOS</span>
-<span class="text-[10px] uppercase tracking-widest text-on-surface-variant font-medium">Admin Console</span>
-</div>
-</div>
-<nav class="flex-1 space-y-1">
-<a class="flex items-center gap-3 px-8 py-3 text-[#c7c4d7] hover:bg-[#1c1f2a] hover:text-[#dfe2f1] hover:scale-[1.02] transition-all duration-400 font-['Outfit'] font-medium text-sm" href="#">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-<span>Dashboard</span>
-</a>
-<a class="flex items-center gap-3 px-8 py-3 text-[#c7c4d7] hover:bg-[#1c1f2a] hover:text-[#dfe2f1] hover:scale-[1.02] transition-all duration-400 font-['Outfit'] font-medium text-sm" href="#">
-<span class="material-symbols-outlined" data-icon="group">group</span>
-<span>Clients</span>
-</a>
-<a class="flex items-center gap-3 px-8 py-3 text-[#c7c4d7] hover:bg-[#1c1f2a] hover:text-[#dfe2f1] hover:scale-[1.02] transition-all duration-400 font-['Outfit'] font-medium text-sm" href="#">
-<span class="material-symbols-outlined" data-icon="folder">folder</span>
-<span>Projects</span>
-</a>
-<a class="flex items-center gap-3 px-8 py-3 text-[#c7c4d7] hover:bg-[#1c1f2a] hover:text-[#dfe2f1] hover:scale-[1.02] transition-all duration-400 font-['Outfit'] font-medium text-sm" href="#">
-<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
-<span>Tasks</span>
-</a>
-<a class="flex items-center gap-3 px-8 py-3 text-[#c7c4d7] hover:bg-[#1c1f2a] hover:text-[#dfe2f1] hover:scale-[1.02] transition-all duration-400 font-['Outfit'] font-medium text-sm" href="#">
-<span class="material-symbols-outlined" data-icon="badge">badge</span>
-<span>Team</span>
-</a>
-<a class="flex items-center gap-3 px-8 py-3 text-[#c7c4d7] hover:bg-[#1c1f2a] hover:text-[#dfe2f1] hover:scale-[1.02] transition-all duration-400 font-['Outfit'] font-medium text-sm" href="#">
-<span class="material-symbols-outlined" data-icon="folder_shared">folder_shared</span>
-<span>Files</span>
-</a>
-<a class="flex items-center gap-3 px-8 py-3 text-[#c7c4d7] hover:bg-[#1c1f2a] hover:text-[#dfe2f1] hover:scale-[1.02] transition-all duration-400 font-['Outfit'] font-medium text-sm" href="#">
-<span class="material-symbols-outlined" data-icon="payments">payments</span>
-<span>Billing</span>
-</a>
-<!-- Active State: System Configuration -->
-<a class="flex items-center gap-3 px-8 py-3 text-[#c0c1ff] bg-[#1c1f2a] border-l-2 border-[#6366f1] font-['Outfit'] font-medium text-sm" href="#">
-<span class="material-symbols-outlined" data-icon="settings_input_component">settings_input_component</span>
-<span>System Configuration</span>
-</a>
-</nav>
-<div class="px-8 mt-auto pt-6 border-t border-outline-variant/15">
-<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-xl">
-<img alt="User Profile" class="w-10 h-10 rounded-lg object-cover" data-alt="portrait of a focused system administrator in a dimly lit office with cool blue ambient light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtn88fKBhog3_-Yna2J7l-YOFSiOy9Q4ftsF1ZyJ8vaK1-kll4hAQeOU-2iArdK516eTQQS40e8czNJXdZ_zEySsXRhePyLcZuAOnArBIvy7049v3jcB_AfpAurGE2LM8iXkIHb53b_kmTs1Ju74r2kUeNzbLuL8mfmpAjtzz39fcWHfMcC3ZgGUslGFf3x1xt8rxjqy6a8ftfxcqGlrnU39tVoxjKg4ql37sdv7SwsNKiODIgWx-vGDjEIdqmBv0eo6DRakm6cec"/>
-<div class="flex flex-col min-w-0">
-<span class="text-xs font-semibold truncate">Alex Vanguard</span>
-<span class="text-[10px] text-on-surface-variant truncate">Lead Architect</span>
-</div>
-</div>
-</div>
-</aside>
-<!-- Main Canvas -->
-<main class="ml-64 min-h-screen flex flex-col">
+    <!-- Main Canvas -->
+    <main class="min-h-screen flex flex-col">
         <!-- Header Container -->
         <div id="header-container"></div>
 <!-- TopNavBar (Authority: JSON) -->

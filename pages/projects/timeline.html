@@ -91,64 +91,12 @@
     </style>
 </head>
 <body class="bg-background text-on-surface font-outfit antialiased selection:bg-primary/30">
-    <!-- Component Containers -->
-    <div id="sidebar-container"></div>
-<!-- SideNavBar Component -->
-<aside class="h-screen w-64 fixed left-0 top-0 bg-[#1c1f2a] flex flex-col py-8 gap-2 z-[60] font-['Outfit'] font-medium text-sm">
-<div class="px-6 mb-8">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-xl indigo-glow flex items-center justify-center shadow-lg">
-<span class="material-symbols-outlined text-on-primary-container" data-icon="rocket_launch">rocket_launch</span>
-</div>
-<div>
-<h1 class="font-['Syne'] font-extrabold text-[#c0c1ff] text-lg leading-tight">Project Alpha</h1>
-<p class="text-xs text-on-surface-variant">XenonOS Management</p>
-</div>
-</div>
-</div>
-<nav class="flex-1 px-2 space-y-1">
-<a class="flex items-center gap-3 text-[#c7c4d7] hover:text-[#dfe2f1] px-4 py-3 hover:bg-[#313540] transition-all duration-400 cubic-bezier(0.4,0,0.2,1) hover:translate-x-1" href="#">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-                Dashboard
-            </a>
-<a class="flex items-center gap-3 text-[#c0c1ff] bg-[#0f131d] border-l-2 border-[#6366f1] px-4 py-3 ml-2 rounded-l-xl transition-all duration-400" href="#">
-<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
-                Projects
-            </a>
-<a class="flex items-center gap-3 text-[#c7c4d7] hover:text-[#dfe2f1] px-4 py-3 hover:bg-[#313540] transition-all duration-400 cubic-bezier(0.4,0,0.2,1) hover:translate-x-1" href="#">
-<span class="material-symbols-outlined" data-icon="handshake">handshake</span>
-                Clients
-            </a>
-<a class="flex items-center gap-3 text-[#c7c4d7] hover:text-[#dfe2f1] px-4 py-3 hover:bg-[#313540] transition-all duration-400 cubic-bezier(0.4,0,0.2,1) hover:translate-x-1" href="#">
-<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
-                Tasks
-            </a>
-<a class="flex items-center gap-3 text-[#c7c4d7] hover:text-[#dfe2f1] px-4 py-3 hover:bg-[#313540] transition-all duration-400 cubic-bezier(0.4,0,0.2,1) hover:translate-x-1" href="#">
-<span class="material-symbols-outlined" data-icon="group">group</span>
-                Team
-            </a>
-<a class="flex items-center gap-3 text-[#c7c4d7] hover:text-[#dfe2f1] px-4 py-3 hover:bg-[#313540] transition-all duration-400 cubic-bezier(0.4,0,0.2,1) hover:translate-x-1" href="#">
-<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
-                Files
-            </a>
-<a class="flex items-center gap-3 text-[#c7c4d7] hover:text-[#dfe2f1] px-4 py-3 hover:bg-[#313540] transition-all duration-400 cubic-bezier(0.4,0,0.2,1) hover:translate-x-1" href="#">
-<span class="material-symbols-outlined" data-icon="payments">payments</span>
-                Billing
-            </a>
-</nav>
-<div class="px-4 mt-auto">
-<button class="w-full py-3 indigo-glow rounded-xl font-bold text-on-primary-container flex items-center justify-center gap-2 scale-98 active:scale-95 transition-transform shadow-lg">
-<span class="material-symbols-outlined" data-icon="add">add</span>
-                New Project
-            </button>
-</div>
-</aside>
-<!-- Main Canvas -->
-<main class="ml-64 min-h-screen relative flex flex-col">
+    <!-- Main Canvas -->
+    <main class="min-h-screen relative flex flex-col">
         <!-- Header Container -->
         <div id="header-container"></div>
 <!-- TopNavBar Component -->
-<header class="fixed top-0 right-0 left-64 z-50 bg-[#0f131d]/70 backdrop-blur-xl shadow-[0_32px_32px_-4px_rgba(10,14,24,0.5)]">
+<header class="fixed top-0 right-0 left-0 z-50 bg-[#0f131d]/70 backdrop-blur-xl shadow-[0_32px_32px_-4px_rgba(10,14,24,0.5)]">
 <div class="flex justify-between items-center w-full px-6 py-3">
 <div class="flex items-center gap-8">
 <span class="font-['Syne'] font-extrabold text-[#c0c1ff] tracking-tighter text-xl">XenonOS</span>

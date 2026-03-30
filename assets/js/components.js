@@ -1,7 +1,7 @@
 /**
  * ==================================================================
  * COMPONENTS.JS - Dynamic Component Loading System
- * Handles injection of sidebar, header, and footer components
+ * Handles injection of header and footer components
  * ==================================================================
  */
 
@@ -12,315 +12,80 @@
   const getComponentPath = () => {
     const currentPath = window.location.pathname;
     const pathParts = currentPath.split('/').filter(part => part !== '');
-    
+
     // Count depth from 'pages' directory
     const pagesIndex = pathParts.indexOf('pages');
     if (pagesIndex === -1) {
       // Not in pages directory, use default
       return '../assets/components/';
     }
-    
+
     // Calculate depth after 'pages' (e.g., pages/billing/invoices.html = depth 2)
     const depth = pathParts.length - pagesIndex - 1;
-    
+
     // Build relative path prefix based on depth
     let prefix = '';
     for (let i = 0; i < depth; i++) {
       prefix += '../';
     }
-    
+
     return prefix + 'assets/components/';
   };
 
   const COMPONENT_PATH = getComponentPath();
 
-  // Get path prefix for navigation based on current page depth
-  const getNavPathPrefix = () => {
-    const currentPath = window.location.pathname;
-    const pathParts = currentPath.split('/').filter(part => part !== '');
-    const pagesIndex = pathParts.indexOf('pages');
-    
-    if (pagesIndex === -1) {
-      return '../pages/';
-    }
-    
-    const depth = pathParts.length - pagesIndex - 1;
-    let prefix = '';
-    for (let i = 0; i < depth; i++) {
-      prefix += '../';
-    }
-    
-    return prefix + 'pages/';
-  };
-
-  // Navigation configuration - All pages mapped (paths are relative to pages root)
-  const navigationConfig = {
-    dashboard: [
-      { name: 'Dashboard', icon: 'dashboard', path: 'dashboard/index.html' }
-    ],
-    billing: [
-      { name: 'Billing Overview', icon: 'account_balance', path: 'billing/index.html' },
-      { name: 'Invoices', icon: 'receipt', path: 'billing/invoices.html' },
-      { name: 'Subscriptions', icon: 'repeat', path: 'billing/subscriptions.html' },
-      { name: 'Transactions', icon: 'swap_horiz', path: 'billing/transactions.html' },
-      { name: 'Invoice Details', icon: 'description', path: 'billing/invoice-details.html' }
-    ],
-    clients: [
-      { name: 'Client List', icon: 'group', path: 'clients/index.html' },
-      { name: 'Client Management', icon: 'manage_accounts', path: 'clients/management.html' },
-      { name: 'Client Overview', icon: 'person', path: 'clients/client-overview.html' },
-      { name: 'Activity Log', icon: 'history', path: 'clients/activity-log.html' },
-      { name: 'Document Vault', icon: 'folder', path: 'clients/document-vault.html' },
-      { name: 'Projects Grid', icon: 'grid_view', path: 'clients/projects-grid.html' },
-      { name: 'Client Details', icon: 'person_outline', path: 'clients/details.html' }
-    ],
-    projects: [
-      { name: 'All Projects', icon: 'folder_open', path: 'projects/index.html' },
-      { name: 'Projects Hub', icon: 'business_center', path: 'projects/hub.html' },
-      { name: 'My Assigned', icon: 'assignment', path: 'projects/my-assigned.html' },
-      { name: 'Assigned Projects', icon: 'assignment_ind', path: 'projects/assigned.html' },
-      { name: 'Project Overview', icon: 'visibility', path: 'projects/overview.html' },
-      { name: 'Team', icon: 'people', path: 'projects/team.html' },
-      { name: 'Timeline', icon: 'schedule', path: 'projects/timeline.html' },
-      { name: 'Files', icon: 'folder_shared', path: 'projects/files-workspace.html' },
-      { name: 'Tasks', icon: 'task', path: 'projects/tasks-workspace.html' },
-      { name: 'Project Details', icon: 'description', path: 'projects/details.html' }
-    ],
-    tasks: [
-      { name: 'Task List', icon: 'format_list_bulleted', path: 'tasks/index.html' },
-      { name: 'Tasks Hub', icon: 'list_alt', path: 'tasks/hub.html' },
-      { name: 'Task Details', icon: 'assignment', path: 'tasks/details.html' },
-      { name: 'Assign New', icon: 'add_task', path: 'tasks/assign-new.html' },
-      { name: 'Task Calendar', icon: 'calendar_today', path: 'tasks/calendar.html' },
-      { name: 'Task Analytics', icon: 'insights', path: 'tasks/analytics.html' },
-      { name: 'Task Management', icon: 'manage_accounts', path: 'tasks/manage.html' },
-      { name: 'Assign Task', icon: 'post_add', path: 'tasks/assign.html' }
-    ],
-    communication: [
-      { name: 'Communication Hub', icon: 'forum', path: 'communication/index.html' },
-      { name: 'Chat Control', icon: 'chat', path: 'communication/control.html' }
-    ],
-    files: [
-      { name: 'File Manager', icon: 'folder_shared', path: 'files/index.html' },
-      { name: 'File Details', icon: 'insert_drive_file', path: 'files/details.html' }
-    ],
-    payment: [
-      { name: 'Payment Center', icon: 'payments', path: 'payment/index.html' }
-    ],
-    team: [
-      { name: 'Team Members', icon: 'badge', path: 'team/index.html' },
-      { name: 'Team Assign', icon: 'person_add', path: 'team/assign.html' }
-    ],
-    analytics: [
-      { name: 'Executive Analytics', icon: 'analytics', path: 'analytics/executive.html' },
-      { name: 'Marketing Analytics', icon: 'trending_up', path: 'analytics/marketing.html' },
-      { name: 'Operations Analytics', icon: 'operations', path: 'analytics/operations.html' }
-    ],
-    reports: [
-      { name: 'Report Insights', icon: 'insights', path: 'reports/insights.html' },
-      { name: 'Saved Reports', icon: 'bookmark', path: 'reports/saved.html' },
-      { name: 'Report Builder', icon: 'build', path: 'reports/builder.html' },
-      { name: 'Financial Reports', icon: 'receipt_long', path: 'reports/financial.html' },
-      { name: 'Sales Reports', icon: 'bar_chart', path: 'reports/sales.html' },
-      { name: 'Support Reports', icon: 'support_agent', path: 'reports/support.html' }
-    ],
-    activity: [
-      { name: 'Activity Logs', icon: 'history', path: 'activity/index.html' }
-    ],
-    settings: [
-      { name: 'System Settings', icon: 'settings', path: 'settings/index.html' },
-      { name: 'System Config', icon: 'tune', path: 'settings/system.html' },
-      { name: 'Integrations', icon: 'api', path: 'settings/integrations.html' }
-    ],
-    profile: [
-      { name: 'User Profile', icon: 'account_circle', path: 'profile/index.html' },
-      { name: 'Profile Details', icon: 'person', path: 'profile/profile.html' },
-      { name: 'Login Sessions', icon: 'security', path: 'profile/sessions.html' },
-      { name: 'Security Settings', icon: 'lock', path: 'profile/security.html' }
-    ],
-    roles: [
-      { name: 'Roles & Permissions', icon: 'admin_panel_settings', path: 'roles/index.html' },
-      { name: 'Add New Role', icon: 'add_circle', path: 'roles/add.html' }
-    ],
-    notifications: [
-      { name: 'Notification Center', icon: 'notifications', path: 'notifications/index.html' },
-      { name: 'Notification Details', icon: 'notifications_active', path: 'notifications/details.html' }
-    ]
-  };
-
-  // Get current page name for active state
-  const getCurrentPage = () => {
-    const path = window.location.pathname;
-    const parts = path.split('/');
-    const fileName = parts.pop() || parts.pop();
-    return fileName ? fileName.replace('.html', '') : 'index';
-  };
-
-  // Generate sidebar HTML with dynamic path prefix
-  const generateSidebar = () => {
-    const currentPage = getCurrentPage();
-    const navPathPrefix = getNavPathPrefix();
-    
-    const sidebarHTML = `
-      <!-- Branding -->
-      <div class="px-5 mb-8 mt-8 flex items-center gap-4 overflow-hidden">
-        <div class="min-w-[40px] h-10 rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[#3f4077] flex items-center justify-center shadow-lg">
-          <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">diamond</span>
-        </div>
-        <div class="nav-label">
-          <h1 class="text-xl font-bold text-[var(--color-on-surface)] font-headline tracking-tight syne">Obsidian</h1>
-          <p class="text-[10px] text-slate-500 font-label uppercase tracking-[0.2em] outfit">Management Hub</p>
-        </div>
-      </div>
-
-      <!-- Navigation -->
-      <nav class="flex-1 space-y-1">
-        <!-- Dashboard -->
-        <div class="sidebar-section">
-          ${navigationConfig.dashboard.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
-        </div>
-
-        <!-- Billing -->
-        <div class="sidebar-section">
-          ${navigationConfig.billing.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
-        </div>
-
-        <!-- Clients -->
-        <div class="sidebar-section">
-          ${navigationConfig.clients.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
-        </div>
-
-        <!-- Projects -->
-        <div class="sidebar-section">
-          ${navigationConfig.projects.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
-        </div>
-
-        <!-- Tasks -->
-        <div class="sidebar-section">
-          ${navigationConfig.tasks.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
-        </div>
-
-        <!-- Communication -->
-        <div class="sidebar-section">
-          ${navigationConfig.communication.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
-        </div>
-
-        <!-- Files -->
-        <div class="sidebar-section">
-          ${navigationConfig.files.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
-        </div>
-
-        <!-- Payment -->
-        <div class="sidebar-section">
-          ${navigationConfig.payment.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
-        </div>
-
-        <!-- Team -->
-        <div class="sidebar-section">
-          ${navigationConfig.team.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
-        </div>
-
-        <!-- Analytics -->
-        <div class="sidebar-section">
-          ${navigationConfig.analytics.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
-        </div>
-
-        <!-- Reports -->
-        <div class="sidebar-section">
-          ${navigationConfig.reports.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
-        </div>
-
-        <!-- Activity -->
-        <div class="sidebar-section">
-          ${navigationConfig.activity.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
-        </div>
-
-        <!-- Divider -->
-        <div class="sidebar-divider"></div>
-
-        <!-- Settings & Profile -->
-        <div class="sidebar-section">
-          ${navigationConfig.settings.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
-          ${navigationConfig.profile.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
-          ${navigationConfig.roles.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
-          ${navigationConfig.notifications.map(item => createNavItem(item, currentPage, navPathPrefix)).join('')}
-        </div>
-      </nav>
-
-      <!-- Pin Toggle Button -->
-      <div id="pin-sidebar" class="pin-toggle mx-4 mb-4 flex items-center justify-center shadow-lg" title="Pin Sidebar">
-        <span class="material-symbols-outlined text-sm">push_pin</span>
-      </div>
-    `;
-
-    return sidebarHTML;
-  };
-
-  // Create nav item HTML with path prefix
-  const createNavItem = (item, currentPage, navPathPrefix = '') => {
-    const isActive = currentPage.includes(item.name.toLowerCase().split(' ')[0]) ||
-                     (currentPage === 'index' && item.name === 'Dashboard') ||
-                     (currentPage === item.name.toLowerCase().replace(/\s+/g, '-'));
-
-    const activeClass = isActive ? 'active' : '';
-
-    return `
-      <a href="${navPathPrefix}${item.path}" class="nav-item ${activeClass}" data-tooltip="${item.name}">
-        <span class="material-symbols-outlined">${item.icon}</span>
-        <span class="nav-label text-sm">${item.name}</span>
-      </a>
-    `;
-  };
-
-  // Generate header HTML
+  // Generate header HTML - Clean, minimal design
   const generateHeader = () => {
     return `
-      <div class="flex items-center gap-6">
-        <!-- Mobile Menu Toggle -->
-        <button id="mobile-menu-btn"
-          class="lg:hidden w-10 h-10 rounded-xl flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all border border-white/5">
-          <span class="material-symbols-outlined">menu</span>
-        </button>
-
-        <div class="relative group">
-          <span
-            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg group-focus-within:text-[var(--color-primary)] transition-colors">search</span>
+      <div class="header-left">
+        <!-- Search -->
+        <div class="search-container">
+          <span class="material-symbols-outlined search-icon">search</span>
           <input
-            class="bg-[var(--color-surface-container)] border-none text-[var(--color-on-surface)] text-sm rounded-full py-2 pl-10 pr-4 w-32 sm:w-64 focus:ring-1 focus:ring-[var(--color-primary)] transition-all placeholder:text-slate-500 outfit"
-            placeholder="Search..." type="text" />
+            class="search-input outfit"
+            placeholder="Search..."
+            type="text"
+            aria-label="Search" />
         </div>
       </div>
-      <div class="flex items-center gap-4">
-        <button
-          class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all">
+
+      <div class="header-right">
+        <!-- Notifications -->
+        <button class="header-action-btn" aria-label="Notifications">
           <span class="material-symbols-outlined">notifications</span>
+          <span class="notification-badge"></span>
         </button>
-        <button
-          class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all">
-          <span class="material-symbols-outlined">settings</span>
+
+        <!-- Settings -->
+        <button class="header-action-btn" aria-label="Settings">
+          <span class="material-symbols-outlined">tune</span>
         </button>
-        <div class="h-10 w-[1px] bg-[var(--color-outline-variant)]/20 mx-2"></div>
-        <div class="flex items-center gap-3">
-          <div class="hidden lg:block text-right">
-            <p class="text-sm font-semibold text-[var(--color-on-surface)] leading-tight outfit">Alex Rivera</p>
-            <p class="text-[10px] text-slate-500 font-label outfit">Super Admin</p>
+
+        <!-- Divider -->
+        <div class="header-divider"></div>
+
+        <!-- User Profile -->
+        <div class="user-profile">
+          <div class="user-info">
+            <p class="user-name outfit">Alex Rivera</p>
+            <p class="user-role outfit">Super Admin</p>
           </div>
           <img alt="Admin Profile"
-            class="w-10 h-10 rounded-xl bg-[var(--color-surface-container)] object-cover border border-white/10"
+            class="user-avatar"
             src="https://ui-avatars.com/api/?name=Alex+Rivera&background=6366f1&color=fff&size=128" />
         </div>
       </div>
     `;
   };
 
-  // Generate footer HTML
+  // Generate footer HTML - Minimal system status
   const generateFooter = () => {
     return `
       <div class="footer-content">
-        <p class="footer-text">© 2024 Obsidian Architect • System Status: <span class="footer-status">Operational</span></p>
+        <p class="footer-text outfit">© 2024 XenonOS • <span class="footer-status">Operational</span></p>
         <div class="footer-indicator">
           <span class="status-dot"></span>
-          <span class="footer-text">Region: Global-Alpha-1</span>
+          <span class="footer-text outfit">Global-Alpha-1</span>
         </div>
       </div>
     `;
@@ -331,73 +96,12 @@
     const container = document.getElementById(containerId);
     if (container) {
       container.innerHTML = htmlContent;
-      
+
       // Initialize component-specific functionality after injection
-      if (containerId === 'sidebar-container') {
-        initSidebar();
-      } else if (containerId === 'header-container') {
+      if (containerId === 'header-container') {
         initHeader();
       }
     }
-  };
-
-  // Initialize sidebar functionality
-  const initSidebar = () => {
-    const pinBtn = document.getElementById('pin-sidebar');
-    const sidebar = document.querySelector('.modern-sidebar');
-    const main = document.querySelector('main.with-sidebar');
-
-    // Load pinned state from localStorage
-    const isPinned = localStorage.getItem('sidebar-pinned') === 'true';
-    if (isPinned && sidebar) {
-      sidebar.classList.add('pinned');
-      if (main) main.classList.add('pinned');
-      if (pinBtn) pinBtn.classList.add('active');
-    }
-
-    // Pin toggle functionality
-    if (pinBtn && sidebar && main) {
-      pinBtn.addEventListener('click', () => {
-        sidebar.classList.toggle('pinned');
-        main.classList.toggle('pinned');
-        pinBtn.classList.toggle('active');
-        localStorage.setItem('sidebar-pinned', sidebar.classList.contains('pinned'));
-      });
-    }
-
-    // Mobile menu toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    if (mobileMenuBtn && sidebar) {
-      mobileMenuBtn.addEventListener('click', () => {
-        sidebar.classList.toggle('translate-x-0');
-        
-        // Create/remove overlay for mobile
-        let overlay = document.querySelector('.mobile-overlay');
-        if (!overlay) {
-          overlay = document.createElement('div');
-          overlay.className = 'mobile-overlay';
-          document.body.appendChild(overlay);
-          
-          overlay.addEventListener('click', () => {
-            sidebar.classList.remove('translate-x-0');
-            overlay.classList.remove('active');
-          });
-        }
-        overlay.classList.toggle('active');
-      });
-    }
-
-    // Close sidebar when clicking nav item on mobile
-    const navItems = document.querySelectorAll('.nav-item');
-    navItems.forEach(item => {
-      item.addEventListener('click', () => {
-        if (window.innerWidth <= 1024) {
-          sidebar.classList.remove('translate-x-0');
-          const overlay = document.querySelector('.mobile-overlay');
-          if (overlay) overlay.classList.remove('active');
-        }
-      });
-    });
   };
 
   // Initialize header functionality
@@ -408,14 +112,14 @@
       searchInput.addEventListener('focus', () => {
         searchInput.parentElement.classList.add('focused');
       });
-      
+
       searchInput.addEventListener('blur', () => {
         searchInput.parentElement.classList.remove('focused');
       });
     }
 
     // Notification button
-    const notificationBtn = document.querySelector('button[aria-label="notifications"]');
+    const notificationBtn = document.querySelector('button[aria-label="Notifications"]');
     if (notificationBtn) {
       notificationBtn.addEventListener('click', () => {
         window.location.href = '../pages/notifications/index.html';
@@ -423,7 +127,7 @@
     }
 
     // Settings button
-    const settingsBtn = document.querySelector('button[aria-label="settings"]');
+    const settingsBtn = document.querySelector('button[aria-label="Settings"]');
     if (settingsBtn) {
       settingsBtn.addEventListener('click', () => {
         window.location.href = '../pages/settings/index.html';
@@ -434,7 +138,6 @@
   // Initialize all components
   const initComponents = () => {
     // Load components
-    loadComponent('sidebar-container', generateSidebar());
     loadComponent('header-container', generateHeader());
     loadComponent('footer-container', generateFooter());
   };
@@ -447,9 +150,8 @@
   }
 
   // Expose API for manual re-initialization if needed
-  window.ObsidianComponents = {
+  window.XenonComponents = {
     reinit: initComponents,
-    loadSidebar: () => loadComponent('sidebar-container', generateSidebar()),
     loadHeader: () => loadComponent('header-container', generateHeader()),
     loadFooter: () => loadComponent('footer-container', generateFooter())
   };

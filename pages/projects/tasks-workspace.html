@@ -84,60 +84,8 @@
     </style>
 </head>
 <body class="bg-background text-on-surface font-outfit antialiased selection:bg-primary selection:text-on-primary">
-    <!-- Component Containers -->
-    <div id="sidebar-container"></div>
-<!-- SideNavBar (Shared Component) -->
-<aside class="h-screen w-64 fixed left-0 top-0 z-40 bg-[#1c1f2a] flex flex-col p-4 gap-2">
-<div class="px-4 py-6 mb-4">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-container flex items-center justify-center shadow-lg">
-<span class="material-symbols-outlined text-on-primary" style="font-variation-settings: 'FILL' 1;">deployed_code</span>
-</div>
-<div>
-<h1 class="font-syne font-extrabold text-[#c0c1ff] text-xl tracking-tighter">XenonOS</h1>
-<p class="text-[10px] text-on-surface-variant uppercase tracking-widest font-bold">Project Intelligence</p>
-</div>
-</div>
-</div>
-<nav class="flex-1 flex flex-col gap-1">
-<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 hover:bg-[#313540]/30 rounded-xl hover:translate-x-1 transition-transform duration-300" href="#">
-<span class="material-symbols-outlined">dashboard</span>
-<span class="font-outfit font-medium text-sm">Dashboard</span>
-</a>
-<a class="flex items-center gap-3 bg-[#313540] text-[#c0c1ff] rounded-xl px-4 py-3 border-l-4 border-[#6366f1] shadow-[0_0_15px_rgba(99,102,241,0.2)] scale-[1.02]" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
-<span class="font-outfit font-medium text-sm">Projects</span>
-</a>
-<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 hover:bg-[#313540]/30 rounded-xl hover:translate-x-1 transition-transform duration-300" href="#">
-<span class="material-symbols-outlined">assignment</span>
-<span class="font-outfit font-medium text-sm">Tasks</span>
-</a>
-<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 hover:bg-[#313540]/30 rounded-xl hover:translate-x-1 transition-transform duration-300" href="#">
-<span class="material-symbols-outlined">group</span>
-<span class="font-outfit font-medium text-sm">Team</span>
-</a>
-<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 hover:bg-[#313540]/30 rounded-xl hover:translate-x-1 transition-transform duration-300" href="#">
-<span class="material-symbols-outlined">folder</span>
-<span class="font-outfit font-medium text-sm">Files</span>
-</a>
-<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 hover:bg-[#313540]/30 rounded-xl hover:translate-x-1 transition-transform duration-300" href="#">
-<span class="material-symbols-outlined">payments</span>
-<span class="font-outfit font-medium text-sm">Billing</span>
-</a>
-</nav>
-<div class="mt-auto border-t border-outline-variant/10 pt-4 flex flex-col gap-1">
-<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 hover:bg-[#313540]/30 rounded-xl hover:translate-x-1 transition-transform duration-300" href="#">
-<span class="material-symbols-outlined">help</span>
-<span class="font-outfit font-medium text-sm">Support</span>
-</a>
-<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 hover:bg-[#313540]/30 rounded-xl hover:translate-x-1 transition-transform duration-300" href="#">
-<span class="material-symbols-outlined">logout</span>
-<span class="font-outfit font-medium text-sm">Sign Out</span>
-</a>
-</div>
-</aside>
-<!-- Main Content Canvas -->
-<main class="ml-64 min-h-screen flex flex-col">
+    <!-- Main Content Canvas -->
+    <main class="min-h-screen flex flex-col">
         <!-- Header Container -->
         <div id="header-container"></div>
 <!-- TopAppBar (Shared Component) -->

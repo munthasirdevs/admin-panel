@@ -157,84 +157,6 @@
   };
 
   // ================================================================
-  // MOBILE MENU HANDLING
-  // ================================================================
-
-  /**
-   * Initialize mobile menu functionality
-   */
-  const initMobileMenu = () => {
-    const menuBtn = getElement('mobile-menu-btn');
-    const sidebar = document.querySelector('.modern-sidebar');
-    
-    if (!menuBtn || !sidebar) return;
-
-    // Create overlay if not exists
-    const createOverlay = () => {
-      let overlay = document.querySelector('.mobile-overlay');
-      if (!overlay) {
-        overlay = document.createElement('div');
-        overlay.className = 'mobile-overlay';
-        document.body.appendChild(overlay);
-        
-        overlay.addEventListener('click', () => {
-          removeClass(sidebar, 'translate-x-0');
-          removeClass(overlay, 'active');
-        });
-      }
-      return overlay;
-    };
-
-    addEvent(menuBtn, 'click', () => {
-      toggleClass(sidebar, 'translate-x-0');
-      const overlay = createOverlay();
-      toggleClass(overlay, 'active');
-    });
-
-    // Close menu when clicking nav items
-    const navItems = getElements('.nav-item');
-    navItems.forEach(item => {
-      addEvent(item, 'click', () => {
-        if (window.innerWidth <= 1024) {
-          removeClass(sidebar, 'translate-x-0');
-          const overlay = document.querySelector('.mobile-overlay');
-          if (overlay) removeClass(overlay, 'active');
-        }
-      });
-    });
-  };
-
-  // ================================================================
-  // SIDEBAR PIN FUNCTIONALITY
-  // ================================================================
-
-  /**
-   * Initialize sidebar pin/unpin functionality
-   */
-  const initSidebarPin = () => {
-    const pinBtn = getElement('pin-sidebar');
-    const sidebar = document.querySelector('.modern-sidebar');
-    const main = document.querySelector('main.with-sidebar');
-    
-    if (!pinBtn || !sidebar || !main) return;
-
-    // Restore pinned state from localStorage
-    const isPinned = localStorage.getItem('sidebar-pinned') === 'true';
-    if (isPinned) {
-      addClass(sidebar, 'pinned');
-      addClass(main, 'pinned');
-      addClass(pinBtn, 'active');
-    }
-
-    addEvent(pinBtn, 'click', () => {
-      toggleClass(sidebar, 'pinned');
-      toggleClass(main, 'pinned');
-      toggleClass(pinBtn, 'active');
-      localStorage.setItem('sidebar-pinned', hasClass(sidebar, 'pinned'));
-    });
-  };
-
-  // ================================================================
   // SEARCH FUNCTIONALITY
   // ================================================================
 
@@ -509,16 +431,10 @@
   const init = () => {
     // Initialize theme
     initTheme();
-    
+
     // Initialize navigation highlighting
     initActiveNavigation();
-    
-    // Initialize mobile menu
-    initMobileMenu();
-    
-    // Initialize sidebar pin
-    initSidebarPin();
-    
+
     // Initialize search
     initSearch();
 
