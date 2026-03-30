@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Payments - System Admin</title>
+
+    <!-- Core Assets -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="../../assets/js/tailwind-config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+
+<body class="flex min-h-screen bg-surface">
+    <!-- Sidebar Placeholder -->
+    <!-- 
+  XenonOS Shared Component: Sidebar (v5.0 - New Typography System)
+  Reference: Obsidian / Outfit & Syne
+-->
+    <!-- 
+  XenonOS Shared Component: Sidebar (v5.0 - New Typography System)
+  Reference: Obsidian / Outfit & Syne
+-->
+<!-- 
+  XenonOS Shared Component: Modern Interactive Sidebar (v5.0)
+  Collapsible, Hover-to-Expand, and Pinned States
+-->
+<aside class="modern-sidebar outfit lg:translate-x-0 -translate-x-full transition-all duration-300 ease-in-out">
+    <!-- Branding -->
+    <div class="px-5 mb-8 mt-8 flex items-center gap-4 overflow-hidden">
+        <div class="min-w-[40px] h-10 rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[#3f4077] flex items-center justify-center shadow-lg">
+            <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">diamond</span>
+        </div>
+        <div class="nav-label">
+            <h1 class="text-xl font-bold text-[var(--color-on-surface)] font-headline tracking-tight syne">Obsidian</h1>
+            <p class="text-[10px] text-slate-500 font-label uppercase tracking-[0.2em] outfit">Management Hub</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex-1 space-y-1">
+        <!-- 1. Dashboard -->
+        <a href="../pages/dashboard/index.html" class="nav-item group" data-tooltip="Dashboard">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="nav-label text-sm">Dashboard</span>
+        </a>
+
+        <!-- 2. Clients -->
+        <a href="../pages/clients/index.html" class="nav-item group" data-tooltip="Clients">
+            <span class="material-symbols-outlined">group</span>
+            <span class="nav-label text-sm">Clients</span>
+        </a>
+
+        <!-- 3. Projects -->
+        <a href="../pages/projects/index.html" class="nav-item group" data-tooltip="Projects">
+            <span class="material-symbols-outlined">folder_open</span>
+            <span class="nav-label text-sm">Projects</span>
+        </a>
+
+        <!-- 4. Tasks -->
+        <a href="../pages/tasks/index.html" class="nav-item group" data-tooltip="Tasks">
+            <span class="material-symbols-outlined">assignment</span>
+            <span class="nav-label text-sm">Tasks</span>
+        </a>
+
+        <!-- 5. Communication -->
+        <a href="../pages/communication/index.html" class="nav-item group" data-tooltip="Communication">
+            <span class="material-symbols-outlined">forum</span>
+            <span class="nav-label text-sm">Communication</span>
+        </a>
+
+        <!-- 6. Files -->
+        <a href="../pages/files/index.html" class="nav-item group" data-tooltip="Files">
+            <span class="material-symbols-outlined">folder_shared</span>
+            <span class="nav-label text-sm">Files</span>
+        </a>
+
+        <!-- 7. Payment -->
+        <a href="../pages/payment/index.html" class="nav-item group" data-tooltip="Payment">
+            <span class="material-symbols-outlined">payments</span>
+            <span class="nav-label text-sm">Payment</span>
+        </a>
+
+        <!-- 8. Team -->
+        <a href="../pages/team/index.html" class="nav-item group" data-tooltip="Team">
+            <span class="material-symbols-outlined">badge</span>
+            <span class="nav-label text-sm">Team Members</span>
+        </a>
+
+        <!-- 9. Analytics -->
+        <a href="../pages/analytics/executive.html" class="nav-item group" data-tooltip="Analytics">
+            <span class="material-symbols-outlined">analytics</span>
+            <span class="nav-label text-sm">Analytics</span>
+        </a>
+
+        <!-- 10. Reports -->
+        <a href="../pages/reports/financial.html" class="nav-item group" data-tooltip="Reports">
+            <span class="material-symbols-outlined">trending_up</span>
+            <span class="nav-label text-sm">Reports</span>
+        </a>
+
+        <!-- 11. Activity -->
+        <a href="../pages/activity/index.html" class="nav-item group" data-tooltip="Activity">
+            <span class="material-symbols-outlined">history</span>
+            <span class="nav-label text-sm">Activity Logs</span>
+        </a>
+
+        <!-- Divider -->
+        <div class="mx-6 my-4 border-t border-[var(--color-outline-variant)]/10"></div>
+
+        <!-- 12. Settings -->
+        <a href="../pages/settings/index.html" class="nav-item group" data-tooltip="Settings">
+            <span class="material-symbols-outlined">settings</span>
+            <span class="nav-label text-sm">Settings</span>
+        </a>
+    </nav>
+
+    <!-- Pin Toggle Button -->
+    <div id="pin-sidebar" class="pin-toggle mx-4 mb-4 flex items-center justify-center shadow-lg" title="Pin Sidebar">
+        <span class="material-symbols-outlined text-sm">push_pin</span>
+    </div>
+</aside>
+
+
+    <!-- Main Content -->
+    <main class="flex-1 min-h-screen flex flex-col">
+        <!-- Header Placeholder -->
+        <!-- 
+  XenonOS Shared Component: Header (v5.0 - New Typography System)
+-->
+        <header
+            class="bg-[var(--color-surface)]/80 backdrop-blur-xl sticky top-0 z-40 w-full px-8 py-4 flex justify-between items-center shadow-[0_20px_40px_rgba(0,0,0,0.3)] outfit">
+            <div class="flex items-center gap-6">
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-btn"
+                    class="lg:hidden w-10 h-10 rounded-xl flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all border border-white/5">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+
+                <div class="relative group">
+                    <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg group-focus-within:text-[var(--color-primary)] transition-colors">search</span>
+                    <input
+                        class="bg-[var(--color-surface-container)] border-none text-[var(--color-on-surface)] text-sm rounded-full py-2 pl-10 pr-4 w-32 sm:w-64 focus:ring-1 focus:ring-[var(--color-primary)] transition-all placeholder:text-slate-500 outfit"
+                        placeholder="Search..." type="text" />
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all">
+                    <span class="material-symbols-outlined">notifications</span>
+                </button>
+                <button
+                    class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all">
+                    <span class="material-symbols-outlined">settings</span>
+                </button>
+                <div class="h-10 w-[1px] bg-[var(--color-outline-variant)]/20 mx-2"></div>
+                <div class="flex items-center gap-3">
+                    <div class="hidden lg:block text-right">
+                        <p class="text-sm font-semibold text-[var(--color-on-surface)] leading-tight outfit">Alex Rivera
+                        </p>
+                        <p class="text-[10px] text-slate-500 font-label outfit">Super Admin</p>
+                    </div>
+                    <img alt="Admin Profile"
+                        class="w-10 h-10 rounded-xl bg-[var(--color-surface-container)] object-cover border border-white/10"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiwvRijOxcIA8PzPmV4_ePxNAQ1jEK6liXVtWkfs0B0GPSYNv0s2X9bjRrxQARCKCqfkZMd_pN7fsOwKf9m_fJ_15CowBjsePuDTSSAX1-9Vs_i3-l0yrn5GMXq9GUw0e9T_8MqYD5fcbH63KRsAIXgKDhALrSWhkRRooXJVcVzAYfnMs4F7d9jBp7Yl1Es5d241Rjpgf0DTyQZGm_aWG748o3-FXMGSid14TvMD2IxzNtrSDjzE5yeYoJgfU9JpTr1C1EIG_a15o" />
+                </div>
+            </div>
+        </header>
+
+
+        <!-- Main Scrollable Canvas -->
+
+        <!-- Main Content Canvas -->
+        <div class="p-10">
+            <div class="p-10 space-y-10">
+                <!-- Page Header -->
+                <section class="flex items-end justify-between">
+                    <div>
+                        <span class="text-primary font-label text-[10px] tracking-[0.2em] uppercase font-bold">Financial
+                            Overview</span>
+                        <h2 class="text-5xl font-headline font-light text-white mt-2 -ml-1">Payments</h2>
+                        <p class="text-on-surface-variant mt-2 max-w-md">Manage client transactions, active balances,
+                            and financial health for your agency elite ecosystem.</p>
+                    </div>
+                    <button
+                        class="bg-primary text-on-primary font-bold px-8 py-4 rounded-xl flex items-center gap-3 shadow-lg shadow-primary/10 hover:shadow-primary/20 transition-all active:scale-95">
+                        <span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                        Add Payment
+                    </button>
+                </section>
+                <!-- Quick Stats: Bento Layout -->
+                <section class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <!-- Stat Card 1 -->
+                    <div
+                        class="bg-surface-container-low p-6 rounded-xl border-l-2 border-primary-container relative overflow-hidden group">
+                        <div
+                            class="absolute top-0 left-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 glass-glow">
+                        </div>
+                        <p
+                            class="text-on-surface-variant font-label text-[10px] font-bold uppercase tracking-wider relative z-10">
+                            Total Revenue</p>
+                        <h3 class="text-3xl font-headline font-bold text-white mt-4 relative z-10">$142,850.00</h3>
+                        <div class="flex items-center gap-2 mt-4 text-xs font-bold text-indigo-400 relative z-10">
+                            <span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+                            <span>+12.4% vs last month</span>
+                        </div>
+                    </div>
+                    <!-- Stat Card 2 -->
+                    <div
+                        class="bg-surface-container-low p-6 rounded-xl border-l-2 border-tertiary-container relative overflow-hidden group">
+                        <p class="text-on-surface-variant font-label text-[10px] font-bold uppercase tracking-wider">
+                            Pending Payments</p>
+                        <h3 class="text-3xl font-headline font-bold text-white mt-4">$12,400.00</h3>
+                        <div class="flex items-center gap-2 mt-4 text-xs font-bold text-tertiary">
+                            <span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+                            <span>8 invoices awaiting</span>
+                        </div>
+                    </div>
+                    <!-- Stat Card 3 -->
+                    <div
+                        class="bg-surface-container-low p-6 rounded-xl border-l-2 border-secondary-container relative overflow-hidden group">
+                        <p class="text-on-surface-variant font-label text-[10px] font-bold uppercase tracking-wider">
+                            Completed (MTD)</p>
+                        <h3 class="text-3xl font-headline font-bold text-white mt-4">142</h3>
+                        <div class="flex items-center gap-2 mt-4 text-xs font-bold text-secondary">
+                            <span class="material-symbols-outlined text-sm" data-icon="verified">verified</span>
+                            <span>98% success rate</span>
+                        </div>
+                    </div>
+                    <!-- Stat Card 4 -->
+                    <div
+                        class="bg-surface-container-low p-6 rounded-xl border-l-2 border-error-container relative overflow-hidden group">
+                        <p class="text-on-surface-variant font-label text-[10px] font-bold uppercase tracking-wider">
+                            Failed Transactions</p>
+                        <h3 class="text-3xl font-headline font-bold text-white mt-4">3</h3>
+                        <div class="flex items-center gap-2 mt-4 text-xs font-bold text-error">
+                            <span class="material-symbols-outlined text-sm" data-icon="report">report</span>
+                            <span>Action required</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- Main Workspace Grid -->
+                <div class="grid grid-cols-12 gap-8 items-start">
+                    <!-- Left: Recent Transactions -->
+                    <div class="col-span-8 bg-surface-container rounded-2xl overflow-hidden shadow-2xl shadow-black/20">
+                        <div class="p-6 flex items-center justify-between border-b border-outline-variant/10">
+                            <h4 class="text-lg font-headline font-bold text-white">Recent Transactions</h4>
+                            <div class="flex items-center gap-4">
+                                <div class="flex items-center gap-2 bg-surface-container-low rounded-lg px-3 py-1.5">
+                                    <span class="material-symbols-outlined text-sm text-slate-500"
+                                        data-icon="filter_list">filter_list</span>
+                                    <span class="text-xs font-bold text-on-surface-variant">Filters</span>
+                                </div>
+                                <button class="text-primary text-xs font-bold flex items-center gap-1 group">
+                                    <div
+                                        class="w-1 h-1 bg-primary rounded-full group-hover:w-3 transition-all duration-300">
+                                    </div>
+                                    View All
+                                </button>
+                            </div>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="bg-surface-container-low/50">
+                                        <th
+                                            class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">
+                                            Client</th>
+                                        <th
+                                            class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">
+                                            Transaction ID</th>
+                                        <th
+                                            class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">
+                                            Amount</th>
+                                        <th
+                                            class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">
+                                            Status</th>
+                                        <th
+                                            class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant text-right">
+                                            Method</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-outline-variant/5">
+                                    <tr class="hover:bg-surface-bright/30 transition-colors">
+                                        <td class="px-6 py-4">
+                                            <div class="flex items-center gap-3">
+                                                <div
+                                                    class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-xs">
+                                                    NL</div>
+                                                <div>
+                                                    <p class="text-sm font-bold text-white">Nova Labs</p>
+                                                    <p class="text-[10px] text-on-surface-variant">Web Architecture</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 font-mono text-xs text-on-surface-variant">#TXN-90210</td>
+                                        <td class="px-6 py-4 font-bold text-white">$4,500.00</td>
+                                        <td class="px-6 py-4">
+                                            <span
+                                                class="px-2 py-1 rounded-md bg-indigo-500/10 text-indigo-400 text-[10px] font-black uppercase tracking-wider">Completed</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-right">
+                                            <div class="flex items-center justify-end gap-2 text-slate-400">
+                                                <span class="material-symbols-outlined text-sm"
+                                                    data-icon="credit_card">credit_card</span>
+                                                <span class="text-xs font-medium">Visa •••• 4242</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-surface-bright/30 transition-colors">
+                                        <td class="px-6 py-4">
+                                            <div class="flex items-center gap-3">
+                                                <div
+                                                    class="w-8 h-8 rounded-lg bg-tertiary/20 text-tertiary flex items-center justify-center font-bold text-xs">
+                                                    SV</div>
+                                                <div>
+                                                    <p class="text-sm font-bold text-white">Solar Ventures</p>
+                                                    <p class="text-[10px] text-on-surface-variant">Branding Package</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 font-mono text-xs text-on-surface-variant">#TXN-88432</td>
+                                        <td class="px-6 py-4 font-bold text-white">$12,000.00</td>
+                                        <td class="px-6 py-4">
+                                            <span
+                                                class="px-2 py-1 rounded-md bg-tertiary/10 text-tertiary text-[10px] font-black uppercase tracking-wider">Pending</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-right">
+                                            <div class="flex items-center justify-end gap-2 text-slate-400">
+                                                <span class="material-symbols-outlined text-sm"
+                                                    data-icon="account_balance">account_balance</span>
+                                                <span class="text-xs font-medium">Bank Transfer</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-surface-bright/30 transition-colors">
+                                        <td class="px-6 py-4">
+                                            <div class="flex items-center gap-3">
+                                                <div
+                                                    class="w-8 h-8 rounded-lg bg-secondary/20 text-secondary flex items-center justify-center font-bold text-xs">
+                                                    KM</div>
+                                                <div>
+                                                    <p class="text-sm font-bold text-white">Kinetic Media</p>
+                                                    <p class="text-[10px] text-on-surface-variant">Ad Campaign</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 font-mono text-xs text-on-surface-variant">#TXN-77321</td>
+                                        <td class="px-6 py-4 font-bold text-white">$850.00</td>
+                                        <td class="px-6 py-4">
+                                            <span
+                                                class="px-2 py-1 rounded-md bg-indigo-500/10 text-indigo-400 text-[10px] font-black uppercase tracking-wider">Completed</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-right">
+                                            <div class="flex items-center justify-end gap-2 text-slate-400">
+                                                <span class="material-symbols-outlined text-sm"
+                                                    data-icon="payments">payments</span>
+                                                <span class="text-xs font-medium">PayPal</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-surface-bright/30 transition-colors">
+                                        <td class="px-6 py-4">
+                                            <div class="flex items-center gap-3">
+                                                <div
+                                                    class="w-8 h-8 rounded-lg bg-error/20 text-error flex items-center justify-center font-bold text-xs">
+                                                    AH</div>
+                                                <div>
+                                                    <p class="text-sm font-bold text-white">Aero Health</p>
+                                                    <p class="text-[10px] text-on-surface-variant">UI Audit</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 font-mono text-xs text-on-surface-variant">#TXN-76551</td>
+                                        <td class="px-6 py-4 font-bold text-white">$3,200.00</td>
+                                        <td class="px-6 py-4">
+                                            <span
+                                                class="px-2 py-1 rounded-md bg-error/10 text-error text-[10px] font-black uppercase tracking-wider">Failed</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-right">
+                                            <div class="flex items-center justify-end gap-2 text-slate-400">
+                                                <span class="material-symbols-outlined text-sm"
+                                                    data-icon="credit_card">credit_card</span>
+                                                <span class="text-xs font-medium">Mastercard •••• 9012</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Right: Methods & Performance -->
+                    <div class="col-span-4 space-y-8">
+                        <!-- Performance Mini-Chart (Visual Representation) -->
+                        <div class="bg-surface-container rounded-2xl p-6 shadow-2xl shadow-black/20">
+                            <h4 class="font-headline font-bold text-white mb-2">Monthly Target</h4>
+                            <div class="flex items-end gap-2 mb-4">
+                                <span class="text-2xl font-bold text-white">74%</span>
+                                <span class="text-xs text-on-surface-variant mb-1">of $200k goal reached</span>
+                            </div>
+                            <div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-primary to-primary-container relative"
+                                    style="width: 74%; filter: drop-shadow(0 0 8px rgba(192, 193, 255, 0.4));"></div>
+                            </div>
+                            <div class="mt-6 space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span
+                                        class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Last
+                                        30 Days</span>
+                                    <span class="text-[10px] font-bold text-indigo-400">+$24,100</span>
+                                </div>
+                                <!-- Mini-graph placeholder using CSS bars -->
+                                <div class="flex items-end justify-between h-12 pt-2">
+                                    <div class="w-2 bg-indigo-500/20 rounded-full h-3"></div>
+                                    <div class="w-2 bg-indigo-500/20 rounded-full h-6"></div>
+                                    <div class="w-2 bg-indigo-500/40 rounded-full h-4"></div>
+                                    <div class="w-2 bg-indigo-500/60 rounded-full h-8"></div>
+                                    <div
+                                        class="w-2 bg-indigo-500 rounded-full h-10 shadow-[0_0_10px_rgba(99,102,241,0.5)]">
+                                    </div>
+                                    <div class="w-2 bg-indigo-500/20 rounded-full h-5"></div>
+                                    <div class="w-2 bg-indigo-500/20 rounded-full h-7"></div>
+                                    <div class="w-2 bg-indigo-500/30 rounded-full h-4"></div>
+                                    <div class="w-2 bg-indigo-500/50 rounded-full h-9"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Footer Placeholder -->
+        <!-- 
+  XenonOS Shared Component: Footer (v5.0 - New Typography System)
+-->
+        <footer
+            class="mt-12 px-8 py-6 border-t border-[var(--color-outline-variant)]/15 bg-[var(--color-surface)] flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-300 outfit">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">© 2024 Obsidian Architect • System
+                Status: <span class="text-[var(--color-success)]">Operational</span></p>
+            <div class="flex gap-4 items-center">
+                <span
+                    class="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse shadow-[0_0_10px_rgba(99,102,241,0.4)]"></span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Region:
+                    Global-Alpha-1</span>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="../../assets/js/app.js"></script>
+</body>
+
+</html>
+
+

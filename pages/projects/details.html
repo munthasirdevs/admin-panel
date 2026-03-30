@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Project Details - System Admin</title>
+    
+    <!-- Core Assets -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="../../assets/js/tailwind-config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body class="flex min-h-screen bg-surface">
+    <!-- Sidebar Placeholder -->
+    <!-- 
+  XenonOS Shared Component: Sidebar (v5.0 - New Typography System)
+  Reference: Obsidian / Outfit & Syne
+-->
+<!-- 
+  XenonOS Shared Component: Sidebar (v5.0 - New Typography System)
+  Reference: Obsidian / Outfit & Syne
+-->
+<!-- 
+  XenonOS Shared Component: Modern Interactive Sidebar (v5.0)
+  Collapsible, Hover-to-Expand, and Pinned States
+-->
+<aside class="modern-sidebar outfit lg:translate-x-0 -translate-x-full transition-all duration-300 ease-in-out">
+    <!-- Branding -->
+    <div class="px-5 mb-8 mt-8 flex items-center gap-4 overflow-hidden">
+        <div class="min-w-[40px] h-10 rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[#3f4077] flex items-center justify-center shadow-lg">
+            <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">diamond</span>
+        </div>
+        <div class="nav-label">
+            <h1 class="text-xl font-bold text-[var(--color-on-surface)] font-headline tracking-tight syne">Obsidian</h1>
+            <p class="text-[10px] text-slate-500 font-label uppercase tracking-[0.2em] outfit">Management Hub</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex-1 space-y-1">
+        <!-- 1. Dashboard -->
+        <a href="../pages/dashboard/index.html" class="nav-item group" data-tooltip="Dashboard">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="nav-label text-sm">Dashboard</span>
+        </a>
+
+        <!-- 2. Clients -->
+        <a href="../pages/clients/index.html" class="nav-item group" data-tooltip="Clients">
+            <span class="material-symbols-outlined">group</span>
+            <span class="nav-label text-sm">Clients</span>
+        </a>
+
+        <!-- 3. Projects -->
+        <a href="../pages/projects/index.html" class="nav-item group" data-tooltip="Projects">
+            <span class="material-symbols-outlined">folder_open</span>
+            <span class="nav-label text-sm">Projects</span>
+        </a>
+
+        <!-- 4. Tasks -->
+        <a href="../pages/tasks/index.html" class="nav-item group" data-tooltip="Tasks">
+            <span class="material-symbols-outlined">assignment</span>
+            <span class="nav-label text-sm">Tasks</span>
+        </a>
+
+        <!-- 5. Communication -->
+        <a href="../pages/communication/index.html" class="nav-item group" data-tooltip="Communication">
+            <span class="material-symbols-outlined">forum</span>
+            <span class="nav-label text-sm">Communication</span>
+        </a>
+
+        <!-- 6. Files -->
+        <a href="../pages/files/index.html" class="nav-item group" data-tooltip="Files">
+            <span class="material-symbols-outlined">folder_shared</span>
+            <span class="nav-label text-sm">Files</span>
+        </a>
+
+        <!-- 7. Payment -->
+        <a href="../pages/payment/index.html" class="nav-item group" data-tooltip="Payment">
+            <span class="material-symbols-outlined">payments</span>
+            <span class="nav-label text-sm">Payment</span>
+        </a>
+
+        <!-- 8. Team -->
+        <a href="../pages/team/index.html" class="nav-item group" data-tooltip="Team">
+            <span class="material-symbols-outlined">badge</span>
+            <span class="nav-label text-sm">Team Members</span>
+        </a>
+
+        <!-- 9. Analytics -->
+        <a href="../pages/analytics/executive.html" class="nav-item group" data-tooltip="Analytics">
+            <span class="material-symbols-outlined">analytics</span>
+            <span class="nav-label text-sm">Analytics</span>
+        </a>
+
+        <!-- 10. Reports -->
+        <a href="../pages/reports/financial.html" class="nav-item group" data-tooltip="Reports">
+            <span class="material-symbols-outlined">trending_up</span>
+            <span class="nav-label text-sm">Reports</span>
+        </a>
+
+        <!-- 11. Activity -->
+        <a href="../pages/activity/index.html" class="nav-item group" data-tooltip="Activity">
+            <span class="material-symbols-outlined">history</span>
+            <span class="nav-label text-sm">Activity Logs</span>
+        </a>
+
+        <!-- Divider -->
+        <div class="mx-6 my-4 border-t border-[var(--color-outline-variant)]/10"></div>
+
+        <!-- 12. Settings -->
+        <a href="../pages/settings/index.html" class="nav-item group" data-tooltip="Settings">
+            <span class="material-symbols-outlined">settings</span>
+            <span class="nav-label text-sm">Settings</span>
+        </a>
+    </nav>
+
+    <!-- Pin Toggle Button -->
+    <div id="pin-sidebar" class="pin-toggle mx-4 mb-4 flex items-center justify-center shadow-lg" title="Pin Sidebar">
+        <span class="material-symbols-outlined text-sm">push_pin</span>
+    </div>
+</aside>
+
+
+    <!-- Main Content -->
+    <main class="flex-1 min-h-screen flex flex-col">
+        <!-- Header Placeholder -->
+        <!-- 
+  XenonOS Shared Component: Header (v5.0 - New Typography System)
+-->
+<header class="bg-[var(--color-surface)]/80 backdrop-blur-xl sticky top-0 z-40 w-full px-8 py-4 flex justify-between items-center shadow-[0_20px_40px_rgba(0,0,0,0.3)] outfit">
+    <div class="flex items-center gap-6">
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 rounded-xl flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all border border-white/5">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+        
+        <div class="relative group">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg group-focus-within:text-[var(--color-primary)] transition-colors">search</span>
+            <input class="bg-[var(--color-surface-container)] border-none text-[var(--color-on-surface)] text-sm rounded-full py-2 pl-10 pr-4 w-32 sm:w-64 focus:ring-1 focus:ring-[var(--color-primary)] transition-all placeholder:text-slate-500 outfit" placeholder="Search..." type="text"/>
+        </div>
+    </div>
+    <div class="flex items-center gap-4">
+        <button class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all">
+            <span class="material-symbols-outlined">notifications</span>
+        </button>
+        <button class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all">
+            <span class="material-symbols-outlined">settings</span>
+        </button>
+        <div class="h-10 w-[1px] bg-[var(--color-outline-variant)]/20 mx-2"></div>
+        <div class="flex items-center gap-3">
+            <div class="hidden lg:block text-right">
+                <p class="text-sm font-semibold text-[var(--color-on-surface)] leading-tight outfit">Alex Rivera</p>
+                <p class="text-[10px] text-slate-500 font-label outfit">Super Admin</p>
+            </div>
+            <img alt="Admin Profile" class="w-10 h-10 rounded-xl bg-[var(--color-surface-container)] object-cover border border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiwvRijOxcIA8PzPmV4_ePxNAQ1jEK6liXVtWkfs0B0GPSYNv0s2X9bjRrxQARCKCqfkZMd_pN7fsOwKf9m_fJ_15CowBjsePuDTSSAX1-9Vs_i3-l0yrn5GMXq9GUw0e9T_8MqYD5fcbH63KRsAIXgKDhALrSWhkRRooXJVcVzAYfnMs4F7d9jBp7Yl1Es5d241Rjpgf0DTyQZGm_aWG748o3-FXMGSid14TvMD2IxzNtrSDjzE5yeYoJgfU9JpTr1C1EIG_a15o"/>
+        </div>
+    </div>
+</header>
+
+
+        <!-- Main Scrollable Canvas -->
+<!-- Main Canvas -->
+<div class="p-8">
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div class="space-y-4 max-w-2xl">
+<div class="flex items-center gap-3">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase border border-primary/20">Active</span>
+<span class="text-on-surface-variant text-sm font-medium flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                        High Priority
+                    </span>
+</div>
+<h1 class="text-5xl md:text-6xl font-headline font-light tracking-tight text-on-surface">
+                    Lumina <span class="text-primary font-bold tracking-tighter">Rebrand</span> &amp; Identity
+                </h1>
+<div class="flex flex-col gap-2">
+<a class="text-primary hover:text-primary-container transition-colors text-lg font-semibold flex items-center gap-2" href="#">
+                        Aura Dynamics
+                        <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+<p class="text-on-surface-variant leading-relaxed max-w-xl">
+                        Q4 Brand identity overhaul including logo, style guide, and digital assets. This project focuses on shifting the digital presence to a premium, dark-themed aesthetic.
+                    </p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 bg-surface-container border border-outline-variant/20 rounded-xl text-sm font-semibold hover:bg-surface-bright transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">edit</span>
+                    Edit Project
+                </button>
+<button class="p-2.5 bg-surface-container border border-outline-variant/20 rounded-xl hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Quick Info Bar (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-surface-container-low p-6 rounded-3xl glass-glow border-l-2 border-primary/50">
+<span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase mb-4 block">Current Progress</span>
+<div class="flex items-end justify-between mb-2">
+<span class="text-3xl font-headline font-semibold text-primary">75%</span>
+<span class="text-xs text-on-surface-variant font-medium">3 of 4 phases</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container drop-shadow-[0_0_8px_rgba(192,193,255,0.4)]" style="width: 75%"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-3xl border-l-2 border-tertiary/50">
+<span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase mb-4 block">Deadline</span>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary">event</span>
+<div>
+<span class="text-xl font-headline font-semibold block text-on-surface">Oct 24, 2023</span>
+<span class="text-xs text-on-surface-variant">12 days remaining</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-3xl border-l-2 border-outline-variant/50">
+<span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase mb-4 block">Assigned Team</span>
+<div class="flex -space-x-3 items-center">
+<img class="w-10 h-10 rounded-full border-2 border-surface-container-low object-cover" data-alt="Team Member Alex" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmbqhNDtjHiidnqoUnyS_NniG8wMc5ZMQyk8U8X5dQs2y4YW8ihx469HkGOREoqlCIKG6spk5CgQV6A-8ifySeq13vdjdBNutRKK5Vy8AVoTO7NZKvD2SlaG1Af5v-Lx-_bnA3RvWwIbVfgn7LG85NN-MUmAaAjUjVDVAq9_BOWpEipr2i9j1OW9F_4CqtuvfMcidbWUPv8AyRVo9qPFY3eyi13Fk4Kt5sW6BgYgQELyl5EQre8TFSDAi6Qbusn9GSgxaoBjjr0Mw"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface-container-low object-cover" data-alt="Team Member Jordan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHj8ptsLGvWc4O9xQAhIq-kbajtXJ5t2sq_MIn2ctxtLnphuKzQtxVQDzxN8VUvxTx7Wq1UOrnGFhcUDNjtWY675CIkONC2Iv7JwLkklsLibOvOY0TPter1tuwUOYq7x2SiQwSTLp-YUCtGiyHnXzdOkcA7sAbGskUJc9-yeTmXj5IPHAtlsnspiHDvxrxOr5mYZpUtJGBk9UDX7Y1tCFrDZUh18ldJaTgT1wWE2J3aVwJYXh-yGmaYm9iRfGwm_ouVoxmcAXyoyc"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface-container-low object-cover" data-alt="Team Member Sarah" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw0IaYufWchuxPMztZN6f0RzUbqm9zQiFYE6fKiv9wWhEfVd6p57CkM0bFQzIrAbTagrOBITG_rIPH_qzxXqyZRLUhV-VeTEy5TBqOG8ieAexHCX5ADnBJ_rW1c7LJpb036ENUiYXNtmaskpOCYbr4lVbVeZxplq7c2Z2C9Qdx9WRyRFhhW0SK4s3OqnYxUNt_mF_pVsWUUU8x56xkx2IWPaE88RoT-Yybg04AqBAQX0kreR-YwLEYI_KYjoMzPu366-kr0pBIkSU"/>
+<div class="w-10 h-10 rounded-full border-2 border-surface-container-low bg-surface-container-highest flex items-center justify-center text-xs font-bold text-primary">+2</div>
+<span class="ml-6 text-xs text-on-surface-variant font-medium">4 Core Members</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-3xl border-l-2 border-secondary/50">
+<span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase mb-4 block">Service Type</span>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">brush</span>
+<div>
+<span class="text-lg font-headline font-semibold block text-on-surface leading-tight">Branding &amp; UI Design</span>
+<span class="text-xs text-on-surface-variant">Identity Package</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column (Project Details) -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Tasks Section -->
+<section class="bg-surface-container-low rounded-3xl p-8 relative overflow-hidden">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="text-xl font-headline font-semibold text-on-surface">Active Tasks</h3>
+<p class="text-sm text-on-surface-variant">Milestones for the current sprint</p>
+</div>
+<button class="text-primary font-bold text-xs tracking-wide flex items-center gap-2 group">
+<span class="w-1 h-1 bg-primary rounded-full group-hover:w-3 transition-all"></span>
+                            VIEW ALL TASKS
+                        </button>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-surface-container rounded-2xl hover:bg-surface-bright transition-all cursor-pointer group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-medium text-on-surface-variant line-through opacity-60">Finalize Color Palette</span>
+</div>
+<span class="text-[10px] font-bold bg-primary/10 text-primary px-2 py-0.5 rounded uppercase">Done</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container rounded-2xl hover:bg-surface-bright transition-all cursor-pointer group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary">radio_button_checked</span>
+<span class="text-sm font-medium text-on-surface">Iconography Set</span>
+</div>
+<div class="flex items-center gap-2">
+<img class="w-6 h-6 rounded-full border border-outline-variant/30" data-alt="Avatar Jordan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbnJRuU2UqHz6eNEMTI7ViLrSKgFpTnliHMbm8VWQC_H89UgixeiikIs7eJtcG4bZ3N0VTv_gZ5XMMIfvUx4cTQBt0-ZTGov5y4fPrKKUhsnGviTICbkUeq5OWEzQehEnUsaixjRffkRES6A-9l4bbOGus6FTosPX7xYcJ8MGwd64BTxMubSME1VzCpisvICuAPuWvdgNDT3fm2XlB66DnPGiRz5ZYUCMd2JUtTVkJ1iLIQgfM1bIBQ7imJ-4huUr57PwyDScDAOs"/>
+<span class="text-[10px] font-bold text-tertiary px-2 py-0.5 rounded uppercase">In Progress</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container rounded-2xl hover:bg-surface-bright transition-all cursor-pointer group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-outline">circle</span>
+<span class="text-sm font-medium text-on-surface">Style Guide PDF Production</span>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant px-2 py-0.5 rounded uppercase">Pending</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container rounded-2xl hover:bg-surface-bright transition-all cursor-pointer group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-outline">circle</span>
+<span class="text-sm font-medium text-on-surface">Responsive Web Mockups</span>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant px-2 py-0.5 rounded uppercase">Pending</span>
+</div>
+</div>
+<button class="w-full mt-6 py-4 border-2 border-dashed border-outline-variant/20 rounded-2xl text-on-surface-variant hover:text-primary hover:border-primary/40 hover:bg-primary/5 transition-all font-medium text-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+                        Add New Task
+                    </button>
+</section>
+<!-- Files Section -->
+<section class="bg-surface-container-low rounded-3xl p-8">
+<div class="flex justify-between items-center mb-8">
+<h3 class="text-xl font-headline font-semibold text-on-surface">Asset Vault</h3>
+<button class="px-4 py-2 bg-primary text-on-primary rounded-xl text-xs font-bold hover:scale-95 transition-transform flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">upload</span>
+                            UPLOAD
+                        </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container rounded-2xl border border-outline-variant/10 flex items-center gap-4 group hover:bg-surface-bright transition-colors">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">folder_zip</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold text-on-surface truncate">Lumina_Final_Assets.zip</p>
+<p class="text-[10px] text-on-surface-variant">ZIP • 45.2 MB • Oct 10</p>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">download</button>
+</div>
+<div class="p-4 bg-surface-container rounded-2xl border border-outline-variant/10 flex items-center gap-4 group hover:bg-surface-bright transition-colors">
+<div class="w-12 h-12 rounded-xl bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold text-on-surface truncate">Brand_Strategy_Draft.pdf</p>
+<p class="text-[10px] text-on-surface-variant">PDF • 2.1 MB • Oct 08</p>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">download</button>
+</div>
+<div class="p-4 bg-surface-container rounded-2xl border border-outline-variant/10 flex items-center gap-4 group hover:bg-surface-bright transition-colors">
+<div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">image</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold text-on-surface truncate">Main_Logo_Black.png</p>
+<p class="text-[10px] text-on-surface-variant">PNG • 840 KB • Oct 05</p>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">download</button>
+</div>
+<div class="p-4 bg-surface-container rounded-2xl border border-outline-variant/10 flex items-center gap-4 group hover:bg-surface-bright transition-colors">
+<div class="w-12 h-12 rounded-xl bg-outline/10 flex items-center justify-center text-outline">
+<span class="material-symbols-outlined">movie</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold text-on-surface truncate">Animation_Stinger.mp4</p>
+<p class="text-[10px] text-on-surface-variant">MP4 • 12.8 MB • Sep 30</p>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">download</button>
+</div>
+</div>
+</section>
+<!-- Milestones -->
+<section class="bg-surface-container-low rounded-3xl p-8">
+<h3 class="text-xl font-headline font-semibold text-on-surface mb-8">Phase Roadmap</h3>
+<div class="flex flex-col md:flex-row gap-4">
+<div class="flex-1 p-6 rounded-2xl bg-primary/10 border border-primary/20 relative">
+<span class="material-symbols-outlined text-primary absolute top-4 right-4" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-[10px] font-bold text-primary mb-2 block tracking-widest uppercase">Phase 1</span>
+<p class="font-bold text-on-surface">Discovery</p>
+<p class="text-xs text-on-surface-variant mt-1">Research &amp; Moodboards</p>
+</div>
+<div class="flex-1 p-6 rounded-2xl bg-tertiary/10 border border-tertiary/20 relative">
+<div class="animate-pulse w-2 h-2 rounded-full bg-tertiary absolute top-4 right-4"></div>
+<span class="text-[10px] font-bold text-tertiary mb-2 block tracking-widest uppercase">Phase 2</span>
+<p class="font-bold text-on-surface">Design Phase</p>
+<p class="text-xs text-on-surface-variant mt-1">Logo &amp; Palette Dev</p>
+</div>
+<div class="flex-1 p-6 rounded-2xl bg-surface-container border border-outline-variant/10 opacity-50">
+<span class="text-[10px] font-bold text-on-surface-variant mb-2 block tracking-widest uppercase">Phase 3</span>
+<p class="font-bold text-on-surface">Review</p>
+<p class="text-xs text-on-surface-variant mt-1">Client Feedback Loop</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column (Sidebar Panels) -->
+<div class="lg:col-span-4 space-y-8">
+<!-- Communication Preview -->
+<section class="bg-surface-container-low rounded-3xl p-6 shadow-xl border-t border-white/5">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">forum</span>
+<h3 class="font-headline font-semibold text-on-surface">Chat Room</h3>
+</div>
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+</div>
+<div class="space-y-4 max-h-[300px] overflow-y-auto custom-scrollbar pr-2 mb-6">
+<div class="flex items-start gap-3">
+<img class="w-8 h-8 rounded-full" data-alt="Sarah Jenkins" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXjiI0BrxudXxz3w3wwIGRQSA9NJFeSy2woeqkPkryuRpnazCJG-y_pALT59RqUkyf50XNjEKjY-r4NwiGMUBrU8AQQFhKWbnLzlXGpHQ7XopQUshfvHOy_ruoex5DdTrmQZKsrc7A4vgLv0Ql7I8w_N2TRaYRPHItRkmGXAMeGIS0DwVnoTX4hq3dVeiSKDyqt5L_id-yZ3RjBnoJxDu2cJBMzXyQt8OesqymPt3hyssPR23VC3MFK-hAD6psaoVPRC8Xzv1Obbk"/>
+<div class="bg-surface-container p-3 rounded-2xl rounded-tl-none text-xs text-on-surface-variant border border-outline-variant/10">
+<span class="font-bold text-on-surface block mb-1">Sarah Jenkins</span>
+                                I've uploaded the new color palette drafts. Let me know what you think!
+                            </div>
+</div>
+<div class="flex items-start gap-3 justify-end">
+<div class="bg-primary-container/20 p-3 rounded-2xl rounded-tr-none text-xs text-on-background border border-primary/20 text-right">
+<span class="font-bold text-primary block mb-1">Me</span>
+                                Looking great, Sarah. The indigo tones are perfect for the 'Obsidian' vibe.
+                            </div>
+</div>
+<div class="flex items-start gap-3">
+<img class="w-8 h-8 rounded-full" data-alt="Jordan Miles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlsRsv-0HwAttIeyl0nwZ1n60cYUr4wHMzRvcHCTZQBtMn7VjQ_yOhbkd12UsanyLvlAwP8qhLedzlIAyaVgMkXfUPn8uGQYHOyk1s2VRuSy-TNBAQyQ6pNMQoXAGxYeCqt0pN2VeY5OkSITsnhutpXYZA5qXZvWGgWlpYykVxcewh8uwQFPDEQ9iQ6tx3Fc5JCiWUkrRt2ACSO2FgfrvhgnJ7wXMsOkGSYuL98qpcsO3FUfffqAr0K8VQQ-L976WL3IoBStSNRQM"/>
+<div class="bg-surface-container p-3 rounded-2xl rounded-tl-none text-xs text-on-surface-variant border border-outline-variant/10">
+<span class="font-bold text-on-surface block mb-1">Jordan Miles</span>
+                                Should we schedule the presentation for Monday?
+                            </div>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container-highest rounded-2xl text-xs font-bold text-primary hover:bg-primary hover:text-on-primary transition-all uppercase tracking-widest">
+                        Open Full Chat
+                    </button>
+</section>
+<!-- Activity Timeline -->
+<section class="bg-surface-container-low rounded-3xl p-6">
+<h3 class="font-headline font-semibold text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-tertiary">history</span>
+                        Recent Activity
+                    </h3>
+<div class="space-y-6 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-outline-variant/20">
+<div class="relative pl-8 group">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-surface-container-low border-2 border-primary flex items-center justify-center z-10">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+<p class="text-xs font-bold text-on-surface">Task Completed</p>
+<p class="text-xs text-on-surface-variant">Alex finalized 'Color Palette'</p>
+<span class="text-[10px] text-outline mt-1 block">2 hours ago</span>
+</div>
+<div class="relative pl-8 group">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-surface-container-low border-2 border-tertiary flex items-center justify-center z-10">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+</div>
+<p class="text-xs font-bold text-on-surface">New File Uploaded</p>
+<p class="text-xs text-on-surface-variant">Sarah added 'Lumina_Moodboard.jpg'</p>
+<span class="text-[10px] text-outline mt-1 block">5 hours ago</span>
+</div>
+<div class="relative pl-8 group">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-surface-container-low border-2 border-outline-variant flex items-center justify-center z-10">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+</div>
+<p class="text-xs font-bold text-on-surface">Task Status Updated</p>
+<p class="text-xs text-on-surface-variant">'Iconography Set' moved to In Progress</p>
+<span class="text-[10px] text-outline mt-1 block">Yesterday</span>
+</div>
+</div>
+</section>
+<!-- Team Section -->
+<section class="bg-surface-container-low rounded-3xl p-6">
+<h3 class="font-headline font-semibold text-on-surface mb-6">Active Team</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-3 group">
+<div class="relative">
+<img class="w-10 h-10 rounded-xl object-cover" data-alt="Alex Sterling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPoi9ZCESulPOZjCmOd0fDXl7e2CE7vL2OV5FUlRREy8hXDp_Uw0AU7_tuCuKgTKYWs5dngmoJXW9O7GhREKp_rQ81OBJzF0fNPVuyFtijiXoeeGA9Jizt1vfBX-52DIq1mpu1gfjAKx-72LhuF2XmBMzJjmnNFx60QJ6eXPRZpMAY1lPsySPGG7MprxghX1A_Vw_JY4E5pWGh7cvcQDov5zZ_Y9wVpBBPJIGJNnQPTIiqYhOA_dLpw5S8crfs76jVafEVlQqZwZE"/>
+<span class="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 border-2 border-surface-container-low rounded-full"></span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Alex Sterling</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Lead Designer</p>
+</div>
+<button class="ml-auto material-symbols-outlined text-outline-variant hover:text-primary transition-colors">chat</button>
+</div>
+<div class="flex items-center gap-3 group">
+<div class="relative">
+<img class="w-10 h-10 rounded-xl object-cover" data-alt="Sarah Jenkins" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYQU8ISlLwUlHkiLFs9sz6JcEN_46aH_yemoWEhsIAPuDey71Oa9UnT87LcuTk-1wD-H2pSuxA_i0PgNpKlDTzE8wEsOsMoGdEobyne-AHS8AYuiiNOwV6SvPgkD6kolpjPaQVD1TMGZzPXDi1HK5VTHblCru0UtfGAa_0SbVm_a2VDlTxRh-XVcZeHKmBlxuWXJQ_TbNbLEm-NgJ5qsqN4uyXQGJXpixD5sl7U-2JCvtOAnwxF651JwSCWUWiipRpN58-FmBDG-E"/>
+<span class="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 border-2 border-surface-container-low rounded-full"></span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Sarah Jenkins</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Art Director</p>
+</div>
+<button class="ml-auto material-symbols-outlined text-outline-variant hover:text-primary transition-colors">chat</button>
+</div>
+<div class="flex items-center gap-3 group">
+<div class="relative">
+<img class="w-10 h-10 rounded-xl object-cover" data-alt="Jordan Miles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA57YsZVsCqdrTclDgBUibCwWA2gV_ktnnfYpEJb0n-g6hs1rTvNpMDbOPZqkRo0MzTOYPsKdzp1fLZH-BesRjV5FIr74XSQAf_HmuuL7XDKKiW5x1gnHNAP2vU4k7hxvVHN1t7PNSSptiqGtMXUi1z9TXchyFFLgZlXK9IouZSX2NH6IATE7BW6u1h394ysUQ_bk0hzdGk0hNyq2LRjOyLyazmQsxmt-RXZXAr54K5CiXo-LBF2k1Gaw8aqW2OkikZofaipVaaho4"/>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Jordan Miles</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">UI Specialist</p>
+</div>
+<button class="ml-auto material-symbols-outlined text-outline-variant hover:text-primary transition-colors">chat</button>
+</div>
+</div>
+</section>
+</div>
+</div>
+        <!-- Footer Placeholder -->
+    <!-- 
+  XenonOS Shared Component: Footer (v5.0 - New Typography System)
+-->
+<footer class="mt-12 px-8 py-6 border-t border-[var(--color-outline-variant)]/15 bg-[var(--color-surface)] flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-300 outfit">
+    <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">© 2024 Obsidian Architect • System Status: <span class="text-[var(--color-success)]">Operational</span></p>
+    <div class="flex gap-4 items-center">
+        <span class="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse shadow-[0_0_10px_rgba(99,102,241,0.4)]"></span>
+        <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Region: Global-Alpha-1</span>
+    </div>
+</footer>
+
+</main>
+
+    <script src="../../assets/js/app.js"></script>
+</body>
+</html>
+
+
+

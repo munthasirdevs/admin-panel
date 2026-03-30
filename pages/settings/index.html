@@ -3,161 +3,456 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Settings - Obsidian Admin</title>
-
-    <!-- Tailwind CSS -->
+    <title>Unified Settings - System Admin</title>
+    
+    <!-- Core Assets -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="../../assets/js/tailwind-config.js"></script>
-    
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-
+    
     <!-- Custom Styles -->
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/components.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
 <body class="flex min-h-screen bg-surface">
-    <div id="sidebar-container"></div>
-
-    <main class="flex-1 min-h-screen flex flex-col with-sidebar">
-        <div id="header-container"></div>
-
-        <div class="p-8 space-y-12 flex-1">
-            <!-- Page Header -->
-            <section class="flex flex-col gap-1">
-                <h2 class="text-on-surface font-headline font-light text-5xl tracking-tight">Settings</h2>
-                <p class="text-on-surface-variant font-body text-sm">Manage your account and system preferences.</p>
-            </section>
-
-            <!-- Settings Sections -->
-            <div class="grid gap-6">
-                <!-- Profile Settings -->
-                <section class="bg-surface-container rounded-2xl p-8 border border-outline-variant/5">
-                    <h4 class="text-xl font-headline font-semibold text-on-surface mb-6">Profile Settings</h4>
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-6">
-                            <img src="https://ui-avatars.com/api/?name=Alex+Rivera&background=6366f1&color=fff&size=128" alt="Profile" class="w-20 h-20 rounded-2xl object-cover border border-white/10"/>
-                            <button class="px-6 py-2 bg-surface-container-high text-on-surface rounded-xl text-sm font-semibold hover:bg-surface-container-highest transition-all">
-                                Change Avatar
-                            </button>
-                        </div>
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-xs font-semibold text-on-surface-variant uppercase tracking-wider mb-2">First Name</label>
-                                <input type="text" value="Alex" class="w-full bg-surface-container-high border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary focus:border-transparent transition-all"/>
-                            </div>
-                            <div>
-                                <label class="block text-xs font-semibold text-on-surface-variant uppercase tracking-wider mb-2">Last Name</label>
-                                <input type="text" value="Rivera" class="w-full bg-surface-container-high border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary focus:border-transparent transition-all"/>
-                            </div>
-                            <div>
-                                <label class="block text-xs font-semibold text-on-surface-variant uppercase tracking-wider mb-2">Email</label>
-                                <input type="email" value="alex.rivera@obsidian.com" class="w-full bg-surface-container-high border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary focus:border-transparent transition-all"/>
-                            </div>
-                            <div>
-                                <label class="block text-xs font-semibold text-on-surface-variant uppercase tracking-wider mb-2">Phone</label>
-                                <input type="tel" value="+1 (555) 123-4567" class="w-full bg-surface-container-high border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary focus:border-transparent transition-all"/>
-                            </div>
-                        </div>
-                        <div class="flex justify-end gap-4 pt-4">
-                            <button class="px-6 py-2 bg-transparent border border-outline-variant/20 text-on-surface rounded-xl text-sm font-semibold hover:bg-surface-container-high transition-all">
-                                Cancel
-                            </button>
-                            <button class="px-6 py-2 bg-primary text-white rounded-xl text-sm font-semibold hover:bg-primary/90 transition-all">
-                                Save Changes
-                            </button>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Notification Settings -->
-                <section class="bg-surface-container rounded-2xl p-8 border border-outline-variant/5">
-                    <h4 class="text-xl font-headline font-semibold text-on-surface mb-6">Notifications</h4>
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl">
-                            <div>
-                                <p class="text-sm font-medium text-on-surface">Email Notifications</p>
-                                <p class="text-xs text-on-surface-variant mt-1">Receive email updates about your account</p>
-                            </div>
-                            <label class="relative inline-flex items-center cursor-pointer">
-                                <input type="checkbox" class="sr-only peer" checked/>
-                                <div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
-                            </label>
-                        </div>
-                        <div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl">
-                            <div>
-                                <p class="text-sm font-medium text-on-surface">Push Notifications</p>
-                                <p class="text-xs text-on-surface-variant mt-1">Receive push notifications in your browser</p>
-                            </div>
-                            <label class="relative inline-flex items-center cursor-pointer">
-                                <input type="checkbox" class="sr-only peer" checked/>
-                                <div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
-                            </label>
-                        </div>
-                        <div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl">
-                            <div>
-                                <p class="text-sm font-medium text-on-surface">Task Reminders</p>
-                                <p class="text-xs text-on-surface-variant mt-1">Get reminded about upcoming task deadlines</p>
-                            </div>
-                            <label class="relative inline-flex items-center cursor-pointer">
-                                <input type="checkbox" class="sr-only peer"/>
-                                <div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
-                            </label>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Security Settings -->
-                <section class="bg-surface-container rounded-2xl p-8 border border-outline-variant/5">
-                    <h4 class="text-xl font-headline font-semibold text-on-surface mb-6">Security</h4>
-                    <div class="space-y-4">
-                        <div class="p-4 bg-surface-container-low rounded-xl">
-                            <div class="flex items-center justify-between mb-4">
-                                <div>
-                                    <p class="text-sm font-medium text-on-surface">Password</p>
-                                    <p class="text-xs text-on-surface-variant mt-1">Last changed 3 months ago</p>
-                                </div>
-                                <button class="px-4 py-2 bg-surface-container-high text-on-surface rounded-xl text-sm font-semibold hover:bg-surface-container-highest transition-all">
-                                    Change
-                                </button>
-                            </div>
-                        </div>
-                        <div class="p-4 bg-surface-container-low rounded-xl">
-                            <div class="flex items-center justify-between">
-                                <div>
-                                    <p class="text-sm font-medium text-on-surface">Two-Factor Authentication</p>
-                                    <p class="text-xs text-on-surface-variant mt-1">Add an extra layer of security</p>
-                                </div>
-                                <button class="px-4 py-2 bg-primary/10 text-primary rounded-xl text-sm font-semibold hover:bg-primary/20 transition-all">
-                                    Enable
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Danger Zone -->
-                <section class="bg-surface-container rounded-2xl p-8 border border-error/30">
-                    <h4 class="text-xl font-headline font-semibold text-error mb-4">Danger Zone</h4>
-                    <p class="text-sm text-on-surface-variant mb-6">Irreversible and destructive actions</p>
-                    <div class="flex flex-wrap gap-4">
-                        <button class="px-6 py-2 bg-surface-container-high border border-outline-variant/20 text-on-surface rounded-xl text-sm font-semibold hover:bg-surface-container-highest transition-all">
-                            Delete Account
-                        </button>
-                        <button class="px-6 py-2 bg-surface-container-high border border-outline-variant/20 text-on-surface rounded-xl text-sm font-semibold hover:bg-surface-container-highest transition-all">
-                            Clear Data
-                        </button>
-                    </div>
-                </section>
-            </div>
+    <!-- Sidebar Placeholder -->
+    <!-- 
+  XenonOS Shared Component: Sidebar (v5.0 - New Typography System)
+  Reference: Obsidian / Outfit & Syne
+-->
+<!-- 
+  XenonOS Shared Component: Sidebar (v5.0 - New Typography System)
+  Reference: Obsidian / Outfit & Syne
+-->
+<!-- 
+  XenonOS Shared Component: Modern Interactive Sidebar (v5.0)
+  Collapsible, Hover-to-Expand, and Pinned States
+-->
+<aside class="modern-sidebar outfit lg:translate-x-0 -translate-x-full transition-all duration-300 ease-in-out">
+    <!-- Branding -->
+    <div class="px-5 mb-8 mt-8 flex items-center gap-4 overflow-hidden">
+        <div class="min-w-[40px] h-10 rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[#3f4077] flex items-center justify-center shadow-lg">
+            <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">diamond</span>
         </div>
+        <div class="nav-label">
+            <h1 class="text-xl font-bold text-[var(--color-on-surface)] font-headline tracking-tight syne">Obsidian</h1>
+            <p class="text-[10px] text-slate-500 font-label uppercase tracking-[0.2em] outfit">Management Hub</p>
+        </div>
+    </div>
 
-        <div id="footer-container"></div>
+    <!-- Navigation -->
+    <nav class="flex-1 space-y-1">
+        <!-- 1. Dashboard -->
+        <a href="../pages/dashboard/index.html" class="nav-item group" data-tooltip="Dashboard">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="nav-label text-sm">Dashboard</span>
+        </a>
+
+        <!-- 2. Clients -->
+        <a href="../pages/clients/index.html" class="nav-item group" data-tooltip="Clients">
+            <span class="material-symbols-outlined">group</span>
+            <span class="nav-label text-sm">Clients</span>
+        </a>
+
+        <!-- 3. Projects -->
+        <a href="../pages/projects/index.html" class="nav-item group" data-tooltip="Projects">
+            <span class="material-symbols-outlined">folder_open</span>
+            <span class="nav-label text-sm">Projects</span>
+        </a>
+
+        <!-- 4. Tasks -->
+        <a href="../pages/tasks/index.html" class="nav-item group" data-tooltip="Tasks">
+            <span class="material-symbols-outlined">assignment</span>
+            <span class="nav-label text-sm">Tasks</span>
+        </a>
+
+        <!-- 5. Communication -->
+        <a href="../pages/communication/index.html" class="nav-item group" data-tooltip="Communication">
+            <span class="material-symbols-outlined">forum</span>
+            <span class="nav-label text-sm">Communication</span>
+        </a>
+
+        <!-- 6. Files -->
+        <a href="../pages/files/index.html" class="nav-item group" data-tooltip="Files">
+            <span class="material-symbols-outlined">folder_shared</span>
+            <span class="nav-label text-sm">Files</span>
+        </a>
+
+        <!-- 7. Payment -->
+        <a href="../pages/payment/index.html" class="nav-item group" data-tooltip="Payment">
+            <span class="material-symbols-outlined">payments</span>
+            <span class="nav-label text-sm">Payment</span>
+        </a>
+
+        <!-- 8. Team -->
+        <a href="../pages/team/index.html" class="nav-item group" data-tooltip="Team">
+            <span class="material-symbols-outlined">badge</span>
+            <span class="nav-label text-sm">Team Members</span>
+        </a>
+
+        <!-- 9. Analytics -->
+        <a href="../pages/analytics/executive.html" class="nav-item group" data-tooltip="Analytics">
+            <span class="material-symbols-outlined">analytics</span>
+            <span class="nav-label text-sm">Analytics</span>
+        </a>
+
+        <!-- 10. Reports -->
+        <a href="../pages/reports/financial.html" class="nav-item group" data-tooltip="Reports">
+            <span class="material-symbols-outlined">trending_up</span>
+            <span class="nav-label text-sm">Reports</span>
+        </a>
+
+        <!-- 11. Activity -->
+        <a href="../pages/activity/index.html" class="nav-item group" data-tooltip="Activity">
+            <span class="material-symbols-outlined">history</span>
+            <span class="nav-label text-sm">Activity Logs</span>
+        </a>
+
+        <!-- Divider -->
+        <div class="mx-6 my-4 border-t border-[var(--color-outline-variant)]/10"></div>
+
+        <!-- 12. Settings -->
+        <a href="../pages/settings/index.html" class="nav-item group" data-tooltip="Settings">
+            <span class="material-symbols-outlined">settings</span>
+            <span class="nav-label text-sm">Settings</span>
+        </a>
+    </nav>
+
+    <!-- Pin Toggle Button -->
+    <div id="pin-sidebar" class="pin-toggle mx-4 mb-4 flex items-center justify-center shadow-lg" title="Pin Sidebar">
+        <span class="material-symbols-outlined text-sm">push_pin</span>
+    </div>
+</aside>
+
+
+    <!-- Main Content -->
+    <main class="flex-1 min-h-screen flex flex-col">
+        <!-- Header Placeholder -->
+        <!-- 
+  XenonOS Shared Component: Header (v5.0 - New Typography System)
+-->
+<header class="bg-[var(--color-surface)]/80 backdrop-blur-xl sticky top-0 z-40 w-full px-8 py-4 flex justify-between items-center shadow-[0_20px_40px_rgba(0,0,0,0.3)] outfit">
+    <div class="flex items-center gap-6">
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 rounded-xl flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all border border-white/5">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+        
+        <div class="relative group">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg group-focus-within:text-[var(--color-primary)] transition-colors">search</span>
+            <input class="bg-[var(--color-surface-container)] border-none text-[var(--color-on-surface)] text-sm rounded-full py-2 pl-10 pr-4 w-32 sm:w-64 focus:ring-1 focus:ring-[var(--color-primary)] transition-all placeholder:text-slate-500 outfit" placeholder="Search..." type="text"/>
+        </div>
+    </div>
+    <div class="flex items-center gap-4">
+        <button class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all">
+            <span class="material-symbols-outlined">notifications</span>
+        </button>
+        <button class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all">
+            <span class="material-symbols-outlined">settings</span>
+        </button>
+        <div class="h-10 w-[1px] bg-[var(--color-outline-variant)]/20 mx-2"></div>
+        <div class="flex items-center gap-3">
+            <div class="hidden lg:block text-right">
+                <p class="text-sm font-semibold text-[var(--color-on-surface)] leading-tight outfit">Alex Rivera</p>
+                <p class="text-[10px] text-slate-500 font-label outfit">Super Admin</p>
+            </div>
+            <img alt="Admin Profile" class="w-10 h-10 rounded-xl bg-[var(--color-surface-container)] object-cover border border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiwvRijOxcIA8PzPmV4_ePxNAQ1jEK6liXVtWkfs0B0GPSYNv0s2X9bjRrxQARCKCqfkZMd_pN7fsOwKf9m_fJ_15CowBjsePuDTSSAX1-9Vs_i3-l0yrn5GMXq9GUw0e9T_8MqYD5fcbH63KRsAIXgKDhALrSWhkRRooXJVcVzAYfnMs4F7d9jBp7Yl1Es5d241Rjpgf0DTyQZGm_aWG748o3-FXMGSid14TvMD2IxzNtrSDjzE5yeYoJgfU9JpTr1C1EIG_a15o"/>
+        </div>
+    </div>
+</header>
+
+
+        <!-- Main Scrollable Canvas -->
+
+<!-- Main Canvas -->
+<div class="p-10">
+<div class="max-w-7xl mx-auto space-y-12">
+<!-- Page Header -->
+<div class="flex items-end justify-between">
+<div>
+<p class="text-primary font-bold tracking-[0.2em] text-[11px] uppercase mb-2">Security &amp; Identity</p>
+<h1 class="font-headline text-5xl font-light tracking-tight text-on-surface">Account Settings</h1>
+</div>
+<p class="text-on-surface-variant text-sm max-w-xs text-right italic font-light opacity-60">Manage your administrative privileges and security protocols.</p>
+</div>
+<!-- Settings Bento Grid -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Change Password (4 cols) -->
+<section class="col-span-12 lg:col-span-5 bg-surface-container rounded-3xl p-8 glass-card border-l-2 border-primary/20">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary" data-icon="key">key</span>
+<h2 class="font-headline text-xl font-semibold">Change Password</h2>
+</div>
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest pl-1">Current Password</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-primary/40 transition-all" placeholder="••••••••" type="password"/>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest pl-1">New Password</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-primary/40 transition-all" placeholder="••••••••" type="password"/>
+<div class="pt-2">
+<div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container w-2/3 shadow-[0_0_8px_rgba(192,193,255,0.4)]"></div>
+</div>
+<p class="text-[11px] text-primary mt-1.5 flex justify-between">
+<span>Strong Password</span>
+<span>68%</span>
+</p>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest pl-1">Confirm New Password</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-primary/40 transition-all" placeholder="••••••••" type="password"/>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-xl font-bold text-sm tracking-wide hover:opacity-90 transition-opacity active:scale-[0.98] mt-4">
+                            Update Credentials
+                        </button>
+</form>
+</section>
+<!-- Authentication Rules & Active Monitoring (7 cols) -->
+<div class="col-span-12 lg:col-span-7 space-y-6">
+<!-- Authentication Rules -->
+<section class="bg-surface-container-low rounded-3xl p-8">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-tertiary" data-icon="verified_user">verified_user</span>
+<h2 class="font-headline text-xl font-semibold">Authentication Rules</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Toggle Card -->
+<div class="p-5 bg-surface-container rounded-2xl flex items-start justify-between">
+<div>
+<p class="font-semibold text-sm mb-1">Complex Passwords</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">Require symbols and numbers.</p>
+</div>
+<div class="w-12 h-6 bg-primary rounded-full relative cursor-pointer flex items-center px-1">
+<div class="w-4 h-4 bg-on-primary rounded-full ml-auto"></div>
+</div>
+</div>
+<!-- Toggle Card -->
+<div class="p-5 bg-surface-container rounded-2xl flex items-start justify-between">
+<div>
+<p class="font-semibold text-sm mb-1">2FA Enforcement</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">Required for all team members.</p>
+</div>
+<div class="w-12 h-6 bg-primary rounded-full relative cursor-pointer flex items-center px-1">
+<div class="w-4 h-4 bg-on-primary rounded-full ml-auto"></div>
+</div>
+</div>
+<!-- Toggle Card -->
+<div class="p-5 bg-surface-container rounded-2xl flex items-start justify-between col-span-1 md:col-span-2">
+<div>
+<p class="font-semibold text-sm mb-1">Sensitive Action Re-Auth</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">Request password before project deletion or data export.</p>
+</div>
+<div class="w-12 h-6 bg-surface-container-highest rounded-full relative cursor-pointer flex items-center px-1 border border-outline-variant/20">
+<div class="w-4 h-4 bg-outline rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Active Login Monitoring -->
+<section class="bg-surface-container-low rounded-3xl p-8 overflow-hidden">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="devices">devices</span>
+<h2 class="font-headline text-xl font-semibold">Active Sessions</h2>
+</div>
+<span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded-full uppercase tracking-tighter">3 Active Now</span>
+</div>
+<div class="space-y-1">
+<!-- Session Item -->
+<div class="flex items-center justify-between p-4 hover:bg-surface-bright/30 rounded-2xl transition-all group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="laptop_mac">laptop_mac</span>
+</div>
+<div>
+<p class="text-sm font-semibold">MacBook Pro 16"</p>
+<p class="text-[11px] text-on-surface-variant">San Francisco, USA • Active now</p>
+</div>
+</div>
+<button class="text-[11px] font-bold text-error uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">Force Logout</button>
+</div>
+<!-- Session Item -->
+<div class="flex items-center justify-between p-4 hover:bg-surface-bright/30 rounded-2xl transition-all group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-outline group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="phone_iphone">phone_iphone</span>
+</div>
+<div>
+<p class="text-sm font-semibold">iPhone 15 Pro</p>
+<p class="text-[11px] text-on-surface-variant">London, UK • 2 hours ago</p>
+</div>
+</div>
+<button class="text-[11px] font-bold text-error uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">Force Logout</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Activity Logs (Full Width) -->
+<section class="col-span-12 bg-surface-container-low rounded-3xl p-8">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="history">history</span>
+<h2 class="font-headline text-xl font-semibold">Audit Activity Logs</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg" data-icon="search">search</span>
+<input class="bg-surface-container border-none rounded-xl pl-9 pr-4 py-2 text-xs w-64 focus:ring-1 focus:ring-primary/30 transition-all" placeholder="Filter logs..." type="text"/>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container text-on-surface rounded-xl text-xs font-bold hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="ios_share">ios_share</span> Export
+                            </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-separate border-spacing-y-2">
+<thead>
+<tr class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest px-4">
+<th class="pb-4 pl-4">Timestamp</th>
+<th class="pb-4">User</th>
+<th class="pb-4">Action Type</th>
+<th class="pb-4">Target Entity</th>
+<th class="pb-4 text-right pr-4">Status</th>
+</tr>
+</thead>
+<tbody class="text-sm">
+<tr class="group">
+<td class="bg-surface-container first:rounded-l-2xl py-4 pl-4 text-on-surface-variant font-mono text-[11px]">OCT 24, 2023 14:22</td>
+<td class="bg-surface-container font-semibold">Sarah Jenkins</td>
+<td class="bg-surface-container">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="edit_square">edit_square</span> Project Update
+                                        </span>
+</td>
+<td class="bg-surface-container text-on-surface-variant">Nexus Dashboard v2.0</td>
+<td class="bg-surface-container last:rounded-r-2xl text-right pr-4">
+<span class="px-2 py-0.5 rounded-md bg-green-500/10 text-green-400 text-[10px] font-bold">SUCCESS</span>
+</td>
+</tr>
+<tr class="group">
+<td class="bg-surface-container first:rounded-l-2xl py-4 pl-4 text-on-surface-variant font-mono text-[11px]">OCT 24, 2023 11:05</td>
+<td class="bg-surface-container font-semibold">System Bot</td>
+<td class="bg-surface-container">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-lg" data-icon="cloud_sync">cloud_sync</span> Auto Backup
+                                        </span>
+</td>
+<td class="bg-surface-container text-on-surface-variant">Production Database</td>
+<td class="bg-surface-container last:rounded-r-2xl text-right pr-4">
+<span class="px-2 py-0.5 rounded-md bg-green-500/10 text-green-400 text-[10px] font-bold">SUCCESS</span>
+</td>
+</tr>
+<tr class="group">
+<td class="bg-surface-container first:rounded-l-2xl py-4 pl-4 text-on-surface-variant font-mono text-[11px]">OCT 23, 2023 18:45</td>
+<td class="bg-surface-container font-semibold">Admin Rivera</td>
+<td class="bg-surface-container">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-lg" data-icon="delete">delete</span> Delete Task
+                                        </span>
+</td>
+<td class="bg-surface-container text-on-surface-variant">Old Wireframe Archive</td>
+<td class="bg-surface-container last:rounded-r-2xl text-right pr-4">
+<span class="px-2 py-0.5 rounded-md bg-orange-500/10 text-orange-400 text-[10px] font-bold">WARNING</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Notification Center & Priority Alerts (Side-by-side or stacked) -->
+<div class="col-span-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Notification Settings -->
+<section class="md:col-span-2 bg-surface-container-low rounded-3xl p-8">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary" data-icon="notifications_active">notifications_active</span>
+<h2 class="font-headline text-xl font-semibold">Notification Center</h2>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest border-b border-outline-variant/10">
+<th class="pb-4">Notification Type</th>
+<th class="pb-4 text-center">In-App</th>
+<th class="pb-4 text-center">Email</th>
+<th class="pb-4 text-center">Push</th>
+</tr>
+</thead>
+<tbody class="text-sm">
+<tr class="border-b border-outline-variant/5">
+<td class="py-5 font-semibold">Task Assignments</td>
+<td class="text-center py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
+<td class="text-center py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
+<td class="text-center py-5"><input class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
+</tr>
+<tr class="border-b border-outline-variant/5">
+<td class="py-5 font-semibold">Project Milestones</td>
+<td class="text-center py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
+<td class="text-center py-5"><input class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
+<td class="text-center py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
+</tr>
+<tr class="border-b border-outline-variant/5">
+<td class="py-5 font-semibold">Direct Messages</td>
+<td class="text-center py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
+<td class="text-center py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
+<td class="text-center py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
+</tr>
+<tr>
+<td class="py-5 font-semibold">System Maintenance</td>
+<td class="text-center py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
+<td class="text-center py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
+<td class="text-center py-5"><input class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Priority Alerts Card -->
+<section class="bg-surface-container rounded-3xl p-8 border border-tertiary/10 flex flex-col justify-center">
+<div class="w-14 h-14 rounded-2xl bg-tertiary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="campaign">campaign</span>
+</div>
+<h2 class="font-headline text-xl font-semibold mb-3">Priority Alerts</h2>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-8">Force highlight urgent messages or system flags to the top of your workspace feed regardless of filters.</p>
+<div class="flex items-center justify-between p-4 bg-surface-container-high rounded-2xl">
+<span class="text-sm font-bold">Enable Priority Feed</span>
+<div class="w-12 h-6 bg-tertiary rounded-full relative cursor-pointer flex items-center px-1 shadow-[0_0_15px_rgba(255,183,131,0.2)]">
+<div class="w-4 h-4 bg-on-tertiary rounded-full ml-auto"></div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="flex items-center justify-center pt-8">
+<p class="text-on-surface-variant text-xs flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="lock">lock</span>
+                    All settings are end-to-end encrypted and audited.
+                </p>
+</div>
+</div>
+    <!-- Footer Placeholder -->
+    <!-- 
+  XenonOS Shared Component: Footer (v5.0 - New Typography System)
+-->
+<footer class="mt-12 px-8 py-6 border-t border-[var(--color-outline-variant)]/15 bg-[var(--color-surface)] flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-300 outfit">
+    <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">© 2024 Obsidian Architect • System Status: <span class="text-[var(--color-success)]">Operational</span></p>
+    <div class="flex gap-4 items-center">
+        <span class="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse shadow-[0_0_10px_rgba(99,102,241,0.4)]"></span>
+        <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Region: Global-Alpha-1</span>
+    </div>
+</footer>
+
+</main>
+        </div>
     </main>
 
-    <script src="../../assets/js/components.js"></script>
-    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/app.js"></script>
 </body>
 </html>
+
+
+

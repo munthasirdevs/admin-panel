@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Marketing Analytics - System Admin</title>
+    
+    <!-- Core Assets -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="../../assets/js/tailwind-config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body class="flex min-h-screen bg-surface">
+    <!-- Sidebar Placeholder -->
+    <!-- 
+  XenonOS Shared Component: Sidebar (v5.0 - New Typography System)
+  Reference: Obsidian / Outfit & Syne
+-->
+<!-- 
+  XenonOS Shared Component: Sidebar (v5.0 - New Typography System)
+  Reference: Obsidian / Outfit & Syne
+-->
+<!-- 
+  XenonOS Shared Component: Modern Interactive Sidebar (v5.0)
+  Collapsible, Hover-to-Expand, and Pinned States
+-->
+<aside class="modern-sidebar outfit lg:translate-x-0 -translate-x-full transition-all duration-300 ease-in-out">
+    <!-- Branding -->
+    <div class="px-5 mb-8 mt-8 flex items-center gap-4 overflow-hidden">
+        <div class="min-w-[40px] h-10 rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[#3f4077] flex items-center justify-center shadow-lg">
+            <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">diamond</span>
+        </div>
+        <div class="nav-label">
+            <h1 class="text-xl font-bold text-[var(--color-on-surface)] font-headline tracking-tight syne">Obsidian</h1>
+            <p class="text-[10px] text-slate-500 font-label uppercase tracking-[0.2em] outfit">Management Hub</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex-1 space-y-1">
+        <!-- 1. Dashboard -->
+        <a href="../pages/dashboard/index.html" class="nav-item group" data-tooltip="Dashboard">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="nav-label text-sm">Dashboard</span>
+        </a>
+
+        <!-- 2. Clients -->
+        <a href="../pages/clients/index.html" class="nav-item group" data-tooltip="Clients">
+            <span class="material-symbols-outlined">group</span>
+            <span class="nav-label text-sm">Clients</span>
+        </a>
+
+        <!-- 3. Projects -->
+        <a href="../pages/projects/index.html" class="nav-item group" data-tooltip="Projects">
+            <span class="material-symbols-outlined">folder_open</span>
+            <span class="nav-label text-sm">Projects</span>
+        </a>
+
+        <!-- 4. Tasks -->
+        <a href="../pages/tasks/index.html" class="nav-item group" data-tooltip="Tasks">
+            <span class="material-symbols-outlined">assignment</span>
+            <span class="nav-label text-sm">Tasks</span>
+        </a>
+
+        <!-- 5. Communication -->
+        <a href="../pages/communication/index.html" class="nav-item group" data-tooltip="Communication">
+            <span class="material-symbols-outlined">forum</span>
+            <span class="nav-label text-sm">Communication</span>
+        </a>
+
+        <!-- 6. Files -->
+        <a href="../pages/files/index.html" class="nav-item group" data-tooltip="Files">
+            <span class="material-symbols-outlined">folder_shared</span>
+            <span class="nav-label text-sm">Files</span>
+        </a>
+
+        <!-- 7. Payment -->
+        <a href="../pages/payment/index.html" class="nav-item group" data-tooltip="Payment">
+            <span class="material-symbols-outlined">payments</span>
+            <span class="nav-label text-sm">Payment</span>
+        </a>
+
+        <!-- 8. Team -->
+        <a href="../pages/team/index.html" class="nav-item group" data-tooltip="Team">
+            <span class="material-symbols-outlined">badge</span>
+            <span class="nav-label text-sm">Team Members</span>
+        </a>
+
+        <!-- 9. Analytics -->
+        <a href="../pages/analytics/executive.html" class="nav-item group" data-tooltip="Analytics">
+            <span class="material-symbols-outlined">analytics</span>
+            <span class="nav-label text-sm">Analytics</span>
+        </a>
+
+        <!-- 10. Reports -->
+        <a href="../pages/reports/financial.html" class="nav-item group" data-tooltip="Reports">
+            <span class="material-symbols-outlined">trending_up</span>
+            <span class="nav-label text-sm">Reports</span>
+        </a>
+
+        <!-- 11. Activity -->
+        <a href="../pages/activity/index.html" class="nav-item group" data-tooltip="Activity">
+            <span class="material-symbols-outlined">history</span>
+            <span class="nav-label text-sm">Activity Logs</span>
+        </a>
+
+        <!-- Divider -->
+        <div class="mx-6 my-4 border-t border-[var(--color-outline-variant)]/10"></div>
+
+        <!-- 12. Settings -->
+        <a href="../pages/settings/index.html" class="nav-item group" data-tooltip="Settings">
+            <span class="material-symbols-outlined">settings</span>
+            <span class="nav-label text-sm">Settings</span>
+        </a>
+    </nav>
+
+    <!-- Pin Toggle Button -->
+    <div id="pin-sidebar" class="pin-toggle mx-4 mb-4 flex items-center justify-center shadow-lg" title="Pin Sidebar">
+        <span class="material-symbols-outlined text-sm">push_pin</span>
+    </div>
+</aside>
+
+
+    <!-- Main Content -->
+    <main class="flex-1 min-h-screen flex flex-col">
+        <!-- Header Placeholder -->
+        <!-- 
+  XenonOS Shared Component: Header (v5.0 - New Typography System)
+-->
+<header class="bg-[var(--color-surface)]/80 backdrop-blur-xl sticky top-0 z-40 w-full px-8 py-4 flex justify-between items-center shadow-[0_20px_40px_rgba(0,0,0,0.3)] outfit">
+    <div class="flex items-center gap-6">
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 rounded-xl flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all border border-white/5">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+        
+        <div class="relative group">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg group-focus-within:text-[var(--color-primary)] transition-colors">search</span>
+            <input class="bg-[var(--color-surface-container)] border-none text-[var(--color-on-surface)] text-sm rounded-full py-2 pl-10 pr-4 w-32 sm:w-64 focus:ring-1 focus:ring-[var(--color-primary)] transition-all placeholder:text-slate-500 outfit" placeholder="Search..." type="text"/>
+        </div>
+    </div>
+    <div class="flex items-center gap-4">
+        <button class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all">
+            <span class="material-symbols-outlined">notifications</span>
+        </button>
+        <button class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all">
+            <span class="material-symbols-outlined">settings</span>
+        </button>
+        <div class="h-10 w-[1px] bg-[var(--color-outline-variant)]/20 mx-2"></div>
+        <div class="flex items-center gap-3">
+            <div class="hidden lg:block text-right">
+                <p class="text-sm font-semibold text-[var(--color-on-surface)] leading-tight outfit">Alex Rivera</p>
+                <p class="text-[10px] text-slate-500 font-label outfit">Super Admin</p>
+            </div>
+            <img alt="Admin Profile" class="w-10 h-10 rounded-xl bg-[var(--color-surface-container)] object-cover border border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiwvRijOxcIA8PzPmV4_ePxNAQ1jEK6liXVtWkfs0B0GPSYNv0s2X9bjRrxQARCKCqfkZMd_pN7fsOwKf9m_fJ_15CowBjsePuDTSSAX1-9Vs_i3-l0yrn5GMXq9GUw0e9T_8MqYD5fcbH63KRsAIXgKDhALrSWhkRRooXJVcVzAYfnMs4F7d9jBp7Yl1Es5d241Rjpgf0DTyQZGm_aWG748o3-FXMGSid14TvMD2IxzNtrSDjzE5yeYoJgfU9JpTr1C1EIG_a15o"/>
+        </div>
+    </div>
+</header>
+
+
+        <!-- Main Scrollable Canvas -->
+
+<!-- Dashboard Content -->
+<div class="p-8 max-w-[1600px] mx-auto space-y-12">
+<!-- Hero Section / Header -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="text-5xl font-headline font-light tracking-tight text-white mb-2">Performance <span class="text-primary font-semibold">Pulse</span></h1>
+<p class="text-on-surface-variant font-body max-w-md">Real-time data synchronization with your active marketing funnels.</p>
+</div>
+<div class="flex gap-3">
+<div class="bg-surface-container-low px-4 py-2 rounded-xl flex items-center gap-2 border border-white/5">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="calendar_today">calendar_today</span>
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Last 30 Days</span>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-xl font-manrope text-sm font-bold hover:brightness-110 transition-all">Export PDF</button>
+</div>
+</section>
+<!-- KPI Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Total Users -->
+<div class="bg-surface-container-low rounded-xl p-6 relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-0.5 bg-primary-container"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.1em]">Total Traffic</span>
+<span class="text-xs font-bold text-emerald-400 flex items-center gap-1">+12.4% <span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span></span>
+</div>
+<h3 class="text-3xl font-manrope font-bold text-white tracking-tight">842,910</h3>
+<p class="text-xs text-slate-500 mt-1">Unique visitors this month</p>
+<div class="mt-6 h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-3/4 bg-gradient-to-r from-primary to-primary-container shadow-[0_0_8px_rgba(192,193,255,0.4)]"></div>
+</div>
+</div>
+<!-- Signups -->
+<div class="bg-surface-container-low rounded-xl p-6 relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-0.5 bg-tertiary"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.1em]">New Signups</span>
+<span class="text-xs font-bold text-emerald-400 flex items-center gap-1">+8.1% <span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span></span>
+</div>
+<h3 class="text-3xl font-manrope font-bold text-white tracking-tight">12,402</h3>
+<p class="text-xs text-slate-500 mt-1">Conversion from landing page</p>
+<div class="mt-6 h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-1/2 bg-gradient-to-r from-tertiary to-tertiary-container shadow-[0_0_8px_rgba(255,183,131,0.4)]"></div>
+</div>
+</div>
+<!-- CTR (%) -->
+<div class="bg-surface-container-low rounded-xl p-6 relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-0.5 bg-primary-container"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.1em]">Avg. CTR</span>
+<span class="text-xs font-bold text-rose-400 flex items-center gap-1">-1.2% <span class="material-symbols-outlined text-xs" data-icon="trending_down">trending_down</span></span>
+</div>
+<h3 class="text-3xl font-manrope font-bold text-white tracking-tight">4.82%</h3>
+<p class="text-xs text-slate-500 mt-1">Global ad engagement</p>
+<div class="mt-6 h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-2/5 bg-gradient-to-r from-primary to-primary-container shadow-[0_0_8px_rgba(192,193,255,0.4)]"></div>
+</div>
+</div>
+<!-- Conv. Rate -->
+<div class="bg-surface-container-low rounded-xl p-6 relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-0.5 bg-tertiary"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.1em]">Conv. Rate</span>
+<span class="text-xs font-bold text-emerald-400 flex items-center gap-1">+4.9% <span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span></span>
+</div>
+<h3 class="text-3xl font-manrope font-bold text-white tracking-tight">18.5%</h3>
+<p class="text-xs text-slate-500 mt-1">Lead to customer flow</p>
+<div class="mt-6 h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-2/3 bg-gradient-to-r from-tertiary to-tertiary-container shadow-[0_0_8px_rgba(255,183,131,0.4)]"></div>
+</div>
+</div>
+</section>
+<!-- Charts Section -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Website Traffic (Main Chart) -->
+<div class="lg:col-span-2 bg-surface-container rounded-xl p-8 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-32 h-32 bg-primary/5 blur-[80px] rounded-full"></div>
+<div class="flex justify-between items-start mb-10">
+<div>
+<h4 class="text-xl font-headline font-semibold text-white">Website Traffic</h4>
+<p class="text-sm text-slate-500">Global sessions vs. Page views</p>
+</div>
+<div class="flex gap-2">
+<button class="px-3 py-1 text-[10px] font-bold uppercase rounded-md bg-surface-bright text-primary border border-primary/20">Daily</button>
+<button class="px-3 py-1 text-[10px] font-bold uppercase rounded-md text-slate-500 hover:text-white transition-colors">Weekly</button>
+</div>
+</div>
+<div class="h-[300px] flex items-end justify-between gap-4">
+<!-- Visual placeholder for a complex line chart using custom shapes -->
+<div class="flex-1 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-full h-24 bg-surface-container-highest rounded-t-lg relative group-hover:bg-primary/20 transition-all">
+<div class="absolute bottom-0 left-0 right-0 h-12 bg-primary/40 rounded-t-lg"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-600">MON</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-full h-32 bg-surface-container-highest rounded-t-lg relative group-hover:bg-primary/20 transition-all">
+<div class="absolute bottom-0 left-0 right-0 h-20 bg-primary/40 rounded-t-lg"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-600">TUE</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-full h-48 bg-surface-container-highest rounded-t-lg relative group-hover:bg-primary/20 transition-all">
+<div class="absolute bottom-0 left-0 right-0 h-32 bg-primary/40 rounded-t-lg"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-600">WED</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-full h-40 bg-surface-container-highest rounded-t-lg relative group-hover:bg-primary/20 transition-all">
+<div class="absolute bottom-0 left-0 right-0 h-24 bg-primary/40 rounded-t-lg"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-600">THU</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-full h-56 bg-surface-container-highest rounded-t-lg relative group-hover:bg-primary/20 transition-all">
+<div class="absolute bottom-0 left-0 right-0 h-44 bg-primary/40 rounded-t-lg"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-600">FRI</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-full h-64 bg-surface-container-highest rounded-t-lg relative group-hover:bg-primary/20 transition-all">
+<div class="absolute bottom-0 left-0 right-0 h-52 bg-primary rounded-t-lg shadow-lg shadow-primary/20"></div>
+</div>
+<span class="text-[10px] font-bold text-primary">SAT</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-full h-36 bg-surface-container-highest rounded-t-lg relative group-hover:bg-primary/20 transition-all">
+<div class="absolute bottom-0 left-0 right-0 h-16 bg-primary/40 rounded-t-lg"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-600">SUN</span>
+</div>
+</div>
+</div>
+<!-- Campaign Performance (Bar Chart) -->
+<div class="bg-surface-container rounded-xl p-8">
+<div class="flex justify-between items-start mb-8">
+<div>
+<h4 class="text-xl font-headline font-semibold text-white">Campaigns</h4>
+<p class="text-sm text-slate-500">Reach per platform</p>
+</div>
+</div>
+<div class="space-y-6">
+<div class="space-y-2">
+<div class="flex justify-between text-xs">
+<span class="text-on-surface font-bold uppercase tracking-wider">Instagram Ads</span>
+<span class="text-primary font-bold">88%</span>
+</div>
+<div class="h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-[88%] bg-primary rounded-full"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs">
+<span class="text-on-surface font-bold uppercase tracking-wider">Google Search</span>
+<span class="text-primary font-bold">64%</span>
+</div>
+<div class="h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-[64%] bg-primary rounded-full opacity-70"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs">
+<span class="text-on-surface font-bold uppercase tracking-wider">LinkedIn Promo</span>
+<span class="text-tertiary font-bold">42%</span>
+</div>
+<div class="h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-[42%] bg-tertiary rounded-full"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs">
+<span class="text-on-surface font-bold uppercase tracking-wider">X Campaigns</span>
+<span class="text-primary font-bold">31%</span>
+</div>
+<div class="h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-[31%] bg-primary rounded-full opacity-40"></div>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-white/5">
+<button class="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group">
+<div class="w-1 h-1 bg-primary rounded-full group-hover:w-3 group-hover:h-3 transition-all duration-300"></div>
+                                View Analytics
+                            </button>
+</div>
+</div>
+</section>
+<!-- Tables and Lists -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Top Pages -->
+<div class="lg:col-span-2 bg-surface-container rounded-xl overflow-hidden">
+<div class="p-8 border-b border-white/5 flex justify-between items-center">
+<h4 class="text-xl font-headline font-semibold text-white">Top Converting Pages</h4>
+<button class="text-primary font-bold text-xs uppercase tracking-widest">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">
+<th class="px-8 py-4">Page Path</th>
+<th class="px-8 py-4">Visits</th>
+<th class="px-8 py-4">Bounce Rate</th>
+<th class="px-8 py-4">Conversion</th>
+</tr>
+</thead>
+<tbody class="text-sm font-body">
+<tr class="border-b border-white/5 hover:bg-surface-bright/30 transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="home">home</span>
+</div>
+<span class="text-on-surface font-medium">/home</span>
+</div>
+</td>
+<td class="px-8 py-5 text-on-surface-variant">42,012</td>
+<td class="px-8 py-5 text-on-surface-variant">24.5%</td>
+<td class="px-8 py-5">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold">4.2%</span>
+</td>
+</tr>
+<tr class="border-b border-white/5 hover:bg-surface-bright/30 transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-sm" data-icon="shopping_cart">shopping_cart</span>
+</div>
+<span class="text-on-surface font-medium">/product-pro-plan</span>
+</div>
+</td>
+<td class="px-8 py-5 text-on-surface-variant">28,550</td>
+<td class="px-8 py-5 text-on-surface-variant">18.2%</td>
+<td class="px-8 py-5">
+<span class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full text-xs font-bold">12.8%</span>
+</td>
+</tr>
+<tr class="border-b border-white/5 hover:bg-surface-bright/30 transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="sell">sell</span>
+</div>
+<span class="text-on-surface font-medium">/pricing-enterprise</span>
+</div>
+</td>
+<td class="px-8 py-5 text-on-surface-variant">15,221</td>
+<td class="px-8 py-5 text-on-surface-variant">32.1%</td>
+<td class="px-8 py-5">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold">8.4%</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Activity Feed -->
+<div class="bg-surface-container rounded-xl p-8">
+<h4 class="text-xl font-headline font-semibold text-white mb-8">Team Updates</h4>
+<div class="space-y-8">
+<div class="flex gap-4 group">
+<div class="relative">
+<img alt="Sarah Jenks" class="w-10 h-10 rounded-full grayscale group-hover:grayscale-0 transition-all" data-alt="Avatar of Sarah Jenks, marketing manager" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClNvkiBzAkAoVYgQcPO-qF-wQ8HtZJEKlrW7ABPxRlju2RpEgg2LD1yAabViz8HZ1WmOFb0ELvSaBPFwCFTBY6aPF5WfnVo5GSZrb_WoxO3DjcHZzMGCNJdE4s34Z_2BrRHVmD_NAQKFrZwLOpAwUsQBWP8VJkWKvau1XWe8V6fyJ31Zg5Br-FVkkYexYErZAFdluLk5ze_x0E2C-idfcRHR5eYnaZfOI5kx447GkA6uid0L0w_h5k9mDfIImBFtLIv_N4jP8kzWM"/>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 border-2 border-surface-container rounded-full"></div>
+</div>
+<div class="flex flex-col">
+<p class="text-sm text-on-surface"><span class="font-bold">Sarah Jenks</span> updated <span class="text-primary font-medium">Q4 Roadmap</span></p>
+<span class="text-[10px] text-slate-500 uppercase mt-1 font-bold">14 minutes ago</span>
+</div>
+</div>
+<div class="flex gap-4 group">
+<div class="relative">
+<img alt="Marcus Thorne" class="w-10 h-10 rounded-full grayscale group-hover:grayscale-0 transition-all" data-alt="Avatar of Marcus Thorne, creative director" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPRmUXvwtmXMIt8AOMd4fKWs1HjkeCcZQA_jRxBwkB9h5WTZHFaHgv0bO78aF_ZaOwVeuU9PWusC_OxTAm1T3Fj5KzHVkFTMpNmuRhZ2nvIbgBCAhpM7P1x9HgGCjuCOy922cwE-78XAU2xbFq2gwP3cGhnUXUbNfodkIU1huv-NcpPia86zLLzMRNUd4pETzZio2a2ao2c_4BA4qTqh1mDb0EElFUgifk-ewokSTwejQTJ9yiR6hVWgSryrac1gB8ZYUnzqiZEQI"/>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-amber-500 border-2 border-surface-container rounded-full"></div>
+</div>
+<div class="flex flex-col">
+<p class="text-sm text-on-surface"><span class="font-bold">Marcus Thorne</span> pushed new creatives to <span class="text-tertiary font-medium">Google Ads</span></p>
+<span class="text-[10px] text-slate-500 uppercase mt-1 font-bold">2 hours ago</span>
+</div>
+</div>
+<div class="flex gap-4 group">
+<div class="relative">
+<img alt="Lydia Chen" class="w-10 h-10 rounded-full grayscale group-hover:grayscale-0 transition-all" data-alt="Avatar of Lydia Chen, data scientist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3x6TzQ_OlpCAgkAIW0cPTnLu6ne63BptVYo1nHZH5QN75UUbc61Srrc0PcbNhvhykqYkuk0xsPBwM6bLoeKIP9koFRQziXs2RpCYlwpDpfNe2e5lP8iVZ6d_Q0c7wYqzQGQWBzTXccvhi-3EGqE-uXManNTWXWIRcfTUf0xFeHUbtjTjHsIa9R96AKxYAWh4dDnQTSUHbeZxei9O6pGUJjkHMJivx6RFH5aC1KFmA18R-ixqAt9LvyADOFHpn5ytjI6tni19UW5o"/>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-indigo-500 border-2 border-surface-container rounded-full"></div>
+</div>
+<div class="flex flex-col">
+<p class="text-sm text-on-surface"><span class="font-bold">Lydia Chen</span> exported monthly <span class="text-primary font-medium">KPI Report</span></p>
+<span class="text-[10px] text-slate-500 uppercase mt-1 font-bold">5 hours ago</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-10 py-3 rounded-xl border border-white/5 hover:bg-white/5 text-slate-400 text-xs font-bold uppercase tracking-widest transition-all">View All Activity</button>
+</div>
+</section>
+</div>
+        </div>
+        <!-- Footer Placeholder -->
+    <!-- 
+  XenonOS Shared Component: Footer (v5.0 - New Typography System)
+-->
+<footer class="mt-12 px-8 py-6 border-t border-[var(--color-outline-variant)]/15 bg-[var(--color-surface)] flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-300 outfit">
+    <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">© 2024 Obsidian Architect • System Status: <span class="text-[var(--color-success)]">Operational</span></p>
+    <div class="flex gap-4 items-center">
+        <span class="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse shadow-[0_0_10px_rgba(99,102,241,0.4)]"></span>
+        <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Region: Global-Alpha-1</span>
+    </div>
+</footer>
+
+</main>
+
+    <script src="../../assets/js/app.js"></script>
+</body>
+</html>
+
+
+
