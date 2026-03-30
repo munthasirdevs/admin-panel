@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Team Members - System Admin</title>
+    
+    <!-- Core Assets -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="../../assets/js/tailwind-config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body class="flex min-h-screen bg-surface">
+    <!-- Sidebar Placeholder -->
+    <!-- 
+  XenonOS Shared Component: Sidebar (v5.0 - New Typography System)
+  Reference: Obsidian / Outfit & Syne
+-->
+<!-- 
+  XenonOS Shared Component: Sidebar (v5.0 - New Typography System)
+  Reference: Obsidian / Outfit & Syne
+-->
+<!-- 
+  XenonOS Shared Component: Modern Interactive Sidebar (v5.0)
+  Collapsible, Hover-to-Expand, and Pinned States
+-->
+<aside class="modern-sidebar outfit lg:translate-x-0 -translate-x-full transition-all duration-300 ease-in-out">
+    <!-- Branding -->
+    <div class="px-5 mb-8 mt-8 flex items-center gap-4 overflow-hidden">
+        <div class="min-w-[40px] h-10 rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[#3f4077] flex items-center justify-center shadow-lg">
+            <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">diamond</span>
+        </div>
+        <div class="nav-label">
+            <h1 class="text-xl font-bold text-[var(--color-on-surface)] font-headline tracking-tight syne">Obsidian</h1>
+            <p class="text-[10px] text-slate-500 font-label uppercase tracking-[0.2em] outfit">Management Hub</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex-1 space-y-1">
+        <!-- 1. Dashboard -->
+        <a href="../dashboard/dashboard.html" class="nav-item group" data-tooltip="Dashboard">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="nav-label text-sm">Dashboard</span>
+        </a>
+
+        <!-- 2. Clients -->
+        <a href="../clients/clients-list.html" class="nav-item group" data-tooltip="Clients">
+            <span class="material-symbols-outlined">group</span>
+            <span class="nav-label text-sm">Clients</span>
+        </a>
+
+        <!-- 3. Projects -->
+        <a href="../projects/all-projects.html" class="nav-item group" data-tooltip="Projects">
+            <span class="material-symbols-outlined">folder_open</span>
+            <span class="nav-label text-sm">Projects</span>
+        </a>
+
+        <!-- 4. Tasks -->
+        <a href="../tasks/task-list.html" class="nav-item group" data-tooltip="Tasks">
+            <span class="material-symbols-outlined">assignment</span>
+            <span class="nav-label text-sm">Tasks</span>
+        </a>
+
+        <!-- 5. Communication -->
+        <a href="../chat/communication.html" class="nav-item group" data-tooltip="Communication">
+            <span class="material-symbols-outlined">forum</span>
+            <span class="nav-label text-sm">Communication</span>
+        </a>
+
+        <!-- 6. Files -->
+        <a href="../files/file-manager.html" class="nav-item group" data-tooltip="Files">
+            <span class="material-symbols-outlined">folder_shared</span>
+            <span class="nav-label text-sm">Files</span>
+        </a>
+
+        <!-- 7. Payment -->
+        <a href="../payment/payment.html" class="nav-item group" data-tooltip="Payment">
+            <span class="material-symbols-outlined">payments</span>
+            <span class="nav-label text-sm">Payment</span>
+        </a>
+
+        <!-- 8. Team -->
+        <a href="../team/team-members.html" class="nav-item group" data-tooltip="Team">
+            <span class="material-symbols-outlined">badge</span>
+            <span class="nav-label text-sm">Team Members</span>
+        </a>
+
+        <!-- 9. Analytics -->
+        <a href="../Overview Analytics/executive.html" class="nav-item group" data-tooltip="Analytics">
+            <span class="material-symbols-outlined">analytics</span>
+            <span class="nav-label text-sm">Analytics</span>
+        </a>
+
+        <!-- 10. Reports -->
+        <a href="../Performance Reports/financial.html" class="nav-item group" data-tooltip="Reports">
+            <span class="material-symbols-outlined">trending_up</span>
+            <span class="nav-label text-sm">Reports</span>
+        </a>
+
+        <!-- 11. Activity -->
+        <a href="../activity/activity-logs.html" class="nav-item group" data-tooltip="Activity">
+            <span class="material-symbols-outlined">history</span>
+            <span class="nav-label text-sm">Activity Logs</span>
+        </a>
+
+        <!-- Divider -->
+        <div class="mx-6 my-4 border-t border-[var(--color-outline-variant)]/10"></div>
+
+        <!-- 12. Settings -->
+        <a href="../settings/settings.html" class="nav-item group" data-tooltip="Settings">
+            <span class="material-symbols-outlined">settings</span>
+            <span class="nav-label text-sm">Settings</span>
+        </a>
+    </nav>
+
+    <!-- Pin Toggle Button -->
+    <div id="pin-sidebar" class="pin-toggle mx-4 mb-4 flex items-center justify-center shadow-lg" title="Pin Sidebar">
+        <span class="material-symbols-outlined text-sm">push_pin</span>
+    </div>
+</aside>
+
+
+    <!-- Main Content -->
+    <main class="flex-1 min-h-screen flex flex-col">
+        <!-- Header Placeholder -->
+        <!-- 
+  XenonOS Shared Component: Header (v5.0 - New Typography System)
+-->
+<header class="bg-[var(--color-surface)]/80 backdrop-blur-xl sticky top-0 z-40 w-full px-8 py-4 flex justify-between items-center shadow-[0_20px_40px_rgba(0,0,0,0.3)] outfit">
+    <div class="flex items-center gap-6">
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 rounded-xl flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all border border-white/5">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+        
+        <div class="relative group">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg group-focus-within:text-[var(--color-primary)] transition-colors">search</span>
+            <input class="bg-[var(--color-surface-container)] border-none text-[var(--color-on-surface)] text-sm rounded-full py-2 pl-10 pr-4 w-32 sm:w-64 focus:ring-1 focus:ring-[var(--color-primary)] transition-all placeholder:text-slate-500 outfit" placeholder="Search..." type="text"/>
+        </div>
+    </div>
+    <div class="flex items-center gap-4">
+        <button class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all">
+            <span class="material-symbols-outlined">notifications</span>
+        </button>
+        <button class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all">
+            <span class="material-symbols-outlined">settings</span>
+        </button>
+        <div class="h-10 w-[1px] bg-[var(--color-outline-variant)]/20 mx-2"></div>
+        <div class="flex items-center gap-3">
+            <div class="hidden lg:block text-right">
+                <p class="text-sm font-semibold text-[var(--color-on-surface)] leading-tight outfit">Alex Rivera</p>
+                <p class="text-[10px] text-slate-500 font-label outfit">Super Admin</p>
+            </div>
+            <img alt="Admin Profile" class="w-10 h-10 rounded-xl bg-[var(--color-surface-container)] object-cover border border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiwvRijOxcIA8PzPmV4_ePxNAQ1jEK6liXVtWkfs0B0GPSYNv0s2X9bjRrxQARCKCqfkZMd_pN7fsOwKf9m_fJ_15CowBjsePuDTSSAX1-9Vs_i3-l0yrn5GMXq9GUw0e9T_8MqYD5fcbH63KRsAIXgKDhALrSWhkRRooXJVcVzAYfnMs4F7d9jBp7Yl1Es5d241Rjpgf0DTyQZGm_aWG748o3-FXMGSid14TvMD2IxzNtrSDjzE5yeYoJgfU9JpTr1C1EIG_a15o"/>
+        </div>
+    </div>
+</header>
+
+
+        <!-- Main Scrollable Canvas -->
+<div class="flex items-center gap-4 flex-1 max-w-xl">
+<div class="relative w-full group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-lg py-2 pl-10 pr-4 text-sm text-on-surface placeholder:text-outline/60 focus:ring-1 focus:ring-primary/30 transition-all" placeholder="Search team, projects or assets..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative text-outline hover:text-white transition-all">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-tertiary rounded-full border-2 border-surface-dim"></span>
+</button>
+<button class="text-outline hover:text-white transition-all">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant/20 mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface leading-none">Alex Rivera</p>
+<p class="text-[10px] text-outline uppercase tracking-wider mt-1">Admin</p>
+</div>
+<img class="w-9 h-9 rounded-lg object-cover ring-2 ring-outline-variant/20" data-alt="Profile picture of Admin User" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF4Z2T2w3YiQoMixbdp5pEgt271Wc-tMLvsv8DqMdAxWWm-_16LLIS6hR8hB1AJUbrGSBE6ap4px2SyAomu93bRWrqE_w2cIKrtv13qyvtY4D3aORqa44VprPg5G21EmUtlLy4lo2tuDzuFF2PtqUbKb8HfqxglgIZhdbdDDqoRJkSzhVLU2Xn-4l5cuDW42C_kfpQvH8CVdezPCIJUcuZskoraKbfyJn3Lzn2sWoL8l1TxoHJD_9qWXTWiQaF_VjDnySfRi9yIFM"/>
+</div>
+</div>
+</header>
+<!-- Content Body -->
+<div class="pt-24 pb-12 px-8">
+<!-- Page Header Section -->
+<section class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="font-headline text-4xl font-light tracking-tight text-on-surface mb-2">Team Members</h1>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_rgba(192,193,255,0.6)]"></span>
+<p class="text-sm text-on-surface-variant">Active workforce of 12 specialists across 4 departments</p>
+</div>
+</div>
+<button class="inline-flex items-center justify-center gap-2 bg-primary px-6 py-3 rounded-xl text-on-primary font-semibold text-sm hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined text-lg">person_add</span>
+                    Add New Team Member
+                </button>
+</section>
+<!-- Filters & Bulk Selection -->
+<section class="mb-8 flex flex-wrap items-center gap-4">
+<div class="flex items-center gap-2 bg-surface-container p-1 rounded-xl">
+<button class="px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest text-primary bg-surface-container-high shadow-sm">All</button>
+<button class="px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest text-outline hover:text-on-surface transition-colors">Designers</button>
+<button class="px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest text-outline hover:text-on-surface transition-colors">Developers</button>
+<button class="px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest text-outline hover:text-on-surface transition-colors">PMs</button>
+<button class="px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest text-outline hover:text-on-surface transition-colors">QA</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/20 mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="relative group">
+<select class="appearance-none bg-surface-container-low border border-outline-variant/10 rounded-lg pl-4 pr-10 py-2 text-xs font-medium text-on-surface-variant focus:ring-1 focus:ring-primary/30">
+<option>Status: All</option>
+<option>Active</option>
+<option>Inactive</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-xs pointer-events-none">expand_more</span>
+</div>
+<div class="relative group">
+<select class="appearance-none bg-surface-container-low border border-outline-variant/10 rounded-lg pl-4 pr-10 py-2 text-xs font-medium text-on-surface-variant focus:ring-1 focus:ring-primary/30">
+<option>Project: All</option>
+<option>Obsidian AI</option>
+<option>Nexus Mobile</option>
+<option>Vault ERP</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-xs pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="ml-auto flex items-center gap-4">
+<p class="text-xs text-outline font-medium">Selected: 0</p>
+<button class="text-outline hover:text-error-container/80 transition-colors p-2 rounded-lg hover:bg-error-container/10">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</section>
+<!-- Team Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Member Card 1 -->
+<div class="group relative bg-surface-container rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40 indigo-glow">
+<div class="absolute top-4 left-4 z-10">
+<input class="w-4 h-4 rounded border-outline-variant/30 bg-transparent text-primary focus:ring-offset-0 focus:ring-primary/30" type="checkbox"/>
+</div>
+<div class="absolute top-4 right-4 flex gap-1">
+<button class="p-1.5 text-outline hover:text-white hover:bg-surface-bright rounded-lg transition-all">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-1.5 text-outline hover:text-white hover:bg-surface-bright rounded-lg transition-all">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="relative mb-4">
+<img class="w-20 h-20 rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Avatar of Jordan Smith, Senior Designer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsjfh_2coQKvMNrDbY1AveeZH3F4zJlen_3AEAHpIT9qgFyEVPXH0vXQMy0_U4XY0VILmpfu-SLZHukaQrwH5IpoolZK1x2Y4dp2FdAd9iUS0rHRmQMlKxmV6cMkwWvSxGaBY6RpM2rpWvfAMQO1bomHCGF4rvK_I_H2Qu61VXKVSqyNJRuT6QVfquNuqzKYbWEYukdSLhceL4G919METNcoTUSBv3TcRNscBogoEkxQfTdBtpnZDt_Ad0uSes6fYRbY2rUJ63UzI"/>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 bg-emerald-500 border-4 border-surface-container rounded-full"></span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-1">Jordan Smith</h3>
+<p class="text-xs font-bold uppercase tracking-widest text-outline mb-6">Senior Designer</p>
+<div class="w-full flex items-center justify-between py-3 border-y border-outline-variant/5 mb-6">
+<div class="text-left">
+<p class="text-[10px] text-outline font-bold uppercase tracking-tighter mb-1">Projects</p>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container border-2 border-surface-container flex items-center justify-center text-[8px] font-bold" title="Project Obsidian">O</div>
+<div class="w-6 h-6 rounded-full bg-tertiary-container border-2 border-surface-container flex items-center justify-center text-[8px] font-bold" title="Nexus App">N</div>
+<div class="w-6 h-6 rounded-full bg-surface-container-highest border-2 border-surface-container flex items-center justify-center text-[8px] font-bold text-outline">+2</div>
+</div>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-outline font-bold uppercase tracking-tighter mb-1">Status</p>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide bg-primary/10 text-primary">Active</span>
+</div>
+</div>
+<div class="w-full flex items-center justify-between text-xs">
+<span class="text-outline">Last seen: 2m ago</span>
+<button class="text-primary font-bold hover:underline">View Profile</button>
+</div>
+</div>
+</div>
+<!-- Member Card 2 -->
+<div class="group relative bg-surface-container rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40 indigo-glow">
+<div class="absolute top-4 left-4 z-10">
+<input class="w-4 h-4 rounded border-outline-variant/30 bg-transparent text-primary focus:ring-offset-0 focus:ring-primary/30" type="checkbox"/>
+</div>
+<div class="absolute top-4 right-4 flex gap-1">
+<button class="p-1.5 text-outline hover:text-white hover:bg-surface-bright rounded-lg transition-all">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-1.5 text-outline hover:text-white hover:bg-surface-bright rounded-lg transition-all">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="relative mb-4">
+<img class="w-20 h-20 rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Avatar of Sarah Chen, Lead Developer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpb_H5RPVotoUIsCRxEWjLSm1YMr1xAC1GYlKJ9BwK4pTMcB5Wuwea-dLYuMuJm1ZE9Syoo_amurN9UM-Z4vNj25Lpgs7X8azzQ2_pQBL2YaZnB2ybd8cwhMaw2zJ-qdB9CuhrV-eiZhFms7sdPVnKiRFWyElNWW4a-ZtBVFFphy_uK7p1rW9XnjdaeY7qJ9tp8O4-oF7W0goSDD60uqi3va8f3albceu4iyo8bJJ00YeIJWrjGjAVBp3y5Lrwu-qJfwrN2C8sc5I"/>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 bg-emerald-500 border-4 border-surface-container rounded-full"></span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-1">Sarah Chen</h3>
+<p class="text-xs font-bold uppercase tracking-widest text-outline mb-6">Lead Developer</p>
+<div class="w-full flex items-center justify-between py-3 border-y border-outline-variant/5 mb-6">
+<div class="text-left">
+<p class="text-[10px] text-outline font-bold uppercase tracking-tighter mb-1">Projects</p>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-primary-container border-2 border-surface-container flex items-center justify-center text-[8px] font-bold" title="Vault ERP">V</div>
+<div class="w-6 h-6 rounded-full bg-surface-container-highest border-2 border-surface-container flex items-center justify-center text-[8px] font-bold text-outline">+1</div>
+</div>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-outline font-bold uppercase tracking-tighter mb-1">Status</p>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide bg-primary/10 text-primary">Active</span>
+</div>
+</div>
+<div class="w-full flex items-center justify-between text-xs">
+<span class="text-outline">Last seen: 1h ago</span>
+<button class="text-primary font-bold hover:underline">View Profile</button>
+</div>
+</div>
+</div>
+<!-- Member Card 3 -->
+<div class="group relative bg-surface-container rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40 indigo-glow">
+<div class="absolute top-4 left-4 z-10">
+<input class="w-4 h-4 rounded border-outline-variant/30 bg-transparent text-primary focus:ring-offset-0 focus:ring-primary/30" type="checkbox"/>
+</div>
+<div class="absolute top-4 right-4 flex gap-1">
+<button class="p-1.5 text-outline hover:text-white hover:bg-surface-bright rounded-lg transition-all">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-1.5 text-outline hover:text-white hover:bg-surface-bright rounded-lg transition-all">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="relative mb-4">
+<img class="w-20 h-20 rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Avatar of Marcus Aurelius, Product Manager" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxXebGQLGkkRth7kQgYB7dKh69VONdQQVty8IDQSDica63nIubAVJVWlizVYqSF8NC5-3NljBRCHBQZJcAC5E4IexVyX9hREIZjVEa3rK9iD5PqdgehvQcm4YGhL8bXKwPNfauY2CCxcRXJDkEJ4BlEpU2OW0VUpRScuBPa1ZeP_9xFPu_efTUE04qIWjF6hDfCcLNGQX5Q32z0-0hUpuJOMEtdv_tvpDXJsS2NyYBT0cE_cIDyO-Oz9SCEruMyZPB3ZRaJrLlYZE"/>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 bg-outline-variant border-4 border-surface-container rounded-full"></span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-1">Marcus Aurelius</h3>
+<p class="text-xs font-bold uppercase tracking-widest text-outline mb-6">Product Manager</p>
+<div class="w-full flex items-center justify-between py-3 border-y border-outline-variant/5 mb-6">
+<div class="text-left">
+<p class="text-[10px] text-outline font-bold uppercase tracking-tighter mb-1">Projects</p>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-tertiary-container border-2 border-surface-container flex items-center justify-center text-[8px] font-bold" title="Nexus App">N</div>
+</div>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-outline font-bold uppercase tracking-tighter mb-1">Status</p>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide bg-surface-variant text-outline">Inactive</span>
+</div>
+</div>
+<div class="w-full flex items-center justify-between text-xs">
+<span class="text-outline">Last seen: 3d ago</span>
+<button class="text-primary font-bold hover:underline">View Profile</button>
+</div>
+</div>
+</div>
+<!-- Member Card 4 -->
+<div class="group relative bg-surface-container rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40 indigo-glow">
+<div class="absolute top-4 left-4 z-10">
+<input class="w-4 h-4 rounded border-outline-variant/30 bg-transparent text-primary focus:ring-offset-0 focus:ring-primary/30" type="checkbox"/>
+</div>
+<div class="absolute top-4 right-4 flex gap-1">
+<button class="p-1.5 text-outline hover:text-white hover:bg-surface-bright rounded-lg transition-all">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-1.5 text-outline hover:text-white hover:bg-surface-bright rounded-lg transition-all">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="relative mb-4">
+<img class="w-20 h-20 rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Avatar of David Kim, QA Lead" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO1H5uH_4G1Wasukw44SeR54EEFjW0SJUfdIDUzYYoHtLPlm4wB7rz09MGZg4VJunRvMJklYCRhqeiCfmVo3mGQA0jKwx0bhk9SfkHN_NN1kYi8W8slogUS0rkbnRf0E5h8jF3mqKpa4zEL2nqvIhPP-bxX6iKcKk8Bg3csQvHC54sCTTxRmjWK5JfNyNaKaw2puZ8iAq_NLjoISlOh3IDuo2YZ1eF2YR4Uec_e_slXFU0XO94mBtKLmECyOEnKl8t4yHV_NVzX54"/>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 bg-emerald-500 border-4 border-surface-container rounded-full"></span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-1">David Kim</h3>
+<p class="text-xs font-bold uppercase tracking-widest text-outline mb-6">QA Lead</p>
+<div class="w-full flex items-center justify-between py-3 border-y border-outline-variant/5 mb-6">
+<div class="text-left">
+<p class="text-[10px] text-outline font-bold uppercase tracking-tighter mb-1">Projects</p>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container border-2 border-surface-container flex items-center justify-center text-[8px] font-bold" title="Project Obsidian">O</div>
+<div class="w-6 h-6 rounded-full bg-primary-container border-2 border-surface-container flex items-center justify-center text-[8px] font-bold" title="Vault ERP">V</div>
+</div>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-outline font-bold uppercase tracking-tighter mb-1">Status</p>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide bg-primary/10 text-primary">Active</span>
+</div>
+</div>
+<div class="w-full flex items-center justify-between text-xs">
+<span class="text-outline">Last seen: 14m ago</span>
+<button class="text-primary font-bold hover:underline">View Profile</button>
+</div>
+</div>
+</div>
+<!-- Member Card 5 -->
+<div class="group relative bg-surface-container rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40 indigo-glow">
+<div class="absolute top-4 left-4 z-10">
+<input class="w-4 h-4 rounded border-outline-variant/30 bg-transparent text-primary focus:ring-offset-0 focus:ring-primary/30" type="checkbox"/>
+</div>
+<div class="absolute top-4 right-4 flex gap-1">
+<button class="p-1.5 text-outline hover:text-white hover:bg-surface-bright rounded-lg transition-all">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-1.5 text-outline hover:text-white hover:bg-surface-bright rounded-lg transition-all">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="relative mb-4">
+<img class="w-20 h-20 rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Avatar of Elena Rodriguez, UI Designer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZMda-YrA21V2b1sCcDVHLTrdDM8CRVYBr4wWKcl8C0LkhHhSOpiNnkFIM1QTtXBg42cWxizLHRu6dCaKTBHyEFHRKIGC6R_w5Ux6t995w9gFtdcpyFwjcN8JE8R3TzS1Apn4gYnKc8Sm339PxxqMhOHqSxewS8Rp_KbjIf2lvwmYTrSfOFj7BLT2_YoMi73rmeHCgIk3TxapGI40x5o_UOwdQKB96qHrRvBkxRASEptxB_1gpNL_3OwoEybvsjPLP8zJUfr_5m-Y"/>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 bg-emerald-500 border-4 border-surface-container rounded-full"></span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-1">Elena Rodriguez</h3>
+<p class="text-xs font-bold uppercase tracking-widest text-outline mb-6">UI Designer</p>
+<div class="w-full flex items-center justify-between py-3 border-y border-outline-variant/5 mb-6">
+<div class="text-left">
+<p class="text-[10px] text-outline font-bold uppercase tracking-tighter mb-1">Projects</p>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container border-2 border-surface-container flex items-center justify-center text-[8px] font-bold" title="Project Obsidian">O</div>
+</div>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-outline font-bold uppercase tracking-tighter mb-1">Status</p>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide bg-primary/10 text-primary">Active</span>
+</div>
+</div>
+<div class="w-full flex items-center justify-between text-xs">
+<span class="text-outline">Last seen: 5h ago</span>
+<button class="text-primary font-bold hover:underline">View Profile</button>
+</div>
+</div>
+</div>
+<!-- Add Member Placeholder Card -->
+<button class="group border-2 border-dashed border-outline-variant/20 rounded-xl p-6 flex flex-col items-center justify-center text-center hover:border-primary/40 hover:bg-surface-container-low transition-all duration-300">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-high flex items-center justify-center mb-4 group-hover:bg-primary/10 group-hover:scale-110 transition-all">
+<span class="material-symbols-outlined text-3xl text-outline group-hover:text-primary">add</span>
+</div>
+<p class="text-sm font-bold text-on-surface-variant">Add new team member</p>
+<p class="text-[10px] text-outline uppercase tracking-widest mt-1">4 available slots</p>
+</button>
+</div>
+<!-- Stats Footer (Optional Bento Style) -->
+<section class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-surface-container-low p-6 rounded-xl border-l-2 border-primary-container">
+<p class="text-[10px] font-bold uppercase tracking-widest text-outline mb-1">Retention</p>
+<p class="text-2xl font-light text-on-surface">98.4%</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border-l-2 border-primary-container">
+<p class="text-[10px] font-bold uppercase tracking-widest text-outline mb-1">Availability</p>
+<p class="text-2xl font-light text-on-surface">82%</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border-l-2 border-primary-container">
+<p class="text-[10px] font-bold uppercase tracking-widest text-outline mb-1">Avg Project Load</p>
+<p class="text-2xl font-light text-on-surface">2.4</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border-l-2 border-primary-container flex items-center justify-between">
+<div>
+<p class="text-[10px] font-bold uppercase tracking-widest text-outline mb-1">Quick Report</p>
+<p class="text-sm font-bold text-primary">Download PDF</p>
+</div>
+<span class="material-symbols-outlined text-outline">description</span>
+</div>
+</section>
+</div>
+    <!-- Footer Placeholder -->
+    <!-- 
+  XenonOS Shared Component: Footer (v5.0 - New Typography System)
+-->
+<footer class="mt-12 px-8 py-6 border-t border-[var(--color-outline-variant)]/15 bg-[var(--color-surface)] flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-300 outfit">
+    <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">© 2024 Obsidian Architect • System Status: <span class="text-[var(--color-success)]">Operational</span></p>
+    <div class="flex gap-4 items-center">
+        <span class="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse shadow-[0_0_10px_rgba(99,102,241,0.4)]"></span>
+        <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Region: Global-Alpha-1</span>
+    </div>
+</footer>
+
+</main>
+        </div>
+    </main>
+
+    <script src="../../assets/js/app.js"></script>
+</body>
+</html>
+
+
+

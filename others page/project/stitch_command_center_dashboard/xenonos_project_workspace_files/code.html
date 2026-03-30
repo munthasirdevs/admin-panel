@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>XenonOS | Files Workspace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600&amp;family=Space+Grotesk:wght@700&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-container": "#452000",
+                        "inverse-surface": "#dfe2f1",
+                        "primary-fixed": "#e1e0ff",
+                        "surface-variant": "#313540",
+                        "tertiary": "#ffb783",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-error": "#690005",
+                        "on-secondary-container": "#b2b3f2",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#171b26",
+                        "secondary-fixed-dim": "#c0c1ff",
+                        "secondary-fixed": "#e1e0ff",
+                        "on-surface-variant": "#c7c4d7",
+                        "on-secondary": "#292a60",
+                        "secondary": "#c0c1ff",
+                        "on-surface": "#dfe2f1",
+                        "background": "#0f131d",
+                        "on-primary-container": "#0d0096",
+                        "on-tertiary": "#4f2500",
+                        "tertiary-fixed-dim": "#ffb783",
+                        "surface-tint": "#c0c1ff",
+                        "on-primary": "#1000a9",
+                        "primary-container": "#8083ff",
+                        "outline-variant": "#464554",
+                        "on-primary-fixed": "#07006c",
+                        "tertiary-fixed": "#ffdcc5",
+                        "inverse-on-surface": "#2c303b",
+                        "primary": "#c0c1ff",
+                        "on-secondary-fixed-variant": "#404178",
+                        "error-container": "#93000a",
+                        "error": "#ffb4ab",
+                        "surface": "#0f131d",
+                        "surface-container-highest": "#313540",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "surface-container-high": "#262a35",
+                        "on-tertiary-fixed-variant": "#703700",
+                        "surface-container": "#1c1f2a",
+                        "outline": "#908fa0",
+                        "inverse-primary": "#494bd6",
+                        "on-tertiary-fixed": "#301400",
+                        "secondary-container": "#42447b",
+                        "surface-bright": "#353944",
+                        "tertiary-container": "#d97721",
+                        "surface-container-lowest": "#0a0e18",
+                        "on-background": "#dfe2f1",
+                        "on-secondary-fixed": "#13144a",
+                        "surface-dim": "#0f131d"
+                    },
+                    fontFamily: {
+                        "syne": ["Syne", "sans-serif"],
+                        "outfit": ["Outfit", "sans-serif"],
+                        "headline": ["Space Grotesk", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-glass {
+            background: rgba(28, 31, 42, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .indigo-gradient {
+            background: linear-gradient(135deg, #c0c1ff 0%, #8083ff 100%);
+        }
+        .bento-card-hover:hover {
+            transform: scale(1.02);
+            background-color: #262a35;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-outfit selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar (Persistent) -->
+<aside class="h-screen w-64 fixed left-0 top-0 z-40 bg-[#1c1f2a] flex flex-col p-4 gap-2">
+<div class="mb-8 px-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl indigo-gradient flex items-center justify-center shadow-[0_0_20px_rgba(99,102,241,0.3)]">
+<span class="material-symbols-outlined text-on-primary" style="font-variation-settings: 'FILL' 1;">dataset</span>
+</div>
+<div>
+<h1 class="font-syne font-extrabold text-[#c0c1ff] text-lg leading-none">XenonOS</h1>
+<p class="font-outfit text-[10px] text-on-surface-variant tracking-widest uppercase">Project Intelligence</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-2">
+<!-- Navigation Items -->
+<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 hover:bg-[#313540]/30 rounded-xl transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 hover:bg-[#313540]/30 rounded-xl transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-sm font-medium">Projects</span>
+</a>
+<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 hover:bg-[#313540]/30 rounded-xl transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="text-sm font-medium">Tasks</span>
+</a>
+<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 hover:bg-[#313540]/30 rounded-xl transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">Team</span>
+</a>
+<!-- Active State: Files -->
+<a class="flex items-center gap-3 bg-[#313540] text-[#c0c1ff] rounded-xl px-4 py-3 border-l-4 border-[#6366f1] shadow-[0_0_15px_rgba(99,102,241,0.2)] scale-[1.02]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">folder</span>
+<span class="text-sm font-bold">Files</span>
+</a>
+<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 hover:bg-[#313540]/30 rounded-xl transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-sm font-medium">Billing</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-outline-variant/10 pt-4 flex flex-col gap-2">
+<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 hover:bg-[#313540]/30 rounded-xl transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="text-sm font-medium">Support</span>
+</a>
+<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 hover:bg-[#313540]/30 rounded-xl transition-transform duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-sm font-medium">Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 bg-[#0f131d]/70 backdrop-blur-xl flex justify-between items-center w-full px-8 py-4">
+<div class="flex items-center gap-4">
+<div class="flex flex-col">
+<h2 class="font-syne font-extrabold text-2xl tracking-tight text-[#c0c1ff]">Project Assets</h2>
+<p class="text-xs text-on-surface-variant font-outfit">Workspace / Files / Q4_Strategy_Assets</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="bg-surface-container-lowest border-none rounded-xl pl-10 pr-4 py-2 text-sm w-64 focus:ring-2 focus:ring-primary/40 transition-all placeholder:text-outline" placeholder="Search workspace..." type="text"/>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface">settings</span>
+</button>
+<button class="indigo-gradient text-on-primary font-bold px-6 py-2 rounded-xl text-sm shadow-[0_4px_12px_rgba(99,102,241,0.3)] hover:scale-105 active:scale-95 transition-all">
+                    Create
+                </button>
+</div>
+</header>
+<div class="p-8">
+<!-- Bento Layout Container -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Upload Zone / Drop Area -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container rounded-2xl p-6 border-2 border-dashed border-outline-variant/30 flex flex-col items-center justify-center text-center gap-4 group hover:border-primary/50 transition-all duration-400 bg-gradient-to-br from-surface-container to-surface-container-low">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-3xl text-primary">cloud_upload</span>
+</div>
+<div>
+<p class="font-syne font-bold text-lg text-on-surface">Drop files here</p>
+<p class="text-sm text-on-surface-variant font-outfit">or click to browse from device</p>
+</div>
+<div class="flex gap-2 mt-2">
+<span class="px-2 py-1 rounded-md bg-surface-container-lowest text-[10px] text-outline font-medium uppercase tracking-wider">PDF</span>
+<span class="px-2 py-1 rounded-md bg-surface-container-lowest text-[10px] text-outline font-medium uppercase tracking-wider">PNG</span>
+<span class="px-2 py-1 rounded-md bg-surface-container-lowest text-[10px] text-outline font-medium uppercase tracking-wider">FIG</span>
+</div>
+</div>
+<!-- Storage Stats Card -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container rounded-2xl p-6 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-syne font-bold text-xl text-on-surface">Workspace Storage</h3>
+<p class="text-sm text-on-surface-variant">42.8 GB used of 100 GB</p>
+</div>
+<div class="flex gap-2">
+<button class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm">grid_view</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">list</span>
+</button>
+</div>
+</div>
+<div class="mt-8">
+<div class="w-full h-2 bg-surface-container-lowest rounded-full overflow-hidden flex">
+<div class="h-full bg-primary w-[42%]"></div>
+<div class="h-full bg-tertiary w-[15%]"></div>
+</div>
+<div class="flex gap-6 mt-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="text-xs text-on-surface-variant">Documents (22.1 GB)</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<span class="text-xs text-on-surface-variant">Media (10.4 GB)</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-outline"></div>
+<span class="text-xs text-on-surface-variant">Other (10.3 GB)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- File Grid Filter/Header -->
+<div class="col-span-12 flex justify-between items-center py-2">
+<div class="flex gap-4">
+<button class="text-primary font-bold border-b-2 border-primary pb-1 text-sm">All Files</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors text-sm">Recent</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors text-sm">Favorites</button>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="text-xs font-medium">Sort by:</span>
+<select class="bg-transparent border-none text-xs text-on-surface focus:ring-0 cursor-pointer">
+<option>Date Modified</option>
+<option>Name</option>
+<option>Size</option>
+</select>
+</div>
+</div>
+<!-- File Bento Grid -->
+<!-- Item 1: Preview Focus -->
+<div class="col-span-12 md:col-span-6 lg:col-span-4 bg-surface-container rounded-2xl overflow-hidden group bento-card-hover transition-all duration-400">
+<div class="h-48 relative bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Abstract 3D render with flowing indigo and dark violet crystalline shapes, soft lighting on matte obsidian surfaces" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFU4KKFXaGLRo9fpU38XeizWM9Kmz1-GPTf6WQoeh5C4Y2Ux0j2wJFr8Ufh8FAREE_1m6JTKnpnItNfc36i7vtEm6PfjvnXVU0vn-LVBmdJG_7m3Wl3chmLIhq48l8zOIRnCliMd9tqjTS_mxDZNudlSgim8y7fZW7M1BViP1N446AvG1ckIsEYDbNqX98rQO2IjosWr5sRDCZq4t5XapSPSOhZx5ahotfN2DuiEP8CXrqL4UA4_GnYGXCtliRh6Y5vzD4VWSwDYI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-60"></div>
+<div class="absolute top-3 right-3 flex gap-2">
+<button class="w-8 h-8 rounded-full bg-surface-container/80 backdrop-blur-md flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-lg">share</span>
+</button>
+</div>
+<div class="absolute bottom-3 left-3 flex gap-1 items-center bg-primary/20 backdrop-blur-sm border border-primary/20 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[10px] text-primary" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="text-[10px] text-primary font-bold uppercase tracking-wider">v2.4</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-bold text-on-surface">Marketing_Brand_Visuals.fig</h4>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors">more_vert</span>
+</div>
+<div class="flex justify-between items-center mt-4">
+<div class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>2h ago</span>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">124.5 MB</span>
+</div>
+</div>
+</div>
+<!-- Item 2: PDF Style -->
+<div class="col-span-12 md:col-span-6 lg:col-span-3 bg-surface-container rounded-2xl p-5 flex flex-col justify-between bento-card-hover transition-all duration-400">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 rounded-xl bg-error/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-error text-2xl" style="font-variation-settings: 'FILL' 1;">picture_as_pdf</span>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">star</span>
+</button>
+</div>
+<div class="mt-8">
+<h4 class="font-bold text-on-surface truncate">Q4_Project_Roadmap_Final.pdf</h4>
+<p class="text-xs text-on-surface-variant mt-1">Edited by Sarah Chen</p>
+</div>
+<div class="mt-6 flex gap-2">
+<button class="flex-1 bg-surface-container-highest text-on-surface text-xs font-bold py-2 rounded-lg hover:bg-primary hover:text-on-primary transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span> Download
+                        </button>
+</div>
+</div>
+<!-- Item 3: SpreadSheet Style -->
+<div class="col-span-12 md:col-span-6 lg:col-span-5 bg-surface-container rounded-2xl p-6 bento-card-hover transition-all duration-400 flex flex-col justify-between">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-2xl bg-[#107c41]/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#107c41] text-3xl">table_chart</span>
+</div>
+<div class="flex-1 overflow-hidden">
+<h4 class="font-bold text-on-surface truncate">Budget_Allocation_FY24.xlsx</h4>
+<div class="flex items-center gap-2 mt-1">
+<div class="flex -space-x-2">
+<div class="w-5 h-5 rounded-full border border-surface-container bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up portrait of a professional man with clean lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAPsZYejiWYG_bKiVz7zvptG_SEAjSu_SYq0NuD98UpNIG1tcfsCBHAaG_EwtdyGZAxxHGVRHvR4MK7RZ8UqeCUsZVLFfsmfLMA8GekRy0A8Ogf5-4Klo58MCsrVpNH1AYgm5RJENM0Q5BqeLAXGFOU3gU8FP_pV9UL_rTj6zl_27yhWcieh1x6rclB7xGSEZH8jPzl5R2wKRNJ2IRlsvPH5gHprWPbC69pdg3oRfsVvMObZ_IBrhpsdqGCkIpmPSvrTrbuK8PoTE"/>
+</div>
+<div class="w-5 h-5 rounded-full border border-surface-container bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a smiling woman in soft natural studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWcmF1DbhdPFDiSluVrCcqRP-j8okfoMHIYwnxyxEplT91NvI1X7KeS8oPD-wcUshF2NTVxhoGnZKpSyxw5isvOrQiw6mZdTIEkPvwoihUC0ZDwv5VBLJJ3URKo-HBiIEWEiqMrgU-Lpazh_siBZePv2WxoR6sSgZqVdIerNcIYqSEJo3dnBmmmSffsFsBokmhm0Ql0mmAhDB8IA5WC_jocCKL3u6nEjF8c1cBo8cmQKNzOcKmxNpgA8wHDAyCEJYi9d0KH6XxBfQ"/>
+</div>
+</div>
+<span class="text-[10px] text-on-surface-variant uppercase font-medium">Collaborative</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-[10px] text-primary font-bold">LIVE</span>
+<span class="text-xs text-on-surface-variant mt-1">8.2 MB</span>
+</div>
+</div>
+<div class="mt-8 flex items-center justify-between border-t border-outline-variant/10 pt-4">
+<span class="text-xs text-on-surface-variant italic">Last active: 15 mins ago</span>
+<div class="flex gap-2">
+<button class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">link</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 4: Large Folder Bento -->
+<div class="col-span-12 lg:col-span-7 bg-surface-container rounded-2xl p-6 bento-card-hover transition-all duration-400 group">
+<div class="flex justify-between items-center mb-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-3xl text-primary" style="font-variation-settings: 'FILL' 1;">folder</span>
+<div>
+<h4 class="font-bold text-lg text-on-surface">Client_Briefings_Archive</h4>
+<p class="text-xs text-on-surface-variant">248 items • 1.2 GB total</p>
+</div>
+</div>
+<button class="text-outline group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">arrow_forward_ios</span>
+</button>
+</div>
+<div class="grid grid-cols-4 gap-3">
+<div class="aspect-square rounded-xl bg-surface-container-highest flex items-center justify-center hover:bg-surface-container-lowest transition-colors cursor-pointer border border-outline-variant/10">
+<span class="material-symbols-outlined text-outline">description</span>
+</div>
+<div class="aspect-square rounded-xl bg-surface-container-highest flex items-center justify-center hover:bg-surface-container-lowest transition-colors cursor-pointer border border-outline-variant/10">
+<span class="material-symbols-outlined text-outline">movie</span>
+</div>
+<div class="aspect-square rounded-xl bg-surface-container-highest flex items-center justify-center hover:bg-surface-container-lowest transition-colors cursor-pointer border border-outline-variant/10">
+<span class="material-symbols-outlined text-outline">image</span>
+</div>
+<div class="aspect-square rounded-xl bg-surface-container-highest flex items-center justify-center hover:bg-surface-container-lowest transition-colors cursor-pointer border border-outline-variant/10">
+<span class="material-symbols-outlined text-outline">add</span>
+</div>
+</div>
+</div>
+<!-- Item 5: Small Detail Card -->
+<div class="col-span-12 md:col-span-6 lg:col-span-5 bg-surface-container-highest/40 border border-outline-variant/10 rounded-2xl p-6 flex flex-col justify-center">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">history</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Version Tracking</h4>
+<p class="text-xs text-on-surface-variant">Restore previous states instantly</p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center text-xs">
+<span class="text-on-surface">V2.4.1 (Stable)</span>
+<span class="text-outline">Yesterday, 14:30</span>
+</div>
+<div class="flex justify-between items-center text-xs opacity-50">
+<span class="text-on-surface">V2.4.0 (Base)</span>
+<span class="text-outline">Oct 12, 09:15</span>
+</div>
+<button class="w-full mt-2 py-2 text-xs font-bold text-primary border border-primary/20 rounded-lg hover:bg-primary/10 transition-colors">
+                            View Full Timeline
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual FAB (Only on main dashboard-like screens) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 rounded-2xl indigo-gradient text-on-primary shadow-[0_8px_32px_rgba(99,102,241,0.4)] hover:scale-110 active:scale-90 transition-all z-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'wght' 600;">add</span>
+</button>
+</body></html>

@@ -72,7 +72,6 @@ body {
 
 .glass-card {
   background-color: rgba(17, 24, 39, 0.8);
-  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -110,60 +109,6 @@ body {
 .bg-obsidian-gradient {
   background: radial-gradient(circle at top left, rgba(192, 193, 255, 0.08), transparent 40%), #0f131d;
 }
-
-/* ============================================
-   ANIMATIONS
-   Custom keyframe animations for components
-   ============================================ */
-
-/* Toast slide-in animation */
-@keyframes slide-in-right {
-  from {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-slide-in-right {
-  animation: slide-in-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Toast progress bar shrink animation */
-@keyframes shrink {
-  from {
-    width: 100%;
-  }
-  to {
-    width: 0%;
-  }
-}
-
-/* Skeleton wave animation */
-@keyframes skeleton-wave {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-.skeleton-wave {
-  background: linear-gradient(
-    90deg,
-    var(--color-surface-container-high) 0%,
-    var(--color-surface-container-highest) 50%,
-    var(--color-surface-container-high) 100%
-  );
-  background-size: 200% 100%;
-  animation: skeleton-wave 1.5s ease-in-out infinite;
-}
-
-/* Modal fade animations are handled via CSS transitions in the component */
 
 .glass-card {
   background: linear-gradient(135deg, rgba(192, 193, 255, 0.05) 0%, rgba(28, 31, 42, 0) 100%);
