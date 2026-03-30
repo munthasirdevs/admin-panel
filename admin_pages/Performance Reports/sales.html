@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Sales Reports - System Admin</title>
+    
+    <!-- Core Assets -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="../../assets/js/tailwind-config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body class="flex min-h-screen bg-surface">
+    <!-- Sidebar Placeholder -->
+    <!-- 
+  XenonOS Shared Component: Sidebar (v5.0 - New Typography System)
+  Reference: Obsidian / Outfit & Syne
+-->
+<!-- 
+  XenonOS Shared Component: Sidebar (v5.0 - New Typography System)
+  Reference: Obsidian / Outfit & Syne
+-->
+<!-- 
+  XenonOS Shared Component: Modern Interactive Sidebar (v5.0)
+  Collapsible, Hover-to-Expand, and Pinned States
+-->
+<aside class="modern-sidebar outfit lg:translate-x-0 -translate-x-full transition-all duration-300 ease-in-out">
+    <!-- Branding -->
+    <div class="px-5 mb-8 mt-8 flex items-center gap-4 overflow-hidden">
+        <div class="min-w-[40px] h-10 rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[#3f4077] flex items-center justify-center shadow-lg">
+            <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">diamond</span>
+        </div>
+        <div class="nav-label">
+            <h1 class="text-xl font-bold text-[var(--color-on-surface)] font-headline tracking-tight syne">Obsidian</h1>
+            <p class="text-[10px] text-slate-500 font-label uppercase tracking-[0.2em] outfit">Management Hub</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex-1 space-y-1">
+        <!-- 1. Dashboard -->
+        <a href="../dashboard/dashboard.html" class="nav-item group" data-tooltip="Dashboard">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="nav-label text-sm">Dashboard</span>
+        </a>
+
+        <!-- 2. Clients -->
+        <a href="../clients/clients-list.html" class="nav-item group" data-tooltip="Clients">
+            <span class="material-symbols-outlined">group</span>
+            <span class="nav-label text-sm">Clients</span>
+        </a>
+
+        <!-- 3. Projects -->
+        <a href="../projects/all-projects.html" class="nav-item group" data-tooltip="Projects">
+            <span class="material-symbols-outlined">folder_open</span>
+            <span class="nav-label text-sm">Projects</span>
+        </a>
+
+        <!-- 4. Tasks -->
+        <a href="../tasks/task-list.html" class="nav-item group" data-tooltip="Tasks">
+            <span class="material-symbols-outlined">assignment</span>
+            <span class="nav-label text-sm">Tasks</span>
+        </a>
+
+        <!-- 5. Communication -->
+        <a href="../chat/communication.html" class="nav-item group" data-tooltip="Communication">
+            <span class="material-symbols-outlined">forum</span>
+            <span class="nav-label text-sm">Communication</span>
+        </a>
+
+        <!-- 6. Files -->
+        <a href="../files/file-manager.html" class="nav-item group" data-tooltip="Files">
+            <span class="material-symbols-outlined">folder_shared</span>
+            <span class="nav-label text-sm">Files</span>
+        </a>
+
+        <!-- 7. Payment -->
+        <a href="../payment/payment.html" class="nav-item group" data-tooltip="Payment">
+            <span class="material-symbols-outlined">payments</span>
+            <span class="nav-label text-sm">Payment</span>
+        </a>
+
+        <!-- 8. Team -->
+        <a href="../team/team-members.html" class="nav-item group" data-tooltip="Team">
+            <span class="material-symbols-outlined">badge</span>
+            <span class="nav-label text-sm">Team Members</span>
+        </a>
+
+        <!-- 9. Analytics -->
+        <a href="../Overview Analytics/executive.html" class="nav-item group" data-tooltip="Analytics">
+            <span class="material-symbols-outlined">analytics</span>
+            <span class="nav-label text-sm">Analytics</span>
+        </a>
+
+        <!-- 10. Reports -->
+        <a href="../Performance Reports/financial.html" class="nav-item group" data-tooltip="Reports">
+            <span class="material-symbols-outlined">trending_up</span>
+            <span class="nav-label text-sm">Reports</span>
+        </a>
+
+        <!-- 11. Activity -->
+        <a href="../activity/activity-logs.html" class="nav-item group" data-tooltip="Activity">
+            <span class="material-symbols-outlined">history</span>
+            <span class="nav-label text-sm">Activity Logs</span>
+        </a>
+
+        <!-- Divider -->
+        <div class="mx-6 my-4 border-t border-[var(--color-outline-variant)]/10"></div>
+
+        <!-- 12. Settings -->
+        <a href="../settings/settings.html" class="nav-item group" data-tooltip="Settings">
+            <span class="material-symbols-outlined">settings</span>
+            <span class="nav-label text-sm">Settings</span>
+        </a>
+    </nav>
+
+    <!-- Pin Toggle Button -->
+    <div id="pin-sidebar" class="pin-toggle mx-4 mb-4 flex items-center justify-center shadow-lg" title="Pin Sidebar">
+        <span class="material-symbols-outlined text-sm">push_pin</span>
+    </div>
+</aside>
+
+
+    <!-- Main Content -->
+    <main class="flex-1 min-h-screen flex flex-col">
+        <!-- Header Placeholder -->
+        <!-- 
+  XenonOS Shared Component: Header (v5.0 - New Typography System)
+-->
+<header class="bg-[var(--color-surface)]/80 backdrop-blur-xl sticky top-0 z-40 w-full px-8 py-4 flex justify-between items-center shadow-[0_20px_40px_rgba(0,0,0,0.3)] outfit">
+    <div class="flex items-center gap-6">
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 rounded-xl flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all border border-white/5">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+        
+        <div class="relative group">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg group-focus-within:text-[var(--color-primary)] transition-colors">search</span>
+            <input class="bg-[var(--color-surface-container)] border-none text-[var(--color-on-surface)] text-sm rounded-full py-2 pl-10 pr-4 w-32 sm:w-64 focus:ring-1 focus:ring-[var(--color-primary)] transition-all placeholder:text-slate-500 outfit" placeholder="Search..." type="text"/>
+        </div>
+    </div>
+    <div class="flex items-center gap-4">
+        <button class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all">
+            <span class="material-symbols-outlined">notifications</span>
+        </button>
+        <button class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all">
+            <span class="material-symbols-outlined">settings</span>
+        </button>
+        <div class="h-10 w-[1px] bg-[var(--color-outline-variant)]/20 mx-2"></div>
+        <div class="flex items-center gap-3">
+            <div class="hidden lg:block text-right">
+                <p class="text-sm font-semibold text-[var(--color-on-surface)] leading-tight outfit">Alex Rivera</p>
+                <p class="text-[10px] text-slate-500 font-label outfit">Super Admin</p>
+            </div>
+            <img alt="Admin Profile" class="w-10 h-10 rounded-xl bg-[var(--color-surface-container)] object-cover border border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiwvRijOxcIA8PzPmV4_ePxNAQ1jEK6liXVtWkfs0B0GPSYNv0s2X9bjRrxQARCKCqfkZMd_pN7fsOwKf9m_fJ_15CowBjsePuDTSSAX1-9Vs_i3-l0yrn5GMXq9GUw0e9T_8MqYD5fcbH63KRsAIXgKDhALrSWhkRRooXJVcVzAYfnMs4F7d9jBp7Yl1Es5d241Rjpgf0DTyQZGm_aWG748o3-FXMGSid14TvMD2IxzNtrSDjzE5yeYoJgfU9JpTr1C1EIG_a15o"/>
+        </div>
+    </div>
+</header>
+
+
+        <!-- Main Scrollable Canvas -->
+        <div class="p-8">
+<!-- Hero Header Section -->
+<section class="flex flex-col md:flex-row justify-between items-end gap-6">
+<div class="space-y-1">
+<span class="text-[10px] font-bold text-tertiary uppercase tracking-[0.3em] font-label">Territory Overview</span>
+<h3 class="text-6xl font-light font-headline leading-none -ml-1 tracking-tight text-white">Performance.</h3>
+</div>
+<div class="flex gap-4">
+<div class="flex items-center gap-2 text-[10px] font-bold text-slate-400 bg-surface-container border border-white/5 px-4 py-2 rounded-full shadow-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+                        LIVE PIPELINE
+                    </div>
+</div>
+</section>
+<!-- KPI Cards Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface p-8 rounded-2xl flex flex-col gap-4 glass-warm relative overflow-hidden group border border-white/5 shadow-lg">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-tertiary"></div>
+<span class="text-[11px] font-bold text-slate-500 uppercase tracking-widest font-label">Total Sales Revenue</span>
+<div class="flex items-baseline gap-2">
+<h4 class="text-4xl font-manrope font-semibold text-white">$1,284,500</h4>
+<span class="text-xs text-tertiary font-bold">+12.4%</span>
+</div>
+<div class="w-full h-1.5 bg-background rounded-full overflow-hidden mt-2">
+<div class="h-full bg-gradient-to-r from-tertiary to-tertiary-light w-[75%] shadow-[0_0_12px_rgba(253,186,116,0.3)]"></div>
+</div>
+</div>
+<div class="bg-surface p-8 rounded-2xl flex flex-col gap-4 glass-warm relative overflow-hidden group border border-white/5 shadow-lg">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-secondary"></div>
+<span class="text-[11px] font-bold text-slate-500 uppercase tracking-widest font-label">Conversion Rate</span>
+<div class="flex items-baseline gap-2">
+<h4 class="text-4xl font-manrope font-semibold text-white">24.8%</h4>
+<span class="text-xs text-primary font-bold">+2.1%</span>
+</div>
+<div class="w-full h-1.5 bg-background rounded-full overflow-hidden mt-2">
+<div class="h-full bg-gradient-to-r from-primary to-primary/60 w-[48%] shadow-[0_0_12px_rgba(192,193,255,0.3)]"></div>
+</div>
+</div>
+<div class="bg-surface p-8 rounded-2xl flex flex-col gap-4 glass-warm relative overflow-hidden group border border-white/5 shadow-lg">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-tertiary"></div>
+<span class="text-[11px] font-bold text-slate-500 uppercase tracking-widest font-label">Deals Closed</span>
+<div class="flex items-baseline gap-2">
+<h4 class="text-4xl font-manrope font-semibold text-white">142</h4>
+<span class="text-xs text-slate-500 font-medium">Target: 160</span>
+</div>
+<div class="w-full h-1.5 bg-background rounded-full overflow-hidden mt-2">
+<div class="h-full bg-gradient-to-r from-tertiary to-tertiary-light w-[88%] shadow-[0_0_12px_rgba(253,186,116,0.3)]"></div>
+</div>
+</div>
+</section>
+<!-- Main Analytics Bento -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Revenue Trend Chart -->
+<div class="lg:col-span-8 bg-surface p-8 rounded-2xl flex flex-col gap-10 border border-white/5 shadow-xl relative overflow-hidden">
+<div class="flex justify-between items-center relative z-10">
+<div>
+<h5 class="text-xl font-headline font-semibold text-white">Revenue Analytics</h5>
+<p class="text-xs text-slate-500 mt-1">Growth trajectory over the last 7 days</p>
+</div>
+<div class="flex gap-6">
+<span class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary shadow-[0_0_8px_rgba(253,186,116,0.6)]"></span> Revenue
+                            </span>
+<span class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+<span class="w-2.5 h-2.5 rounded-full bg-white opacity-20"></span> Target
+                            </span>
+</div>
+</div>
+<div class="relative h-64 w-full flex flex-col justify-end gap-6">
+<!-- Line Chart SVG Overlay -->
+<div class="absolute inset-0 z-0 pointer-events-none opacity-30">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path class="chart-line" d="M0,80 Q15,75 25,50 T50,40 T75,60 T100,20" fill="none" stroke="var(--color-tertiary)" stroke-width="2"></path>
+<path d="M0,80 Q15,75 25,50 T50,40 T75,60 T100,20 L100,100 L0,100 Z" fill="url(#grad1)"></path>
+<defs>
+<lineargradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:var(--color-tertiary);stop-opacity:0.1"></stop>
+<stop offset="100%" style="stop-color:var(--color-tertiary);stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<!-- Bar Chart -->
+<div class="flex items-end justify-between gap-6 px-4 relative z-10">
+<div class="flex-1 flex flex-col items-center gap-3 group">
+<div class="w-full bg-white/5 rounded-t-xl h-24 group-hover:bg-white/10 transition-all duration-300"></div>
+<span class="text-[10px] text-slate-500 font-bold tracking-tighter">MON</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3 group">
+<div class="w-full bg-tertiary/70 rounded-t-xl h-48 shadow-[0_0_30px_rgba(253,186,116,0.1)] group-hover:bg-tertiary transition-all duration-300"></div>
+<span class="text-[10px] text-slate-500 font-bold tracking-tighter">TUE</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3 group">
+<div class="w-full bg-white/5 rounded-t-xl h-36 group-hover:bg-white/10 transition-all duration-300"></div>
+<span class="text-[10px] text-slate-500 font-bold tracking-tighter">WED</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3 group">
+<div class="w-full bg-tertiary rounded-t-xl h-56 shadow-[0_0_30px_rgba(253,186,116,0.2)] group-hover:scale-[1.02] transition-all duration-300"></div>
+<span class="text-[10px] text-slate-500 font-bold tracking-tighter">THU</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3 group">
+<div class="w-full bg-tertiary/50 rounded-t-xl h-44 group-hover:bg-tertiary transition-all duration-300"></div>
+<span class="text-[10px] text-slate-500 font-bold tracking-tighter">FRI</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3 group">
+<div class="w-full bg-white/5 rounded-t-xl h-20 group-hover:bg-white/10 transition-all duration-300"></div>
+<span class="text-[10px] text-slate-500 font-bold tracking-tighter">SAT</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-3 group">
+<div class="w-full bg-white/5 rounded-t-xl h-28 group-hover:bg-white/10 transition-all duration-300"></div>
+<span class="text-[10px] text-slate-500 font-bold tracking-tighter">SUN</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Deal Pipeline -->
+<div class="lg:col-span-4 bg-surface p-8 rounded-2xl flex flex-col gap-8 border border-white/5 shadow-xl">
+<div class="flex justify-between items-center">
+<h5 class="text-xl font-headline font-semibold text-white">Deal Pipeline</h5>
+<button class="p-1 hover:bg-white/5 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-slate-500" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div class="space-y-6">
+<div class="flex flex-col gap-2.5">
+<div class="flex justify-between text-[11px] font-bold uppercase tracking-widest text-slate-400">
+<span>Contacted</span>
+<span class="text-tertiary">8 Deals</span>
+</div>
+<div class="h-2.5 bg-background rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-full"></div>
+</div>
+</div>
+<div class="flex flex-col gap-2.5">
+<div class="flex justify-between text-[11px] font-bold uppercase tracking-widest text-slate-400">
+<span>Negotiation</span>
+<span class="text-tertiary">28 Deals</span>
+</div>
+<div class="h-2.5 bg-background rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-3/4 opacity-80"></div>
+</div>
+</div>
+<div class="flex flex-col gap-2.5">
+<div class="flex justify-between text-[11px] font-bold uppercase tracking-widest text-slate-400">
+<span>Offer Sent</span>
+<span class="text-tertiary">15 Deals</span>
+</div>
+<div class="h-2.5 bg-background rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-1/2 opacity-60"></div>
+</div>
+</div>
+<div class="flex flex-col gap-2.5">
+<div class="flex justify-between text-[11px] font-bold uppercase tracking-widest text-slate-400">
+<span>Closed Won</span>
+<span class="text-tertiary">8 Deals</span>
+</div>
+<div class="h-2.5 bg-background rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-1/4 opacity-40"></div>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-8 border-t border-white/5 flex items-center justify-between">
+<span class="text-sm font-medium text-slate-400">Estimated Value</span>
+<span class="text-2xl font-manrope font-bold text-tertiary">$4.2M</span>
+</div>
+</div>
+</section>
+<!-- Expanded Recent Deals Table -->
+<section class="bg-surface rounded-2xl overflow-hidden mb-12 border border-white/5 shadow-xl">
+<div class="px-8 py-6 flex justify-between items-center border-b border-white/5">
+<h5 class="text-xl font-headline font-semibold text-white">Recent Transactions</h5>
+<button class="flex items-center gap-2 text-tertiary font-bold text-xs uppercase tracking-[0.15em] hover:brightness-110 transition-all px-4 py-2 bg-tertiary/5 rounded-full border border-tertiary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-[#FDBA74]"></span> View All Deals
+                    </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="text-[10px] font-bold text-slate-500 uppercase tracking-widest border-b border-white/5 bg-white/[0.01]">
+<th class="px-8 py-4">Company</th>
+<th class="px-8 py-4">Value</th>
+<th class="px-8 py-4">Owner</th>
+<th class="px-8 py-4">Status</th>
+<th class="px-8 py-4 text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5">
+<!-- Row 1 -->
+<tr class="hover:bg-white/[0.02] transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-tertiary/10 flex items-center justify-center text-tertiary border border-tertiary/20">
+<span class="material-symbols-outlined text-xl" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-white">Nexus Labs</span>
+<span class="text-[10px] text-slate-500 font-medium">Enterprise License</span>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 font-manrope font-bold text-sm text-slate-200">$45,000</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<img class="w-7 h-7 rounded-full object-cover border border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8KS9TNK-pHxQyUwuFVzUom6vsA4p8PCDuMhBl4FJA0vCYMQJqfI6l_kpcb-iozmkspUaBbiYqDRxwF5uZPI-dxr9_v2dZ7UUuV4yjIzuRUxBotlPTEa1zTL9b6ujAkodkJqLGveEjFdUn7ms4jZUv9BxqXADUXwIm50e7QQTc3Oag_ZygeG_9mcf-Yg4SY5Jr6M0J1tyDgqc43J4-d_dKYEt4KWkjLHI-37iFlQOblyRv4f6zUS_jqNJkb5BcmTS-EWrc3tLfryM"/>
+<span class="text-xs text-slate-400 font-medium">Alex Rivers</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase tracking-wider border border-emerald-500/20">Completed</span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="p-2 hover:bg-white/5 rounded-lg text-slate-600 hover:text-tertiary transition-all">
+<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-white/[0.02] transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary border border-secondary/20">
+<span class="material-symbols-outlined text-xl" data-icon="cloud">cloud</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-white">Solaris Systems</span>
+<span class="text-[10px] text-slate-500 font-medium">Cloud Infrastructure</span>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 font-manrope font-bold text-sm text-slate-200">$128,200</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<img class="w-7 h-7 rounded-full object-cover border border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOgm7rGDuYJ7rywn-dMHSHg57nVAR-92YX6Oo0moG2SuEY7hO6cXr6S_OK8DY_f0oAJ5gd5DMsKoHDe3TqAbz5q5Ru6VoHcSpnERPYeMjTFWLKwCg-4hDOpZk_KO51ISACXjQfQYzcnyoLOz-CunuCjYaCqQ86YzlHpr5V-lGhfWVKzsxmiwP1bIT4gQ4Xx8zGiVO-mBVymuRo1mT3FhJBbjxRLsl_FnbpqIGnljDxFv8K1Qj6oESCePUWbgSOpnyl2ei5IGaSyyA"/>
+<span class="text-xs text-slate-400 font-medium">Sarah Chen</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 rounded-full bg-tertiary/10 text-tertiary text-[10px] font-bold uppercase tracking-wider border border-tertiary/20">In Progress</span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="p-2 hover:bg-white/5 rounded-lg text-slate-600 hover:text-[#FDBA74] transition-all">
+<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-white/[0.02] transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-slate-500/10 flex items-center justify-center text-slate-400 border border-slate-500/20">
+<span class="material-symbols-outlined text-xl" data-icon="account_balance">account_balance</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-white">Vantage Ventures</span>
+<span class="text-[10px] text-slate-500 font-medium">Service Agreement</span>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 font-manrope font-bold text-sm text-slate-200">$12,000</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<img class="w-7 h-7 rounded-full object-cover border border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBGA-_2X-78EKCZnwpwVcO2m4QGYq7XnC8bIA__bCPbzRZ6S61aTRl0T9ZgvTMVFaFrRjrD_L57cDK2gb3__M2SUlzmFvd_x6ZTwmz9DUuuL7VEM-CtMh9S2NQHv2HIQ0qN5Pwlr9UeSpXL_qUH3hMuZXeAecIcfZUpJUyFg8fefRh-WXq67mYRDVo5Pymw24eD6zyQbvPJxCw4no-_siBpsjirGlhjZCoO_tbxIFlZ0kOk3tr8DVc6C-E-h17e8wq7mxiGT0G6uU"/>
+<span class="text-xs text-slate-400 font-medium">Marcus Wright</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase tracking-wider border border-emerald-500/20">Completed</span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="p-2 hover:bg-white/5 rounded-lg text-slate-600 hover:text-[#FDBA74] transition-all">
+<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+        </div>
+        <!-- Footer Placeholder -->
+    <!-- 
+  XenonOS Shared Component: Footer (v5.0 - New Typography System)
+-->
+<footer class="mt-12 px-8 py-6 border-t border-[var(--color-outline-variant)]/15 bg-[var(--color-surface)] flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-300 outfit">
+    <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">© 2024 Obsidian Architect • System Status: <span class="text-[var(--color-success)]">Operational</span></p>
+    <div class="flex gap-4 items-center">
+        <span class="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse shadow-[0_0_10px_rgba(99,102,241,0.4)]"></span>
+        <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Region: Global-Alpha-1</span>
+    </div>
+</footer>
+
+</main>
+
+    <script src="../../assets/js/app.js"></script>
+</body>
+</html>
+
+
+

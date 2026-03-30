@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Activity Logs - System Admin</title>
+
+    <!-- Core Assets -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="../../assets/js/tailwind-config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+
+    <!-- Charting Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="flex min-h-screen bg-surface">
+    <!-- Sidebar Placeholder -->
+    <!-- 
+  XenonOS Shared Component: Sidebar (v5.0 - New Typography System)
+  Reference: Obsidian / Outfit & Syne
+-->
+    <!-- 
+  XenonOS Shared Component: Sidebar (v5.0 - New Typography System)
+  Reference: Obsidian / Outfit & Syne
+-->
+<!-- 
+  XenonOS Shared Component: Modern Interactive Sidebar (v5.0)
+  Collapsible, Hover-to-Expand, and Pinned States
+-->
+<aside class="modern-sidebar outfit lg:translate-x-0 -translate-x-full transition-all duration-300 ease-in-out">
+    <!-- Branding -->
+    <div class="px-5 mb-8 mt-8 flex items-center gap-4 overflow-hidden">
+        <div class="min-w-[40px] h-10 rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[#3f4077] flex items-center justify-center shadow-lg">
+            <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">diamond</span>
+        </div>
+        <div class="nav-label">
+            <h1 class="text-xl font-bold text-[var(--color-on-surface)] font-headline tracking-tight syne">Obsidian</h1>
+            <p class="text-[10px] text-slate-500 font-label uppercase tracking-[0.2em] outfit">Management Hub</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex-1 space-y-1">
+        <!-- 1. Dashboard -->
+        <a href="../dashboard/dashboard.html" class="nav-item group" data-tooltip="Dashboard">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="nav-label text-sm">Dashboard</span>
+        </a>
+
+        <!-- 2. Clients -->
+        <a href="../clients/clients-list.html" class="nav-item group" data-tooltip="Clients">
+            <span class="material-symbols-outlined">group</span>
+            <span class="nav-label text-sm">Clients</span>
+        </a>
+
+        <!-- 3. Projects -->
+        <a href="../projects/all-projects.html" class="nav-item group" data-tooltip="Projects">
+            <span class="material-symbols-outlined">folder_open</span>
+            <span class="nav-label text-sm">Projects</span>
+        </a>
+
+        <!-- 4. Tasks -->
+        <a href="../tasks/task-list.html" class="nav-item group" data-tooltip="Tasks">
+            <span class="material-symbols-outlined">assignment</span>
+            <span class="nav-label text-sm">Tasks</span>
+        </a>
+
+        <!-- 5. Communication -->
+        <a href="../chat/communication.html" class="nav-item group" data-tooltip="Communication">
+            <span class="material-symbols-outlined">forum</span>
+            <span class="nav-label text-sm">Communication</span>
+        </a>
+
+        <!-- 6. Files -->
+        <a href="../files/file-manager.html" class="nav-item group" data-tooltip="Files">
+            <span class="material-symbols-outlined">folder_shared</span>
+            <span class="nav-label text-sm">Files</span>
+        </a>
+
+        <!-- 7. Payment -->
+        <a href="../payment/payment.html" class="nav-item group" data-tooltip="Payment">
+            <span class="material-symbols-outlined">payments</span>
+            <span class="nav-label text-sm">Payment</span>
+        </a>
+
+        <!-- 8. Team -->
+        <a href="../team/team-members.html" class="nav-item group" data-tooltip="Team">
+            <span class="material-symbols-outlined">badge</span>
+            <span class="nav-label text-sm">Team Members</span>
+        </a>
+
+        <!-- 9. Analytics -->
+        <a href="../Overview Analytics/executive.html" class="nav-item group" data-tooltip="Analytics">
+            <span class="material-symbols-outlined">analytics</span>
+            <span class="nav-label text-sm">Analytics</span>
+        </a>
+
+        <!-- 10. Reports -->
+        <a href="../Performance Reports/financial.html" class="nav-item group" data-tooltip="Reports">
+            <span class="material-symbols-outlined">trending_up</span>
+            <span class="nav-label text-sm">Reports</span>
+        </a>
+
+        <!-- 11. Activity -->
+        <a href="../activity/activity-logs.html" class="nav-item group" data-tooltip="Activity">
+            <span class="material-symbols-outlined">history</span>
+            <span class="nav-label text-sm">Activity Logs</span>
+        </a>
+
+        <!-- Divider -->
+        <div class="mx-6 my-4 border-t border-[var(--color-outline-variant)]/10"></div>
+
+        <!-- 12. Settings -->
+        <a href="../settings/settings.html" class="nav-item group" data-tooltip="Settings">
+            <span class="material-symbols-outlined">settings</span>
+            <span class="nav-label text-sm">Settings</span>
+        </a>
+    </nav>
+
+    <!-- Pin Toggle Button -->
+    <div id="pin-sidebar" class="pin-toggle mx-4 mb-4 flex items-center justify-center shadow-lg" title="Pin Sidebar">
+        <span class="material-symbols-outlined text-sm">push_pin</span>
+    </div>
+</aside>
+
+
+    <!-- Main Content -->
+    <main class="flex-1 min-h-screen flex flex-col">
+        <header
+            class="bg-[var(--color-surface)]/80 backdrop-blur-xl sticky top-0 z-40 w-full px-8 py-4 flex justify-between items-center shadow-[0_20px_40px_rgba(0,0,0,0.3)] outfit">
+            <div class="flex items-center gap-6">
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-btn"
+                    class="lg:hidden w-10 h-10 rounded-xl flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all border border-white/5">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+
+                <div class="relative group">
+                    <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg group-focus-within:text-[var(--color-primary)] transition-colors">search</span>
+                    <input
+                        class="bg-[var(--color-surface-container)] border-none text-[var(--color-on-surface)] text-sm rounded-full py-2 pl-10 pr-4 w-32 sm:w-64 focus:ring-1 focus:ring-[var(--color-primary)] transition-all placeholder:text-slate-500 outfit"
+                        placeholder="Search..." type="text" />
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all">
+                    <span class="material-symbols-outlined">notifications</span>
+                </button>
+                <button
+                    class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all">
+                    <span class="material-symbols-outlined">settings</span>
+                </button>
+                <div class="h-10 w-[1px] bg-[var(--color-outline-variant)]/20 mx-2"></div>
+                <div class="flex items-center gap-3">
+                    <div class="hidden lg:block text-right">
+                        <p class="text-sm font-semibold text-[var(--color-on-surface)] leading-tight outfit">Alex Rivera
+                        </p>
+                        <p class="text-[10px] text-slate-500 font-label outfit">Super Admin</p>
+                    </div>
+                    <img alt="Admin Profile"
+                        class="w-10 h-10 rounded-xl bg-[var(--color-surface-container)] object-cover border border-white/10"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiwvRijOxcIA8PzPmV4_ePxNAQ1jEK6liXVtWkfs0B0GPSYNv0s2X9bjRrxQARCKCqfkZMd_pN7fsOwKf9m_fJ_15CowBjsePuDTSSAX1-9Vs_i3-l0yrn5GMXq9GUw0e9T_8MqYD5fcbH63KRsAIXgKDhALrSWhkRRooXJVcVzAYfnMs4F7d9jBp7Yl1Es5d241Rjpgf0DTyQZGm_aWG748o3-FXMGSid14TvMD2IxzNtrSDjzE5yeYoJgfU9JpTr1C1EIG_a15o" />
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Scrollable Canvas -->
+
+        <!-- Page Content -->
+        <div class="pt-2 px-6 pb-2 space-y-12">
+            <!-- Hero Header Section -->
+            <section class="flex flex-col md:flex-row justify-between items-end gap-6">
+                <div class="space-y-2">
+                    <span class="text-[0.6875rem] font-bold tracking-[0.05em] uppercase text-tertiary">Security Protocol
+                        4.0</span>
+                    <h1 class="text-[3.5rem] font-light font-headline leading-tight tracking-tight text-on-surface">
+                        Activity Logs</h1>
+                    <p class="text-on-surface-variant max-w-md font-body leading-relaxed">
+                        Monitor system-wide actions and login sessions. Real-time observability for infrastructure
+                        security.
+                    </p>
+                </div>
+                <div class="flex gap-3 pb-2">
+                    <button
+                        class="flex items-center gap-2 bg-surface-container hover:bg-surface-container-high text-on-surface px-5 py-2.5 rounded-xl border border-outline-variant/10 transition-all active:scale-95">
+                        <span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                        <span class="text-xs font-bold uppercase tracking-wider">Export PDF</span>
+                    </button>
+                    <button
+                        class="flex items-center gap-2 bg-primary text-on-primary px-5 py-2.5 rounded-xl shadow-lg shadow-primary/10 transition-all active:scale-95">
+                        <span class="material-symbols-outlined text-sm" data-icon="csv">description</span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-on-primary">CSV Report</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Stats Overview - Bento Grid Style -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-surface-container-low p-6 rounded-3xl relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 left-0 w-1 h-full bg-primary-container shadow-[0_0_15px_rgba(128,131,255,0.4)]">
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <span
+                            class="text-[0.6875rem] font-bold text-on-surface-variant tracking-[0.05em] uppercase">Total
+                            Actions</span>
+                        <div class="text-3xl font-headline font-semibold text-on-surface">24,892</div>
+                    </div>
+                    <div class="mt-4 flex items-center gap-2 text-primary text-xs">
+                        <span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+                        <span>12% from last 24h</span>
+                    </div>
+                </div>
+                <div class="bg-surface-container-low p-6 rounded-3xl relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-tertiary shadow-[0_0_15px_rgba(255,183,131,0.4)]">
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <span
+                            class="text-[0.6875rem] font-bold text-on-surface-variant tracking-[0.05em] uppercase">Security
+                            Flags</span>
+                        <div class="text-3xl font-headline font-semibold text-on-surface">14</div>
+                    </div>
+                    <div class="mt-4 flex items-center gap-2 text-tertiary text-xs">
+                        <span class="material-symbols-outlined text-sm" data-icon="report">report</span>
+                        <span>Requires review</span>
+                    </div>
+                </div>
+                <div class="bg-surface-container-low p-6 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-success shadow-[0_0_15px_rgba(16,185,129,0.4)]">
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <span
+                            class="text-[0.6875rem] font-bold text-on-surface-variant tracking-[0.05em] uppercase">Login
+                            Sessions</span>
+                        <div class="text-3xl font-headline font-semibold text-on-surface">124</div>
+                    </div>
+                    <div class="mt-4 flex items-center gap-2 text-success text-xs">
+                        <span class="material-symbols-outlined text-sm" data-icon="pulse">sensors</span>
+                        <span>Active sessions</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Activity Density Trend -->
+            <section class="bg-surface-container-low p-8 rounded-3xl border border-outline-variant/5">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+                    <div>
+                        <h2 class="text-xl font-headline font-semibold text-on-surface text-2xl">Activity Intensity
+                            Trend</h2>
+                        <p class="text-xs text-on-surface-variant">Real-time density of system actions & security events
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-primary shadow-[0_0_10px_rgba(99,102,241,0.4)]"></span>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">System
+                                Actions</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span
+                                class="w-3 h-3 rounded-full bg-tertiary shadow-[0_0_10px_rgba(255,183,131,0.4)]"></span>
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Security
+                                Flags</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-[300px] w-full relative">
+                    <canvas id="activityTrendChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Action Bar -->
+            <section
+                class="bg-surface-container-low p-4 rounded-3xl flex flex-wrap items-center gap-4 border border-outline-variant/5">
+                <div class="relative flex-grow">
+                    <span
+                        class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-lg"
+                        data-icon="search">search</span>
+                    <input
+                        class="w-full bg-surface-dim border-none rounded-2xl pl-12 pr-4 py-3 text-sm focus:ring-1 focus:ring-primary/40 placeholder-slate-600"
+                        placeholder="Search User IDs, actions or keywords..." type="text" />
+                </div>
+                <div class="flex items-center gap-2 overflow-x-auto hide-scrollbar">
+                    <button
+                        class="bg-surface-container px-4 py-3 rounded-2xl flex items-center gap-2 hover:bg-surface-container-high transition-all border border-outline-variant/10">
+                        <span class="text-[0.6875rem] font-bold tracking-widest uppercase">Action Type</span>
+                        <span class="material-symbols-outlined text-xs" data-icon="expand_more">expand_more</span>
+                    </button>
+                    <button
+                        class="bg-surface-container px-4 py-3 rounded-2xl flex items-center gap-2 hover:bg-surface-container-high transition-all border border-outline-variant/10">
+                        <span class="text-[0.6875rem] font-bold tracking-widest uppercase">Module</span>
+                        <span class="material-symbols-outlined text-xs" data-icon="expand_more">expand_more</span>
+                    </button>
+                    <button
+                        class="bg-surface-container px-4 py-3 rounded-2xl flex items-center gap-2 hover:bg-surface-container-high transition-all border border-outline-variant/10">
+                        <span class="text-[0.6875rem] font-bold tracking-widest uppercase">Date Range</span>
+                        <span class="material-symbols-outlined text-xs" data-icon="calendar_today">calendar_today</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Tabs Navigation -->
+            <section class="space-y-8">
+                <div class="flex gap-8 border-b border-outline-variant/10">
+                    <button
+                        class="pb-4 border-b-2 border-primary text-primary text-sm font-semibold tracking-tight transition-all">User
+                        &amp; System Activity</button>
+                    <button
+                        class="pb-4 border-b-2 border-transparent text-on-surface-variant text-sm font-medium hover:text-on-surface transition-all">Login
+                        Sessions</button>
+                    <button
+                        class="pb-4 border-b-2 border-transparent text-on-surface-variant text-sm font-medium hover:text-on-surface transition-all">Admin
+                        Controls</button>
+                </div>
+                <!-- Activity List -->
+                <div class="bg-surface-container rounded-[2rem] overflow-hidden border border-outline-variant/5">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-outline-variant/10 bg-surface-container-high/30">
+                                <th
+                                    class="px-8 py-5 text-[0.6875rem] font-bold uppercase tracking-widest text-on-surface-variant">
+                                    User / Entity</th>
+                                <th
+                                    class="px-8 py-5 text-[0.6875rem] font-bold uppercase tracking-widest text-on-surface-variant">
+                                    Action Context</th>
+                                <th
+                                    class="px-8 py-5 text-[0.6875rem] font-bold uppercase tracking-widest text-on-surface-variant text-center">
+                                    Severity</th>
+                                <th
+                                    class="px-8 py-5 text-[0.6875rem] font-bold uppercase tracking-widest text-on-surface-variant text-right">
+                                    Timestamp</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-outline-variant/5">
+                            <tr class="group hover:bg-surface-bright/20 transition-colors">
+                                <td class="px-8 py-6">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-10 h-10 rounded-xl overflow-hidden bg-surface-container-highest">
+                                            <img alt="User JS" class="w-full h-full object-cover"
+                                                data-alt="Avatar of user John Smith"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuArC3ByNcmQTqRYlpTk9zEMiYaS1xS8Yk7yjtvAXQYbE5-QhQ8dfZmGMOmUjiPg3QLiefSyaI4RooIdMldgeNAnS-NERJbs9OhXe361BgTmaxaYJown6QBPDHnEqqdfb5nyslZ5i2VI7519wKAD5Bwex2Wy2nvmJdSW0cwSO_8SOkJU07RpIGq5x0ygLu1pSUbnz56YttZ41763yN5szAh9jcSJ1--109xh5o-BW2_-gU05dni8N62AaBLur3CUaO-ryhGSSOGVREY" />
+                                        </div>
+                                        <div>
+                                            <div class="text-sm font-semibold text-on-surface">John Smith</div>
+                                            <div class="text-[10px] text-on-surface-variant font-medium">Project Manager
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-6">
+                                    <div class="space-y-1">
+                                        <div class="text-sm text-on-surface flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-sm text-primary"
+                                                data-icon="file_upload">file_upload</span>
+                                            Updated project <span class="text-primary-fixed">"Obsidian-Core-V2"</span>
+                                        </div>
+                                        <div class="text-[10px] text-on-surface-variant uppercase tracking-wider">
+                                            Module: Engineering</div>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-6">
+                                    <div class="flex justify-center">
+                                        <span
+                                            class="bg-primary/10 text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-primary/20">Normal</span>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-6 text-right">
+                                    <div class="text-xs text-on-surface-variant">2 mins ago</div>
+                                    <div class="text-[10px] text-slate-600">14:24:02 PM</div>
+                                </td>
+                            </tr>
+                            <tr class="group hover:bg-surface-bright/20 transition-colors">
+                                <td class="px-8 py-6">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-10 h-10 rounded-xl overflow-hidden bg-surface-container-highest">
+                                            <img alt="User AL" class="w-full h-full object-cover"
+                                                data-alt="Avatar of user Anna Lopez"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDArAzt-tHPjuNpSm-bEO8tpiYV9jMVjKXeKwqw0nXZzBlpHRkfccMqeXCqnPmR8Lws10uQOECpbKuYouJdrXeGXhu1Cc2rqGxMgH8wobCsLp6mAPkaYzM1_m72Vky8QfI1-SvJlJP03HwXP3RXTZ144AbQ5CfR_3c-nSb2i8qSYaCEukf3YH52i-B-Lt6ruFMasp7HPWA7_De4QkuZwSVmGlg4derN6hkRlzOc0VFr27Ba__iCaLjQ0n5xV1uyS5NYeYhglu0djng" />
+                                        </div>
+                                        <div>
+                                            <div class="text-sm font-semibold text-on-surface">Anna Lopez</div>
+                                            <div class="text-[10px] text-on-surface-variant font-medium">System Admin
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-6">
+                                    <div class="space-y-1">
+                                        <div class="text-sm text-on-surface flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-sm text-tertiary"
+                                                data-icon="admin_panel_settings">admin_panel_settings</span>
+                                            Edited Role Permissions: <span class="text-tertiary">"Support-Tier-1"</span>
+                                        </div>
+                                        <div class="text-[10px] text-on-surface-variant uppercase tracking-wider">
+                                            Module: Security</div>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-6">
+                                    <div class="flex justify-center">
+                                        <span
+                                            class="bg-tertiary/10 text-tertiary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-tertiary/20">Critical</span>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-6 text-right">
+                                    <div class="text-xs text-on-surface-variant">15 mins ago</div>
+                                    <div class="text-[10px] text-slate-600">14:11:45 PM</div>
+                                </td>
+                            </tr>
+                            <tr class="group hover:bg-surface-bright/20 transition-colors">
+                                <td class="px-8 py-6">
+                                    <div class="flex items-center gap-4">
+                                        <div
+                                            class="w-10 h-10 rounded-xl overflow-hidden bg-surface-container-highest p-2">
+                                            <span class="material-symbols-outlined text-on-surface-variant"
+                                                data-icon="smart_toy">smart_toy</span>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm font-semibold text-on-surface">System Bot</div>
+                                            <div class="text-[10px] text-on-surface-variant font-medium">Automated Task
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-6">
+                                    <div class="space-y-1">
+                                        <div class="text-sm text-on-surface flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-sm text-slate-500"
+                                                data-icon="sync">sync</span>
+                                            Scheduled backup completed successfully
+                                        </div>
+                                        <div class="text-[10px] text-on-surface-variant uppercase tracking-wider">
+                                            Module: Infrastructure</div>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-6">
+                                    <div class="flex justify-center">
+                                        <span
+                                            class="bg-slate-500/10 text-slate-400 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-slate-500/20">Info</span>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-6 text-right">
+                                    <div class="text-xs text-on-surface-variant">42 mins ago</div>
+                                    <div class="text-[10px] text-slate-600">13:44:12 PM</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="p-6 bg-surface-container-high/20 flex justify-between items-center">
+                        <div class="text-xs text-on-surface-variant">Showing 1-10 of 4,209 actions</div>
+                        <div class="flex gap-2">
+                            <button class="p-2 hover:bg-surface-bright rounded-lg text-slate-500 transition-all"><span
+                                    class="material-symbols-outlined"
+                                    data-icon="chevron_left">chevron_left</span></button>
+                            <button class="px-4 py-2 bg-primary text-on-primary text-xs font-bold rounded-lg">1</button>
+                            <button
+                                class="px-4 py-2 hover:bg-surface-bright text-xs font-bold rounded-lg text-on-surface-variant">2</button>
+                            <button
+                                class="px-4 py-2 hover:bg-surface-bright text-xs font-bold rounded-lg text-on-surface-variant">3</button>
+                            <button class="p-2 hover:bg-surface-bright rounded-lg text-slate-500 transition-all"><span
+                                    class="material-symbols-outlined"
+                                    data-icon="chevron_right">chevron_right</span></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Active Sessions Grid -->
+            <section class="space-y-6">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-xl font-headline font-semibold text-on-surface">Recent Login Sessions</h2>
+                    <div class="flex items-center gap-2 text-primary">
+                        <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                        <span class="text-[0.6875rem] font-bold uppercase tracking-widest">124 Active now</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Session Card -->
+                    <div
+                        class="bg-surface-container-low p-6 rounded-3xl border border-outline-variant/5 hover:border-primary/20 transition-all group">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="flex items-center gap-3">
+                                <div class="bg-surface-container-highest p-2.5 rounded-xl">
+                                    <span class="material-symbols-outlined text-primary"
+                                        data-icon="desktop_windows">desktop_windows</span>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-bold text-on-surface">MacBook Pro 16"</div>
+                                    <div class="text-[10px] text-on-surface-variant uppercase tracking-wider">macOS •
+                                        Chrome 118</div>
+                                </div>
+                            </div>
+                            <span
+                                class="bg-green-500/10 text-green-500 text-[10px] font-bold px-2 py-0.5 rounded-md uppercase">Active</span>
+                        </div>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between text-xs">
+                                <span class="text-on-surface-variant">User</span>
+                                <span class="text-on-surface font-medium">david.k@obsidian.io</span>
+                            </div>
+                            <div class="flex justify-between text-xs">
+                                <span class="text-on-surface-variant">Location</span>
+                                <span class="text-on-surface font-medium">San Francisco, US</span>
+                            </div>
+                            <div class="flex justify-between text-xs">
+                                <span class="text-on-surface-variant">Duration</span>
+                                <span class="text-on-surface font-medium">2h 45m</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full py-3 bg-error-container/10 text-error hover:bg-error-container/20 border border-error/20 rounded-xl text-xs font-bold uppercase tracking-widest transition-all">Force
+                            Logout</button>
+                    </div>
+                    <!-- Session Card 2 -->
+                    <div
+                        class="bg-surface-container-low p-6 rounded-3xl border border-outline-variant/5 hover:border-primary/20 transition-all group">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="flex items-center gap-3">
+                                <div class="bg-surface-container-highest p-2.5 rounded-xl">
+                                    <span class="material-symbols-outlined text-slate-400"
+                                        data-icon="smartphone">smartphone</span>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-bold text-on-surface">iPhone 15 Pro</div>
+                                    <div class="text-[10px] text-on-surface-variant uppercase tracking-wider">iOS •
+                                        Obsidian App</div>
+                                </div>
+                            </div>
+                            <span
+                                class="bg-on-surface-variant/10 text-on-surface-variant text-[10px] font-bold px-2 py-0.5 rounded-md uppercase">Idle</span>
+                        </div>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between text-xs">
+                                <span class="text-on-surface-variant">User</span>
+                                <span class="text-on-surface font-medium">sarah.w@obsidian.io</span>
+                            </div>
+                            <div class="flex justify-between text-xs">
+                                <span class="text-on-surface-variant">Location</span>
+                                <span class="text-on-surface font-medium">Berlin, DE</span>
+                            </div>
+                            <div class="flex justify-between text-xs">
+                                <span class="text-on-surface-variant">Duration</span>
+                                <span class="text-on-surface font-medium">5h 12m</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full py-3 bg-error-container/10 text-error hover:bg-error-container/20 border border-error/20 rounded-xl text-xs font-bold uppercase tracking-widest transition-all">Force
+                            Logout</button>
+                    </div>
+                    <!-- Session Card 3 -->
+                    <div
+                        class="bg-surface-container-low p-6 rounded-3xl border border-outline-variant/5 hover:border-primary/20 transition-all group">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="flex items-center gap-3">
+                                <div class="bg-surface-container-highest p-2.5 rounded-xl">
+                                    <span class="material-symbols-outlined text-primary"
+                                        data-icon="laptop_windows">laptop_windows</span>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-bold text-on-surface">Dell XPS 13</div>
+                                    <div class="text-[10px] text-on-surface-variant uppercase tracking-wider">Windows 11
+                                        • Edge</div>
+                                </div>
+                            </div>
+                            <span
+                                class="bg-green-500/10 text-green-500 text-[10px] font-bold px-2 py-0.5 rounded-md uppercase">Active</span>
+                        </div>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between text-xs">
+                                <span class="text-on-surface-variant">User</span>
+                                <span class="text-on-surface font-medium">mark.v@obsidian.io</span>
+                            </div>
+                            <div class="flex justify-between text-xs">
+                                <span class="text-on-surface-variant">Location</span>
+                                <span class="text-on-surface font-medium">London, UK</span>
+                            </div>
+                            <div class="flex justify-between text-xs">
+                                <span class="text-on-surface-variant">Duration</span>
+                                <span class="text-on-surface font-medium">12m</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full py-3 bg-error-container/10 text-error hover:bg-error-container/20 border border-error/20 rounded-xl text-xs font-bold uppercase tracking-widest transition-all">Force
+                            Logout</button>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-4">
+                    <button
+                        class="text-primary text-[0.6875rem] font-bold uppercase tracking-[0.1em] flex items-center gap-2 hover:gap-3 transition-all group">
+                        <span class="w-1 h-1 bg-primary rounded-full group-hover:scale-150 transition-transform"></span>
+                        View all active sessions
+                    </button>
+                </div>
+            </section>
+        </div>
+        <!-- Footer Placeholder -->
+        <footer
+            class="mt-12 px-8 py-6 border-t border-[var(--color-outline-variant)]/15 bg-[var(--color-surface)] flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-300 outfit">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">© 2024 Obsidian Architect • System
+                Status: <span class="text-[var(--color-success)]">Operational</span></p>
+            <div class="flex gap-4 items-center">
+                <span
+                    class="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse shadow-[0_0_10px_rgba(99,102,241,0.4)]"></span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Region:
+                    Global-Alpha-1</span>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="../../assets/js/app.js"></script>
+    <script src="../../assets/js/activity-charts.js"></script>
+</body>
+
+</html>
+
+

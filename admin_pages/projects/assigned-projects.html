@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Assigned Projects - System Admin</title>
+    
+    <!-- Core Assets -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="../../assets/js/tailwind-config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body class="flex min-h-screen bg-surface">
+    <!-- Sidebar Placeholder -->
+    <!-- 
+  XenonOS Shared Component: Sidebar (v5.0 - New Typography System)
+  Reference: Obsidian / Outfit & Syne
+-->
+<!-- 
+  XenonOS Shared Component: Sidebar (v5.0 - New Typography System)
+  Reference: Obsidian / Outfit & Syne
+-->
+<!-- 
+  XenonOS Shared Component: Modern Interactive Sidebar (v5.0)
+  Collapsible, Hover-to-Expand, and Pinned States
+-->
+<aside class="modern-sidebar outfit lg:translate-x-0 -translate-x-full transition-all duration-300 ease-in-out">
+    <!-- Branding -->
+    <div class="px-5 mb-8 mt-8 flex items-center gap-4 overflow-hidden">
+        <div class="min-w-[40px] h-10 rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[#3f4077] flex items-center justify-center shadow-lg">
+            <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">diamond</span>
+        </div>
+        <div class="nav-label">
+            <h1 class="text-xl font-bold text-[var(--color-on-surface)] font-headline tracking-tight syne">Obsidian</h1>
+            <p class="text-[10px] text-slate-500 font-label uppercase tracking-[0.2em] outfit">Management Hub</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex-1 space-y-1">
+        <!-- 1. Dashboard -->
+        <a href="../dashboard/dashboard.html" class="nav-item group" data-tooltip="Dashboard">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="nav-label text-sm">Dashboard</span>
+        </a>
+
+        <!-- 2. Clients -->
+        <a href="../clients/clients-list.html" class="nav-item group" data-tooltip="Clients">
+            <span class="material-symbols-outlined">group</span>
+            <span class="nav-label text-sm">Clients</span>
+        </a>
+
+        <!-- 3. Projects -->
+        <a href="../projects/all-projects.html" class="nav-item group" data-tooltip="Projects">
+            <span class="material-symbols-outlined">folder_open</span>
+            <span class="nav-label text-sm">Projects</span>
+        </a>
+
+        <!-- 4. Tasks -->
+        <a href="../tasks/task-list.html" class="nav-item group" data-tooltip="Tasks">
+            <span class="material-symbols-outlined">assignment</span>
+            <span class="nav-label text-sm">Tasks</span>
+        </a>
+
+        <!-- 5. Communication -->
+        <a href="../chat/communication.html" class="nav-item group" data-tooltip="Communication">
+            <span class="material-symbols-outlined">forum</span>
+            <span class="nav-label text-sm">Communication</span>
+        </a>
+
+        <!-- 6. Files -->
+        <a href="../files/file-manager.html" class="nav-item group" data-tooltip="Files">
+            <span class="material-symbols-outlined">folder_shared</span>
+            <span class="nav-label text-sm">Files</span>
+        </a>
+
+        <!-- 7. Payment -->
+        <a href="../payment/payment.html" class="nav-item group" data-tooltip="Payment">
+            <span class="material-symbols-outlined">payments</span>
+            <span class="nav-label text-sm">Payment</span>
+        </a>
+
+        <!-- 8. Team -->
+        <a href="../team/team-members.html" class="nav-item group" data-tooltip="Team">
+            <span class="material-symbols-outlined">badge</span>
+            <span class="nav-label text-sm">Team Members</span>
+        </a>
+
+        <!-- 9. Analytics -->
+        <a href="../Overview Analytics/executive.html" class="nav-item group" data-tooltip="Analytics">
+            <span class="material-symbols-outlined">analytics</span>
+            <span class="nav-label text-sm">Analytics</span>
+        </a>
+
+        <!-- 10. Reports -->
+        <a href="../Performance Reports/financial.html" class="nav-item group" data-tooltip="Reports">
+            <span class="material-symbols-outlined">trending_up</span>
+            <span class="nav-label text-sm">Reports</span>
+        </a>
+
+        <!-- 11. Activity -->
+        <a href="../activity/activity-logs.html" class="nav-item group" data-tooltip="Activity">
+            <span class="material-symbols-outlined">history</span>
+            <span class="nav-label text-sm">Activity Logs</span>
+        </a>
+
+        <!-- Divider -->
+        <div class="mx-6 my-4 border-t border-[var(--color-outline-variant)]/10"></div>
+
+        <!-- 12. Settings -->
+        <a href="../settings/settings.html" class="nav-item group" data-tooltip="Settings">
+            <span class="material-symbols-outlined">settings</span>
+            <span class="nav-label text-sm">Settings</span>
+        </a>
+    </nav>
+
+    <!-- Pin Toggle Button -->
+    <div id="pin-sidebar" class="pin-toggle mx-4 mb-4 flex items-center justify-center shadow-lg" title="Pin Sidebar">
+        <span class="material-symbols-outlined text-sm">push_pin</span>
+    </div>
+</aside>
+
+
+    <!-- Main Content -->
+    <main class="flex-1 min-h-screen flex flex-col">
+        <!-- Header Placeholder -->
+        <!-- 
+  XenonOS Shared Component: Header (v5.0 - New Typography System)
+-->
+<header class="bg-[var(--color-surface)]/80 backdrop-blur-xl sticky top-0 z-40 w-full px-8 py-4 flex justify-between items-center shadow-[0_20px_40px_rgba(0,0,0,0.3)] outfit">
+    <div class="flex items-center gap-6">
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 rounded-xl flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all border border-white/5">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+        
+        <div class="relative group">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg group-focus-within:text-[var(--color-primary)] transition-colors">search</span>
+            <input class="bg-[var(--color-surface-container)] border-none text-[var(--color-on-surface)] text-sm rounded-full py-2 pl-10 pr-4 w-32 sm:w-64 focus:ring-1 focus:ring-[var(--color-primary)] transition-all placeholder:text-slate-500 outfit" placeholder="Search..." type="text"/>
+        </div>
+    </div>
+    <div class="flex items-center gap-4">
+        <button class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all">
+            <span class="material-symbols-outlined">notifications</span>
+        </button>
+        <button class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all">
+            <span class="material-symbols-outlined">settings</span>
+        </button>
+        <div class="h-10 w-[1px] bg-[var(--color-outline-variant)]/20 mx-2"></div>
+        <div class="flex items-center gap-3">
+            <div class="hidden lg:block text-right">
+                <p class="text-sm font-semibold text-[var(--color-on-surface)] leading-tight outfit">Alex Rivera</p>
+                <p class="text-[10px] text-slate-500 font-label outfit">Super Admin</p>
+            </div>
+            <img alt="Admin Profile" class="w-10 h-10 rounded-xl bg-[var(--color-surface-container)] object-cover border border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiwvRijOxcIA8PzPmV4_ePxNAQ1jEK6liXVtWkfs0B0GPSYNv0s2X9bjRrxQARCKCqfkZMd_pN7fsOwKf9m_fJ_15CowBjsePuDTSSAX1-9Vs_i3-l0yrn5GMXq9GUw0e9T_8MqYD5fcbH63KRsAIXgKDhALrSWhkRRooXJVcVzAYfnMs4F7d9jBp7Yl1Es5d241Rjpgf0DTyQZGm_aWG748o3-FXMGSid14TvMD2IxzNtrSDjzE5yeYoJgfU9JpTr1C1EIG_a15o"/>
+        </div>
+    </div>
+</header>
+
+
+        <!-- Main Scrollable Canvas -->
+<!-- Page Canvas -->
+<div class="px-10 py-12 max-w-7xl mx-auto space-y-10">
+<!-- Hero Header Section -->
+<section class="flex flex-col md:flex-row justify-between items-end md:items-center gap-6">
+<div class="space-y-2">
+<h1 class="font-headline text-5xl font-light tracking-tight text-on-surface">Assigned Projects</h1>
+<p class="text-on-surface-variant max-w-md text-sm leading-relaxed">Oversee active workstreams, monitor delivery health, and coordinate team velocity across your premium portfolio.</p>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-xl font-headline font-semibold text-sm flex items-center gap-2 hover:opacity-90 active:scale-[0.98] transition-all shadow-[0_10px_20px_rgba(192,193,255,0.2)]">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+                    Assign New Project
+                </button>
+</section>
+<!-- Filters & Controls Bar -->
+<section class="bg-surface-container-low p-2 rounded-2xl flex flex-wrap items-center gap-2">
+<div class="flex items-center gap-2 px-3 py-2 bg-surface-container-high rounded-xl text-xs font-semibold text-on-surface-variant cursor-pointer hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="person">person</span>
+                    Team Member: All
+                    <span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-2 bg-surface-container-high rounded-xl text-xs font-semibold text-on-surface-variant cursor-pointer hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="stacked_line_chart">stacked_line_chart</span>
+                    Status: Active
+                    <span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-2 bg-surface-container-high rounded-xl text-xs font-semibold text-on-surface-variant cursor-pointer hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="priority_high">priority_high</span>
+                    Priority: High
+                    <span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</div>
+<div class="ml-auto flex items-center gap-4 pr-2">
+<div class="text-[11px] font-bold text-slate-500 uppercase tracking-widest">Showing 24 Projects</div>
+<button class="p-2 rounded-lg text-slate-400 hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+</button>
+<button class="p-2 rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined font-variation-settings: 'FILL' 1;" data-icon="view_list">view_list</span>
+</button>
+</div>
+</section>
+<!-- Project Cards Stack -->
+<div class="space-y-4">
+<!-- Expanded Project Card -->
+<div class="bg-surface-container rounded-xl overflow-hidden shadow-2xl transition-all duration-300 ring-1 ring-primary/20">
+<div class="p-6 flex items-start gap-6 border-b border-outline-variant/10">
+<div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="flex-1 grid grid-cols-12 gap-4 items-center">
+<div class="col-span-4">
+<h3 class="font-headline font-bold text-lg text-on-surface leading-tight">Neon Genesis Rebranding</h3>
+<p class="text-xs text-on-surface-variant">Client: CyberDyne Systems</p>
+</div>
+<div class="col-span-2">
+<div class="flex -space-x-2">
+<img class="w-8 h-8 rounded-full ring-2 ring-surface-container" data-alt="Team member avatar John Doe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoF_GwKTozKgbPXfDfdLEUO5aMPb7B_wrpYOHMdrHyqPgDmRD0K_9BsTo2ym9O9f443f8OUbursGQZJ6kYGmTTu_drZgPqbJaFIvjeIP4GXkqtYLAhmRn_6lF7kTJzRXt5-aPT8-xrBCEWrxk0R1KVm0iHgod_7YEAIiJyj6VIkmWeZU1dNLQWbr0kFoL340h-ZAbhsKs-164pClV_5z3xpLN9n_HYMNOYWe8uH2GbSIaB3tboj0yBg2LIS_jqkkOyAFskysuoNbo"/>
+<img class="w-8 h-8 rounded-full ring-2 ring-surface-container" data-alt="Team member avatar Sarah Miller" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMWxkP1n5Pj1tB1M7T5qe0X3cdaUhVhLHRQYhYSz4gwxk0WNuBc2LI-11eOi_rv68pKPV8kLqXz95AKUFpccsFbSOdivjQZitVXJa92opExBXOKS4-YNBixy0HjRpQubDJEGU028UeUHbtaR3yJdviPP6F8hWzb-iTvprYBDp5A7rTLHCHhY27SWr9TwFQTNPPW0TbLbfJS9PAPObK0_HWS59EZoygYPgtMAaSko4FQJJYJ0h7aVkNW8LY3ZklnQCF2nS2fNGYlDE"/>
+<img class="w-8 h-8 rounded-full ring-2 ring-surface-container" data-alt="Team member avatar Tom Kim" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4g6qBzZ5nyT9rdYOzaHiPwI1IIo4in_PDK7YKZ1N28M4ufK13QBGhpRjlyz9pqzYlKB3bZVV0w8tVTPBZHNf_mUO98u1zoDz71kmMuFtU9xwmlxmoLl1yli5yn54O8F6Rql9pSp5bm1AaVcYwCWpAYwsh9tMN5ZlRvskR61Gl5SkkXWCOlYuNvKhU9jfc3t-bkrPFcC7jbhId1bS9ObJh3MzDdIMZbbFU3Zhbf0gDbY8c5ZlRPUy0WfcwhyzQSUB9yxY8ozo1-XE"/>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest ring-2 ring-surface-container flex items-center justify-center text-[10px] font-bold">+2</div>
+</div>
+</div>
+<div class="col-span-3 px-4">
+<div class="flex justify-between text-[10px] font-bold text-on-surface-variant mb-1.5 uppercase tracking-tighter">
+<span>Velocity</span>
+<span>68%</span>
+</div>
+<div class="h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container w-[68%] shadow-[0_0_8px_rgba(192,193,255,0.4)]"></div>
+</div>
+</div>
+<div class="col-span-2 flex flex-col items-end">
+<span class="px-2 py-0.5 rounded bg-tertiary/20 text-tertiary text-[10px] font-bold uppercase tracking-wider mb-1">High Priority</span>
+<span class="text-[11px] text-slate-400 font-medium">Due Oct 24, 2024</span>
+</div>
+<div class="col-span-1 flex justify-end">
+<button class="p-2 text-slate-500 hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Expanded Details Panel -->
+<div class="bg-surface-container-low/40 p-8 grid grid-cols-1 md:grid-cols-3 gap-10">
+<div class="space-y-6">
+<div>
+<h4 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">Task Summary</h4>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-surface-container p-4 rounded-xl border-l-2 border-primary">
+<p class="text-2xl font-headline font-bold text-on-surface">42</p>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase">Total Tasks</p>
+</div>
+<div class="bg-surface-container p-4 rounded-xl border-l-2 border-tertiary">
+<p class="text-2xl font-headline font-bold text-on-surface">12</p>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase">In Progress</p>
+</div>
+<div class="bg-surface-container p-4 rounded-xl border-l-2 border-slate-600">
+<p class="text-2xl font-headline font-bold text-on-surface">08</p>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase">Pending</p>
+</div>
+<div class="bg-surface-container p-4 rounded-xl border-l-2 border-emerald-500">
+<p class="text-2xl font-headline font-bold text-on-surface">22</p>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase">Completed</p>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">Recent Updates</h4>
+<div class="space-y-4 relative before:absolute before:left-[7px] before:top-2 before:bottom-2 before:w-[1px] before:bg-outline-variant/20">
+<div class="flex gap-4 relative pl-6">
+<div class="absolute left-0 top-1 w-3.5 h-3.5 rounded-full bg-primary-container ring-4 ring-surface-container-low"></div>
+<div>
+<p class="text-[13px] text-on-surface leading-tight font-medium">Sarah Miller updated <span class="text-primary">Hero_Concept_V2.fig</span></p>
+<p class="text-[11px] text-slate-500 mt-0.5">2 hours ago</p>
+</div>
+</div>
+<div class="flex gap-4 relative pl-6">
+<div class="absolute left-0 top-1 w-3.5 h-3.5 rounded-full bg-surface-container-highest ring-4 ring-surface-container-low"></div>
+<div>
+<p class="text-[13px] text-on-surface leading-tight font-medium">Status changed to <span class="px-1.5 py-0.5 bg-secondary-container rounded text-[10px]">In Review</span></p>
+<p class="text-[11px] text-slate-500 mt-0.5">5 hours ago</p>
+</div>
+</div>
+<div class="flex gap-4 relative pl-6">
+<div class="absolute left-0 top-1 w-3.5 h-3.5 rounded-full bg-surface-container-highest ring-4 ring-surface-container-low"></div>
+<div>
+<p class="text-[13px] text-on-surface leading-tight font-medium">New comment from Client on <span class="text-primary">Style Guide</span></p>
+<p class="text-[11px] text-slate-500 mt-0.5">Yesterday</p>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">Project Actions</h4>
+<div class="flex flex-col gap-2">
+<button class="w-full flex items-center justify-between px-4 py-3 bg-surface-container rounded-xl text-sm font-medium hover:bg-surface-bright transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="task_alt">task_alt</span>
+                                        View Full Tasks
+                                    </div>
+<span class="material-symbols-outlined text-slate-500 group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-4 py-3 bg-surface-container rounded-xl text-sm font-medium hover:bg-surface-bright transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="folder">folder</span>
+                                        Project Assets
+                                    </div>
+<span class="material-symbols-outlined text-slate-500 group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-4 py-3 bg-surface-container rounded-xl text-sm font-medium hover:bg-surface-bright transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="forum">forum</span>
+                                        Open Team Chat
+                                    </div>
+<span class="material-symbols-outlined text-slate-500 group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="mt-4 w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-outline-variant/10 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-outline-variant/20 transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="person_add">person_add</span>
+                                    Reassign Team
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Collapsed Project Card 2 -->
+<div class="bg-surface-container hover:bg-surface-container-high rounded-xl overflow-hidden transition-all duration-300 group cursor-pointer border-l-2 border-transparent hover:border-primary">
+<div class="p-6 flex items-start gap-6">
+<div class="w-14 h-14 bg-surface-container-highest rounded-2xl flex items-center justify-center shrink-0 transition-colors group-hover:bg-primary/10">
+<span class="material-symbols-outlined text-slate-400 text-3xl transition-colors group-hover:text-primary" data-icon="diamond">diamond</span>
+</div>
+<div class="flex-1 grid grid-cols-12 gap-4 items-center">
+<div class="col-span-4">
+<h3 class="font-headline font-bold text-lg text-on-surface leading-tight">Sapphire Ecommerce</h3>
+<p class="text-xs text-on-surface-variant">Client: Blue Ocean Retail</p>
+</div>
+<div class="col-span-2">
+<div class="flex -space-x-2">
+<img class="w-8 h-8 rounded-full ring-2 ring-surface-container" data-alt="Team member avatar Ricky V" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgQgHa98gU14hkYqhF-_h6IW-qPUaoWWM-wVf9niy5b_t5X97lcmK7aVtVf0Wvhy6RVjuZMMwQ4rHnFwVWn2FBAeflecjQs-0IBy8F7VD9ST9svO9nWW2ETFvqom0OTTicJioPCxHIjgq9iHX2PBizApsx9PhS4lfBk9aGbY1QQZxPZ3DuVVUfPD_qkSLgOKnnD20ZPm3drpJnOuCiYJCc0Z0H5lz1siAWyzcR4-3ZLNijuwi0bFXwfeIPgTIX9gyyWxFIx1W6Q68"/>
+<img class="w-8 h-8 rounded-full ring-2 ring-surface-container" data-alt="Team member avatar Lisa A" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZlYFIDMP2zurUNvVHqnYSe0dvTPC0zs0_HS_PyuOftXpwYEtCWn63UA0jJ1iCqPm9bEozUhJ_no_FuuBx_Wk1Apm_4FJEwh0s6g6eBMoE_8TKLFUXrvgfz6KGOIsUhVq_OTGK9D_3lAjfiP11iNevKf0SeXxOFZOap37wyI_9_iTx0da2C71AbMduG_XxChWyP5A5H0R4ayP7hsKg3DOuY1U6wfSZ4lSOeP3QZADjUxw0RIbfeQ1dp7HRubf1-3866ebcu6cspeo"/>
+</div>
+</div>
+<div class="col-span-3 px-4">
+<div class="flex justify-between text-[10px] font-bold text-on-surface-variant mb-1.5 uppercase tracking-tighter">
+<span>Velocity</span>
+<span>32%</span>
+</div>
+<div class="h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container w-[32%]"></div>
+</div>
+</div>
+<div class="col-span-2 flex flex-col items-end">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-slate-400 text-[10px] font-bold uppercase tracking-wider mb-1">Med Priority</span>
+<span class="text-[11px] text-slate-400 font-medium">Due Nov 12, 2024</span>
+</div>
+<div class="col-span-1 flex justify-end">
+<button class="p-2 text-slate-500 group-hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Collapsed Project Card 3 -->
+<div class="bg-surface-container hover:bg-surface-container-high rounded-xl overflow-hidden transition-all duration-300 group cursor-pointer border-l-2 border-transparent hover:border-primary">
+<div class="p-6 flex items-start gap-6">
+<div class="w-14 h-14 bg-surface-container-highest rounded-2xl flex items-center justify-center shrink-0 transition-colors group-hover:bg-primary/10">
+<span class="material-symbols-outlined text-slate-400 text-3xl transition-colors group-hover:text-primary" data-icon="cloud_queue">cloud_queue</span>
+</div>
+<div class="flex-1 grid grid-cols-12 gap-4 items-center">
+<div class="col-span-4">
+<h3 class="font-headline font-bold text-lg text-on-surface leading-tight">Quantum Infrastructure</h3>
+<p class="text-xs text-on-surface-variant">Client: Omni Corp</p>
+</div>
+<div class="col-span-2">
+<div class="flex -space-x-2">
+<img class="w-8 h-8 rounded-full ring-2 ring-surface-container" data-alt="Team member avatar Mike P" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR6QifWJ1KCXiuLtI5il2QPYF5BA4iEURGT_18pnn9JeUljdB2AypbdX2glYQWZ6pgKIIlDshSfovxrlz5CQjSwtMEoGFx6eF2JgCrS7v-hEvqQybRHG6jJVaPhQ8W0dtl5mCkdP70_IHF-KNQOuK9cQznWdJhUpiKQEk3nrYvVduQHuTKUTJcyB5-dO7-hJKwaq4IAK8X507O5FclJQ8T1_cNYtyJci3YY3Mt1d8j2axcfGzEHaCcfSDGRUZuqWfIrSUQCg1l_Lg"/>
+<img class="w-8 h-8 rounded-full ring-2 ring-surface-container" data-alt="Team member avatar Jane D" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg4ExaMTXCHS0X2K0pHrxmAVTiNt78WnYibxkapKS4ZRdwYm7FpDC1LIkImp7Cuu4V-RGLIdjzQJ9lQesD9hjI7JfiaEi273CWFH4TRAxWlTK8MPY5ZXAYfyIlfag7SgZ3iTP3d_6TWwkTOcaScVS7LhxEZHoWQAqBQ4p8mfCmpPkjY8vNXVUIak18tz-D3Jj6aE5LWrdIsEvC_LrP9wqYq9N9-VD70XktzP_6EDQZezl7vt374Ls4JiGAOTT9-sP59w7Uc55pQPs"/>
+<img class="w-8 h-8 rounded-full ring-2 ring-surface-container" data-alt="Team member avatar Alex S" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPI83KH1cDQC00b69NvuUhDCTPAENhohR5lsr2JzBrb6wc_KNrjyJIqxOIgjIOzAl82EhC3tScY_cTZv8DuyI27H7ATWgw5fH6qMnG6OP8_uoJG0x3ZnCFVPzx2WIxhDmKA4446Iq0oqYnE9neUEgFn1ZnRvTOzcWgeddc8AzXCJ2R1JX0oXxSsG9iIMELj-40XNYgAHiCJ1c4hh4QhyMJaDrUxv0dOHBDPY7ZjDQ85hvkxdn6UPwTgeXXUKpthq_e4sCCWqosux8"/>
+</div>
+</div>
+<div class="col-span-3 px-4">
+<div class="flex justify-between text-[10px] font-bold text-on-surface-variant mb-1.5 uppercase tracking-tighter">
+<span>Velocity</span>
+<span>92%</span>
+</div>
+<div class="h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container w-[92%] shadow-[0_0_8px_rgba(192,193,255,0.4)]"></div>
+</div>
+</div>
+<div class="col-span-2 flex flex-col items-end">
+<span class="px-2 py-0.5 rounded bg-tertiary/20 text-tertiary text-[10px] font-bold uppercase tracking-wider mb-1">High Priority</span>
+<span class="text-[11px] text-slate-400 font-medium">Due Tomorrow</span>
+</div>
+<div class="col-span-1 flex justify-end">
+<button class="p-2 text-slate-500 group-hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Dashboard Stats Summary (Bento Minimal) -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6 pt-8">
+<div class="bg-surface-container-low p-6 rounded-2xl relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary/40 group-hover:bg-primary transition-colors"></div>
+<p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Total Budget Allocated</p>
+<h4 class="text-3xl font-headline font-light text-on-surface">$2.4M</h4>
+<p class="text-xs text-emerald-500 mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span>
+                        +12% from last quarter
+                    </p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-2xl relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-tertiary/40 group-hover:bg-tertiary transition-colors"></div>
+<p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Pending Milestones</p>
+<h4 class="text-3xl font-headline font-light text-on-surface">18</h4>
+<p class="text-xs text-slate-500 mt-2 flex items-center gap-1">
+                        7 critical path items
+                    </p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-2xl relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-secondary/40 group-hover:bg-secondary transition-colors"></div>
+<p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Team Capacity</p>
+<h4 class="text-3xl font-headline font-light text-on-surface">84%</h4>
+<p class="text-xs text-on-surface-variant mt-2 flex items-center gap-1">
+                        Optimal operating range
+                    </p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-2xl relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-slate-600/40 group-hover:bg-slate-400 transition-colors"></div>
+<p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Avg. Completion Time</p>
+<h4 class="text-3xl font-headline font-light text-on-surface">14d</h4>
+<p class="text-xs text-on-surface-variant mt-2 flex items-center gap-1">
+                        -2d compared to industry
+                    </p>
+</div>
+</section>
+</div>
+        <!-- Footer Placeholder -->
+    <!-- 
+  XenonOS Shared Component: Footer (v5.0 - New Typography System)
+-->
+<footer class="mt-12 px-8 py-6 border-t border-[var(--color-outline-variant)]/15 bg-[var(--color-surface)] flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-300 outfit">
+    <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">© 2024 Obsidian Architect • System Status: <span class="text-[var(--color-success)]">Operational</span></p>
+    <div class="flex gap-4 items-center">
+        <span class="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse shadow-[0_0_10px_rgba(99,102,241,0.4)]"></span>
+        <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Region: Global-Alpha-1</span>
+    </div>
+</footer>
+
+</main>
+
+    <script src="../../assets/js/app.js"></script>
+</body>
+</html>
+
+
+

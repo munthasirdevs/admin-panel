@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(28, 31, 42, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .indigo-glow-hover:hover {
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
+        }
+        body {
+            background-color: #0f131d;
+            color: #dfe2f1;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#404178",
+              "on-primary-fixed-variant": "#2f2ebe",
+              "inverse-primary": "#494bd6",
+              "error-container": "#93000a",
+              "on-primary-fixed": "#07006c",
+              "surface-dim": "#0f131d",
+              "secondary-container": "#42447b",
+              "secondary-fixed-dim": "#c0c1ff",
+              "tertiary-fixed-dim": "#ffb783",
+              "surface-container-high": "#262a35",
+              "surface-container-lowest": "#0a0e18",
+              "background": "#0f131d",
+              "surface-variant": "#313540",
+              "on-surface": "#dfe2f1",
+              "outline-variant": "#464554",
+              "on-error": "#690005",
+              "error": "#ffb4ab",
+              "on-tertiary-fixed-variant": "#703700",
+              "inverse-on-surface": "#2c303b",
+              "tertiary-fixed": "#ffdcc5",
+              "secondary-fixed": "#e1e0ff",
+              "surface-container": "#1c1f2a",
+              "surface-container-low": "#171b26",
+              "surface-container-highest": "#313540",
+              "outline": "#908fa0",
+              "on-error-container": "#ffdad6",
+              "on-secondary": "#292a60",
+              "secondary": "#c0c1ff",
+              "on-tertiary-fixed": "#301400",
+              "on-tertiary-container": "#452000",
+              "primary-fixed-dim": "#c0c1ff",
+              "on-surface-variant": "#c7c4d7",
+              "surface-tint": "#c0c1ff",
+              "primary-container": "#8083ff",
+              "surface": "#0f131d",
+              "on-secondary-fixed": "#13144a",
+              "surface-bright": "#353944",
+              "on-primary": "#1000a9",
+              "on-primary-container": "#0d0096",
+              "tertiary-container": "#d97721",
+              "on-tertiary": "#4f2500",
+              "on-background": "#dfe2f1",
+              "primary-fixed": "#e1e0ff",
+              "inverse-surface": "#dfe2f1",
+              "on-secondary-container": "#b2b3f2",
+              "primary": "#c0c1ff",
+              "tertiary": "#ffb783"
+            },
+            fontFamily: {
+              "headline": ["Syne", "sans-serif"],
+              "body": ["Outfit", "sans-serif"],
+              "label": ["Outfit", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 h-full w-64 z-40 bg-[#0a0e18] flex flex-col pt-24 pb-8">
+<div class="px-8 mb-12">
+<h1 class="text-xl font-['Syne'] font-black text-[#c0c1ff]">XenonOS</h1>
+<p class="text-xs text-on-surface-variant font-medium mt-1 uppercase tracking-widest">Management Module</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-8 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 text-[#c0c1ff] bg-[#1c1f2a] border-l-2 border-[#6366f1] py-3 px-8" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-sm font-medium">Clients</span>
+</a>
+<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-8 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+<span class="text-sm font-medium">Projects</span>
+</a>
+<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-8 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
+<span class="material-symbols-outlined" data-icon="assignment_turned_in">assignment_turned_in</span>
+<span class="text-sm font-medium">Tasks</span>
+</a>
+<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-8 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
+<span class="material-symbols-outlined" data-icon="group_work">group_work</span>
+<span class="text-sm font-medium">Team</span>
+</a>
+<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-8 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
+<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
+<span class="text-sm font-medium">Files</span>
+</a>
+<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-8 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="text-sm font-medium">Billing</span>
+</a>
+<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-8 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble_outline">chat_bubble_outline</span>
+<span class="text-sm font-medium">Communication</span>
+</a>
+<a class="flex items-center gap-4 text-[#c7c4d7] py-3 px-8 hover:bg-[#1c1f2a] hover:text-[#dfe2f1] transition-all duration-400" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl font-bold shadow-[0_8px_16px_-4px_rgba(99,102,241,0.4)] flex items-center justify-center gap-2 scale-100 hover:scale-[1.02] transition-transform">
+<span class="material-symbols-outlined text-lg" data-icon="add_circle">add_circle</span>
+                New Project
+            </button>
+</div>
+</aside>
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-[#1c1f2a]/70 backdrop-blur-md shadow-[0_32px_32px_-4px_rgba(10,14,24,0.5)] flex justify-between items-center px-8 h-20 ml-64" style="width: calc(100% - 16rem);">
+<div class="flex items-center gap-6">
+<div class="relative">
+<span class="absolute inset-y-0 left-4 flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</span>
+<input class="bg-surface-container-lowest border-none rounded-full py-2.5 pl-12 pr-6 text-sm focus:ring-2 focus:ring-primary/40 w-80 text-on-surface placeholder:text-on-surface-variant/50 transition-all" placeholder="Search systems..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full border-2 border-surface-container"></span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l border-outline-variant/20">
+<div class="text-right">
+<p class="text-sm font-bold text-on-surface">Alex Mercer</p>
+<p class="text-[10px] text-on-surface-variant font-medium tracking-wider uppercase">Lead Architect</p>
+</div>
+<img alt="User avatar with status indicator" class="w-10 h-10 rounded-full border-2 border-primary/20 object-cover" data-alt="Close up portrait of a professional male architect in a dark studio setting with soft side lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEX6jgdYMMRKh1FTneOI_js3tzNdgilWlOr9GdZuuwaX5M3eotglULFOQglJTOUNOKN7nDL1zjLTQkI4mLZNI_oWvIRGR_IO_8bulxXL33vuEkSj0LQYX3Rtqn87wrA83HBFVyns7c-lgHjW8hud_tloKYLvbAtb8pbnz84C5iwYVfPhtkmIiDDYWMFw_f6rddiUPad53GYXksARBighoPs-3WQUbfv-Ou_QqNBHkZe3FCWUt7K_KHEXZ0wJ8kpkrRwrzl57PeIsY"/>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-64 pt-28 px-12 pb-20">
+<!-- Client Profile Header -->
+<section class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-10">
+<div class="flex items-start gap-8">
+<div class="relative group">
+<img alt="Organization profile image" class="w-32 h-32 rounded-3xl object-cover shadow-2xl border border-outline-variant/10" data-alt="Modern corporate office headquarters building with glass facade reflecting a dark evening sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuctT4jpfRZ6-V1ky955VQj5EocVUPlpM2eoVVrtu2oc3TlS87zUrK_hG2HuTHYjnT6N676EmPoKwkgkhxtkRnKaIScRrQ5sa9kOkCTHVZ76HU6OOhHT9ym_UYFskh7YS114tIeae4TJ5IEvngi9VSrhA3oyKsklhjKyd1jUk_qHCYq3_DwR6-xm_NN4Kyzccge-z5l8LDuHhT_ZSNbDK2OxIDVEZC_mx3j2l8lZ8yMiOGUGo0Mtjb65p41S3YLZRo3zMkOoMw-kE"/>
+<div class="absolute -bottom-2 -right-2 bg-primary p-2 rounded-xl text-on-primary shadow-lg">
+<span class="material-symbols-outlined text-lg" data-icon="verified">verified</span>
+</div>
+</div>
+<div class="pt-2">
+<div class="flex items-center gap-4 mb-2">
+<h2 class="text-4xl font-headline font-extrabold tracking-tight text-on-surface">Aetheria Global</h2>
+<span class="px-3 py-1 rounded-full bg-secondary-container/30 text-secondary text-xs font-bold tracking-widest uppercase">Enterprise</span>
+</div>
+<p class="text-on-surface-variant max-w-lg leading-relaxed">Infrastructure &amp; Logistics division specializing in orbital supply chain management and automated terrestrial distribution.</p>
+<div class="flex items-center gap-6 mt-6">
+<div class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-base" data-icon="location_on">location_on</span>
+<span>Geneva, Switzerland</span>
+</div>
+<div class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-base" data-icon="mail">mail</span>
+<span>contact@aetheria.global</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-6 py-3 rounded-xl border border-outline-variant/20 font-semibold text-on-surface hover:bg-surface-container-high transition-all">
+                        Edit Profile
+                    </button>
+<button class="px-6 py-3 rounded-xl bg-gradient-to-br from-primary to-primary-container font-bold text-on-primary shadow-lg shadow-primary/20 scale-100 hover:scale-[1.02] transition-transform flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+                        Create Project
+                    </button>
+</div>
+</div>
+<!-- Client Tabs -->
+<div class="flex gap-10 border-b border-outline-variant/10 pb-px">
+<button class="pb-4 text-on-surface-variant font-medium hover:text-on-surface transition-colors relative">
+                    Overview
+                </button>
+<button class="pb-4 text-primary font-bold transition-colors relative">
+                    Projects
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-primary rounded-t-full"></span>
+</button>
+<button class="pb-4 text-on-surface-variant font-medium hover:text-on-surface transition-colors">
+                    Resources
+                </button>
+<button class="pb-4 text-on-surface-variant font-medium hover:text-on-surface transition-colors">
+                    Billing
+                </button>
+<button class="pb-4 text-on-surface-variant font-medium hover:text-on-surface transition-colors">
+                    Documents
+                </button>
+</div>
+</section>
+<!-- Projects Grid Content -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Project Card 1: Large Bento -->
+<div class="lg:col-span-2 bg-surface-container rounded-[1.5rem] p-8 hover:bg-surface-container-high transition-all duration-400 group relative overflow-hidden border border-outline-variant/5 shadow-xl">
+<div class="absolute top-0 right-0 p-8">
+<span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase">High Priority</span>
+</div>
+<div class="flex flex-col h-full justify-between">
+<div>
+<h3 class="text-3xl font-headline font-extrabold text-primary mb-2 group-hover:translate-x-1 transition-transform">Neo-Transit Hub</h3>
+<p class="text-on-surface-variant font-medium mb-8">Aetheria Global • Infrastructure</p>
+<div class="grid grid-cols-2 gap-8 mb-8">
+<div>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest mb-1">Status</p>
+<p class="text-on-surface font-semibold flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                                    In Development
+                                </p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest mb-1">Deadline</p>
+<p class="text-on-surface font-semibold">Oct 24, 2024</p>
+</div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-end mb-3">
+<div>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest mb-1">Progress</p>
+<p class="text-2xl font-headline font-bold text-on-surface">68%</p>
+</div>
+<div class="flex -space-x-3">
+<img class="w-8 h-8 rounded-full border-2 border-surface-container object-cover" data-alt="User avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXq5AJM5HwBj67BUl9R-Q6_Y1rWolnpHclY3bblp891lpPSIecsMSQOv4TC11uJSXnP-CIEUuaRMggNpU2hugK4YHldVVG0bJ1hNZwbajRI6biQOi0OvoZ2DOim3YpEo1qB_Grln3rDYnBUxae77WbScs5SPmIvEsnW6vRURp6GgKP65UDhsXzx8CRVqbU2hKfpP-a_FD_hTUAXFwQ1SuwM9EN2jjvIv9TtHtT25nXe3elt8QxHJZbH3JVC5dYjdcjnCk-wMc2rLw"/>
+<img class="w-8 h-8 rounded-full border-2 border-surface-container object-cover" data-alt="User avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9p1OKtvDRzGtvU6Z8uJm2e2vMIqKkPPIoyqzy0E2f9D1aLiKOARBlyL6YxAx4gfCj4kSiXWd8tE01sbqqxniXBYltW9lXxCGdhD_v7W6Gv36fWl2QZ6z3jtrg_bTQgl5MMmsXS-5XcOUuKl3LWPmYoCVgePpmIHC0rbA_RW44uOPuIQnzhDx8vaSiJGf6D9lOY7XmHDQJ4X5oQKF7XWaaDuqXOFlB-TzrmRhWTsY_4Z9EPI-USTHlxEHdXDIF26TbSJNku45kdYA"/>
+<img class="w-8 h-8 rounded-full border-2 border-surface-container object-cover" data-alt="User avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDATi3owG-R5ZOZZJSpuGI9pu3YVR7-JavgnpHIPpHkTEy1GQ7pxg2iXUVF3Ij1aRIPZNbD3G18Or_WPaXL1PwrlNG5MbZcAoZOHhJyGQ6E33kVpipGlVlkUUQQ-AF7ydkDpG0C80dX9YS8lF7pJaS-U1BBSSG-D1SEsDPCd6S6mL6l9lKJmGHsFbYMIFPb64r6L6ThRjvz0Dx0DUAnq_QNxyZCxG4IWCTpEGAjMU_ugdMZI9NnhT3elBPL8o8GM9mgsc5I3xypSz4"/>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border-2 border-surface-container flex items-center justify-center text-[10px] font-bold text-on-surface-variant">+4</div>
+</div>
+</div>
+<div class="h-2 w-full bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container w-[68%] rounded-full shadow-[0_0_12px_rgba(192,193,255,0.4)]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Card 2: Square Bento -->
+<div class="bg-surface-container rounded-[1.5rem] p-8 hover:bg-surface-container-high transition-all duration-400 border border-outline-variant/5 group shadow-xl">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-2xl bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl" data-icon="database">database</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-on-surface-variant text-[10px] font-bold tracking-widest uppercase">Internal</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-1 group-hover:text-primary transition-colors">Core Engine v4</h3>
+<p class="text-xs text-on-surface-variant mb-8">Aetheria Global • Systems</p>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between text-[10px] text-on-surface-variant font-bold uppercase tracking-widest mb-2">
+<span>Deadline</span>
+<span>Status</span>
+</div>
+<div class="flex justify-between font-semibold text-sm">
+<span>Nov 12</span>
+<span class="text-secondary">Testing</span>
+</div>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest mb-2">Completion</p>
+<div class="h-1.5 w-full bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[92%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Card 3: Standard Bento -->
+<div class="bg-surface-container rounded-[1.5rem] p-8 hover:bg-surface-container-high transition-all duration-400 border border-outline-variant/5 group shadow-xl">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-2xl bg-tertiary-container/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-2xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-tertiary-container/10 text-tertiary text-[10px] font-bold tracking-widest uppercase">New</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-1 group-hover:text-primary transition-colors">Quantum API</h3>
+<p class="text-xs text-on-surface-variant mb-8">Aetheria Global • Cloud</p>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between text-[10px] text-on-surface-variant font-bold uppercase tracking-widest mb-2">
+<span>Deadline</span>
+<span>Status</span>
+</div>
+<div class="flex justify-between font-semibold text-sm">
+<span>Dec 05</span>
+<span class="text-on-surface-variant">Planning</span>
+</div>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest mb-2">Completion</p>
+<div class="h-1.5 w-full bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[15%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Card 4: Standard Bento -->
+<div class="bg-surface-container rounded-[1.5rem] p-8 hover:bg-surface-container-high transition-all duration-400 border border-outline-variant/5 group shadow-xl">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl" data-icon="security">security</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-error-container/20 text-error text-[10px] font-bold tracking-widest uppercase">Delayed</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-1 group-hover:text-primary transition-colors">Vault Security</h3>
+<p class="text-xs text-on-surface-variant mb-8">Aetheria Global • Security</p>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between text-[10px] text-on-surface-variant font-bold uppercase tracking-widest mb-2">
+<span>Deadline</span>
+<span>Status</span>
+</div>
+<div class="flex justify-between font-semibold text-sm">
+<span class="text-error">EXPIRED</span>
+<span class="text-on-surface-variant">On Hold</span>
+</div>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest mb-2">Completion</p>
+<div class="h-1.5 w-full bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-outline-variant w-[45%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Card 5: Large Vertical Bento -->
+<div class="bg-surface-container rounded-[1.5rem] p-8 hover:bg-surface-container-high transition-all duration-400 border border-outline-variant/5 group shadow-xl flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl" data-icon="rocket_launch">rocket_launch</span>
+</div>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-1 group-hover:text-primary transition-colors">Orbital Logistics</h3>
+<p class="text-xs text-on-surface-variant mb-6">Aetheria Global • Launch</p>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-8">Development of autonomous drone docking systems for stratospheric distribution networks.</p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="calendar_today">calendar_today</span>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">Kickoff</p>
+<p class="text-sm font-semibold">Jan 10, 2025</p>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/10">
+<button class="w-full py-3 rounded-xl bg-surface-container-highest text-on-surface text-sm font-bold hover:bg-primary hover:text-on-primary transition-all">
+                            View Roadmap
+                         </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+</body></html>
