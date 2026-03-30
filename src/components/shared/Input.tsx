@@ -1,4 +1,5 @@
 import type { FC, InputHTMLAttributes, ReactNode } from 'react';
+import { useId, memo } from 'react';
 import { cn } from '@/utils';
 import type { ClassNameProps } from '@/types';
 
@@ -136,7 +137,8 @@ export const Input: FC<InputProps> = ({
   onChange,
   ...props
 }) => {
-  const inputId = id || `input-${Math.random().toString(36).substr(2, 9)}`;
+  const generatedId = useId();
+  const inputId = id || generatedId;
   const helperId = `${inputId}-helper`;
   const errorId = `${inputId}-error`;
 
@@ -314,4 +316,4 @@ export const Input: FC<InputProps> = ({
   );
 };
 
-export default Input;
+export default memo(Input);

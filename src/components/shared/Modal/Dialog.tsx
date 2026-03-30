@@ -26,11 +26,11 @@ export interface ModalProps extends ClassNameProps {
 }
 
 const sizeConfig: Record<ModalSize, string> = {
-  sm: 'max-w-sm',
-  md: 'max-w-md',
-  lg: 'max-w-lg',
-  xl: 'max-w-xl',
-  full: 'max-w-full mx-4',
+  sm: 'w-full sm:max-w-sm mx-2',
+  md: 'w-full sm:max-w-md mx-2',
+  lg: 'w-full sm:max-w-lg mx-2',
+  xl: 'w-full sm:max-w-xl mx-2',
+  full: 'w-full mx-2',
 };
 
 function useFocusTrap(modalRef: RefObject<HTMLElement>, isActive: boolean): void {
@@ -202,7 +202,7 @@ export const Modal: FC<ModalProps> & {
         )}
       >
         {header ? (
-          <div className="flex-shrink-0 px-6 py-4 border-b border-outline-variant">
+          <div className="flex-shrink-0 px-4 sm:px-6 py-4 border-b border-outline-variant">
             {header}
           </div>
         ) : title ? (
@@ -216,7 +216,7 @@ export const Modal: FC<ModalProps> & {
           <button
             onClick={handleCloseClick}
             className={cn(
-              'absolute top-4 right-4 p-2 rounded-lg',
+              'absolute top-3 right-3 sm:top-4 sm:right-4 p-2 rounded-lg',
               'text-on-surface-variant hover:text-on-surface',
               'hover:bg-surface-container-high',
               'transition-colors duration-200',
@@ -242,10 +242,10 @@ export const Modal: FC<ModalProps> & {
           </button>
         )}
 
-        <div className="flex-1 overflow-y-auto px-6 py-4">{children}</div>
+        <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-4">{children}</div>
 
         {footer && (
-          <div className="flex-shrink-0 px-6 py-4 border-t border-outline-variant bg-surface-container-low/50 rounded-b-xl">
+          <div className="flex-shrink-0 px-4 sm:px-6 py-4 border-t border-outline-variant bg-surface-container-low/50 rounded-b-xl">
             {footer}
           </div>
         )}
@@ -257,7 +257,7 @@ export const Modal: FC<ModalProps> & {
 const ModalHeader: FC<ClassNameProps> = ({ children, className }) => (
   <div
     className={cn(
-      'flex-shrink-0 px-6 py-4 border-b border-outline-variant',
+      'flex-shrink-0 px-4 sm:px-6 py-4 border-b border-outline-variant',
       className
     )}
   >
@@ -269,7 +269,7 @@ const ModalTitle: FC<ClassNameProps> = ({ children, className }) => (
   <h2
     id="modal-title"
     className={cn(
-      'text-xl font-semibold text-on-surface',
+      'text-lg sm:text-xl font-semibold text-on-surface',
       'syne',
       className
     )}
@@ -291,7 +291,7 @@ const ModalSubtitle: FC<ClassNameProps> = ({ children, className }) => (
 );
 
 const ModalBody: FC<ClassNameProps> = ({ children, className }) => (
-  <div className={cn('px-6 py-4', className)}>{children}</div>
+  <div className={cn('px-2 sm:px-4 py-4', className)}>{children}</div>
 );
 
 const ModalFooter: FC<ClassNameProps> = ({
@@ -300,7 +300,7 @@ const ModalFooter: FC<ClassNameProps> = ({
 }) => (
   <div
     className={cn(
-      'flex-shrink-0 px-6 py-4 border-t border-outline-variant',
+      'flex-shrink-0 px-4 sm:px-6 py-4 border-t border-outline-variant',
       'bg-surface-container-low/50 rounded-b-xl',
       'flex items-center justify-end gap-3',
       className

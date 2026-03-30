@@ -99,7 +99,7 @@ export const ToastComponent: FC<ToastComponentProps> = ({ toast, onDismiss, clas
         'glass-card border',
         colors.bg,
         colors.border,
-        'min-w-[300px] max-w-md',
+        'w-full sm:min-w-[300px] sm:max-w-md max-w-[calc(100vw-2rem)]',
         'animate-slide-in-right',
         'ubuntu',
         className

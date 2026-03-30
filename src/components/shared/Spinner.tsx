@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { memo } from 'react';
 import { cn } from '@/utils';
 import type { ClassNameProps } from '@/types';
 
@@ -109,4 +110,4 @@ export const Spinner: FC<SpinnerProps> = ({
   );
 };
 
-export default Spinner;
+export default memo(Spinner);

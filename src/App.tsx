@@ -1,7 +1,6 @@
-import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Suspense } from 'react';
-import { AppLayout } from '@/components/layout';
+import { DashboardLayout } from '@/components/layout';
 import { Spinner } from '@/components/shared';
 
 // Lazy load feature pages
@@ -23,8 +22,8 @@ const LoadingSpinner = () => (
 
 function App() {
   return (
-    <AppLayout>
-      <Suspense fallback={<LoadingSpinner />}>
+    <Suspense fallback={<LoadingSpinner />}>
+      <DashboardLayout>
         <div className="min-h-screen bg-surface">
           <Routes>
             <Route path="/" element={<Dashboard />} />
@@ -42,7 +41,9 @@ function App() {
               element={
                 <div className="flex items-center justify-center min-h-screen">
                   <div className="text-center">
-                    <h1 className="text-4xl font-headline text-on-surface mb-4 syne">404</h1>
+                    <h1 className="text-2xl sm:text-4xl font-headline text-on-surface mb-4 syne">
+                      404
+                    </h1>
                     <p className="text-on-surface-muted ubuntu">Page not found</p>
                   </div>
                 </div>
@@ -50,8 +51,8 @@ function App() {
             />
           </Routes>
         </div>
-      </Suspense>
-    </AppLayout>
+      </DashboardLayout>
+    </Suspense>
   );
 }
 

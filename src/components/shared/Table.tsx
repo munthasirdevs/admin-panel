@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, memo } from 'react';
 import { cn } from '@/utils';
 import type { ClassNameProps } from '@/types';
 
@@ -196,9 +196,13 @@ export function Table<T extends Record<string, any>>({
     [rowKey]
   );
 
-  const allSelected = paginatedData.length > 0 && paginatedData.every((row) => selectedRowKeys.includes(getRowKey(row)));
+  const allSelected = useMemo(() => 
+    paginatedData.length > 0 && 
+    paginatedData.every((row) => selectedRowKeys.includes(getRowKey(row))),
+    [paginatedData, selectedRowKeys, getRowKey]
+  );
 
-  const renderSortIcon = (column: Column<T>) => {
+  const renderSortIcon = useCallback((column: Column<T>) => {
     if (!column.sortable || !sortable) return null;
 
     const isActive = activeSortConfig?.key === column.key;
@@ -228,7 +232,7 @@ export function Table<T extends Record<string, any>>({
         </svg>
       </span>
     );
-  };
+  }, [activeSortConfig, sortable]);
 
   const getRowClassName = useCallback(
     (record: T, index: number): string => {
@@ -458,4 +462,4 @@ export function Table<T extends Record<string, any>>({
   );
 }
 
-export default Table;
+export default memo(Table);

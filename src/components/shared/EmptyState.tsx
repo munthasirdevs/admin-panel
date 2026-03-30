@@ -1,4 +1,5 @@
 import type { FC, ReactNode } from 'react';
+import { memo } from 'react';
 import { cn } from '@/utils';
 import type { ClassNameProps } from '@/types';
 import { Button, type ButtonProps } from './Button';
@@ -182,4 +183,4 @@ export const EmptyState: FC<EmptyStateProps> = ({
   );
 };
 
-export default EmptyState;
+export default memo(EmptyState);

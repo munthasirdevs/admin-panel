@@ -1,4 +1,5 @@
 import type { FC, ReactNode, HTMLAttributes } from 'react';
+import { memo } from 'react';
 import { cn } from '@/utils';
 import type { ClassNameProps } from '@/types';
 
@@ -333,4 +334,4 @@ Card.Header = CardHeader;
 Card.Body = CardBody;
 Card.Footer = CardFooter;
 
-export default Card;
+export default memo(Card);

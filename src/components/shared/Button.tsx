@@ -1,4 +1,5 @@
 import type { FC, ButtonHTMLAttributes } from 'react';
+import { memo } from 'react';
 import { cn } from '@/utils';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -89,4 +90,4 @@ export const Button: FC<ButtonProps> = ({
   );
 };
 
-export default Button;
+export default memo(Button);

@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { memo } from 'react';
 import { cn } from '@/utils';
 import type { ClassNameProps } from '@/types';
 
@@ -222,4 +223,4 @@ export const Skeleton: FC<SkeletonProps> = ({
   );
 };
 
-export default Skeleton;
+export default memo(Skeleton);
