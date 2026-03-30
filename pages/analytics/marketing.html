@@ -16,153 +16,14 @@
     <link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
 <body class="flex min-h-screen bg-surface">
-    <!-- Sidebar Placeholder -->
-    <!-- 
-  XenonOS Shared Component: Sidebar (v5.0 - New Typography System)
-  Reference: Obsidian / Outfit & Syne
--->
-<!-- 
-  XenonOS Shared Component: Sidebar (v5.0 - New Typography System)
-  Reference: Obsidian / Outfit & Syne
--->
-<!-- 
-  XenonOS Shared Component: Modern Interactive Sidebar (v5.0)
-  Collapsible, Hover-to-Expand, and Pinned States
--->
-<aside class="modern-sidebar outfit lg:translate-x-0 -translate-x-full transition-all duration-300 ease-in-out">
-    <!-- Branding -->
-    <div class="px-5 mb-8 mt-8 flex items-center gap-4 overflow-hidden">
-        <div class="min-w-[40px] h-10 rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[#3f4077] flex items-center justify-center shadow-lg">
-            <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">diamond</span>
-        </div>
-        <div class="nav-label">
-            <h1 class="text-xl font-bold text-[var(--color-on-surface)] font-headline tracking-tight syne">Obsidian</h1>
-            <p class="text-[10px] text-slate-500 font-label uppercase tracking-[0.2em] outfit">Management Hub</p>
-        </div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="flex-1 space-y-1">
-        <!-- 1. Dashboard -->
-        <a href="../pages/dashboard/index.html" class="nav-item group" data-tooltip="Dashboard">
-            <span class="material-symbols-outlined">dashboard</span>
-            <span class="nav-label text-sm">Dashboard</span>
-        </a>
-
-        <!-- 2. Clients -->
-        <a href="../pages/clients/index.html" class="nav-item group" data-tooltip="Clients">
-            <span class="material-symbols-outlined">group</span>
-            <span class="nav-label text-sm">Clients</span>
-        </a>
-
-        <!-- 3. Projects -->
-        <a href="../pages/projects/index.html" class="nav-item group" data-tooltip="Projects">
-            <span class="material-symbols-outlined">folder_open</span>
-            <span class="nav-label text-sm">Projects</span>
-        </a>
-
-        <!-- 4. Tasks -->
-        <a href="../pages/tasks/index.html" class="nav-item group" data-tooltip="Tasks">
-            <span class="material-symbols-outlined">assignment</span>
-            <span class="nav-label text-sm">Tasks</span>
-        </a>
-
-        <!-- 5. Communication -->
-        <a href="../pages/communication/index.html" class="nav-item group" data-tooltip="Communication">
-            <span class="material-symbols-outlined">forum</span>
-            <span class="nav-label text-sm">Communication</span>
-        </a>
-
-        <!-- 6. Files -->
-        <a href="../pages/files/index.html" class="nav-item group" data-tooltip="Files">
-            <span class="material-symbols-outlined">folder_shared</span>
-            <span class="nav-label text-sm">Files</span>
-        </a>
-
-        <!-- 7. Payment -->
-        <a href="../pages/payment/index.html" class="nav-item group" data-tooltip="Payment">
-            <span class="material-symbols-outlined">payments</span>
-            <span class="nav-label text-sm">Payment</span>
-        </a>
-
-        <!-- 8. Team -->
-        <a href="../pages/team/index.html" class="nav-item group" data-tooltip="Team">
-            <span class="material-symbols-outlined">badge</span>
-            <span class="nav-label text-sm">Team Members</span>
-        </a>
-
-        <!-- 9. Analytics -->
-        <a href="../pages/analytics/executive.html" class="nav-item group" data-tooltip="Analytics">
-            <span class="material-symbols-outlined">analytics</span>
-            <span class="nav-label text-sm">Analytics</span>
-        </a>
-
-        <!-- 10. Reports -->
-        <a href="../pages/reports/financial.html" class="nav-item group" data-tooltip="Reports">
-            <span class="material-symbols-outlined">trending_up</span>
-            <span class="nav-label text-sm">Reports</span>
-        </a>
-
-        <!-- 11. Activity -->
-        <a href="../pages/activity/index.html" class="nav-item group" data-tooltip="Activity">
-            <span class="material-symbols-outlined">history</span>
-            <span class="nav-label text-sm">Activity Logs</span>
-        </a>
-
-        <!-- Divider -->
-        <div class="mx-6 my-4 border-t border-[var(--color-outline-variant)]/10"></div>
-
-        <!-- 12. Settings -->
-        <a href="../pages/settings/index.html" class="nav-item group" data-tooltip="Settings">
-            <span class="material-symbols-outlined">settings</span>
-            <span class="nav-label text-sm">Settings</span>
-        </a>
-    </nav>
-
-    <!-- Pin Toggle Button -->
-    <div id="pin-sidebar" class="pin-toggle mx-4 mb-4 flex items-center justify-center shadow-lg" title="Pin Sidebar">
-        <span class="material-symbols-outlined text-sm">push_pin</span>
-    </div>
-</aside>
-
-
+    <!-- Component Containers -->
+    <div id="sidebar-container"></div>
+    
     <!-- Main Content -->
     <main class="flex-1 min-h-screen flex flex-col">
-        <!-- Header Placeholder -->
-        <!-- 
-  XenonOS Shared Component: Header (v5.0 - New Typography System)
--->
-<header class="bg-[var(--color-surface)]/80 backdrop-blur-xl sticky top-0 z-40 w-full px-8 py-4 flex justify-between items-center shadow-[0_20px_40px_rgba(0,0,0,0.3)] outfit">
-    <div class="flex items-center gap-6">
-        <!-- Mobile Menu Toggle -->
-        <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 rounded-xl flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all border border-white/5">
-            <span class="material-symbols-outlined">menu</span>
-        </button>
+        <!-- Header Container -->
+        <div id="header-container"></div>
         
-        <div class="relative group">
-            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg group-focus-within:text-[var(--color-primary)] transition-colors">search</span>
-            <input class="bg-[var(--color-surface-container)] border-none text-[var(--color-on-surface)] text-sm rounded-full py-2 pl-10 pr-4 w-32 sm:w-64 focus:ring-1 focus:ring-[var(--color-primary)] transition-all placeholder:text-slate-500 outfit" placeholder="Search..." type="text"/>
-        </div>
-    </div>
-    <div class="flex items-center gap-4">
-        <button class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all">
-            <span class="material-symbols-outlined">notifications</span>
-        </button>
-        <button class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all">
-            <span class="material-symbols-outlined">settings</span>
-        </button>
-        <div class="h-10 w-[1px] bg-[var(--color-outline-variant)]/20 mx-2"></div>
-        <div class="flex items-center gap-3">
-            <div class="hidden lg:block text-right">
-                <p class="text-sm font-semibold text-[var(--color-on-surface)] leading-tight outfit">Alex Rivera</p>
-                <p class="text-[10px] text-slate-500 font-label outfit">Super Admin</p>
-            </div>
-            <img alt="Admin Profile" class="w-10 h-10 rounded-xl bg-[var(--color-surface-container)] object-cover border border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiwvRijOxcIA8PzPmV4_ePxNAQ1jEK6liXVtWkfs0B0GPSYNv0s2X9bjRrxQARCKCqfkZMd_pN7fsOwKf9m_fJ_15CowBjsePuDTSSAX1-9Vs_i3-l0yrn5GMXq9GUw0e9T_8MqYD5fcbH63KRsAIXgKDhALrSWhkRRooXJVcVzAYfnMs4F7d9jBp7Yl1Es5d241Rjpgf0DTyQZGm_aWG748o3-FXMGSid14TvMD2IxzNtrSDjzE5yeYoJgfU9JpTr1C1EIG_a15o"/>
-        </div>
-    </div>
-</header>
-
-
         <!-- Main Scrollable Canvas -->
 
 <!-- Dashboard Content -->
@@ -474,8 +335,9 @@
 </main>
 
     <script src="../../assets/js/app.js"></script>
+    <!-- Component Scripts -->
+    <script src="../../assets/js/components.js"></script>
 </body>
 </html>
-
 
 

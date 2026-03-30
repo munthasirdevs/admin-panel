@@ -92,6 +92,8 @@
     </style>
 </head>
 <body class="bg-background text-on-surface font-outfit selection:bg-primary-container selection:text-on-primary-container">
+    <!-- Component Containers -->
+    <div id="sidebar-container"></div>
 <!-- SideNavBar (Persistent) -->
 <aside class="h-screen w-64 fixed left-0 top-0 z-40 bg-[#1c1f2a] flex flex-col p-4 gap-2">
 <div class="mb-8 px-4 flex items-center gap-3">
@@ -144,6 +146,8 @@
 </aside>
 <!-- Main Content Canvas -->
 <main class="ml-64 min-h-screen">
+        <!-- Header Container -->
+        <div id="header-container"></div>
 <!-- TopAppBar -->
 <header class="sticky top-0 z-50 bg-[#0f131d]/70 backdrop-blur-xl flex justify-between items-center w-full px-8 py-4">
 <div class="flex items-center gap-4">
@@ -387,4 +391,6 @@
 <button class="fixed bottom-8 right-8 w-14 h-14 rounded-2xl indigo-gradient text-on-primary shadow-[0_8px_32px_rgba(99,102,241,0.4)] hover:scale-110 active:scale-90 transition-all z-50 flex items-center justify-center">
 <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'wght' 600;">add</span>
 </button>
+    <!-- Component Scripts -->
+    <script src="../../assets/js/components.js"></script>
 </body></html>

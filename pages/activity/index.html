@@ -23,118 +23,13 @@
 </head>
 
 <body class="flex min-h-screen bg-surface">
-    <!-- Sidebar Placeholder -->
-    <!-- 
-  XenonOS Shared Component: Sidebar (v5.0 - New Typography System)
-  Reference: Obsidian / Outfit & Syne
--->
-    <!-- 
-  XenonOS Shared Component: Sidebar (v5.0 - New Typography System)
-  Reference: Obsidian / Outfit & Syne
--->
-<!-- 
-  XenonOS Shared Component: Modern Interactive Sidebar (v5.0)
-  Collapsible, Hover-to-Expand, and Pinned States
--->
-<aside class="modern-sidebar outfit lg:translate-x-0 -translate-x-full transition-all duration-300 ease-in-out">
-    <!-- Branding -->
-    <div class="px-5 mb-8 mt-8 flex items-center gap-4 overflow-hidden">
-        <div class="min-w-[40px] h-10 rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[#3f4077] flex items-center justify-center shadow-lg">
-            <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">diamond</span>
-        </div>
-        <div class="nav-label">
-            <h1 class="text-xl font-bold text-[var(--color-on-surface)] font-headline tracking-tight syne">Obsidian</h1>
-            <p class="text-[10px] text-slate-500 font-label uppercase tracking-[0.2em] outfit">Management Hub</p>
-        </div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="flex-1 space-y-1">
-        <!-- 1. Dashboard -->
-        <a href="../pages/dashboard/index.html" class="nav-item group" data-tooltip="Dashboard">
-            <span class="material-symbols-outlined">dashboard</span>
-            <span class="nav-label text-sm">Dashboard</span>
-        </a>
-
-        <!-- 2. Clients -->
-        <a href="../pages/clients/index.html" class="nav-item group" data-tooltip="Clients">
-            <span class="material-symbols-outlined">group</span>
-            <span class="nav-label text-sm">Clients</span>
-        </a>
-
-        <!-- 3. Projects -->
-        <a href="../pages/projects/index.html" class="nav-item group" data-tooltip="Projects">
-            <span class="material-symbols-outlined">folder_open</span>
-            <span class="nav-label text-sm">Projects</span>
-        </a>
-
-        <!-- 4. Tasks -->
-        <a href="../pages/tasks/index.html" class="nav-item group" data-tooltip="Tasks">
-            <span class="material-symbols-outlined">assignment</span>
-            <span class="nav-label text-sm">Tasks</span>
-        </a>
-
-        <!-- 5. Communication -->
-        <a href="../pages/communication/index.html" class="nav-item group" data-tooltip="Communication">
-            <span class="material-symbols-outlined">forum</span>
-            <span class="nav-label text-sm">Communication</span>
-        </a>
-
-        <!-- 6. Files -->
-        <a href="../pages/files/index.html" class="nav-item group" data-tooltip="Files">
-            <span class="material-symbols-outlined">folder_shared</span>
-            <span class="nav-label text-sm">Files</span>
-        </a>
-
-        <!-- 7. Payment -->
-        <a href="../pages/payment/index.html" class="nav-item group" data-tooltip="Payment">
-            <span class="material-symbols-outlined">payments</span>
-            <span class="nav-label text-sm">Payment</span>
-        </a>
-
-        <!-- 8. Team -->
-        <a href="../pages/team/index.html" class="nav-item group" data-tooltip="Team">
-            <span class="material-symbols-outlined">badge</span>
-            <span class="nav-label text-sm">Team Members</span>
-        </a>
-
-        <!-- 9. Analytics -->
-        <a href="../pages/analytics/executive.html" class="nav-item group" data-tooltip="Analytics">
-            <span class="material-symbols-outlined">analytics</span>
-            <span class="nav-label text-sm">Analytics</span>
-        </a>
-
-        <!-- 10. Reports -->
-        <a href="../pages/reports/financial.html" class="nav-item group" data-tooltip="Reports">
-            <span class="material-symbols-outlined">trending_up</span>
-            <span class="nav-label text-sm">Reports</span>
-        </a>
-
-        <!-- 11. Activity -->
-        <a href="../pages/activity/index.html" class="nav-item group" data-tooltip="Activity">
-            <span class="material-symbols-outlined">history</span>
-            <span class="nav-label text-sm">Activity Logs</span>
-        </a>
-
-        <!-- Divider -->
-        <div class="mx-6 my-4 border-t border-[var(--color-outline-variant)]/10"></div>
-
-        <!-- 12. Settings -->
-        <a href="../pages/settings/index.html" class="nav-item group" data-tooltip="Settings">
-            <span class="material-symbols-outlined">settings</span>
-            <span class="nav-label text-sm">Settings</span>
-        </a>
-    </nav>
-
-    <!-- Pin Toggle Button -->
-    <div id="pin-sidebar" class="pin-toggle mx-4 mb-4 flex items-center justify-center shadow-lg" title="Pin Sidebar">
-        <span class="material-symbols-outlined text-sm">push_pin</span>
-    </div>
-</aside>
-
-
+    <!-- Component Containers -->
+    <div id="sidebar-container"></div>
+    
     <!-- Main Content -->
     <main class="flex-1 min-h-screen flex flex-col">
+        <!-- Header Container -->
+        <div id="header-container"></div>
         <header
             class="bg-[var(--color-surface)]/80 backdrop-blur-xl sticky top-0 z-40 w-full px-8 py-4 flex justify-between items-center shadow-[0_20px_40px_rgba(0,0,0,0.3)] outfit">
             <div class="flex items-center gap-6">
@@ -621,6 +516,8 @@
 
     <script src="../../assets/js/app.js"></script>
     <script src="../../assets/js/activity-charts.js"></script>
+    <!-- Component Scripts -->
+    <script src="../../assets/js/components.js"></script>
 </body>
 
 </html>

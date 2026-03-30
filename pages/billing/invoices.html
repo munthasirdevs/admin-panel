@@ -89,6 +89,8 @@
   </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary/30">
+    <!-- Component Containers -->
+    <div id="sidebar-container"></div>
 <!-- Side Navigation -->
 <aside class="h-screen w-64 fixed left-0 top-0 overflow-y-auto bg-surface-container-lowest z-50 flex flex-col py-8">
 <div class="px-8 mb-10">
@@ -141,6 +143,8 @@
 </aside>
 <!-- Main Content -->
 <main class="ml-64 min-h-screen">
+        <!-- Header Container -->
+        <div id="header-container"></div>
 <!-- Top Bar -->
 <header class="sticky top-0 z-40 w-full px-8 py-4 flex justify-between items-center bg-surface/70 glass-nav">
 <div class="flex items-center gap-4 bg-surface-container-lowest px-4 py-2 rounded-full border border-outline-variant/10 w-96">
@@ -411,4 +415,6 @@
 <button class="fixed bottom-8 right-8 w-14 h-14 bg-surface-container-highest rounded-full shadow-2xl flex items-center justify-center border border-primary/20 hover:scale-110 active:scale-95 transition-all group z-50">
 <span class="material-symbols-outlined text-primary group-hover:rotate-12 transition-transform">support_agent</span>
 </button>
+    <!-- Component Scripts -->
+    <script src="../../assets/js/components.js"></script>
 </body></html>

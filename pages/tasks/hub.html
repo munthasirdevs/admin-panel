@@ -82,6 +82,8 @@
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+    <!-- Component Containers -->
+    <div id="sidebar-container"></div>
 <!-- TopNavBar (Shared Component) -->
 <nav class="fixed top-0 w-full z-50 bg-[#0f131d]/70 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full shadow-[0_32px_32px_-4px_rgba(10,14,24,0.5)]">
 <div class="flex items-center gap-8">
@@ -141,6 +143,8 @@
 </aside>
 <!-- Main Content -->
 <main class="ml-20 pt-24 px-8 pb-12 transition-all duration-400">
+        <!-- Header Container -->
+        <div id="header-container"></div>
 <!-- Header Section -->
 <header class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
 <div class="space-y-2">
@@ -345,4 +349,6 @@
 </div>
 </main>
 <!-- Contextual FAB Suppression: Hide FAB on Task List as per instructions, Create Task is in Header -->
+    <!-- Component Scripts -->
+    <script src="../../assets/js/components.js"></script>
 </body></html>

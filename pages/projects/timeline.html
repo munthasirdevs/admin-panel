@@ -90,6 +90,8 @@
     </style>
 </head>
 <body class="bg-background text-on-surface font-outfit antialiased selection:bg-primary/30">
+    <!-- Component Containers -->
+    <div id="sidebar-container"></div>
 <!-- SideNavBar Component -->
 <aside class="h-screen w-64 fixed left-0 top-0 bg-[#1c1f2a] flex flex-col py-8 gap-2 z-[60] font-['Outfit'] font-medium text-sm">
 <div class="px-6 mb-8">
@@ -142,6 +144,8 @@
 </aside>
 <!-- Main Canvas -->
 <main class="ml-64 min-h-screen relative flex flex-col">
+        <!-- Header Container -->
+        <div id="header-container"></div>
 <!-- TopNavBar Component -->
 <header class="fixed top-0 right-0 left-64 z-50 bg-[#0f131d]/70 backdrop-blur-xl shadow-[0_32px_32px_-4px_rgba(10,14,24,0.5)]">
 <div class="flex justify-between items-center w-full px-6 py-3">
@@ -381,4 +385,6 @@
 <button class="fixed bottom-8 right-8 w-14 h-14 rounded-full indigo-glow shadow-2xl flex items-center justify-center text-on-primary-container z-50 hover:scale-110 active:scale-90 transition-transform">
 <span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
 </button>
+    <!-- Component Scripts -->
+    <script src="../../assets/js/components.js"></script>
 </body></html>

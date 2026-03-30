@@ -86,6 +86,8 @@
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary/30">
+    <!-- Component Containers -->
+    <div id="sidebar-container"></div>
 <!-- Sidebar Navigation -->
 <aside class="h-screen w-64 fixed left-0 top-0 overflow-y-auto bg-surface-container-lowest z-50 hidden md:flex flex-col py-8">
 <div class="px-8 mb-12">
@@ -131,6 +133,8 @@
 </aside>
 <!-- Main Content Canvas -->
 <main class="md:ml-64 min-h-screen">
+        <!-- Header Container -->
+        <div id="header-container"></div>
 <!-- Top Navigation Bar -->
 <header class="sticky top-0 z-40 w-full px-8 py-4 flex justify-between items-center bg-[#0f131d]/70 backdrop-blur-xl shadow-[0_32px_32px_-4px_rgba(10,14,24,0.5)]">
 <div class="flex items-center gap-4 flex-1">
@@ -465,4 +469,6 @@
 <span class="text-[10px]">Settings</span>
 </button>
 </nav>
+    <!-- Component Scripts -->
+    <script src="../../assets/js/components.js"></script>
 </body></html>

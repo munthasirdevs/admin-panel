@@ -83,6 +83,8 @@
     </style>
 </head>
 <body class="bg-background text-on-surface font-outfit antialiased selection:bg-primary selection:text-on-primary">
+    <!-- Component Containers -->
+    <div id="sidebar-container"></div>
 <!-- SideNavBar (Shared Component) -->
 <aside class="h-screen w-64 fixed left-0 top-0 z-40 bg-[#1c1f2a] flex flex-col p-4 gap-2">
 <div class="px-4 py-6 mb-4">
@@ -135,6 +137,8 @@
 </aside>
 <!-- Main Content Canvas -->
 <main class="ml-64 min-h-screen flex flex-col">
+        <!-- Header Container -->
+        <div id="header-container"></div>
 <!-- TopAppBar (Shared Component) -->
 <header class="sticky top-0 z-30 bg-[#0f131d]/70 backdrop-blur-xl transition-colors duration-300 flex justify-between items-center w-full px-8 py-4">
 <div class="flex items-center gap-6 flex-1">
@@ -379,4 +383,6 @@
 </button>
 </div>
 </main>
+    <!-- Component Scripts -->
+    <script src="../../assets/js/components.js"></script>
 </body></html>
