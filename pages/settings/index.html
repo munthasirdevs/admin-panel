@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Settings - Obsidian Admin</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="../../assets/js/tailwind-config.js"></script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body class="flex min-h-screen bg-surface">
+    <div id="sidebar-container"></div>
+
+    <main class="flex-1 min-h-screen flex flex-col with-sidebar">
+        <div id="header-container"></div>
+
+        <div class="p-8 space-y-12 flex-1">
+            <!-- Page Header -->
+            <section class="flex flex-col gap-1">
+                <h2 class="text-on-surface font-headline font-light text-5xl tracking-tight">Settings</h2>
+                <p class="text-on-surface-variant font-body text-sm">Manage your account and system preferences.</p>
+            </section>
+
+            <!-- Settings Sections -->
+            <div class="grid gap-6">
+                <!-- Profile Settings -->
+                <section class="bg-surface-container rounded-2xl p-8 border border-outline-variant/5">
+                    <h4 class="text-xl font-headline font-semibold text-on-surface mb-6">Profile Settings</h4>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-6">
+                            <img src="https://ui-avatars.com/api/?name=Alex+Rivera&background=6366f1&color=fff&size=128" alt="Profile" class="w-20 h-20 rounded-2xl object-cover border border-white/10"/>
+                            <button class="px-6 py-2 bg-surface-container-high text-on-surface rounded-xl text-sm font-semibold hover:bg-surface-container-highest transition-all">
+                                Change Avatar
+                            </button>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-semibold text-on-surface-variant uppercase tracking-wider mb-2">First Name</label>
+                                <input type="text" value="Alex" class="w-full bg-surface-container-high border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary focus:border-transparent transition-all"/>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-on-surface-variant uppercase tracking-wider mb-2">Last Name</label>
+                                <input type="text" value="Rivera" class="w-full bg-surface-container-high border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary focus:border-transparent transition-all"/>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-on-surface-variant uppercase tracking-wider mb-2">Email</label>
+                                <input type="email" value="alex.rivera@obsidian.com" class="w-full bg-surface-container-high border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary focus:border-transparent transition-all"/>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-on-surface-variant uppercase tracking-wider mb-2">Phone</label>
+                                <input type="tel" value="+1 (555) 123-4567" class="w-full bg-surface-container-high border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary focus:border-transparent transition-all"/>
+                            </div>
+                        </div>
+                        <div class="flex justify-end gap-4 pt-4">
+                            <button class="px-6 py-2 bg-transparent border border-outline-variant/20 text-on-surface rounded-xl text-sm font-semibold hover:bg-surface-container-high transition-all">
+                                Cancel
+                            </button>
+                            <button class="px-6 py-2 bg-primary text-white rounded-xl text-sm font-semibold hover:bg-primary/90 transition-all">
+                                Save Changes
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Notification Settings -->
+                <section class="bg-surface-container rounded-2xl p-8 border border-outline-variant/5">
+                    <h4 class="text-xl font-headline font-semibold text-on-surface mb-6">Notifications</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl">
+                            <div>
+                                <p class="text-sm font-medium text-on-surface">Email Notifications</p>
+                                <p class="text-xs text-on-surface-variant mt-1">Receive email updates about your account</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" class="sr-only peer" checked/>
+                                <div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                            </label>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl">
+                            <div>
+                                <p class="text-sm font-medium text-on-surface">Push Notifications</p>
+                                <p class="text-xs text-on-surface-variant mt-1">Receive push notifications in your browser</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" class="sr-only peer" checked/>
+                                <div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                            </label>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl">
+                            <div>
+                                <p class="text-sm font-medium text-on-surface">Task Reminders</p>
+                                <p class="text-xs text-on-surface-variant mt-1">Get reminded about upcoming task deadlines</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" class="sr-only peer"/>
+                                <div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Security Settings -->
+                <section class="bg-surface-container rounded-2xl p-8 border border-outline-variant/5">
+                    <h4 class="text-xl font-headline font-semibold text-on-surface mb-6">Security</h4>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-surface-container-low rounded-xl">
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <p class="text-sm font-medium text-on-surface">Password</p>
+                                    <p class="text-xs text-on-surface-variant mt-1">Last changed 3 months ago</p>
+                                </div>
+                                <button class="px-4 py-2 bg-surface-container-high text-on-surface rounded-xl text-sm font-semibold hover:bg-surface-container-highest transition-all">
+                                    Change
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-surface-container-low rounded-xl">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm font-medium text-on-surface">Two-Factor Authentication</p>
+                                    <p class="text-xs text-on-surface-variant mt-1">Add an extra layer of security</p>
+                                </div>
+                                <button class="px-4 py-2 bg-primary/10 text-primary rounded-xl text-sm font-semibold hover:bg-primary/20 transition-all">
+                                    Enable
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Danger Zone -->
+                <section class="bg-surface-container rounded-2xl p-8 border border-error/30">
+                    <h4 class="text-xl font-headline font-semibold text-error mb-4">Danger Zone</h4>
+                    <p class="text-sm text-on-surface-variant mb-6">Irreversible and destructive actions</p>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="px-6 py-2 bg-surface-container-high border border-outline-variant/20 text-on-surface rounded-xl text-sm font-semibold hover:bg-surface-container-highest transition-all">
+                            Delete Account
+                        </button>
+                        <button class="px-6 py-2 bg-surface-container-high border border-outline-variant/20 text-on-surface rounded-xl text-sm font-semibold hover:bg-surface-container-highest transition-all">
+                            Clear Data
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div id="footer-container"></div>
+    </main>
+
+    <script src="../../assets/js/components.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

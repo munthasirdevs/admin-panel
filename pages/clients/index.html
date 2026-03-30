@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Clients - Obsidian Admin</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="../../assets/js/tailwind-config.js"></script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body class="flex min-h-screen bg-surface">
+    <div id="sidebar-container"></div>
+
+    <main class="flex-1 min-h-screen flex flex-col with-sidebar">
+        <div id="header-container"></div>
+
+        <div class="p-8 space-y-12 flex-1">
+            <!-- Page Header -->
+            <section class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div class="flex flex-col gap-1">
+                    <h2 class="text-on-surface font-headline font-light text-5xl tracking-tight">Clients</h2>
+                    <p class="text-on-surface-variant font-body text-sm">Manage your client relationships.</p>
+                </div>
+                <a href="../../pages/clients/details.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white rounded-xl font-semibold hover:bg-primary/90 transition-all">
+                    <span class="material-symbols-outlined">add</span>
+                    Add Client
+                </a>
+            </section>
+
+            <!-- Stats Row -->
+            <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-surface-container-low p-6 rounded-2xl relative overflow-hidden">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container rounded-full"></div>
+                    <p class="text-on-surface-variant text-[10px] font-bold tracking-widest uppercase">Total Clients</p>
+                    <h3 class="text-3xl font-headline font-semibold text-on-surface mt-2">1,284</h3>
+                </div>
+                <div class="bg-surface-container-low p-6 rounded-2xl relative overflow-hidden">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-success rounded-full"></div>
+                    <p class="text-on-surface-variant text-[10px] font-bold tracking-widest uppercase">Active</p>
+                    <h3 class="text-3xl font-headline font-semibold text-on-surface mt-2">942</h3>
+                </div>
+                <div class="bg-surface-container-low p-6 rounded-2xl relative overflow-hidden">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-tertiary rounded-full"></div>
+                    <p class="text-on-surface-variant text-[10px] font-bold tracking-widest uppercase">New This Month</p>
+                    <h3 class="text-3xl font-headline font-semibold text-on-surface mt-2">12</h3>
+                </div>
+                <div class="bg-surface-container-low p-6 rounded-2xl relative overflow-hidden">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-error rounded-full"></div>
+                    <p class="text-on-surface-variant text-[10px] font-bold tracking-widest uppercase">Inactive</p>
+                    <h3 class="text-3xl font-headline font-semibold text-on-surface mt-2">342</h3>
+                </div>
+            </section>
+
+            <!-- Clients Table -->
+            <section class="bg-surface-container rounded-2xl border border-outline-variant/5 overflow-hidden">
+                <div class="p-6 border-b border-outline-variant/10">
+                    <h4 class="text-xl font-headline font-semibold text-on-surface">All Clients</h4>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-surface-container-high">
+                            <tr>
+                                <th class="text-left text-xs font-semibold text-on-surface-variant uppercase tracking-wider px-6 py-4">Client</th>
+                                <th class="text-left text-xs font-semibold text-on-surface-variant uppercase tracking-wider px-6 py-4">Status</th>
+                                <th class="text-left text-xs font-semibold text-on-surface-variant uppercase tracking-wider px-6 py-4">Contact</th>
+                                <th class="text-left text-xs font-semibold text-on-surface-variant uppercase tracking-wider px-6 py-4">Projects</th>
+                                <th class="text-left text-xs font-semibold text-on-surface-variant uppercase tracking-wider px-6 py-4">Last Activity</th>
+                                <th class="text-left text-xs font-semibold text-on-surface-variant uppercase tracking-wider px-6 py-4">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-outline-variant/10">
+                            <tr class="hover:bg-surface-container-high transition-colors">
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest">
+                                            <img src="https://ui-avatars.com/api/?name=Acme+Corp&background=6366f1&color=fff" alt="Acme Corp"/>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-medium text-on-surface">Acme Corp</p>
+                                            <p class="text-xs text-on-surface-variant">acme@example.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="text-xs px-3 py-1 rounded-full bg-success/10 text-success font-semibold">Active</span>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-on-surface">John Doe</td>
+                                <td class="px-6 py-4 text-sm text-on-surface">5 Projects</td>
+                                <td class="px-6 py-4 text-sm text-on-surface-variant">2 hours ago</td>
+                                <td class="px-6 py-4">
+                                    <a href="../../pages/clients/details.html" class="text-primary hover:text-primary/80 text-sm font-semibold">View</a>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-surface-container-high transition-colors">
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest">
+                                            <img src="https://ui-avatars.com/api/?name=Stellar+Dynamics&background=c0c1ff&color=0b0f19" alt="Stellar Dynamics"/>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-medium text-on-surface">Stellar Dynamics</p>
+                                            <p class="text-xs text-on-surface-variant">stellar@example.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="text-xs px-3 py-1 rounded-full bg-success/10 text-success font-semibold">Active</span>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-on-surface">Jane Smith</td>
+                                <td class="px-6 py-4 text-sm text-on-surface">3 Projects</td>
+                                <td class="px-6 py-4 text-sm text-on-surface-variant">1 day ago</td>
+                                <td class="px-6 py-4">
+                                    <a href="../../pages/clients/details.html" class="text-primary hover:text-primary/80 text-sm font-semibold">View</a>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-surface-container-high transition-colors">
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest">
+                                            <img src="https://ui-avatars.com/api/?name=Tech+Start&background=ffb783&color=0b0f19" alt="Tech Start"/>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-medium text-on-surface">Tech Start Inc</p>
+                                            <p class="text-xs text-on-surface-variant">info@techstart.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="text-xs px-3 py-1 rounded-full bg-warning/10 text-warning font-semibold">Onboarding</span>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-on-surface">Mike Johnson</td>
+                                <td class="px-6 py-4 text-sm text-on-surface">1 Project</td>
+                                <td class="px-6 py-4 text-sm text-on-surface-variant">3 days ago</td>
+                                <td class="px-6 py-4">
+                                    <a href="../../pages/clients/details.html" class="text-primary hover:text-primary/80 text-sm font-semibold">View</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+        <div id="footer-container"></div>
+    </main>
+
+    <script src="../../assets/js/components.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>{PAGE_TITLE} - Obsidian Admin</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="../../assets/js/tailwind-config.js"></script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body class="flex min-h-screen bg-surface">
+    <!-- Component Containers -->
+    <div id="sidebar-container"></div>
+
+    <main class="flex-1 min-h-screen flex flex-col with-sidebar">
+        <!-- Header Container -->
+        <div id="header-container"></div>
+
+        <!-- Main Content -->
+        <div class="p-8 space-y-12 flex-1">
+            <!-- Page Header -->
+            <section class="flex flex-col gap-1">
+                <h2 class="text-on-surface font-headline font-light text-5xl tracking-tight">{PAGE_TITLE}</h2>
+                <p class="text-on-surface-variant font-body text-sm">{PAGE_DESCRIPTION}</p>
+            </section>
+
+            <!-- Page Content Here -->
+            <section class="bg-surface-container rounded-2xl p-8 border border-outline-variant/5">
+                <!-- Your content goes here -->
+            </section>
+        </div>
+
+        <!-- Footer Container -->
+        <div id="footer-container"></div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/components.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

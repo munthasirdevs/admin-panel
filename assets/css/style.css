@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&family=Space+Grotesk:wght@300..700&family=Ubuntu:wght@300;400;500;700&display=swap');
-@import url('./sidebar.css');
 
 /* ============================================
    TYPOGRAPHY & FONTS
@@ -28,7 +27,19 @@
   font-style: normal;
 }
 
-/* Tailwind v3 compatibility layer for CDN usage if needed, or custom variables */
+.font-headline {
+  font-family: 'Syne', sans-serif !important;
+}
+
+.font-label {
+  font-family: 'Outfit', sans-serif !important;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+/* ============================================
+   CSS VARIABLES - Design System Tokens
+   ============================================ */
 :root {
   /* Surface Colors */
   --color-surface: #0b0f19;
@@ -36,6 +47,7 @@
   --color-surface-container-low: #1c1f2a;
   --color-surface-container-high: #1f2937;
   --color-surface-container-highest: #313540;
+  --color-surface-dim: #0f131d;
 
   /* Text & Content Colors */
   --color-on-surface: #dfe2f1;
@@ -51,42 +63,64 @@
   --color-tertiary-light: #FED7AA;
   --color-error: #ef4444;
   --color-success: #10b981;
-
-  /* Extra Surface */
-  --color-surface-dim: #0f131d;
+  --color-warning: #f59e0b;
+  --color-info: #3b82f6;
 
   /* Utility Colors */
   --color-outline-variant: #464554;
 }
 
+/* ============================================
+   BASE STYLES
+   ============================================ */
 body {
   background-color: var(--color-surface);
   color: var(--color-on-surface);
   font-family: 'Outfit', sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-.font-headline {
-  font-family: 'Syne', sans-serif !important;
-}
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
 
+/* Glass Effects */
 .glass-card {
-  background-color: rgba(17, 24, 39, 0.8);
+  background: linear-gradient(135deg, rgba(192, 193, 255, 0.05) 0%, rgba(28, 31, 42, 0) 100%);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.glass-effect {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .glass-glow {
   background: linear-gradient(135deg, rgba(192, 193, 255, 0.05) 0%, rgba(15, 19, 29, 0) 100%);
+}
+
+.indigo-glow {
+  background: radial-gradient(circle at top left, rgba(192, 193, 255, 0.08), transparent 70%);
+}
+
+.bg-obsidian-gradient {
+  background: radial-gradient(circle at top left, rgba(192, 193, 255, 0.08), transparent 40%), #0f131d;
+}
+
+/* Scrollbar Utilities */
+.no-scrollbar::-webkit-scrollbar,
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar,
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -102,39 +136,16 @@ body {
   border-radius: 10px;
 }
 
-.indigo-glow {
-  background: radial-gradient(circle at top left, rgba(192, 193, 255, 0.08), transparent 70%);
+/* Hover Effects */
+.hover-scale {
+  transition: transform 0.2s ease;
 }
 
-.bg-obsidian-gradient {
-  background: radial-gradient(circle at top left, rgba(192, 193, 255, 0.08), transparent 40%), #0f131d;
+.hover-scale:hover {
+  transform: scale(1.02);
 }
 
-.glass-card {
-  background: linear-gradient(135deg, rgba(192, 193, 255, 0.05) 0%, rgba(28, 31, 42, 0) 100%);
-}
-
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.glass-effect {
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-}
-
-/* Sidebar Content Adjustment */
-@media (min-width: 1025px) {
-  main {
-    margin-left: 68px;
-    transition: margin-left 300ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  main.pinned {
-    margin-left: 260px;
-  }
+.glass-card:hover {
+  border-color: var(--color-primary-container);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }

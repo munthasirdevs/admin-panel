@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Dashboard - Obsidian Admin</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="../../assets/js/tailwind-config.js"></script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body class="flex min-h-screen bg-surface">
+    <!-- Component Containers -->
+    <div id="sidebar-container"></div>
+
+    <main class="flex-1 min-h-screen flex flex-col with-sidebar">
+        <!-- Header Container -->
+        <div id="header-container"></div>
+
+        <!-- Main Content -->
+        <div class="p-8 space-y-12 flex-1">
+            <!-- Page Header -->
+            <section class="flex flex-col gap-1">
+                <h2 class="text-on-surface font-headline font-light text-5xl tracking-tight">Command Center</h2>
+                <p class="text-on-surface-variant font-body text-sm">Complete system overview.</p>
+            </section>
+
+            <!-- Quick Stats Row -->
+            <section class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="bg-surface-container-low p-6 rounded-2xl relative overflow-hidden indigo-glow transition-all">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container rounded-full"></div>
+                    <p class="text-on-surface-variant text-[10px] font-bold tracking-widest uppercase">Total Clients</p>
+                    <h3 class="text-3xl font-headline font-semibold text-on-surface mt-2">1,284</h3>
+                </div>
+                <div class="bg-surface-container-low p-6 rounded-2xl relative overflow-hidden indigo-glow transition-all">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container rounded-full"></div>
+                    <p class="text-on-surface-variant text-[10px] font-bold tracking-widest uppercase">Active Projects</p>
+                    <h3 class="text-3xl font-headline font-semibold text-on-surface mt-2">42</h3>
+                </div>
+                <div class="bg-surface-container-low p-6 rounded-2xl relative overflow-hidden indigo-glow transition-all">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container rounded-full"></div>
+                    <p class="text-on-surface-variant text-[10px] font-bold tracking-widest uppercase">Revenue (MTD)</p>
+                    <h3 class="text-3xl font-headline font-semibold text-on-surface mt-2">$84.2k</h3>
+                </div>
+                <div class="bg-surface-container-low p-6 rounded-2xl relative overflow-hidden indigo-glow transition-all">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container rounded-full"></div>
+                    <p class="text-on-surface-variant text-[10px] font-bold tracking-widest uppercase">Open Tasks</p>
+                    <h3 class="text-3xl font-headline font-semibold text-on-surface mt-2">156</h3>
+                </div>
+            </section>
+
+            <!-- Clients Summary -->
+            <section class="bg-surface-container rounded-2xl p-8 border border-outline-variant/5">
+                <div class="flex items-center justify-between mb-8">
+                    <div>
+                        <h4 class="text-xl font-headline font-semibold text-on-surface">Clients Summary</h4>
+                        <div class="flex gap-4 mt-2">
+                            <span class="text-xs text-on-surface-variant"><b class="text-primary">1,284</b> Total</span>
+                            <span class="text-xs text-on-surface-variant"><b class="text-primary">942</b> Active</span>
+                            <span class="text-xs text-on-surface-variant"><b class="text-primary">12</b> New</span>
+                        </div>
+                    </div>
+                    <a class="flex items-center gap-2 text-sm font-semibold text-primary group" href="../../pages/clients/index.html">
+                        <span class="w-1 h-1 bg-primary rounded-full group-hover:w-3 transition-all"></span>
+                        View All
+                    </a>
+                </div>
+                <div class="grid gap-4">
+                    <div class="flex items-center justify-between p-4 bg-surface-container rounded-xl hover:bg-surface-bright transition-colors cursor-pointer">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest">
+                                <img alt="Client" src="https://ui-avatars.com/api/?name=Acme+Corp&background=6366f1&color=fff"/>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-on-surface">Acme Corp</p>
+                                <p class="text-xs text-on-surface-variant">Onboarding</p>
+                            </div>
+                        </div>
+                        <span class="text-xs text-on-surface-variant">Oct 12, 2023</span>
+                    </div>
+                    <div class="flex items-center justify-between p-4 bg-surface-container rounded-xl hover:bg-surface-bright transition-colors cursor-pointer">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest">
+                                <img alt="Client" src="https://ui-avatars.com/api/?name=Stellar+Dynamics&background=c0c1ff&color=0b0f19"/>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-on-surface">Stellar Dynamics</p>
+                                <p class="text-xs text-on-surface-variant">Active</p>
+                            </div>
+                        </div>
+                        <span class="text-xs text-on-surface-variant">Oct 11, 2023</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Summary -->
+            <section class="bg-surface-container rounded-2xl p-8 border border-outline-variant/5">
+                <div class="flex items-center justify-between mb-8">
+                    <div>
+                        <h4 class="text-xl font-headline font-semibold text-on-surface">Projects Summary</h4>
+                        <div class="flex gap-4 mt-2">
+                            <span class="text-xs text-on-surface-variant"><b class="text-primary">42</b> Active</span>
+                            <span class="text-xs text-on-surface-variant"><b class="text-primary">128</b> Completed</span>
+                            <span class="text-xs text-on-surface-variant"><b class="text-error">2</b> Delayed</span>
+                        </div>
+                    </div>
+                    <a class="flex items-center gap-2 text-sm font-semibold text-primary group" href="../../pages/projects/index.html">
+                        <span class="w-1 h-1 bg-primary rounded-full group-hover:w-3 transition-all"></span>
+                        View All
+                    </a>
+                </div>
+                <div class="grid gap-4">
+                    <div class="flex items-center justify-between p-4 bg-surface-container rounded-xl hover:bg-surface-bright transition-colors cursor-pointer">
+                        <div>
+                            <p class="text-sm font-medium text-on-surface">Website Redesign</p>
+                            <p class="text-xs text-on-surface-variant">Due: Nov 15, 2023</p>
+                        </div>
+                        <span class="text-xs px-3 py-1 rounded-full bg-success/10 text-success font-semibold">On Track</span>
+                    </div>
+                    <div class="flex items-center justify-between p-4 bg-surface-container rounded-xl hover:bg-surface-bright transition-colors cursor-pointer">
+                        <div>
+                            <p class="text-sm font-medium text-on-surface">Mobile App Development</p>
+                            <p class="text-xs text-on-surface-variant">Due: Dec 1, 2023</p>
+                        </div>
+                        <span class="text-xs px-3 py-1 rounded-full bg-warning/10 text-warning font-semibold">At Risk</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer Container -->
+        <div id="footer-container"></div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/components.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

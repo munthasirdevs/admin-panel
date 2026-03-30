@@ -1,0 +1,379 @@
+/*
+   ==================================================================
+   COMPONENTS.CSS - Shared Component Styles
+   Sidebar, Header, Footer, and Navigation
+   ==================================================================
+*/
+
+/* ================================================================
+   SIDEBAR - Modern Interactive Sidebar (Collapsible)
+   ================================================================ */
+:root {
+  --sb-collapsed: 68px;
+  --sb-expanded: 260px;
+  --sb-transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --sb-bg: var(--color-surface);
+  --sb-border: rgba(255, 255, 255, 0.05);
+  --sb-item-padding: 12px 14px;
+  --sb-active-bg: rgba(99, 102, 241, 0.1);
+  --sb-hover-bg: rgba(255, 255, 255, 0.03);
+}
+
+/* Base Sidebar Styles */
+.modern-sidebar {
+  width: var(--sb-collapsed);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: var(--sb-bg);
+  border-right: 1px solid var(--sb-border);
+  transition: width var(--sb-transition), transform var(--sb-transition);
+  overflow: hidden;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sidebar Expansion on Hover/Pin */
+.modern-sidebar:hover,
+.modern-sidebar.pinned {
+  width: var(--sb-expanded);
+  box-shadow: 20px 0 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Navigation Labels - Hidden by Default */
+.modern-sidebar .nav-label {
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 150ms ease-in-out;
+  pointer-events: none;
+  margin-left: 12px;
+}
+
+.modern-sidebar:hover .nav-label,
+.modern-sidebar.pinned .nav-label {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity var(--sb-transition) 100ms;
+}
+
+/* Navigation Items */
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: var(--sb-item-padding);
+  margin: 4px 12px;
+  border-radius: 12px;
+  color: var(--color-on-surface-variant);
+  transition: background var(--sb-transition), color var(--sb-transition), transform 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  background: var(--sb-hover-bg);
+  color: var(--color-on-surface);
+}
+
+.nav-item .material-symbols-outlined {
+  font-size: 22px;
+  min-width: 24px;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.nav-item:hover .material-symbols-outlined {
+  transform: scale(1.1);
+  color: var(--color-primary);
+}
+
+/* Active Navigation State */
+.nav-item.active {
+  background: var(--sb-active-bg);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.nav-item.active .material-symbols-outlined {
+  font-variation-settings: 'FILL' 1;
+}
+
+/* Pin Toggle Button */
+.pin-toggle {
+  position: absolute;
+  bottom: 24px;
+  right: 16px;
+  opacity: 0;
+  transition: opacity 200ms;
+  cursor: pointer;
+  background: var(--color-surface-container);
+  border: 1px solid var(--sb-border);
+  padding: 6px;
+  border-radius: 8px;
+  color: var(--color-on-surface-muted);
+}
+
+.modern-sidebar:hover .pin-toggle,
+.modern-sidebar.pinned .pin-toggle {
+  opacity: 1;
+}
+
+.pin-toggle.active {
+  color: var(--color-primary);
+  background: var(--sb-active-bg);
+  transform: rotate(45deg);
+}
+
+/* Sidebar Tooltips */
+.sb-tooltip {
+  position: fixed;
+  left: 80px;
+  background: #1e293b;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 150ms;
+  z-index: 2000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Sidebar Divider */
+.sidebar-divider {
+  margin: 4px 12px;
+  border-top: 1px solid var(--color-outline-variant);
+  opacity: 0.15;
+}
+
+/* ================================================================
+   HEADER - Sticky Top Navigation Bar
+   ================================================================ */
+.modern-header {
+  background-color: rgba(11, 15, 25, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mobile-menu-btn:hover {
+  color: white;
+  background: var(--color-surface-container-high);
+}
+
+/* Search Bar */
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-container .material-symbols-outlined {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  font-size: 18px;
+  transition: color 0.2s ease;
+}
+
+.search-container:focus-within .material-symbols-outlined {
+  color: var(--color-primary);
+}
+
+.search-input {
+  background: var(--color-surface-container);
+  border: none;
+  color: var(--color-on-surface);
+  font-size: 14px;
+  border-radius: 9999px;
+  padding: 8px 16px 8px 40px;
+  width: 128px;
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  width: 256px;
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+/* Header Action Buttons */
+.header-action-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.header-action-btn:hover {
+  color: white;
+  background: var(--color-surface-container-high);
+}
+
+/* Header Divider */
+.header-divider {
+  height: 40px;
+  width: 1px;
+  background: var(--color-outline-variant);
+  opacity: 0.2;
+  margin: 0 8px;
+}
+
+/* User Profile Section */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-info {
+  text-align: right;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+  line-height: 1.2;
+}
+
+.user-role {
+  font-size: 10px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ================================================================
+   FOOTER - Bottom Navigation Bar
+   ================================================================ */
+.modern-footer {
+  margin-top: 3rem;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid var(--color-outline-variant);
+  opacity: 0.15;
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.footer-text {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #64748b;
+}
+
+.footer-status {
+  color: var(--color-success);
+}
+
+.footer-indicator {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  animation: pulse 2s infinite;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* ================================================================
+   MAIN CONTENT ADJUSTMENTS
+   ================================================================ */
+main.with-sidebar {
+  margin-left: var(--sb-collapsed);
+  transition: margin-left var(--sb-transition);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+main.with-sidebar.pinned {
+  margin-left: var(--sb-expanded);
+}
+
+/* Desktop Sidebar Content Adjustment */
+@media (min-width: 1025px) {
+  main.with-sidebar {
+    margin-left: var(--sb-collapsed);
+  }
+  
+  main.with-sidebar.pinned {
+    margin-left: var(--sb-expanded);
+  }
+}
+
+/* Mobile - No Sidebar Margin */
+@media (max-width: 1024px) {
+  main.with-sidebar {
+    margin-left: 0 !important;
+  }
+}
