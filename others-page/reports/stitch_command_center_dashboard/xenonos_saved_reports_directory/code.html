@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Saved Reports | XenonOS Reports</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#c7c4d7",
+              "inverse-on-surface": "#2c303b",
+              "primary-container": "#8083ff",
+              "tertiary": "#ffb783",
+              "outline": "#908fa0",
+              "on-surface": "#dfe2f1",
+              "surface-variant": "#313540",
+              "surface-container": "#1c1f2a",
+              "background": "#0f131d",
+              "secondary-fixed": "#e1e0ff",
+              "primary-fixed-dim": "#c0c1ff",
+              "outline-variant": "#464554",
+              "surface-container-lowest": "#0a0e18",
+              "surface-dim": "#0f131d",
+              "surface-container-low": "#171b26",
+              "primary-fixed": "#e1e0ff",
+              "secondary": "#c0c1ff",
+              "on-secondary-fixed": "#13144a",
+              "on-secondary-container": "#b2b3f2",
+              "on-secondary": "#292a60",
+              "surface-bright": "#353944",
+              "tertiary-fixed": "#ffdcc5",
+              "on-primary-fixed": "#07006c",
+              "secondary-fixed-dim": "#c0c1ff",
+              "on-secondary-fixed-variant": "#404178",
+              "surface-container-high": "#262a35",
+              "on-primary-fixed-variant": "#2f2ebe",
+              "surface-tint": "#c0c1ff",
+              "tertiary-fixed-dim": "#ffb783",
+              "on-error": "#690005",
+              "on-primary-container": "#0d0096",
+              "on-error-container": "#ffdad6",
+              "on-background": "#dfe2f1",
+              "error-container": "#93000a",
+              "surface-container-highest": "#313540",
+              "inverse-primary": "#494bd6",
+              "error": "#ffb4ab",
+              "primary": "#c0c1ff",
+              "on-tertiary-fixed-variant": "#703700",
+              "secondary-container": "#42447b",
+              "on-tertiary-container": "#452000",
+              "on-primary": "#1000a9",
+              "inverse-surface": "#dfe2f1",
+              "on-tertiary": "#4f2500",
+              "surface": "#0f131d",
+              "tertiary-container": "#d97721",
+              "on-tertiary-fixed": "#301400"
+            },
+            fontFamily: {
+              "headline": ["Syne", "sans-serif"],
+              "body": ["Outfit", "sans-serif"],
+              "label": ["Outfit", "sans-serif"],
+              "syne": ["Syne", "sans-serif"],
+              "outfit": ["Outfit", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .indigo-gradient {
+        background: linear-gradient(135deg, #c0c1ff 0%, #8083ff 100%);
+      }
+      .indigo-glow:hover {
+        box-shadow: 0 0 20px rgba(192, 193, 255, 0.15);
+      }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-outfit antialiased selection:bg-primary/30 min-h-screen">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 z-40 bg-[#1c1f2a] flex flex-col h-full py-6 font-['Outfit'] text-sm tracking-wide">
+<!-- Brand Header -->
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl indigo-gradient flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+<div>
+<h1 class="font-['Syne'] font-extrabold text-[#dfe2f1] text-lg leading-tight">XenonOS</h1>
+<p class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-bold">Analytics Engine</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 space-y-1 px-2">
+<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 hover:bg-[#313540] transition-transform duration-400 cubic-bezier(0.4,0,0.2,1) hover:translate-x-1 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span>Custom Builder</span>
+</a>
+<!-- Active State: Saved Reports -->
+<a class="flex items-center gap-3 text-[#c0c1ff] bg-[#0a0e18] border-l-2 border-[#6366f1] px-4 py-3 rounded-r-lg transition-all active:scale-98" href="#">
+<span class="material-symbols-outlined" data-icon="folder_open" style="font-variation-settings: 'FILL' 1;">folder_open</span>
+<span class="font-bold">Saved Reports</span>
+</a>
+<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 hover:bg-[#313540] transition-transform duration-400 cubic-bezier(0.4,0,0.2,1) hover:translate-x-1 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span>KPI Overview</span>
+</a>
+<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 hover:bg-[#313540] transition-transform duration-400 cubic-bezier(0.4,0,0.2,1) hover:translate-x-1 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="table_chart">table_chart</span>
+<span>Data Tables</span>
+</a>
+<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 hover:bg-[#313540] transition-transform duration-400 cubic-bezier(0.4,0,0.2,1) hover:translate-x-1 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="event_repeat">event_repeat</span>
+<span>Scheduled</span>
+</a>
+<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 hover:bg-[#313540] transition-transform duration-400 cubic-bezier(0.4,0,0.2,1) hover:translate-x-1 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Archive</span>
+</a>
+</nav>
+<!-- Sidebar CTA -->
+<div class="px-4 mt-6">
+<button class="w-full py-3 px-4 rounded-xl indigo-gradient text-on-primary font-bold shadow-lg flex items-center justify-center gap-2 hover:brightness-110 transition-all">
+<span class="material-symbols-outlined text-sm">add</span>
+                Create New Report
+            </button>
+</div>
+<!-- Footer Links -->
+<div class="mt-auto px-2 pt-6 border-t border-outline-variant/10">
+<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 hover:bg-[#313540] rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span>Help Center</span>
+</a>
+<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 hover:bg-[#313540] rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="manage_accounts">manage_accounts</span>
+<span>Account</span>
+</a>
+</div>
+</aside>
+<!-- TopAppBar Shell -->
+<header class="ml-64 w-[calc(100%-16rem)] sticky top-0 z-30 h-16 bg-[#0f131d]/70 backdrop-blur-xl flex justify-between items-center px-8 shadow-[0_32px_32px_-4px_rgba(10,14,24,0.5)]">
+<div class="flex items-center gap-8">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+<input class="bg-surface-container-lowest border-none rounded-xl pl-10 pr-4 py-2 text-sm w-64 focus:ring-1 focus:ring-primary/40 transition-all text-on-surface placeholder:text-outline/50" placeholder="Search reports..." type="text"/>
+</div>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-[#c7c4d7] hover:text-[#dfe2f1] text-sm font-medium transition-colors" href="#">Dashboard</a>
+<a class="text-[#c0c1ff] font-bold border-b-2 border-[#6366f1] pb-1 text-sm" href="#">Analytics</a>
+<a class="text-[#c7c4d7] hover:text-[#dfe2f1] text-sm font-medium transition-colors" href="#">Templates</a>
+<a class="text-[#c7c4d7] hover:text-[#dfe2f1] text-sm font-medium transition-colors" href="#">Exports</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-lg hover:bg-[#313540]/50 transition-colors text-on-surface-variant relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<button class="p-2 rounded-lg hover:bg-[#313540]/50 transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-px bg-outline-variant/20 mx-2"></div>
+<div class="flex items-center gap-3 pl-2">
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface">Alex Chen</p>
+<p class="text-[10px] text-on-surface-variant">Admin</p>
+</div>
+<img alt="User Profile" class="w-10 h-10 rounded-xl object-cover ring-2 ring-surface-container-high" data-alt="close-up portrait of a professional male in a dark grey suit with a modern architectural background and soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALoibJyGiZKTTU5FYmBaZtx5_kSHWh5wg_D1aMYnjmW3gEA0FLoJBZI1WfE_-OpPwldK24-5zLIuIdwbOEOeZAfD4y9h-aagXoc4cj3Kfn2eq_xoTMOIYLYFHwWm2X4_UGSLQl6dxs9o9xwFq8rC8u66NGUvs59ZByhrbUfKr306q00F8bLI_d4Vp-Ao9HkQrGjezc6UJX7Fmap0iUh5viK46eO-h4LvWy2z0efVSUzp91RnqII-njt1BoQyuorWhvU8M5DFoCgiw"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 p-8 min-h-[calc(100vh-4rem)]">
+<!-- Page Header Section -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+<div>
+<h2 class="font-syne font-extrabold text-4xl text-on-surface tracking-tighter mb-2">Saved Reports</h2>
+<p class="text-on-surface-variant text-sm max-w-md">Manage and analyze your historical data architectures and generated insights.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-5 py-3 rounded-xl bg-surface-container-high text-on-surface text-sm font-semibold hover:bg-surface-variant transition-colors border border-outline-variant/10">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                    Advanced Filters
+                </button>
+<button class="flex items-center gap-2 px-6 py-3 rounded-xl indigo-gradient text-on-primary font-bold shadow-[0_8px_16px_-4px_rgba(99,102,241,0.4)] hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">add_circle</span>
+                    Create New Report
+                </button>
+</div>
+</section>
+<!-- Filtering Tabs -->
+<div class="flex items-center gap-2 mb-8 bg-surface-container-lowest p-1.5 rounded-2xl w-fit">
+<button class="px-6 py-2.5 rounded-xl bg-surface-container text-primary font-bold shadow-sm text-sm">All Reports</button>
+<button class="px-6 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface font-medium text-sm transition-colors">Financial</button>
+<button class="px-6 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface font-medium text-sm transition-colors">Performance</button>
+<button class="px-6 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface font-medium text-sm transition-colors">Operational</button>
+</div>
+<!-- Reports Table Area -->
+<div class="bg-surface-container rounded-2xl overflow-hidden shadow-2xl ring-1 ring-outline-variant/10">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Report Name</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Type</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Last Updated</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Created By</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Status</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<!-- Row 1 -->
+<tr class="group hover:bg-surface-container-high transition-all duration-300 indigo-glow">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">description</span>
+<span class="font-semibold text-on-surface">Q4 Revenue Synthesis</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-2.5 py-1 rounded-md bg-secondary-container/30 text-secondary text-[11px] font-bold uppercase">Financial</span>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Oct 24, 2023 • 14:20</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-[10px] font-bold">JD</div>
+<span class="text-sm text-on-surface">J. Doe</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1.5 text-emerald-400">
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-400"></div>
+<span class="text-[11px] font-bold uppercase">Live</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="View"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+<button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Edit"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+<button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Duplicate"><span class="material-symbols-outlined text-[20px]">content_copy</span></button>
+<button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Export"><span class="material-symbols-outlined text-[20px]">ios_share</span></button>
+<button class="p-2 rounded-lg hover:bg-error/10 hover:text-error transition-colors text-on-surface-variant" title="Delete"><span class="material-symbols-outlined text-[20px]">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-surface-container-high transition-all duration-300 indigo-glow">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">speed</span>
+<span class="font-semibold text-on-surface">System Latency Audit</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-2.5 py-1 rounded-md bg-tertiary-container/30 text-tertiary text-[11px] font-bold uppercase">Performance</span>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Oct 23, 2023 • 09:15</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-[10px] font-bold">AC</div>
+<span class="text-sm text-on-surface">A. Chen</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<div class="w-1.5 h-1.5 rounded-full bg-on-surface-variant"></div>
+<span class="text-[11px] font-bold uppercase">Archived</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="View"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+<button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Edit"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+<button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Duplicate"><span class="material-symbols-outlined text-[20px]">content_copy</span></button>
+<button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Export"><span class="material-symbols-outlined text-[20px]">ios_share</span></button>
+<button class="p-2 rounded-lg hover:bg-error/10 hover:text-error transition-colors text-on-surface-variant" title="Delete"><span class="material-symbols-outlined text-[20px]">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-surface-container-high transition-all duration-300 indigo-glow">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">hub</span>
+<span class="font-semibold text-on-surface">Node Distribution Chart</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-2.5 py-1 rounded-md bg-surface-variant text-on-surface text-[11px] font-bold uppercase">Operational</span>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Oct 21, 2023 • 18:45</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-[10px] font-bold">MK</div>
+<span class="text-sm text-on-surface">M. Kraus</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1.5 text-primary">
+<div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+<span class="text-[11px] font-bold uppercase">Processing</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="View"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+<button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Edit"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+<button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Duplicate"><span class="material-symbols-outlined text-[20px]">content_copy</span></button>
+<button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Export"><span class="material-symbols-outlined text-[20px]">ios_share</span></button>
+<button class="p-2 rounded-lg hover:bg-error/10 hover:text-error transition-colors text-on-surface-variant" title="Delete"><span class="material-symbols-outlined text-[20px]">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="group hover:bg-surface-container-high transition-all duration-300 indigo-glow">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">database</span>
+<span class="font-semibold text-on-surface">Cluster Health Matrix</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-2.5 py-1 rounded-md bg-tertiary-container/30 text-tertiary text-[11px] font-bold uppercase">Performance</span>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Oct 19, 2023 • 11:30</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-[10px] font-bold">AC</div>
+<span class="text-sm text-on-surface">A. Chen</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1.5 text-emerald-400">
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-400"></div>
+<span class="text-[11px] font-bold uppercase">Live</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="View"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+<button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Edit"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+<button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Duplicate"><span class="material-symbols-outlined text-[20px]">content_copy</span></button>
+<button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Export"><span class="material-symbols-outlined text-[20px]">ios_share</span></button>
+<button class="p-2 rounded-lg hover:bg-error/10 hover:text-error transition-colors text-on-surface-variant" title="Delete"><span class="material-symbols-outlined text-[20px]">delete</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination Section -->
+<div class="px-6 py-5 bg-surface-container-low/30 flex items-center justify-between border-t border-outline-variant/5">
+<span class="text-xs text-on-surface-variant font-medium">Showing <span class="text-on-surface">1-4</span> of <span class="text-on-surface">32</span> reports</span>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface-variant opacity-50 cursor-not-allowed border border-outline-variant/10">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary/20 text-primary font-bold text-xs">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high text-on-surface-variant text-xs transition-colors">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high text-on-surface-variant text-xs transition-colors">3</button>
+<span class="text-on-surface-variant text-xs mx-1">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high text-on-surface-variant text-xs transition-colors">8</button>
+</div>
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface border border-outline-variant/10 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Secondary Info Cards (Asymmetric Bento Element) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+<div class="md:col-span-2 bg-surface-container rounded-2xl p-6 relative overflow-hidden group border border-outline-variant/5">
+<div class="relative z-10">
+<h3 class="font-syne font-bold text-xl text-on-surface mb-2">Automated Insights Ready</h3>
+<p class="text-on-surface-variant text-sm mb-4 max-w-sm">We've identified 3 new patterns in your Financial reports. Sync now to update your dashboard metrics.</p>
+<button class="text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all">
+                        Sync Intelligence <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="absolute -right-8 -bottom-8 opacity-10 group-hover:opacity-20 transition-opacity duration-700">
+<span class="material-symbols-outlined text-[180px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+</div>
+<div class="bg-primary/5 rounded-2xl p-6 border border-primary/20 flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary mb-4" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<h3 class="font-syne font-bold text-lg text-on-surface mb-1">Storage Usage</h3>
+<p class="text-on-surface-variant text-[11px] uppercase tracking-wider mb-4">Plan: Enterprise Ultra</p>
+</div>
+<div class="space-y-2">
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-3/4 h-full indigo-gradient"></div>
+</div>
+<p class="text-xs text-on-surface-variant flex justify-between">
+<span>1.2GB / 2GB</span>
+<span class="text-primary font-bold">75%</span>
+</p>
+</div>
+</div>
+</div>
+</main>
+</body></html>

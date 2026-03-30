@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Task Calendar | XenonOS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&amp;family=Outfit:wght@300;400;600;700&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#dfe2f1",
+              "outline": "#908fa0",
+              "error-container": "#93000a",
+              "inverse-surface": "#dfe2f1",
+              "on-tertiary-container": "#452000",
+              "surface": "#0f131d",
+              "on-primary-container": "#0d0096",
+              "tertiary-container": "#d97721",
+              "primary-fixed-dim": "#c0c1ff",
+              "surface-bright": "#353944",
+              "secondary": "#c0c1ff",
+              "on-secondary-fixed-variant": "#404178",
+              "tertiary-fixed-dim": "#ffb783",
+              "primary-fixed": "#e1e0ff",
+              "on-error": "#690005",
+              "surface-container-lowest": "#0a0e18",
+              "surface-container": "#1c1f2a",
+              "surface-container-highest": "#313540",
+              "on-tertiary-fixed": "#301400",
+              "on-secondary-fixed": "#13144a",
+              "on-background": "#dfe2f1",
+              "secondary-container": "#42447b",
+              "on-error-container": "#ffdad6",
+              "on-tertiary": "#4f2500",
+              "error": "#ffb4ab",
+              "surface-variant": "#313540",
+              "tertiary": "#ffb783",
+              "on-primary-fixed": "#07006c",
+              "on-surface-variant": "#c7c4d7",
+              "inverse-primary": "#494bd6",
+              "on-secondary-container": "#b2b3f2",
+              "surface-dim": "#0f131d",
+              "primary": "#c0c1ff",
+              "outline-variant": "#464554",
+              "background": "#0f131d",
+              "tertiary-fixed": "#ffdcc5",
+              "primary-container": "#8083ff",
+              "surface-container-high": "#262a35",
+              "on-primary-fixed-variant": "#2f2ebe",
+              "inverse-on-surface": "#2c303b",
+              "on-secondary": "#292a60",
+              "on-primary": "#1000a9",
+              "surface-tint": "#c0c1ff",
+              "surface-container": "#1c1f2a"
+            },
+            fontFamily: {
+              "headline": ["Syne", "sans-serif"],
+              "body": ["Outfit", "sans-serif"],
+              "label": ["Outfit", "sans-serif"],
+              "sans": ["Outfit", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-panel {
+        background: rgba(28, 31, 42, 0.7);
+        backdrop-filter: blur(20px);
+      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 min-h-screen overflow-x-hidden">
+<!-- Side Navigation Shell -->
+<aside class="fixed left-0 top-0 h-full w-20 hover:w-64 transition-all duration-400 z-40 bg-[#1c1f2a] flex flex-col py-8 px-4 group">
+<!-- Brand/Header -->
+<div class="flex items-center gap-4 mb-12 px-2">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-surface text-2xl" style="font-variation-settings: 'FILL' 1;">cloud_done</span>
+</div>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-hidden whitespace-nowrap">
+<h1 class="font-headline font-extrabold text-[#c0c1ff] text-xl leading-none">Tasks</h1>
+<p class="text-xs text-on-surface-variant font-medium tracking-widest uppercase">Management</p>
+</div>
+</div>
+<!-- Navigation Tabs -->
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-4 text-[#c7c4d7] p-3 hover:bg-[#313540] hover:text-[#dfe2f1] transition-all duration-400 rounded-xl" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="format_list_bulleted">format_list_bulleted</span>
+<span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">Task List</span>
+</a>
+<a class="flex items-center gap-4 text-[#c7c4d7] p-3 hover:bg-[#313540] hover:text-[#dfe2f1] transition-all duration-400 rounded-xl" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="info">info</span>
+<span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">Task Details</span>
+</a>
+<a class="flex items-center gap-4 text-[#c7c4d7] p-3 hover:bg-[#313540] hover:text-[#dfe2f1] transition-all duration-400 rounded-xl" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="person_add">person_add</span>
+<span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">Assign Task</span>
+</a>
+<!-- Active Tab: Task Calendar -->
+<a class="flex items-center gap-4 bg-gradient-to-br from-[#c0c1ff] to-[#8083ff] text-[#0f131d] rounded-xl p-3 shadow-[0_0_4px_#c0c1ff]" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="calendar_month" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-bold">Task Calendar</span>
+</a>
+<a class="flex items-center gap-4 text-[#c7c4d7] p-3 hover:bg-[#313540] hover:text-[#dfe2f1] transition-all duration-400 rounded-xl" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="analytics">analytics</span>
+<span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">Task Analytics</span>
+</a>
+</nav>
+<!-- CTA & Footer -->
+<div class="mt-auto space-y-4">
+<button class="w-full bg-surface-container-highest hover:bg-primary/20 text-primary p-3 rounded-xl transition-all duration-300 flex items-center justify-center gap-3">
+<span class="material-symbols-outlined">add</span>
+<span class="hidden group-hover:inline font-semibold">New Task</span>
+</button>
+<div class="space-y-1">
+<a class="flex items-center gap-4 text-[#c7c4d7] p-3 hover:bg-[#313540] transition-all duration-400 rounded-xl" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="settings">settings</span>
+<span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">Settings</span>
+</a>
+<a class="flex items-center gap-4 text-[#c7c4d7] p-3 hover:bg-[#313540] transition-all duration-400 rounded-xl" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="logout">logout</span>
+<span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Top AppBar Shell -->
+<header class="fixed top-0 right-0 left-20 z-50 bg-[#0f131d]/70 backdrop-blur-xl flex justify-between items-center px-8 h-16 shadow-[0_32px_32px_-4px_rgba(10,14,24,0.5)]">
+<div class="flex items-center gap-8">
+<div class="flex items-center bg-surface-container-lowest px-4 py-1.5 rounded-full border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-sm mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-on-surface w-64" placeholder="Search tasks or files..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-surface-container-highest transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-highest transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+<div class="h-8 w-px bg-outline-variant/20 mx-2"></div>
+<div class="flex items-center gap-3 group cursor-pointer">
+<div class="text-right">
+<p class="text-sm font-semibold text-on-surface leading-none">Alex Sterling</p>
+<p class="text-[10px] text-primary uppercase tracking-tighter mt-1">Admin Account</p>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-primary/30 p-0.5 group-hover:border-primary transition-all duration-400">
+<img alt="User profile avatar" class="w-full h-full rounded-full object-cover" data-alt="close up professional portrait of a tech professional with soft blue lighting and blurred workstation background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBycxFJcFXLYw2LImZjWkWn3yfAmcQM9cfIYpDvREIESAP2UjTcsojerHtqS85kZhwcZ3k1kcMhV8rk-MmEc8o3pbZJjsx4R7uIfRHsBMPuOAkuuLxqGYwV8AtyxiTVQzFBGqxx0TOpiyE0hWpyBhWdB-2-4EyBAZRrMzwm8K8iInIKbCXSPbtsVh25QKoX7gFdNXymZx1T1QSOpgo7AHrJ3xzcQgWBjmAQm5tra20LWg7Dz1uztCPOnk8kghn_QOA4IXDHEGY5CTg"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-20 pt-24 px-8 pb-12 min-h-screen">
+<div class="max-w-[1600px] mx-auto">
+<!-- Header Section with Monthly Control -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6">
+<div>
+<h2 class="font-headline text-4xl text-primary-fixed-dim tracking-tight mb-2">October 2024</h2>
+<p class="text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                        You have 14 tasks scheduled for this month.
+                    </p>
+</div>
+<div class="flex items-center gap-4 bg-surface-container p-1 rounded-2xl shadow-inner">
+<button class="p-2 hover:bg-surface-container-highest rounded-xl text-on-surface transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="px-6 py-2 bg-surface-container-highest text-on-surface rounded-xl font-semibold text-sm">Today</button>
+<button class="p-2 hover:bg-surface-container-highest rounded-xl text-on-surface transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex bg-surface-container-low p-1 rounded-xl">
+<button class="px-4 py-1.5 text-xs font-bold rounded-lg bg-primary text-surface">Month</button>
+<button class="px-4 py-1.5 text-xs font-medium text-on-surface-variant hover:text-on-surface transition-colors">Week</button>
+<button class="px-4 py-1.5 text-xs font-medium text-on-surface-variant hover:text-on-surface transition-colors">Day</button>
+</div>
+</div>
+</div>
+<!-- Calendar Bento Grid -->
+<div class="grid grid-cols-7 gap-px bg-outline-variant/10 rounded-2xl overflow-hidden shadow-2xl border border-outline-variant/5">
+<!-- Day Labels -->
+<div class="bg-surface-container py-4 text-center border-b border-outline-variant/10">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Sun</span>
+</div>
+<div class="bg-surface-container py-4 text-center border-b border-outline-variant/10">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Mon</span>
+</div>
+<div class="bg-surface-container py-4 text-center border-b border-outline-variant/10">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Tue</span>
+</div>
+<div class="bg-surface-container py-4 text-center border-b border-outline-variant/10">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Wed</span>
+</div>
+<div class="bg-surface-container py-4 text-center border-b border-outline-variant/10">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Thu</span>
+</div>
+<div class="bg-surface-container py-4 text-center border-b border-outline-variant/10">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Fri</span>
+</div>
+<div class="bg-surface-container py-4 text-center border-b border-outline-variant/10">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Sat</span>
+</div>
+<!-- Calendar Days (Mocked for October 2024 starting Tuesday) -->
+<!-- Week 1 Empty Slots -->
+<div class="bg-surface-container-lowest h-40 opacity-40"></div>
+<div class="bg-surface-container-lowest h-40 opacity-40"></div>
+<!-- Day 1 (Tue) -->
+<div class="bg-surface-container h-40 p-3 group relative hover:bg-surface-container-high transition-colors">
+<span class="text-sm font-semibold text-on-surface-variant">01</span>
+<button class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 p-1 hover:bg-primary/20 rounded-md transition-all">
+<span class="material-symbols-outlined text-primary text-sm">add</span>
+</button>
+</div>
+<!-- Day 2 (Wed) -->
+<div class="bg-surface-container h-40 p-3 group relative hover:bg-surface-container-high transition-colors">
+<span class="text-sm font-semibold text-on-surface-variant">02</span>
+<!-- High Priority Task -->
+<div class="mt-2 p-2 bg-error-container/20 border-l-2 border-error rounded-r-lg cursor-grab active:cursor-grabbing hover:scale-[1.02] transition-transform">
+<p class="text-[10px] font-bold text-error uppercase mb-0.5">Urgent</p>
+<p class="text-xs font-medium text-on-surface truncate">Server Migration</p>
+</div>
+</div>
+<!-- Day 3 (Thu) -->
+<div class="bg-surface-container h-40 p-3 group relative hover:bg-surface-container-high transition-colors">
+<span class="text-sm font-semibold text-on-surface-variant">03</span>
+</div>
+<!-- Day 4 (Fri) -->
+<div class="bg-surface-container h-40 p-3 group relative hover:bg-surface-container-high transition-colors">
+<span class="text-sm font-semibold text-on-surface-variant">04</span>
+<!-- Medium Priority Task -->
+<div class="mt-2 p-2 bg-primary-container/20 border-l-2 border-primary rounded-r-lg hover:scale-[1.02] transition-transform cursor-grab">
+<p class="text-[10px] font-bold text-primary uppercase mb-0.5">Main</p>
+<p class="text-xs font-medium text-on-surface truncate">API Documentation</p>
+</div>
+</div>
+<!-- Day 5 (Sat) -->
+<div class="bg-surface-container-lowest h-40 p-3">
+<span class="text-sm font-semibold text-on-surface-variant/40">05</span>
+</div>
+<!-- Week 2 -->
+<div class="bg-surface-container-lowest h-40 p-3"><span class="text-sm font-semibold text-on-surface-variant/40">06</span></div>
+<div class="bg-surface-container h-40 p-3 group relative hover:bg-surface-container-high transition-colors">
+<span class="text-sm font-semibold text-on-surface-variant">07</span>
+</div>
+<div class="bg-surface-container h-40 p-3 group relative hover:bg-surface-container-high transition-colors">
+<span class="text-sm font-semibold text-on-surface-variant">08</span>
+<div class="mt-2 p-2 bg-tertiary-container/20 border-l-2 border-tertiary rounded-r-lg hover:scale-[1.02] transition-transform cursor-grab">
+<p class="text-[10px] font-bold text-tertiary uppercase mb-0.5">Planning</p>
+<p class="text-xs font-medium text-on-surface truncate">Team Sync: Sprint 4</p>
+</div>
+</div>
+<!-- Today Cell (Day 9) -->
+<div class="bg-surface-container h-40 p-3 group relative border-2 border-primary/40 ring-4 ring-primary/5 z-10">
+<span class="text-sm font-bold text-primary flex items-center gap-1.5">09 <span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span></span>
+<div class="mt-2 p-2 bg-surface-container-highest border border-outline-variant/20 rounded-lg shadow-xl cursor-grab hover:border-primary/50 transition-colors">
+<p class="text-xs font-semibold text-on-surface">Finalize UI Mockups</p>
+<div class="flex items-center gap-2 mt-2">
+<img alt="Team member" class="w-4 h-4 rounded-full" data-alt="close up circular headshot of a young creative professional with modern glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxSlR3Y_QiFdMSUUHnpVnDpRlMtjyGKBk9cltTiMUpNYfEcBc0NFtOwUO1snSt27Z4d9rnH5RUiigV-_GSXetL2mRtEYr9Bs9rU8xwvNFcXTn2-u48wqUNn2zwK7pGrQ1oDL8ypoy5b5XJrL4BWBxuQAtXMdh-Gj66Rb87UUAmnzDUfLTuHK_x4C5HXErPQ02efSRPvcKCWqYAh4H3wGoGqtU6X5B-oKS10J21t9wRTdrPqNcey3_BY25juHi-W4atPMQvEz5rl3Q"/>
+<span class="text-[9px] text-on-surface-variant">Reviewing now</span>
+</div>
+</div>
+<button class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-primary/10 hover:bg-primary/20 text-primary px-3 py-1 rounded-full text-[10px] font-bold transition-all opacity-0 group-hover:opacity-100">
+                        + New Event
+                    </button>
+</div>
+<div class="bg-surface-container h-40 p-3 group relative hover:bg-surface-container-high transition-colors">
+<span class="text-sm font-semibold text-on-surface-variant">10</span>
+</div>
+<div class="bg-surface-container h-40 p-3 group relative hover:bg-surface-container-high transition-colors">
+<span class="text-sm font-semibold text-on-surface-variant">11</span>
+<!-- Multiple tasks hint -->
+<div class="mt-2 flex flex-col gap-1">
+<div class="h-1.5 w-full bg-primary/40 rounded-full"></div>
+<div class="h-1.5 w-2/3 bg-tertiary/40 rounded-full"></div>
+<p class="text-[10px] text-on-surface-variant mt-1">+ 2 more tasks</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest h-40 p-3"><span class="text-sm font-semibold text-on-surface-variant/40">12</span></div>
+<!-- Week 3 (Simplified for design flow) -->
+<div class="bg-surface-container-lowest h-40 p-3"><span class="text-sm font-semibold text-on-surface-variant/40">13</span></div>
+<div class="bg-surface-container h-40 p-3 hover:bg-surface-container-high transition-colors"><span class="text-sm font-semibold text-on-surface-variant">14</span></div>
+<div class="bg-surface-container h-40 p-3 hover:bg-surface-container-high transition-colors"><span class="text-sm font-semibold text-on-surface-variant">15</span></div>
+<div class="bg-surface-container h-40 p-3 hover:bg-surface-container-high transition-colors"><span class="text-sm font-semibold text-on-surface-variant">16</span></div>
+<div class="bg-surface-container h-40 p-3 hover:bg-surface-container-high transition-colors">
+<span class="text-sm font-semibold text-on-surface-variant">17</span>
+<div class="mt-2 p-2 bg-primary/20 border border-primary/30 rounded-lg">
+<p class="text-xs text-on-surface italic">User Research Session</p>
+</div>
+</div>
+<div class="bg-surface-container h-40 p-3 hover:bg-surface-container-high transition-colors"><span class="text-sm font-semibold text-on-surface-variant">18</span></div>
+<div class="bg-surface-container-lowest h-40 p-3"><span class="text-sm font-semibold text-on-surface-variant/40">19</span></div>
+<!-- Week 4 -->
+<div class="bg-surface-container-lowest h-40 p-3"><span class="text-sm font-semibold text-on-surface-variant/40">20</span></div>
+<div class="bg-surface-container h-40 p-3 hover:bg-surface-container-high transition-colors"><span class="text-sm font-semibold text-on-surface-variant">21</span></div>
+<div class="bg-surface-container h-40 p-3 hover:bg-surface-container-high transition-colors"><span class="text-sm font-semibold text-on-surface-variant">22</span></div>
+<div class="bg-surface-container h-40 p-3 hover:bg-surface-container-high transition-colors"><span class="text-sm font-semibold text-on-surface-variant">23</span></div>
+<div class="bg-surface-container h-40 p-3 hover:bg-surface-container-high transition-colors"><span class="text-sm font-semibold text-on-surface-variant">24</span></div>
+<div class="bg-surface-container h-40 p-3 hover:bg-surface-container-high transition-colors">
+<span class="text-sm font-semibold text-on-surface-variant">25</span>
+<div class="mt-2 p-2 bg-error-container/20 border-l-2 border-error rounded-r-lg hover:scale-[1.02] transition-transform cursor-grab">
+<p class="text-xs font-medium text-on-surface truncate">Product Launch</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest h-40 p-3"><span class="text-sm font-semibold text-on-surface-variant/40">26</span></div>
+</div>
+<!-- Footer Details & Quick stats -->
+<div class="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Upcoming Tasks Bento -->
+<div class="lg:col-span-2 bg-surface-container rounded-2xl p-6 shadow-xl border border-outline-variant/5">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-bold text-xl text-on-surface">Upcoming Focus</h3>
+<button class="text-primary text-sm font-semibold hover:underline">View All Tasks</button>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4 bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/10 group hover:border-primary/40 transition-all cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-error-container/10 flex items-center justify-center text-error">
+<span class="material-symbols-outlined">priority_high</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-on-surface">Cloud Security Audit</p>
+<p class="text-xs text-on-surface-variant">Scheduled for Oct 12 • 4:00 PM</p>
+</div>
+<div class="flex -space-x-2">
+<img class="w-7 h-7 rounded-full border-2 border-surface-container-lowest" data-alt="face of a diverse male team member with a warm smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK-w38Sn8YdZ57fiJgkyRa7c3F_f53eAhb4DdCTaYe2nnRuI1T8OxVeE0cHQd-634sZA8uaridQio-Hx3UvGlOJsbLOBZaZDqxpesgpXdPpS28gt8llzdlnaWxB38CYt9pmu36K0TBKK-5SYePP71Q1kWsvIky1Q3HvBYyaQ8mMNVV8Q_7tNpRIf-6Ua1l-RXN7oeQpx9S6_K6wEJInbc9hVkiVm615X2H0s_VXI7X88qYWGP6Mmjq96ebrY21yfNyYEzc_lcRBSE"/>
+<img class="w-7 h-7 rounded-full border-2 border-surface-container-lowest" data-alt="professional portrait of a confident female engineer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN_xrYa8SWrBd-70dgKnAY6yEwDzZZZUvt4X3W8QZ-oUpsWegplV5jKIRkPen4JxrGU9c8fpE1pypkKAn0PNWjdy8M_gKFLmEZiuDFDufgeyfY_5eXqm6HFBoEmJvpwMMbP9lhxYDgU9-M4se6BhdQHPuOUuJVgYalkjxv6kXi-ckHkGpOALSUN3SGu4qi08e8XgGOZCp3OGqAusP8O57-i0hUhO4SThwnAs9LSXhG9vqdx92UdpZs5GOgRbFoJ2mwolhm-3GTWic"/>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/10 group hover:border-primary/40 transition-all cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">draw</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-on-surface">Final Logo Export</p>
+<p class="text-xs text-on-surface-variant">Scheduled for Oct 15 • 10:30 AM</p>
+</div>
+<div class="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] font-bold text-primary">IN REVIEW</div>
+</div>
+</div>
+</div>
+<!-- Rescheduling Legend & Hint -->
+<div class="bg-gradient-to-br from-surface-container to-surface-container-high rounded-2xl p-6 shadow-xl relative overflow-hidden group">
+<div class="relative z-10">
+<div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">drag_indicator</span>
+</div>
+<h3 class="font-headline text-xl text-primary-fixed-dim mb-3">Precision Control</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+                            Need to reschedule? Simply <span class="text-primary font-bold">drag and drop</span> any task slot to a new date. The system will automatically notify assigned members of the shift.
+                        </p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-xs text-on-surface">
+<span class="w-2 h-2 rounded-full bg-error"></span> Urgent Action Required
+                            </li>
+<li class="flex items-center gap-3 text-xs text-on-surface">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Standard Workflow
+                            </li>
+<li class="flex items-center gap-3 text-xs text-on-surface">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Review &amp; Discussion
+                            </li>
+</ul>
+</div>
+<!-- Aesthetic element -->
+<div class="absolute -right-10 -bottom-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-1000"></div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB for Quick Task Creation (Only on home/dashboard-style top levels) -->
+<button class="fixed bottom-10 right-10 w-16 h-16 bg-gradient-to-br from-primary to-primary-container text-surface rounded-2xl shadow-[0_12px_24px_-8px_rgba(192,193,255,0.6)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50 group">
+<span class="material-symbols-outlined text-3xl font-bold group-hover:rotate-90 transition-transform duration-300">add</span>
+<!-- Tooltip -->
+<span class="absolute right-20 bg-surface-container-highest text-on-surface text-xs font-bold px-4 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-2xl pointer-events-none">
+            New Workspace Task
+        </span>
+</button>
+</body></html>

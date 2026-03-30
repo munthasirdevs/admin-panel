@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>XenonOS | Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#e1e0ff",
+              "on-primary-fixed": "#07006c",
+              "surface-bright": "#353944",
+              "secondary-fixed-dim": "#c0c1ff",
+              "surface-container-highest": "#313540",
+              "on-primary": "#1000a9",
+              "on-primary-fixed-variant": "#2f2ebe",
+              "tertiary": "#ffb783",
+              "primary-container": "#8083ff",
+              "outline-variant": "#464554",
+              "tertiary-fixed-dim": "#ffb783",
+              "surface-dim": "#0f131d",
+              "on-secondary-fixed-variant": "#404178",
+              "secondary-fixed": "#e1e0ff",
+              "outline": "#908fa0",
+              "on-error": "#690005",
+              "on-surface": "#dfe2f1",
+              "on-secondary-fixed": "#13144a",
+              "background": "#0f131d",
+              "secondary-container": "#42447b",
+              "surface-container-low": "#171b26",
+              "surface-tint": "#c0c1ff",
+              "surface-container": "#1c1f2a",
+              "on-tertiary-fixed-variant": "#703700",
+              "inverse-surface": "#dfe2f1",
+              "inverse-on-surface": "#2c303b",
+              "primary-fixed-dim": "#c0c1ff",
+              "surface-container-lowest": "#0a0e18",
+              "on-tertiary-fixed": "#301400",
+              "on-error-container": "#ffdad6",
+              "on-secondary": "#292a60",
+              "on-background": "#dfe2f1",
+              "surface": "#0f131d",
+              "on-tertiary": "#4f2500",
+              "surface-container-high": "#262a35",
+              "on-secondary-container": "#b2b3f2",
+              "inverse-primary": "#494bd6",
+              "error": "#ffb4ab",
+              "on-surface-variant": "#c7c4d7",
+              "error-container": "#93000a",
+              "tertiary-container": "#d97721",
+              "primary": "#c0c1ff",
+              "tertiary-fixed": "#ffdcc5",
+              "surface-variant": "#313540",
+              "secondary": "#c0c1ff",
+              "on-primary-container": "#0d0096",
+              "on-tertiary-container": "#452000"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0f131d;
+            color: #dfe2f1;
+            font-family: 'Manrope', sans-serif;
+        }
+        .syne { font-family: 'Syne', sans-serif; }
+        .outfit { font-family: 'Outfit', sans-serif; }
+        .indigo-glow {
+            background: linear-gradient(135deg, #c0c1ff 0%, #8083ff 100%);
+        }
+        .glass-panel {
+            background-color: rgba(28, 31, 42, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .bento-card {
+            transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            transform: scale(1.02);
+            background-color: #262a35;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Sidebar Navigation (Predicted Component) -->
+<aside class="h-screen w-64 fixed left-0 top-0 z-40 bg-[#1c1f2a] flex flex-col py-6">
+<div class="px-6 mb-10">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 indigo-glow rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed" style="font-variation-settings: 'FILL' 1;">cloud</span>
+</div>
+<div>
+<h1 class="font-['Syne'] font-bold text-lg text-[#6366f1]">XenonOS</h1>
+<p class="font-['Outfit'] text-[10px] tracking-widest text-on-surface-variant uppercase">Premium Management</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-2 space-y-1">
+<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 opacity-70 hover:bg-[#313540] hover:opacity-100 transition-all duration-400 font-['Outfit'] text-sm tracking-wide" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 bg-[#313540] text-[#c0c1ff] border-l-4 border-[#6366f1] px-4 py-3 rounded-r-lg font-['Outfit'] text-sm tracking-wide" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span>Profile</span>
+</a>
+<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 opacity-70 hover:bg-[#313540] hover:opacity-100 transition-all duration-400 font-['Outfit'] text-sm tracking-wide" href="#">
+<span class="material-symbols-outlined">security</span>
+<span>Security</span>
+</a>
+<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 opacity-70 hover:bg-[#313540] hover:opacity-100 transition-all duration-400 font-['Outfit'] text-sm tracking-wide" href="#">
+<span class="material-symbols-outlined">history</span>
+<span>Sessions</span>
+</a>
+<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 opacity-70 hover:bg-[#313540] hover:opacity-100 transition-all duration-400 font-['Outfit'] text-sm tracking-wide" href="#">
+<span class="material-symbols-outlined">devices</span>
+<span>Devices</span>
+</a>
+<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-3 opacity-70 hover:bg-[#313540] hover:opacity-100 transition-all duration-400 font-['Outfit'] text-sm tracking-wide" href="#">
+<span class="material-symbols-outlined">lock</span>
+<span>Privacy</span>
+</a>
+</nav>
+<div class="px-4 mt-auto space-y-1">
+<div class="p-4 bg-surface-container-lowest rounded-xl mb-4">
+<p class="text-[11px] font-bold text-primary mb-2 uppercase tracking-tighter">Pro Status</p>
+<button class="w-full py-2 rounded-lg indigo-glow text-on-primary-fixed text-xs font-bold outfit">Upgrade Pro</button>
+</div>
+<a class="flex items-center gap-3 text-[#c7c4d7] px-4 py-2 opacity-70 hover:opacity-100 transition-all font-['Outfit'] text-sm" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Support</span>
+</a>
+<a class="flex items-center gap-3 text-error px-4 py-2 opacity-70 hover:opacity-100 transition-all font-['Outfit'] text-sm" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 w-full z-50 bg-[#1c1f2a]/70 backdrop-blur-xl flex justify-between items-center px-8 py-4">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary/40 text-on-surface" placeholder="Search resources..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/20"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-xs font-bold outfit">Alex Sterling</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Executive Admin</p>
+</div>
+<img alt="User profile avatar" class="w-10 h-10 rounded-full border-2 border-primary/20 object-cover" data-alt="Close up portrait of a professional man in a dark turtleneck with confident expression against a dark textured background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHgIq4oZjlZkGDOlT9vGAj43uTXYADSaxZFsXPcrerrMicPGoC1I2ICsWu1nmpgfIrJgz-vzxk5U0s0UG3RCm8bWjHDSjIRaKN9xn-5VM0Q7jUj2zGxDjZ2F_Trb9PyTJGsKkd0dTIJXOIIy6SwJoVfgrgpNiqeVyk8OZ81XmZzW0igPnBfN1NM7EOwqQBrEGI1yFoKmhtr-qP9n_SqzUIfbr-NWIa0thRM-wlJPuMYmahyxKH-gtc0tYew_1SjZsqj_c3Bq9Dzkc"/>
+</div>
+</div>
+</header>
+<!-- Profile Content Grid -->
+<section class="p-8 max-w-7xl mx-auto">
+<!-- Header Identity Section -->
+<div class="relative rounded-[2rem] overflow-hidden mb-8 bg-surface-container-low p-8 flex flex-col md:flex-row items-end gap-8">
+<div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-r from-primary/10 to-transparent"></div>
+<div class="relative group">
+<img alt="Profile picture" class="w-32 h-32 rounded-3xl object-cover border-4 border-surface shadow-2xl relative z-10" data-alt="Professional headshot of a creative executive with short hair, warm studio lighting, dark moody background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsU3ctmBybwKK14n-vmI9F3cskKcjLRTNs5LhZShBoZ5zIB5F59XXrC6dPaa6Fyx4fxoVVacaX3BWOKQ3NJ4i5Udj0ouRb9W9Dpqpg9OpiPcTu8NxrVdq8zL2rRU3_rUaNP9sS7yn5CBP12hF8rE8nEqSAzO7Ph2Bixj0tdis_YbuK_J_huGdeucA15UgkRezAo30uyY_fChhZSiHhfYUycn0Oc4zrz8QZ2WggJB7l4URo71jZsh3b9JhnC23OE8s7MyvQrdls-S0"/>
+<button class="absolute -bottom-2 -right-2 z-20 w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center text-on-primary shadow-lg border-2 border-surface">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+</div>
+<div class="flex-1 pb-2">
+<div class="flex items-center gap-3 mb-1">
+<h2 class="syne text-4xl font-extrabold tracking-tighter">Alex Sterling</h2>
+<span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest rounded-full border border-primary/20 flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                            Active
+                        </span>
+</div>
+<p class="outfit text-on-surface-variant text-lg">Executive Admin • Product Strategy Lead</p>
+</div>
+<div class="flex gap-3 pb-2">
+<button class="px-6 py-2.5 rounded-xl bg-surface-container-highest border border-outline-variant/10 font-bold outfit text-sm hover:bg-surface-variant transition-all">View Public Profile</button>
+<button class="px-6 py-2.5 rounded-xl indigo-glow text-on-primary-fixed font-bold outfit text-sm shadow-[0_0_20px_rgba(99,102,241,0.3)]">Save Changes</button>
+</div>
+</div>
+<!-- Main Bento Grid -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Left Column: Personal Information -->
+<div class="col-span-12 lg:col-span-8 space-y-6">
+<!-- Bio Section -->
+<div class="bg-surface-container rounded-[1.5rem] p-8 border border-outline-variant/5">
+<h3 class="syne text-xl font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">description</span>
+                            Professional Summary
+                        </h3>
+<textarea class="w-full bg-surface-container-lowest border-none rounded-xl p-4 text-on-surface-variant outfit leading-relaxed focus:ring-1 focus:ring-primary/40 h-32 resize-none" placeholder="Write a short bio...">Driving excellence in cross-functional team coordination and product strategy. Specializing in high-scale infrastructure management and executive operations. Based in the San Francisco tech hub, currently managing XenonOS premium core systems.</textarea>
+</div>
+<!-- Personal Information Form -->
+<div class="bg-surface-container rounded-[1.5rem] p-8 border border-outline-variant/5">
+<h3 class="syne text-xl font-bold mb-8 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">badge</span>
+                            Personal Information
+                        </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="text-[11px] font-bold text-on-surface-variant uppercase tracking-widest pl-1">Full Name</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl px-4 py-3 text-on-surface outfit focus:ring-1 focus:ring-primary/40" type="text" value="Alex Sterling"/>
+</div>
+<div class="space-y-2">
+<label class="text-[11px] font-bold text-on-surface-variant uppercase tracking-widest pl-1">Job Role</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl px-4 py-3 text-on-surface outfit focus:ring-1 focus:ring-primary/40" type="text" value="Executive Admin"/>
+</div>
+<div class="space-y-2">
+<label class="text-[11px] font-bold text-on-surface-variant uppercase tracking-widest pl-1">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">mail</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl pl-10 pr-4 py-3 text-on-surface outfit focus:ring-1 focus:ring-primary/40" type="email" value="alex.sterling@xenonos.cloud"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[11px] font-bold text-on-surface-variant uppercase tracking-widest pl-1">Phone Number</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">phone</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl pl-10 pr-4 py-3 text-on-surface outfit focus:ring-1 focus:ring-primary/40" type="tel" value="+1 (555) 942-0192"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Quick Stats Bento -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+<!-- Stats Card 1: Projects -->
+<div class="bento-card bg-surface-container rounded-[1.5rem] p-6 border border-outline-variant/5">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">folder</span>
+</div>
+<span class="text-[10px] font-bold text-primary px-2 py-1 bg-primary/10 rounded-md">MONTHLY</span>
+</div>
+<p class="text-on-surface-variant text-sm outfit font-medium">Projects Assigned</p>
+<h4 class="syne text-5xl font-extrabold tracking-tighter mt-1">12</h4>
+<div class="mt-4 flex items-center gap-2">
+<span class="text-xs text-primary font-bold outfit">↑ 14%</span>
+<span class="text-[10px] text-on-surface-variant uppercase tracking-widest">since last month</span>
+</div>
+</div>
+<!-- Stats Card 2: Tasks -->
+<div class="bento-card bg-surface-container rounded-[1.5rem] p-6 border border-outline-variant/5">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 bg-tertiary/10 rounded-2xl flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+</div>
+<span class="text-[10px] font-bold text-tertiary px-2 py-1 bg-tertiary/10 rounded-md">LIFETIME</span>
+</div>
+<p class="text-on-surface-variant text-sm outfit font-medium">Tasks Completed</p>
+<h4 class="syne text-5xl font-extrabold tracking-tighter mt-1">842</h4>
+<div class="mt-4 w-full h-1 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[82%]"></div>
+</div>
+<p class="mt-2 text-[10px] text-on-surface-variant uppercase tracking-widest">82% Efficiency Rating</p>
+</div>
+<!-- Stats Card 3: Activity Level -->
+<div class="bento-card bg-surface-container-high rounded-[1.5rem] p-6 border border-primary/20 relative overflow-hidden">
+<div class="absolute -right-8 -bottom-8 opacity-10 scale-150">
+<span class="material-symbols-outlined text-[120px] text-primary">bolt</span>
+</div>
+<p class="text-on-surface-variant text-sm outfit font-medium mb-1">Activity Level</p>
+<h4 class="syne text-3xl font-extrabold text-primary mb-6">High Density</h4>
+<div class="flex items-end gap-1.5 h-16">
+<div class="flex-1 bg-primary/20 h-[60%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/20 h-[40%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/20 h-[70%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/40 h-[90%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[100%] rounded-t-sm shadow-[0_0_15px_rgba(192,193,255,0.4)]"></div>
+<div class="flex-1 bg-primary/60 h-[80%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/30 h-[50%] rounded-t-sm"></div>
+</div>
+<p class="mt-4 text-[10px] text-on-surface uppercase tracking-widest font-bold">Peak Performance Window</p>
+</div>
+</div>
+</div>
+<!-- Footer Meta -->
+<div class="mt-12 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-on-surface-variant outfit">Last profile update: October 24, 2023 at 14:02 GMT</p>
+<div class="flex gap-6">
+<a class="text-xs text-on-surface-variant hover:text-primary transition-colors outfit font-bold" href="#">Privacy Settings</a>
+<a class="text-xs text-on-surface-variant hover:text-primary transition-colors outfit font-bold" href="#">Connected Apps</a>
+<a class="text-xs text-on-surface-variant hover:text-primary transition-colors outfit font-bold" href="#">API Access</a>
+</div>
+</div>
+</section>
+</main>
+</body></html>
