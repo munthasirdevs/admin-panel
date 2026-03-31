@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>XenonOS | Files Workspace</title>
 
     <!-- Core Assets -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="../../assets/js/tailwind-config.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600&amp;family=Space+Grotesk:wght@700&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600&amp;family=Space+Grotesk:wght@700&amp;family=Manrope:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
-<body class="bg-background text-on-surface font-outfit selection:bg-primary-container selection:text-on-primary-container">
+
+<body
+    class="bg-background text-on-surface font-outfit selection:bg-primary-container selection:text-on-primary-container">
     <!-- ========= MAIN CONTENT CANVAS ========= -->
     <main class="min-h-screen flex flex-col">
         <!-- ========= PAGE CONTENT ========= -->
@@ -23,8 +30,10 @@
             <!-- ========= BENTO LAYOUT CONTAINER ========= -->
             <div class="grid grid-cols-12 gap-6">
                 <!-- ========= UPLOAD ZONE ========= -->
-                <div class="col-span-12 lg:col-span-4 bg-surface-container rounded-2xl p-6 border-2 border-dashed border-outline-variant/30 flex flex-col items-center justify-center text-center gap-4 group hover:border-primary/50 transition-all duration-400 bg-gradient-to-br from-surface-container to-surface-container-low">
-                    <div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                <div
+                    class="col-span-12 lg:col-span-4 bg-surface-container rounded-2xl p-6 border-2 border-dashed border-outline-variant/30 flex flex-col items-center justify-center text-center gap-4 group hover:border-primary/50 transition-all duration-400 bg-gradient-to-br from-surface-container to-surface-container-low">
+                    <div
+                        class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
                         <span class="material-symbols-outlined text-3xl text-primary">cloud_upload</span>
                     </div>
                     <div>
@@ -32,24 +41,30 @@
                         <p class="text-sm text-on-surface-variant font-outfit">or click to browse from device</p>
                     </div>
                     <div class="flex gap-2 mt-2">
-                        <span class="px-2 py-1 rounded-md bg-surface-container-lowest text-[10px] text-outline font-medium uppercase tracking-wider">PDF</span>
-                        <span class="px-2 py-1 rounded-md bg-surface-container-lowest text-[10px] text-outline font-medium uppercase tracking-wider">PNG</span>
-                        <span class="px-2 py-1 rounded-md bg-surface-container-lowest text-[10px] text-outline font-medium uppercase tracking-wider">FIG</span>
+                        <span
+                            class="px-2 py-1 rounded-md bg-surface-container-lowest text-[10px] text-outline font-medium uppercase tracking-wider">PDF</span>
+                        <span
+                            class="px-2 py-1 rounded-md bg-surface-container-lowest text-[10px] text-outline font-medium uppercase tracking-wider">PNG</span>
+                        <span
+                            class="px-2 py-1 rounded-md bg-surface-container-lowest text-[10px] text-outline font-medium uppercase tracking-wider">FIG</span>
                     </div>
                 </div>
 
                 <!-- ========= STORAGE STATS CARD ========= -->
-                <div class="col-span-12 lg:col-span-8 bg-surface-container rounded-2xl p-6 flex flex-col justify-between">
+                <div
+                    class="col-span-12 lg:col-span-8 bg-surface-container rounded-2xl p-6 flex flex-col justify-between">
                     <div class="flex justify-between items-start">
                         <div>
                             <h3 class="font-syne font-bold text-xl text-on-surface">Workspace Storage</h3>
                             <p class="text-sm text-on-surface-variant">42.8 GB used of 100 GB</p>
                         </div>
                         <div class="flex gap-2">
-                            <button class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+                            <button
+                                class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
                                 <span class="material-symbols-outlined text-sm">grid_view</span>
                             </button>
-                            <button class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-on-surface-variant">
+                            <button
+                                class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-on-surface-variant">
                                 <span class="material-symbols-outlined text-sm">list</span>
                             </button>
                         </div>
@@ -80,8 +95,10 @@
                 <div class="col-span-12 flex justify-between items-center py-2">
                     <div class="flex gap-4">
                         <button class="text-primary font-bold border-b-2 border-primary pb-1 text-sm">All Files</button>
-                        <button class="text-on-surface-variant hover:text-on-surface transition-colors text-sm">Recent</button>
-                        <button class="text-on-surface-variant hover:text-on-surface transition-colors text-sm">Favorites</button>
+                        <button
+                            class="text-on-surface-variant hover:text-on-surface transition-colors text-sm">Recent</button>
+                        <button
+                            class="text-on-surface-variant hover:text-on-surface transition-colors text-sm">Favorites</button>
                     </div>
                     <div class="flex items-center gap-2 text-on-surface-variant">
                         <span class="text-xs font-medium">Sort by:</span>
@@ -95,16 +112,21 @@
 
                 <!-- ========= FILE BENTO GRID ========= -->
                 <!-- Item 1: Preview Focus -->
-                <div class="col-span-12 md:col-span-6 lg:col-span-4 bg-surface-container rounded-2xl overflow-hidden group bento-card-hover transition-all duration-400">
+                <div
+                    class="col-span-12 md:col-span-6 lg:col-span-4 bg-surface-container rounded-2xl overflow-hidden group bento-card-hover transition-all duration-400">
                     <div class="h-48 relative bg-surface-container-lowest overflow-hidden">
-                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFU4KKFXaGLRo9fpU38XeizWM9Kmz1-GPTf6WQoeh5C4Y2Ux0j2wJFr8Ufh8FAREE_1m6JTKnpnItNfc36i7vtEm6PfjvnXVU0vn-LVBmdJG_7m3Wl3chmLIhq48l8zOIRnCliMd9tqjTS_mxDZNudlSgim8y7fZW7M1BViP1N446AvG1ckIsEYDbNqX98rQO2IjosWr5sRDCZq4t5XapSPSOhZx5ahotfN2DuiEP8CXrqL4UA4_GnYGXCtliRh6Y5vzD4VWSwDYI"/>
-                        <div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-60"></div>
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFU4KKFXaGLRo9fpU38XeizWM9Kmz1-GPTf6WQoeh5C4Y2Ux0j2wJFr8Ufh8FAREE_1m6JTKnpnItNfc36i7vtEm6PfjvnXVU0vn-LVBmdJG_7m3Wl3chmLIhq48l8zOIRnCliMd9tqjTS_mxDZNudlSgim8y7fZW7M1BViP1N446AvG1ckIsEYDbNqX98rQO2IjosWr5sRDCZq4t5XapSPSOhZx5ahotfN2DuiEP8CXrqL4UA4_GnYGXCtliRh6Y5vzD4VWSwDYI" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-60">
+                        </div>
                         <div class="absolute top-3 right-3 flex gap-2">
-                            <button class="w-8 h-8 rounded-full bg-surface-container/80 backdrop-blur-md flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all">
+                            <button
+                                class="w-8 h-8 rounded-full bg-surface-container/80 backdrop-blur-md flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all">
                                 <span class="material-symbols-outlined text-lg">share</span>
                             </button>
                         </div>
-                        <div class="absolute bottom-3 left-3 flex gap-1 items-center bg-primary/20 backdrop-blur-sm border border-primary/20 px-2 py-0.5 rounded-full">
+                        <div
+                            class="absolute bottom-3 left-3 flex gap-1 items-center bg-primary/20 backdrop-blur-sm border border-primary/20 px-2 py-0.5 rounded-full">
                             <span class="material-symbols-outlined text-[10px] text-primary">history</span>
                             <span class="text-[10px] text-primary font-bold uppercase tracking-wider">v2.4</span>
                         </div>
@@ -112,7 +134,8 @@
                     <div class="p-5">
                         <div class="flex justify-between items-start mb-1">
                             <h4 class="font-bold text-on-surface">Marketing_Brand_Visuals.fig</h4>
-                            <span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors">more_vert</span>
+                            <span
+                                class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors">more_vert</span>
                         </div>
                         <div class="flex justify-between items-center mt-4">
                             <div class="flex items-center gap-2 text-xs text-on-surface-variant">
@@ -125,7 +148,8 @@
                 </div>
 
                 <!-- Item 2: PDF Style -->
-                <div class="col-span-12 md:col-span-6 lg:col-span-3 bg-surface-container rounded-2xl p-5 flex flex-col justify-between bento-card-hover transition-all duration-400">
+                <div
+                    class="col-span-12 md:col-span-6 lg:col-span-3 bg-surface-container rounded-2xl p-5 flex flex-col justify-between bento-card-hover transition-all duration-400">
                     <div class="flex justify-between items-start">
                         <div class="w-12 h-12 rounded-xl bg-error/10 flex items-center justify-center">
                             <span class="material-symbols-outlined text-error text-2xl">picture_as_pdf</span>
@@ -139,14 +163,16 @@
                         <p class="text-xs text-on-surface-variant mt-1">Edited by Sarah Chen</p>
                     </div>
                     <div class="mt-6 flex gap-2">
-                        <button class="flex-1 bg-surface-container-highest text-on-surface text-xs font-bold py-2 rounded-lg hover:bg-primary hover:text-on-primary transition-all flex items-center justify-center gap-2">
+                        <button
+                            class="flex-1 bg-surface-container-highest text-on-surface text-xs font-bold py-2 rounded-lg hover:bg-primary hover:text-on-primary transition-all flex items-center justify-center gap-2">
                             <span class="material-symbols-outlined text-sm">download</span> Download
                         </button>
                     </div>
                 </div>
 
                 <!-- Item 3: SpreadSheet Style -->
-                <div class="col-span-12 md:col-span-6 lg:col-span-5 bg-surface-container rounded-2xl p-6 bento-card-hover transition-all duration-400 flex flex-col justify-between">
+                <div
+                    class="col-span-12 md:col-span-6 lg:col-span-5 bg-surface-container rounded-2xl p-6 bento-card-hover transition-all duration-400 flex flex-col justify-between">
                     <div class="flex items-center gap-4">
                         <div class="w-14 h-14 rounded-2xl bg-[#107c41]/10 flex items-center justify-center">
                             <span class="material-symbols-outlined text-[#107c41] text-3xl">table_chart</span>
@@ -155,14 +181,19 @@
                             <h4 class="font-bold text-on-surface truncate">Budget_Allocation_FY24.xlsx</h4>
                             <div class="flex items-center gap-2 mt-1">
                                 <div class="flex -space-x-2">
-                                    <div class="w-5 h-5 rounded-full border border-surface-container bg-surface-container-highest overflow-hidden">
-                                        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAPsZYejiWYG_bKiVz7zvptG_SEAjSu_SYq0NuD98UpNIG1tcfsCBHAaG_EwtdyGZAxxHGVRHvR4MK7RZ8UqeCUsZVLFfsmfLMA8GekRy0A8Ogf5-4Klo58MCsrVpNH1AYgm5RJENM0Q5BqeLAXGFOU3gU8FP_pV9UL_rTj6zl_27yhWcieh1x6rclB7xGSEZH8jPzl5R2wKRNJ2IRlsvPH5gHprWPbC69pdg3oRfsVvMObZ_IBrhpsdqGCkIpmPSvrTrbuK8PoTE"/>
+                                    <div
+                                        class="w-5 h-5 rounded-full border border-surface-container bg-surface-container-highest overflow-hidden">
+                                        <img class="w-full h-full object-cover"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAPsZYejiWYG_bKiVz7zvptG_SEAjSu_SYq0NuD98UpNIG1tcfsCBHAaG_EwtdyGZAxxHGVRHvR4MK7RZ8UqeCUsZVLFfsmfLMA8GekRy0A8Ogf5-4Klo58MCsrVpNH1AYgm5RJENM0Q5BqeLAXGFOU3gU8FP_pV9UL_rTj6zl_27yhWcieh1x6rclB7xGSEZH8jPzl5R2wKRNJ2IRlsvPH5gHprWPbC69pdg3oRfsVvMObZ_IBrhpsdqGCkIpmPSvrTrbuK8PoTE" />
                                     </div>
-                                    <div class="w-5 h-5 rounded-full border border-surface-container bg-surface-container-highest overflow-hidden">
-                                        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWcmF1DbhdPFDiSluVrCcqRP-j8okfoMHIYwnxyxEplT91NvI1X7KeS8oPD-wcUshF2NTVxhoGnZKpSyxw5isvOrQiw6mZdTIEkPvwoihUC0ZDwv5VBLJJ3URKo-HBiIEWEiqMrgU-Lpazh_siBZePv2WxoR6sSgZqVdIerNcIYqSEJo3dnBmmmSffsFsBokmhm0Ql0mmAhDB8IA5WC_jocCKL3u6nEjF8c1cBo8cmQKNzOcKmxNpgA8wHDAyCEJYi9d0KH6XxBfQ"/>
+                                    <div
+                                        class="w-5 h-5 rounded-full border border-surface-container bg-surface-container-highest overflow-hidden">
+                                        <img class="w-full h-full object-cover"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWcmF1DbhdPFDiSluVrCcqRP-j8okfoMHIYwnxyxEplT91NvI1X7KeS8oPD-wcUshF2NTVxhoGnZKpSyxw5isvOrQiw6mZdTIEkPvwoihUC0ZDwv5VBLJJ3URKo-HBiIEWEiqMrgU-Lpazh_siBZePv2WxoR6sSgZqVdIerNcIYqSEJo3dnBmmmSffsFsBokmhm0Ql0mmAhDB8IA5WC_jocCKL3u6nEjF8c1cBo8cmQKNzOcKmxNpgA8wHDAyCEJYi9d0KH6XxBfQ" />
                                     </div>
                                 </div>
-                                <span class="text-[10px] text-on-surface-variant uppercase font-medium">Collaborative</span>
+                                <span
+                                    class="text-[10px] text-on-surface-variant uppercase font-medium">Collaborative</span>
                             </div>
                         </div>
                         <div class="flex flex-col items-end">
@@ -173,10 +204,12 @@
                     <div class="mt-8 flex items-center justify-between border-t border-outline-variant/10 pt-4">
                         <span class="text-xs text-on-surface-variant italic">Last active: 15 mins ago</span>
                         <div class="flex gap-2">
-                            <button class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface hover:text-primary transition-colors">
+                            <button
+                                class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface hover:text-primary transition-colors">
                                 <span class="material-symbols-outlined text-sm">visibility</span>
                             </button>
-                            <button class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface hover:text-primary transition-colors">
+                            <button
+                                class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface hover:text-primary transition-colors">
                                 <span class="material-symbols-outlined text-sm">link</span>
                             </button>
                         </div>
@@ -184,7 +217,8 @@
                 </div>
 
                 <!-- Item 4: Large Folder Bento -->
-                <div class="col-span-12 lg:col-span-7 bg-surface-container rounded-2xl p-6 bento-card-hover transition-all duration-400 group">
+                <div
+                    class="col-span-12 lg:col-span-7 bg-surface-container rounded-2xl p-6 bento-card-hover transition-all duration-400 group">
                     <div class="flex justify-between items-center mb-6">
                         <div class="flex items-center gap-3">
                             <span class="material-symbols-outlined text-3xl text-primary">folder</span>
@@ -198,23 +232,28 @@
                         </button>
                     </div>
                     <div class="grid grid-cols-4 gap-3">
-                        <div class="aspect-square rounded-xl bg-surface-container-highest flex items-center justify-center hover:bg-surface-container-lowest transition-colors cursor-pointer border border-outline-variant/10">
+                        <div
+                            class="aspect-square rounded-xl bg-surface-container-highest flex items-center justify-center hover:bg-surface-container-lowest transition-colors cursor-pointer border border-outline-variant/10">
                             <span class="material-symbols-outlined text-outline">description</span>
                         </div>
-                        <div class="aspect-square rounded-xl bg-surface-container-highest flex items-center justify-center hover:bg-surface-container-lowest transition-colors cursor-pointer border border-outline-variant/10">
+                        <div
+                            class="aspect-square rounded-xl bg-surface-container-highest flex items-center justify-center hover:bg-surface-container-lowest transition-colors cursor-pointer border border-outline-variant/10">
                             <span class="material-symbols-outlined text-outline">movie</span>
                         </div>
-                        <div class="aspect-square rounded-xl bg-surface-container-highest flex items-center justify-center hover:bg-surface-container-lowest transition-colors cursor-pointer border border-outline-variant/10">
+                        <div
+                            class="aspect-square rounded-xl bg-surface-container-highest flex items-center justify-center hover:bg-surface-container-lowest transition-colors cursor-pointer border border-outline-variant/10">
                             <span class="material-symbols-outlined text-outline">image</span>
                         </div>
-                        <div class="aspect-square rounded-xl bg-surface-container-highest flex items-center justify-center hover:bg-surface-container-lowest transition-colors cursor-pointer border border-outline-variant/10">
+                        <div
+                            class="aspect-square rounded-xl bg-surface-container-highest flex items-center justify-center hover:bg-surface-container-lowest transition-colors cursor-pointer border border-outline-variant/10">
                             <span class="material-symbols-outlined text-outline">add</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Item 5: Small Detail Card -->
-                <div class="col-span-12 md:col-span-6 lg:col-span-5 bg-surface-container-highest/40 border border-outline-variant/10 rounded-2xl p-6 flex flex-col justify-center">
+                <div
+                    class="col-span-12 md:col-span-6 lg:col-span-5 bg-surface-container-highest/40 border border-outline-variant/10 rounded-2xl p-6 flex flex-col justify-center">
                     <div class="flex items-center gap-4 mb-4">
                         <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
                             <span class="material-symbols-outlined text-primary">history</span>
@@ -233,7 +272,8 @@
                             <span class="text-on-surface">V2.4.0 (Base)</span>
                             <span class="text-outline">Oct 12, 09:15</span>
                         </div>
-                        <button class="w-full mt-2 py-2 text-xs font-bold text-primary border border-primary/20 rounded-lg hover:bg-primary/10 transition-colors">
+                        <button
+                            class="w-full mt-2 py-2 text-xs font-bold text-primary border border-primary/20 rounded-lg hover:bg-primary/10 transition-colors">
                             View Full Timeline
                         </button>
                     </div>
@@ -242,4 +282,5 @@
         </div>
     </main>
 </body>
+
 </html>

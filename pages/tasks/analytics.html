@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Task Analytics | XenonOS</title>
 
     <!-- === CORE ASSETS === -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="../../assets/js/tailwind-config.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
 
     <!-- === CUSTOM STYLES === -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
+
 <body class="bg-surface text-on-surface selection:bg-primary selection:text-on-primary">
 
     <!-- === MAIN CONTENT === -->
@@ -25,15 +31,20 @@
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
                 <div>
                     <h1 class="font-['Syne'] text-5xl font-extrabold tracking-tight mb-2">Task Analytics</h1>
-                    <p class="text-on-surface-variant text-lg">Performance insights and real-time productivity metrics.</p>
+                    <p class="text-on-surface-variant text-lg">Performance insights and real-time productivity metrics.
+                    </p>
                 </div>
                 <div class="flex gap-4">
                     <div class="bg-surface-container-high p-1 rounded-xl flex">
-                        <button class="px-4 py-2 bg-surface-container-highest text-primary rounded-lg text-sm font-semibold">Weekly</button>
-                        <button class="px-4 py-2 text-on-surface-variant hover:text-on-surface text-sm font-semibold">Monthly</button>
-                        <button class="px-4 py-2 text-on-surface-variant hover:text-on-surface text-sm font-semibold">Yearly</button>
+                        <button
+                            class="px-4 py-2 bg-surface-container-highest text-primary rounded-lg text-sm font-semibold">Weekly</button>
+                        <button
+                            class="px-4 py-2 text-on-surface-variant hover:text-on-surface text-sm font-semibold">Monthly</button>
+                        <button
+                            class="px-4 py-2 text-on-surface-variant hover:text-on-surface text-sm font-semibold">Yearly</button>
                     </div>
-                    <button class="bg-gradient-to-br from-[#c0c1ff] to-[#8083ff] text-[#0f131d] px-6 py-2 rounded-xl font-bold flex items-center gap-2 hover:shadow-[0_0_20px_rgba(192,193,255,0.4)] transition-all">
+                    <button
+                        class="bg-gradient-to-br from-[#c0c1ff] to-[#8083ff] text-[#0f131d] px-6 py-2 rounded-xl font-bold flex items-center gap-2 hover:shadow-[0_0_20px_rgba(192,193,255,0.4)] transition-all">
                         <span class="material-symbols-outlined">download</span>
                         Export Report
                     </button>
@@ -43,7 +54,8 @@
             <!-- === KPI CARDS ROW === -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 <!-- Total Tasks -->
-                <div class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all duration-400 group relative overflow-hidden">
+                <div
+                    class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all duration-400 group relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                         <span class="material-symbols-outlined text-6xl">inventory_2</span>
                     </div>
@@ -56,7 +68,8 @@
                 </div>
 
                 <!-- Completed Tasks -->
-                <div class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all duration-400 group relative overflow-hidden">
+                <div
+                    class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all duration-400 group relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                         <span class="material-symbols-outlined text-6xl text-primary">check_circle</span>
                     </div>
@@ -69,7 +82,8 @@
                 </div>
 
                 <!-- Overdue Tasks -->
-                <div class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all duration-400 group relative overflow-hidden">
+                <div
+                    class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all duration-400 group relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                         <span class="material-symbols-outlined text-6xl text-error">warning</span>
                     </div>
@@ -82,7 +96,8 @@
                 </div>
 
                 <!-- Active Tasks -->
-                <div class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all duration-400 group relative overflow-hidden">
+                <div
+                    class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all duration-400 group relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                         <span class="material-symbols-outlined text-6xl text-tertiary">pending_actions</span>
                     </div>
@@ -118,31 +133,42 @@
 
                     <!-- Simplified Visual Graph -->
                     <div class="h-64 flex items-end justify-between gap-2">
-                        <div class="w-full bg-surface-container-low h-full rounded-t-xl relative overflow-hidden flex flex-col justify-end">
+                        <div
+                            class="w-full bg-surface-container-low h-full rounded-t-xl relative overflow-hidden flex flex-col justify-end">
                             <div class="w-full bg-surface-container-highest h-[40%] rounded-t-lg"></div>
                             <div class="w-full bg-primary/40 h-[25%] absolute bottom-0"></div>
                         </div>
-                        <div class="w-full bg-surface-container-low h-full rounded-t-xl relative overflow-hidden flex flex-col justify-end">
+                        <div
+                            class="w-full bg-surface-container-low h-full rounded-t-xl relative overflow-hidden flex flex-col justify-end">
                             <div class="w-full bg-surface-container-highest h-[55%] rounded-t-lg"></div>
                             <div class="w-full bg-primary/40 h-[45%] absolute bottom-0"></div>
                         </div>
-                        <div class="w-full bg-surface-container-low h-full rounded-t-xl relative overflow-hidden flex flex-col justify-end">
+                        <div
+                            class="w-full bg-surface-container-low h-full rounded-t-xl relative overflow-hidden flex flex-col justify-end">
                             <div class="w-full bg-surface-container-highest h-[50%] rounded-t-lg"></div>
-                            <div class="w-full bg-primary h-[65%] absolute bottom-0 shadow-[0_-10px_20px_rgba(192,193,255,0.2)]"></div>
+                            <div
+                                class="w-full bg-primary h-[65%] absolute bottom-0 shadow-[0_-10px_20px_rgba(192,193,255,0.2)]">
+                            </div>
                         </div>
-                        <div class="w-full bg-surface-container-low h-full rounded-t-xl relative overflow-hidden flex flex-col justify-end">
+                        <div
+                            class="w-full bg-surface-container-low h-full rounded-t-xl relative overflow-hidden flex flex-col justify-end">
                             <div class="w-full bg-surface-container-highest h-[70%] rounded-t-lg"></div>
                             <div class="w-full bg-primary/40 h-[55%] absolute bottom-0"></div>
                         </div>
-                        <div class="w-full bg-surface-container-low h-full rounded-t-xl relative overflow-hidden flex flex-col justify-end">
+                        <div
+                            class="w-full bg-surface-container-low h-full rounded-t-xl relative overflow-hidden flex flex-col justify-end">
                             <div class="w-full bg-surface-container-highest h-[65%] rounded-t-lg"></div>
                             <div class="w-full bg-primary/40 h-[40%] absolute bottom-0"></div>
                         </div>
-                        <div class="w-full bg-surface-container-low h-full rounded-t-xl relative overflow-hidden flex flex-col justify-end">
+                        <div
+                            class="w-full bg-surface-container-low h-full rounded-t-xl relative overflow-hidden flex flex-col justify-end">
                             <div class="w-full bg-surface-container-highest h-[80%] rounded-t-lg"></div>
-                            <div class="w-full bg-primary h-[90%] absolute bottom-0 shadow-[0_-10px_20px_rgba(192,193,255,0.2)]"></div>
+                            <div
+                                class="w-full bg-primary h-[90%] absolute bottom-0 shadow-[0_-10px_20px_rgba(192,193,255,0.2)]">
+                            </div>
                         </div>
-                        <div class="w-full bg-surface-container-low h-full rounded-t-xl relative overflow-hidden flex flex-col justify-end">
+                        <div
+                            class="w-full bg-surface-container-low h-full rounded-t-xl relative overflow-hidden flex flex-col justify-end">
                             <div class="w-full bg-surface-container-highest h-[60%] rounded-t-lg"></div>
                             <div class="w-full bg-primary/40 h-[50%] absolute bottom-0"></div>
                         </div>
@@ -154,13 +180,17 @@
                 </div>
 
                 <!-- Secondary Chart: Task Completion Rate -->
-                <div class="col-span-12 lg:col-span-4 bg-surface-container rounded-2xl p-8 flex flex-col items-center justify-center text-center relative overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
+                <div
+                    class="col-span-12 lg:col-span-4 bg-surface-container rounded-2xl p-8 flex flex-col items-center justify-center text-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none">
+                    </div>
                     <h3 class="font-syne text-xl font-bold mb-8">Completion Rate</h3>
                     <div class="relative w-48 h-48 flex items-center justify-center mb-8">
                         <svg class="w-full h-full transform -rotate-90">
-                            <circle class="text-surface-container-highest" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-width="12"></circle>
-                            <circle class="text-primary" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-dasharray="502.4" stroke-dashoffset="125.6" stroke-width="12"></circle>
+                            <circle class="text-surface-container-highest" cx="96" cy="96" fill="transparent" r="80"
+                                stroke="currentColor" stroke-width="12"></circle>
+                            <circle class="text-primary" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor"
+                                stroke-dasharray="502.4" stroke-dashoffset="125.6" stroke-width="12"></circle>
                         </svg>
                         <div class="absolute inset-0 flex flex-col items-center justify-center">
                             <span class="text-4xl font-syne font-extrabold">75%</span>
@@ -186,7 +216,8 @@
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-4">
                                 <div class="w-10 h-10 rounded-full border border-primary/20 overflow-hidden">
-                                    <img alt="Alex Rivers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXyj8H4GFOc1tGBszauk0nm5JEJLz33tNqwt6Ccc9rFNz30oASjzFRf_HXU_SB-fql-rwmm-lpLvQnM0PeaSzBibiFwulFsfZJ6oHh3tAZXk69TC5EjAefPj0gCg1qpSHrPDKZtQT4DxlFHG_AAW1ynrWfGa65j8UuuSgS-Ev-n7Q1QoUTjC4hS3oJtH3CEim1OLyDxgxM0EFtwVrRfA46zzDW5SWF6KsYFXqJ3WhugIB98mL1nPN7ESHzEyKV5arW0ojFcxvFzGI"/>
+                                    <img alt="Alex Rivers"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXyj8H4GFOc1tGBszauk0nm5JEJLz33tNqwt6Ccc9rFNz30oASjzFRf_HXU_SB-fql-rwmm-lpLvQnM0PeaSzBibiFwulFsfZJ6oHh3tAZXk69TC5EjAefPj0gCg1qpSHrPDKZtQT4DxlFHG_AAW1ynrWfGa65j8UuuSgS-Ev-n7Q1QoUTjC4hS3oJtH3CEim1OLyDxgxM0EFtwVrRfA46zzDW5SWF6KsYFXqJ3WhugIB98mL1nPN7ESHzEyKV5arW0ojFcxvFzGI" />
                                 </div>
                                 <div>
                                     <p class="font-bold">Alex Rivers</p>
@@ -204,7 +235,8 @@
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-4">
                                 <div class="w-10 h-10 rounded-full border border-primary/20 overflow-hidden">
-                                    <img alt="Sarah Chen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcpfQF04Jd1fMgcyLvUp6GaOTExj3_bT2a9n5rg9d2K8ZZaS4z_8CWsfZGRPS9LU4EsA0Onhiz927xhwtWOaaVtXl8BN0-xhVPdpJQw__9bLwQuTRb4nqAiXYxN4cBnFH5v0S2yqzwLZvsXskWKsx3QqnWUbzsi6n2ks9oysRObFx3aEmdN2yhz_NGyxbYY1COdYhi2pcRfCA2rymgvHbNcjGdQjvE7fm1xJ9E3uyCbs_0xHb61sv1WmWy2xRI6pkQfeJUMobNK_k"/>
+                                    <img alt="Sarah Chen"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcpfQF04Jd1fMgcyLvUp6GaOTExj3_bT2a9n5rg9d2K8ZZaS4z_8CWsfZGRPS9LU4EsA0Onhiz927xhwtWOaaVtXl8BN0-xhVPdpJQw__9bLwQuTRb4nqAiXYxN4cBnFH5v0S2yqzwLZvsXskWKsx3QqnWUbzsi6n2ks9oysRObFx3aEmdN2yhz_NGyxbYY1COdYhi2pcRfCA2rymgvHbNcjGdQjvE7fm1xJ9E3uyCbs_0xHb61sv1WmWy2xRI6pkQfeJUMobNK_k" />
                                 </div>
                                 <div>
                                     <p class="font-bold">Sarah Chen</p>
@@ -222,7 +254,8 @@
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-4">
                                 <div class="w-10 h-10 rounded-full border border-primary/20 overflow-hidden">
-                                    <img alt="Jordan Smith" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk-0fIQ-Wct3C3vwbYncv6pqSLI9BrK87lmnTW6I73b__FT-_WbhO3tjftqMD0aQ7fZATb_G6i8oP5LSPYIewjLj5Jek3t11l8VjzvQ5trVHGQE3WOXYoxPeEUbNFBIo_H1RCke_V69Uz6DWgt4Gh9G8GFAWEmIoFQ7k1myUdxIJh7LOUwSfdZtA5cfQUZL1691BsK7RIkcKOkdxMVsLC7c4Toa-I2J2s2uxLOPH3us_Wu62Q5rb_XXdsNGRCaYOdZfDfXkpo2ioM"/>
+                                    <img alt="Jordan Smith"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk-0fIQ-Wct3C3vwbYncv6pqSLI9BrK87lmnTW6I73b__FT-_WbhO3tjftqMD0aQ7fZATb_G6i8oP5LSPYIewjLj5Jek3t11l8VjzvQ5trVHGQE3WOXYoxPeEUbNFBIo_H1RCke_V69Uz6DWgt4Gh9G8GFAWEmIoFQ7k1myUdxIJh7LOUwSfdZtA5cfQUZL1691BsK7RIkcKOkdxMVsLC7c4Toa-I2J2s2uxLOPH3us_Wu62Q5rb_XXdsNGRCaYOdZfDfXkpo2ioM" />
                                 </div>
                                 <div>
                                     <p class="font-bold">Jordan Smith</p>
@@ -243,11 +276,14 @@
                 <div class="col-span-12 lg:col-span-7 bg-surface-container rounded-2xl p-8">
                     <div class="flex justify-between items-center mb-8">
                         <h3 class="font-syne text-2xl font-bold">Category Distribution</h3>
-                        <span class="text-xs font-bold text-on-surface-variant bg-surface-container-highest px-3 py-1 rounded-full uppercase tracking-widest">Global View</span>
+                        <span
+                            class="text-xs font-bold text-on-surface-variant bg-surface-container-highest px-3 py-1 rounded-full uppercase tracking-widest">Global
+                            View</span>
                     </div>
                     <div class="flex flex-wrap gap-4">
                         <!-- Bento-style category cards -->
-                        <div class="flex-grow min-w-[200px] bg-surface-container-low p-5 rounded-2xl border border-outline-variant/10 hover:border-primary/40 transition-colors">
+                        <div
+                            class="flex-grow min-w-[200px] bg-surface-container-low p-5 rounded-2xl border border-outline-variant/10 hover:border-primary/40 transition-colors">
                             <div class="flex justify-between items-start mb-4">
                                 <div class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
                                     <span class="material-symbols-outlined text-primary text-sm">code</span>
@@ -260,7 +296,8 @@
                             </div>
                         </div>
 
-                        <div class="flex-grow min-w-[200px] bg-surface-container-low p-5 rounded-2xl border border-outline-variant/10 hover:border-primary/40 transition-colors">
+                        <div
+                            class="flex-grow min-w-[200px] bg-surface-container-low p-5 rounded-2xl border border-outline-variant/10 hover:border-primary/40 transition-colors">
                             <div class="flex justify-between items-start mb-4">
                                 <div class="w-8 h-8 rounded-lg bg-tertiary/20 flex items-center justify-center">
                                     <span class="material-symbols-outlined text-tertiary text-sm">palette</span>
@@ -273,7 +310,8 @@
                             </div>
                         </div>
 
-                        <div class="flex-grow min-w-[200px] bg-surface-container-low p-5 rounded-2xl border border-outline-variant/10 hover:border-primary/40 transition-colors">
+                        <div
+                            class="flex-grow min-w-[200px] bg-surface-container-low p-5 rounded-2xl border border-outline-variant/10 hover:border-primary/40 transition-colors">
                             <div class="flex justify-between items-start mb-4">
                                 <div class="w-8 h-8 rounded-lg bg-error/20 flex items-center justify-center">
                                     <span class="material-symbols-outlined text-error text-sm">bug_report</span>
@@ -294,4 +332,5 @@
     <!-- === SCRIPTS === -->
     <script src="../../assets/js/app.js"></script>
 </body>
+
 </html>

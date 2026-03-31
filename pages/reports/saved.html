@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Saved Reports | XenonOS Reports</title>
 
     <!-- === CORE ASSETS === -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="../../assets/js/tailwind-config.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;family=Manrope:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
 
     <!-- === CUSTOM STYLES === -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
+
 <body class="bg-background text-on-surface font-outfit antialiased selection:bg-primary/30 min-h-screen">
 
     <!-- === MAIN CONTENT CANVAS === -->
@@ -24,14 +30,17 @@
         <section class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <div>
                 <h2 class="font-syne font-extrabold text-4xl text-on-surface tracking-tighter mb-2">Saved Reports</h2>
-                <p class="text-on-surface-variant text-sm max-w-md">Manage and analyze your historical data architectures and generated insights.</p>
+                <p class="text-on-surface-variant text-sm max-w-md">Manage and analyze your historical data
+                    architectures and generated insights.</p>
             </div>
             <div class="flex items-center gap-3">
-                <button class="flex items-center gap-2 px-5 py-3 rounded-xl bg-surface-container-high text-on-surface text-sm font-semibold hover:bg-surface-variant transition-colors border border-outline-variant/10">
+                <button
+                    class="flex items-center gap-2 px-5 py-3 rounded-xl bg-surface-container-high text-on-surface text-sm font-semibold hover:bg-surface-variant transition-colors border border-outline-variant/10">
                     <span class="material-symbols-outlined text-sm">filter_list</span>
                     Advanced Filters
                 </button>
-                <button class="flex items-center gap-2 px-6 py-3 rounded-xl indigo-gradient text-on-primary font-bold shadow-[0_8px_16px_-4px_rgba(99,102,241,0.4)] hover:scale-105 transition-transform">
+                <button
+                    class="flex items-center gap-2 px-6 py-3 rounded-xl indigo-gradient text-on-primary font-bold shadow-[0_8px_16px_-4px_rgba(99,102,241,0.4)] hover:scale-105 transition-transform">
                     <span class="material-symbols-outlined">add_circle</span>
                     Create New Report
                 </button>
@@ -40,10 +49,14 @@
 
         <!-- === FILTERING TABS === -->
         <div class="flex items-center gap-2 mb-8 bg-surface-container-lowest p-1.5 rounded-2xl w-fit">
-            <button class="px-6 py-2.5 rounded-xl bg-surface-container text-primary font-bold shadow-sm text-sm">All Reports</button>
-            <button class="px-6 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface font-medium text-sm transition-colors">Financial</button>
-            <button class="px-6 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface font-medium text-sm transition-colors">Performance</button>
-            <button class="px-6 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface font-medium text-sm transition-colors">Operational</button>
+            <button class="px-6 py-2.5 rounded-xl bg-surface-container text-primary font-bold shadow-sm text-sm">All
+                Reports</button>
+            <button
+                class="px-6 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface font-medium text-sm transition-colors">Financial</button>
+            <button
+                class="px-6 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface font-medium text-sm transition-colors">Performance</button>
+            <button
+                class="px-6 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface font-medium text-sm transition-colors">Operational</button>
         </div>
 
         <!-- === REPORTS TABLE AREA === -->
@@ -51,12 +64,19 @@
             <table class="w-full text-left border-collapse">
                 <thead>
                     <tr class="bg-surface-container-low/50">
-                        <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Report Name</th>
-                        <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Type</th>
-                        <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Last Updated</th>
-                        <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Created By</th>
-                        <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Status</th>
-                        <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant text-right">Actions</th>
+                        <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Report
+                            Name</th>
+                        <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Type
+                        </th>
+                        <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Last
+                            Updated</th>
+                        <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">
+                            Created By</th>
+                        <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Status
+                        </th>
+                        <th
+                            class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant text-right">
+                            Actions</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-outline-variant/5">
@@ -69,12 +89,15 @@
                             </div>
                         </td>
                         <td class="px-6 py-5">
-                            <span class="px-2.5 py-1 rounded-md bg-secondary-container/30 text-secondary text-[11px] font-bold uppercase">Financial</span>
+                            <span
+                                class="px-2.5 py-1 rounded-md bg-secondary-container/30 text-secondary text-[11px] font-bold uppercase">Financial</span>
                         </td>
                         <td class="px-6 py-5 text-sm text-on-surface-variant">Oct 24, 2023 • 14:20</td>
                         <td class="px-6 py-5">
                             <div class="flex items-center gap-2">
-                                <div class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-[10px] font-bold">JD</div>
+                                <div
+                                    class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-[10px] font-bold">
+                                    JD</div>
                                 <span class="text-sm text-on-surface">J. Doe</span>
                             </div>
                         </td>
@@ -86,11 +109,26 @@
                         </td>
                         <td class="px-6 py-5 text-right">
                             <div class="flex items-center justify-end gap-1">
-                                <button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="View"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
-                                <button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Edit"><span class="material-symbols-outlined text-[20px]">edit</span></button>
-                                <button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Duplicate"><span class="material-symbols-outlined text-[20px]">content_copy</span></button>
-                                <button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Export"><span class="material-symbols-outlined text-[20px]">ios_share</span></button>
-                                <button class="p-2 rounded-lg hover:bg-error/10 hover:text-error transition-colors text-on-surface-variant" title="Delete"><span class="material-symbols-outlined text-[20px]">delete</span></button>
+                                <button
+                                    class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant"
+                                    title="View"><span
+                                        class="material-symbols-outlined text-[20px]">visibility</span></button>
+                                <button
+                                    class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant"
+                                    title="Edit"><span
+                                        class="material-symbols-outlined text-[20px]">edit</span></button>
+                                <button
+                                    class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant"
+                                    title="Duplicate"><span
+                                        class="material-symbols-outlined text-[20px]">content_copy</span></button>
+                                <button
+                                    class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant"
+                                    title="Export"><span
+                                        class="material-symbols-outlined text-[20px]">ios_share</span></button>
+                                <button
+                                    class="p-2 rounded-lg hover:bg-error/10 hover:text-error transition-colors text-on-surface-variant"
+                                    title="Delete"><span
+                                        class="material-symbols-outlined text-[20px]">delete</span></button>
                             </div>
                         </td>
                     </tr>
@@ -104,12 +142,15 @@
                             </div>
                         </td>
                         <td class="px-6 py-5">
-                            <span class="px-2.5 py-1 rounded-md bg-tertiary-container/30 text-tertiary text-[11px] font-bold uppercase">Performance</span>
+                            <span
+                                class="px-2.5 py-1 rounded-md bg-tertiary-container/30 text-tertiary text-[11px] font-bold uppercase">Performance</span>
                         </td>
                         <td class="px-6 py-5 text-sm text-on-surface-variant">Oct 23, 2023 • 09:15</td>
                         <td class="px-6 py-5">
                             <div class="flex items-center gap-2">
-                                <div class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-[10px] font-bold">AC</div>
+                                <div
+                                    class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-[10px] font-bold">
+                                    AC</div>
                                 <span class="text-sm text-on-surface">A. Chen</span>
                             </div>
                         </td>
@@ -121,11 +162,26 @@
                         </td>
                         <td class="px-6 py-5 text-right">
                             <div class="flex items-center justify-end gap-1">
-                                <button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="View"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
-                                <button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Edit"><span class="material-symbols-outlined text-[20px]">edit</span></button>
-                                <button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Duplicate"><span class="material-symbols-outlined text-[20px]">content_copy</span></button>
-                                <button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Export"><span class="material-symbols-outlined text-[20px]">ios_share</span></button>
-                                <button class="p-2 rounded-lg hover:bg-error/10 hover:text-error transition-colors text-on-surface-variant" title="Delete"><span class="material-symbols-outlined text-[20px]">delete</span></button>
+                                <button
+                                    class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant"
+                                    title="View"><span
+                                        class="material-symbols-outlined text-[20px]">visibility</span></button>
+                                <button
+                                    class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant"
+                                    title="Edit"><span
+                                        class="material-symbols-outlined text-[20px]">edit</span></button>
+                                <button
+                                    class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant"
+                                    title="Duplicate"><span
+                                        class="material-symbols-outlined text-[20px]">content_copy</span></button>
+                                <button
+                                    class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant"
+                                    title="Export"><span
+                                        class="material-symbols-outlined text-[20px]">ios_share</span></button>
+                                <button
+                                    class="p-2 rounded-lg hover:bg-error/10 hover:text-error transition-colors text-on-surface-variant"
+                                    title="Delete"><span
+                                        class="material-symbols-outlined text-[20px]">delete</span></button>
                             </div>
                         </td>
                     </tr>
@@ -139,12 +195,15 @@
                             </div>
                         </td>
                         <td class="px-6 py-5">
-                            <span class="px-2.5 py-1 rounded-md bg-surface-variant text-on-surface text-[11px] font-bold uppercase">Operational</span>
+                            <span
+                                class="px-2.5 py-1 rounded-md bg-surface-variant text-on-surface text-[11px] font-bold uppercase">Operational</span>
                         </td>
                         <td class="px-6 py-5 text-sm text-on-surface-variant">Oct 21, 2023 • 18:45</td>
                         <td class="px-6 py-5">
                             <div class="flex items-center gap-2">
-                                <div class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-[10px] font-bold">MK</div>
+                                <div
+                                    class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-[10px] font-bold">
+                                    MK</div>
                                 <span class="text-sm text-on-surface">M. Kraus</span>
                             </div>
                         </td>
@@ -156,11 +215,26 @@
                         </td>
                         <td class="px-6 py-5 text-right">
                             <div class="flex items-center justify-end gap-1">
-                                <button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="View"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
-                                <button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Edit"><span class="material-symbols-outlined text-[20px]">edit</span></button>
-                                <button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Duplicate"><span class="material-symbols-outlined text-[20px]">content_copy</span></button>
-                                <button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Export"><span class="material-symbols-outlined text-[20px]">ios_share</span></button>
-                                <button class="p-2 rounded-lg hover:bg-error/10 hover:text-error transition-colors text-on-surface-variant" title="Delete"><span class="material-symbols-outlined text-[20px]">delete</span></button>
+                                <button
+                                    class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant"
+                                    title="View"><span
+                                        class="material-symbols-outlined text-[20px]">visibility</span></button>
+                                <button
+                                    class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant"
+                                    title="Edit"><span
+                                        class="material-symbols-outlined text-[20px]">edit</span></button>
+                                <button
+                                    class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant"
+                                    title="Duplicate"><span
+                                        class="material-symbols-outlined text-[20px]">content_copy</span></button>
+                                <button
+                                    class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant"
+                                    title="Export"><span
+                                        class="material-symbols-outlined text-[20px]">ios_share</span></button>
+                                <button
+                                    class="p-2 rounded-lg hover:bg-error/10 hover:text-error transition-colors text-on-surface-variant"
+                                    title="Delete"><span
+                                        class="material-symbols-outlined text-[20px]">delete</span></button>
                             </div>
                         </td>
                     </tr>
@@ -174,12 +248,15 @@
                             </div>
                         </td>
                         <td class="px-6 py-5">
-                            <span class="px-2.5 py-1 rounded-md bg-tertiary-container/30 text-tertiary text-[11px] font-bold uppercase">Performance</span>
+                            <span
+                                class="px-2.5 py-1 rounded-md bg-tertiary-container/30 text-tertiary text-[11px] font-bold uppercase">Performance</span>
                         </td>
                         <td class="px-6 py-5 text-sm text-on-surface-variant">Oct 19, 2023 • 11:30</td>
                         <td class="px-6 py-5">
                             <div class="flex items-center gap-2">
-                                <div class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-[10px] font-bold">AC</div>
+                                <div
+                                    class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-[10px] font-bold">
+                                    AC</div>
                                 <span class="text-sm text-on-surface">A. Chen</span>
                             </div>
                         </td>
@@ -191,11 +268,26 @@
                         </td>
                         <td class="px-6 py-5 text-right">
                             <div class="flex items-center justify-end gap-1">
-                                <button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="View"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
-                                <button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Edit"><span class="material-symbols-outlined text-[20px]">edit</span></button>
-                                <button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Duplicate"><span class="material-symbols-outlined text-[20px]">content_copy</span></button>
-                                <button class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant" title="Export"><span class="material-symbols-outlined text-[20px]">ios_share</span></button>
-                                <button class="p-2 rounded-lg hover:bg-error/10 hover:text-error transition-colors text-on-surface-variant" title="Delete"><span class="material-symbols-outlined text-[20px]">delete</span></button>
+                                <button
+                                    class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant"
+                                    title="View"><span
+                                        class="material-symbols-outlined text-[20px]">visibility</span></button>
+                                <button
+                                    class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant"
+                                    title="Edit"><span
+                                        class="material-symbols-outlined text-[20px]">edit</span></button>
+                                <button
+                                    class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant"
+                                    title="Duplicate"><span
+                                        class="material-symbols-outlined text-[20px]">content_copy</span></button>
+                                <button
+                                    class="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-on-surface-variant"
+                                    title="Export"><span
+                                        class="material-symbols-outlined text-[20px]">ios_share</span></button>
+                                <button
+                                    class="p-2 rounded-lg hover:bg-error/10 hover:text-error transition-colors text-on-surface-variant"
+                                    title="Delete"><span
+                                        class="material-symbols-outlined text-[20px]">delete</span></button>
                             </div>
                         </td>
                     </tr>
@@ -203,20 +295,28 @@
             </table>
 
             <!-- === PAGINATION SECTION === -->
-            <div class="px-6 py-5 bg-surface-container-low/30 flex items-center justify-between border-t border-outline-variant/5">
-                <span class="text-xs text-on-surface-variant font-medium">Showing <span class="text-on-surface">1-4</span> of <span class="text-on-surface">32</span> reports</span>
+            <div
+                class="px-6 py-5 bg-surface-container-low/30 flex items-center justify-between border-t border-outline-variant/5">
+                <span class="text-xs text-on-surface-variant font-medium">Showing <span
+                        class="text-on-surface">1-4</span> of <span class="text-on-surface">32</span> reports</span>
                 <div class="flex items-center gap-2">
-                    <button class="p-2 rounded-lg bg-surface-container-high text-on-surface-variant opacity-50 cursor-not-allowed border border-outline-variant/10">
+                    <button
+                        class="p-2 rounded-lg bg-surface-container-high text-on-surface-variant opacity-50 cursor-not-allowed border border-outline-variant/10">
                         <span class="material-symbols-outlined">chevron_left</span>
                     </button>
                     <div class="flex items-center gap-1">
-                        <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary/20 text-primary font-bold text-xs">1</button>
-                        <button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high text-on-surface-variant text-xs transition-colors">2</button>
-                        <button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high text-on-surface-variant text-xs transition-colors">3</button>
+                        <button
+                            class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary/20 text-primary font-bold text-xs">1</button>
+                        <button
+                            class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high text-on-surface-variant text-xs transition-colors">2</button>
+                        <button
+                            class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high text-on-surface-variant text-xs transition-colors">3</button>
                         <span class="text-on-surface-variant text-xs mx-1">...</span>
-                        <button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high text-on-surface-variant text-xs transition-colors">8</button>
+                        <button
+                            class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high text-on-surface-variant text-xs transition-colors">8</button>
                     </div>
-                    <button class="p-2 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface border border-outline-variant/10 transition-colors">
+                    <button
+                        class="p-2 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface border border-outline-variant/10 transition-colors">
                         <span class="material-symbols-outlined">chevron_right</span>
                     </button>
                 </div>
@@ -225,15 +325,18 @@
 
         <!-- === SECONDARY INFO CARDS (ASYMMETRIC BENTO ELEMENT) === -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            <div class="md:col-span-2 bg-surface-container rounded-2xl p-6 relative overflow-hidden group border border-outline-variant/5">
+            <div
+                class="md:col-span-2 bg-surface-container rounded-2xl p-6 relative overflow-hidden group border border-outline-variant/5">
                 <div class="relative z-10">
                     <h3 class="font-syne font-bold text-xl text-on-surface mb-2">Automated Insights Ready</h3>
-                    <p class="text-on-surface-variant text-sm mb-4 max-w-sm">We've identified 3 new patterns in your Financial reports. Sync now to update your dashboard metrics.</p>
+                    <p class="text-on-surface-variant text-sm mb-4 max-w-sm">We've identified 3 new patterns in your
+                        Financial reports. Sync now to update your dashboard metrics.</p>
                     <button class="text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all">
                         Sync Intelligence <span class="material-symbols-outlined text-sm">arrow_forward</span>
                     </button>
                 </div>
-                <div class="absolute -right-8 -bottom-8 opacity-10 group-hover:opacity-20 transition-opacity duration-700">
+                <div
+                    class="absolute -right-8 -bottom-8 opacity-10 group-hover:opacity-20 transition-opacity duration-700">
                     <span class="material-symbols-outlined text-[180px]">bolt</span>
                 </div>
             </div>
@@ -242,7 +345,8 @@
                 <div>
                     <span class="material-symbols-outlined text-primary mb-4">workspace_premium</span>
                     <h3 class="font-syne font-bold text-lg text-on-surface mb-1">Storage Usage</h3>
-                    <p class="text-on-surface-variant text-[11px] uppercase tracking-wider mb-4">Plan: Enterprise Ultra</p>
+                    <p class="text-on-surface-variant text-[11px] uppercase tracking-wider mb-4">Plan: Enterprise Ultra
+                    </p>
                 </div>
                 <div class="space-y-2">
                     <div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
@@ -260,4 +364,5 @@
     <!-- === SCRIPTS === -->
     <script src="../../assets/js/app.js"></script>
 </body>
+
 </html>

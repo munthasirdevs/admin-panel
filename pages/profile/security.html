@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Profile - Security Settings | Admin Panel</title>
 
     <!-- Core Assets -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="../../assets/js/tailwind-config.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Manrope:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
+
 <body class="bg-background text-on-surface font-body selection:bg-primary/30">
     <!-- Main Canvas -->
     <main class="min-h-screen flex flex-col">
@@ -22,32 +28,45 @@
         <section class="p-6 md:p-10 max-w-7xl mx-auto space-y-10">
             <!-- === PAGE HEADER === -->
             <div class="space-y-2">
-                <h2 class="font-headline font-extrabold text-4xl md:text-5xl tracking-tighter text-on-surface">Security Settings</h2>
-                <p class="text-on-surface-variant max-w-2xl font-light">Manage your account protection, encryption keys, and monitor real-time access logs from one centralized high-security dashboard.</p>
+                <h2 class="font-headline font-extrabold text-4xl md:text-5xl tracking-tighter text-on-surface">Security
+                    Settings</h2>
+                <p class="text-on-surface-variant max-w-2xl font-light">Manage your account protection, encryption keys,
+                    and monitor real-time access logs from one centralized high-security dashboard.</p>
             </div>
 
             <!-- === BENTO GRID LAYOUT === -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
                 <!-- Password Management Card (Spans 7) -->
-                <div class="lg:col-span-7 bg-surface-container rounded-xl p-8 shadow-sm hover:scale-[1.01] transition-all duration-400 border border-outline-variant/10 group">
+                <div
+                    class="lg:col-span-7 bg-surface-container rounded-xl p-8 shadow-sm hover:scale-[1.01] transition-all duration-400 border border-outline-variant/10 group">
                     <div class="flex items-start justify-between mb-8">
                         <div>
                             <h3 class="font-headline font-bold text-xl text-primary mb-1">Password Management</h3>
-                            <p class="text-sm text-on-surface-variant">Update your credentials regularly to maintain peak security.</p>
+                            <p class="text-sm text-on-surface-variant">Update your credentials regularly to maintain
+                                peak security.</p>
                         </div>
-                        <div class="p-3 bg-surface-container-lowest rounded-lg group-hover:bg-primary/10 transition-colors">
+                        <div
+                            class="p-3 bg-surface-container-lowest rounded-lg group-hover:bg-primary/10 transition-colors">
                             <span class="material-symbols-outlined text-primary">key</span>
                         </div>
                     </div>
                     <form class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="space-y-2">
-                                <label class="block text-xs font-semibold text-on-surface-variant uppercase tracking-widest">Current Password</label>
-                                <input class="w-full bg-surface-container-lowest border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary/40 transition-all" placeholder="••••••••••••" type="password"/>
+                                <label
+                                    class="block text-xs font-semibold text-on-surface-variant uppercase tracking-widest">Current
+                                    Password</label>
+                                <input
+                                    class="w-full bg-surface-container-lowest border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary/40 transition-all"
+                                    placeholder="••••••••••••" type="password" />
                             </div>
                             <div class="space-y-2">
-                                <label class="block text-xs font-semibold text-on-surface-variant uppercase tracking-widest">New Password</label>
-                                <input class="w-full bg-surface-container-lowest border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary/40 transition-all" placeholder="••••••••••••" type="password"/>
+                                <label
+                                    class="block text-xs font-semibold text-on-surface-variant uppercase tracking-widest">New
+                                    Password</label>
+                                <input
+                                    class="w-full bg-surface-container-lowest border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary/40 transition-all"
+                                    placeholder="••••••••••••" type="password" />
                             </div>
                         </div>
                         <div class="space-y-3">
@@ -55,16 +74,20 @@
                                 <span class="text-on-surface-variant">Strength Indicator</span>
                                 <span class="text-primary font-bold">Strong</span>
                             </div>
-                            <div class="h-1.5 w-full bg-surface-container-lowest rounded-full overflow-hidden flex gap-1">
+                            <div
+                                class="h-1.5 w-full bg-surface-container-lowest rounded-full overflow-hidden flex gap-1">
                                 <div class="h-full w-1/4 bg-primary rounded-full"></div>
                                 <div class="h-full w-1/4 bg-primary rounded-full"></div>
                                 <div class="h-full w-1/4 bg-primary rounded-full"></div>
                                 <div class="h-full w-1/12 bg-outline-variant/30 rounded-full"></div>
                             </div>
-                            <p class="text-[10px] text-on-surface-variant/60 italic">Use at least 12 characters, including numbers and special symbols.</p>
+                            <p class="text-[10px] text-on-surface-variant/60 italic">Use at least 12 characters,
+                                including numbers and special symbols.</p>
                         </div>
                         <div class="flex justify-end pt-4">
-                            <button class="bg-indigo-glow px-8 py-3 rounded-xl text-on-primary font-bold text-sm hover:shadow-[0_0_15px_rgba(99,102,241,0.4)] transition-all active:scale-95" type="submit">
+                            <button
+                                class="bg-indigo-glow px-8 py-3 rounded-xl text-on-primary font-bold text-sm hover:shadow-[0_0_15px_rgba(99,102,241,0.4)] transition-all active:scale-95"
+                                type="submit">
                                 Update Password
                             </button>
                         </div>
@@ -72,46 +95,64 @@
                 </div>
 
                 <!-- 2FA Setup Card (Spans 5) -->
-                <div class="lg:col-span-5 bg-surface-container rounded-xl p-8 border border-outline-variant/10 flex flex-col justify-between">
+                <div
+                    class="lg:col-span-5 bg-surface-container rounded-xl p-8 border border-outline-variant/10 flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-6">
                             <h3 class="font-headline font-bold text-xl text-on-surface">Two-Factor (2FA)</h3>
                             <div class="relative inline-flex items-center cursor-pointer">
-                                <input checked="" class="sr-only peer" type="checkbox"/>
-                                <div class="w-11 h-6 bg-surface-container-lowest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-surface-variant after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                <input checked="" class="sr-only peer" type="checkbox" />
+                                <div
+                                    class="w-11 h-6 bg-surface-container-lowest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-surface-variant after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                                </div>
                             </div>
                         </div>
-                        <p class="text-sm text-on-surface-variant mb-8">Add an extra layer of security by requiring a code from your mobile device.</p>
+                        <p class="text-sm text-on-surface-variant mb-8">Add an extra layer of security by requiring a
+                            code from your mobile device.</p>
                         <!-- QR Placeholder -->
-                        <div class="aspect-square w-full max-w-[200px] mx-auto bg-surface-container-lowest rounded-2xl flex items-center justify-center p-4 relative group overflow-hidden border border-outline-variant/5">
-                            <div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                            <img alt="2FA QR Code" class="w-full h-full opacity-80 mix-blend-screen grayscale brightness-150" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRGpEmXilChwoVNIHqlfchdDhVxqV_P2tYUAsz2kdXTNU0i9iXUDfc9zpm2LQ7c72lM5Fp0FCBhiARp7RaOHTZ1sL415ltxLj-AB_IIpVrp3EYJ--yDx85gtPqfDlATrlDAA4kswcN3YJ9egHxaZmTDfUa_ke72Qpk8sBo8NVm_caP3l3qTgujtpSVYY_z0YzUY8SwqFngb-JaiLgHToGPy4pbkB50_LeAwIvpSHy6rZnDi-OZDpjD2dgObQDGmlsv1Zvo_dKF1Rc"/>
+                        <div
+                            class="aspect-square w-full max-w-[200px] mx-auto bg-surface-container-lowest rounded-2xl flex items-center justify-center p-4 relative group overflow-hidden border border-outline-variant/5">
+                            <div
+                                class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                            <img alt="2FA QR Code"
+                                class="w-full h-full opacity-80 mix-blend-screen grayscale brightness-150"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRGpEmXilChwoVNIHqlfchdDhVxqV_P2tYUAsz2kdXTNU0i9iXUDfc9zpm2LQ7c72lM5Fp0FCBhiARp7RaOHTZ1sL415ltxLj-AB_IIpVrp3EYJ--yDx85gtPqfDlATrlDAA4kswcN3YJ9egHxaZmTDfUa_ke72Qpk8sBo8NVm_caP3l3qTgujtpSVYY_z0YzUY8SwqFngb-JaiLgHToGPy4pbkB50_LeAwIvpSHy6rZnDi-OZDpjD2dgObQDGmlsv1Zvo_dKF1Rc" />
                         </div>
                     </div>
                     <div class="mt-8 space-y-3">
-                        <button class="w-full flex items-center justify-center gap-2 border border-outline-variant/20 py-3 rounded-xl text-sm font-semibold hover:bg-surface-container-high transition-colors">
+                        <button
+                            class="w-full flex items-center justify-center gap-2 border border-outline-variant/20 py-3 rounded-xl text-sm font-semibold hover:bg-surface-container-high transition-colors">
                             <span class="material-symbols-outlined text-sm">download</span>
                             Download Backup Codes
                         </button>
-                        <p class="text-[10px] text-center text-on-surface-variant/60 uppercase tracking-tighter">Connected Device: iPhone 15 Pro Max</p>
+                        <p class="text-[10px] text-center text-on-surface-variant/60 uppercase tracking-tighter">
+                            Connected Device: iPhone 15 Pro Max</p>
                     </div>
                 </div>
 
                 <!-- === SECURITY LOGS CARD (SPANS 12) === -->
-                <div class="lg:col-span-12 bg-surface-container-low rounded-xl overflow-hidden border border-outline-variant/5">
+                <div
+                    class="lg:col-span-12 bg-surface-container-low rounded-xl overflow-hidden border border-outline-variant/5">
                     <div class="p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
                         <div>
                             <h3 class="font-headline font-bold text-xl text-on-surface">Recent Security Activity</h3>
-                            <p class="text-sm text-on-surface-variant">Review recent login attempts and critical system alerts.</p>
+                            <p class="text-sm text-on-surface-variant">Review recent login attempts and critical system
+                                alerts.</p>
                         </div>
                         <div class="flex gap-2">
-                            <button class="px-4 py-2 rounded-lg bg-surface-container text-xs font-bold text-on-surface hover:bg-surface-container-high transition-all">Export Logs</button>
-                            <button class="px-4 py-2 rounded-lg border border-outline-variant/20 text-xs font-bold text-primary hover:bg-primary/5 transition-all">Clear History</button>
+                            <button
+                                class="px-4 py-2 rounded-lg bg-surface-container text-xs font-bold text-on-surface hover:bg-surface-container-high transition-all">Export
+                                Logs</button>
+                            <button
+                                class="px-4 py-2 rounded-lg border border-outline-variant/20 text-xs font-bold text-primary hover:bg-primary/5 transition-all">Clear
+                                History</button>
                         </div>
                     </div>
                     <div class="overflow-x-auto">
                         <table class="w-full text-left">
-                            <thead class="bg-surface-container-lowest/50 text-xs text-on-surface-variant uppercase tracking-widest font-semibold">
+                            <thead
+                                class="bg-surface-container-lowest/50 text-xs text-on-surface-variant uppercase tracking-widest font-semibold">
                                 <tr>
                                     <th class="px-8 py-4">Event Type</th>
                                     <th class="px-8 py-4">Location &amp; IP</th>
@@ -124,8 +165,10 @@
                                 <tr class="hover:bg-surface-container/30 transition-colors">
                                     <td class="px-8 py-5">
                                         <div class="flex items-center gap-3">
-                                            <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                                                <span class="material-symbols-outlined text-primary text-sm">login</span>
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                                                <span
+                                                    class="material-symbols-outlined text-primary text-sm">login</span>
                                             </div>
                                             <span class="text-sm font-medium">Successful Login</span>
                                         </div>
@@ -136,18 +179,23 @@
                                     </td>
                                     <td class="px-8 py-5 text-sm text-on-surface-variant">Today, 09:42 AM</td>
                                     <td class="px-8 py-5">
-                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-500/10 text-green-400">Trusted</span>
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-500/10 text-green-400">Trusted</span>
                                     </td>
                                     <td class="px-8 py-5 text-right">
-                                        <button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-lg">more_vert</span></button>
+                                        <button
+                                            class="text-on-surface-variant hover:text-primary transition-colors"><span
+                                                class="material-symbols-outlined text-lg">more_vert</span></button>
                                     </td>
                                 </tr>
 
                                 <tr class="hover:bg-surface-container/30 transition-colors">
                                     <td class="px-8 py-5">
                                         <div class="flex items-center gap-3">
-                                            <div class="w-8 h-8 rounded-full bg-error/10 flex items-center justify-center">
-                                                <span class="material-symbols-outlined text-error text-sm">warning</span>
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-error/10 flex items-center justify-center">
+                                                <span
+                                                    class="material-symbols-outlined text-error text-sm">warning</span>
                                             </div>
                                             <span class="text-sm font-medium">Suspicious Attempt</span>
                                         </div>
@@ -158,7 +206,8 @@
                                     </td>
                                     <td class="px-8 py-5 text-sm text-on-surface-variant">Yesterday, 11:15 PM</td>
                                     <td class="px-8 py-5">
-                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-error/10 text-error">Blocked</span>
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-error/10 text-error">Blocked</span>
                                     </td>
                                     <td class="px-8 py-5 text-right">
                                         <button class="text-primary hover:underline text-xs font-bold">Details</button>
@@ -168,8 +217,10 @@
                                 <tr class="hover:bg-surface-container/30 transition-colors">
                                     <td class="px-8 py-5">
                                         <div class="flex items-center gap-3">
-                                            <div class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center">
-                                                <span class="material-symbols-outlined text-tertiary text-sm">sync_lock</span>
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center">
+                                                <span
+                                                    class="material-symbols-outlined text-tertiary text-sm">sync_lock</span>
                                             </div>
                                             <span class="text-sm font-medium">Password Changed</span>
                                         </div>
@@ -180,10 +231,13 @@
                                     </td>
                                     <td class="px-8 py-5 text-sm text-on-surface-variant">Oct 24, 2023</td>
                                     <td class="px-8 py-5">
-                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary">System</span>
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary">System</span>
                                     </td>
                                     <td class="px-8 py-5 text-right">
-                                        <button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-lg">more_vert</span></button>
+                                        <button
+                                            class="text-on-surface-variant hover:text-primary transition-colors"><span
+                                                class="material-symbols-outlined text-lg">more_vert</span></button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -193,8 +247,10 @@
 
                 <!-- === FOOTER QUICK ACTION / ASYMMETRIC CARD === -->
                 <div class="lg:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 flex items-center gap-4 group">
-                        <div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div
+                        class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 flex items-center gap-4 group">
+                        <div
+                            class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-primary">history_edu</span>
                         </div>
                         <div>
@@ -202,8 +258,10 @@
                             <p class="text-xs text-on-surface-variant">Read our encryption standards</p>
                         </div>
                     </div>
-                    <div class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 flex items-center gap-4 group">
-                        <div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div
+                        class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 flex items-center gap-4 group">
+                        <div
+                            class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-tertiary">emergency</span>
                         </div>
                         <div>
@@ -211,8 +269,10 @@
                             <p class="text-xs text-on-surface-variant">Instantly sign out all devices</p>
                         </div>
                     </div>
-                    <div class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 flex items-center gap-4 group">
-                        <div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div
+                        class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 flex items-center gap-4 group">
+                        <div
+                            class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-green-400">privacy_tip</span>
                         </div>
                         <div>
@@ -227,4 +287,5 @@
 
     <script src="../../assets/js/app.js"></script>
 </body>
+
 </html>

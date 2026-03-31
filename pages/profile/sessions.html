@@ -1,36 +1,46 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Profile - Sessions | Admin Panel</title>
 
     <!-- Core Assets -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="../../assets/js/tailwind-config.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Manrope:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
+
 <body class="bg-background text-on-surface antialiased">
     <!-- Main Content Area -->
     <main class="p-6 lg:p-10 space-y-8 max-w-7xl mx-auto">
         <!-- === HERO / HEADER SECTION === -->
         <section class="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div class="space-y-2">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
                     <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-primary">Live Protection Active</span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-primary">Live Protection
+                        Active</span>
                 </div>
                 <h1 class="font-['Syne'] text-4xl font-extrabold tracking-tight">Active Sessions</h1>
                 <p class="text-on-surface-variant max-w-xl text-sm leading-relaxed">
-                    Manage and secure your account across all logged-in devices. If you see an unfamiliar session, we recommend logging out immediately and updating your security keys.
+                    Manage and secure your account across all logged-in devices. If you see an unfamiliar session, we
+                    recommend logging out immediately and updating your security keys.
                 </p>
             </div>
-            <button class="indigo-glow px-6 py-3 rounded-xl text-on-primary font-bold text-sm shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform flex items-center gap-2">
+            <button
+                class="indigo-glow px-6 py-3 rounded-xl text-on-primary font-bold text-sm shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform flex items-center gap-2">
                 <span class="material-symbols-outlined text-sm">lock_reset</span>
                 Logout all sessions
             </button>
@@ -47,7 +57,8 @@
                     </div>
                     <div class="overflow-x-auto">
                         <table class="w-full text-left">
-                            <thead class="bg-surface-container-low text-on-surface-variant text-[11px] uppercase tracking-widest">
+                            <thead
+                                class="bg-surface-container-low text-on-surface-variant text-[11px] uppercase tracking-widest">
                                 <tr>
                                     <th class="px-6 py-4 font-semibold">Device / Browser</th>
                                     <th class="px-6 py-4 font-semibold">Location</th>
@@ -61,13 +72,16 @@
                                 <tr class="hover:bg-surface-container-high transition-colors group">
                                     <td class="px-6 py-5">
                                         <div class="flex items-center gap-3">
-                                            <div class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center text-primary border border-primary/10">
+                                            <div
+                                                class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center text-primary border border-primary/10">
                                                 <span class="material-symbols-outlined">laptop_mac</span>
                                             </div>
                                             <div>
                                                 <div class="text-sm font-semibold flex items-center gap-2">
                                                     MacBook Pro 16"
-                                                    <span class="px-1.5 py-0.5 rounded text-[9px] bg-green-500/10 text-green-400 border border-green-500/20">Active Now</span>
+                                                    <span
+                                                        class="px-1.5 py-0.5 rounded text-[9px] bg-green-500/10 text-green-400 border border-green-500/20">Active
+                                                        Now</span>
                                                 </div>
                                                 <div class="text-[11px] text-on-surface-variant">Chrome v122.0.1</div>
                                             </div>
@@ -80,7 +94,8 @@
                                     <td class="px-6 py-5 font-mono text-xs opacity-70">192.158.1.38</td>
                                     <td class="px-6 py-5 text-sm">2 mins ago</td>
                                     <td class="px-6 py-5 text-right">
-                                        <button class="text-on-surface-variant hover:text-error transition-colors p-2 rounded-lg hover:bg-error/5">
+                                        <button
+                                            class="text-on-surface-variant hover:text-error transition-colors p-2 rounded-lg hover:bg-error/5">
                                             <span class="material-symbols-outlined text-lg">logout</span>
                                         </button>
                                     </td>
@@ -90,7 +105,8 @@
                                 <tr class="hover:bg-surface-container-high transition-colors group">
                                     <td class="px-6 py-5">
                                         <div class="flex items-center gap-3">
-                                            <div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant border border-outline-variant/10">
+                                            <div
+                                                class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant border border-outline-variant/10">
                                                 <span class="material-symbols-outlined">smartphone</span>
                                             </div>
                                             <div>
@@ -106,7 +122,8 @@
                                     <td class="px-6 py-5 font-mono text-xs opacity-70">172.56.21.104</td>
                                     <td class="px-6 py-5 text-sm">4 hours ago</td>
                                     <td class="px-6 py-5 text-right">
-                                        <button class="text-on-surface-variant hover:text-error transition-colors p-2 rounded-lg hover:bg-error/5">
+                                        <button
+                                            class="text-on-surface-variant hover:text-error transition-colors p-2 rounded-lg hover:bg-error/5">
                                             <span class="material-symbols-outlined text-lg">logout</span>
                                         </button>
                                     </td>
@@ -116,7 +133,8 @@
                                 <tr class="hover:bg-surface-container-high transition-colors group">
                                     <td class="px-6 py-5">
                                         <div class="flex items-center gap-3">
-                                            <div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant border border-outline-variant/10">
+                                            <div
+                                                class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant border border-outline-variant/10">
                                                 <span class="material-symbols-outlined">desktop_windows</span>
                                             </div>
                                             <div>
@@ -132,7 +150,8 @@
                                     <td class="px-6 py-5 font-mono text-xs opacity-70">45.12.98.221</td>
                                     <td class="px-6 py-5 text-sm">Yesterday, 14:20</td>
                                     <td class="px-6 py-5 text-right">
-                                        <button class="text-on-surface-variant hover:text-error transition-colors p-2 rounded-lg hover:bg-error/5">
+                                        <button
+                                            class="text-on-surface-variant hover:text-error transition-colors p-2 rounded-lg hover:bg-error/5">
                                             <span class="material-symbols-outlined text-lg">logout</span>
                                         </button>
                                     </td>
@@ -150,7 +169,8 @@
                     <div class="p-6 space-y-6">
                         <div class="flex gap-4 relative">
                             <div class="absolute left-[19px] top-8 bottom-[-24px] w-px bg-outline-variant/20"></div>
-                            <div class="z-10 w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant/10 flex items-center justify-center shrink-0">
+                            <div
+                                class="z-10 w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant/10 flex items-center justify-center shrink-0">
                                 <span class="material-symbols-outlined text-sm text-primary">login</span>
                             </div>
                             <div class="space-y-1">
@@ -162,18 +182,21 @@
 
                         <div class="flex gap-4 relative">
                             <div class="absolute left-[19px] top-8 bottom-[-24px] w-px bg-outline-variant/20"></div>
-                            <div class="z-10 w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant/10 flex items-center justify-center shrink-0">
+                            <div
+                                class="z-10 w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant/10 flex items-center justify-center shrink-0">
                                 <span class="material-symbols-outlined text-sm text-tertiary">key</span>
                             </div>
                             <div class="space-y-1">
                                 <p class="text-sm font-medium">MFA Authenticated via Security Key</p>
-                                <p class="text-xs text-on-surface-variant">Verification successful for device: MacBook Pro</p>
+                                <p class="text-xs text-on-surface-variant">Verification successful for device: MacBook
+                                    Pro</p>
                                 <p class="text-[10px] text-outline uppercase font-bold">Mar 24, 2024 • 09:11 AM</p>
                             </div>
                         </div>
 
                         <div class="flex gap-4">
-                            <div class="z-10 w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant/10 flex items-center justify-center shrink-0">
+                            <div
+                                class="z-10 w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant/10 flex items-center justify-center shrink-0">
                                 <span class="material-symbols-outlined text-sm text-error">gpp_maybe</span>
                             </div>
                             <div class="space-y-1">
@@ -189,15 +212,19 @@
             <!-- === SIDE BENTO COLUMN === -->
             <div class="space-y-6">
                 <!-- Security Score Card -->
-                <div class="bg-surface-container rounded-xl p-6 border border-outline-variant/10 relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110 duration-500"></div>
+                <div
+                    class="bg-surface-container rounded-xl p-6 border border-outline-variant/10 relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110 duration-500">
+                    </div>
                     <div class="relative z-10">
                         <div class="flex justify-between items-start mb-6">
                             <span class="material-symbols-outlined text-3xl text-primary">shield_with_heart</span>
                             <span class="text-2xl font-['Syne'] font-extrabold text-primary">98%</span>
                         </div>
                         <h4 class="font-['Outfit'] font-bold text-lg mb-2">Security Health</h4>
-                        <p class="text-xs text-on-surface-variant mb-6 leading-relaxed">Your account uses 2FA and has no active security vulnerabilities detected.</p>
+                        <p class="text-xs text-on-surface-variant mb-6 leading-relaxed">Your account uses 2FA and has no
+                            active security vulnerabilities detected.</p>
                         <div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
                             <div class="h-full bg-primary w-[98%] rounded-full"></div>
                         </div>
@@ -205,9 +232,13 @@
                 </div>
 
                 <!-- Map Location Card -->
-                <div class="bg-surface-container rounded-xl border border-outline-variant/10 overflow-hidden h-64 relative group">
-                    <img class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArIQNoicSlSmJVo8rgkSA55z9cefTEl4ydT3o0zLJMQOT1KtB3wGGeeOua71uxGiCCDaw2H2CqAS_vMSwklKRvpKQNV-MgdwGa9C3zAoHcjJg2uGQ8ou1XycP0iIg9h8LKWxCdGcAuP5YnZvbzk9oP7NOqqBlY-yDnNhPE_mKLIJ0VoMteBAz7jOuR0uEPdR9i_xoCYOp8oAXy8an5F97GrFZbSAnEuMtGFl20OXPUYSWz8sS3aO3KtoCh2NfPvI8pwo_17z-MFD0"/>
-                    <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/20 to-transparent"></div>
+                <div
+                    class="bg-surface-container rounded-xl border border-outline-variant/10 overflow-hidden h-64 relative group">
+                    <img class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuArIQNoicSlSmJVo8rgkSA55z9cefTEl4ydT3o0zLJMQOT1KtB3wGGeeOua71uxGiCCDaw2H2CqAS_vMSwklKRvpKQNV-MgdwGa9C3zAoHcjJg2uGQ8ou1XycP0iIg9h8LKWxCdGcAuP5YnZvbzk9oP7NOqqBlY-yDnNhPE_mKLIJ0VoMteBAz7jOuR0uEPdR9i_xoCYOp8oAXy8an5F97GrFZbSAnEuMtGFl20OXPUYSWz8sS3aO3KtoCh2NfPvI8pwo_17z-MFD0" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/20 to-transparent">
+                    </div>
                     <div class="absolute bottom-4 left-4 right-4">
                         <div class="flex items-center gap-2 mb-1">
                             <span class="material-symbols-outlined text-xs text-primary">location_on</span>
@@ -238,7 +269,8 @@
                             </div>
                             <span class="text-[10px] text-on-surface-variant font-mono">Trusted</span>
                         </div>
-                        <button class="w-full mt-4 py-2 border border-outline-variant/20 rounded-lg text-[11px] font-bold uppercase tracking-widest hover:bg-surface-container-low transition-colors">
+                        <button
+                            class="w-full mt-4 py-2 border border-outline-variant/20 rounded-lg text-[11px] font-bold uppercase tracking-widest hover:bg-surface-container-low transition-colors">
                             Manage Trusted List
                         </button>
                     </div>
@@ -253,10 +285,13 @@
             </div>
             <div class="flex-1 space-y-1 text-center md:text-left">
                 <h4 class="font-['Outfit'] font-bold text-lg text-error">Unrecognized session?</h4>
-                <p class="text-sm text-on-surface-variant">If you don't recognize a device or location, logout immediately. Your account security might be compromised. Your account security might be compromised. We also recommend enabling 2FA if you haven't already.</p>
+                <p class="text-sm text-on-surface-variant">If you don't recognize a device or location, logout
+                    immediately. Your account security might be compromised. Your account security might be compromised.
+                    We also recommend enabling 2FA if you haven't already.</p>
             </div>
             <div class="shrink-0">
-                <button class="px-6 py-3 border border-error/30 rounded-xl text-error text-sm font-bold hover:bg-error/10 transition-colors">
+                <button
+                    class="px-6 py-3 border border-error/30 rounded-xl text-error text-sm font-bold hover:bg-error/10 transition-colors">
                     Reset Security Keys
                 </button>
             </div>
@@ -266,7 +301,8 @@
     <!-- === FOOTER META === -->
     <footer class="px-6 pb-12 pt-8 text-center md:text-left">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <p class="text-xs text-outline outfit opacity-60">© 2024 XenonOS Management Systems. All sessions are encrypted with AES-256.</p>
+            <p class="text-xs text-outline outfit opacity-60">© 2024 XenonOS Management Systems. All sessions are
+                encrypted with AES-256.</p>
             <div class="flex gap-6 text-xs text-outline outfit font-medium">
                 <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
                 <a class="hover:text-primary transition-colors" href="#">Audit Logs</a>
@@ -277,4 +313,5 @@
 
     <script src="../../assets/js/app.js"></script>
 </body>
+
 </html>

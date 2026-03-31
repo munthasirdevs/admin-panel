@@ -1,195 +1,231 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>File Manager - System Admin</title>
-    
+
     <!-- Core Assets -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="../../assets/js/tailwind-config.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
+
 <body class="flex min-h-screen bg-surface">
     <!-- Main Content -->
     <main class="flex-1 min-h-screen flex flex-col">
         <!-- Main Scrollable Canvas -->
 
-<!-- Page Header -->
-<div class="px-8 pt-8 pb-6 flex flex-col gap-6">
-<div class="flex items-end justify-between">
-<div>
-<h1 class="font-headline text-4xl font-light tracking-tight text-on-surface">File Manager</h1>
-<p class="text-sm text-on-surface-variant/60 mt-2 font-body">Manage and organize your project assets with obsidian precision.</p>
-</div>
-<button class="bg-primary text-on-primary px-6 py-3 rounded-xl font-bold text-sm flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/10">
-<span class="material-symbols-outlined">upload</span> Upload File
+        <!-- Page Header -->
+        <div class="px-8 pt-8 pb-6 flex flex-col gap-6">
+            <div class="flex items-end justify-between">
+                <div>
+                    <h1 class="font-headline text-4xl font-light tracking-tight text-on-surface">File Manager</h1>
+                    <p class="text-sm text-on-surface-variant/60 mt-2 font-body">Manage and organize your project assets
+                        with obsidian precision.</p>
+                </div>
+                <button
+                    class="bg-primary text-on-primary px-6 py-3 rounded-xl font-bold text-sm flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/10">
+                    <span class="material-symbols-outlined">upload</span> Upload File
                 </button>
-</div>
-<!-- Filters Bar -->
-<div class="flex items-center gap-3">
-<div class="flex items-center bg-surface-container-low px-4 py-2 rounded-xl text-xs font-medium text-on-surface-variant gap-2 hover:bg-surface-container transition-colors cursor-pointer">
-<span class="material-symbols-outlined text-sm">folder</span> Project: All
+            </div>
+            <!-- Filters Bar -->
+            <div class="flex items-center gap-3">
+                <div
+                    class="flex items-center bg-surface-container-low px-4 py-2 rounded-xl text-xs font-medium text-on-surface-variant gap-2 hover:bg-surface-container transition-colors cursor-pointer">
+                    <span class="material-symbols-outlined text-sm">folder</span> Project: All
                 </div>
-<div class="flex items-center bg-surface-container-low px-4 py-2 rounded-xl text-xs font-medium text-on-surface-variant gap-2 hover:bg-surface-container transition-colors cursor-pointer">
-<span class="material-symbols-outlined text-sm">description</span> File Type: All
+                <div
+                    class="flex items-center bg-surface-container-low px-4 py-2 rounded-xl text-xs font-medium text-on-surface-variant gap-2 hover:bg-surface-container transition-colors cursor-pointer">
+                    <span class="material-symbols-outlined text-sm">description</span> File Type: All
                 </div>
-<div class="flex items-center bg-surface-container-low px-4 py-2 rounded-xl text-xs font-medium text-on-surface-variant gap-2 hover:bg-surface-container transition-colors cursor-pointer">
-<span class="material-symbols-outlined text-sm">calendar_today</span> Date: This Month
+                <div
+                    class="flex items-center bg-surface-container-low px-4 py-2 rounded-xl text-xs font-medium text-on-surface-variant gap-2 hover:bg-surface-container transition-colors cursor-pointer">
+                    <span class="material-symbols-outlined text-sm">calendar_today</span> Date: This Month
                 </div>
-<div class="flex items-center bg-surface-container-low px-4 py-2 rounded-xl text-xs font-medium text-on-surface-variant gap-2 hover:bg-surface-container transition-colors cursor-pointer">
-<span class="material-symbols-outlined text-sm">groups</span> Team: Engineering
+                <div
+                    class="flex items-center bg-surface-container-low px-4 py-2 rounded-xl text-xs font-medium text-on-surface-variant gap-2 hover:bg-surface-container transition-colors cursor-pointer">
+                    <span class="material-symbols-outlined text-sm">groups</span> Team: Engineering
                 </div>
-<div class="ml-auto flex items-center bg-surface-container-low p-1 rounded-xl">
-<button class="p-2 rounded-lg bg-surface-bright text-primary">
-<span class="material-symbols-outlined text-lg">format_list_bulleted</span>
-</button>
-<button class="p-2 rounded-lg text-slate-500 hover:text-slate-300">
-<span class="material-symbols-outlined text-lg">grid_view</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Layout Wrapper -->
-<div class="flex-1 flex px-8 pb-8 gap-6 overflow-hidden">
-<!-- File List Container -->
-<div class="flex-1 overflow-y-auto scrollbar-hide flex flex-col gap-6">
-<!-- Data Table -->
-<div class="bg-surface-container-low rounded-2xl overflow-hidden">
-<table class="w-full text-left border-collapse">
-<thead>
-<tr class="text-[10px] uppercase tracking-widest text-on-surface-variant/50 font-bold">
-<th class="px-6 py-4">Name</th>
-<th class="px-6 py-4">Project</th>
-<th class="px-6 py-4">Uploaded</th>
-<th class="px-6 py-4">Team</th>
-<th class="px-6 py-4">Size</th>
-<th class="px-6 py-4 w-10"></th>
-</tr>
-</thead>
-<tbody class="text-sm font-body">
-<!-- Selected Row -->
-<tr class="hover:bg-surface-bright/50 cursor-pointer transition-colors border-b border-outline-variant/5 group bg-surface-container-high/40">
-<td class="px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-lg bg-error/10 flex items-center justify-center text-error">
-<span class="material-symbols-outlined">picture_as_pdf</span>
-</div>
-<div>
-<div class="font-medium text-on-surface">Architectural_V2_Final.pdf</div>
-<div class="text-[10px] text-on-surface-variant/60">PDF Document</div>
-</div>
-</div>
-</td>
-<td class="px-6 py-4 text-on-surface-variant">Obsidian HQ</td>
-<td class="px-6 py-4 text-on-surface-variant">Oct 12, 2023</td>
-<td class="px-6 py-4">
-<div class="flex -space-x-2">
-<img class="w-6 h-6 rounded-full border-2 border-surface-container-low object-cover" data-alt="Team Member Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF4yWA1_49stkWgG9v8LoY7zmSO01Lctcr5FXXafT97igM2FYwKS4zCeYrpKfdjr49TKPJP-ncrQw4Wlyos-A0qW3XQffyiEZEQQAWBDhHcuh5F8E-fsH-u20JeISow059WapjcKDN8PpkwMM25UtowrdEgpqDDtJrUCrluOfhCLtudmsFqtYXerkIZBuo6hUzHWpmOXGplqOoub6XvcpWdkta9XaZbj9xR0EDoCYC3x8ar0r6yntpFsqTm--SPE7cVi5njj1IXo0"/>
-<img class="w-6 h-6 rounded-full border-2 border-surface-container-low object-cover" data-alt="Team Member Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpz_DmMOIqDvBYr0M7EwPTMHIkhRshg4EkcO0o4nYLjQPP9GCk-ai7X8FslKNrZSxK6jM5izZbkcqSKTANjRytbUIJwWO11ooTHIKM53fHST1tytQ9lZlVSLehlOG5OBYo_0OAJh3I-4DaXnxH2sVJMiiC4s3KmxUJubbv6cHT0wY9iOyuRHNIoO-cVBp7yux9kiKVLc_lUJTXeDbkSExrv8_3t-O0UIjgl9BDgHxOtX3qAfMSwrNDjjEZm6gxYylFcf9vDulRV8I"/>
-</div>
-</td>
-<td class="px-6 py-4 text-on-surface-variant">14.2 MB</td>
-<td class="px-6 py-4 text-right">
-<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">more_vert</span>
-</td>
-</tr>
-<tr class="hover:bg-surface-bright/50 cursor-pointer transition-colors border-b border-outline-variant/5 group">
-<td class="px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">image</span>
-</div>
-<div>
-<div class="font-medium text-on-surface">Lobby_Render_Daylight.png</div>
-<div class="text-[10px] text-on-surface-variant/60">PNG Image</div>
-</div>
-</div>
-</td>
-<td class="px-6 py-4 text-on-surface-variant">Obsidian HQ</td>
-<td class="px-6 py-4 text-on-surface-variant">Oct 10, 2023</td>
-<td class="px-6 py-4">
-<div class="flex -space-x-2">
-<img class="w-6 h-6 rounded-full border-2 border-surface-container-low object-cover" data-alt="Team Member Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIFXeJ13-phXnRj69l73mQovR0G3uUQFzZoeAtVo77Je3l4yX-JmCcyy4Ih_nLZxufmt3qjdNPODgLgXAac2aELF-youz8SvcINI5I8AGNl3YXRlOXc0AvaxeRzXhwqd1r6LE809CkArftOwlaeCpHXnJt2vFTlq9D2fNhaD-iK4KBXsmNxtrq4uMAtvjNi8gnTiXorNbj40DEsus4Iap2Tgw87nwptprcMjaB2LgBCegGRsTnjaUa9mL-S6T0oSyY8a0tKX3fbqs"/>
-</div>
-</td>
-<td class="px-6 py-4 text-on-surface-variant">45.8 MB</td>
-<td class="px-6 py-4 text-right">
-<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">more_vert</span>
-</td>
-</tr>
-<tr class="hover:bg-surface-bright/50 cursor-pointer transition-colors border-b border-outline-variant/5 group">
-<td class="px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary">
-<span class="material-symbols-outlined">description</span>
-</div>
-<div>
-<div class="font-medium text-on-surface">Client_Brief_v4.docx</div>
-<div class="text-[10px] text-on-surface-variant/60">Word Document</div>
-</div>
-</div>
-</td>
-<td class="px-6 py-4 text-on-surface-variant">Zenith Towers</td>
-<td class="px-6 py-4 text-on-surface-variant">Oct 08, 2023</td>
-<td class="px-6 py-4">
-<div class="flex -space-x-2">
-<img class="w-6 h-6 rounded-full border-2 border-surface-container-low object-cover" data-alt="Team Member Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrfqbvZJYRMQjVCFXS7i1SLs9orSjAVhQNvFU-nxunvcroZx-wRwA0WzovJBjWqk4JsBTwU5kzbKeMORIWon8_sW4n__O0EoH7J7B6QM8_-NyL-ijfSCiSQEi09pjoYWysEl74CVWfn5bqLBa_9Cyrve3c3zx5Zd0GLUX9l8mXEzUZ_wjyG53h5qRlBhqLBb1hWIN1bTjmUxz13Tqc1Xwh2V_Cer0kHo8NIqxzIHoT11BhsjRsZ7gTF3S5L8xDe8wIz6BJiAZV4-I"/>
-<img class="w-6 h-6 rounded-full border-2 border-surface-container-low object-cover" data-alt="Team Member Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb80_DByaA9ug9FyI8oQFKHn51tRK6OgL_3vbjlzzQNiBHV-ROWD85sFzSz9iJGjH-Bk0YJQeGkwEYcFzgi_njxDomIG7jcJdy_ofgbCr76rIgoy89SXdUZbP658m-eWl2CZcVuvb0wjWKhtWEUqYtsvzOc6-VgxrwhHzJb49D-a2SgrA98GSgLR_n0TwzhXtqaudhBO0fn72GhjJB7JCEE5OVpExT2LhweMKKo99RMazD5BeK2e4niYN73fiSjz5OU_GimhgMASI"/>
-</div>
-</td>
-<td class="px-6 py-4 text-on-surface-variant">1.2 MB</td>
-<td class="px-6 py-4 text-right">
-<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">more_vert</span>
-</td>
-</tr>
-<tr class="hover:bg-surface-bright/50 cursor-pointer transition-colors border-b border-outline-variant/5 group">
-<td class="px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-lg bg-on-secondary-container/10 flex items-center justify-center text-on-secondary-container">
-<span class="material-symbols-outlined">table_chart</span>
-</div>
-<div>
-<div class="font-medium text-on-surface">Budget_Projections.xlsx</div>
-<div class="text-[10px] text-on-surface-variant/60">Excel Sheet</div>
-</div>
-</div>
-</td>
-<td class="px-6 py-4 text-on-surface-variant">Internal Operations</td>
-<td class="px-6 py-4 text-on-surface-variant">Oct 05, 2023</td>
-<td class="px-6 py-4">
-<div class="flex -space-x-2">
-<div class="w-6 h-6 rounded-full border-2 border-surface-container-low bg-surface-container flex items-center justify-center text-[8px] font-bold text-on-surface-variant">+3</div>
-</div>
-</td>
-<td class="px-6 py-4 text-on-surface-variant">4.5 MB</td>
-<td class="px-6 py-4 text-right">
-<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">more_vert</span>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<!-- Drag & Drop Upload Area -->
-<div class="mt-auto border-2 border-dashed border-outline-variant/20 rounded-2xl p-12 flex flex-col items-center justify-center text-center bg-surface-container-low/30 hover:bg-surface-container-low/50 hover:border-primary/40 transition-all group">
-<div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform mb-4">
-<span class="material-symbols-outlined text-3xl">cloud_upload</span>
-</div>
-<h3 class="font-headline text-xl font-semibold text-on-surface">Drag &amp; drop files here</h3>
-<p class="text-on-surface-variant/60 text-sm mt-1">Or click to browse from your computer (Max 1GB)</p>
-</div>
-</div>
-<!-- Right Preview Panel -->
-</div>
+                <div class="ml-auto flex items-center bg-surface-container-low p-1 rounded-xl">
+                    <button class="p-2 rounded-lg bg-surface-bright text-primary">
+                        <span class="material-symbols-outlined text-lg">format_list_bulleted</span>
+                    </button>
+                    <button class="p-2 rounded-lg text-slate-500 hover:text-slate-300">
+                        <span class="material-symbols-outlined text-lg">grid_view</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Layout Wrapper -->
+        <div class="flex-1 flex px-8 pb-8 gap-6 overflow-hidden">
+            <!-- File List Container -->
+            <div class="flex-1 overflow-y-auto scrollbar-hide flex flex-col gap-6">
+                <!-- Data Table -->
+                <div class="bg-surface-container-low rounded-2xl overflow-hidden">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="text-[10px] uppercase tracking-widest text-on-surface-variant/50 font-bold">
+                                <th class="px-6 py-4">Name</th>
+                                <th class="px-6 py-4">Project</th>
+                                <th class="px-6 py-4">Uploaded</th>
+                                <th class="px-6 py-4">Team</th>
+                                <th class="px-6 py-4">Size</th>
+                                <th class="px-6 py-4 w-10"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm font-body">
+                            <!-- Selected Row -->
+                            <tr
+                                class="hover:bg-surface-bright/50 cursor-pointer transition-colors border-b border-outline-variant/5 group bg-surface-container-high/40">
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-10 h-10 rounded-lg bg-error/10 flex items-center justify-center text-error">
+                                            <span class="material-symbols-outlined">picture_as_pdf</span>
+                                        </div>
+                                        <div>
+                                            <div class="font-medium text-on-surface">Architectural_V2_Final.pdf</div>
+                                            <div class="text-[10px] text-on-surface-variant/60">PDF Document</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-on-surface-variant">Obsidian HQ</td>
+                                <td class="px-6 py-4 text-on-surface-variant">Oct 12, 2023</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex -space-x-2">
+                                        <img class="w-6 h-6 rounded-full border-2 border-surface-container-low object-cover"
+                                            data-alt="Team Member Avatar"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF4yWA1_49stkWgG9v8LoY7zmSO01Lctcr5FXXafT97igM2FYwKS4zCeYrpKfdjr49TKPJP-ncrQw4Wlyos-A0qW3XQffyiEZEQQAWBDhHcuh5F8E-fsH-u20JeISow059WapjcKDN8PpkwMM25UtowrdEgpqDDtJrUCrluOfhCLtudmsFqtYXerkIZBuo6hUzHWpmOXGplqOoub6XvcpWdkta9XaZbj9xR0EDoCYC3x8ar0r6yntpFsqTm--SPE7cVi5njj1IXo0" />
+                                        <img class="w-6 h-6 rounded-full border-2 border-surface-container-low object-cover"
+                                            data-alt="Team Member Avatar"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpz_DmMOIqDvBYr0M7EwPTMHIkhRshg4EkcO0o4nYLjQPP9GCk-ai7X8FslKNrZSxK6jM5izZbkcqSKTANjRytbUIJwWO11ooTHIKM53fHST1tytQ9lZlVSLehlOG5OBYo_0OAJh3I-4DaXnxH2sVJMiiC4s3KmxUJubbv6cHT0wY9iOyuRHNIoO-cVBp7yux9kiKVLc_lUJTXeDbkSExrv8_3t-O0UIjgl9BDgHxOtX3qAfMSwrNDjjEZm6gxYylFcf9vDulRV8I" />
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-on-surface-variant">14.2 MB</td>
+                                <td class="px-6 py-4 text-right">
+                                    <span
+                                        class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">more_vert</span>
+                                </td>
+                            </tr>
+                            <tr
+                                class="hover:bg-surface-bright/50 cursor-pointer transition-colors border-b border-outline-variant/5 group">
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                            <span class="material-symbols-outlined">image</span>
+                                        </div>
+                                        <div>
+                                            <div class="font-medium text-on-surface">Lobby_Render_Daylight.png</div>
+                                            <div class="text-[10px] text-on-surface-variant/60">PNG Image</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-on-surface-variant">Obsidian HQ</td>
+                                <td class="px-6 py-4 text-on-surface-variant">Oct 10, 2023</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex -space-x-2">
+                                        <img class="w-6 h-6 rounded-full border-2 border-surface-container-low object-cover"
+                                            data-alt="Team Member Avatar"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIFXeJ13-phXnRj69l73mQovR0G3uUQFzZoeAtVo77Je3l4yX-JmCcyy4Ih_nLZxufmt3qjdNPODgLgXAac2aELF-youz8SvcINI5I8AGNl3YXRlOXc0AvaxeRzXhwqd1r6LE809CkArftOwlaeCpHXnJt2vFTlq9D2fNhaD-iK4KBXsmNxtrq4uMAtvjNi8gnTiXorNbj40DEsus4Iap2Tgw87nwptprcMjaB2LgBCegGRsTnjaUa9mL-S6T0oSyY8a0tKX3fbqs" />
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-on-surface-variant">45.8 MB</td>
+                                <td class="px-6 py-4 text-right">
+                                    <span
+                                        class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">more_vert</span>
+                                </td>
+                            </tr>
+                            <tr
+                                class="hover:bg-surface-bright/50 cursor-pointer transition-colors border-b border-outline-variant/5 group">
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary">
+                                            <span class="material-symbols-outlined">description</span>
+                                        </div>
+                                        <div>
+                                            <div class="font-medium text-on-surface">Client_Brief_v4.docx</div>
+                                            <div class="text-[10px] text-on-surface-variant/60">Word Document</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-on-surface-variant">Zenith Towers</td>
+                                <td class="px-6 py-4 text-on-surface-variant">Oct 08, 2023</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex -space-x-2">
+                                        <img class="w-6 h-6 rounded-full border-2 border-surface-container-low object-cover"
+                                            data-alt="Team Member Avatar"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrfqbvZJYRMQjVCFXS7i1SLs9orSjAVhQNvFU-nxunvcroZx-wRwA0WzovJBjWqk4JsBTwU5kzbKeMORIWon8_sW4n__O0EoH7J7B6QM8_-NyL-ijfSCiSQEi09pjoYWysEl74CVWfn5bqLBa_9Cyrve3c3zx5Zd0GLUX9l8mXEzUZ_wjyG53h5qRlBhqLBb1hWIN1bTjmUxz13Tqc1Xwh2V_Cer0kHo8NIqxzIHoT11BhsjRsZ7gTF3S5L8xDe8wIz6BJiAZV4-I" />
+                                        <img class="w-6 h-6 rounded-full border-2 border-surface-container-low object-cover"
+                                            data-alt="Team Member Avatar"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb80_DByaA9ug9FyI8oQFKHn51tRK6OgL_3vbjlzzQNiBHV-ROWD85sFzSz9iJGjH-Bk0YJQeGkwEYcFzgi_njxDomIG7jcJdy_ofgbCr76rIgoy89SXdUZbP658m-eWl2CZcVuvb0wjWKhtWEUqYtsvzOc6-VgxrwhHzJb49D-a2SgrA98GSgLR_n0TwzhXtqaudhBO0fn72GhjJB7JCEE5OVpExT2LhweMKKo99RMazD5BeK2e4niYN73fiSjz5OU_GimhgMASI" />
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-on-surface-variant">1.2 MB</td>
+                                <td class="px-6 py-4 text-right">
+                                    <span
+                                        class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">more_vert</span>
+                                </td>
+                            </tr>
+                            <tr
+                                class="hover:bg-surface-bright/50 cursor-pointer transition-colors border-b border-outline-variant/5 group">
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-10 h-10 rounded-lg bg-on-secondary-container/10 flex items-center justify-center text-on-secondary-container">
+                                            <span class="material-symbols-outlined">table_chart</span>
+                                        </div>
+                                        <div>
+                                            <div class="font-medium text-on-surface">Budget_Projections.xlsx</div>
+                                            <div class="text-[10px] text-on-surface-variant/60">Excel Sheet</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-on-surface-variant">Internal Operations</td>
+                                <td class="px-6 py-4 text-on-surface-variant">Oct 05, 2023</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex -space-x-2">
+                                        <div
+                                            class="w-6 h-6 rounded-full border-2 border-surface-container-low bg-surface-container flex items-center justify-center text-[8px] font-bold text-on-surface-variant">
+                                            +3</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-on-surface-variant">4.5 MB</td>
+                                <td class="px-6 py-4 text-right">
+                                    <span
+                                        class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">more_vert</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Drag & Drop Upload Area -->
+                <div
+                    class="mt-auto border-2 border-dashed border-outline-variant/20 rounded-2xl p-12 flex flex-col items-center justify-center text-center bg-surface-container-low/30 hover:bg-surface-container-low/50 hover:border-primary/40 transition-all group">
+                    <div
+                        class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform mb-4">
+                        <span class="material-symbols-outlined text-3xl">cloud_upload</span>
+                    </div>
+                    <h3 class="font-headline text-xl font-semibold text-on-surface">Drag &amp; drop files here</h3>
+                    <p class="text-on-surface-variant/60 text-sm mt-1">Or click to browse from your computer (Max 1GB)
+                    </p>
+                </div>
+            </div>
+            <!-- Right Preview Panel -->
+        </div>
     </main>
 
     <script src="../../assets/js/app.js"></script>
 </body>
+
 </html>
-
-

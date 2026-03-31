@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Task List - System Admin</title>
 
     <!-- Core Assets -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="../../assets/js/tailwind-config.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
+
 <body class="flex min-h-screen bg-surface">
     <!-- ==================== MAIN CONTENT ==================== -->
     <main class="flex-1 min-h-screen flex flex-col">
@@ -24,9 +28,11 @@
             <header class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
                 <div class="space-y-2">
                     <h1 class="font-headline text-5xl tracking-tighter text-on-surface">Active Tasks</h1>
-                    <p class="text-on-surface-variant text-lg max-w-xl">Precision management for your obsidian-grade infrastructure. Monitor, assign, and execute with absolute clarity.</p>
+                    <p class="text-on-surface-variant text-lg max-w-xl">Precision management for your obsidian-grade
+                        infrastructure. Monitor, assign, and execute with absolute clarity.</p>
                 </div>
-                <button class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold px-8 py-4 rounded-xl shadow-[0_0_20px_rgba(192,193,255,0.2)] flex items-center gap-2 hover:scale-105 transition-transform duration-400 group">
+                <button
+                    class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold px-8 py-4 rounded-xl shadow-[0_0_20px_rgba(192,193,255,0.2)] flex items-center gap-2 hover:scale-105 transition-transform duration-400 group">
                     <span class="material-symbols-outlined text-xl">add</span>
                     Create Task
                 </button>
@@ -37,39 +43,60 @@
                 <!-- ==================== FILTERS & SORTING ==================== -->
                 <aside class="md:col-span-3 space-y-6">
                     <div class="bg-surface-container rounded-xl p-6 shadow-sm">
-                        <h3 class="font-headline text-sm uppercase tracking-widest text-primary mb-6">Execution Filters</h3>
+                        <h3 class="font-headline text-sm uppercase tracking-widest text-primary mb-6">Execution Filters
+                        </h3>
                         <div class="space-y-6">
                             <div>
-                                <label class="block text-xs font-medium text-outline uppercase tracking-wider mb-3">Status Matrix</label>
+                                <label
+                                    class="block text-xs font-medium text-outline uppercase tracking-wider mb-3">Status
+                                    Matrix</label>
                                 <div class="space-y-2">
                                     <label class="flex items-center gap-3 cursor-pointer group">
-                                        <input class="rounded border-outline-variant bg-surface-container-lowest text-primary focus:ring-primary/20 transition-all" type="checkbox"/>
-                                        <span class="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">To Do</span>
+                                        <input
+                                            class="rounded border-outline-variant bg-surface-container-lowest text-primary focus:ring-primary/20 transition-all"
+                                            type="checkbox" />
+                                        <span
+                                            class="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">To
+                                            Do</span>
                                     </label>
                                     <label class="flex items-center gap-3 cursor-pointer group">
-                                        <input checked="" class="rounded border-outline-variant bg-surface-container-lowest text-primary focus:ring-primary/20 transition-all" type="checkbox"/>
-                                        <span class="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">In Progress</span>
+                                        <input checked=""
+                                            class="rounded border-outline-variant bg-surface-container-lowest text-primary focus:ring-primary/20 transition-all"
+                                            type="checkbox" />
+                                        <span
+                                            class="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">In
+                                            Progress</span>
                                     </label>
                                     <label class="flex items-center gap-3 cursor-pointer group">
-                                        <input class="rounded border-outline-variant bg-surface-container-lowest text-primary focus:ring-primary/20 transition-all" type="checkbox"/>
-                                        <span class="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Done</span>
+                                        <input
+                                            class="rounded border-outline-variant bg-surface-container-lowest text-primary focus:ring-primary/20 transition-all"
+                                            type="checkbox" />
+                                        <span
+                                            class="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Done</span>
                                     </label>
                                 </div>
                             </div>
                             <div>
-                                <label class="block text-xs font-medium text-outline uppercase tracking-wider mb-3">Priority Gradient</label>
+                                <label
+                                    class="block text-xs font-medium text-outline uppercase tracking-wider mb-3">Priority
+                                    Gradient</label>
                                 <div class="flex flex-wrap gap-2">
-                                    <button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest border border-outline-variant/20 text-xs hover:border-primary/50 transition-colors">Low</button>
-                                    <button class="px-3 py-1.5 rounded-lg bg-primary/10 border border-primary/30 text-primary text-xs font-semibold">Medium</button>
-                                    <button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest border border-outline-variant/20 text-xs hover:border-primary/50 transition-colors">High</button>
+                                    <button
+                                        class="px-3 py-1.5 rounded-lg bg-surface-container-lowest border border-outline-variant/20 text-xs hover:border-primary/50 transition-colors">Low</button>
+                                    <button
+                                        class="px-3 py-1.5 rounded-lg bg-primary/10 border border-primary/30 text-primary text-xs font-semibold">Medium</button>
+                                    <button
+                                        class="px-3 py-1.5 rounded-lg bg-surface-container-lowest border border-outline-variant/20 text-xs hover:border-primary/50 transition-colors">High</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-gradient-to-br from-surface-container to-surface-container-high rounded-xl p-6 border-l-4 border-primary/40">
+                    <div
+                        class="bg-gradient-to-br from-surface-container to-surface-container-high rounded-xl p-6 border-l-4 border-primary/40">
                         <span class="material-symbols-outlined text-primary mb-4">analytics</span>
                         <h4 class="font-headline text-lg text-on-surface mb-2">Weekly Efficiency</h4>
-                        <p class="text-on-surface-variant text-sm mb-4">You have completed 84% of your high-priority cycles this week.</p>
+                        <p class="text-on-surface-variant text-sm mb-4">You have completed 84% of your high-priority
+                            cycles this week.</p>
                         <div class="h-1.5 w-full bg-surface-container-lowest rounded-full overflow-hidden">
                             <div class="h-full bg-primary w-[84%] rounded-full"></div>
                         </div>
@@ -79,7 +106,8 @@
                 <!-- ==================== TASK LIST MAIN ==================== -->
                 <section class="md:col-span-9 space-y-4">
                     <!-- Table Header -->
-                    <div class="grid grid-cols-12 px-6 py-3 text-xs font-medium text-outline uppercase tracking-widest bg-surface-container-low rounded-t-xl hidden lg:grid">
+                    <div
+                        class="grid grid-cols-12 px-6 py-3 text-xs font-medium text-outline uppercase tracking-widest bg-surface-container-low rounded-t-xl hidden lg:grid">
                         <div class="col-span-5">Task Designation</div>
                         <div class="col-span-2">Protocol Status</div>
                         <div class="col-span-2">Priority</div>
@@ -88,15 +116,19 @@
                     </div>
 
                     <!-- Task Item: Row 1 -->
-                    <div class="group bg-surface-container rounded-xl p-6 transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high shadow-lg lg:grid lg:grid-cols-12 lg:items-center lg:gap-4 border border-transparent hover:border-primary/10">
+                    <div
+                        class="group bg-surface-container rounded-xl p-6 transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high shadow-lg lg:grid lg:grid-cols-12 lg:items-center lg:gap-4 border border-transparent hover:border-primary/10">
                         <div class="col-span-5 mb-4 lg:mb-0">
                             <div class="flex items-center gap-4">
-                                <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
                                     <span class="material-symbols-outlined">terminal</span>
                                 </div>
                                 <div>
-                                    <h3 class="font-bold text-on-surface group-hover:text-primary transition-colors">Initialize Xenon Core v4.2</h3>
-                                    <p class="text-sm text-on-surface-variant line-clamp-1">Deployment of low-latency kernel updates across primary nodes.</p>
+                                    <h3 class="font-bold text-on-surface group-hover:text-primary transition-colors">
+                                        Initialize Xenon Core v4.2</h3>
+                                    <p class="text-sm text-on-surface-variant line-clamp-1">Deployment of low-latency
+                                        kernel updates across primary nodes.</p>
                                 </div>
                             </div>
                         </div>
@@ -107,29 +139,39 @@
                             </span>
                         </div>
                         <div class="col-span-2 mb-4 lg:mb-0">
-                            <span class="px-2.5 py-1 rounded-md bg-error-container/20 text-error text-xs font-bold uppercase border border-error/30">High</span>
+                            <span
+                                class="px-2.5 py-1 rounded-md bg-error-container/20 text-error text-xs font-bold uppercase border border-error/30">High</span>
                         </div>
                         <div class="col-span-2 mb-4 lg:mb-0 flex items-center gap-2">
-                            <img alt="Assignee avatar" class="w-6 h-6 rounded-full bg-surface-container-highest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiQINYoaI7rNEgriQMN-nVGaD9dJIwv1fRH3nmLIPyqbcwvpv-5F6ywNb9ZkYpzh3W-B3vVZsHXTv197t6ojkUJ_wOCTxxiwZMwgeaEI6wiOGnszM8_v1VbqU2980e6gk2QsD4tPz4pIDZjOvaefZdfX96XSsTysVbWMGHJc9IOXyy-pwnNdan6EvugZW5L3vFJXm9HQbGaHlZfkTs81GAOAoMS1uaAsWh6K9ETH7HwwEOTB1bZvU5a_qeoXtbZGk7dVGTTWfyTc0"/>
+                            <img alt="Assignee avatar" class="w-6 h-6 rounded-full bg-surface-container-highest"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiQINYoaI7rNEgriQMN-nVGaD9dJIwv1fRH3nmLIPyqbcwvpv-5F6ywNb9ZkYpzh3W-B3vVZsHXTv197t6ojkUJ_wOCTxxiwZMwgeaEI6wiOGnszM8_v1VbqU2980e6gk2QsD4tPz4pIDZjOvaefZdfX96XSsTysVbWMGHJc9IOXyy-pwnNdan6EvugZW5L3vFJXm9HQbGaHlZfkTs81GAOAoMS1uaAsWh6K9ETH7HwwEOTB1bZvU5a_qeoXtbZGk7dVGTTWfyTc0" />
                             <span class="text-sm text-on-surface-variant">Alex Rivera</span>
                         </div>
                         <div class="col-span-1 flex justify-end gap-2">
-                            <button class="material-symbols-outlined text-outline hover:text-primary transition-colors" title="View Details">visibility</button>
-                            <button class="material-symbols-outlined text-outline hover:text-primary transition-colors" title="Edit Task">edit</button>
-                            <button class="material-symbols-outlined text-outline hover:text-green-400 transition-colors" title="Complete Task">check_circle</button>
+                            <button class="material-symbols-outlined text-outline hover:text-primary transition-colors"
+                                title="View Details">visibility</button>
+                            <button class="material-symbols-outlined text-outline hover:text-primary transition-colors"
+                                title="Edit Task">edit</button>
+                            <button
+                                class="material-symbols-outlined text-outline hover:text-green-400 transition-colors"
+                                title="Complete Task">check_circle</button>
                         </div>
                     </div>
 
                     <!-- Task Item: Row 2 -->
-                    <div class="group bg-surface-container rounded-xl p-6 transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high shadow-lg lg:grid lg:grid-cols-12 lg:items-center lg:gap-4 border border-transparent hover:border-primary/10">
+                    <div
+                        class="group bg-surface-container rounded-xl p-6 transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high shadow-lg lg:grid lg:grid-cols-12 lg:items-center lg:gap-4 border border-transparent hover:border-primary/10">
                         <div class="col-span-5 mb-4 lg:mb-0">
                             <div class="flex items-center gap-4">
-                                <div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
                                     <span class="material-symbols-outlined">database</span>
                                 </div>
                                 <div>
-                                    <h3 class="font-bold text-on-surface group-hover:text-primary transition-colors">Neural Sync Optimization</h3>
-                                    <p class="text-sm text-on-surface-variant line-clamp-1">Database indexing for real-time telemetry processing.</p>
+                                    <h3 class="font-bold text-on-surface group-hover:text-primary transition-colors">
+                                        Neural Sync Optimization</h3>
+                                    <p class="text-sm text-on-surface-variant line-clamp-1">Database indexing for
+                                        real-time telemetry processing.</p>
                                 </div>
                             </div>
                         </div>
@@ -140,29 +182,38 @@
                             </span>
                         </div>
                         <div class="col-span-2 mb-4 lg:mb-0">
-                            <span class="px-2.5 py-1 rounded-md bg-tertiary-container/20 text-tertiary text-xs font-bold uppercase border border-tertiary/30">Medium</span>
+                            <span
+                                class="px-2.5 py-1 rounded-md bg-tertiary-container/20 text-tertiary text-xs font-bold uppercase border border-tertiary/30">Medium</span>
                         </div>
                         <div class="col-span-2 mb-4 lg:mb-0 flex items-center gap-2">
-                            <img alt="Assignee avatar" class="w-6 h-6 rounded-full bg-surface-container-highest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5maxBPRHCBnc_n1u8GzBwN8F_ib70eo-BEVda6qBsrVwrInbx8YCtNN9itFuy061Le2Mbfs0T806o4QkP9mfkn1hQSNyBCqsT5G6NTYRgxxbpU63vETF95PSFUmhmicdkBQ0orwyaIULcTaUiSHUrRT3SF237MoT4QTaJbdTJKDhFNUR-W9ujewujG5bGOT1dhbDWpUl3JS9RhiQO_3oG0j0lzn85AMtADmam5MUpOXcOI5WRAe6M5pOnkrFWUopXSwObVGkHhpk"/>
+                            <img alt="Assignee avatar" class="w-6 h-6 rounded-full bg-surface-container-highest"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5maxBPRHCBnc_n1u8GzBwN8F_ib70eo-BEVda6qBsrVwrInbx8YCtNN9itFuy061Le2Mbfs0T806o4QkP9mfkn1hQSNyBCqsT5G6NTYRgxxbpU63vETF95PSFUmhmicdkBQ0orwyaIULcTaUiSHUrRT3SF237MoT4QTaJbdTJKDhFNUR-W9ujewujG5bGOT1dhbDWpUl3JS9RhiQO_3oG0j0lzn85AMtADmam5MUpOXcOI5WRAe6M5pOnkrFWUopXSwObVGkHhpk" />
                             <span class="text-sm text-on-surface-variant">Marcus Chen</span>
                         </div>
                         <div class="col-span-1 flex justify-end gap-2">
-                            <button class="material-symbols-outlined text-outline hover:text-primary transition-colors">visibility</button>
-                            <button class="material-symbols-outlined text-outline hover:text-primary transition-colors">edit</button>
-                            <button class="material-symbols-outlined text-outline hover:text-green-400 transition-colors">check_circle</button>
+                            <button
+                                class="material-symbols-outlined text-outline hover:text-primary transition-colors">visibility</button>
+                            <button
+                                class="material-symbols-outlined text-outline hover:text-primary transition-colors">edit</button>
+                            <button
+                                class="material-symbols-outlined text-outline hover:text-green-400 transition-colors">check_circle</button>
                         </div>
                     </div>
 
                     <!-- Task Item: Row 3 -->
-                    <div class="group bg-surface-container rounded-xl p-6 transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high shadow-lg lg:grid lg:grid-cols-12 lg:items-center lg:gap-4 border border-transparent hover:border-primary/10">
+                    <div
+                        class="group bg-surface-container rounded-xl p-6 transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high shadow-lg lg:grid lg:grid-cols-12 lg:items-center lg:gap-4 border border-transparent hover:border-primary/10">
                         <div class="col-span-5 mb-4 lg:mb-0">
                             <div class="flex items-center gap-4">
-                                <div class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center text-green-400">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center text-green-400">
                                     <span class="material-symbols-outlined">security</span>
                                 </div>
                                 <div>
-                                    <h3 class="font-bold text-on-surface-variant line-through">Biometric Security Audit</h3>
-                                    <p class="text-sm text-on-surface-variant/60 line-clamp-1">Compliance review of facial recognition protocols.</p>
+                                    <h3 class="font-bold text-on-surface-variant line-through">Biometric Security Audit
+                                    </h3>
+                                    <p class="text-sm text-on-surface-variant/60 line-clamp-1">Compliance review of
+                                        facial recognition protocols.</p>
                                 </div>
                             </div>
                         </div>
@@ -173,31 +224,40 @@
                             </span>
                         </div>
                         <div class="col-span-2 mb-4 lg:mb-0">
-                            <span class="px-2.5 py-1 rounded-md bg-surface-container-highest text-outline text-xs font-bold uppercase border border-outline/20">Low</span>
+                            <span
+                                class="px-2.5 py-1 rounded-md bg-surface-container-highest text-outline text-xs font-bold uppercase border border-outline/20">Low</span>
                         </div>
                         <div class="col-span-2 mb-4 lg:mb-0 flex items-center gap-2">
-                            <img alt="Assignee avatar" class="w-6 h-6 rounded-full bg-surface-container-highest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-M2gQE093hhXBMnM4W2ru3_sPMFLzOjip6CnwTFtgEQh-oU6gBNrNRRQKLTThyuRo69fPC21YXZVRvw6Ws1HxB714Iq94jHLT1mWtDY-hDqDC-N1BMNe4FMwmVaavApPL06KGbQfkI-2XtbWsAIUtNn1PzkpDKsG6oOCpJxLkAyJRXkam7uuTBjCtF8JQ9h_DfSR6uVM3Og_U8eiwPcY7gNI91dlrsHRnjCYITXTcX4awxQrG6dehwj18jI1fi7M3TeL2VvV5sx0"/>
+                            <img alt="Assignee avatar" class="w-6 h-6 rounded-full bg-surface-container-highest"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-M2gQE093hhXBMnM4W2ru3_sPMFLzOjip6CnwTFtgEQh-oU6gBNrNRRQKLTThyuRo69fPC21YXZVRvw6Ws1HxB714Iq94jHLT1mWtDY-hDqDC-N1BMNe4FMwmVaavApPL06KGbQfkI-2XtbWsAIUtNn1PzkpDKsG6oOCpJxLkAyJRXkam7uuTBjCtF8JQ9h_DfSR6uVM3Og_U8eiwPcY7gNI91dlrsHRnjCYITXTcX4awxQrG6dehwj18jI1fi7M3TeL2VvV5sx0" />
                             <span class="text-sm text-on-surface-variant">Sara Voss</span>
                         </div>
                         <div class="col-span-1 flex justify-end gap-2">
-                            <button class="material-symbols-outlined text-outline hover:text-primary transition-colors">visibility</button>
-                            <button class="material-symbols-outlined text-outline hover:text-primary transition-colors">edit</button>
+                            <button
+                                class="material-symbols-outlined text-outline hover:text-primary transition-colors">visibility</button>
+                            <button
+                                class="material-symbols-outlined text-outline hover:text-primary transition-colors">edit</button>
                             <button class="material-symbols-outlined text-green-400">check_circle</button>
                         </div>
                     </div>
 
                     <!-- Task Item: Row 4 (Critical Milestone) -->
-                    <div class="group bg-gradient-to-br from-surface-container to-[#1a1e2e] rounded-xl p-8 transition-all duration-400 hover:shadow-2xl lg:grid lg:grid-cols-12 lg:items-center lg:gap-4 border border-primary/5 relative overflow-hidden">
+                    <div
+                        class="group bg-gradient-to-br from-surface-container to-[#1a1e2e] rounded-xl p-8 transition-all duration-400 hover:shadow-2xl lg:grid lg:grid-cols-12 lg:items-center lg:gap-4 border border-primary/5 relative overflow-hidden">
                         <div class="absolute -right-12 -top-12 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
                         <div class="col-span-5 mb-4 lg:mb-0 relative z-10">
                             <div class="flex items-center gap-6">
-                                <div class="w-14 h-14 rounded-xl bg-primary flex items-center justify-center text-surface shadow-[0_0_20px_rgba(192,193,255,0.4)]">
+                                <div
+                                    class="w-14 h-14 rounded-xl bg-primary flex items-center justify-center text-surface shadow-[0_0_20px_rgba(192,193,255,0.4)]">
                                     <span class="material-symbols-outlined text-3xl">rocket_launch</span>
                                 </div>
                                 <div>
-                                    <span class="text-[10px] font-bold text-primary tracking-[0.2em] uppercase mb-1 block">Critical Milestone</span>
+                                    <span
+                                        class="text-[10px] font-bold text-primary tracking-[0.2em] uppercase mb-1 block">Critical
+                                        Milestone</span>
                                     <h3 class="font-headline text-2xl text-on-surface">Galaxy Gate Beta Integration</h3>
-                                    <p class="text-sm text-on-surface-variant mt-1">Full-stack bridge between internal Xenon protocols and public API nodes.</p>
+                                    <p class="text-sm text-on-surface-variant mt-1">Full-stack bridge between internal
+                                        Xenon protocols and public API nodes.</p>
                                 </div>
                             </div>
                         </div>
@@ -214,16 +274,20 @@
                             </span>
                         </div>
                         <div class="col-span-3 flex justify-end gap-3">
-                            <button class="bg-surface-container-highest text-on-surface-variant px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-surface-bright transition-all">Details</button>
-                            <button class="bg-primary text-on-primary px-5 py-2.5 rounded-lg text-sm font-bold shadow-lg hover:brightness-110 transition-all">Initialize</button>
+                            <button
+                                class="bg-surface-container-highest text-on-surface-variant px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-surface-bright transition-all">Details</button>
+                            <button
+                                class="bg-primary text-on-primary px-5 py-2.5 rounded-lg text-sm font-bold shadow-lg hover:brightness-110 transition-all">Initialize</button>
                         </div>
                     </div>
 
                     <!-- Pagination -->
                     <div class="pt-8 flex justify-center">
-                        <button class="text-outline text-sm font-medium flex items-center gap-2 hover:text-primary transition-colors group">
+                        <button
+                            class="text-outline text-sm font-medium flex items-center gap-2 hover:text-primary transition-colors group">
                             Load more encrypted tasks
-                            <span class="material-symbols-outlined text-lg group-hover:translate-y-1 transition-transform">expand_more</span>
+                            <span
+                                class="material-symbols-outlined text-lg group-hover:translate-y-1 transition-transform">expand_more</span>
                         </button>
                     </div>
                 </section>
@@ -231,15 +295,20 @@
         </div>
 
         <!-- ==================== FOOTER ==================== -->
-        <footer class="mt-12 px-8 py-6 border-t border-[var(--color-outline-variant)]/15 bg-[var(--color-surface)] flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-300 outfit">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">© 2024 Obsidian Architect • System Status: <span class="text-[var(--color-success)]">Operational</span></p>
+        <footer
+            class="mt-12 px-8 py-6 border-t border-[var(--color-outline-variant)]/15 bg-[var(--color-surface)] flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-300 outfit">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">© 2024 Obsidian Architect • System
+                Status: <span class="text-[var(--color-success)]">Operational</span></p>
             <div class="flex gap-4 items-center">
-                <span class="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse shadow-[0_0_10px_rgba(99,102,241,0.4)]"></span>
-                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Region: Global-Alpha-1</span>
+                <span
+                    class="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse shadow-[0_0_10px_rgba(99,102,241,0.4)]"></span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Region:
+                    Global-Alpha-1</span>
             </div>
         </footer>
     </main>
 
     <script src="../../assets/js/app.js"></script>
 </body>
+
 </html>

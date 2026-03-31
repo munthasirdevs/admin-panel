@@ -1,48 +1,61 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Report Builder | XenonOS</title>
 
     <!-- === CORE ASSETS === -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="../../assets/js/tailwind-config.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Manrope:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
 
     <!-- === CUSTOM STYLES === -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
+
 <body class="bg-background text-on-background font-body selection:bg-primary-container/30">
 
     <!-- === MAIN WORKSPACE === -->
     <main class="min-h-screen grid grid-cols-12 gap-0 overflow-hidden">
 
         <!-- === LEFT COLUMN: REPORT BUILDER === -->
-        <section class="col-span-3 bg-surface-container-low p-6 flex flex-col gap-8 overflow-y-auto custom-scrollbar border-r border-outline-variant/10">
+        <section
+            class="col-span-3 bg-surface-container-low p-6 flex flex-col gap-8 overflow-y-auto custom-scrollbar border-r border-outline-variant/10">
             <div>
                 <h2 class="font-headline text-lg font-extrabold text-primary mb-6 tracking-tight">Report Builder</h2>
 
                 <!-- Data Source -->
                 <div class="space-y-3 mb-8">
-                    <label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Data Source</label>
+                    <label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Data
+                        Source</label>
                     <div class="grid grid-cols-1 gap-2">
-                        <button class="flex items-center gap-3 p-3 bg-surface-container-high border border-primary/20 rounded-xl text-left text-on-surface group hover:border-primary transition-all">
+                        <button
+                            class="flex items-center gap-3 p-3 bg-surface-container-high border border-primary/20 rounded-xl text-left text-on-surface group hover:border-primary transition-all">
                             <span class="material-symbols-outlined text-primary">group</span>
                             <span class="text-sm font-medium">Clients</span>
-                            <span class="ml-auto material-symbols-outlined text-xs text-primary/40">radio_button_checked</span>
+                            <span
+                                class="ml-auto material-symbols-outlined text-xs text-primary/40">radio_button_checked</span>
                         </button>
-                        <button class="flex items-center gap-3 p-3 bg-surface-container rounded-xl text-left text-on-surface-variant hover:bg-surface-container-high transition-all">
+                        <button
+                            class="flex items-center gap-3 p-3 bg-surface-container rounded-xl text-left text-on-surface-variant hover:bg-surface-container-high transition-all">
                             <span class="material-symbols-outlined">assignment</span>
                             <span class="text-sm font-medium">Projects</span>
                         </button>
-                        <button class="flex items-center gap-3 p-3 bg-surface-container rounded-xl text-left text-on-surface-variant hover:bg-surface-container-high transition-all">
+                        <button
+                            class="flex items-center gap-3 p-3 bg-surface-container rounded-xl text-left text-on-surface-variant hover:bg-surface-container-high transition-all">
                             <span class="material-symbols-outlined">check_circle</span>
                             <span class="text-sm font-medium">Tasks</span>
                         </button>
-                        <button class="flex items-center gap-3 p-3 bg-surface-container rounded-xl text-left text-on-surface-variant hover:bg-surface-container-high transition-all">
+                        <button
+                            class="flex items-center gap-3 p-3 bg-surface-container rounded-xl text-left text-on-surface-variant hover:bg-surface-container-high transition-all">
                             <span class="material-symbols-outlined">payments</span>
                             <span class="text-sm font-medium">Billing</span>
                         </button>
@@ -51,21 +64,27 @@
 
                 <!-- Filters -->
                 <div class="space-y-4 mb-8">
-                    <label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Global Filters</label>
+                    <label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Global
+                        Filters</label>
                     <div class="space-y-4">
                         <div class="space-y-2">
                             <p class="text-xs text-on-surface-variant font-medium">Date Range</p>
-                            <div class="flex items-center gap-2 p-2.5 bg-surface-container-lowest rounded-xl border border-outline-variant/20">
-                                <span class="material-symbols-outlined text-sm text-on-surface-variant">calendar_today</span>
+                            <div
+                                class="flex items-center gap-2 p-2.5 bg-surface-container-lowest rounded-xl border border-outline-variant/20">
+                                <span
+                                    class="material-symbols-outlined text-sm text-on-surface-variant">calendar_today</span>
                                 <span class="text-xs text-on-surface">Oct 1, 2023 - Oct 31, 2023</span>
                             </div>
                         </div>
                         <div class="space-y-2">
                             <p class="text-xs text-on-surface-variant font-medium">Status</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded-full border border-primary/20">Active</span>
-                                <span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold rounded-full border border-outline-variant/10">Completed</span>
-                                <span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold rounded-full border border-outline-variant/10">Pending</span>
+                                <span
+                                    class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded-full border border-primary/20">Active</span>
+                                <span
+                                    class="px-3 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold rounded-full border border-outline-variant/10">Completed</span>
+                                <span
+                                    class="px-3 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold rounded-full border border-outline-variant/10">Pending</span>
                             </div>
                         </div>
                     </div>
@@ -73,9 +92,12 @@
 
                 <!-- Query Builder Placeholder -->
                 <div class="space-y-3">
-                    <label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Query Schema</label>
-                    <div class="p-4 border-2 border-dashed border-outline-variant/30 rounded-xl bg-surface-container-lowest/50 group hover:border-primary/40 transition-all flex flex-col items-center justify-center gap-3 text-center min-h-[160px]">
-                        <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+                    <label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Query
+                        Schema</label>
+                    <div
+                        class="p-4 border-2 border-dashed border-outline-variant/30 rounded-xl bg-surface-container-lowest/50 group hover:border-primary/40 transition-all flex flex-col items-center justify-center gap-3 text-center min-h-[160px]">
+                        <div
+                            class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
                             <span class="material-symbols-outlined">drag_indicator</span>
                         </div>
                         <div>
@@ -87,7 +109,8 @@
             </div>
 
             <div class="mt-auto pt-6">
-                <button class="w-full py-4 indigo-gradient-bg text-on-primary-container font-headline font-bold rounded-2xl flex items-center justify-center gap-3 hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:-translate-y-1">
+                <button
+                    class="w-full py-4 indigo-gradient-bg text-on-primary-container font-headline font-bold rounded-2xl flex items-center justify-center gap-3 hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:-translate-y-1">
                     <span class="material-symbols-outlined">play_circle</span>
                     GENERATE REPORT
                 </button>
@@ -100,14 +123,17 @@
             <!-- Breadcrumbs / Actions -->
             <div class="flex items-center justify-between">
                 <div>
-                    <h1 class="text-3xl font-headline font-extrabold text-on-surface tracking-tighter">October Performance Analysis</h1>
+                    <h1 class="text-3xl font-headline font-extrabold text-on-surface tracking-tighter">October
+                        Performance Analysis</h1>
                     <p class="text-sm text-on-surface-variant mt-1">Real-time preview based on live data source</p>
                 </div>
                 <div class="flex gap-2">
-                    <button class="w-10 h-10 flex items-center justify-center bg-surface-container rounded-xl border border-outline-variant/10 hover:bg-surface-container-high transition-all text-on-surface-variant">
+                    <button
+                        class="w-10 h-10 flex items-center justify-center bg-surface-container rounded-xl border border-outline-variant/10 hover:bg-surface-container-high transition-all text-on-surface-variant">
                         <span class="material-symbols-outlined">save</span>
                     </button>
-                    <button class="w-10 h-10 flex items-center justify-center bg-surface-container rounded-xl border border-outline-variant/10 hover:bg-surface-container-high transition-all text-on-surface-variant">
+                    <button
+                        class="w-10 h-10 flex items-center justify-center bg-surface-container rounded-xl border border-outline-variant/10 hover:bg-surface-container-high transition-all text-on-surface-variant">
                         <span class="material-symbols-outlined">file_download</span>
                     </button>
                 </div>
@@ -115,52 +141,63 @@
 
             <!-- === KPI BENTO GRID === -->
             <div class="grid grid-cols-3 gap-4">
-                <div class="bg-surface-container p-6 rounded-2xl border border-outline-variant/5 hover:bg-surface-container-high transition-all group">
+                <div
+                    class="bg-surface-container p-6 rounded-2xl border border-outline-variant/5 hover:bg-surface-container-high transition-all group">
                     <div class="flex justify-between items-start mb-4">
                         <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
                             <span class="material-symbols-outlined">payments</span>
                         </div>
                         <span class="text-[10px] font-bold text-emerald-400">+12.4%</span>
                     </div>
-                    <p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Total Revenue</p>
+                    <p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Total
+                        Revenue</p>
                     <h3 class="text-2xl font-headline font-bold text-on-surface">$142,500</h3>
                 </div>
 
-                <div class="bg-surface-container p-6 rounded-2xl border border-outline-variant/5 hover:bg-surface-container-high transition-all">
+                <div
+                    class="bg-surface-container p-6 rounded-2xl border border-outline-variant/5 hover:bg-surface-container-high transition-all">
                     <div class="flex justify-between items-start mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-secondary-container/30 flex items-center justify-center text-secondary">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-secondary-container/30 flex items-center justify-center text-secondary">
                             <span class="material-symbols-outlined">layers</span>
                         </div>
                         <span class="text-[10px] font-bold text-on-surface-variant">Stable</span>
                     </div>
-                    <p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Active Projects</p>
+                    <p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Active
+                        Projects</p>
                     <h3 class="text-2xl font-headline font-bold text-on-surface">48</h3>
                 </div>
 
-                <div class="bg-surface-container p-6 rounded-2xl border border-outline-variant/5 hover:bg-surface-container-high transition-all group">
+                <div
+                    class="bg-surface-container p-6 rounded-2xl border border-outline-variant/5 hover:bg-surface-container-high transition-all group">
                     <div class="flex justify-between items-start mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-tertiary-container/20 flex items-center justify-center text-tertiary">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-tertiary-container/20 flex items-center justify-center text-tertiary">
                             <span class="material-symbols-outlined">bolt</span>
                         </div>
                         <span class="text-[10px] font-bold text-emerald-400">98%</span>
                     </div>
-                    <p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Completion Rate</p>
+                    <p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Completion
+                        Rate</p>
                     <h3 class="text-2xl font-headline font-bold text-on-surface">94.2%</h3>
                 </div>
             </div>
 
             <!-- === INTERACTIVE CHART AREA === -->
-            <div class="bg-surface-container p-8 rounded-2xl border border-outline-variant/5 flex flex-col gap-6 relative overflow-hidden min-h-[320px]">
+            <div
+                class="bg-surface-container p-8 rounded-2xl border border-outline-variant/5 flex flex-col gap-6 relative overflow-hidden min-h-[320px]">
                 <div class="flex items-center justify-between z-10">
                     <h4 class="font-headline font-bold text-on-surface">Revenue vs Projections</h4>
                     <div class="flex items-center gap-4">
                         <div class="flex items-center gap-2">
                             <span class="w-2 h-2 rounded-full bg-primary"></span>
-                            <span class="text-[10px] text-on-surface-variant font-bold uppercase tracking-tight">Actual</span>
+                            <span
+                                class="text-[10px] text-on-surface-variant font-bold uppercase tracking-tight">Actual</span>
                         </div>
                         <div class="flex items-center gap-2">
                             <span class="w-2 h-2 rounded-full bg-outline-variant"></span>
-                            <span class="text-[10px] text-on-surface-variant font-bold uppercase tracking-tight">Forecast</span>
+                            <span
+                                class="text-[10px] text-on-surface-variant font-bold uppercase tracking-tight">Forecast</span>
                         </div>
                     </div>
                 </div>
@@ -168,10 +205,15 @@
                 <!-- Visualization Placeholder (Asymmetric Bars) -->
                 <div class="flex-1 flex items-end gap-3 pb-4">
                     <div class="w-full bg-surface-container-lowest h-48 rounded-t-lg relative group">
-                        <div class="absolute bottom-0 left-0 w-full bg-primary/20 rounded-t-lg h-[60%] transition-all group-hover:bg-primary/30"></div>
-                        <div class="absolute bottom-0 left-0 w-full bg-primary rounded-t-lg h-[45%] shadow-[0_-8px_16px_-4px_rgba(192,193,255,0.4)]"></div>
+                        <div
+                            class="absolute bottom-0 left-0 w-full bg-primary/20 rounded-t-lg h-[60%] transition-all group-hover:bg-primary/30">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 w-full bg-primary rounded-t-lg h-[45%] shadow-[0_-8px_16px_-4px_rgba(192,193,255,0.4)]">
+                        </div>
                         <!-- Tooltip -->
-                        <div class="absolute -top-12 left-1/2 -translate-x-1/2 bg-surface-container-highest px-3 py-1.5 rounded-lg text-[10px] opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20 shadow-xl border border-outline-variant/20">
+                        <div
+                            class="absolute -top-12 left-1/2 -translate-x-1/2 bg-surface-container-highest px-3 py-1.5 rounded-lg text-[10px] opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20 shadow-xl border border-outline-variant/20">
                             <span class="text-primary font-bold">Week 1:</span> $32,400
                         </div>
                     </div>
@@ -216,7 +258,8 @@
                 </div>
                 <table class="w-full text-left text-xs">
                     <thead>
-                        <tr class="bg-surface-container-high text-on-surface-variant uppercase tracking-widest font-bold">
+                        <tr
+                            class="bg-surface-container-high text-on-surface-variant uppercase tracking-widest font-bold">
                             <th class="px-6 py-3">Client</th>
                             <th class="px-6 py-3">Project</th>
                             <th class="px-6 py-3">Revenue</th>
@@ -229,29 +272,42 @@
                             <td class="px-6 py-4 font-medium">Aetheris Corp</td>
                             <td class="px-6 py-4 text-on-surface-variant">Quantum CRM</td>
                             <td class="px-6 py-4 text-on-surface font-bold">$24,500.00</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 bg-emerald-500/10 text-emerald-400 rounded-md">Paid</span></td>
-                            <td class="px-6 py-4 text-right"><span class="material-symbols-outlined text-sm cursor-pointer hover:text-primary">more_vert</span></td>
+                            <td class="px-6 py-4"><span
+                                    class="px-2 py-0.5 bg-emerald-500/10 text-emerald-400 rounded-md">Paid</span></td>
+                            <td class="px-6 py-4 text-right"><span
+                                    class="material-symbols-outlined text-sm cursor-pointer hover:text-primary">more_vert</span>
+                            </td>
                         </tr>
                         <tr class="hover:bg-surface-container-highest/50 transition-colors">
                             <td class="px-6 py-4 font-medium">Lumina Labs</td>
                             <td class="px-6 py-4 text-on-surface-variant">Biotech Dashboard</td>
                             <td class="px-6 py-4 text-on-surface font-bold">$12,000.00</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 bg-emerald-500/10 text-emerald-400 rounded-md">Paid</span></td>
-                            <td class="px-6 py-4 text-right"><span class="material-symbols-outlined text-sm cursor-pointer hover:text-primary">more_vert</span></td>
+                            <td class="px-6 py-4"><span
+                                    class="px-2 py-0.5 bg-emerald-500/10 text-emerald-400 rounded-md">Paid</span></td>
+                            <td class="px-6 py-4 text-right"><span
+                                    class="material-symbols-outlined text-sm cursor-pointer hover:text-primary">more_vert</span>
+                            </td>
                         </tr>
                         <tr class="hover:bg-surface-container-highest/50 transition-colors">
                             <td class="px-6 py-4 font-medium">Void Space</td>
                             <td class="px-6 py-4 text-on-surface-variant">Satellite Uplink</td>
                             <td class="px-6 py-4 text-on-surface font-bold">$45,200.00</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 bg-primary-container/20 text-primary rounded-md">Processing</span></td>
-                            <td class="px-6 py-4 text-right"><span class="material-symbols-outlined text-sm cursor-pointer hover:text-primary">more_vert</span></td>
+                            <td class="px-6 py-4"><span
+                                    class="px-2 py-0.5 bg-primary-container/20 text-primary rounded-md">Processing</span>
+                            </td>
+                            <td class="px-6 py-4 text-right"><span
+                                    class="material-symbols-outlined text-sm cursor-pointer hover:text-primary">more_vert</span>
+                            </td>
                         </tr>
                         <tr class="hover:bg-surface-container-highest/50 transition-colors">
                             <td class="px-6 py-4 font-medium">Neon District</td>
                             <td class="px-6 py-4 text-on-surface-variant">Marketing Kit</td>
                             <td class="px-6 py-4 text-on-surface font-bold">$3,400.00</td>
-                            <td class="px-6 py-4"><span class="px-2 py-0.5 bg-error-container/20 text-error rounded-md">Overdue</span></td>
-                            <td class="px-6 py-4 text-right"><span class="material-symbols-outlined text-sm cursor-pointer hover:text-primary">more_vert</span></td>
+                            <td class="px-6 py-4"><span
+                                    class="px-2 py-0.5 bg-error-container/20 text-error rounded-md">Overdue</span></td>
+                            <td class="px-6 py-4 text-right"><span
+                                    class="material-symbols-outlined text-sm cursor-pointer hover:text-primary">more_vert</span>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -259,27 +315,33 @@
         </section>
 
         <!-- === RIGHT COLUMN: VISUALIZATION SETTINGS === -->
-        <section class="col-span-3 bg-surface-container-low p-6 flex flex-col gap-8 overflow-y-auto custom-scrollbar border-l border-outline-variant/10">
+        <section
+            class="col-span-3 bg-surface-container-low p-6 flex flex-col gap-8 overflow-y-auto custom-scrollbar border-l border-outline-variant/10">
             <div>
                 <h2 class="font-headline text-lg font-extrabold text-primary mb-6 tracking-tight">Visualization</h2>
 
                 <!-- Type Selector -->
                 <div class="space-y-3 mb-8">
-                    <label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Chart Type</label>
+                    <label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Chart
+                        Type</label>
                     <div class="grid grid-cols-2 gap-2">
-                        <button class="flex flex-col items-center justify-center p-4 bg-surface-container-high border border-primary/40 rounded-xl text-primary gap-2 transition-all">
+                        <button
+                            class="flex flex-col items-center justify-center p-4 bg-surface-container-high border border-primary/40 rounded-xl text-primary gap-2 transition-all">
                             <span class="material-symbols-outlined text-2xl">bar_chart</span>
                             <span class="text-[10px] font-bold uppercase">Bar Chart</span>
                         </button>
-                        <button class="flex flex-col items-center justify-center p-4 bg-surface-container rounded-xl text-on-surface-variant gap-2 hover:bg-surface-container-high transition-all">
+                        <button
+                            class="flex flex-col items-center justify-center p-4 bg-surface-container rounded-xl text-on-surface-variant gap-2 hover:bg-surface-container-high transition-all">
                             <span class="material-symbols-outlined text-2xl">show_chart</span>
                             <span class="text-[10px] font-bold uppercase">Line Graph</span>
                         </button>
-                        <button class="flex flex-col items-center justify-center p-4 bg-surface-container rounded-xl text-on-surface-variant gap-2 hover:bg-surface-container-high transition-all">
+                        <button
+                            class="flex flex-col items-center justify-center p-4 bg-surface-container rounded-xl text-on-surface-variant gap-2 hover:bg-surface-container-high transition-all">
                             <span class="material-symbols-outlined text-2xl">pie_chart</span>
                             <span class="text-[10px] font-bold uppercase">Pie Chart</span>
                         </button>
-                        <button class="flex flex-col items-center justify-center p-4 bg-surface-container rounded-xl text-on-surface-variant gap-2 hover:bg-surface-container-high transition-all">
+                        <button
+                            class="flex flex-col items-center justify-center p-4 bg-surface-container rounded-xl text-on-surface-variant gap-2 hover:bg-surface-container-high transition-all">
                             <span class="material-symbols-outlined text-2xl">table_rows</span>
                             <span class="text-[10px] font-bold uppercase">Raw Table</span>
                         </button>
@@ -288,24 +350,29 @@
 
                 <!-- Grouping & Sorting -->
                 <div class="space-y-4 mb-8">
-                    <label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Group &amp; Sort</label>
+                    <label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Group &amp;
+                        Sort</label>
                     <div class="space-y-4">
                         <div class="space-y-2">
                             <p class="text-[10px] font-bold text-on-surface-variant uppercase">Primary Grouping</p>
                             <div class="relative">
-                                <select class="w-full bg-surface-container-lowest border-none rounded-xl py-2.5 px-4 text-xs appearance-none focus:ring-1 focus:ring-primary/40">
+                                <select
+                                    class="w-full bg-surface-container-lowest border-none rounded-xl py-2.5 px-4 text-xs appearance-none focus:ring-1 focus:ring-primary/40">
                                     <option>Client Name</option>
                                     <option>Project Category</option>
                                     <option>Assignee</option>
                                 </select>
-                                <span class="absolute right-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-xs pointer-events-none">expand_more</span>
+                                <span
+                                    class="absolute right-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-xs pointer-events-none">expand_more</span>
                             </div>
                         </div>
                         <div class="space-y-2">
                             <p class="text-[10px] font-bold text-on-surface-variant uppercase">Sort Direction</p>
                             <div class="flex gap-2">
-                                <button class="flex-1 py-2 bg-surface-container-high text-primary border border-primary/20 text-[10px] font-bold rounded-lg uppercase">Ascending</button>
-                                <button class="flex-1 py-2 bg-surface-container-lowest text-on-surface-variant border border-outline-variant/10 text-[10px] font-bold rounded-lg uppercase">Descending</button>
+                                <button
+                                    class="flex-1 py-2 bg-surface-container-high text-primary border border-primary/20 text-[10px] font-bold rounded-lg uppercase">Ascending</button>
+                                <button
+                                    class="flex-1 py-2 bg-surface-container-lowest text-on-surface-variant border border-outline-variant/10 text-[10px] font-bold rounded-lg uppercase">Descending</button>
                             </div>
                         </div>
                     </div>
@@ -313,11 +380,14 @@
 
                 <!-- Output Settings -->
                 <div class="space-y-4">
-                    <label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Output Config</label>
+                    <label class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Output
+                        Config</label>
                     <div class="space-y-4">
                         <div class="flex items-center justify-between">
                             <span class="text-xs text-on-surface-variant">Rows per page</span>
-                            <input class="w-16 bg-surface-container-lowest border-none rounded-lg text-xs py-1 px-2 text-right" type="number" value="25"/>
+                            <input
+                                class="w-16 bg-surface-container-lowest border-none rounded-lg text-xs py-1 px-2 text-right"
+                                type="number" value="25" />
                         </div>
                         <div class="flex items-center justify-between">
                             <span class="text-xs text-on-surface-variant">Show subtotals</span>
@@ -334,11 +404,13 @@
             </div>
 
             <div class="mt-auto pt-6 flex flex-col gap-3">
-                <button class="w-full py-3 bg-surface-container-highest text-on-surface font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-surface-bright transition-all text-sm border border-outline-variant/10">
+                <button
+                    class="w-full py-3 bg-surface-container-highest text-on-surface font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-surface-bright transition-all text-sm border border-outline-variant/10">
                     <span class="material-symbols-outlined text-lg">picture_as_pdf</span>
                     Export as PDF
                 </button>
-                <button class="w-full py-3 bg-surface-container-highest text-on-surface font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-surface-bright transition-all text-sm border border-outline-variant/10">
+                <button
+                    class="w-full py-3 bg-surface-container-highest text-on-surface font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-surface-bright transition-all text-sm border border-outline-variant/10">
                     <span class="material-symbols-outlined text-lg">csv</span>
                     Export as CSV
                 </button>
@@ -349,4 +421,5 @@
     <!-- === SCRIPTS === -->
     <script src="../../assets/js/app.js"></script>
 </body>
+
 </html>
