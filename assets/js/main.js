@@ -5,8 +5,8 @@
  * ==================================================================
  */
 
-(function() {
-  'use strict';
+(function () {
+  "use strict";
 
   // ================================================================
   // UTILITY FUNCTIONS
@@ -102,18 +102,22 @@
    */
   const initActiveNavigation = () => {
     const currentPath = window.location.pathname;
-    const currentPage = currentPath.split('/').pop() || 'index.html';
-    
+    const currentPage = currentPath.split("/").pop() || "index.html";
+
     // Get all navigation items
-    const navItems = getElements('.nav-item');
-    
-    navItems.forEach(item => {
-      const href = item.getAttribute('href');
-      if (href && (currentPage === href.split('/').pop() || 
-                   currentPage.replace('.html', '') === href.split('/').pop().replace('.html', ''))) {
-        addClass(item, 'active');
+    const navItems = getElements(".nav-item");
+
+    navItems.forEach((item) => {
+      const href = item.getAttribute("href");
+      if (
+        href &&
+        (currentPage === href.split("/").pop() ||
+          currentPage.replace(".html", "") ===
+            href.split("/").pop().replace(".html", ""))
+      ) {
+        addClass(item, "active");
       } else {
-        removeClass(item, 'active');
+        removeClass(item, "active");
       }
     });
   };
@@ -126,15 +130,15 @@
    * Initialize theme from localStorage
    */
   const initTheme = () => {
-    const savedTheme = localStorage.getItem('theme');
+    const savedTheme = localStorage.getItem("theme");
     const html = document.documentElement;
-    
-    if (savedTheme === 'light') {
-      html.classList.remove('dark');
-      html.classList.add('light');
+
+    if (savedTheme === "light") {
+      html.classList.remove("dark");
+      html.classList.add("light");
     } else {
-      html.classList.add('dark');
-      html.classList.remove('light');
+      html.classList.add("dark");
+      html.classList.remove("light");
     }
   };
 
@@ -143,16 +147,16 @@
    */
   const toggleTheme = () => {
     const html = document.documentElement;
-    const isDark = html.classList.contains('dark');
-    
+    const isDark = html.classList.contains("dark");
+
     if (isDark) {
-      html.classList.remove('dark');
-      html.classList.add('light');
-      localStorage.setItem('theme', 'light');
+      html.classList.remove("dark");
+      html.classList.add("light");
+      localStorage.setItem("theme", "light");
     } else {
-      html.classList.add('dark');
-      html.classList.remove('light');
-      localStorage.setItem('theme', 'dark');
+      html.classList.add("dark");
+      html.classList.remove("light");
+      localStorage.setItem("theme", "dark");
     }
   };
 
@@ -164,23 +168,23 @@
    * Initialize search bar functionality
    */
   const initSearch = () => {
-    const searchInput = document.querySelector('.search-input');
-    
+    const searchInput = document.querySelector(".search-input");
+
     if (!searchInput) return;
 
-    addEvent(searchInput, 'focus', () => {
-      addClass(searchInput.parentElement, 'focused');
+    addEvent(searchInput, "focus", () => {
+      addClass(searchInput.parentElement, "focused");
     });
 
-    addEvent(searchInput, 'blur', () => {
-      removeClass(searchInput.parentElement, 'focused');
+    addEvent(searchInput, "blur", () => {
+      removeClass(searchInput.parentElement, "focused");
     });
 
-    addEvent(searchInput, 'keyup', (e) => {
-      if (e.key === 'Enter') {
+    addEvent(searchInput, "keyup", (e) => {
+      if (e.key === "Enter") {
         const query = searchInput.value.trim();
         if (query) {
-          console.log('Search query:', query);
+          console.log("Search query:", query);
           // Implement search functionality here
         }
       }
@@ -196,32 +200,36 @@
    * @param {string} message - Notification message
    * @param {string} type - Notification type (success, error, warning, info)
    */
-  const showToast = (message, type = 'info') => {
-    const toast = document.createElement('div');
+  const showToast = (message, type = "info") => {
+    const toast = document.createElement("div");
     toast.className = `toast toast-${type}`;
     toast.textContent = message;
-    
+
     const styles = {
-      position: 'fixed',
-      bottom: '24px',
-      right: '24px',
-      padding: '12px 24px',
-      borderRadius: '12px',
-      backgroundColor: type === 'success' ? 'var(--color-success)' :
-                       type === 'error' ? 'var(--color-error)' :
-                       type === 'warning' ? 'var(--color-warning)' :
-                       'var(--color-primary)',
-      color: 'white',
-      boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
-      zIndex: '9999',
-      animation: 'slideInRight 0.3s ease'
+      position: "fixed",
+      bottom: "24px",
+      right: "24px",
+      padding: "12px 24px",
+      borderRadius: "12px",
+      backgroundColor:
+        type === "success"
+          ? "var(--color-success)"
+          : type === "error"
+            ? "var(--color-error)"
+            : type === "warning"
+              ? "var(--color-warning)"
+              : "var(--color-primary)",
+      color: "white",
+      boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
+      zIndex: "9999",
+      animation: "slideInRight 0.3s ease",
     };
 
     Object.assign(toast.style, styles);
     document.body.appendChild(toast);
 
     setTimeout(() => {
-      toast.style.animation = 'slideOutRight 0.3s ease';
+      toast.style.animation = "slideOutRight 0.3s ease";
       setTimeout(() => toast.remove(), 300);
     }, 3000);
   };
@@ -236,18 +244,18 @@
    */
   const showLoading = (container) => {
     if (!container) return;
-    
-    const spinner = document.createElement('div');
-    spinner.className = 'loading-spinner';
+
+    const spinner = document.createElement("div");
+    spinner.className = "loading-spinner";
     spinner.innerHTML = '<div class="spinner"></div>';
-    
+
     spinner.style.cssText = `
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 200px;
     `;
-    
+
     container.appendChild(spinner);
   };
 
@@ -257,7 +265,7 @@
    */
   const hideLoading = (container) => {
     if (!container) return;
-    const spinner = container.querySelector('.loading-spinner');
+    const spinner = container.querySelector(".loading-spinner");
     if (spinner) spinner.remove();
   };
 
@@ -271,31 +279,31 @@
    * @param {string} format - Format type (short, long, relative)
    * @returns {string}
    */
-  const formatDate = (date, format = 'short') => {
+  const formatDate = (date, format = "short") => {
     const d = new Date(date);
-    
-    if (format === 'short') {
+
+    if (format === "short") {
       return d.toLocaleDateString();
-    } else if (format === 'long') {
-      return d.toLocaleDateString('en-US', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
+    } else if (format === "long") {
+      return d.toLocaleDateString("en-US", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
       });
-    } else if (format === 'relative') {
+    } else if (format === "relative") {
       const now = new Date();
       const diff = now - d;
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      
-      if (days === 0) return 'Today';
-      if (days === 1) return 'Yesterday';
+
+      if (days === 0) return "Today";
+      if (days === 1) return "Yesterday";
       if (days < 7) return `${days} days ago`;
       if (days < 30) return `${Math.floor(days / 7)} weeks ago`;
       if (days < 365) return `${Math.floor(days / 30)} months ago`;
       return `${Math.floor(days / 365)} years ago`;
     }
-    
+
     return d.toLocaleDateString();
   };
 
@@ -305,7 +313,7 @@
    * @returns {string}
    */
   const formatNumber = (num) => {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
   /**
@@ -314,10 +322,10 @@
    * @param {string} currency - Currency code (default: USD)
    * @returns {string}
    */
-  const formatCurrency = (amount, currency = 'USD') => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: currency
+  const formatCurrency = (amount, currency = "USD") => {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: currency,
     }).format(amount);
   };
 
@@ -330,18 +338,21 @@
    * @param {HTMLElement} element - Element to animate
    * @param {string} animation - Animation class
    */
-  const animateOnScroll = (element, animation = 'fadeInUp') => {
+  const animateOnScroll = (element, animation = "fadeInUp") => {
     if (!element) return;
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          addClass(element, animation);
-          observer.unobserve(element);
-        }
-      });
-    }, { threshold: 0.1 });
-    
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            addClass(element, animation);
+            observer.unobserve(element);
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
+
     observer.observe(element);
   };
 
@@ -352,12 +363,12 @@
    */
   const fadeIn = (element, duration = 300) => {
     if (!element) return;
-    
-    element.style.opacity = '0';
+
+    element.style.opacity = "0";
     element.style.transition = `opacity ${duration}ms ease`;
-    
+
     requestAnimationFrame(() => {
-      element.style.opacity = '1';
+      element.style.opacity = "1";
     });
   };
 
@@ -368,12 +379,12 @@
    */
   const fadeOut = (element, duration = 300) => {
     if (!element) return;
-    
-    element.style.opacity = '1';
+
+    element.style.opacity = "1";
     element.style.transition = `opacity ${duration}ms ease`;
-    
+
     requestAnimationFrame(() => {
-      element.style.opacity = '0';
+      element.style.opacity = "0";
     });
   };
 
@@ -390,7 +401,7 @@
     try {
       localStorage.setItem(key, JSON.stringify(value));
     } catch (e) {
-      console.error('Error saving to localStorage:', e);
+      console.error("Error saving to localStorage:", e);
     }
   };
 
@@ -404,7 +415,7 @@
       const item = localStorage.getItem(key);
       return item ? JSON.parse(item) : null;
     } catch (e) {
-      console.error('Error reading from localStorage:', e);
+      console.error("Error reading from localStorage:", e);
       return null;
     }
   };
@@ -417,7 +428,7 @@
     try {
       localStorage.removeItem(key);
     } catch (e) {
-      console.error('Error removing from localStorage:', e);
+      console.error("Error removing from localStorage:", e);
     }
   };
 
@@ -439,7 +450,7 @@
     initSearch();
 
     // Add CSS animations for toast
-    const style = document.createElement('style');
+    const style = document.createElement("style");
     style.textContent = `
       @keyframes slideInRight {
         from {
@@ -479,8 +490,8 @@
   };
 
   // Run initialization when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
   } else {
     init();
   }
@@ -495,34 +506,33 @@
     removeClass,
     toggleClass,
     hasClass,
-    
+
     // Theme
     toggleTheme,
-    
+
     // Notifications
     showToast,
-    
+
     // Loading
     showLoading,
     hideLoading,
-    
+
     // Formatting
     formatDate,
     formatNumber,
     formatCurrency,
-    
+
     // Animations
     animateOnScroll,
     fadeIn,
     fadeOut,
-    
+
     // Storage
     saveToStorage,
     getFromStorage,
     removeFromStorage,
-    
-    // Re-initialize
-    reinit: init
-  };
 
+    // Re-initialize
+    reinit: init,
+  };
 })();

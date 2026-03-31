@@ -89,14 +89,14 @@ body {
 /* Glass Effects */
 .glass-card {
   background: linear-gradient(135deg, rgba(192, 193, 255, 0.05) 0%, rgba(28, 31, 42, 0) 100%);
-  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .glass-effect {
-  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
 }
 
 .glass-glow {
@@ -120,6 +120,7 @@ body {
 .no-scrollbar,
 .hide-scrollbar {
   -ms-overflow-style: none;
+  -webkit-scrollbar-width: none;
   scrollbar-width: none;
 }
 
