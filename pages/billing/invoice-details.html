@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Invoice Details | Admin Panel</title>
 
     <!-- Core Assets -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="../../assets/js/tailwind-config.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&amp;family=Outfit:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@800&amp;family=Outfit:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;family=Manrope:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
+
 <body class="bg-background text-on-background font-body selection:bg-primary/30">
     <!-- Main Canvas -->
     <main class="min-h-screen bg-surface-dim flex flex-col">
@@ -23,22 +29,26 @@
             <!-- === ACTIONS TOOLBAR === -->
             <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
                 <div class="flex items-center gap-2">
-                    <button class="flex items-center gap-2 px-5 py-2.5 bg-indigo-gradient text-on-primary font-bold rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.02] active:opacity-80 transition-all">
+                    <button
+                        class="flex items-center gap-2 px-5 py-2.5 bg-indigo-gradient text-on-primary font-bold rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.02] active:opacity-80 transition-all">
                         <span class="material-symbols-outlined text-sm">send</span>
                         Send Invoice
                     </button>
-                    <button class="flex items-center gap-2 px-5 py-2.5 bg-surface-container-highest text-on-surface font-semibold rounded-xl hover:bg-surface-bright transition-all border border-outline-variant/10">
+                    <button
+                        class="flex items-center gap-2 px-5 py-2.5 bg-surface-container-highest text-on-surface font-semibold rounded-xl hover:bg-surface-bright transition-all border border-outline-variant/10">
                         <span class="material-symbols-outlined text-sm">download</span>
                         PDF
                     </button>
                 </div>
                 <div class="flex items-center gap-2">
-                    <button class="flex items-center gap-2 px-4 py-2.5 text-on-surface-variant hover:text-primary transition-colors">
+                    <button
+                        class="flex items-center gap-2 px-4 py-2.5 text-on-surface-variant hover:text-primary transition-colors">
                         <span class="material-symbols-outlined text-sm">edit</span>
                         Edit
                     </button>
                     <div class="w-px h-6 bg-outline-variant/20 mx-2"></div>
-                    <button class="flex items-center gap-2 px-5 py-2.5 bg-surface-container-low text-on-surface border border-outline-variant/20 rounded-xl hover:border-primary/40 transition-all">
+                    <button
+                        class="flex items-center gap-2 px-5 py-2.5 bg-surface-container-low text-on-surface border border-outline-variant/20 rounded-xl hover:border-primary/40 transition-all">
                         <span class="material-symbols-outlined text-sm text-primary">check_circle</span>
                         Mark as Paid
                     </button>
@@ -54,35 +64,40 @@
                         <div class="flex justify-between items-start mb-12">
                             <div class="space-y-4">
                                 <div>
-                                    <p class="text-on-surface-variant text-xs font-bold uppercase tracking-widest mb-1">From</p>
+                                    <p class="text-on-surface-variant text-xs font-bold uppercase tracking-widest mb-1">
+                                        From</p>
                                     <h2 class="font-headline font-bold text-lg">Xenon Systems Inc.</h2>
                                     <p class="text-on-surface-variant text-sm leading-relaxed max-w-xs">
-                                        Level 42, Obsidian Tower<br/>
-                                        88 Cyber Way, New Tokyo<br/>
+                                        Level 42, Obsidian Tower<br />
+                                        88 Cyber Way, New Tokyo<br />
                                         hello@xenonos.com
                                     </p>
                                 </div>
                                 <div class="pt-4">
-                                    <p class="text-on-surface-variant text-xs font-bold uppercase tracking-widest mb-1">To</p>
+                                    <p class="text-on-surface-variant text-xs font-bold uppercase tracking-widest mb-1">
+                                        To</p>
                                     <h2 class="font-headline font-bold text-lg">Vortex Labs GMBH</h2>
                                     <p class="text-on-surface-variant text-sm leading-relaxed max-w-xs">
-                                        Alexander Stratmann<br/>
-                                        Friedrichstraße 19<br/>
+                                        Alexander Stratmann<br />
+                                        Friedrichstraße 19<br />
                                         10117 Berlin, Germany
                                     </p>
                                 </div>
                             </div>
                             <div class="text-right space-y-6">
                                 <div>
-                                    <p class="text-on-surface-variant text-xs font-bold uppercase tracking-widest mb-1">Invoice Date</p>
+                                    <p class="text-on-surface-variant text-xs font-bold uppercase tracking-widest mb-1">
+                                        Invoice Date</p>
                                     <p class="text-on-surface font-medium">October 12, 2024</p>
                                 </div>
                                 <div>
-                                    <p class="text-on-surface-variant text-xs font-bold uppercase tracking-widest mb-1">Due Date</p>
+                                    <p class="text-on-surface-variant text-xs font-bold uppercase tracking-widest mb-1">
+                                        Due Date</p>
                                     <p class="text-on-surface font-medium text-primary">October 26, 2024</p>
                                 </div>
                                 <div class="pt-4">
-                                    <p class="text-on-surface-variant text-xs font-bold uppercase tracking-widest mb-1">Project Ref</p>
+                                    <p class="text-on-surface-variant text-xs font-bold uppercase tracking-widest mb-1">
+                                        Project Ref</p>
                                     <p class="text-on-surface font-medium">VX-889-CORE</p>
                                 </div>
                             </div>
@@ -93,17 +108,26 @@
                             <table class="w-full text-left">
                                 <thead>
                                     <tr class="border-b border-outline-variant/10">
-                                        <th class="pb-4 font-headline text-xs font-bold uppercase tracking-widest text-on-surface-variant">Description</th>
-                                        <th class="pb-4 font-headline text-xs font-bold uppercase tracking-widest text-on-surface-variant text-center">Qty</th>
-                                        <th class="pb-4 font-headline text-xs font-bold uppercase tracking-widest text-on-surface-variant text-right">Unit Price</th>
-                                        <th class="pb-4 font-headline text-xs font-bold uppercase tracking-widest text-on-surface-variant text-right">Total</th>
+                                        <th
+                                            class="pb-4 font-headline text-xs font-bold uppercase tracking-widest text-on-surface-variant">
+                                            Description</th>
+                                        <th
+                                            class="pb-4 font-headline text-xs font-bold uppercase tracking-widest text-on-surface-variant text-center">
+                                            Qty</th>
+                                        <th
+                                            class="pb-4 font-headline text-xs font-bold uppercase tracking-widest text-on-surface-variant text-right">
+                                            Unit Price</th>
+                                        <th
+                                            class="pb-4 font-headline text-xs font-bold uppercase tracking-widest text-on-surface-variant text-right">
+                                            Total</th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-outline-variant/5">
                                     <tr>
                                         <td class="py-6">
                                             <p class="font-bold text-on-surface">Cloud Infrastructure Audit</p>
-                                            <p class="text-sm text-on-surface-variant">Deep security and performance analysis of AWS clusters</p>
+                                            <p class="text-sm text-on-surface-variant">Deep security and performance
+                                                analysis of AWS clusters</p>
                                         </td>
                                         <td class="py-6 text-center font-medium">1</td>
                                         <td class="py-6 text-right font-medium">$2,400.00</td>
@@ -112,7 +136,8 @@
                                     <tr>
                                         <td class="py-6">
                                             <p class="font-bold text-on-surface">Bespoke UI Design System</p>
-                                            <p class="text-sm text-on-surface-variant">Complete Figma tokens and React primitives library</p>
+                                            <p class="text-sm text-on-surface-variant">Complete Figma tokens and React
+                                                primitives library</p>
                                         </td>
                                         <td class="py-6 text-center font-medium">1</td>
                                         <td class="py-6 text-right font-medium">$4,500.00</td>
@@ -121,7 +146,8 @@
                                     <tr>
                                         <td class="py-6">
                                             <p class="font-bold text-on-surface">Data Migration Support</p>
-                                            <p class="text-sm text-on-surface-variant">PostgreSQL to MongoDB transition consultancy (Hourly)</p>
+                                            <p class="text-sm text-on-surface-variant">PostgreSQL to MongoDB transition
+                                                consultancy (Hourly)</p>
                                         </td>
                                         <td class="py-6 text-center font-medium">12</td>
                                         <td class="py-6 text-right font-medium">$180.00</td>
@@ -134,10 +160,13 @@
 
                     <!-- === NOTES SECTION === -->
                     <div class="bg-surface-container-low rounded-xl p-8 border border-outline-variant/10">
-                        <h3 class="font-headline font-bold text-sm uppercase tracking-widest text-primary mb-4">Payment Notes</h3>
+                        <h3 class="font-headline font-bold text-sm uppercase tracking-widest text-primary mb-4">Payment
+                            Notes</h3>
                         <p class="text-on-surface-variant text-sm leading-relaxed">
-                            Please include the invoice number <span class="text-on-surface font-bold">#INV-2024-082</span> in your bank transfer reference.
-                            Payments are expected within 14 days of the invoice date. Late payments may be subject to a 2% monthly interest fee as per our service agreement.
+                            Please include the invoice number <span
+                                class="text-on-surface font-bold">#INV-2024-082</span> in your bank transfer reference.
+                            Payments are expected within 14 days of the invoice date. Late payments may be subject to a
+                            2% monthly interest fee as per our service agreement.
                         </p>
                     </div>
                 </div>
@@ -148,7 +177,9 @@
                     <div class="bg-surface-container-highest rounded-xl p-8 shadow-2xl relative overflow-hidden">
                         <!-- Decorative glow -->
                         <div class="absolute -top-12 -right-12 w-32 h-32 bg-primary/10 blur-3xl rounded-full"></div>
-                        <h3 class="font-headline font-bold text-sm uppercase tracking-widest mb-8 text-on-surface-variant">Calculation</h3>
+                        <h3
+                            class="font-headline font-bold text-sm uppercase tracking-widest mb-8 text-on-surface-variant">
+                            Calculation</h3>
                         <div class="space-y-4">
                             <div class="flex justify-between items-center text-sm">
                                 <span class="text-on-surface-variant">Subtotal</span>
@@ -165,8 +196,10 @@
                             <div class="pt-6 mt-6 border-t border-outline-variant/20">
                                 <div class="flex justify-between items-end">
                                     <div>
-                                        <p class="text-xs font-bold uppercase tracking-widest text-primary mb-1">Total Due</p>
-                                        <p class="text-3xl font-headline font-extrabold text-on-surface tracking-tight">$10,681.40</p>
+                                        <p class="text-xs font-bold uppercase tracking-widest text-primary mb-1">Total
+                                            Due</p>
+                                        <p class="text-3xl font-headline font-extrabold text-on-surface tracking-tight">
+                                            $10,681.40</p>
                                     </div>
                                     <p class="text-[10px] text-on-surface-variant italic mb-1">USD</p>
                                 </div>
@@ -177,7 +210,8 @@
                     <!-- Client Context Card -->
                     <div class="bg-surface-container rounded-xl p-6 border border-outline-variant/10">
                         <div class="flex items-center gap-4 mb-6">
-                            <img alt="Client logo" class="w-12 h-12 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCApHJBdGV6kw81iYU0egnZveyoCA9bO1N9Tmznr3psSJZ-UZZCMwor-HF13SlVCknfFT8Zs2Hn0PeXxhDJk3Owb7H0oXrAziNmwkdUBhiPC8ufd34gUtTHojGObN72l3ehqnxu6Jna4iF2_nJRfoRNpvUyrUlBOXGgCGWcEKj-y7x71PtQhuacEwF1_V9EIxPOQ1AMsS3MHtT1nTBs6gMGhJZOqALSmFS5DsIYi4ptp-tY8MxXDKpEikaCfkj4aGuYLqasQ0SL5Ns"/>
+                            <img alt="Client logo" class="w-12 h-12 rounded-lg object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCApHJBdGV6kw81iYU0egnZveyoCA9bO1N9Tmznr3psSJZ-UZZCMwor-HF13SlVCknfFT8Zs2Hn0PeXxhDJk3Owb7H0oXrAziNmwkdUBhiPC8ufd34gUtTHojGObN72l3ehqnxu6Jna4iF2_nJRfoRNpvUyrUlBOXGgCGWcEKj-y7x71PtQhuacEwF1_V9EIxPOQ1AMsS3MHtT1nTBs6gMGhJZOqALSmFS5DsIYi4ptp-tY8MxXDKpEikaCfkj4aGuYLqasQ0SL5Ns" />
                             <div>
                                 <h4 class="font-bold text-on-surface">Vortex Labs GMBH</h4>
                                 <p class="text-xs text-on-surface-variant">Enterprise Client since 2022</p>
@@ -193,14 +227,17 @@
                                 Avg. payment time: 4 days
                             </div>
                         </div>
-                        <button class="w-full mt-6 py-3 rounded-xl bg-surface-container-highest text-on-surface text-sm font-semibold hover:bg-surface-bright transition-colors">
+                        <button
+                            class="w-full mt-6 py-3 rounded-xl bg-surface-container-highest text-on-surface text-sm font-semibold hover:bg-surface-bright transition-colors">
                             View Client Portal
                         </button>
                     </div>
 
                     <!-- === HISTORY TIMELINE === -->
                     <div class="bg-surface-container rounded-xl p-6">
-                        <h3 class="font-headline font-bold text-xs uppercase tracking-widest text-on-surface-variant mb-6">Activity Log</h3>
+                        <h3
+                            class="font-headline font-bold text-xs uppercase tracking-widest text-on-surface-variant mb-6">
+                            Activity Log</h3>
                         <div class="space-y-6">
                             <div class="flex gap-4">
                                 <div class="flex flex-col items-center">
@@ -240,4 +277,5 @@
 
     <script src="../../assets/js/app.js"></script>
 </body>
+
 </html>

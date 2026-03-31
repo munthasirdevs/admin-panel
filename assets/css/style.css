@@ -120,8 +120,6 @@ body {
 .no-scrollbar,
 .hide-scrollbar {
   -ms-overflow-style: none;
-  -webkit-scrollbar-width: none;
-  scrollbar-width: none;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
