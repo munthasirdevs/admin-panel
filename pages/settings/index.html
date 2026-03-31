@@ -4,13 +4,13 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Unified Settings - System Admin</title>
-    
+
     <!-- Core Assets -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="../../assets/js/tailwind-config.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">
@@ -20,284 +20,284 @@
     <main class="flex-1 min-h-screen flex flex-col">
         <!-- ==================== MAIN CONTENT ==================== -->
         <!-- Main Scrollable Canvas -->
-        <div class="p-10">
-            <div class="max-w-7xl mx-auto space-y-12">
+        <div class="p-4 sm:p-6 md:p-8 lg:p-10">
+            <div class="max-w-7xl mx-auto space-y-8 md:space-y-10 lg:space-y-12">
                 <!-- === PAGE HEADER === -->
-                <div class="flex items-end justify-between">
-<div>
-<p class="text-primary font-bold tracking-[0.2em] text-[11px] uppercase mb-2">Security &amp; Identity</p>
-<h1 class="font-headline text-5xl font-light tracking-tight text-on-surface">Account Settings</h1>
-</div>
-<p class="text-on-surface-variant text-sm max-w-xs text-right italic font-light opacity-60">Manage your administrative privileges and security protocols.</p>
-</div>
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6">
+                    <div>
+                        <p class="text-primary font-bold tracking-[0.2em] text-[11px] uppercase mb-2">Security &amp; Identity</p>
+                        <h1 class="font-headline text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-on-surface">Account Settings</h1>
+                    </div>
+                    <p class="text-on-surface-variant text-xs sm:text-sm max-w-xs text-right md:text-left italic font-light opacity-60">Manage your administrative privileges and security protocols.</p>
+                </div>
 
                 <!-- === SETTINGS BENTO GRID === -->
-                <div class="grid grid-cols-12 gap-6">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
                     <!-- Change Password (4 cols) -->
-                    <section class="col-span-12 lg:col-span-5 bg-surface-container rounded-3xl p-8 glass-card border-l-2 border-primary/20">
-<div class="flex items-center gap-3 mb-8">
-<span class="material-symbols-outlined text-primary" data-icon="key">key</span>
-<h2 class="font-headline text-xl font-semibold">Change Password</h2>
-</div>
-<form class="space-y-6">
-<div class="space-y-2">
-<label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest pl-1">Current Password</label>
-<input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-primary/40 transition-all" placeholder="••••••••" type="password"/>
-</div>
-<div class="space-y-2">
-<label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest pl-1">New Password</label>
-<input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-primary/40 transition-all" placeholder="••••••••" type="password"/>
-<div class="pt-2">
-<div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
-<div class="h-full bg-gradient-to-r from-primary to-primary-container w-2/3 shadow-[0_0_8px_rgba(192,193,255,0.4)]"></div>
-</div>
-<p class="text-[11px] text-primary mt-1.5 flex justify-between">
-<span>Strong Password</span>
-<span>68%</span>
-</p>
-</div>
-</div>
-<div class="space-y-2">
-<label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest pl-1">Confirm New Password</label>
-<input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-primary/40 transition-all" placeholder="••••••••" type="password"/>
-</div>
-<button class="w-full bg-primary text-on-primary py-3 rounded-xl font-bold text-sm tracking-wide hover:opacity-90 transition-opacity active:scale-[0.98] mt-4">
-                            Update Credentials
-                        </button>
-</form>
-</section>
-<!-- Authentication Rules & Active Monitoring (7 cols) -->
-<div class="col-span-12 lg:col-span-7 space-y-6">
-<!-- Authentication Rules -->
-<section class="bg-surface-container-low rounded-3xl p-8">
-<div class="flex items-center gap-3 mb-6">
-<span class="material-symbols-outlined text-tertiary" data-icon="verified_user">verified_user</span>
-<h2 class="font-headline text-xl font-semibold">Authentication Rules</h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<!-- Toggle Card -->
-<div class="p-5 bg-surface-container rounded-2xl flex items-start justify-between">
-<div>
-<p class="font-semibold text-sm mb-1">Complex Passwords</p>
-<p class="text-xs text-on-surface-variant leading-relaxed">Require symbols and numbers.</p>
-</div>
-<div class="w-12 h-6 bg-primary rounded-full relative cursor-pointer flex items-center px-1">
-<div class="w-4 h-4 bg-on-primary rounded-full ml-auto"></div>
-</div>
-</div>
-<!-- Toggle Card -->
-<div class="p-5 bg-surface-container rounded-2xl flex items-start justify-between">
-<div>
-<p class="font-semibold text-sm mb-1">2FA Enforcement</p>
-<p class="text-xs text-on-surface-variant leading-relaxed">Required for all team members.</p>
-</div>
-<div class="w-12 h-6 bg-primary rounded-full relative cursor-pointer flex items-center px-1">
-<div class="w-4 h-4 bg-on-primary rounded-full ml-auto"></div>
-</div>
-</div>
-<!-- Toggle Card -->
-<div class="p-5 bg-surface-container rounded-2xl flex items-start justify-between col-span-1 md:col-span-2">
-<div>
-<p class="font-semibold text-sm mb-1">Sensitive Action Re-Auth</p>
-<p class="text-xs text-on-surface-variant leading-relaxed">Request password before project deletion or data export.</p>
-</div>
-<div class="w-12 h-6 bg-surface-container-highest rounded-full relative cursor-pointer flex items-center px-1 border border-outline-variant/20">
-<div class="w-4 h-4 bg-outline rounded-full"></div>
-</div>
-</div>
-</div>
-</section>
-
-                    <!-- === ACTIVE LOGIN MONITORING === -->
-                    <section class="bg-surface-container-low rounded-3xl p-8 overflow-hidden">
-<div class="flex items-center justify-between mb-6">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary" data-icon="devices">devices</span>
-<h2 class="font-headline text-xl font-semibold">Active Sessions</h2>
-</div>
-<span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded-full uppercase tracking-tighter">3 Active Now</span>
-</div>
-<div class="space-y-1">
-<!-- Session Item -->
-<div class="flex items-center justify-between p-4 hover:bg-surface-bright/30 rounded-2xl transition-all group">
-<div class="flex items-center gap-4">
-<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined" data-icon="laptop_mac">laptop_mac</span>
-</div>
-<div>
-<p class="text-sm font-semibold">MacBook Pro 16"</p>
-<p class="text-[11px] text-on-surface-variant">San Francisco, USA • Active now</p>
-</div>
-</div>
-<button class="text-[11px] font-bold text-error uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">Force Logout</button>
-</div>
-<!-- Session Item -->
-<div class="flex items-center justify-between p-4 hover:bg-surface-bright/30 rounded-2xl transition-all group">
-<div class="flex items-center gap-4">
-<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-outline group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined" data-icon="phone_iphone">phone_iphone</span>
-</div>
-<div>
-<p class="text-sm font-semibold">iPhone 15 Pro</p>
-<p class="text-[11px] text-on-surface-variant">London, UK • 2 hours ago</p>
-</div>
-</div>
-<button class="text-[11px] font-bold text-error uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">Force Logout</button>
-</div>
-</div>
-</section>
-</div>
-</section>
-
-                    <!-- === ACTIVITY LOGS === -->
-                    <section class="col-span-12 bg-surface-container-low rounded-3xl p-8">
-<div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary" data-icon="history">history</span>
-<h2 class="font-headline text-xl font-semibold">Audit Activity Logs</h2>
-</div>
-<div class="flex items-center gap-4">
-<div class="relative group">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg" data-icon="search">search</span>
-<input class="bg-surface-container border-none rounded-xl pl-9 pr-4 py-2 text-xs w-64 focus:ring-1 focus:ring-primary/30 transition-all" placeholder="Filter logs..." type="text"/>
-</div>
-<button class="flex items-center gap-2 px-4 py-2 bg-surface-container text-on-surface rounded-xl text-xs font-bold hover:bg-surface-bright transition-colors">
-<span class="material-symbols-outlined text-sm" data-icon="ios_share">ios_share</span> Export
+                    <section class="col-span-1 lg:col-span-5 bg-surface-container rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 glass-card border-l-2 border-primary/20">
+                        <div class="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
+                            <span class="material-symbols-outlined text-primary" data-icon="key">key</span>
+                            <h2 class="font-headline text-lg sm:text-xl font-semibold">Change Password</h2>
+                        </div>
+                        <form class="space-y-4 sm:space-y-6">
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest pl-1 block">Current Password</label>
+                                <input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-primary/40 transition-all min-h-[44px]" placeholder="••••••••" type="password"/>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest pl-1 block">New Password</label>
+                                <input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-primary/40 transition-all min-h-[44px]" placeholder="••••••••" type="password"/>
+                                <div class="pt-2">
+                                    <div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                                        <div class="h-full bg-gradient-to-r from-primary to-primary-container w-2/3 shadow-[0_0_8px_rgba(192,193,255,0.4)]"></div>
+                                    </div>
+                                    <p class="text-[11px] text-primary mt-1.5 flex justify-between">
+                                        <span>Strong Password</span>
+                                        <span>68%</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest pl-1 block">Confirm New Password</label>
+                                <input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-primary/40 transition-all min-h-[44px]" placeholder="••••••••" type="password"/>
+                            </div>
+                            <button class="w-full bg-primary text-on-primary py-3 rounded-xl font-bold text-sm tracking-wide hover:opacity-90 transition-opacity active:scale-[0.98] mt-4 min-h-[44px]">
+                                Update Credentials
                             </button>
-</div>
-</div>
-<div class="overflow-x-auto">
-<table class="w-full text-left border-separate border-spacing-y-2">
-<thead>
-<tr class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest px-4">
-<th class="pb-4 pl-4">Timestamp</th>
-<th class="pb-4">User</th>
-<th class="pb-4">Action Type</th>
-<th class="pb-4">Target Entity</th>
-<th class="pb-4 text-right pr-4">Status</th>
-</tr>
-</thead>
-<tbody class="text-sm">
-<tr class="group">
-<td class="bg-surface-container first:rounded-l-2xl py-4 pl-4 text-on-surface-variant font-mono text-[11px]">OCT 24, 2023 14:22</td>
-<td class="bg-surface-container font-semibold">Sarah Jenkins</td>
-<td class="bg-surface-container">
-<span class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-lg" data-icon="edit_square">edit_square</span> Project Update
+                        </form>
+                    </section>
+
+                    <!-- Authentication Rules & Active Monitoring (7 cols) -->
+                    <div class="col-span-1 lg:col-span-7 space-y-4 sm:space-y-6">
+                        <!-- Authentication Rules -->
+                        <section class="bg-surface-container-low rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
+                            <div class="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                                <span class="material-symbols-outlined text-tertiary" data-icon="verified_user">verified_user</span>
+                                <h2 class="font-headline text-lg sm:text-xl font-semibold">Authentication Rules</h2>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+                                <!-- Toggle Card -->
+                                <div class="p-4 sm:p-5 bg-surface-container rounded-xl sm:rounded-2xl flex items-start justify-between gap-3">
+                                    <div>
+                                        <p class="font-semibold text-sm mb-1">Complex Passwords</p>
+                                        <p class="text-xs text-on-surface-variant leading-relaxed">Require symbols and numbers.</p>
+                                    </div>
+                                    <div class="w-10 sm:w-12 h-5 sm:h-6 bg-primary rounded-full relative cursor-pointer flex items-center px-0.5 sm:px-1 shrink-0">
+                                        <div class="w-3.5 h-3.5 sm:w-4 sm:h-4 bg-on-primary rounded-full ml-auto"></div>
+                                    </div>
+                                </div>
+                                <!-- Toggle Card -->
+                                <div class="p-4 sm:p-5 bg-surface-container rounded-xl sm:rounded-2xl flex items-start justify-between gap-3">
+                                    <div>
+                                        <p class="font-semibold text-sm mb-1">2FA Enforcement</p>
+                                        <p class="text-xs text-on-surface-variant leading-relaxed">Required for all team members.</p>
+                                    </div>
+                                    <div class="w-10 sm:w-12 h-5 sm:h-6 bg-primary rounded-full relative cursor-pointer flex items-center px-0.5 sm:px-1 shrink-0">
+                                        <div class="w-3.5 h-3.5 sm:w-4 sm:h-4 bg-on-primary rounded-full ml-auto"></div>
+                                    </div>
+                                </div>
+                                <!-- Toggle Card -->
+                                <div class="p-4 sm:p-5 bg-surface-container rounded-xl sm:rounded-2xl flex items-start justify-between gap-3 md:col-span-2">
+                                    <div>
+                                        <p class="font-semibold text-sm mb-1">Sensitive Action Re-Auth</p>
+                                        <p class="text-xs text-on-surface-variant leading-relaxed">Request password before project deletion or data export.</p>
+                                    </div>
+                                    <div class="w-10 sm:w-12 h-5 sm:h-6 bg-surface-container-highest rounded-full relative cursor-pointer flex items-center px-0.5 sm:px-1 border border-outline-variant/20 shrink-0">
+                                        <div class="w-3.5 h-3.5 sm:w-4 sm:h-4 bg-outline rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- === ACTIVE LOGIN MONITORING === -->
+                        <section class="bg-surface-container-low rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 overflow-hidden">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 mb-4 sm:mb-6">
+                                <div class="flex items-center gap-2 sm:gap-3">
+                                    <span class="material-symbols-outlined text-primary" data-icon="devices">devices</span>
+                                    <h2 class="font-headline text-lg sm:text-xl font-semibold">Active Sessions</h2>
+                                </div>
+                                <span class="px-2 sm:px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded-full uppercase tracking-tighter whitespace-nowrap text-center">3 Active Now</span>
+                            </div>
+                            <div class="space-y-2 sm:space-y-3">
+                                <!-- Session Item -->
+                                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-3 sm:p-4 hover:bg-surface-bright/30 rounded-xl sm:rounded-2xl transition-all group">
+                                    <div class="flex items-center gap-3 sm:gap-4">
+                                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-110 transition-transform shrink-0">
+                                            <span class="material-symbols-outlined" data-icon="laptop_mac">laptop_mac</span>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold">MacBook Pro 16"</p>
+                                            <p class="text-[11px] text-on-surface-variant">San Francisco, USA • Active now</p>
+                                        </div>
+                                    </div>
+                                    <button class="text-[11px] font-bold text-error uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity min-h-[44px] min-w-[44px] flex items-center justify-center">Force Logout</button>
+                                </div>
+                                <!-- Session Item -->
+                                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-3 sm:p-4 hover:bg-surface-bright/30 rounded-xl sm:rounded-2xl transition-all group">
+                                    <div class="flex items-center gap-3 sm:gap-4">
+                                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-surface-container-high flex items-center justify-center text-outline group-hover:scale-110 transition-transform shrink-0">
+                                            <span class="material-symbols-outlined" data-icon="phone_iphone">phone_iphone</span>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold">iPhone 15 Pro</p>
+                                            <p class="text-[11px] text-on-surface-variant">London, UK • 2 hours ago</p>
+                                        </div>
+                                    </div>
+                                    <button class="text-[11px] font-bold text-error uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity min-h-[44px] min-w-[44px] flex items-center justify-center">Force Logout</button>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+
+                <!-- === ACTIVITY LOGS === -->
+                <section class="col-span-1 bg-surface-container-low rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 sm:mb-8">
+                        <div class="flex items-center gap-2 sm:gap-3">
+                            <span class="material-symbols-outlined text-primary" data-icon="history">history</span>
+                            <h2 class="font-headline text-lg sm:text-xl font-semibold">Audit Activity Logs</h2>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-3 sm:gap-4">
+                            <div class="relative group flex-grow sm:flex-grow-0">
+                                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg" data-icon="search">search</span>
+                                <input class="bg-surface-container border-none rounded-xl pl-9 pr-4 py-2 text-xs w-full sm:w-64 focus:ring-1 focus:ring-primary/30 transition-all min-h-[44px]" placeholder="Filter logs..." type="text"/>
+                            </div>
+                            <button class="flex items-center gap-2 px-3 sm:px-4 py-2 bg-surface-container text-on-surface rounded-xl text-xs font-bold hover:bg-surface-bright transition-colors min-h-[44px]">
+                                <span class="material-symbols-outlined text-sm" data-icon="ios_share">ios_share</span> <span class="hidden sm:inline">Export</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto no-scrollbar">
+                        <table class="w-full text-left border-separate border-spacing-y-2 min-w-[600px]">
+                            <thead>
+                                <tr class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest px-4">
+                                    <th class="pb-4 pl-4 whitespace-nowrap">Timestamp</th>
+                                    <th class="pb-4 whitespace-nowrap">User</th>
+                                    <th class="pb-4 whitespace-nowrap">Action Type</th>
+                                    <th class="pb-4 whitespace-nowrap">Target Entity</th>
+                                    <th class="pb-4 text-right pr-4 whitespace-nowrap">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-xs sm:text-sm">
+                                <tr class="group">
+                                    <td class="bg-surface-container first:rounded-l-2xl py-3 sm:py-4 pl-4 text-on-surface-variant font-mono text-[11px] whitespace-nowrap">OCT 24, 2023 14:22</td>
+                                    <td class="bg-surface-container font-semibold whitespace-nowrap">Sarah Jenkins</td>
+                                    <td class="bg-surface-container whitespace-nowrap">
+                                        <span class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-primary text-lg" data-icon="edit_square">edit_square</span> <span class="hidden sm:inline">Project Update</span><span class="sm:hidden">Update</span>
                                         </span>
-</td>
-<td class="bg-surface-container text-on-surface-variant">Nexus Dashboard v2.0</td>
-<td class="bg-surface-container last:rounded-r-2xl text-right pr-4">
-<span class="px-2 py-0.5 rounded-md bg-green-500/10 text-green-400 text-[10px] font-bold">SUCCESS</span>
-</td>
-</tr>
-<tr class="group">
-<td class="bg-surface-container first:rounded-l-2xl py-4 pl-4 text-on-surface-variant font-mono text-[11px]">OCT 24, 2023 11:05</td>
-<td class="bg-surface-container font-semibold">System Bot</td>
-<td class="bg-surface-container">
-<span class="flex items-center gap-2">
-<span class="material-symbols-outlined text-tertiary text-lg" data-icon="cloud_sync">cloud_sync</span> Auto Backup
+                                    </td>
+                                    <td class="bg-surface-container text-on-surface-variant truncate max-w-[150px] sm:max-w-none">Nexus Dashboard v2.0</td>
+                                    <td class="bg-surface-container last:rounded-r-2xl text-right pr-4 whitespace-nowrap">
+                                        <span class="px-2 py-0.5 rounded-md bg-green-500/10 text-green-400 text-[10px] font-bold">SUCCESS</span>
+                                    </td>
+                                </tr>
+                                <tr class="group">
+                                    <td class="bg-surface-container first:rounded-l-2xl py-3 sm:py-4 pl-4 text-on-surface-variant font-mono text-[11px] whitespace-nowrap">OCT 24, 2023 11:05</td>
+                                    <td class="bg-surface-container font-semibold whitespace-nowrap">System Bot</td>
+                                    <td class="bg-surface-container whitespace-nowrap">
+                                        <span class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-tertiary text-lg" data-icon="cloud_sync">cloud_sync</span> <span class="hidden sm:inline">Auto Backup</span><span class="sm:hidden">Backup</span>
                                         </span>
-</td>
-<td class="bg-surface-container text-on-surface-variant">Production Database</td>
-<td class="bg-surface-container last:rounded-r-2xl text-right pr-4">
-<span class="px-2 py-0.5 rounded-md bg-green-500/10 text-green-400 text-[10px] font-bold">SUCCESS</span>
-</td>
-</tr>
-<tr class="group">
-<td class="bg-surface-container first:rounded-l-2xl py-4 pl-4 text-on-surface-variant font-mono text-[11px]">OCT 23, 2023 18:45</td>
-<td class="bg-surface-container font-semibold">Admin Rivera</td>
-<td class="bg-surface-container">
-<span class="flex items-center gap-2">
-<span class="material-symbols-outlined text-error text-lg" data-icon="delete">delete</span> Delete Task
+                                    </td>
+                                    <td class="bg-surface-container text-on-surface-variant truncate max-w-[150px] sm:max-w-none">Production Database</td>
+                                    <td class="bg-surface-container last:rounded-r-2xl text-right pr-4 whitespace-nowrap">
+                                        <span class="px-2 py-0.5 rounded-md bg-green-500/10 text-green-400 text-[10px] font-bold">SUCCESS</span>
+                                    </td>
+                                </tr>
+                                <tr class="group">
+                                    <td class="bg-surface-container first:rounded-l-2xl py-3 sm:py-4 pl-4 text-on-surface-variant font-mono text-[11px] whitespace-nowrap">OCT 23, 2023 18:45</td>
+                                    <td class="bg-surface-container font-semibold whitespace-nowrap">Admin Rivera</td>
+                                    <td class="bg-surface-container whitespace-nowrap">
+                                        <span class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-error text-lg" data-icon="delete">delete</span> <span class="hidden sm:inline">Delete Task</span><span class="sm:hidden">Delete</span>
                                         </span>
-</td>
-<td class="bg-surface-container text-on-surface-variant">Old Wireframe Archive</td>
-<td class="bg-surface-container last:rounded-r-2xl text-right pr-4">
-<span class="px-2 py-0.5 rounded-md bg-orange-500/10 text-orange-400 text-[10px] font-bold">WARNING</span>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<!-- Notification Center & Priority Alerts (Side-by-side or stacked) -->
-<div class="col-span-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-<!-- Notification Settings -->
-<section class="md:col-span-2 bg-surface-container-low rounded-3xl p-8">
-<div class="flex items-center gap-3 mb-8">
-<span class="material-symbols-outlined text-primary" data-icon="notifications_active">notifications_active</span>
-<h2 class="font-headline text-xl font-semibold">Notification Center</h2>
-</div>
-<div class="overflow-x-auto">
-<table class="w-full text-left">
-<thead>
-<tr class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest border-b border-outline-variant/10">
-<th class="pb-4">Notification Type</th>
-<th class="pb-4 text-center">In-App</th>
-<th class="pb-4 text-center">Email</th>
-<th class="pb-4 text-center">Push</th>
-</tr>
-</thead>
-<tbody class="text-sm">
-<tr class="border-b border-outline-variant/5">
-<td class="py-5 font-semibold">Task Assignments</td>
-<td class="text-center py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
-<td class="text-center py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
-<td class="text-center py-5"><input class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
-</tr>
-<tr class="border-b border-outline-variant/5">
-<td class="py-5 font-semibold">Project Milestones</td>
-<td class="text-center py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
-<td class="text-center py-5"><input class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
-<td class="text-center py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
-</tr>
-<tr class="border-b border-outline-variant/5">
-<td class="py-5 font-semibold">Direct Messages</td>
-<td class="text-center py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
-<td class="text-center py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
-<td class="text-center py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
-</tr>
-<tr>
-<td class="py-5 font-semibold">System Maintenance</td>
-<td class="text-center py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
-<td class="text-center py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
-<td class="text-center py-5"><input class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20" type="checkbox"/></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
+                                    </td>
+                                    <td class="bg-surface-container text-on-surface-variant truncate max-w-[150px] sm:max-w-none">Old Wireframe Archive</td>
+                                    <td class="bg-surface-container last:rounded-r-2xl text-right pr-4 whitespace-nowrap">
+                                        <span class="px-2 py-0.5 rounded-md bg-orange-500/10 text-orange-400 text-[10px] font-bold">WARNING</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Notification Center & Priority Alerts -->
+                <div class="col-span-1 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                    <!-- Notification Settings -->
+                    <section class="md:col-span-2 bg-surface-container-low rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
+                        <div class="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
+                            <span class="material-symbols-outlined text-primary" data-icon="notifications_active">notifications_active</span>
+                            <h2 class="font-headline text-lg sm:text-xl font-semibold">Notification Center</h2>
+                        </div>
+                        <div class="overflow-x-auto no-scrollbar">
+                            <table class="w-full text-left min-w-[500px]">
+                                <thead>
+                                    <tr class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest border-b border-outline-variant/10">
+                                        <th class="pb-4 whitespace-nowrap">Notification Type</th>
+                                        <th class="pb-4 text-center whitespace-nowrap">In-App</th>
+                                        <th class="pb-4 text-center whitespace-nowrap">Email</th>
+                                        <th class="pb-4 text-center whitespace-nowrap">Push</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-xs sm:text-sm">
+                                    <tr class="border-b border-outline-variant/5">
+                                        <td class="py-4 sm:py-5 font-semibold whitespace-nowrap">Task Assignments</td>
+                                        <td class="text-center py-4 sm:py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4" type="checkbox"/></td>
+                                        <td class="text-center py-4 sm:py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4" type="checkbox"/></td>
+                                        <td class="text-center py-4 sm:py-5"><input class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4" type="checkbox"/></td>
+                                    </tr>
+                                    <tr class="border-b border-outline-variant/5">
+                                        <td class="py-4 sm:py-5 font-semibold whitespace-nowrap">Project Milestones</td>
+                                        <td class="text-center py-4 sm:py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4" type="checkbox"/></td>
+                                        <td class="text-center py-4 sm:py-5"><input class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4" type="checkbox"/></td>
+                                        <td class="text-center py-4 sm:py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4" type="checkbox"/></td>
+                                    </tr>
+                                    <tr class="border-b border-outline-variant/5">
+                                        <td class="py-4 sm:py-5 font-semibold whitespace-nowrap">Direct Messages</td>
+                                        <td class="text-center py-4 sm:py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4" type="checkbox"/></td>
+                                        <td class="text-center py-4 sm:py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4" type="checkbox"/></td>
+                                        <td class="text-center py-4 sm:py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4" type="checkbox"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-4 sm:py-5 font-semibold whitespace-nowrap">System Maintenance</td>
+                                        <td class="text-center py-4 sm:py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4" type="checkbox"/></td>
+                                        <td class="text-center py-4 sm:py-5"><input checked="" class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4" type="checkbox"/></td>
+                                        <td class="text-center py-4 sm:py-5"><input class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4" type="checkbox"/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
 
                     <!-- === PRIORITY ALERTS CARD === -->
-                    <section class="bg-surface-container rounded-3xl p-8 border border-tertiary/10 flex flex-col justify-center">
-<div class="w-14 h-14 rounded-2xl bg-tertiary/10 flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="campaign">campaign</span>
-</div>
-<h2 class="font-headline text-xl font-semibold mb-3">Priority Alerts</h2>
-<p class="text-sm text-on-surface-variant leading-relaxed mb-8">Force highlight urgent messages or system flags to the top of your workspace feed regardless of filters.</p>
-<div class="flex items-center justify-between p-4 bg-surface-container-high rounded-2xl">
-<span class="text-sm font-bold">Enable Priority Feed</span>
-<div class="w-12 h-6 bg-tertiary rounded-full relative cursor-pointer flex items-center px-1 shadow-[0_0_15px_rgba(255,183,131,0.2)]">
-<div class="w-4 h-4 bg-on-tertiary rounded-full ml-auto"></div>
-</div>
-</div>
-</section>
-</div>
-</div>
+                    <section class="bg-surface-container rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 border border-tertiary/10 flex flex-col justify-center">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-tertiary/10 flex items-center justify-center mb-4 sm:mb-6 shrink-0">
+                            <span class="material-symbols-outlined text-tertiary text-2xl sm:text-3xl" data-icon="campaign">campaign</span>
+                        </div>
+                        <h2 class="font-headline text-lg sm:text-xl font-semibold mb-3">Priority Alerts</h2>
+                        <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed mb-4 sm:mb-6">Force highlight urgent messages or system flags to the top of your workspace feed regardless of filters.</p>
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-3 sm:p-4 bg-surface-container-high rounded-xl sm:rounded-2xl">
+                            <span class="text-xs sm:text-sm font-bold">Enable Priority Feed</span>
+                            <div class="w-10 sm:w-12 h-5 sm:h-6 bg-tertiary rounded-full relative cursor-pointer flex items-center px-0.5 sm:px-1 shadow-[0_0_15px_rgba(255,183,131,0.2)] shrink-0">
+                                <div class="w-3.5 h-3.5 sm:w-4 sm:h-4 bg-on-tertiary rounded-full ml-auto"></div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
 
-                <!-- === FOOTER ACTION === -->
-                <div class="flex items-center justify-center pt-8">
-<p class="text-on-surface-variant text-xs flex items-center gap-2">
-<span class="material-symbols-outlined text-lg" data-icon="lock">lock</span>
+            <!-- === FOOTER ACTION === -->
+            <div class="flex items-center justify-center pt-6 sm:pt-8">
+                <p class="text-on-surface-variant text-xs flex items-center gap-2 text-center">
+                    <span class="material-symbols-outlined text-lg" data-icon="lock">lock</span>
                     All settings are end-to-end encrypted and audited.
                 </p>
-</div>
-</div>
+            </div>
+        </div>
     </main>
 
     <script src="../../assets/js/app.js"></script>
 </body>
 </html>
-
-
