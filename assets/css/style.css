@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&family=Space+Grotesk:wght@300..700&family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&family=Space+Grotesk:wght@300..700&family=Ubuntu:wght@300;400;500;700&display=swap");
 
-/* ============================================
+/* ==================================================================
    TYPOGRAPHY & FONTS
    Utility classes for different font families
-   ============================================ */
+   ================================================================== */
 .ubuntu {
   font-family: "Ubuntu", sans-serif !important;
   font-style: normal;
@@ -28,32 +28,18 @@
 }
 
 .font-headline {
-  font-family: 'Syne', sans-serif !important;
+  font-family: "Syne", sans-serif !important;
 }
 
 .font-label {
-  font-family: 'Outfit', sans-serif !important;
+  font-family: "Outfit", sans-serif !important;
   text-transform: uppercase;
   letter-spacing: 0.2em;
 }
 
-/* ============================================
-   SVG CHART STYLES
-   Gradient stops for chart visualizations
-   ============================================ */
-.chart-gradient-stop-start {
-  stop-color: var(--color-tertiary);
-  stop-opacity: 0.1;
-}
-
-.chart-gradient-stop-end {
-  stop-color: var(--color-tertiary);
-  stop-opacity: 0;
-}
-
-/* ============================================
+/* ==================================================================
    CSS VARIABLES - Design System Tokens
-   ============================================ */
+   ================================================================== */
 :root {
   /* Surface Colors */
   --color-surface: #0b0f19;
@@ -74,7 +60,7 @@
   --color-on-primary: #ffffff;
   --color-secondary: #c0c1ff;
   --color-tertiary: #ffb783;
-  --color-tertiary-light: #FED7AA;
+  --color-tertiary-light: #fed7aa;
   --color-error: #ef4444;
   --color-success: #10b981;
   --color-warning: #f59e0b;
@@ -84,25 +70,250 @@
   --color-outline-variant: #464554;
 }
 
-/* ============================================
+/* ==================================================================
    BASE STYLES
-   ============================================ */
+   ================================================================== */
 body {
   background-color: var(--color-surface);
   color: var(--color-on-surface);
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-/* ============================================
-   UTILITY CLASSES
-   ============================================ */
+/* ==================================================================
+   CHART STYLES
+   SVG chart gradient definitions
+   ================================================================== */
+.chart-gradient-stop-start {
+  stop-color: var(--color-tertiary);
+  stop-opacity: 0.1;
+}
 
-/* Glass Effects */
+.chart-gradient-stop-end {
+  stop-color: var(--color-tertiary);
+  stop-opacity: 0;
+}
+
+/* ==================================================================
+   COMPONENT STYLES
+   Reusable UI components
+   ================================================================== */
+
+/* --- Toggle Switch --- */
+.toggle-switch {
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.toggle-switch::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch.active {
+  background-color: var(--color-primary);
+}
+
+.toggle-switch.active::after {
+  right: 2px;
+  left: auto;
+}
+
+.toggle-switch.inactive {
+  background-color: var(--color-surface-container-highest);
+  border: 1px solid var(--color-outline-variant);
+}
+
+.toggle-switch.inactive::after {
+  left: 2px;
+  background-color: var(--color-on-surface-variant);
+}
+
+.toggle-switch:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* --- Custom Radio Buttons --- */
+.custom-radio {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-outline-variant);
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.custom-radio:checked {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+}
+
+.custom-radio:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+/* --- Toast Notifications --- */
+.toast-notification {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 16px 24px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 1000;
+  animation: slideInRight 0.3s ease-out forwards;
+}
+
+.toast-notification:not([class*="gradient"]) {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-container));
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.3);
+}
+
+.toast-notification.success {
+  background: linear-gradient(135deg, var(--color-success), #059669);
+}
+
+.toast-notification.error {
+  background: linear-gradient(135deg, var(--color-error), #dc2626);
+}
+
+.toast-notification.warning {
+  background: linear-gradient(135deg, var(--color-warning), #d97706);
+}
+
+/* --- Stats Card --- */
+.stats-card {
+  background: var(--color-surface-container-low);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.3s ease;
+}
+
+.stats-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.15);
+}
+
+/* --- Danger Zone --- */
+.danger-zone {
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.03), transparent);
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.05);
+}
+
+.danger-zone:hover {
+  border-color: rgba(239, 68, 68, 0.3);
+  box-shadow: 0 0 32px rgba(239, 68, 68, 0.1);
+}
+
+/* --- Section Navigation --- */
+.section-nav-link {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.section-nav-link.active {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.section-nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+
+/* ==================================================================
+   SETTINGS PAGE SPECIFIC
+   Tab navigation, content panels, and interactions
+   ================================================================== */
+
+/* --- Settings Tab Navigation --- */
+.settings-tab-btn {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.settings-tab-btn.active {
+  color: var(--color-primary);
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.settings-tab-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  border-radius: 2px;
+}
+
+/* --- Settings Content Panels --- */
+.settings-content {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.settings-content.active {
+  display: block;
+}
+
+/* --- Responsive Tab Navigation --- */
+@media (max-width: 768px) {
+  .settings-tab-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* ==================================================================
+   UTILITY CLASSES
+   Helper classes for common effects
+   ================================================================== */
+
+/* --- Glass Effects --- */
 .glass-card {
-  background: linear-gradient(135deg, rgba(192, 193, 255, 0.05) 0%, rgba(28, 31, 42, 0) 100%);
+  background: linear-gradient(135deg, rgba(192, 193, 255, 0.05), rgba(28, 31, 42, 0));
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -114,7 +325,7 @@ body {
 }
 
 .glass-glow {
-  background: linear-gradient(135deg, rgba(192, 193, 255, 0.05) 0%, rgba(15, 19, 29, 0) 100%);
+  background: linear-gradient(135deg, rgba(192, 193, 255, 0.05), rgba(15, 19, 29, 0));
 }
 
 .indigo-glow {
@@ -125,7 +336,7 @@ body {
   background: radial-gradient(circle at top left, rgba(192, 193, 255, 0.08), transparent 40%), #0f131d;
 }
 
-/* Scrollbar Utilities */
+/* --- Scrollbar Utilities --- */
 .no-scrollbar::-webkit-scrollbar,
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
@@ -145,11 +356,11 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #313540;
+  background: var(--color-surface-container-highest);
   border-radius: 10px;
 }
 
-/* Hover Effects */
+/* --- Hover Effects --- */
 .hover-scale {
   transition: transform 0.2s ease;
 }
@@ -161,4 +372,39 @@ body {
 .glass-card:hover {
   border-color: var(--color-primary-container);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ==================================================================
+   ANIMATIONS
+   Keyframe definitions
+   ================================================================== */
+@keyframes slideInRight {
+  from {
+    transform: translateX(calc(100% + 24px));
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }

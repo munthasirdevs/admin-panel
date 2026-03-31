@@ -197,7 +197,7 @@ admin-panel/
 ### Settings
 | Page | File | Description |
 |------|------|-------------|
-| System Settings | `pages/settings/index.html` | Application settings |
+| Unified Settings | `pages/settings/main.html` | Complete settings hub with Security, Notifications, Preferences, and Privacy |
 
 ### Profile
 | Page | File | Description |
