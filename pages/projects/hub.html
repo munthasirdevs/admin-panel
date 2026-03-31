@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Projects Hub | XenonOS</title>
 
     <!-- Core Assets -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="../../assets/js/tailwind-config.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600&amp;family=Space+Grotesk:wght@700&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600&amp;family=Space+Grotesk:wght@700&amp;family=Manrope:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
-<body class="bg-background text-on-surface font-outfit antialiased selection:bg-primary/30 selection:text-primary overflow-x-hidden">
+
+<body
+    class="bg-background text-on-surface font-outfit antialiased selection:bg-primary/30 selection:text-primary overflow-x-hidden">
     <!-- ========= MAIN CONTENT AREA ========= -->
     <main class="min-h-screen flex flex-col">
         <!-- ========= PAGE CONTENT ========= -->
         <div class="p-8 space-y-8">
-            <!-- ========= STATS / SUMMARY BENTO ========= -->
+            <!-- ========= STATS / SUMMARY GRID ========= -->
             <section class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="md:col-span-2 bg-surface-container rounded-2xl p-6 relative overflow-hidden bento-card-hover transition-all duration-400 group">
+                <div
+                    class="md:col-span-2 bg-surface-container rounded-2xl p-6 relative overflow-hidden GRID-card-hover transition-all duration-400 group">
                     <div class="relative z-10 h-full flex flex-col justify-between">
                         <div>
-                            <p class="text-on-surface-variant text-xs font-semibold tracking-widest uppercase">System Performance</p>
+                            <p class="text-on-surface-variant text-xs font-semibold tracking-widest uppercase">System
+                                Performance</p>
                             <h3 class="font-syne font-extrabold text-3xl mt-1 text-[#c0c1ff]">98.2% Efficiency</h3>
                         </div>
                         <div class="mt-8 flex items-end gap-1 h-12">
@@ -36,11 +45,12 @@
                             <div class="w-full bg-primary/30 h-10 rounded-full"></div>
                         </div>
                     </div>
-                    <div class="absolute -right-8 -bottom-8 opacity-10 group-hover:scale-110 transition-transform duration-700">
+                    <div
+                        class="absolute -right-8 -bottom-8 opacity-10 group-hover:scale-110 transition-transform duration-700">
                         <span class="material-symbols-outlined text-[160px]">analytics</span>
                     </div>
                 </div>
-                <div class="bg-surface-container rounded-2xl p-6 bento-card-hover transition-all duration-400">
+                <div class="bg-surface-container rounded-2xl p-6 GRID-card-hover transition-all duration-400">
                     <div class="w-10 h-10 rounded-lg bg-tertiary/20 flex items-center justify-center mb-4">
                         <span class="material-symbols-outlined text-tertiary">bolt</span>
                     </div>
@@ -48,7 +58,8 @@
                     <h3 class="font-syne font-extrabold text-4xl mt-1">12</h3>
                     <p class="text-xs text-tertiary mt-2">+2 from last week</p>
                 </div>
-                <div class="bg-surface-container rounded-2xl p-6 bento-card-hover transition-all duration-400 border border-primary/10">
+                <div
+                    class="bg-surface-container rounded-2xl p-6 GRID-card-hover transition-all duration-400 border border-primary/10">
                     <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
                         <span class="material-symbols-outlined text-primary">group</span>
                     </div>
@@ -63,14 +74,17 @@
             <!-- ========= FILTER CONTROLS ========= -->
             <section class="flex flex-wrap items-center justify-between gap-4">
                 <div class="flex items-center gap-3">
-                    <button class="bg-surface-container hover:bg-surface-container-high px-4 py-2 rounded-xl text-sm font-medium transition-colors flex items-center gap-2 ghost-border">
+                    <button
+                        class="bg-surface-container hover:bg-surface-container-high px-4 py-2 rounded-xl text-sm font-medium transition-colors flex items-center gap-2 ghost-border">
                         <span class="material-symbols-outlined text-[18px]">filter_list</span>
                         Status: All
                     </button>
-                    <button class="bg-surface-container hover:bg-surface-container-high px-4 py-2 rounded-xl text-sm font-medium transition-colors flex items-center gap-2 ghost-border">
+                    <button
+                        class="bg-surface-container hover:bg-surface-container-high px-4 py-2 rounded-xl text-sm font-medium transition-colors flex items-center gap-2 ghost-border">
                         Client: All
                     </button>
-                    <button class="bg-surface-container hover:bg-surface-container-high px-4 py-2 rounded-xl text-sm font-medium transition-colors flex items-center gap-2 ghost-border">
+                    <button
+                        class="bg-surface-container hover:bg-surface-container-high px-4 py-2 rounded-xl text-sm font-medium transition-colors flex items-center gap-2 ghost-border">
                         Sort: Newest
                     </button>
                 </div>
@@ -87,14 +101,18 @@
             <!-- ========= PROJECTS GRID ========= -->
             <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Project Card 1 -->
-                <div class="bg-surface-container rounded-2xl p-6 bento-card-hover transition-all duration-400 flex flex-col justify-between h-[320px]">
+                <div
+                    class="bg-surface-container rounded-2xl p-6 GRID-card-hover transition-all duration-400 flex flex-col justify-between h-[320px]">
                     <div>
                         <div class="flex justify-between items-start mb-4">
-                            <span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider rounded-full border border-primary/20">Active</span>
-                            <button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined">more_vert</span></button>
+                            <span
+                                class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider rounded-full border border-primary/20">Active</span>
+                            <button class="text-on-surface-variant hover:text-on-surface"><span
+                                    class="material-symbols-outlined">more_vert</span></button>
                         </div>
                         <h4 class="font-syne font-extrabold text-xl text-on-surface mb-2">Neural Link Interface</h4>
-                        <p class="text-on-surface-variant text-sm line-clamp-2 font-outfit">Implementing asynchronous event streams for high-latency peripheral devices.</p>
+                        <p class="text-on-surface-variant text-sm line-clamp-2 font-outfit">Implementing asynchronous
+                            event streams for high-latency peripheral devices.</p>
                     </div>
                     <div class="space-y-4">
                         <div>
@@ -108,9 +126,15 @@
                         </div>
                         <div class="flex items-center justify-between">
                             <div class="flex -space-x-2">
-                                <img alt="Team member" class="w-8 h-8 rounded-full border-2 border-surface-container object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkRuZI36BOWGC_IRgVPcQB2htX20evkBUtTKB-sYCg-pedkIA2N9rrxpgYWsmb6OE1UW7C7Xl-JFkRbYCgo0Ho92BoaTDcbeMCugUIl14pmL3cGPQAtqwGcRKumbOCmi2b0-P4iu5mq_HsnXbOJ1cFfNYN5oEI_EuvDlAtSQfFIsBG8z_YXnlm2udqqcA7I41rBfpkKmIvzRxiiWl0xqzSSmh0JEzuj93Llme9kL-2flkNhdc5RRA4sLdc5t_RhLrwn6mCBOpe9nQ"/>
-                                <img alt="Team member" class="w-8 h-8 rounded-full border-2 border-surface-container object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-4K20yXN3Aky1GFVhzknrCrrkLKlnvdymeieVQD8A0qpgxqhVycuRe2zuYkUciwkqoar25STjrLqSfGl5-eP-mK2XXhI_qiLH8RUr2y_LzICi5v-HI6qguR0aEg4tsLrpANkBOx0XMXHAqKydq28VoJ8GgmdoSVqDFD2Tej5gNlY8_6KlCRb-gi5OJnXWWimo8ze5kk7uCDy6XALr0BkvgZCIoCAcNZiHAvFQgpNHtonDhz6VeMh8hUwxCGDbPdoa3r1T-CcMzOg"/>
-                                <div class="w-8 h-8 rounded-full border-2 border-surface-container bg-surface-container-highest flex items-center justify-center text-[10px] font-bold">+3</div>
+                                <img alt="Team member"
+                                    class="w-8 h-8 rounded-full border-2 border-surface-container object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkRuZI36BOWGC_IRgVPcQB2htX20evkBUtTKB-sYCg-pedkIA2N9rrxpgYWsmb6OE1UW7C7Xl-JFkRbYCgo0Ho92BoaTDcbeMCugUIl14pmL3cGPQAtqwGcRKumbOCmi2b0-P4iu5mq_HsnXbOJ1cFfNYN5oEI_EuvDlAtSQfFIsBG8z_YXnlm2udqqcA7I41rBfpkKmIvzRxiiWl0xqzSSmh0JEzuj93Llme9kL-2flkNhdc5RRA4sLdc5t_RhLrwn6mCBOpe9nQ" />
+                                <img alt="Team member"
+                                    class="w-8 h-8 rounded-full border-2 border-surface-container object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-4K20yXN3Aky1GFVhzknrCrrkLKlnvdymeieVQD8A0qpgxqhVycuRe2zuYkUciwkqoar25STjrLqSfGl5-eP-mK2XXhI_qiLH8RUr2y_LzICi5v-HI6qguR0aEg4tsLrpANkBOx0XMXHAqKydq28VoJ8GgmdoSVqDFD2Tej5gNlY8_6KlCRb-gi5OJnXWWimo8ze5kk7uCDy6XALr0BkvgZCIoCAcNZiHAvFQgpNHtonDhz6VeMh8hUwxCGDbPdoa3r1T-CcMzOg" />
+                                <div
+                                    class="w-8 h-8 rounded-full border-2 border-surface-container bg-surface-container-highest flex items-center justify-center text-[10px] font-bold">
+                                    +3</div>
                             </div>
                             <div class="flex items-center gap-1.5 text-xs text-on-surface-variant">
                                 <span class="material-symbols-outlined text-[16px]">calendar_today</span>
@@ -121,14 +145,18 @@
                 </div>
 
                 <!-- Project Card 2 -->
-                <div class="bg-surface-container rounded-2xl p-6 bento-card-hover transition-all duration-400 flex flex-col justify-between h-[320px]">
+                <div
+                    class="bg-surface-container rounded-2xl p-6 GRID-card-hover transition-all duration-400 flex flex-col justify-between h-[320px]">
                     <div>
                         <div class="flex justify-between items-start mb-4">
-                            <span class="px-3 py-1 bg-tertiary/10 text-tertiary text-[10px] font-bold uppercase tracking-wider rounded-full border border-tertiary/20">Pending</span>
-                            <button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined">more_vert</span></button>
+                            <span
+                                class="px-3 py-1 bg-tertiary/10 text-tertiary text-[10px] font-bold uppercase tracking-wider rounded-full border border-tertiary/20">Pending</span>
+                            <button class="text-on-surface-variant hover:text-on-surface"><span
+                                    class="material-symbols-outlined">more_vert</span></button>
                         </div>
                         <h4 class="font-syne font-extrabold text-xl text-on-surface mb-2">Xenon Core OS Update</h4>
-                        <p class="text-on-surface-variant text-sm line-clamp-2 font-outfit">Kernel-level security patches and memory management optimization for V5.</p>
+                        <p class="text-on-surface-variant text-sm line-clamp-2 font-outfit">Kernel-level security
+                            patches and memory management optimization for V5.</p>
                     </div>
                     <div class="space-y-4">
                         <div>
@@ -142,8 +170,12 @@
                         </div>
                         <div class="flex items-center justify-between">
                             <div class="flex -space-x-2">
-                                <img alt="Team member" class="w-8 h-8 rounded-full border-2 border-surface-container object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSvGbNZ-eZC_aHw0WBZG6mG3LUpeliSviBX8YYNKzuqpR7YfF_JSwiUv6psfK-ql37zYfTQdUyUy30aSTDD-ceud5PXI8Mh_PafCwvvK4SFrS-WIVKq7Frm_v80Oc2APvBaxkjDPclWl-TAzxHTmWqtXj47In2txdEOQPUdlgCUO3TKHRfPvA43Mh9Tlwa733lzTjwyR0prei8IRR9r0I8aBeHK5enfxsPgobI6F11FT2mz37SHgaBWsfhBUCLVtu79LZr_wZW5-8"/>
-                                <div class="w-8 h-8 rounded-full border-2 border-surface-container bg-surface-container-highest flex items-center justify-center text-[10px] font-bold">+1</div>
+                                <img alt="Team member"
+                                    class="w-8 h-8 rounded-full border-2 border-surface-container object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSvGbNZ-eZC_aHw0WBZG6mG3LUpeliSviBX8YYNKzuqpR7YfF_JSwiUv6psfK-ql37zYfTQdUyUy30aSTDD-ceud5PXI8Mh_PafCwvvK4SFrS-WIVKq7Frm_v80Oc2APvBaxkjDPclWl-TAzxHTmWqtXj47In2txdEOQPUdlgCUO3TKHRfPvA43Mh9Tlwa733lzTjwyR0prei8IRR9r0I8aBeHK5enfxsPgobI6F11FT2mz37SHgaBWsfhBUCLVtu79LZr_wZW5-8" />
+                                <div
+                                    class="w-8 h-8 rounded-full border-2 border-surface-container bg-surface-container-highest flex items-center justify-center text-[10px] font-bold">
+                                    +1</div>
                             </div>
                             <div class="flex items-center gap-1.5 text-xs text-on-surface-variant">
                                 <span class="material-symbols-outlined text-[16px]">calendar_today</span>
@@ -154,14 +186,18 @@
                 </div>
 
                 <!-- Project Card 3 -->
-                <div class="bg-surface-container rounded-2xl p-6 bento-card-hover transition-all duration-400 flex flex-col justify-between lg:col-span-1 h-[320px] bg-gradient-to-br from-surface-container to-surface-container-low border border-primary/5">
+                <div
+                    class="bg-surface-container rounded-2xl p-6 GRID-card-hover transition-all duration-400 flex flex-col justify-between lg:col-span-1 h-[320px] bg-gradient-to-br from-surface-container to-surface-container-low border border-primary/5">
                     <div>
                         <div class="flex justify-between items-start mb-4">
-                            <span class="px-3 py-1 bg-green-500/10 text-green-400 text-[10px] font-bold uppercase tracking-wider rounded-full border border-green-500/20">Completed</span>
-                            <button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined">more_vert</span></button>
+                            <span
+                                class="px-3 py-1 bg-green-500/10 text-green-400 text-[10px] font-bold uppercase tracking-wider rounded-full border border-green-500/20">Completed</span>
+                            <button class="text-on-surface-variant hover:text-on-surface"><span
+                                    class="material-symbols-outlined">more_vert</span></button>
                         </div>
                         <h4 class="font-syne font-extrabold text-xl text-on-surface mb-2">Quantum Encryption Module</h4>
-                        <p class="text-on-surface-variant text-sm line-clamp-2 font-outfit">Post-quantum cryptographic library integration for end-to-end user data.</p>
+                        <p class="text-on-surface-variant text-sm line-clamp-2 font-outfit">Post-quantum cryptographic
+                            library integration for end-to-end user data.</p>
                     </div>
                     <div class="space-y-4">
                         <div class="bg-surface-container-lowest p-3 rounded-xl flex items-center gap-3">
@@ -170,7 +206,9 @@
                         </div>
                         <div class="flex items-center justify-between">
                             <div class="flex -space-x-2">
-                                <img alt="Team member" class="w-8 h-8 rounded-full border-2 border-surface-container object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIZ0Yk4VjpCDIISbVAXI8MS1pKtlxt_AmBlRt7IdwdE6ypOwL_avsAWTj-A9wM6RE_bcE9zWothFvF3PFByncO7n_CC6CPXQ-w4r-WQSBRXfzsufOX23cVeMYrCo7xkHFyD8eVOWnP7_4WSaAN0S_fyZ5u7rk7Nsdturw6OSYs9ajANxoFZ3WYeNhAIlzFoLqIokni6xOCR0FSbgud0dSzMQr6r4LAoMPkee-G9updpUbzV1t_H-tYvzp5y7c0WgjzAh4bK62YFXY"/>
+                                <img alt="Team member"
+                                    class="w-8 h-8 rounded-full border-2 border-surface-container object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIZ0Yk4VjpCDIISbVAXI8MS1pKtlxt_AmBlRt7IdwdE6ypOwL_avsAWTj-A9wM6RE_bcE9zWothFvF3PFByncO7n_CC6CPXQ-w4r-WQSBRXfzsufOX23cVeMYrCo7xkHFyD8eVOWnP7_4WSaAN0S_fyZ5u7rk7Nsdturw6OSYs9ajANxoFZ3WYeNhAIlzFoLqIokni6xOCR0FSbgud0dSzMQr6r4LAoMPkee-G9updpUbzV1t_H-tYvzp5y7c0WgjzAh4bK62YFXY" />
                             </div>
                             <div class="flex items-center gap-1.5 text-xs text-on-surface-variant">
                                 <span class="material-symbols-outlined text-[16px]">calendar_today</span>
@@ -181,14 +219,18 @@
                 </div>
 
                 <!-- Project Card 4 -->
-                <div class="bg-surface-container rounded-2xl p-6 bento-card-hover transition-all duration-400 flex flex-col justify-between h-[320px]">
+                <div
+                    class="bg-surface-container rounded-2xl p-6 GRID-card-hover transition-all duration-400 flex flex-col justify-between h-[320px]">
                     <div>
                         <div class="flex justify-between items-start mb-4">
-                            <span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider rounded-full border border-primary/20">Active</span>
-                            <button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined">more_vert</span></button>
+                            <span
+                                class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider rounded-full border border-primary/20">Active</span>
+                            <button class="text-on-surface-variant hover:text-on-surface"><span
+                                    class="material-symbols-outlined">more_vert</span></button>
                         </div>
                         <h4 class="font-syne font-extrabold text-xl text-on-surface mb-2">Aether Dashboard Redesign</h4>
-                        <p class="text-on-surface-variant text-sm line-clamp-2 font-outfit">Applying Nocturnal Precision principles across all client portals.</p>
+                        <p class="text-on-surface-variant text-sm line-clamp-2 font-outfit">Applying Nocturnal Precision
+                            principles across all client portals.</p>
                     </div>
                     <div class="space-y-4">
                         <div>
@@ -202,8 +244,12 @@
                         </div>
                         <div class="flex items-center justify-between">
                             <div class="flex -space-x-2">
-                                <img alt="Team member" class="w-8 h-8 rounded-full border-2 border-surface-container object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi8rYtGPGKqCzIjfsP3MnKqNi_IQMOgdVtC6GCKPZTcN0MUxyDC66ZDT2KKn8ISFPyHre2dsL_Y0p-Vv58JuBAX-gVkYg9QbI3npWXyh64Tb6-OSOvApJnJnGSsvN_ff-sAXjfzWsQp9Rm0U1twhVnS6Rabe4HzhwL17vxUrvVBVr_ObnTWEIlZsEMVgAMtVW7gLxebuBf_biuwROA3wv-8DwEaoFZPKCLI4E5HYilUVkLB28P5H3KSzWXAf6CUjswHD1iUExAwAE"/>
-                                <img alt="Team member" class="w-8 h-8 rounded-full border-2 border-surface-container object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGU8qqA-1i8BdV6Dtg4C1HOL7Ganea7RZEw0XvN5NEokE68jbVL-vGNnMdynabBsPOdiK6JYJIKDtUtVF0lVnumY60jJD4lZf-MDE3wYcE6gXNJcO0YzxTgZRNrUayqskeyBje9AeECPoOE0nlTrMc5VmAJpVOS1pBEjwog0QQgBn9MbyXWhG8Ie4rEJd3ULhi4G9-GhLdm8LIhRC9ZOZ4CI8sSpHOy1FNMctNy4_m163cvCX3iBNbkm5FCPRgdzbDqhoWfNUlvVs"/>
+                                <img alt="Team member"
+                                    class="w-8 h-8 rounded-full border-2 border-surface-container object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi8rYtGPGKqCzIjfsP3MnKqNi_IQMOgdVtC6GCKPZTcN0MUxyDC66ZDT2KKn8ISFPyHre2dsL_Y0p-Vv58JuBAX-gVkYg9QbI3npWXyh64Tb6-OSOvApJnJnGSsvN_ff-sAXjfzWsQp9Rm0U1twhVnS6Rabe4HzhwL17vxUrvVBVr_ObnTWEIlZsEMVgAMtVW7gLxebuBf_biuwROA3wv-8DwEaoFZPKCLI4E5HYilUVkLB28P5H3KSzWXAf6CUjswHD1iUExAwAE" />
+                                <img alt="Team member"
+                                    class="w-8 h-8 rounded-full border-2 border-surface-container object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGU8qqA-1i8BdV6Dtg4C1HOL7Ganea7RZEw0XvN5NEokE68jbVL-vGNnMdynabBsPOdiK6JYJIKDtUtVF0lVnumY60jJD4lZf-MDE3wYcE6gXNJcO0YzxTgZRNrUayqskeyBje9AeECPoOE0nlTrMc5VmAJpVOS1pBEjwog0QQgBn9MbyXWhG8Ie4rEJd3ULhi4G9-GhLdm8LIhRC9ZOZ4CI8sSpHOy1FNMctNy4_m163cvCX3iBNbkm5FCPRgdzbDqhoWfNUlvVs" />
                             </div>
                             <div class="flex items-center gap-1.5 text-xs text-on-surface-variant">
                                 <span class="material-symbols-outlined text-[16px]">calendar_today</span>
@@ -214,7 +260,8 @@
                 </div>
 
                 <!-- Hybrid Component: Table Row Integration -->
-                <div class="bg-surface-container lg:col-span-2 rounded-2xl p-6 bento-card-hover transition-all duration-400 flex flex-col justify-between">
+                <div
+                    class="bg-surface-container lg:col-span-2 rounded-2xl p-6 GRID-card-hover transition-all duration-400 flex flex-col justify-between">
                     <div class="flex items-center justify-between mb-6">
                         <h4 class="font-syne font-extrabold text-xl">Critical Maintenance Log</h4>
                         <a class="text-primary text-xs font-bold hover:underline" href="#">View All Tickets</a>
@@ -234,12 +281,15 @@
                                     <td class="py-4 font-medium text-on-surface">Database Latency Leak</td>
                                     <td class="py-4">
                                         <div class="flex items-center gap-2">
-                                            <div class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-[10px] font-bold">JD</div>
+                                            <div
+                                                class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-[10px] font-bold">
+                                                JD</div>
                                             <span>Julian D.</span>
                                         </div>
                                     </td>
                                     <td class="py-4">
-                                        <span class="text-error font-bold text-[10px] tracking-widest uppercase">High</span>
+                                        <span
+                                            class="text-error font-bold text-[10px] tracking-widest uppercase">High</span>
                                     </td>
                                     <td class="py-4 text-on-surface-variant">2h 15m</td>
                                 </tr>
@@ -247,12 +297,15 @@
                                     <td class="py-4 font-medium text-on-surface">Auth Token Refactor</td>
                                     <td class="py-4">
                                         <div class="flex items-center gap-2">
-                                            <div class="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center text-[10px] font-bold">SA</div>
+                                            <div
+                                                class="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center text-[10px] font-bold">
+                                                SA</div>
                                             <span>Sarah A.</span>
                                         </div>
                                     </td>
                                     <td class="py-4">
-                                        <span class="text-tertiary font-bold text-[10px] tracking-widest uppercase">Medium</span>
+                                        <span
+                                            class="text-tertiary font-bold text-[10px] tracking-widest uppercase">Medium</span>
                                     </td>
                                     <td class="py-4 text-on-surface-variant">Next Week</td>
                                 </tr>
@@ -264,4 +317,5 @@
         </div>
     </main>
 </body>
+
 </html>

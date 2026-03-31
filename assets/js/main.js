@@ -113,7 +113,7 @@
         href &&
         (currentPage === href.split("/").pop() ||
           currentPage.replace(".html", "") ===
-            href.split("/").pop().replace(".html", ""))
+          href.split("/").pop().replace(".html", ""))
       ) {
         addClass(item, "active");
       } else {
@@ -533,6 +533,6 @@
     removeFromStorage,
 
     // Re-initialize
-    reinit: init,
+    reinitialize: init,
   };
 })();
