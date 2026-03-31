@@ -357,7 +357,9 @@
                             <p class="text-[10px] font-bold text-on-surface-variant uppercase">Primary Grouping</p>
                             <div class="relative">
                                 <select
-                                    class="w-full bg-surface-container-lowest border-none rounded-xl py-2.5 px-4 text-xs appearance-none focus:ring-1 focus:ring-primary/40">
+                                    aria-label="Primary grouping criteria for report data"
+                                    class="w-full bg-surface-container-lowest border-none rounded-xl py-2.5 px-4 text-xs appearance-none focus:ring-1 focus:ring-primary/40"
+                                    name="primary_grouping">
                                     <option>Client Name</option>
                                     <option>Project Category</option>
                                     <option>Assignee</option>
@@ -384,10 +386,11 @@
                         Config</label>
                     <div class="space-y-4">
                         <div class="flex items-center justify-between">
-                            <span class="text-xs text-on-surface-variant">Rows per page</span>
+                            <label for="rows_per_page" class="text-xs text-on-surface-variant">Rows per page</label>
                             <input
+                                id="rows_per_page"
                                 class="w-16 bg-surface-container-lowest border-none rounded-lg text-xs py-1 px-2 text-right"
-                                type="number" value="25" />
+                                type="number" value="25" placeholder="25" />
                         </div>
                         <div class="flex items-center justify-between">
                             <span class="text-xs text-on-surface-variant">Show subtotals</span>

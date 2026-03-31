@@ -62,7 +62,7 @@
                 <div class="h-8 w-[1px] bg-outline-variant/20 mx-2 hidden sm:block"></div>
                 <div class="flex flex-wrap items-center gap-2 sm:gap-3">
                     <div class="relative group">
-                        <select
+                        <select id="filter_status" aria-label="Filter by status"
                             class="appearance-none bg-surface-container-low border border-outline-variant/10 rounded-lg sm:rounded-xl pl-3 sm:pl-4 pr-8 sm:pr-10 py-2 sm:py-2.5 text-xs font-medium text-on-surface-variant focus:ring-1 focus:ring-primary/30 min-h-[44px]">
                             <option>Status: All</option>
                             <option>Active</option>
@@ -72,7 +72,7 @@
                             class="material-symbols-outlined absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 text-xs pointer-events-none">expand_more</span>
                     </div>
                     <div class="relative group">
-                        <select
+                        <select id="filter_project" aria-label="Filter by project"
                             class="appearance-none bg-surface-container-low border border-outline-variant/10 rounded-lg sm:rounded-xl pl-3 sm:pl-4 pr-8 sm:pr-10 py-2 sm:py-2.5 text-xs font-medium text-on-surface-variant focus:ring-1 focus:ring-primary/30 min-h-[44px]">
                             <option>Project: All</option>
                             <option>Obsidian AI</option>
@@ -85,7 +85,7 @@
                 </div>
                 <div class="ml-auto flex items-center gap-3 sm:gap-4">
                     <p class="text-xs text-outline font-medium whitespace-nowrap">Selected: 0</p>
-                    <button
+                    <button aria-label="Delete selected team members"
                         class="text-outline hover:text-error-container/80 transition-colors p-2 rounded-lg hover:bg-error-container/10 min-h-[44px] min-w-[44px]">
                         <span class="material-symbols-outlined text-xl">delete</span>
                     </button>
@@ -98,9 +98,9 @@
                 <div
                     class="group relative bg-surface-container rounded-xl p-4 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40 indigo-glow">
                     <div class="absolute top-3 sm:top-4 left-3 sm:left-4 z-10">
-                        <input
+                        <input aria-label="Select Jordan Smith"
                             class="w-4 h-4 rounded border-outline-variant/30 bg-transparent text-primary focus:ring-offset-0 focus:ring-primary/30"
-                            type="checkbox" />
+                            type="checkbox" name="select_member_1" />
                     </div>
                     <div class="absolute top-3 sm:top-4 right-3 sm:right-4 flex gap-1">
                         <button
@@ -115,7 +115,7 @@
                     <div class="flex flex-col items-center text-center">
                         <div class="relative mb-3 sm:mb-4">
                             <img class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                                data-alt="Avatar of Jordan Smith, Senior Designer"
+                                alt="Avatar of Jordan Smith, Senior Designer"
                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsjfh_2coQKvMNrDbY1AveeZH3F4zJlen_3AEAHpIT9qgFyEVPXH0vXQMy0_U4XY0VILmpfu-SLZHukaQrwH5IpoolZK1x2Y4dp2FdAd9iUS0rHRmQMlKxmV6cMkwWvSxGaBY6RpM2rpWvfAMQO1bomHCGF4rvK_I_H2Qu61VXKVSqyNJRuT6QVfquNuqzKYbWEYukdSLhceL4G919METNcoTUSBv3TcRNscBogoEkxQfTdBtpnZDt_Ad0uSes6fYRbY2rUJ63UzI" />
                             <span
                                 class="absolute -bottom-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-emerald-500 border-2 sm:border-4 border-surface-container rounded-full"></span>
@@ -157,9 +157,9 @@
                 <div
                     class="group relative bg-surface-container rounded-xl p-4 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40 indigo-glow">
                     <div class="absolute top-3 sm:top-4 left-3 sm:left-4 z-10">
-                        <input
+                        <input aria-label="Select Sarah Chen"
                             class="w-4 h-4 rounded border-outline-variant/30 bg-transparent text-primary focus:ring-offset-0 focus:ring-primary/30"
-                            type="checkbox" />
+                            type="checkbox" name="select_member_2" />
                     </div>
                     <div class="absolute top-3 sm:top-4 right-3 sm:right-4 flex gap-1">
                         <button
@@ -174,7 +174,7 @@
                     <div class="flex flex-col items-center text-center">
                         <div class="relative mb-3 sm:mb-4">
                             <img class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                                data-alt="Avatar of Sarah Chen, Lead Developer"
+                                alt="Avatar of Sarah Chen, Lead Developer"
                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpb_H5RPVotoUIsCRxEWjLSm1YMr1xAC1GYlKJ9BwK4pTMcB5Wuwea-dLYuMuJm1ZE9Syoo_amurN9UM-Z4vNj25Lpgs7X8azzQ2_pQBL2YaZnB2ybd8cwhMaw2zJ-qdB9CuhrV-eiZhFms7sdPVnKiRFWyElNWW4a-ZtBVFFphy_uK7p1rW9XnjdaeY7qJ9tp8O4-oF7W0goSDD60uqi3va8f3albceu4iyo8bJJ00YeIJWrjGjAVBp3y5Lrwu-qJfwrN2C8sc5I" />
                             <span
                                 class="absolute -bottom-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-emerald-500 border-2 sm:border-4 border-surface-container rounded-full"></span>
@@ -214,9 +214,9 @@
                 <div
                     class="group relative bg-surface-container rounded-xl p-4 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40 indigo-glow">
                     <div class="absolute top-3 sm:top-4 left-3 sm:left-4 z-10">
-                        <input
+                        <input aria-label="Select Alex Morgan"
                             class="w-4 h-4 rounded border-outline-variant/30 bg-transparent text-primary focus:ring-offset-0 focus:ring-primary/30"
-                            type="checkbox" />
+                            type="checkbox" name="select_member_3" />
                     </div>
                     <div class="absolute top-3 sm:top-4 right-3 sm:right-4 flex gap-1">
                         <button
@@ -231,7 +231,7 @@
                     <div class="flex flex-col items-center text-center">
                         <div class="relative mb-3 sm:mb-4">
                             <img class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                                data-alt="Avatar of Marcus Aurelius, Product Manager"
+                                alt="Avatar of Marcus Aurelius, Product Manager"
                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxXebGQLGkkRth7kQgYB7dKh69VONdQQVty8IDQSDica63nIubAVJVWlizVYqSF8NC5-3NljBRCHBQZJcAC5E4IexVyX9hREIZjVEa3rK9iD5PqdgehvQcm4YGhL8bXKwPNfauY2CCxcRXJDkEJ4BlEpU2OW0VUpRScuBPa1ZeP_9xFPu_efTUE04qIWjF6hDfCcLNGQX5Q32z0-0hUpuJOMEtdv_tvpDXJsS2NyYBT0cE_cIDyO-Oz9SCEruMyZPB3ZRaJrLlYZE" />
                             <span
                                 class="absolute -bottom-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-outline-variant border-2 sm:border-4 border-surface-container rounded-full"></span>

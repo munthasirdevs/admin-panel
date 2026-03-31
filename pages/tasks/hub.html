@@ -52,7 +52,7 @@
                                     Matrix</label>
                                 <div class="space-y-2">
                                     <label class="flex items-center gap-3 cursor-pointer group">
-                                        <input
+                                        <input aria-label="Filter by To Do status"
                                             class="rounded border-outline-variant bg-surface-container-lowest text-primary focus:ring-primary/20 transition-all"
                                             type="checkbox" />
                                         <span
@@ -60,7 +60,7 @@
                                             Do</span>
                                     </label>
                                     <label class="flex items-center gap-3 cursor-pointer group">
-                                        <input checked=""
+                                        <input checked="" aria-label="Filter by In Progress status"
                                             class="rounded border-outline-variant bg-surface-container-lowest text-primary focus:ring-primary/20 transition-all"
                                             type="checkbox" />
                                         <span
@@ -68,7 +68,7 @@
                                             Progress</span>
                                     </label>
                                     <label class="flex items-center gap-3 cursor-pointer group">
-                                        <input
+                                        <input aria-label="Filter by Done status"
                                             class="rounded border-outline-variant bg-surface-container-lowest text-primary focus:ring-primary/20 transition-all"
                                             type="checkbox" />
                                         <span
@@ -108,17 +108,18 @@
                     <!-- Table Header -->
                     <div
                         class="grid grid-cols-12 px-6 py-3 text-xs font-medium text-outline uppercase tracking-widest bg-surface-container-low rounded-t-xl hidden lg:grid">
-                        <div class="col-span-5">Task Designation</div>
+                        <div class="col-span-4">Task Designation</div>
                         <div class="col-span-2">Protocol Status</div>
-                        <div class="col-span-2">Priority</div>
+                        <div class="col-span-1">Priority</div>
                         <div class="col-span-2">Assignee</div>
+                        <div class="col-span-2">Deadline</div>
                         <div class="col-span-1 text-right">Actions</div>
                     </div>
 
                     <!-- Task Item: Row 1 -->
                     <div
                         class="group bg-surface-container rounded-xl p-6 transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high shadow-lg lg:grid lg:grid-cols-12 lg:items-center lg:gap-4 border border-transparent hover:border-primary/10">
-                        <div class="col-span-5 mb-4 lg:mb-0">
+                        <div class="col-span-4 mb-4 lg:mb-0">
                             <div class="flex items-center gap-4">
                                 <div
                                     class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
@@ -138,7 +139,7 @@
                                 In Progress
                             </span>
                         </div>
-                        <div class="col-span-2 mb-4 lg:mb-0">
+                        <div class="col-span-1 mb-4 lg:mb-0">
                             <span
                                 class="px-2.5 py-1 rounded-md bg-error-container/20 text-error text-xs font-bold uppercase border border-error/30">High</span>
                         </div>
@@ -147,21 +148,27 @@
                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiQINYoaI7rNEgriQMN-nVGaD9dJIwv1fRH3nmLIPyqbcwvpv-5F6ywNb9ZkYpzh3W-B3vVZsHXTv197t6ojkUJ_wOCTxxiwZMwgeaEI6wiOGnszM8_v1VbqU2980e6gk2QsD4tPz4pIDZjOvaefZdfX96XSsTysVbWMGHJc9IOXyy-pwnNdan6EvugZW5L3vFJXm9HQbGaHlZfkTs81GAOAoMS1uaAsWh6K9ETH7HwwEOTB1bZvU5a_qeoXtbZGk7dVGTTWfyTc0" />
                             <span class="text-sm text-on-surface-variant">Alex Rivera</span>
                         </div>
+                        <div class="col-span-2 mb-4 lg:mb-0">
+                            <div class="flex items-center gap-2 text-sm text-on-surface-variant">
+                                <span class="material-symbols-outlined text-base">calendar_today</span>
+                                <span>Oct 15, 2024</span>
+                            </div>
+                        </div>
                         <div class="col-span-1 flex justify-end gap-2">
                             <button class="material-symbols-outlined text-outline hover:text-primary transition-colors"
-                                title="View Details">visibility</button>
+                                aria-label="View Details">visibility</button>
                             <button class="material-symbols-outlined text-outline hover:text-primary transition-colors"
-                                title="Edit Task">edit</button>
+                                aria-label="Edit Task">edit</button>
                             <button
                                 class="material-symbols-outlined text-outline hover:text-green-400 transition-colors"
-                                title="Complete Task">check_circle</button>
+                                aria-label="Complete Task">check_circle</button>
                         </div>
                     </div>
 
                     <!-- Task Item: Row 2 -->
                     <div
                         class="group bg-surface-container rounded-xl p-6 transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high shadow-lg lg:grid lg:grid-cols-12 lg:items-center lg:gap-4 border border-transparent hover:border-primary/10">
-                        <div class="col-span-5 mb-4 lg:mb-0">
+                        <div class="col-span-4 mb-4 lg:mb-0">
                             <div class="flex items-center gap-4">
                                 <div
                                     class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
@@ -181,7 +188,7 @@
                                 To Do
                             </span>
                         </div>
-                        <div class="col-span-2 mb-4 lg:mb-0">
+                        <div class="col-span-1 mb-4 lg:mb-0">
                             <span
                                 class="px-2.5 py-1 rounded-md bg-tertiary-container/20 text-tertiary text-xs font-bold uppercase border border-tertiary/30">Medium</span>
                         </div>
@@ -189,6 +196,12 @@
                             <img alt="Assignee avatar" class="w-6 h-6 rounded-full bg-surface-container-highest"
                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5maxBPRHCBnc_n1u8GzBwN8F_ib70eo-BEVda6qBsrVwrInbx8YCtNN9itFuy061Le2Mbfs0T806o4QkP9mfkn1hQSNyBCqsT5G6NTYRgxxbpU63vETF95PSFUmhmicdkBQ0orwyaIULcTaUiSHUrRT3SF237MoT4QTaJbdTJKDhFNUR-W9ujewujG5bGOT1dhbDWpUl3JS9RhiQO_3oG0j0lzn85AMtADmam5MUpOXcOI5WRAe6M5pOnkrFWUopXSwObVGkHhpk" />
                             <span class="text-sm text-on-surface-variant">Marcus Chen</span>
+                        </div>
+                        <div class="col-span-2 mb-4 lg:mb-0">
+                            <div class="flex items-center gap-2 text-sm text-on-surface-variant">
+                                <span class="material-symbols-outlined text-base">calendar_today</span>
+                                <span>Oct 20, 2024</span>
+                            </div>
                         </div>
                         <div class="col-span-1 flex justify-end gap-2">
                             <button
@@ -203,7 +216,7 @@
                     <!-- Task Item: Row 3 -->
                     <div
                         class="group bg-surface-container rounded-xl p-6 transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high shadow-lg lg:grid lg:grid-cols-12 lg:items-center lg:gap-4 border border-transparent hover:border-primary/10">
-                        <div class="col-span-5 mb-4 lg:mb-0">
+                        <div class="col-span-4 mb-4 lg:mb-0">
                             <div class="flex items-center gap-4">
                                 <div
                                     class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center text-green-400">
@@ -223,7 +236,7 @@
                                 Done
                             </span>
                         </div>
-                        <div class="col-span-2 mb-4 lg:mb-0">
+                        <div class="col-span-1 mb-4 lg:mb-0">
                             <span
                                 class="px-2.5 py-1 rounded-md bg-surface-container-highest text-outline text-xs font-bold uppercase border border-outline/20">Low</span>
                         </div>
@@ -232,12 +245,18 @@
                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-M2gQE093hhXBMnM4W2ru3_sPMFLzOjip6CnwTFtgEQh-oU6gBNrNRRQKLTThyuRo69fPC21YXZVRvw6Ws1HxB714Iq94jHLT1mWtDY-hDqDC-N1BMNe4FMwmVaavApPL06KGbQfkI-2XtbWsAIUtNn1PzkpDKsG6oOCpJxLkAyJRXkam7uuTBjCtF8JQ9h_DfSR6uVM3Og_U8eiwPcY7gNI91dlrsHRnjCYITXTcX4awxQrG6dehwj18jI1fi7M3TeL2VvV5sx0" />
                             <span class="text-sm text-on-surface-variant">Sara Ross</span>
                         </div>
+                        <div class="col-span-2 mb-4 lg:mb-0">
+                            <div class="flex items-center gap-2 text-sm text-on-surface-variant">
+                                <span class="material-symbols-outlined text-base">calendar_today</span>
+                                <span>Oct 10, 2024</span>
+                            </div>
+                        </div>
                         <div class="col-span-1 flex justify-end gap-2">
                             <button
-                                class="material-symbols-outlined text-outline hover:text-primary transition-colors">visibility</button>
+                                class="material-symbols-outlined text-outline hover:text-primary transition-colors" aria-label="View Details">visibility</button>
                             <button
-                                class="material-symbols-outlined text-outline hover:text-primary transition-colors">edit</button>
-                            <button class="material-symbols-outlined text-green-400">check_circle</button>
+                                class="material-symbols-outlined text-outline hover:text-primary transition-colors" aria-label="Edit Task">edit</button>
+                            <button class="material-symbols-outlined text-green-400" aria-label="Complete Task">check_circle</button>
                         </div>
                     </div>
 

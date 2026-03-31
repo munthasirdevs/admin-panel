@@ -38,6 +38,20 @@
 }
 
 /* ============================================
+   SVG CHART STYLES
+   Gradient stops for chart visualizations
+   ============================================ */
+.chart-gradient-stop-start {
+  stop-color: var(--color-tertiary);
+  stop-opacity: 0.1;
+}
+
+.chart-gradient-stop-end {
+  stop-color: var(--color-tertiary);
+  stop-opacity: 0;
+}
+
+/* ============================================
    CSS VARIABLES - Design System Tokens
    ============================================ */
 :root {

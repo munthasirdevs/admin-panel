@@ -39,10 +39,10 @@
                         interaction.</p>
                 </div>
                 <div class="flex gap-4">
-                    <button
+                    <button aria-label="Discard all unsaved changes"
                         class="px-6 py-3 rounded-xl border border-outline-variant/20 font-medium text-sm hover:bg-surface-container transition-all">Discard
                         Changes</button>
-                    <button
+                    <button aria-label="Save all configuration changes"
                         class="px-8 py-3 primary-gradient rounded-xl font-bold text-on-primary text-sm flex items-center gap-2 shadow-xl shadow-primary/10">
                         <span class="material-symbols-outlined text-lg">save</span>
                         Save Changes
@@ -55,7 +55,7 @@
 
                 <!-- === GENERAL SETTINGS (LARGE SPAN) === -->
                 <div
-                    class="col-span-12 lg:col-span-8 GRID-card bg-surface-container rounded-2xl p-8 flex flex-col justify-between overflow-hidden relative group">
+                    class="col-span-12 lg:col-span-8 bg-surface-container rounded-2xl p-8 flex flex-col justify-between overflow-hidden relative group">
                     <div
                         class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-20 -mt-20 blur-3xl group-hover:bg-primary/10 transition-colors">
                     </div>
@@ -66,22 +66,24 @@
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div class="space-y-4">
-                                <label class="block text-sm font-medium text-on-surface-variant">System Name</label>
-                                <input
+                                <label for="system_name"
+                                    class="block text-sm font-medium text-on-surface-variant">System Name</label>
+                                <input id="system_name" aria-label="Enter system name"
                                     class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary/40 focus:outline-none transition-all"
-                                    type="text" value="XenonOS Enterprise" />
+                                    type="text" value="XenonOS Enterprise" name="system_name" />
                                 <p class="text-[11px] text-outline/70">The global identifier for this instance.</p>
                             </div>
                             <div class="space-y-4">
-                                <label class="block text-sm font-medium text-on-surface-variant">Branding Color</label>
+                                <label for="branding_color"
+                                    class="block text-sm font-medium text-on-surface-variant">Branding Color</label>
                                 <div class="flex items-center gap-4">
                                     <div
                                         class="w-12 h-12 rounded-xl bg-[#6366f1] cursor-pointer border-4 border-surface-container-high shadow-lg">
                                     </div>
                                     <div class="flex-1">
-                                        <input
+                                        <input id="branding_color" aria-label="Enter branding color hex code"
                                             class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-4 py-3 text-xs font-mono uppercase focus:ring-2 focus:ring-primary/40 focus:outline-none"
-                                            type="text" value="#6366F1" />
+                                            type="text" value="#6366F1" name="branding_color" />
                                     </div>
                                 </div>
                                 <p class="text-[11px] text-outline/70">Used for primary accents and high-priority
@@ -105,9 +107,10 @@
                             <p class="text-xs text-on-surface-variant max-w-xs leading-relaxed">Recommended 512x512px
                                 SVG or PNG. This logo appears in the side navigation and login portals.</p>
                             <div class="flex gap-3 mt-2">
-                                <button class="text-[11px] font-bold text-primary uppercase tracking-wider">Update
+                                <button aria-label="Update instance logo image"
+                                    class="text-[11px] font-bold text-primary uppercase tracking-wider">Update
                                     Image</button>
-                                <button
+                                <button aria-label="Remove instance logo"
                                     class="text-[11px] font-bold text-error uppercase tracking-wider opacity-60 hover:opacity-100">Remove</button>
                             </div>
                         </div>
@@ -115,18 +118,19 @@
                 </div>
 
                 <!-- === LOCALIZATION CARD (NARROW VERTICAL) === -->
-                <div
-                    class="col-span-12 lg:col-span-4 GRID-card bg-surface-container rounded-2xl p-8 flex flex-col gap-8">
+                <div class="col-span-12 lg:col-span-4 bg-surface-container rounded-2xl p-8 flex flex-col gap-8">
                     <div class="flex items-center gap-3">
                         <span class="material-symbols-outlined text-primary">language</span>
                         <h3 class="font-['Syne'] text-xl font-bold">Localization</h3>
                     </div>
                     <div class="space-y-6">
                         <div class="space-y-2">
-                            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant/60">System
+                            <label for="system_language"
+                                class="text-xs font-bold uppercase tracking-widest text-on-surface-variant/60">System
                                 Language</label>
-                            <select
-                                class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-4 py-3 text-sm text-on-surface appearance-none focus:ring-2 focus:ring-primary/40">
+                            <select id="system_language" aria-label="Select system language"
+                                class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-4 py-3 text-sm text-on-surface appearance-none focus:ring-2 focus:ring-primary/40"
+                                name="system_language">
                                 <option>English (United Kingdom)</option>
                                 <option>English (United States)</option>
                                 <option>German (Germany)</option>
@@ -135,10 +139,12 @@
                             </select>
                         </div>
                         <div class="space-y-2">
-                            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant/60">Global
+                            <label for="system_timezone"
+                                class="text-xs font-bold uppercase tracking-widest text-on-surface-variant/60">Global
                                 Timezone</label>
-                            <select
-                                class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-4 py-3 text-sm text-on-surface appearance-none focus:ring-2 focus:ring-primary/40">
+                            <select id="system_timezone" aria-label="Select global timezone"
+                                class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-4 py-3 text-sm text-on-surface appearance-none focus:ring-2 focus:ring-primary/40"
+                                name="system_timezone">
                                 <option>(UTC+00:00) London</option>
                                 <option>(UTC-05:00) New York</option>
                                 <option>(UTC+01:00) Berlin</option>
@@ -158,7 +164,7 @@
                 </div>
 
                 <!-- === INTERFACE PREFERENCES (WIDE LOWER) === -->
-                <div class="col-span-12 lg:col-span-12 GRID-card bg-surface-container rounded-2xl p-8">
+                <div class="col-span-12 lg:col-span-12 bg-surface-container rounded-2xl p-8">
                     <div class="flex items-center justify-between mb-8">
                         <div class="flex items-center gap-3">
                             <span class="material-symbols-outlined text-primary">palette</span>
@@ -175,7 +181,8 @@
                             <h4 class="text-sm font-bold text-on-surface-variant uppercase tracking-widest">Appearance
                             </h4>
                             <div class="grid grid-cols-2 gap-4">
-                                <div
+                                <div role="radio" aria-checked="true" tabindex="0"
+                                    aria-label="Select Nocturnal dark theme"
                                     class="border-2 border-primary bg-surface-container-lowest rounded-xl p-4 flex flex-col items-center gap-3 cursor-pointer">
                                     <div
                                         class="w-full h-20 rounded-lg bg-[#0f131d] border border-outline-variant/20 flex flex-col p-2 gap-1">
@@ -184,7 +191,8 @@
                                     </div>
                                     <span class="text-xs font-bold">Nocturnal</span>
                                 </div>
-                                <div
+                                <div role="radio" aria-checked="false" tabindex="0"
+                                    aria-label="Select Luminescent light theme"
                                     class="border border-outline-variant/20 bg-surface-container-lowest/50 rounded-xl p-4 flex flex-col items-center gap-3 cursor-pointer hover:border-primary/40 transition-all">
                                     <div
                                         class="w-full h-20 rounded-lg bg-[#dfe2f1] border border-outline-variant/20 flex flex-col p-2 gap-1">
@@ -208,7 +216,9 @@
                                             class="material-symbols-outlined text-on-surface-variant">view_sidebar</span>
                                         <span class="text-sm font-medium">Fixed Sidebar</span>
                                     </div>
-                                    <div class="w-10 h-5 bg-primary/20 rounded-full relative">
+                                    <div role="switch" aria-checked="true" aria-label="Enable fixed sidebar"
+                                        tabindex="0"
+                                        class="w-10 h-5 bg-primary/20 rounded-full relative cursor-pointer">
                                         <div
                                             class="absolute right-0.5 top-0.5 w-4 h-4 bg-primary rounded-full shadow-sm">
                                         </div>
@@ -221,7 +231,9 @@
                                             class="material-symbols-outlined text-on-surface-variant">view_stream</span>
                                         <span class="text-sm font-medium">Horizontal Navigation</span>
                                     </div>
-                                    <div class="w-10 h-5 bg-outline-variant/20 rounded-full relative">
+                                    <div role="switch" aria-checked="false" aria-label="Enable horizontal navigation"
+                                        tabindex="0"
+                                        class="w-10 h-5 bg-outline-variant/20 rounded-full relative cursor-pointer">
                                         <div
                                             class="absolute left-0.5 top-0.5 w-4 h-4 bg-outline-variant/60 rounded-full shadow-sm">
                                         </div>
@@ -240,7 +252,9 @@
                                         <span class="text-sm font-medium">Critical Alerts</span>
                                         <span class="text-[10px] text-outline/70">Always visible in status bar</span>
                                     </div>
-                                    <div class="w-10 h-5 bg-primary/20 rounded-full relative">
+                                    <div role="switch" aria-checked="true" aria-label="Enable critical alerts"
+                                        tabindex="0"
+                                        class="w-10 h-5 bg-primary/20 rounded-full relative cursor-pointer">
                                         <div class="absolute right-0.5 top-0.5 w-4 h-4 bg-primary rounded-full"></div>
                                     </div>
                                 </div>
@@ -249,7 +263,9 @@
                                         <span class="text-sm font-medium">Sound Effects</span>
                                         <span class="text-[10px] text-outline/70">Audible interface cues</span>
                                     </div>
-                                    <div class="w-10 h-5 bg-outline-variant/20 rounded-full relative">
+                                    <div role="switch" aria-checked="false" aria-label="Enable sound effects"
+                                        tabindex="0"
+                                        class="w-10 h-5 bg-outline-variant/20 rounded-full relative cursor-pointer">
                                         <div
                                             class="absolute left-0.5 top-0.5 w-4 h-4 bg-outline-variant/60 rounded-full">
                                         </div>
@@ -260,7 +276,9 @@
                                         <span class="text-sm font-medium">Usage Reports</span>
                                         <span class="text-[10px] text-outline/70">Monthly analytical digests</span>
                                     </div>
-                                    <div class="w-10 h-5 bg-primary/20 rounded-full relative">
+                                    <div role="switch" aria-checked="true" aria-label="Enable usage reports"
+                                        tabindex="0"
+                                        class="w-10 h-5 bg-primary/20 rounded-full relative cursor-pointer">
                                         <div class="absolute right-0.5 top-0.5 w-4 h-4 bg-primary rounded-full"></div>
                                     </div>
                                 </div>

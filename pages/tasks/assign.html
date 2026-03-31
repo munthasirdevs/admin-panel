@@ -97,19 +97,20 @@
                         </div>
                         <div class="grid grid-cols-2 gap-6">
                             <div class="col-span-2">
-                                <label
+                                <label for="task_name"
                                     class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Task
                                     Name</label>
                                 <input
+                                    id="task_name"
                                     class="w-full bg-surface-container rounded-xl border-outline-variant/15 py-3 px-4 focus:ring-1 focus:ring-primary focus:border-primary"
                                     placeholder="e.g., Q3 Financial Audit Review" type="text" />
                             </div>
                             <div>
-                                <label
+                                <label for="project_selection"
                                     class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Project
                                     Selection</label>
                                 <div class="relative">
-                                    <select
+                                    <select id="project_selection" aria-label="Select project for task"
                                         class="w-full appearance-none bg-surface-container rounded-xl border-outline-variant/15 py-3 px-4 focus:ring-1 focus:ring-primary">
                                         <option>Select Project</option>
                                         <option>Obsidian Arch Redesign</option>
@@ -121,11 +122,12 @@
                                 </div>
                             </div>
                             <div>
-                                <label
+                                <label for="due_date"
                                     class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Due
                                     Date</label>
                                 <div class="relative">
                                     <input
+                                        id="due_date"
                                         class="w-full bg-surface-container rounded-xl border-outline-variant/15 py-3 px-4 focus:ring-1 focus:ring-primary"
                                         type="date" />
                                     <span
@@ -133,10 +135,11 @@
                                 </div>
                             </div>
                             <div class="col-span-2">
-                                <label
+                                <label for="task_description"
                                     class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Short
                                     Description</label>
                                 <textarea
+                                    id="task_description"
                                     class="w-full bg-surface-container rounded-xl border-outline-variant/15 py-3 px-4 focus:ring-1 focus:ring-primary"
                                     placeholder="Briefly describe the task objectives..." rows="4"></textarea>
                             </div>
@@ -157,7 +160,7 @@
                                     class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Initial
                                     Status</label>
                                 <div class="relative">
-                                    <select
+                                    <select aria-label="Select initial task status"
                                         class="w-full appearance-none bg-surface-container rounded-xl border-outline-variant/15 py-3 px-4 focus:ring-1 focus:ring-primary">
                                         <option>To Do</option>
                                         <option>In Progress</option>
@@ -200,14 +203,14 @@
                                 </div>
                                 <div class="flex items-center gap-8">
                                     <div class="w-40">
-                                        <select
+                                        <select aria-label="Select role for team member"
                                             class="w-full bg-surface-container-low border-none text-xs font-medium rounded-lg focus:ring-1 focus:ring-primary">
                                             <option>Approver</option>
                                             <option selected="">Assignee</option>
                                             <option>Observer</option>
                                         </select>
                                     </div>
-                                    <button class="text-slate-500 hover:text-error transition-colors">
+                                    <button class="text-slate-500 hover:text-error transition-colors" aria-label="Remove team member">
                                         <span class="material-symbols-outlined text-lg">close</span>
                                     </button>
                                 </div>
@@ -225,14 +228,14 @@
                                 </div>
                                 <div class="flex items-center gap-8">
                                     <div class="w-40">
-                                        <select
+                                        <select aria-label="Select role for team member"
                                             class="w-full bg-surface-container-low border-none text-xs font-medium rounded-lg focus:ring-1 focus:ring-primary">
                                             <option>Approver</option>
                                             <option>Assignee</option>
                                             <option selected="">Observer</option>
                                         </select>
                                     </div>
-                                    <button class="text-slate-500 hover:text-error transition-colors">
+                                    <button class="text-slate-500 hover:text-error transition-colors" aria-label="Remove team member">
                                         <span class="material-symbols-outlined text-lg">close</span>
                                     </button>
                                 </div>
@@ -261,9 +264,10 @@
                                     class="w-5 h-5 rounded border-2 border-primary/40 flex items-center justify-center">
                                 </div>
                                 <input class="flex-1 bg-transparent border-none text-sm p-0 focus:ring-0" type="text"
-                                    value="Draft project requirements document" />
-                                <button
-                                    class="opacity-0 group-hover/item:opacity-100 transition-opacity text-slate-500">
+                                    value="Draft project requirements document"
+                                    aria-label="Sub-task: Draft project requirements document" />
+                                <button class="opacity-0 group-hover/item:opacity-100 transition-opacity text-slate-500"
+                                    aria-label="Drag to reorder">
                                     <span class="material-symbols-outlined text-lg">drag_indicator</span>
                                 </button>
                             </div>
@@ -272,9 +276,10 @@
                                     class="w-5 h-5 rounded border-2 border-primary/40 flex items-center justify-center">
                                 </div>
                                 <input class="flex-1 bg-transparent border-none text-sm p-0 focus:ring-0" type="text"
-                                    value="Identify key stakeholders for approval" />
-                                <button
-                                    class="opacity-0 group-hover/item:opacity-100 transition-opacity text-slate-500">
+                                    value="Identify key stakeholders for approval"
+                                    aria-label="Sub-task: Identify key stakeholders for approval" />
+                                <button class="opacity-0 group-hover/item:opacity-100 transition-opacity text-slate-500"
+                                    aria-label="Drag to reorder">
                                     <span class="material-symbols-outlined text-lg">drag_indicator</span>
                                 </button>
                             </div>
@@ -284,8 +289,8 @@
                                 </div>
                                 <input
                                     class="flex-1 bg-transparent border-none text-sm p-0 focus:ring-0 placeholder:text-slate-600"
-                                    placeholder="Add new sub-task..." type="text" />
-                                <button class="text-primary">
+                                    placeholder="Add new sub-task..." type="text" aria-label="Add new sub-task" />
+                                <button class="text-primary" aria-label="Add sub-task">
                                     <span class="material-symbols-outlined">add</span>
                                 </button>
                             </div>
@@ -325,7 +330,7 @@
                             <h3 class="text-xl font-semibold font-headline">Notification Preferences</h3>
                         </div>
                         <div class="space-y-6">
-                            <label
+                            <label for="notify_team"
                                 class="flex items-center justify-between p-4 bg-surface-container rounded-2xl cursor-pointer">
                                 <div class="flex items-center gap-4">
                                     <div
@@ -338,11 +343,11 @@
                                             assignees</p>
                                     </div>
                                 </div>
-                                <input checked=""
+                                <input id="notify_team" checked=""
                                     class="w-6 h-6 rounded-md bg-surface-container-low border-outline-variant/30 text-primary focus:ring-primary/20"
                                     type="checkbox" />
                             </label>
-                            <label
+                            <label for="notify_client"
                                 class="flex items-center justify-between p-4 bg-surface-container rounded-2xl cursor-pointer">
                                 <div class="flex items-center gap-4">
                                     <div
@@ -355,7 +360,7 @@
                                             stakeholders</p>
                                     </div>
                                 </div>
-                                <input
+                                <input id="notify_client"
                                     class="w-6 h-6 rounded-md bg-surface-container-low border-outline-variant/30 text-primary focus:ring-primary/20"
                                     type="checkbox" />
                             </label>

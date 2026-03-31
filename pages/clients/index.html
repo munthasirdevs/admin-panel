@@ -54,378 +54,374 @@
                         <div class="flex-grow min-w-[200px] sm:min-w-[240px] relative">
                             <span
                                 class="material-symbols-outlined absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm sm:text-base">search</span>
-                            <input
+                            <input id="client-search"
                                 class="w-full bg-surface-container border-none text-sm rounded-xl sm:rounded-2xl py-2.5 sm:py-3 pl-10 sm:pl-12 pr-4 focus:ring-1 focus:ring-primary transition-all min-h-[44px]"
-                                placeholder="Filter by Name, Email, or Company" type="text" />
+                                placeholder="Filter by Name, Email, or Company" type="text"
+                                aria-label="Search clients by name, email, or company" />
                         </div>
-                        <div class="flex flex-wrap items-center gap-2 sm:gap-3">
-                            <select
-                                class="bg-surface-container border-none text-sm rounded-xl sm:rounded-2xl py-2.5 sm:py-3 px-4 sm:px-6 focus:ring-1 focus:ring-primary appearance-none cursor-pointer min-h-[44px]"
-                                aria-label="Filter clients by status">
-                                <option>Status: All</option>
-                                <option>Active</option>
-                                <option>Inactive</option>
-                                <option>Blocked</option>
-                            </select>
-                            <button
-                                class="bg-surface-container hover:bg-surface-bright text-on-surface p-2.5 sm:p-3 rounded-xl sm:rounded-2xl transition-all min-h-[44px] min-w-[44px]">
-                                <span class="material-symbols-outlined">calendar_today</span>
-                            </button>
-                            <button
-                                class="bg-surface-container hover:bg-surface-bright text-on-surface p-2.5 sm:p-3 rounded-xl sm:rounded-2xl transition-all min-h-[44px] min-w-[44px]">
-                                <span class="material-symbols-outlined">filter_list</span>
-                            </button>
-                        </div>
+                        <label for="client-status-filter" class="sr-only">Filter clients by status</label>
+                        <select id="client-status-filter"
+                            class="bg-surface-container border-none text-sm rounded-xl sm:rounded-2xl py-2.5 sm:py-3 px-4 sm:px-6 focus:ring-1 focus:ring-primary appearance-none cursor-pointer min-h-[44px]"
+                            aria-label="Filter clients by status">
+                            <option>Status: All</option>
+                            <option>Active</option>
+                            <option>Inactive</option>
+                            <option>Blocked</option>
+                        </select>
+                        <button
+                            class="bg-surface-container hover:bg-surface-bright text-on-surface p-2.5 sm:p-3 rounded-xl sm:rounded-2xl transition-all min-h-[44px] min-w-[44px]"
+                            aria-label="Filter by date">
+                            <span class="material-symbols-outlined">calendar_today</span>
+                        </button>
+                        <button
+                            class="bg-surface-container hover:bg-surface-bright text-on-surface p-2.5 sm:p-3 rounded-xl sm:rounded-2xl transition-all min-h-[44px] min-w-[44px]"
+                            aria-label="Filter list">
+                            <span class="material-symbols-outlined">filter_list</span>
+                        </button>
                     </div>
-                    <!-- === END FILTER BAR === -->
-
-                    <!-- === CLIENT TABLE === -->
-                    <div class="bg-surface-container-low rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl">
-                        <div class="overflow-x-auto no-scrollbar">
-                            <table class="w-full text-left border-collapse min-w-[700px]">
-                                <!-- === TABLE HEADER === -->
-                                <thead>
-                                    <tr class="border-b border-outline-variant/10">
-                                        <th
-                                            class="px-4 sm:px-6 py-4 sm:py-6 font-label text-[10px] uppercase tracking-[0.15em] text-slate-500 whitespace-nowrap">
-                                            Client Info</th>
-                                        <th
-                                            class="px-4 sm:px-6 py-4 sm:py-6 font-label text-[10px] uppercase tracking-[0.15em] text-slate-500 whitespace-nowrap hide-mobile">
-                                            Company</th>
-                                        <th
-                                            class="px-4 sm:px-6 py-4 sm:py-6 font-label text-[10px] uppercase tracking-[0.15em] text-slate-500 whitespace-nowrap">
-                                            Status</th>
-                                        <th
-                                            class="px-4 sm:px-6 py-4 sm:py-6 font-label text-[10px] uppercase tracking-[0.15em] text-slate-500 whitespace-nowrap hide-mobile">
-                                            Projects</th>
-                                        <th
-                                            class="px-4 sm:px-6 py-4 sm:py-6 font-label text-[10px] uppercase tracking-[0.15em] text-slate-500 text-right whitespace-nowrap">
-                                            Revenue</th>
-                                        <th
-                                            class="px-4 sm:px-6 py-4 sm:py-6 font-label text-[10px] uppercase tracking-[0.15em] text-slate-500">
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <!-- === END TABLE HEADER === -->
-
-                                <!-- === TABLE BODY === -->
-                                <tbody class="divide-y divide-outline-variant/5">
-                                    <!-- Client Row 1: Sarah Jenkins - Active -->
-                                    <tr class="group hover:bg-surface-container transition-colors cursor-pointer">
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5">
-                                            <div class="flex items-center gap-3 sm:gap-4">
-                                                <img alt="Client"
-                                                    class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-surface-container-high object-cover shrink-0"
-                                                    data-alt="Avatar of a creative professional woman"
-                                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvBk-dWxsAR-fROI2pu8jRz-u-Ivvi44ovtdo5NmbHZUiJRECZbBmqz-LoiLdwHWY_d9Yjh8bsxT9jW6-VT-RVYY-ul-mYQ_L5yjmEkI7STW4QhiMEDBVsTRNw8JaqdsXrs2pfRIPoMOselno9RP_nFIl9ILpXHLmt4Yn7fJTHZlKCaSbLoQHH80iTxWFgKO3UXFd2TYNDYKAnNMVpKfz0XAIDcrdmt5Zwrnm5XZl4Cx5qsiBmUfsoX6KIzJ5G7g6vsHsowuza0ec" />
-                                                <div class="min-w-0">
-                                                    <p
-                                                        class="font-bold text-on-surface group-hover:text-primary transition-colors text-sm sm:text-base truncate">
-                                                        Sarah Jenkins</p>
-                                                    <p class="text-xs text-slate-500 truncate">sarah.j@lumina.io</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-4 sm:px-6 py-4 sm:py-5 text-on-surface-variant font-medium text-sm whitespace-nowrap hide-mobile">
-                                            Lumina Design</td>
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5">
-                                            <span
-                                                class="px-2 sm:px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 whitespace-nowrap">Active</span>
-                                        </td>
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5 hide-mobile">
-                                            <div class="flex -space-x-2">
-                                                <div
-                                                    class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-primary/20 flex items-center justify-center text-[8px] sm:text-[10px] font-bold shrink-0">
-                                                    12</div>
-                                                <div
-                                                    class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-tertiary/20 flex items-center justify-center text-[8px] sm:text-[10px] font-bold shrink-0">
-                                                    4</div>
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-4 sm:px-6 py-4 sm:py-5 text-right font-headline font-semibold text-on-surface whitespace-nowrap text-sm sm:text-base">
-                                            $128,400</td>
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5 text-right">
-                                            <button
-                                                class="text-slate-500 hover:text-white p-2 min-h-[44px] min-w-[44px]">
-                                                <span class="material-symbols-outlined">more_vert</span>
-                                            </button>
-                                        </td>
-                                    </tr>
-
-                                    <!-- Client Row 2: Marcus Thornton - Pending -->
-                                    <tr class="group hover:bg-surface-container transition-colors cursor-pointer">
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5">
-                                            <div class="flex items-center gap-3 sm:gap-4">
-                                                <img alt="Client"
-                                                    class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-surface-container-high object-cover shrink-0"
-                                                    data-alt="Avatar of a tech executive man"
-                                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBORhezdeI5mdJ6irqO9PckGMh9lX5oL_SsevFjo9awCWf3_Y3yHGkGVoez6m7ICDFdMrrZ0LLcvvnNLj8_RCe8tfHP6PzFIJ6dfc4i2mOtEqet90FYWXN8R8joVBJuxtJLnMPUNFhR8w8Tes0MS3RgiqUlzcAm0o_IwFDtYvQqa1dyhRKNF0KR61-pfVwfiWThMtp0HnelCyLmi4GAKN4mvs3hjekKlBruacYGn-cLHosU9B38ZeNKYUWp4cM3pLDeELV6l5A8Tg" />
-                                                <div class="min-w-0">
-                                                    <p
-                                                        class="font-bold text-on-surface group-hover:text-primary transition-colors text-sm sm:text-base truncate">
-                                                        Marcus Thornton</p>
-                                                    <p class="text-xs text-slate-500 truncate">m.Thornton@vector.com</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-4 sm:px-6 py-4 sm:py-5 text-on-surface-variant font-medium text-sm whitespace-nowrap hide-mobile">
-                                            Vector Global</td>
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5">
-                                            <span
-                                                class="px-2 sm:px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/20 whitespace-nowrap">Pending</span>
-                                        </td>
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5 hide-mobile">
-                                            <div class="flex -space-x-2">
-                                                <div
-                                                    class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-primary/20 flex items-center justify-center text-[8px] sm:text-[10px] font-bold shrink-0">
-                                                    3</div>
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-4 sm:px-6 py-4 sm:py-5 text-right font-headline font-semibold text-on-surface whitespace-nowrap text-sm sm:text-base">
-                                            $45,200</td>
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5 text-right">
-                                            <button
-                                                class="text-slate-500 hover:text-white p-2 min-h-[44px] min-w-[44px]">
-                                                <span class="material-symbols-outlined">more_vert</span>
-                                            </button>
-                                        </td>
-                                    </tr>
-
-                                    <!-- Client Row 3: Elena Ross - Blocked -->
-                                    <tr class="group hover:bg-surface-container transition-colors cursor-pointer">
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5">
-                                            <div class="flex items-center gap-3 sm:gap-4">
-                                                <img alt="Client"
-                                                    class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-surface-container-high object-cover shrink-0"
-                                                    data-alt="Avatar of a woman in business attire"
-                                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwn0lzJs_rEmL4AMihUIVDNyJ5roSctD1ZdojVWgfJjHtJvwhuU0_gA9pklh1g5OD54l8wP5F1MNQTxK3bMNV0ub5Ao0TqYz9esEAspE3bvnpaOSRSfdeQre14CuNbMLF8wP3MTrDieYXsGu10HjDWk3go9eDZh_G43_9TwdSFRiCDI1-jfZzn9SlOjLA9JCe22eF_WaoWXAjm1B5z-knrMJZa5bUbnuSuGZ1-l8iyrc4pU7PRSk7tr8dJXwGVqUTNb8op73jaqNI" />
-                                                <div class="min-w-0">
-                                                    <p
-                                                        class="font-bold text-on-surface group-hover:text-primary transition-colors text-sm sm:text-base truncate">
-                                                        Elena Ross</p>
-                                                    <p class="text-xs text-slate-500 truncate">elena@skyline.dev</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-4 sm:px-6 py-4 sm:py-5 text-on-surface-variant font-medium text-sm whitespace-nowrap hide-mobile">
-                                            Skyline Dev</td>
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5">
-                                            <span
-                                                class="px-2 sm:px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-red-500/10 text-red-400 border border-red-500/20 whitespace-nowrap">Blocked</span>
-                                        </td>
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5 hide-mobile">
-                                            <div class="flex -space-x-2">
-                                                <div
-                                                    class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-slate-700/50 flex items-center justify-center text-[8px] sm:text-[10px] font-bold shrink-0">
-                                                    0</div>
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-4 sm:px-6 py-4 sm:py-5 text-right font-headline font-semibold text-on-surface whitespace-nowrap text-sm sm:text-base">
-                                            $12,000</td>
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5 text-right">
-                                            <button
-                                                class="text-slate-500 hover:text-white p-2 min-h-[44px] min-w-[44px]">
-                                                <span class="material-symbols-outlined">more_vert</span>
-                                            </button>
-                                        </td>
-                                    </tr>
-
-                                    <!-- Client Row 4: Julian Banks - Active -->
-                                    <tr class="group hover:bg-surface-container transition-colors cursor-pointer">
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5">
-                                            <div class="flex items-center gap-3 sm:gap-4">
-                                                <img alt="Client"
-                                                    class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-surface-container-high object-cover shrink-0"
-                                                    data-alt="Avatar of a young male entrepreneur"
-                                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2xOIzY1GyvY8SC0myflC3oJViTN316KKCLQsENgFN3X8fctm4-b49mlENk2l71GUNPxUNK5kGfWLST5xTTzTICpS34_BJik_tKVU_emu-chmvcS37Xbzb-h1d4gtqJF_mociBIg6uoDvQnmEiE9xN4t4Oaqi4TnU_am6Ba1zMOFQ2ej37QGrHmSaUGfrzcIAft1FZqXYHfpX0fqnvT91m9ai01v-rA2XC_EZ2OOECaANf5o7ayZK6dL8lh8CCNCklRVkpIJ6xUWM" />
-                                                <div class="min-w-0">
-                                                    <p
-                                                        class="font-bold text-on-surface group-hover:text-primary transition-colors text-sm sm:text-base truncate">
-                                                        Julian Banks</p>
-                                                    <p class="text-xs text-slate-500 truncate">julian@apex.media</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-4 sm:px-6 py-4 sm:py-5 text-on-surface-variant font-medium text-sm whitespace-nowrap hide-mobile">
-                                            Apex Media</td>
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5">
-                                            <span
-                                                class="px-2 sm:px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 whitespace-nowrap">Active</span>
-                                        </td>
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5 hide-mobile">
-                                            <div class="flex -space-x-2">
-                                                <div
-                                                    class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-primary/20 flex items-center justify-center text-[8px] sm:text-[10px] font-bold shrink-0">
-                                                    8</div>
-                                                <div
-                                                    class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-tertiary/20 flex items-center justify-center text-[8px] sm:text-[10px] font-bold shrink-0">
-                                                    1</div>
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-4 sm:px-6 py-4 sm:py-5 text-right font-headline font-semibold text-on-surface whitespace-nowrap text-sm sm:text-base">
-                                            $92,750</td>
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5 text-right">
-                                            <button
-                                                class="text-slate-500 hover:text-white p-2 min-h-[44px] min-w-[44px]">
-                                                <span class="material-symbols-outlined">more_vert</span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                                <!-- === END TABLE BODY === -->
-                            </table>
-                        </div>
-
-                        <!-- === PAGINATION === -->
-                        <div
-                            class="p-4 sm:p-6 bg-surface-container-low/50 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0 border-t border-outline-variant/5">
-                            <p class="text-xs text-slate-500 text-center sm:text-left">Showing 4 of 128 clients</p>
-                            <div class="flex gap-2 flex-wrap justify-center">
-                                <button
-                                    class="p-2 rounded-xl bg-surface-container text-slate-500 hover:text-white transition-all min-h-[44px] min-w-[44px]">
-                                    <span class="material-symbols-outlined">chevron_left</span>
-                                </button>
-                                <button
-                                    class="px-4 py-2 rounded-xl bg-primary/20 text-primary font-bold text-sm min-h-[44px]">1</button>
-                                <button
-                                    class="px-4 py-2 rounded-xl text-slate-500 hover:bg-surface-container transition-all text-sm font-bold min-h-[44px]">2</button>
-                                <button
-                                    class="p-2 rounded-xl bg-surface-container text-slate-500 hover:text-white transition-all min-h-[44px] min-w-[44px]">
-                                    <span class="material-symbols-outlined">chevron_right</span>
-                                </button>
-                            </div>
-                        </div>
-                        <!-- === END PAGINATION === -->
-                    </div>
-                    <!-- === END CLIENT TABLE === -->
                 </div>
-                <!-- === END MAIN TABLE SECTION (LEFT) === -->
+                <!-- === END FILTER BAR === -->
 
-                <!-- === RIGHT QUICK STATS PANEL === -->
-                <div class="space-y-4 md:space-y-6">
-                    <!-- === STATS/CONTENT SECTION === -->
-                    <!-- Stat Card 1: Total Clients -->
-                    <div
-                        class="bg-surface-container-low p-4 sm:p-6 rounded-2xl sm:rounded-3xl relative overflow-hidden">
-                        <div
-                            class="absolute top-0 left-0 w-1 h-full bg-primary shadow-[0_0_15px_rgba(192,193,255,0.4)]">
-                        </div>
-                        <p
-                            class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">
-                            Total Clients</p>
-                        <div class="flex items-end justify-between">
-                            <h4 class="text-3xl sm:text-4xl font-headline font-semibold text-on-surface">1,284</h4>
-                            <div class="flex items-center text-emerald-400 text-xs font-bold gap-1 mb-1">
-                                <span class="material-symbols-outlined text-sm">trending_up</span>
-                                12%
-                            </div>
-                        </div>
+                <!-- === CLIENT TABLE === -->
+                <div class="bg-surface-container-low rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl">
+                    <div class="overflow-x-auto no-scrollbar">
+                        <table class="w-full text-left border-collapse min-w-[700px]">
+                            <!-- === TABLE HEADER === -->
+                            <thead>
+                                <tr class="border-b border-outline-variant/10">
+                                    <th
+                                        class="px-4 sm:px-6 py-4 sm:py-6 font-label text-[10px] uppercase tracking-[0.15em] text-slate-500 whitespace-nowrap">
+                                        Client Info</th>
+                                    <th
+                                        class="px-4 sm:px-6 py-4 sm:py-6 font-label text-[10px] uppercase tracking-[0.15em] text-slate-500 whitespace-nowrap hide-mobile">
+                                        Company</th>
+                                    <th
+                                        class="px-4 sm:px-6 py-4 sm:py-6 font-label text-[10px] uppercase tracking-[0.15em] text-slate-500 whitespace-nowrap">
+                                        Status</th>
+                                    <th
+                                        class="px-4 sm:px-6 py-4 sm:py-6 font-label text-[10px] uppercase tracking-[0.15em] text-slate-500 whitespace-nowrap hide-mobile">
+                                        Projects</th>
+                                    <th
+                                        class="px-4 sm:px-6 py-4 sm:py-6 font-label text-[10px] uppercase tracking-[0.15em] text-slate-500 text-right whitespace-nowrap">
+                                        Revenue</th>
+                                    <th
+                                        class="px-4 sm:px-6 py-4 sm:py-6 font-label text-[10px] uppercase tracking-[0.15em] text-slate-500">
+                                    </th>
+                                </tr>
+                            </thead>
+                            <!-- === END TABLE HEADER === -->
+
+                            <!-- === TABLE BODY === -->
+                            <tbody class="divide-y divide-outline-variant/5">
+                                <!-- Client Row 1: Sarah Jenkins - Active -->
+                                <tr class="group hover:bg-surface-container transition-colors cursor-pointer">
+                                    <td class="px-4 sm:px-6 py-4 sm:py-5">
+                                        <div class="flex items-center gap-3 sm:gap-4">
+                                            <img alt="Client"
+                                                class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-surface-container-high object-cover shrink-0"
+                                                alt="Avatar of a creative professional woman"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvBk-dWxsAR-fROI2pu8jRz-u-Ivvi44ovtdo5NmbHZUiJRECZbBmqz-LoiLdwHWY_d9Yjh8bsxT9jW6-VT-RVYY-ul-mYQ_L5yjmEkI7STW4QhiMEDBVsTRNw8JaqdsXrs2pfRIPoMOselno9RP_nFIl9ILpXHLmt4Yn7fJTHZlKCaSbLoQHH80iTxWFgKO3UXFd2TYNDYKAnNMVpKfz0XAIDcrdmt5Zwrnm5XZl4Cx5qsiBmUfsoX6KIzJ5G7g6vsHsowuza0ec" />
+                                            <div class="min-w-0">
+                                                <p
+                                                    class="font-bold text-on-surface group-hover:text-primary transition-colors text-sm sm:text-base truncate">
+                                                    Sarah Jenkins</p>
+                                                <p class="text-xs text-slate-500 truncate">sarah.j@lumina.io</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="px-4 sm:px-6 py-4 sm:py-5 text-on-surface-variant font-medium text-sm whitespace-nowrap hide-mobile">
+                                        Lumina Design</td>
+                                    <td class="px-4 sm:px-6 py-4 sm:py-5">
+                                        <span
+                                            class="px-2 sm:px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 whitespace-nowrap">Active</span>
+                                    </td>
+                                    <td class="px-4 sm:px-6 py-4 sm:py-5 hide-mobile">
+                                        <div class="flex -space-x-2">
+                                            <div
+                                                class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-primary/20 flex items-center justify-center text-[8px] sm:text-[10px] font-bold shrink-0">
+                                                12</div>
+                                            <div
+                                                class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-tertiary/20 flex items-center justify-center text-[8px] sm:text-[10px] font-bold shrink-0">
+                                                4</div>
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="px-4 sm:px-6 py-4 sm:py-5 text-right font-headline font-semibold text-on-surface whitespace-nowrap text-sm sm:text-base">
+                                        $128,400</td>
+                                    <td class="px-4 sm:px-6 py-4 sm:py-5 text-right">
+                                        <button class="text-slate-500 hover:text-white p-2 min-h-[44px] min-w-[44px]"
+                                            aria-label="More options for Sarah Jenkins">
+                                            <span class="material-symbols-outlined">more_vert</span>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- Client Row 2: Marcus Thornton - Pending -->
+                                <tr class="group hover:bg-surface-container transition-colors cursor-pointer">
+                                    <td class="px-4 sm:px-6 py-4 sm:py-5">
+                                        <div class="flex items-center gap-3 sm:gap-4">
+                                            <img alt="Client"
+                                                class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-surface-container-high object-cover shrink-0"
+                                                alt="Avatar of a tech executive man"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBORhezdeI5mdJ6irqO9PckGMh9lX5oL_SsevFjo9awCWf3_Y3yHGkGVoez6m7ICDFdMrrZ0LLcvvnNLj8_RCe8tfHP6PzFIJ6dfc4i2mOtEqet90FYWXN8R8joVBJuxtJLnMPUNFhR8w8Tes0MS3RgiqUlzcAm0o_IwFDtYvQqa1dyhRKNF0KR61-pfVwfiWThMtp0HnelCyLmi4GAKN4mvs3hjekKlBruacYGn-cLHosU9B38ZeNKYUWp4cM3pLDeELV6l5A8Tg" />
+                                            <div class="min-w-0">
+                                                <p
+                                                    class="font-bold text-on-surface group-hover:text-primary transition-colors text-sm sm:text-base truncate">
+                                                    Marcus Thornton</p>
+                                                <p class="text-xs text-slate-500 truncate">m.Thornton@vector.com</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="px-4 sm:px-6 py-4 sm:py-5 text-on-surface-variant font-medium text-sm whitespace-nowrap hide-mobile">
+                                        Vector Global</td>
+                                    <td class="px-4 sm:px-6 py-4 sm:py-5">
+                                        <span
+                                            class="px-2 sm:px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/20 whitespace-nowrap">Pending</span>
+                                    </td>
+                                    <td class="px-4 sm:px-6 py-4 sm:py-5 hide-mobile">
+                                        <div class="flex -space-x-2">
+                                            <div
+                                                class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-primary/20 flex items-center justify-center text-[8px] sm:text-[10px] font-bold shrink-0">
+                                                3</div>
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="px-4 sm:px-6 py-4 sm:py-5 text-right font-headline font-semibold text-on-surface whitespace-nowrap text-sm sm:text-base">
+                                        $45,200</td>
+                                    <td class="px-4 sm:px-6 py-4 sm:py-5 text-right">
+                                        <button class="text-slate-500 hover:text-white p-2 min-h-[44px] min-w-[44px]"
+                                            aria-label="More options for Marcus Thornton">
+                                            <span class="material-symbols-outlined">more_vert</span>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- Client Row 3: Elena Ross - Blocked -->
+                                <tr class="group hover:bg-surface-container transition-colors cursor-pointer">
+                                    <td class="px-4 sm:px-6 py-4 sm:py-5">
+                                        <div class="flex items-center gap-3 sm:gap-4">
+                                            <img alt="Client"
+                                                class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-surface-container-high object-cover shrink-0"
+                                                alt="Avatar of a woman in business attire"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwn0lzJs_rEmL4AMihUIVDNyJ5roSctD1ZdojVWgfJjHtJvwhuU0_gA9pklh1g5OD54l8wP5F1MNQTxK3bMNV0ub5Ao0TqYz9esEAspE3bvnpaOSRSfdeQre14CuNbMLF8wP3MTrDieYXsGu10HjDWk3go9eDZh_G43_9TwdSFRiCDI1-jfZzn9SlOjLA9JCe22eF_WaoWXAjm1B5z-knrMJZa5bUbnuSuGZ1-l8iyrc4pU7PRSk7tr8dJXwGVqUTNb8op73jaqNI" />
+                                            <div class="min-w-0">
+                                                <p
+                                                    class="font-bold text-on-surface group-hover:text-primary transition-colors text-sm sm:text-base truncate">
+                                                    Elena Ross</p>
+                                                <p class="text-xs text-slate-500 truncate">elena@skyline.dev</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="px-4 sm:px-6 py-4 sm:py-5 text-on-surface-variant font-medium text-sm whitespace-nowrap hide-mobile">
+                                        Skyline Dev</td>
+                                    <td class="px-4 sm:px-6 py-4 sm:py-5">
+                                        <span
+                                            class="px-2 sm:px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-red-500/10 text-red-400 border border-red-500/20 whitespace-nowrap">Blocked</span>
+                                    </td>
+                                    <td class="px-4 sm:px-6 py-4 sm:py-5 hide-mobile">
+                                        <div class="flex -space-x-2">
+                                            <div
+                                                class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-slate-700/50 flex items-center justify-center text-[8px] sm:text-[10px] font-bold shrink-0">
+                                                0</div>
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="px-4 sm:px-6 py-4 sm:py-5 text-right font-headline font-semibold text-on-surface whitespace-nowrap text-sm sm:text-base">
+                                        $12,000</td>
+                                    <td class="px-4 sm:px-6 py-4 sm:py-5 text-right">
+                                        <button class="text-slate-500 hover:text-white p-2 min-h-[44px] min-w-[44px]"
+                                            aria-label="More options for Elena Ross">
+                                            <span class="material-symbols-outlined">more_vert</span>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- Client Row 4: Julian Banks - Active -->
+                                <tr class="group hover:bg-surface-container transition-colors cursor-pointer">
+                                    <td class="px-4 sm:px-6 py-4 sm:py-5">
+                                        <div class="flex items-center gap-3 sm:gap-4">
+                                            <img alt="Client"
+                                                class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-surface-container-high object-cover shrink-0"
+                                                alt="Avatar of a young male entrepreneur"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2xOIzY1GyvY8SC0myflC3oJViTN316KKCLQsENgFN3X8fctm4-b49mlENk2l71GUNPxUNK5kGfWLST5xTTzTICpS34_BJik_tKVU_emu-chmvcS37Xbzb-h1d4gtqJF_mociBIg6uoDvQnmEiE9xN4t4Oaqi4TnU_am6Ba1zMOFQ2ej37QGrHmSaUGfrzcIAft1FZqXYHfpX0fqnvT91m9ai01v-rA2XC_EZ2OOECaANf5o7ayZK6dL8lh8CCNCklRVkpIJ6xUWM" />
+                                            <div class="min-w-0">
+                                                <p
+                                                    class="font-bold text-on-surface group-hover:text-primary transition-colors text-sm sm:text-base truncate">
+                                                    Julian Banks</p>
+                                                <p class="text-xs text-slate-500 truncate">julian@apex.media</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="px-4 sm:px-6 py-4 sm:py-5 text-on-surface-variant font-medium text-sm whitespace-nowrap hide-mobile">
+                                        Apex Media</td>
+                                    <td class="px-4 sm:px-6 py-4 sm:py-5">
+                                        <span
+                                            class="px-2 sm:px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 whitespace-nowrap">Active</span>
+                                    </td>
+                                    <td class="px-4 sm:px-6 py-4 sm:py-5 hide-mobile">
+                                        <div class="flex -space-x-2">
+                                            <div
+                                                class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-primary/20 flex items-center justify-center text-[8px] sm:text-[10px] font-bold shrink-0">
+                                                8</div>
+                                            <div
+                                                class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-tertiary/20 flex items-center justify-center text-[8px] sm:text-[10px] font-bold shrink-0">
+                                                1</div>
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="px-4 sm:px-6 py-4 sm:py-5 text-right font-headline font-semibold text-on-surface whitespace-nowrap text-sm sm:text-base">
+                                        $92,750</td>
+                                    <td class="px-4 sm:px-6 py-4 sm:py-5 text-right">
+                                        <button class="text-slate-500 hover:text-white p-2 min-h-[44px] min-w-[44px]"
+                                            aria-label="More options for Julian Banks">
+                                            <span class="material-symbols-outlined">more_vert</span>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <!-- === END TABLE BODY === -->
+                        </table>
                     </div>
 
-                    <!-- Stat Card 2: Active Now -->
+                    <!-- === PAGINATION === -->
                     <div
-                        class="bg-surface-container-low p-4 sm:p-6 rounded-2xl sm:rounded-3xl relative overflow-hidden">
-                        <div
-                            class="absolute top-0 left-0 w-1 h-full bg-tertiary shadow-[0_0_15px_rgba(255,183,131,0.4)]">
-                        </div>
-                        <p
-                            class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">
-                            Active Now</p>
-                        <div class="flex items-end justify-between">
-                            <h4 class="text-3xl sm:text-4xl font-headline font-semibold text-on-surface">942</h4>
-                            <div class="flex items-center text-slate-500 text-xs font-bold gap-1 mb-1">
-                                <span class="material-symbols-outlined text-sm">horizontal_rule</span>
-                                0%
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stat Card 3: New This Month -->
-                    <div
-                        class="bg-surface-container-low p-4 sm:p-6 rounded-2xl sm:rounded-3xl relative overflow-hidden">
-                        <div
-                            class="absolute top-0 left-0 w-1 h-full bg-primary-container shadow-[0_0_15px_rgba(128,131,255,0.4)]">
-                        </div>
-                        <p
-                            class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">
-                            New This Month</p>
-                        <div class="flex items-end justify-between">
-                            <h4 class="text-3xl sm:text-4xl font-headline font-semibold text-on-surface">48</h4>
-                            <div class="flex items-center text-emerald-400 text-xs font-bold gap-1 mb-1">
-                                <span class="material-symbols-outlined text-sm">trending_up</span>
-                                5%
-                            </div>
-                        </div>
-                    </div>
-                    <!-- === END STATS/CONTENT SECTION === -->
-
-                    <!-- === ACTIVITY FEED SECTION === -->
-                    <div class="bg-surface-container-low p-4 sm:p-6 rounded-2xl sm:rounded-3xl space-y-4 sm:space-y-6">
-                        <div class="flex justify-between items-center">
-                            <h5 class="text-xs sm:text-sm font-bold uppercase tracking-widest text-on-surface-variant">
-                                Recent Events</h5>
-                            <button class="text-xs text-primary font-bold flex items-center gap-1 group min-h-[44px]">
-                                <div
-                                    class="w-1 h-1 bg-primary rounded-full group-hover:w-3 transition-all duration-200">
-                                </div>
-                                View All
+                        class="p-4 sm:p-6 bg-surface-container-low/50 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0 border-t border-outline-variant/5">
+                        <p class="text-xs text-slate-500 text-center sm:text-left">Showing 4 of 128 clients</p>
+                        <div class="flex gap-2 flex-wrap justify-center">
+                            <button
+                                class="p-2 rounded-xl bg-surface-container text-slate-500 hover:text-white transition-all min-h-[44px] min-w-[44px]"
+                                aria-label="Previous page">
+                                <span class="material-symbols-outlined">chevron_left</span>
+                            </button>
+                            <button
+                                class="px-4 py-2 rounded-xl bg-primary/20 text-primary font-bold text-sm min-h-[44px]"
+                                aria-label="Page 1, current page" aria-current="page">1</button>
+                            <button
+                                class="px-4 py-2 rounded-xl text-slate-500 hover:bg-surface-container transition-all text-sm font-bold min-h-[44px]"
+                                aria-label="Page 2">2</button>
+                            <button
+                                class="p-2 rounded-xl bg-surface-container text-slate-500 hover:text-white transition-all min-h-[44px] min-w-[44px]"
+                                aria-label="Next page">
+                                <span class="material-symbols-outlined">chevron_right</span>
                             </button>
                         </div>
-
-                        <!-- Activity Row 1: Lumina Design - New Retainer -->
-                        <div class="flex gap-3 sm:gap-4 group">
-                            <div
-                                class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0">
-                                <span
-                                    class="material-symbols-outlined text-primary text-base sm:text-lg">description</span>
-                            </div>
-                            <div class="min-w-0">
-                                <p class="text-xs text-on-surface leading-normal"><strong>Lumina Design</strong> signed
-                                    a new retainer agreement.</p>
-                                <p class="text-[10px] text-slate-500 mt-1">2 hours ago</p>
-                            </div>
-                        </div>
-
-                        <!-- Activity Row 2: Marcus Thornton - Payment Complete -->
-                        <div class="flex gap-3 sm:gap-4 group">
-                            <div
-                                class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0">
-                                <span
-                                    class="material-symbols-outlined text-tertiary text-base sm:text-lg">payments</span>
-                            </div>
-                            <div class="min-w-0">
-                                <p class="text-xs text-on-surface leading-normal"><strong>Marcus Thornton</strong>
-                                    completed payment for Project X.</p>
-                                <p class="text-[10px] text-slate-500 mt-1">5 hours ago</p>
-                            </div>
-                        </div>
-
-                        <!-- Activity Row 3: Skyline Dev - Account Flagged -->
-                        <div class="flex gap-3 sm:gap-4 group">
-                            <div
-                                class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0">
-                                <span class="material-symbols-outlined text-error text-base sm:text-lg">report</span>
-                            </div>
-                            <div class="min-w-0">
-                                <p class="text-xs text-on-surface leading-normal"><strong>Skyline Dev</strong> account
-                                    has been flagged for review.</p>
-                                <p class="text-[10px] text-slate-500 mt-1">Yesterday</p>
-                            </div>
-                        </div>
                     </div>
-                    <!-- === END ACTIVITY FEED SECTION === -->
+                    <!-- === END PAGINATION === -->
                 </div>
-                <!-- === END RIGHT QUICK STATS PANEL === -->
+                <!-- === END CLIENT TABLE === -->
             </div>
-            <!-- === END MAIN CONTENT GRID === -->
+            <!-- === END MAIN TABLE SECTION (LEFT) === -->
+
+            <!-- === RIGHT QUICK STATS PANEL === -->
+            <div class="space-y-4 md:space-y-6">
+                <!-- === STATS/CONTENT SECTION === -->
+                <!-- Stat Card 1: Total Clients -->
+                <div class="bg-surface-container-low p-4 sm:p-6 rounded-2xl sm:rounded-3xl relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-primary shadow-[0_0_15px_rgba(192,193,255,0.4)]">
+                    </div>
+                    <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">
+                        Total Clients</p>
+                    <div class="flex items-end justify-between">
+                        <h4 class="text-3xl sm:text-4xl font-headline font-semibold text-on-surface">1,284</h4>
+                        <div class="flex items-center text-emerald-400 text-xs font-bold gap-1 mb-1">
+                            <span class="material-symbols-outlined text-sm">trending_up</span>
+                            12%
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stat Card 2: Active Now -->
+                <div class="bg-surface-container-low p-4 sm:p-6 rounded-2xl sm:rounded-3xl relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-tertiary shadow-[0_0_15px_rgba(255,183,131,0.4)]">
+                    </div>
+                    <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">
+                        Active Now</p>
+                    <div class="flex items-end justify-between">
+                        <h4 class="text-3xl sm:text-4xl font-headline font-semibold text-on-surface">942</h4>
+                        <div class="flex items-center text-slate-500 text-xs font-bold gap-1 mb-1">
+                            <span class="material-symbols-outlined text-sm">horizontal_rule</span>
+                            0%
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stat Card 3: New This Month -->
+                <div class="bg-surface-container-low p-4 sm:p-6 rounded-2xl sm:rounded-3xl relative overflow-hidden">
+                    <div
+                        class="absolute top-0 left-0 w-1 h-full bg-primary-container shadow-[0_0_15px_rgba(128,131,255,0.4)]">
+                    </div>
+                    <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">
+                        New This Month</p>
+                    <div class="flex items-end justify-between">
+                        <h4 class="text-3xl sm:text-4xl font-headline font-semibold text-on-surface">48</h4>
+                        <div class="flex items-center text-emerald-400 text-xs font-bold gap-1 mb-1">
+                            <span class="material-symbols-outlined text-sm">trending_up</span>
+                            5%
+                        </div>
+                    </div>
+                </div>
+                <!-- === END STATS/CONTENT SECTION === -->
+
+                <!-- === ACTIVITY FEED SECTION === -->
+                <div class="bg-surface-container-low p-4 sm:p-6 rounded-2xl sm:rounded-3xl space-y-4 sm:space-y-6">
+                    <div class="flex justify-between items-center">
+                        <h5 class="text-xs sm:text-sm font-bold uppercase tracking-widest text-on-surface-variant">
+                            Recent Events</h5>
+                        <button class="text-xs text-primary font-bold flex items-center gap-1 group min-h-[44px]">
+                            <div class="w-1 h-1 bg-primary rounded-full group-hover:w-3 transition-all duration-200">
+                            </div>
+                            View All
+                        </button>
+                    </div>
+
+                    <!-- Activity Row 1: Lumina Design - New Retainer -->
+                    <div class="flex gap-3 sm:gap-4 group">
+                        <div
+                            class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-primary text-base sm:text-lg">description</span>
+                        </div>
+                        <div class="min-w-0">
+                            <p class="text-xs text-on-surface leading-normal"><strong>Lumina Design</strong> signed
+                                a new retainer agreement.</p>
+                            <p class="text-[10px] text-slate-500 mt-1">2 hours ago</p>
+                        </div>
+                    </div>
+
+                    <!-- Activity Row 2: Marcus Thornton - Payment Complete -->
+                    <div class="flex gap-3 sm:gap-4 group">
+                        <div
+                            class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-tertiary text-base sm:text-lg">payments</span>
+                        </div>
+                        <div class="min-w-0">
+                            <p class="text-xs text-on-surface leading-normal"><strong>Marcus Thornton</strong>
+                                completed payment for Project X.</p>
+                            <p class="text-[10px] text-slate-500 mt-1">5 hours ago</p>
+                        </div>
+                    </div>
+
+                    <!-- Activity Row 3: Skyline Dev - Account Flagged -->
+                    <div class="flex gap-3 sm:gap-4 group">
+                        <div
+                            class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-error text-base sm:text-lg">report</span>
+                        </div>
+                        <div class="min-w-0">
+                            <p class="text-xs text-on-surface leading-normal"><strong>Skyline Dev</strong> account
+                                has been flagged for review.</p>
+                            <p class="text-[10px] text-slate-500 mt-1">Yesterday</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- === END ACTIVITY FEED SECTION === -->
+            </div>
+            <!-- === END RIGHT QUICK STATS PANEL === -->
+        </div>
+        <!-- === END MAIN CONTENT GRID === -->
         </div>
         <!-- === END CONTENT AREA === -->
     </main>

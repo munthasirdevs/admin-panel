@@ -28,17 +28,20 @@
                     <span
                         class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
                     <input
+                        aria-label="Search resources"
                         class="w-full bg-surface-container-lowest border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary/40 text-on-surface"
-                        placeholder="Search resources..." type="text" />
+                        placeholder="Search resources..." type="text" name="search_resources" />
                 </div>
             </div>
             <div class="flex items-center gap-6">
                 <div class="flex items-center gap-4">
                     <button
+                        aria-label="Notifications"
                         class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-colors">
                         <span class="material-symbols-outlined">notifications</span>
                     </button>
                     <button
+                        aria-label="Settings"
                         class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-colors">
                         <span class="material-symbols-outlined">settings</span>
                     </button>
@@ -49,9 +52,8 @@
                         <p class="text-xs font-bold outfit">Alex Sterling</p>
                         <p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Executive Admin</p>
                     </div>
-                    <img alt="User profile avatar"
+                    <img alt="Close up portrait of a professional man in a dark turtleneck with confident expression against a dark textured background"
                         class="w-10 h-10 rounded-full border-2 border-primary/20 object-cover"
-                        data-alt="Close up portrait of a professional man in a dark turtleneck with confident expression against a dark textured background"
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHgIq4oZjlZkGDOlT9vGAj43uTXYADSaxZFsXPcrerrMicPGoC1I2ICsWu1nmpgfIrJgz-vzxk5U0s0UG3RCm8bWjHDSjIRaKN9xn-5VM0Q7jUj2zGxDjZ2F_Trb9PyTJGsKkd0dTIJXOIIy6SwJoVfgrgpNiqeVyk8OZ81XmZzW0igPnBfN1NM7EOwqQBrEGI1yFoKmhtr-qP9n_SqzUIfbr-NWIa0thRM-wlJPuMYmahyxKH-gtc0tYew_1SjZsqj_c3Bq9Dzkc" />
                 </div>
             </div>
@@ -64,11 +66,11 @@
                 class="relative rounded-[2rem] overflow-hidden mb-8 bg-surface-container-low p-8 flex flex-col md:flex-row items-end gap-8">
                 <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-r from-primary/10 to-transparent"></div>
                 <div class="relative group">
-                    <img alt="Profile picture"
+                    <img alt="Professional headshot of Alex Sterling, Executive Admin"
                         class="w-32 h-32 rounded-3xl object-cover border-4 border-surface shadow-2xl relative z-10"
-                        data-alt="Professional Avatar of a creative executive with short hair, warm studio lighting, dark moody background"
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsU3ctmBybwKK14n-vmI9F3cskKcjLRTNs5LhZShBoZ5zIB5F59XXrC6dPaa6Fyx4fxoVVacaX3BWOKQ3NJ4i5Udj0ouRb9W9Dpqpg9OpiPcTu8NxrVdq8zL2rRU3_rUaNP9sS7yn5CBP12hF8rE8nEqSAzO7Ph2Bixj0tdis_YbuK_J_huGdeucA15UgkRezAo30uyY_fChhZSiHhfYUycn0Oc4zrz8QZ2WggJB7l4URo71jZsh3b9JhnC23OE8s7MyvQrdls-S0" />
                     <button
+                        aria-label="Edit profile picture"
                         class="absolute -bottom-2 -right-2 z-20 w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center text-on-primary shadow-lg border-2 border-surface">
                         <span class="material-symbols-outlined text-lg">edit</span>
                     </button>
@@ -105,6 +107,8 @@
                             Professional Summary
                         </h3>
                         <textarea
+                            id="professional_summary"
+                            aria-label="Write your professional summary"
                             class="w-full bg-surface-container-lowest border-none rounded-xl p-4 text-on-surface-variant outfit leading-relaxed focus:ring-1 focus:ring-primary/40 h-32 resize-none"
                             placeholder="Write a short bio...">Driving excellence in cross-functional team coordination and product strategy. Specializing in high-scale infrastructure management and executive operations. Based in the San Francisco tech hub, currently managing XenonOS premium core systems.</textarea>
                     </div>
@@ -117,43 +121,47 @@
                         </h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div class="space-y-2">
-                                <label
+                                <label for="full_name"
                                     class="text-[11px] font-bold text-on-surface-variant uppercase tracking-widest pl-1">Full
                                     Name</label>
                                 <input
+                                    id="full_name"
                                     class="w-full bg-surface-container-lowest border-none rounded-xl px-4 py-3 text-on-surface outfit focus:ring-1 focus:ring-primary/40"
-                                    type="text" value="Alex Sterling" />
+                                    type="text" value="Alex Sterling" name="full_name" placeholder="Enter your full name" />
                             </div>
                             <div class="space-y-2">
-                                <label
+                                <label for="job_role"
                                     class="text-[11px] font-bold text-on-surface-variant uppercase tracking-widest pl-1">Job
                                     Role</label>
                                 <input
+                                    id="job_role"
                                     class="w-full bg-surface-container-lowest border-none rounded-xl px-4 py-3 text-on-surface outfit focus:ring-1 focus:ring-primary/40"
-                                    type="text" value="Executive Admin" />
+                                    type="text" value="Executive Admin" name="job_role" placeholder="Enter your job role" />
                             </div>
                             <div class="space-y-2">
-                                <label
+                                <label for="email_address"
                                     class="text-[11px] font-bold text-on-surface-variant uppercase tracking-widest pl-1">Email
                                     Address</label>
                                 <div class="relative">
                                     <span
                                         class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">mail</span>
                                     <input
+                                        id="email_address"
                                         class="w-full bg-surface-container-lowest border-none rounded-xl pl-10 pr-4 py-3 text-on-surface outfit focus:ring-1 focus:ring-primary/40"
-                                        type="email" value="alex.sterling@xenonos.cloud" />
+                                        type="email" value="alex.sterling@xenonos.cloud" name="email_address" placeholder="your.email@example.com" />
                                 </div>
                             </div>
                             <div class="space-y-2">
-                                <label
+                                <label for="phone_number"
                                     class="text-[11px] font-bold text-on-surface-variant uppercase tracking-widest pl-1">Phone
                                     Number</label>
                                 <div class="relative">
                                     <span
                                         class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">phone</span>
                                     <input
+                                        id="phone_number"
                                         class="w-full bg-surface-container-lowest border-none rounded-xl pl-10 pr-4 py-3 text-on-surface outfit focus:ring-1 focus:ring-primary/40"
-                                        type="tel" value="+1 (555) 942-0192" />
+                                        type="tel" value="+1 (555) 942-0192" name="phone_number" placeholder="+1 (555) 000-0000" />
                                 </div>
                             </div>
                         </div>

@@ -58,7 +58,7 @@
                                     Password</label>
                                 <input
                                     class="w-full bg-surface-container-lowest border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary/40 transition-all"
-                                    placeholder="••••••••••••" type="password" />
+                                    placeholder="••••••••••••" type="password" name="current_password" />
                             </div>
                             <div class="space-y-2">
                                 <label
@@ -66,7 +66,7 @@
                                     Password</label>
                                 <input
                                     class="w-full bg-surface-container-lowest border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary/40 transition-all"
-                                    placeholder="••••••••••••" type="password" />
+                                    placeholder="••••••••••••" type="password" name="new_password" />
                             </div>
                         </div>
                         <div class="space-y-3">
@@ -101,7 +101,8 @@
                         <div class="flex items-center justify-between mb-6">
                             <h3 class="font-headline font-bold text-xl text-on-surface">Two-Factor (2FA)</h3>
                             <div class="relative inline-flex items-center cursor-pointer">
-                                <input checked="" class="sr-only peer" type="checkbox" />
+                                <input checked="" class="sr-only peer" type="checkbox"
+                                    aria-label="Enable two-factor authentication" />
                                 <div
                                     class="w-11 h-6 bg-surface-container-lowest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-surface-variant after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
                                 </div>

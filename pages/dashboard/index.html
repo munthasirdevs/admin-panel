@@ -88,7 +88,7 @@
                             <div class="flex items-center gap-3 sm:gap-4">
                                 <div
                                     class="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden bg-surface-container-highest shrink-0">
-                                    <img alt="Client" data-alt="Portrait of a male tech entrepreneur"
+                                    <img alt="Portrait of a male tech entrepreneur, Acme Corp client"
                                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDD9yV73Vr_IqASw9GKX1TvR1W5CCJKnySOdoaOCOq425qEvpuKWciHEWfpc5c9YUeZIrftTQkLbY--xd5X32DjXOTKeB8jyPH4svcLzSRsmduyNpGbt80uXWvX33-1VD4MUVSRe7pqTV3RIXVgfaDwtW-OSx2md8pNZmNpKiWo7TITV4aPGqYJwUIa_Ep4P8OB91t9UZI-71amcpbCPKQsnRHbcy3BlH9bLita2rw90tSnX8HPgL7yHAP3xql_18L3AUi8IR-BhM" />
                                 </div>
                                 <div>
@@ -103,7 +103,7 @@
                             <div class="flex items-center gap-3 sm:gap-4">
                                 <div
                                     class="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden bg-surface-container-highest shrink-0">
-                                    <img alt="Client" data-alt="Portrait of a female creative director"
+                                    <img alt="Portrait of a female creative director, Stellar Dynamics client"
                                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvdZ6BLg0snD7toUjdOIgOYJelqNJDUliN1UZkgA0Pk8-6EeNJsAfmT3t0RUUfQcjbtlMr8d79fySvWJJonm1iukwifovm5zEdA4JeIq3fGWzSatg480t_Y_w0tijiKcA_kgMSLlbYbRljjLqjQrG17DG5unArJIBOQGYOXY9jXgsTJmhNDgxyxOjjjqcWa-6_34LXbkyVRY8EuYUKW0-HXuNVgcAw0RJv2dbMl187hH0rZoJnNpErawGO1oHhyBfzqIuhZZLRVxc" />
                                 </div>
                                 <div>
@@ -182,10 +182,12 @@
                 <!-- 2-Column GRID for minor summaries -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                     <!-- Tasks Summary -->
-                    <section class="bg-surface-container rounded-2xl p-4 sm:p-6 border border-outline-variant/5">
+                    <section class="bg-surface-container rounded-2xl p-4 sm:p-6 border border-outline-variant/5"
+                        aria-labelledby="tasks-summary-heading">
                         <div
                             class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 mb-4 sm:mb-6">
-                            <h4 class="text-base sm:text-lg font-headline font-semibold text-on-surface">Tasks</h4>
+                            <h4 id="tasks-summary-heading"
+                                class="text-base sm:text-lg font-headline font-semibold text-on-surface">Tasks</h4>
                             <span
                                 class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full font-bold whitespace-nowrap text-center sm:text-left">156
                                 PENDING</span>
@@ -195,7 +197,7 @@
                                 class="flex items-center gap-3 p-3 bg-surface-container rounded-lg cursor-pointer hover:bg-surface-bright transition-colors group">
                                 <input
                                     class="w-4 h-4 rounded border-outline-variant bg-transparent text-primary focus:ring-primary-container transition-all shrink-0"
-                                    type="checkbox" />
+                                    type="checkbox" aria-label="Task: Review Q3 Finance - HIGH priority" />
                                 <span class="text-sm text-on-surface flex-1">Review Q3 Finance</span>
                                 <span
                                     class="text-[10px] text-tertiary font-bold tracking-tight whitespace-nowrap">HIGH</span>
@@ -204,7 +206,7 @@
                                 class="flex items-center gap-3 p-3 bg-surface-container rounded-lg cursor-pointer hover:bg-surface-bright transition-colors group">
                                 <input
                                     class="w-4 h-4 rounded border-outline-variant bg-transparent text-primary focus:ring-primary-container transition-all shrink-0"
-                                    type="checkbox" />
+                                    type="checkbox" aria-label="Task: Update Security Protocols - SYSTEM priority" />
                                 <span class="text-sm text-on-surface flex-1">Update Security Protocols</span>
                                 <span
                                     class="text-[10px] text-primary font-bold tracking-tight whitespace-nowrap">SYSTEM</span>
@@ -213,7 +215,8 @@
                                 class="flex items-center gap-3 p-3 bg-surface-container rounded-lg cursor-pointer hover:bg-surface-bright transition-colors group">
                                 <input checked=""
                                     class="w-4 h-4 rounded border-outline-variant bg-transparent text-primary focus:ring-primary-container transition-all shrink-0"
-                                    type="checkbox" />
+                                    type="checkbox"
+                                    aria-label="Task: Onboard New Team Member - HR priority (completed)" />
                                 <span class="text-sm text-on-surface/50 line-through flex-1">Onboard New Team
                                     Member</span>
                                 <span
@@ -235,7 +238,7 @@
                             <div
                                 class="flex items-start gap-3 hover:bg-surface-bright p-2 rounded-xl transition-all cursor-pointer">
                                 <div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden shrink-0">
-                                    <img alt="Avatar" data-alt="Portrait of a professional woman wearing glasses"
+                                    <img alt="Portrait of Sarah Miller, professional woman wearing glasses"
                                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfSjeWnU1iVNeQGFXjMIBtSOjN4nK_-0H6hvmMRqFiKk-w0N2isbe-3lPp_vT_8PENrAO53U9QBFUFsC4_UDTnVkFLR0wB0K8_arhpuAtpWMsw4vW7pmXPziwZoVJuBhWzpSgdqcLAn49INugF0uqcR1VW2riY78NdQLS2GIeh-APKpa6pWZGHYqMqqIGaDMd540jX30EQgI-4yYzVhNxAuMK4XOUghJZhhhP3HMBNr9WJOhREzJaofV64mzEv3Me-oJqezn5bJfw" />
                                 </div>
                                 <div class="flex-1 min-w-0">
@@ -249,7 +252,7 @@
                             <div
                                 class="flex items-start gap-3 hover:bg-surface-bright p-2 rounded-xl transition-all cursor-pointer">
                                 <div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden shrink-0">
-                                    <img alt="Avatar" data-alt="Portrait of a man in a black shirt"
+                                    <img alt="Portrait of David Chen, man in a black shirt"
                                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOYmD-QMhSOkguuCsiS06Njh9PHOvbzLL68gy4sr0uqE76RZpmKLjmMcLSjxjd0kZT8ImjkMEGfwaD5EKGTUTlQWiTIgc_-VvNH2zzq5xWGqsn1vOX87cRbYjmnhQJtgzyGROkNlcKZ6Fe2wQtotrMhtyrCas9QMB9q8QrwtEJrkZtHBxMZQ5_nHfZq7WZFsycqZuWNvNFKfsfB6RTpVmEpYb80Ad52JiYJO51G4B1dPhROo4DzAPP4_9xQH8Vc6sJIM7UdOg2634" />
                                 </div>
                                 <div class="flex-1 min-w-0">
@@ -343,17 +346,17 @@
                         <div class="flex -space-x-2">
                             <div
                                 class="w-8 h-8 rounded-full border-2 border-surface-container bg-surface-container overflow-hidden shrink-0">
-                                <img alt="Team" data-alt="Portrait of a smiling professional man"
+                                <img alt="Portrait of a smiling professional man, team member"
                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc2uMhlPwgYPOJ-taULoMr0Aj2x98f2MvNg9UzsM-ogp_WUAYosf7Auf5n54_SakLfewhoSVa2NvykpQpem-ReCDhrOyUMuLgRlzDHerETgMxk_QEjlVq_23GJh-VGWJvETNFzpkBYtZeVqTRiQtUsZt8L_3s76ToB1DWsUv8BMHEsx3YdQZN0A9mOrPcQSDGp1pqOsZpTMC_I7lQNMAVFxt161i9QQ_kaXaeaIHRGKnJ_pQkYGVZSBgFS8csgF9XEiGjwWcP-yOA" />
                             </div>
                             <div
                                 class="w-8 h-8 rounded-full border-2 border-surface-container bg-surface-container overflow-hidden shrink-0">
-                                <img alt="Team" data-alt="Portrait of a smiling professional woman"
+                                <img alt="Portrait of a smiling professional woman, team member"
                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOdmaDLMwBR82LLbtXaqK7xs1kMsxvxzL-r250fbd43gbUkiKRhKnQoGLRSvSb4lMIIkM_UlZvjAuEJMj9vnF1gtclAaRNNZjgsf3GoCkzSS474o-3oPT00IynoxPQF7PgGSx33C8qyPMKqqUMCWH3hBOFDvS7ZXT7_Z1AVU0QcrOfApmQh_ByXMBB0ywCmWsUH_MWFofnAUsac0hA4IRdTPKJgfG-t8dXfdC4HzjSGHoOVV8uiwXDQSfT1Uf8Lbe1ADEKmjYNWD0" />
                             </div>
                             <div
                                 class="w-8 h-8 rounded-full border-2 border-surface-container bg-surface-container overflow-hidden shrink-0">
-                                <img alt="Team" data-alt="Portrait of a young man with beard"
+                                <img alt="Portrait of a young man with beard, team member"
                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA2aaFS_dxN1oBmEXRPy6JpSbAGhXs_g5ksqBwiDpTTtZyKbigxVNMU57MZ0vweGapuA9Y3zpThV31r2PD4QhZPk8wPNDpegxWtDsh2IEbJgJp6qxJ2Xv9S391-YZsQFOz44t_5HJYbJ56WutCPSrVRq9ggAhLdZ5o8779JKldG0P3VSNh1UImq0dze7gdbxZMqioVMxNwGN3rsbAvuoNridk8ykBTpPUZGMCEqonWjmsk-aL_t4OXiUsgv_Yz7w2lcWA0kc9Osfs" />
                             </div>
                             <div

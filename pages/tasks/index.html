@@ -35,14 +35,11 @@
                     </div>
                     <div class="flex items-center gap-3">
                         <div class="flex -space-x-3">
-                            <img alt="Avatar A" class="h-10 w-10 rounded-full border-2 border-surface"
-                                data-alt="Team Member Avatar A"
+                            <img alt="Team Member Avatar A" class="h-10 w-10 rounded-full border-2 border-surface"
                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMIyZdNi46gnd1B2U14qqmiCkTMBdQfO-pjnlSkn_fd3pOKMkcYs5MtPRa5JEYFLxgUHwH1vt1zKa8FcWI6Z6lqySMTu4QtcqCJ_KregM7qgzcJ8tNVFvC9BYp0oKl0-R7mmu_sc5EIabe4Mns6U8FHUS-MnzzpIIyML593qgEFgeK2So0UrWTUqC33FKfzTQta6K0ukNbi-QeF1x3o7QcyKous3lzVQGCySqSmfN_vSrFbB-g7T0vu5P3U7ek-_1WXFUtAUox_PM" />
-                            <img alt="Avatar B" class="h-10 w-10 rounded-full border-2 border-surface"
-                                data-alt="Team Member Avatar B"
+                            <img alt="Team Member Avatar B" class="h-10 w-10 rounded-full border-2 border-surface"
                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvpIT1Q854JCqc5JU0af0QgUhffpdadD24H96htAWIi_uzaAUhuWX67bb6Tddsdhg_WqCAsKST5ZYEwFRxQ44SPo3n_u4NRmiJuAUva9X7rowY5FFRbTsR0yqgMMxj0wWiu9jUgAzWv2RKoOKffBtVPc2E0U7iPS1ktPNYEzTRKkhhfqwUu_YFw5DTzqNF9YthCW3R0oexTtBe7i4dIQ_q244DMOd5XI_dqGwjhP58GGfmuRe_IJrUA_6svYbE-zq3aF_e_TKD6Fg" />
-                            <img alt="Avatar C" class="h-10 w-10 rounded-full border-2 border-surface"
-                                data-alt="Team Member Avatar C"
+                            <img alt="Team Member Avatar C" class="h-10 w-10 rounded-full border-2 border-surface"
                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrxhXpDER4mhQXIokvZHAirY8h6nM7UgDanxo_r3wzQRUboteWc8HW6UPccGCt2yo8dtO3DnsCT0-vBQv2joHC7FZnfwphpBEYks2U6EvkZtBbjcY6DXsB-ZMJMnhvzIGN76dmwuMeKWzAl0m8kARs8ielIh1UEDM-I1qtHtqM3RL8eopNnEJLYjsUxg-Edruh1svcO12BqXPcrYGXhJQi96WIKvfNXTfzwGHBF0y-fl8WuyF_3jpOvSgdBBeKWBdXOj-OmKYMx-M" />
                             <div
                                 class="h-10 w-10 rounded-full bg-surface-container-high border-2 border-surface flex items-center justify-center text-xs font-bold text-on-surface-variant">
@@ -60,28 +57,35 @@
                         <span
                             class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm"
                             data-icon="search">search</span>
-                        <input
+                        <input id="task-search"
                             class="w-full bg-surface-container border-none rounded-lg pl-10 pr-4 py-2.5 text-sm focus:ring-2 focus:ring-primary/50 text-on-surface placeholder:text-outline/50"
-                            placeholder="Search task names..." type="text" />
+                            placeholder="Search task names..." type="text" name="search_tasks"
+                            aria-label="Search tasks by name" />
                     </div>
                     <!-- Dropdowns -->
                     <div class="flex flex-wrap items-center gap-3">
-                        <select
-                            class="bg-surface-container-high border-none rounded-lg px-4 py-2.5 text-sm font-medium text-on-surface focus:ring-2 focus:ring-primary/50 appearance-none min-w-[140px]">
+                        <label for="filter-project" class="sr-only">Filter by project</label>
+                        <select id="filter-project"
+                            class="bg-surface-container-high border-none rounded-lg px-4 py-2.5 text-sm font-medium text-on-surface focus:ring-2 focus:ring-primary/50 appearance-none min-w-[140px]"
+                            name="filter_project" aria-label="Filter tasks by project">
                             <option>All Projects</option>
                             <option>Obsidian UI</option>
                             <option>Nike Campaign</option>
                             <option>Tesla Rebrand</option>
                         </select>
-                        <select
-                            class="bg-surface-container-high border-none rounded-lg px-4 py-2.5 text-sm font-medium text-on-surface focus:ring-2 focus:ring-primary/50 appearance-none min-w-[140px]">
+                        <label for="filter-status" class="sr-only">Filter by status</label>
+                        <select id="filter-status"
+                            class="bg-surface-container-high border-none rounded-lg px-4 py-2.5 text-sm font-medium text-on-surface focus:ring-2 focus:ring-primary/50 appearance-none min-w-[140px]"
+                            name="filter_status" aria-label="Filter tasks by status">
                             <option>Any Status</option>
                             <option>Pending</option>
                             <option>In Progress</option>
                             <option>Completed</option>
                         </select>
-                        <select
-                            class="bg-surface-container-high border-none rounded-lg px-4 py-2.5 text-sm font-medium text-on-surface focus:ring-2 focus:ring-primary/50 appearance-none min-w-[140px]">
+                        <label for="filter-priority" class="sr-only">Filter by priority</label>
+                        <select id="filter-priority"
+                            class="bg-surface-container-high border-none rounded-lg px-4 py-2.5 text-sm font-medium text-on-surface focus:ring-2 focus:ring-primary/50 appearance-none min-w-[140px]"
+                            name="filter_priority" aria-label="Filter tasks by priority">
                             <option>Priority</option>
                             <option>High</option>
                             <option>Medium</option>
@@ -99,10 +103,10 @@
             <!-- Bulk Action Bar (Contextual) -->
             <div class="mb-4 flex items-center justify-between px-2">
                 <div class="flex items-center gap-4">
-                    <input
+                    <input id="select-all-tasks"
                         class="rounded bg-surface-container border-outline-variant/30 text-primary focus:ring-primary h-5 w-5"
-                        type="checkbox" />
-                    <span class="text-sm text-outline font-medium">Select All Tasks</span>
+                        type="checkbox" aria-label="Select all tasks" />
+                    <label for="select-all-tasks" class="text-sm text-outline font-medium">Select All Tasks</label>
                 </div>
                 <div class="flex items-center gap-2">
                     <button
@@ -133,9 +137,10 @@
                             <!-- Task Item 1 -->
                             <tr class="group hover:bg-surface-bright/30 transition-colors">
                                 <td class="px-6 py-5">
-                                    <input
+                                    <input id="task-1"
                                         class="rounded bg-surface-container border-outline-variant/30 text-primary focus:ring-primary h-4 w-4"
-                                        type="checkbox" />
+                                        type="checkbox" aria-label="Select task: Design System Refresh" />
+                                    <label for="task-1" class="sr-only">Select task: Design System Refresh</label>
                                 </td>
                                 <td class="px-6 py-5">
                                     <div class="flex flex-col">
@@ -148,11 +153,9 @@
                                 </td>
                                 <td class="px-6 py-5">
                                     <div class="flex -space-x-2">
-                                        <img alt="Emma" class="h-7 w-7 rounded-full border border-surface shadow-sm"
-                                            data-alt="Emma's profile picture"
+                                        <img alt="Emma's profile picture" class="h-7 w-7 rounded-full border border-surface shadow-sm"
                                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuADZc3x6jdM6ABFtbVK41RCsbLpJDPBnyF_2DlV29M-fg-GBtlgFSHF6K3QfsXmN4ne7OsDhI7Z3rQ2-Hkkoj7eTpJv_6-dRZ-7h9UH2zcNiqYgRYWvHbjCUsxJ0hURISh2_v0JF9y9Cs18_n-99MGQVl9VDlw8_EyEaEI5R7qjq8NP7diH7u6lcebowBCf5w0P3VU_OeunW8ZFCVYjiQmOAuv-ZGOUIElu9oEAhu_Vu3LV1OD30eBAlY3708egJtMQNGzTqaO5sak" />
-                                        <img alt="James" class="h-7 w-7 rounded-full border border-surface shadow-sm"
-                                            data-alt="James's profile picture"
+                                        <img alt="James's profile picture" class="h-7 w-7 rounded-full border border-surface shadow-sm"
                                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY-LJlpqZAWD5PlmVu9-ZYEZzxAB4-eZJ-Vgojwh-L4LcveYwVoqc6kR9I1B1iVFe2v7cBMyC_J125JQnVZzQAIQw_PdjsilGXmJ-83dz86ZKZL0rnSYZ4bLfCvici2lseng-CPCB6kxATrIW-Gbfrg2fKOYJrL8nVWOjklVqX7zzrm3S-6es_TfBeonD3yKo6WTeU0rKloP5mg6HpmSGocKtSbe1uNOusUZsFdKcuasElmCWPOmxJSo0x6m6drPdnkwworkhNtR8" />
                                     </div>
                                 </td>
@@ -187,7 +190,7 @@
                             <!-- Task Item 2 -->
                             <tr class="group hover:bg-surface-bright/30 transition-colors">
                                 <td class="px-6 py-5">
-                                    <input
+                                    <input aria-label="Select task: Onboarding Flows"
                                         class="rounded bg-surface-container border-outline-variant/30 text-primary focus:ring-primary h-4 w-4"
                                         type="checkbox" />
                                 </td>
@@ -202,8 +205,7 @@
                                 </td>
                                 <td class="px-6 py-5">
                                     <div class="flex -space-x-2">
-                                        <img alt="Kim" class="h-7 w-7 rounded-full border border-surface shadow-sm"
-                                            data-alt="Kim's profile picture"
+                                        <img alt="Kim's profile picture" class="h-7 w-7 rounded-full border border-surface shadow-sm"
                                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWSq-eogd3OMujZRE_RzVHJop7OBMYdYxGHjN69OBwVi_OyBnDSf3rnQXlCTTaAsuxrOTic1ZBdgyi42yJr4GA3ktzbBMOR0PV00Iy8Vw9opJk_s8X8MGEZZo6hNWf0VUZ-hZavsFcdgasIKJUULYt00QUHbDyJt4ODhcX86p0JRzP1cscDi7b4FsLzob1OSPRzu-frLb_zqqNAHd_qJdBjqHFW9xRYrzetCJXktWyJDZ0SqRPM-viXmFxuh5Mzw1eBUynGtOhmdc" />
                                     </div>
                                 </td>
@@ -238,7 +240,7 @@
                             <!-- Task Item 3 -->
                             <tr class="group hover:bg-surface-bright/30 transition-colors">
                                 <td class="px-6 py-5">
-                                    <input
+                                    <input aria-label="Select task: Competitor Audit"
                                         class="rounded bg-surface-container border-outline-variant/30 text-primary focus:ring-primary h-4 w-4"
                                         type="checkbox" />
                                 </td>
@@ -253,11 +255,9 @@
                                 </td>
                                 <td class="px-6 py-5">
                                     <div class="flex -space-x-2">
-                                        <img alt="Dan" class="h-7 w-7 rounded-full border border-surface shadow-sm"
-                                            data-alt="Dan's profile picture"
+                                        <img alt="Dan's profile picture" class="h-7 w-7 rounded-full border border-surface shadow-sm"
                                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnJZuVMGbj5UJ-ZLOemFVhXZLvC-m6LFvuhimaXEHvmRprBa6DAa2x9aXRyEQ0ntJ7hd-03kx_y47lFDWCfI7bAwt-NONIYT8je893Z5rg4QANor0jOVgq6mrfQPfVjPg6Lv7ruAbw-LfEUWnhpyNA3p4tA-rZ4DwR7gfTwQoarZf1o261xzb7tjrs7lV2GSO1dIm9sbVdUqhYQprKN7cW1UE-uAl87lrB4itATl3yYLcg4UGYzRzMdD1Gy1q7OJt46q36ryxjg7A" />
-                                        <img alt="Moe" class="h-7 w-7 rounded-full border border-surface shadow-sm"
-                                            data-alt="Moe's profile picture"
+                                        <img alt="Moe's profile picture" class="h-7 w-7 rounded-full border border-surface shadow-sm"
                                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrOhGxynT8PQR2KCDKCWvJx9SGekVi5o4HrebZ0NYeHrZjaLu83HTgFZBHvPGxdGPTUfIDYgfDJc9f6ZVU0Q5AxN5O8rL90GnJeHZzehjeOm9LycV7HpkEg6jqCJhAMaHxxjdmqoE3VGz_ifl-mghbNQEAjuKHPzzeUvRi9iz84NQkeNckKpVIzuK01x_6UUlSyfipOVul7CXUHMMAiYnieHKZye1GkFGQFtFldJSZgQYo0ETNTYcB5a7QKfW8YLknrEIKfdXsZio" />
                                     </div>
                                 </td>

@@ -58,14 +58,16 @@
                         class="px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-all">Chat</button>
                 </div>
                 <div class="h-8 w-[1px] bg-outline-variant/20 hidden lg:block"></div>
-                <select
-                    class="bg-surface-dim border-none text-xs font-bold uppercase tracking-widest text-on-surface-variant rounded-xl px-4 py-2 focus:ring-1 focus:ring-primary/30">
+                <select aria-label="Filter notifications by status"
+                    class="bg-surface-dim border-none text-xs font-bold uppercase tracking-widest text-on-surface-variant rounded-xl px-4 py-2 focus:ring-1 focus:ring-primary/30"
+                    name="filter_status">
                     <option>Status: All</option>
                     <option>Unread</option>
                     <option>Read</option>
                 </select>
-                <select
-                    class="bg-surface-dim border-none text-xs font-bold uppercase tracking-widest text-on-surface-variant rounded-xl px-4 py-2 focus:ring-1 focus:ring-primary/30">
+                <select aria-label="Filter notifications by priority"
+                    class="bg-surface-dim border-none text-xs font-bold uppercase tracking-widest text-on-surface-variant rounded-xl px-4 py-2 focus:ring-1 focus:ring-primary/30"
+                    name="filter_priority">
                     <option>Priority: All</option>
                     <option>High</option>
                     <option>Medium</option>
@@ -80,9 +82,9 @@
             <div
                 class="sticky top-20 z-30 mb-6 flex items-center justify-between px-6 py-4 bg-surface-container-high/60 backdrop-blur-md rounded-2xl border border-white/5 shadow-xl">
                 <div class="flex items-center space-x-4">
-                    <input
+                    <input aria-label="Select all notifications"
                         class="w-5 h-5 rounded border-outline-variant bg-surface-dim text-primary focus:ring-primary/40 focus:ring-offset-0"
-                        type="checkbox" />
+                        type="checkbox" name="select_all_notifications" />
                     <span class="text-sm font-semibold text-on-surface">3 items selected</span>
                 </div>
                 <div class="flex space-x-2">
@@ -110,9 +112,9 @@
                     class="group relative bg-surface-container-low hover:bg-surface-container rounded-2xl p-5 flex items-start space-x-6 transition-all duration-300 hover:shadow-[0_0_30px_rgba(192,193,255,0.05)] hover:-translate-y-1">
                     <div class="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-l-2xl"></div>
                     <div class="pt-1">
-                        <input checked=""
+                        <input checked="" aria-label="Select notification: Security Alert New Login Detected"
                             class="w-5 h-5 rounded border-outline-variant bg-surface-dim text-primary focus:ring-primary/40 focus:ring-offset-0"
-                            type="checkbox" />
+                            type="checkbox" name="notification_1" />
                     </div>
                     <div
                         class="flex-shrink-0 w-12 h-12 rounded-2xl bg-error/10 flex items-center justify-center text-error">
@@ -156,9 +158,9 @@
                     class="group relative bg-surface-container-low hover:bg-surface-container rounded-2xl p-5 flex items-start space-x-6 transition-all duration-300 hover:shadow-[0_0_30px_rgba(192,193,255,0.05)] hover:-translate-y-1">
                     <div class="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-l-2xl"></div>
                     <div class="pt-1">
-                        <input
+                        <input aria-label="Select notification: Task Assigned Design Review"
                             class="w-5 h-5 rounded border-outline-variant bg-surface-dim text-primary focus:ring-primary/40 focus:ring-offset-0"
-                            type="checkbox" />
+                            type="checkbox" name="notification_2" />
                     </div>
                     <div
                         class="flex-shrink-0 w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
@@ -179,7 +181,7 @@
                         <div class="flex items-center space-x-4">
                             <div class="flex items-center space-x-2">
                                 <img alt="Sarah Avatar" class="w-5 h-5 rounded-full"
-                                    data-alt="Avatar of a female team member"
+                                    alt="Avatar of a female team member"
                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbN9E7nBCceVaxrUllFSWs5-DTqzyt_79i_Le_JzdrEG_o86ps8wABZfZnZty_DJbcHxY402Ol81AQ0XCqC6UNhr4SOgjUHG9E-p2Bph9FeYxN9YkLZpMtUE_o7LW61DcBB2ViM8dnON9pt_MclNK4gZECJVwGBjz32wV_HXIN4nIQfGEzzv2ldcLX1I9oYStmMlKoHVA7Tf9vdyoMhF84R4iIuoni7v5r0X76zvuK_tToV3cw2BFsCN--_TmHpxNQXWzJXjKE2JI" />
                                 <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Sarah Miller •
                                     Obsidian Project</span>
@@ -195,9 +197,9 @@
                 <div
                     class="group relative bg-surface-container-low/50 hover:bg-surface-container rounded-2xl p-5 flex items-start space-x-6 transition-all duration-300">
                     <div class="pt-1">
-                        <input
+                        <input aria-label="Select notification: New message in design-ops"
                             class="w-5 h-5 rounded border-outline-variant bg-surface-dim text-primary focus:ring-primary/40 focus:ring-offset-0"
-                            type="checkbox" />
+                            type="checkbox" name="notification_3" />
                     </div>
                     <div
                         class="flex-shrink-0 w-12 h-12 rounded-2xl bg-tertiary/10 flex items-center justify-center text-tertiary">
@@ -230,9 +232,9 @@
                     class="group relative bg-surface-container-low hover:bg-surface-container rounded-2xl p-5 flex items-start space-x-6 transition-all duration-300 hover:shadow-[0_0_30px_rgba(192,193,255,0.05)] hover:-translate-y-1">
                     <div class="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-l-2xl"></div>
                     <div class="pt-1">
-                        <input
+                        <input aria-label="Select notification: System deployment complete"
                             class="w-5 h-5 rounded border-outline-variant bg-surface-dim text-primary focus:ring-primary/40 focus:ring-offset-0"
-                            type="checkbox" />
+                            type="checkbox" name="notification_4" />
                     </div>
                     <div
                         class="flex-shrink-0 w-12 h-12 rounded-2xl bg-primary-container/20 flex items-center justify-center text-primary-fixed">

@@ -52,13 +52,14 @@
                             <span class="text-[10px] font-bold bg-primary/10 text-primary px-2 py-0.5 rounded">01</span>
                             <h2 class="font-headline text-xl font-semibold">Select Team Member</h2>
                         </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div role="radiogroup" aria-label="Select team member"
+                            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             <!-- Selection Cards -->
-                            <div
+                            <div role="radio" aria-checked="true" tabindex="0" aria-label="Select Sarah Chen, UI Designer"
                                 class="bg-surface-container p-4 rounded-xl border-2 border-primary ring-4 ring-primary/5 transition-all cursor-pointer">
                                 <div class="flex items-center gap-3">
                                     <img class="w-12 h-12 rounded-lg object-cover"
-                                        data-alt="Portrait of Sarah Chen, UI Designer"
+                                        alt="Portrait of Sarah Chen, UI Designer"
                                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr4yE504dKkVaqvDwlVStD4JZErUj952KoMzdZccn4Kb4zQ9dIIoBJ8UMBPCKxqW8LA42GGqCs5YdYNE0yuPPGDXPHhauIpHbaC2bKpM5mHazKlf3NWdRkQTjtpoTlg_o9ofo9YS08Kd9bRTc1QcxQ-meBWIKkzxBAR1T5cIKDHeuUGuDhzxMOHTk3PSaysq-yWwW-f2zZW8wc2K1sy6yS2KJBk3IIRDfu7ZQqyrcofJM5psepE6RvLI0nen0DS8QaLb602JRGzy0" />
                                     <div>
                                         <p class="text-sm font-bold">Sarah Chen</p>
@@ -79,11 +80,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div
+                            <div role="radio" aria-checked="false" tabindex="0" aria-label="Select Marcus Thornton, Dev Ops"
                                 class="bg-surface-container p-4 rounded-xl border border-outline-variant/10 hover:border-primary/40 transition-all cursor-pointer">
                                 <div class="flex items-center gap-3">
                                     <img class="w-12 h-12 rounded-lg object-cover grayscale opacity-60"
-                                        data-alt="Portrait of Marcus Thornton, Dev Ops"
+                                        alt="Portrait of Marcus Thornton, Dev Ops"
                                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9qnbkcYc3y5HF6nOygyC7kvK5tRDv1QP1lPAehozslPPHi6kZja3SSSuXX-FOX4SFq1kE0AEnqz71MOkMCmgOHWCEUT_8IiYwzpJhZ_pV4hSRxkNlhu2H6BNVabBx6VrH_P8c9q83pTaPD0v6j9ga-HHZlg8GJheyKRDlrx8l5DRFWdqkxFd2G7IlrexuYKOyTK9H4ldHCsDbYFcUEmYZZsZA7RhvYnN_pRX4QcBDFruG_EDBixX5GtDsdJdY5CPEbMS9i0ZoOqo" />
                                     <div>
                                         <p class="text-sm font-bold">Marcus Thornton</p>
@@ -100,11 +101,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div
+                            <div role="radio" aria-checked="false" tabindex="0" aria-label="Select Elena Rodriguez, QA Lead"
                                 class="bg-surface-container p-4 rounded-xl border border-outline-variant/10 hover:border-primary/40 transition-all cursor-pointer">
                                 <div class="flex items-center gap-3">
                                     <img class="w-12 h-12 rounded-lg object-cover"
-                                        data-alt="Portrait of Elena Rodriguez, QA Engineer"
+                                        alt="Portrait of Elena Rodriguez, QA Engineer"
                                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4MA4dBPBPCLbCRsWPIOXjydA0ogciDwg_2tS7YOVhoiYyT9Xdtvtz_rcQNFrIO7CmHtIT8RDot4tst2Dk1tTtA3i5nddILeuRp2z9g7lRAazn0kxcMtxKJBKaWVl6ljSj7W1yWJC2IlRVP5IC9joxRKrU94iTcu0G1B_2f8TDelUTZF13Q83FpVG37HJvYlsYlLjTl1jv5Lml2uKYvonzxegQXoJUlOCpOKTe-8FzCPaUjIk7bBMOOuxrERk5SJ1LUjDXC2K76VU" />
                                     <div>
                                         <p class="text-sm font-bold">Elena Rodriguez</p>
@@ -122,7 +123,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button
+                        <button aria-label="View complete list of team members"
                             class="mt-6 flex items-center gap-2 text-primary text-xs font-bold hover:gap-3 transition-all">
                             <span class="w-1 h-1 bg-primary rounded-full"></span>
                             VIEW ALL TEAM MEMBERS
@@ -137,11 +138,13 @@
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div class="space-y-2">
-                                <label class="text-[10px] font-bold uppercase tracking-widest text-outline pl-1">Select
+                                <label for="select_project"
+                                    class="text-[10px] font-bold uppercase tracking-widest text-outline pl-1">Select
                                     Project</label>
                                 <div class="relative">
-                                    <select
-                                        class="w-full bg-surface-container border-none rounded-xl py-3.5 pl-4 pr-10 appearance-none focus:ring-2 focus:ring-primary/20 text-sm">
+                                    <select id="select_project"
+                                        class="w-full bg-surface-container border-none rounded-xl py-3.5 pl-4 pr-10 appearance-none focus:ring-2 focus:ring-primary/20 text-sm"
+                                        name="select_project">
                                         <option>Nexus Bank Mobile App</option>
                                         <option>Obsidian Design System</option>
                                         <option>CloudSync Dashboard</option>
@@ -151,11 +154,13 @@
                                 </div>
                             </div>
                             <div class="space-y-2">
-                                <label class="text-[10px] font-bold uppercase tracking-widest text-outline pl-1">Select
+                                <label for="select_task"
+                                    class="text-[10px] font-bold uppercase tracking-widest text-outline pl-1">Select
                                     Task (Optional)</label>
                                 <div class="relative">
-                                    <select
-                                        class="w-full bg-surface-container border-none rounded-xl py-3.5 pl-4 pr-10 appearance-none focus:ring-2 focus:ring-primary/20 text-sm">
+                                    <select id="select_task"
+                                        class="w-full bg-surface-container border-none rounded-xl py-3.5 pl-4 pr-10 appearance-none focus:ring-2 focus:ring-primary/20 text-sm"
+                                        name="select_task">
                                         <option>UX Research Phase 2</option>
                                         <option>Design QA &amp; Audit</option>
                                         <option>Icon Library Development</option>
@@ -169,15 +174,20 @@
                                 <label
                                     class="text-[10px] font-bold uppercase tracking-widest text-outline pl-1">Assignment
                                     Role</label>
-                                <div class="flex flex-wrap gap-3">
-                                    <button
+                                <div role="radiogroup" aria-label="Assignment role selection"
+                                    class="flex flex-wrap gap-3">
+                                    <button role="radio" aria-checked="false" aria-label="Assign as Designer"
+                                        tabindex="-1"
                                         class="px-5 py-2.5 bg-surface-container rounded-xl text-sm border border-outline-variant/10 hover:border-primary transition-all">Designer</button>
-                                    <button
+                                    <button role="radio" aria-checked="true" aria-label="Assign as Developer"
+                                        tabindex="0"
                                         class="px-5 py-2.5 bg-primary text-on-primary-fixed font-bold rounded-xl text-sm border border-transparent">Developer</button>
-                                    <button
+                                    <button role="radio" aria-checked="false" aria-label="Assign as Project Manager"
+                                        tabindex="-1"
                                         class="px-5 py-2.5 bg-surface-container rounded-xl text-sm border border-outline-variant/10 hover:border-primary transition-all">Project
                                         Manager</button>
-                                    <button
+                                    <button role="radio" aria-checked="false" aria-label="Assign as QA Engineer"
+                                        tabindex="-1"
                                         class="px-5 py-2.5 bg-surface-container rounded-xl text-sm border border-outline-variant/10 hover:border-primary transition-all">QA
                                         Engineer</button>
                                 </div>
@@ -193,27 +203,30 @@
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                             <div class="space-y-2">
-                                <label class="text-[10px] font-bold uppercase tracking-widest text-outline pl-1">Start
+                                <label for="start_date"
+                                    class="text-[10px] font-bold uppercase tracking-widest text-outline pl-1">Start
                                     Date</label>
                                 <div class="relative">
-                                    <input
+                                    <input id="start_date"
                                         class="w-full bg-surface-container border-none rounded-xl py-3.5 px-4 focus:ring-2 focus:ring-primary/20 text-sm color-scheme-dark"
-                                        type="date" />
+                                        type="date" name="start_date" aria-label="Assignment start date" />
                                 </div>
                             </div>
                             <div class="space-y-2">
-                                <label class="text-[10px] font-bold uppercase tracking-widest text-outline pl-1">End
+                                <label for="end_date"
+                                    class="text-[10px] font-bold uppercase tracking-widest text-outline pl-1">End
                                     Date</label>
                                 <div class="relative">
-                                    <input
+                                    <input id="end_date"
                                         class="w-full bg-surface-container border-none rounded-xl py-3.5 px-4 focus:ring-2 focus:ring-primary/20 text-sm color-scheme-dark"
-                                        type="date" />
+                                        type="date" name="end_date" aria-label="Assignment end date" />
                                 </div>
                             </div>
                         </div>
                         <label class="flex items-center gap-3 group cursor-pointer">
                             <div class="relative flex items-center">
-                                <input checked="" class="peer hidden" type="checkbox" />
+                                <input checked="" class="peer hidden" type="checkbox"
+                                    aria-label="Notify team members via Slack and Email" />
                                 <div
                                     class="w-5 h-5 border-2 border-outline-variant/40 rounded-md peer-checked:bg-primary peer-checked:border-primary transition-all">
                                 </div>
@@ -240,7 +253,7 @@
                                         </p>
                                         <p class="text-sm font-semibold">Sarah Chen (UI Designer)</p>
                                     </div>
-                                    <button
+                                    <button aria-label="Edit assignee selection"
                                         class="text-primary text-xs opacity-0 group-hover:opacity-100 transition-opacity">Edit</button>
                                 </div>
                                 <div
@@ -250,7 +263,7 @@
                                         </p>
                                         <p class="text-sm font-semibold">Nexus Bank Mobile App</p>
                                     </div>
-                                    <button
+                                    <button aria-label="Edit project assignment"
                                         class="text-primary text-xs opacity-0 group-hover:opacity-100 transition-opacity">Edit</button>
                                 </div>
                                 <div
@@ -260,7 +273,7 @@
                                         </p>
                                         <p class="text-sm font-semibold">Oct 12, 2023 — Dec 24, 2023</p>
                                     </div>
-                                    <button
+                                    <button aria-label="Edit assignment duration"
                                         class="text-primary text-xs opacity-0 group-hover:opacity-100 transition-opacity">Edit</button>
                                 </div>
                             </div>
@@ -276,10 +289,11 @@
                     </section>
                     <!-- Action Buttons -->
                     <div class="flex items-center justify-end gap-6 pt-6">
-                        <button class="text-sm font-bold text-outline hover:text-white transition-all px-6 py-3">
+                        <button aria-label="Cancel team member assignment"
+                            class="text-sm font-bold text-outline hover:text-white transition-all px-6 py-3">
                             Cancel Assignment
                         </button>
-                        <button
+                        <button aria-label="Confirm and assign team member"
                             class="bg-primary text-on-primary-fixed px-10 py-4 rounded-xl font-headline font-bold text-base shadow-xl shadow-primary/10 hover:scale-[1.02] active:scale-[0.98] transition-all">
                             Assign Member
                         </button>

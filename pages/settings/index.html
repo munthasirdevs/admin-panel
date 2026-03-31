@@ -51,20 +51,22 @@
                         </div>
                         <form class="space-y-4 sm:space-y-6">
                             <div class="space-y-2">
-                                <label
+                                <label for="current_password"
                                     class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest pl-1 block">Current
                                     Password</label>
-                                <input
+                                <input id="current_password"
                                     class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-primary/40 transition-all min-h-[44px]"
-                                    placeholder="••••••••" type="password" />
+                                    placeholder="••••••••" type="password" name="current_password"
+                                    aria-label="Enter your current password" />
                             </div>
                             <div class="space-y-2">
-                                <label
+                                <label for="new_password"
                                     class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest pl-1 block">New
                                     Password</label>
-                                <input
+                                <input id="new_password"
                                     class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-primary/40 transition-all min-h-[44px]"
-                                    placeholder="••••••••" type="password" />
+                                    placeholder="••••••••" type="password" name="new_password"
+                                    aria-label="Enter your new password" />
                                 <div class="pt-2">
                                     <div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
                                         <div
@@ -78,15 +80,17 @@
                                 </div>
                             </div>
                             <div class="space-y-2">
-                                <label
+                                <label for="confirm_password"
                                     class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest pl-1 block">Confirm
                                     New Password</label>
-                                <input
+                                <input id="confirm_password"
                                     class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-primary/40 transition-all min-h-[44px]"
-                                    placeholder="••••••••" type="password" />
+                                    placeholder="••••••••" type="password" name="confirm_password"
+                                    aria-label="Confirm your new password" />
                             </div>
                             <button
-                                class="w-full bg-primary text-on-primary py-3 rounded-xl font-bold text-sm tracking-wide hover:opacity-90 transition-opacity active:scale-[0.98] mt-4 min-h-[44px]">
+                                class="w-full bg-primary text-on-primary py-3 rounded-xl font-bold text-sm tracking-wide hover:opacity-90 transition-opacity active:scale-[0.98] mt-4 min-h-[44px]"
+                                type="submit">
                                 Update Credentials
                             </button>
                         </form>
@@ -110,7 +114,8 @@
                                         <p class="text-xs text-on-surface-variant leading-relaxed">Require symbols and
                                             numbers.</p>
                                     </div>
-                                    <div
+                                    <div role="switch" aria-checked="true"
+                                        aria-label="Enable complex password requirement" tabindex="0"
                                         class="w-10 sm:w-12 h-5 sm:h-6 bg-primary rounded-full relative cursor-pointer flex items-center px-0.5 sm:px-1 shrink-0">
                                         <div class="w-3.5 h-3.5 sm:w-4 sm:h-4 bg-on-primary rounded-full ml-auto"></div>
                                     </div>
@@ -123,7 +128,8 @@
                                         <p class="text-xs text-on-surface-variant leading-relaxed">Required for all team
                                             members.</p>
                                     </div>
-                                    <div
+                                    <div role="switch" aria-checked="true"
+                                        aria-label="Enable 2FA enforcement for all team members" tabindex="0"
                                         class="w-10 sm:w-12 h-5 sm:h-6 bg-primary rounded-full relative cursor-pointer flex items-center px-0.5 sm:px-1 shrink-0">
                                         <div class="w-3.5 h-3.5 sm:w-4 sm:h-4 bg-on-primary rounded-full ml-auto"></div>
                                     </div>
@@ -136,7 +142,8 @@
                                         <p class="text-xs text-on-surface-variant leading-relaxed">Request password
                                             before project deletion or data export.</p>
                                     </div>
-                                    <div
+                                    <div role="switch" aria-checked="false"
+                                        aria-label="Enable sensitive action re-authentication" tabindex="0"
                                         class="w-10 sm:w-12 h-5 sm:h-6 bg-surface-container-highest rounded-full relative cursor-pointer flex items-center px-0.5 sm:px-1 border border-outline-variant/20 shrink-0">
                                         <div class="w-3.5 h-3.5 sm:w-4 sm:h-4 bg-outline rounded-full"></div>
                                     </div>
@@ -174,7 +181,7 @@
                                                 now</p>
                                         </div>
                                     </div>
-                                    <button
+                                    <button aria-label="Force logout for MacBook Pro 16 session"
                                         class="text-[11px] font-bold text-error uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity min-h-[44px] min-w-[44px] flex items-center justify-center">Force
                                         Logout</button>
                                 </div>
@@ -192,14 +199,13 @@
                                             <p class="text-[11px] text-on-surface-variant">London, UK • 2 hours ago</p>
                                         </div>
                                     </div>
-                                    <button
+                                    <button aria-label="Force logout for iPhone 15 Pro session"
                                         class="text-[11px] font-bold text-error uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity min-h-[44px] min-w-[44px] flex items-center justify-center">Force
                                         Logout</button>
                                 </div>
                             </div>
                         </section>
                     </div>
-                    </section>
 
                     <!-- === ACTIVITY LOGS === -->
                     <section class="col-span-1 bg-surface-container-low rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
@@ -213,9 +219,9 @@
                                     <span
                                         class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg"
                                         data-icon="search">search</span>
-                                    <input
+                                    <input aria-label="Filter audit logs"
                                         class="bg-surface-container border-none rounded-xl pl-9 pr-4 py-2 text-xs w-full sm:w-64 focus:ring-1 focus:ring-primary/30 transition-all min-h-[44px]"
-                                        placeholder="Filter logs..." type="text" />
+                                        placeholder="Filter logs..." type="text" name="search_logs" />
                                 </div>
                                 <button
                                     class="flex items-center gap-2 px-3 sm:px-4 py-2 bg-surface-container text-on-surface rounded-xl text-xs font-bold hover:bg-surface-bright transition-colors min-h-[44px]">
@@ -337,53 +343,65 @@
                                             <td class="py-4 sm:py-5 font-semibold whitespace-nowrap">Task Assignments
                                             </td>
                                             <td class="text-center py-4 sm:py-5"><input checked=""
+                                                    aria-label="Enable in-app notifications for Task Assignments"
                                                     class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4"
-                                                    type="checkbox" /></td>
+                                                    type="checkbox" name="notification_task_inapp" /></td>
                                             <td class="text-center py-4 sm:py-5"><input checked=""
+                                                    aria-label="Enable email notifications for Task Assignments"
                                                     class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4"
-                                                    type="checkbox" /></td>
+                                                    type="checkbox" name="notification_task_email" /></td>
                                             <td class="text-center py-4 sm:py-5"><input
+                                                    aria-label="Enable push notifications for Task Assignments"
                                                     class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4"
-                                                    type="checkbox" /></td>
+                                                    type="checkbox" name="notification_task_push" /></td>
                                         </tr>
                                         <tr class="border-b border-outline-variant/5">
                                             <td class="py-4 sm:py-5 font-semibold whitespace-nowrap">Project Milestones
                                             </td>
                                             <td class="text-center py-4 sm:py-5"><input checked=""
+                                                    aria-label="Enable in-app notifications for Project Milestones"
                                                     class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4"
-                                                    type="checkbox" /></td>
+                                                    type="checkbox" name="notification_milestone_inapp" /></td>
                                             <td class="text-center py-4 sm:py-5"><input
+                                                    aria-label="Enable email notifications for Project Milestones"
                                                     class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4"
-                                                    type="checkbox" /></td>
+                                                    type="checkbox" name="notification_milestone_email" /></td>
                                             <td class="text-center py-4 sm:py-5"><input checked=""
+                                                    aria-label="Enable push notifications for Project Milestones"
                                                     class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4"
-                                                    type="checkbox" /></td>
+                                                    type="checkbox" name="notification_milestone_push" /></td>
                                         </tr>
                                         <tr class="border-b border-outline-variant/5">
                                             <td class="py-4 sm:py-5 font-semibold whitespace-nowrap">Direct Messages
                                             </td>
                                             <td class="text-center py-4 sm:py-5"><input checked=""
+                                                    aria-label="Enable in-app notifications for Direct Messages"
                                                     class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4"
-                                                    type="checkbox" /></td>
+                                                    type="checkbox" name="notification_message_inapp" /></td>
                                             <td class="text-center py-4 sm:py-5"><input checked=""
+                                                    aria-label="Enable email notifications for Direct Messages"
                                                     class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4"
-                                                    type="checkbox" /></td>
+                                                    type="checkbox" name="notification_message_email" /></td>
                                             <td class="text-center py-4 sm:py-5"><input checked=""
+                                                    aria-label="Enable push notifications for Direct Messages"
                                                     class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4"
-                                                    type="checkbox" /></td>
+                                                    type="checkbox" name="notification_message_push" /></td>
                                         </tr>
                                         <tr>
                                             <td class="py-4 sm:py-5 font-semibold whitespace-nowrap">System Maintenance
                                             </td>
                                             <td class="text-center py-4 sm:py-5"><input checked=""
+                                                    aria-label="Enable in-app notifications for System Maintenance"
                                                     class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4"
-                                                    type="checkbox" /></td>
+                                                    type="checkbox" name="notification_maintenance_inapp" /></td>
                                             <td class="text-center py-4 sm:py-5"><input checked=""
+                                                    aria-label="Enable email notifications for System Maintenance"
                                                     class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4"
-                                                    type="checkbox" /></td>
+                                                    type="checkbox" name="notification_maintenance_email" /></td>
                                             <td class="text-center py-4 sm:py-5"><input
+                                                    aria-label="Enable push notifications for System Maintenance"
                                                     class="rounded border-none bg-surface-container-high text-primary focus:ring-primary/20 w-4 h-4"
-                                                    type="checkbox" /></td>
+                                                    type="checkbox" name="notification_maintenance_push" /></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -405,7 +423,7 @@
                             <div
                                 class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-3 sm:p-4 bg-surface-container-high rounded-xl sm:rounded-2xl">
                                 <span class="text-xs sm:text-sm font-bold">Enable Priority Feed</span>
-                                <div
+                                <div role="switch" aria-checked="true" aria-label="Enable priority feed" tabindex="0"
                                     class="w-10 sm:w-12 h-5 sm:h-6 bg-tertiary rounded-full relative cursor-pointer flex items-center px-0.5 sm:px-1 shadow-[0_0_15px_rgba(255,183,131,0.2)] shrink-0">
                                     <div class="w-3.5 h-3.5 sm:w-4 sm:h-4 bg-on-tertiary rounded-full ml-auto"></div>
                                 </div>
@@ -422,6 +440,7 @@
                     </p>
                 </div>
             </div>
+        </div>
     </main>
 
     <script src="../../assets/js/app.js"></script>

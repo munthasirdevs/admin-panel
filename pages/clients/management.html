@@ -59,15 +59,18 @@
             <div class="ml-auto flex items-center gap-4">
                 <div
                     class="flex items-center gap-2 text-on-surface-variant text-xs font-medium uppercase tracking-widest px-4">
-                    <input
+                    <input id="select-all-clients"
                         class="rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary/20"
-                        type="checkbox" title="Select client" />
+                        type="checkbox" aria-label="Select all clients" />
+                    <label for="select-all-clients" class="sr-only">Select all clients</label>
                     Bulk Action
                 </div>
-                <button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+                <button class="p-2 text-on-surface-variant hover:text-primary transition-colors"
+                    aria-label="Kanban view">
                     <span class="material-symbols-outlined">view_kanban</span>
                 </button>
-                <button class="p-2 text-primary bg-surface-container-highest rounded-lg transition-colors">
+                <button class="p-2 text-primary bg-surface-container-highest rounded-lg transition-colors"
+                    aria-label="List view">
                     <span class="material-symbols-outlined">list</span>
                 </button>
             </div>
@@ -91,9 +94,10 @@
             <div
                 class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer border border-outline-variant/5 shadow-lg group">
                 <div class="col-span-4 flex items-center gap-4">
-                    <input
+                    <input id="select-nebula-dynamics"
                         class="rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary/20"
-                        type="checkbox" title="Select all clients" />
+                        type="checkbox" aria-label="Select Nebula Dynamics" />
+                    <label for="select-nebula-dynamics" class="sr-only">Select Nebula Dynamics</label>
                     <img class="w-12 h-12 rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqIzLMh_qmoaZw__cT43Val75XA18ZmRJa_d1885RusTammKETIevHWpb9F7nZo2SlflQyA_snTs5PUuNPMIKkaSQ_Fwhzvvd0U8O1Ys_yJPl0FleyydKalvuUs1aIlYX873buk4jTZHIlsAuDZO5l_YyL0gyhKcT1BTGykGELSMlbMRBIlbV15p0mpmYDxvND-XIQbM6pZB77AMH2H9W2zy1ZmffenKUCXWk7nuKFI0J2-wRLgbfHE41muZ-0lVEQn59Z-40Nq5Y"
                         alt="Nebula Dynamics logo" />
@@ -117,7 +121,8 @@
                     <div class="text-on-surface-variant text-[10px] uppercase tracking-tighter">Annual Value</div>
                 </div>
                 <div class="col-span-1 flex justify-end gap-2">
-                    <button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+                    <button class="p-2 text-on-surface-variant hover:text-primary transition-colors"
+                        aria-label="More options for Nebula Dynamics">
                         <span class="material-symbols-outlined text-lg">more_vert</span>
                     </button>
                 </div>
@@ -127,9 +132,10 @@
             <div
                 class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer border border-outline-variant/5 shadow-lg group">
                 <div class="col-span-4 flex items-center gap-4">
-                    <input
+                    <input id="select-ethereal-systems"
                         class="rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary/20"
-                        type="checkbox" title="Select Ethereal Systems" />
+                        type="checkbox" aria-label="Select Ethereal Systems" />
+                    <label for="select-ethereal-systems" class="sr-only">Select Ethereal Systems</label>
                     <img class="w-12 h-12 rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_tmp3fgkBo6lMoTdsxJVbA3tdN_8d8lPds3eskONXz68EsYrigSopqS8L8Op6Suwn-49EZk29YYsmASd0alOsuX_tKEqKjweN3HWDXYDqvsVvgyILuFhJ8K6KlGrL8bJpa8lz212-O3qlwEexPycNO4dx9ucDtbGTlp1OSKIhi-KcNh5rMdOt9Kz-Xwi6v5Ae30ChZez71T3BqHyeXXwnxzUnViM8Ktt3HksOyfP82n-ZMSTWsS4j7BJjhGgIBX7zFZ77EoC2Di4"
                         alt="Ethereal Systems logo" />
@@ -153,7 +159,8 @@
                     <div class="text-on-surface-variant text-[10px] uppercase tracking-tighter">Project Value</div>
                 </div>
                 <div class="col-span-1 flex justify-end gap-2">
-                    <button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+                    <button class="p-2 text-on-surface-variant hover:text-primary transition-colors"
+                        aria-label="More options for Ethereal Systems">
                         <span class="material-symbols-outlined text-lg">more_vert</span>
                     </button>
                 </div>
@@ -163,9 +170,10 @@
             <div
                 class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer border border-outline-variant/5 shadow-lg group">
                 <div class="col-span-4 flex items-center gap-4">
-                    <input
+                    <input id="select-vortex-ventures"
                         class="rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary/20"
-                        type="checkbox" title="Select Ethereal Systems" />
+                        type="checkbox" aria-label="Select Vortex Ventures" />
+                    <label for="select-vortex-ventures" class="sr-only">Select Vortex Ventures</label>
                     <img class="w-12 h-12 rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfcn3Fii_joxD8hvr5Ibz-M0R6VPtsey2vblR0bQ_QetVN365rdehC4x-XEIT7LFaLUg_r-xcItBTUPH6YeuiJJw-FO5qk4Hh2kr2BSre4trOglb6VRv56-gfai5w5z66h4xUueWGwGNJ8DAqCe17uCK08J_N_nY6Eg4oxJhE53ES8dvccxoBs6reP_w9cmddNgVRV1Q_X9B43a5_P-Xjp_fmE2ingrzxwW7iEePy4bxhdeyqipSMBYFXWWsUazq1ch7E9B16avJk"
                         alt="Vortex Ventures logo" />
@@ -189,7 +197,8 @@
                     <div class="text-on-surface-variant text-[10px] uppercase tracking-tighter">Total Revenue</div>
                 </div>
                 <div class="col-span-1 flex justify-end gap-2">
-                    <button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+                    <button class="p-2 text-on-surface-variant hover:text-primary transition-colors"
+                        aria-label="More options for Vortex Ventures">
                         <span class="material-symbols-outlined text-lg">more_vert</span>
                     </button>
                 </div>
@@ -199,9 +208,10 @@
             <div
                 class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer border border-outline-variant/5 shadow-lg group">
                 <div class="col-span-4 flex items-center gap-4">
-                    <input
+                    <input id="select-prism-creative"
                         class="rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary/20"
-                        type="checkbox" title="Select Prism Creative" />
+                        type="checkbox" aria-label="Select Prism Creative" />
+                    <label for="select-prism-creative" class="sr-only">Select Prism Creative</label>
                     <img class="w-12 h-12 rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNRwaEzOJu4xpLGvYbcXh-nNTpqEsB0TyGV-UvH4aqx5Se0oj2bh5734AYDL8czzf6bISjvBIzgGf4TKWOkwqaDSrwlTcJ9goN9Whvkm1iscLDUOJHaa9B-TNyW8UbFahZMpSAhc0vJHsjQbbtzrtzTOsCez-JonzZC0hh-4U353egbMlJb1URlcfL742C35sytx4Z0H6peTycW68GEguDqgzsBcjU0gGknbcE7RxDBQgncu16QWRXvovBOnFkOKHeCFbJNEYu76o"
                         alt="Prism Creative logo" />
@@ -225,7 +235,8 @@
                     <div class="text-on-surface-variant text-[10px] uppercase tracking-tighter">Annual Value</div>
                 </div>
                 <div class="col-span-1 flex justify-end gap-2">
-                    <button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+                    <button class="p-2 text-on-surface-variant hover:text-primary transition-colors"
+                        aria-label="More options for Prism Creative">
                         <span class="material-symbols-outlined text-lg">more_vert</span>
                     </button>
                 </div>

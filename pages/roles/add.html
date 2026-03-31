@@ -35,9 +35,9 @@
                         initial user assignments.</p>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <button
+                    <button aria-label="Cancel and discard role creation"
                         class="px-6 py-2.5 rounded-xl border border-outline-variant/20 text-on-surface hover:bg-surface-container transition-colors font-medium">Cancel</button>
-                    <button
+                    <button aria-label="Save new role"
                         class="px-8 py-2.5 rounded-xl bg-primary-container text-on-primary-container font-bold shadow-lg shadow-primary-container/20 active:scale-95 transition-all">Save
                         Role</button>
                 </div>
@@ -61,30 +61,33 @@
                         <div class="space-y-6">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div class="space-y-2">
-                                    <label
+                                    <label for="role_name"
                                         class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Role
                                         Name</label>
-                                    <input
+                                    <input id="role_name" aria-label="Enter role name"
                                         class="w-full bg-surface-container-highest border-none rounded-2xl py-3 px-4 focus:ring-2 focus:ring-primary/50 text-white placeholder-slate-600 transition-all"
-                                        placeholder="e.g. Senior Project Lead" type="text" />
+                                        placeholder="e.g. Senior Project Lead" type="text" name="role_name" />
                                 </div>
                                 <div class="space-y-2">
-                                    <label
+                                    <label for="role_status"
                                         class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Role
                                         Status</label>
-                                    <div
+                                    <div role="radiogroup" aria-label="Select role status"
                                         class="flex items-center space-x-3 bg-surface-container-highest w-fit p-1 rounded-2xl">
-                                        <button
+                                        <button role="radio" aria-checked="true" aria-label="Set role as Active"
+                                            tabindex="0"
                                             class="px-4 py-2 rounded-xl bg-primary text-on-primary font-bold text-xs transition-all">Active</button>
-                                        <button
+                                        <button role="radio" aria-checked="false" aria-label="Set role as Inactive"
+                                            tabindex="-1"
                                             class="px-4 py-2 rounded-xl text-on-surface-variant hover:text-white font-bold text-xs transition-all">Inactive</button>
                                     </div>
                                 </div>
                             </div>
                             <div class="space-y-2">
-                                <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Role
+                                <label for="role_description"
+                                    class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Role
                                     Description</label>
-                                <textarea
+                                <textarea id="role_description" aria-label="Enter role description"
                                     class="w-full bg-surface-container-highest border-none rounded-2xl py-3 px-4 focus:ring-2 focus:ring-primary/50 text-white placeholder-slate-600 transition-all resize-none"
                                     placeholder="Describe the core responsibilities and scope of this role..."
                                     rows="3"></textarea>
@@ -247,7 +250,7 @@
                                 class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm">person_search</span>
                             <input
                                 class="w-full bg-surface-container-highest border-none rounded-2xl py-3 pl-10 pr-4 focus:ring-1 focus:ring-primary/40 text-xs text-white placeholder-slate-600 transition-all"
-                                placeholder="Search team members..." type="text" />
+                                placeholder="Search team members..." type="text" name="search_team_members" />
                         </div>
                         <div class="space-y-3 max-h-[400px] overflow-y-auto hide-scrollbar pr-1">
 
