@@ -20,51 +20,9 @@
 </head>
 
 <body class="flex min-h-screen bg-surface">
-    <!-- Main Content -->
-    <main class="flex-1 min-h-screen flex flex-col"><header
-            class="bg-[var(--color-surface)]/80 backdrop-blur-xl sticky top-0 z-40 w-full px-8 py-4 flex justify-between items-center shadow-[0_20px_40px_rgba(0,0,0,0.3)] outfit">
-            <div class="flex items-center gap-6">
-                <!-- Mobile Menu Toggle -->
-                <button id="mobile-menu-btn"
-                    class="lg:hidden w-10 h-10 rounded-xl flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all border border-white/5">
-                    <span class="material-symbols-outlined">menu</span>
-                </button>
-
-                <div class="relative group">
-                    <span
-                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg group-focus-within:text-[var(--color-primary)] transition-colors">search</span>
-                    <input
-                        class="bg-[var(--color-surface-container)] border-none text-[var(--color-on-surface)] text-sm rounded-full py-2 pl-10 pr-4 w-32 sm:w-64 focus:ring-1 focus:ring-[var(--color-primary)] transition-all placeholder:text-slate-500 outfit"
-                        placeholder="Search..." type="text" />
-                </div>
-            </div>
-            <div class="flex items-center gap-4">
-                <button
-                    class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all">
-                    <span class="material-symbols-outlined">notifications</span>
-                </button>
-                <button
-                    class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-[var(--color-surface-container-high)] transition-all">
-                    <span class="material-symbols-outlined">settings</span>
-                </button>
-                <div class="h-10 w-[1px] bg-[var(--color-outline-variant)]/20 mx-2"></div>
-                <div class="flex items-center gap-3">
-                    <div class="hidden lg:block text-right">
-                        <p class="text-sm font-semibold text-[var(--color-on-surface)] leading-tight outfit">Alex Rivera
-                        </p>
-                        <p class="text-[10px] text-slate-500 font-label outfit">Super Admin</p>
-                    </div>
-                    <img alt="Admin Profile"
-                        class="w-10 h-10 rounded-xl bg-[var(--color-surface-container)] object-cover border border-white/10"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiwvRijOxcIA8PzPmV4_ePxNAQ1jEK6liXVtWkfs0B0GPSYNv0s2X9bjRrxQARCKCqfkZMd_pN7fsOwKf9m_fJ_15CowBjsePuDTSSAX1-9Vs_i3-l0yrn5GMXq9GUw0e9T_8MqYD5fcbH63KRsAIXgKDhALrSWhkRRooXJVcVzAYfnMs4F7d9jBp7Yl1Es5d241Rjpgf0DTyQZGm_aWG748o3-FXMGSid14TvMD2IxzNtrSDjzE5yeYoJgfU9JpTr1C1EIG_a15o" />
-                </div>
-            </div>
-        </header>
-
-
-        <!-- Main Scrollable Canvas -->
-
-        <!-- Main Content Canvas -->
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="flex-1 min-h-screen flex flex-col">
+        <!-- Page Content -->
         <div class="p-10">
             <div class="p-10 space-y-10">
                 <!-- Page Header -->
@@ -323,11 +281,7 @@
                 </div>
             </div>
         </div>
-        </div>
-        <!-- Footer Placeholder -->
-        <!-- 
-  XenonOS Shared Component: Footer (v5.0 - New Typography System)
--->
+        <!-- ==================== FOOTER ==================== -->
         <footer
             class="mt-12 px-8 py-6 border-t border-[var(--color-outline-variant)]/15 bg-[var(--color-surface)] flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-300 outfit">
             <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">© 2024 Obsidian Architect • System
@@ -339,7 +293,6 @@
                     Global-Alpha-1</span>
             </div>
         </footer>
-
     </main>
 
     <script src="../../assets/js/app.js"></script>

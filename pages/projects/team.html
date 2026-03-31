@@ -1,307 +1,194 @@
 <!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>XenonOS | Project Alpha - Team</title>
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>XenonOS | Project Alpha - Team</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "on-tertiary-fixed-variant": "#703700",
-            "surface-container-lowest": "#0a0e18",
-            "on-secondary": "#292a60",
-            "on-secondary-container": "#b2b3f2",
-            "on-secondary-fixed": "#13144a",
-            "tertiary": "#ffb783",
-            "surface-variant": "#313540",
-            "primary": "#c0c1ff",
-            "inverse-surface": "#dfe2f1",
-            "background": "#0f131d",
-            "tertiary-container": "#d97721",
-            "surface-container-high": "#262a35",
-            "on-primary-container": "#0d0096",
-            "surface-container": "#1c1f2a",
-            "on-primary-fixed-variant": "#2f2ebe",
-            "on-primary-fixed": "#07006c",
-            "primary-container": "#8083ff",
-            "on-tertiary-fixed": "#301400",
-            "on-surface-variant": "#c7c4d7",
-            "on-secondary-fixed-variant": "#404178",
-            "tertiary-fixed-dim": "#ffb783",
-            "outline": "#908fa0",
-            "surface-container-highest": "#313540",
-            "primary-fixed": "#e1e0ff",
-            "on-tertiary": "#4f2500",
-            "on-tertiary-container": "#452000",
-            "on-background": "#dfe2f1",
-            "secondary-container": "#42447b",
-            "tertiary-fixed": "#ffdcc5",
-            "on-error": "#690005",
-            "error": "#ffb4ab",
-            "surface-bright": "#353944",
-            "surface-dim": "#0f131d",
-            "inverse-primary": "#494bd6",
-            "inverse-on-surface": "#2c303b",
-            "on-error-container": "#ffdad6",
-            "surface-container-low": "#171b26",
-            "outline-variant": "#464554",
-            "on-primary": "#1000a9",
-            "surface": "#0f131d",
-            "secondary": "#c0c1ff",
-            "on-surface": "#dfe2f1",
-            "secondary-fixed": "#e1e0ff",
-            "error-container": "#93000a",
-            "surface-tint": "#c0c1ff",
-            "primary-fixed-dim": "#c0c1ff",
-            "secondary-fixed-dim": "#c0c1ff"
-          },
-          fontFamily: {
-            "headline": ["Space Grotesk"],
-            "body": ["Manrope"],
-            "label": ["Manrope"],
-            "syne": ["Syne"],
-            "outfit": ["Outfit"]
-          },
-          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-        },
-      },
-    }
-  </script>
-<style>
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-    }
-    .indigo-glow-cta {
-      background: linear-gradient(135deg, #c0c1ff 0%, #8083ff 100%);
-    }
-    .indigo-glow-cta:hover {
-      box-shadow: 0 0 12px rgba(192, 193, 255, 0.4);
-    }
-    .obsidian-card {
-      background-color: #1c1f2a;
-      transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .obsidian-card:hover {
-      background-color: #262a35;
-      transform: scale(1.02);
-    }
-    body {
-      background-color: #0f131d;
-      color: #dfe2f1;
-    }
-  </style>
+    <!-- Core Assets -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="../../assets/js/tailwind-config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
 <body class="font-outfit antialiased">
-    <!-- Main Content Wrapper -->
+    <!-- ========= MAIN CONTENT WRAPPER ========= -->
     <main class="min-h-screen flex flex-col">
-        <!-- Top Bar -->
-<header class="sticky top-0 z-50 bg-[#0f131d]/70 backdrop-blur-xl flex justify-between items-center w-full px-8 py-4">
-<div class="flex items-center gap-8">
-<span class="font-syne font-extrabold text-[#c0c1ff] tracking-tighter text-xl">XenonOS</span>
-<div class="hidden lg:flex items-center bg-surface-container-lowest px-4 py-2 rounded-full w-96">
-<span class="material-symbols-outlined text-on-surface-variant mr-3 text-xl" data-icon="search">search</span>
-<input class="bg-transparent border-none focus:ring-0 text-sm w-full text-on-surface placeholder-on-surface-variant" placeholder="Search team members..." type="text"/>
-</div>
-</div>
-<div class="flex items-center gap-6">
-<button class="text-on-surface-variant hover:text-primary transition-colors">
-<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
-</button>
-<button class="text-on-surface-variant hover:text-primary transition-colors">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
-</button>
-<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-outline-variant/20">
-<img alt="User Profile" class="w-full h-auto" data-alt="Close-up professional portrait of a tech professional with short dark hair and modern glasses against a minimal dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvto_bXDw6c7bwhq6vBouWoGW-w_i4j7ImuKnQboOTO88JsKVB8o66F6vbRCd8pTzVaYCgDr3sFNNvh-vEsP1Ky48NXUggR-2mF_Nqmk0xAs8833ZFWmw0ZukKCLE7Udvj4T1vUZ9HFOu9Ru0GVPXniMRV8ov7Y2Q6TMR4Za2CkBln1UuFRLTW4DoLM6EjteYRwELWZ95uEb_RViA0-GFouP0EEXhgELfj5PrhUnb2Wo9KvDebqYyQMkkSDuy4hCJut52-I6Cl0yA"/>
-</div>
-</div>
-</header>
-<!-- Content Canvas -->
-<div class="p-8 max-w-7xl mx-auto">
-<!-- Section Header -->
-<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-<div>
-<h2 class="font-syne font-extrabold text-4xl text-on-surface tracking-tight mb-2">Quantum Leap Framework</h2>
-<div class="flex items-center gap-4 text-on-surface-variant">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span> Oct 2024 - Jan 2025</span>
-<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="lock">lock</span> Internal Workspace</span>
-</div>
-</div>
-<div class="flex gap-3">
-<button class="bg-surface-container-highest px-6 py-2.5 rounded-xl text-on-surface font-medium border border-outline-variant/20 hover:bg-surface-container-high transition-colors">Manage Roles</button>
-<button class="indigo-glow-cta px-6 py-2.5 rounded-xl text-on-primary-container font-bold flex items-center gap-2">
-<span class="material-symbols-outlined text-xl" data-icon="person_add">person_add</span>
-            Add Member
-          </button>
-</div>
-</div>
-<!-- Bento Grid Team Members -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
-<!-- Large Card: Project Lead -->
-<div class="lg:col-span-8 obsidian-card rounded-xl p-8 flex flex-col md:flex-row gap-8 items-center border border-transparent hover:border-primary/10">
-<div class="relative">
-<div class="w-32 h-32 rounded-2xl overflow-hidden ring-4 ring-primary/20">
-<img alt="Lead Architect" class="w-full h-full object-cover" data-alt="Portrait of a sophisticated male architect with thoughtful expression, sharp features, and studio lighting on a dark obsidian background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5we9jWEGx6Kw5KrV4TolPjJeQw3UBTzpWnAAkhkDbixE--rP5ifnqLWB8KhDAX9w5ujpLexFvDFm9QZS2ZTh_NNtnr9-yaeC_rbu1skbvMuaEtIt4lrM_1LDAAjOkJzAG8tx6psnxmHWEpLKLhPmMhMMfqpV6wOrZHtw47H06sqV1z8wHrC93TAZAxAR4jrloqsGWaRj6Iz-ZY27RbqLLDSJbouKaqmotKCKcdSPDi26HSQq6B4oxD66KyXfohGtN1bBvCJUdiB4"/>
-</div>
-<div class="absolute -bottom-2 -right-2 bg-primary p-1.5 rounded-lg shadow-xl">
-<span class="material-symbols-outlined text-on-primary text-xl" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
-</div>
-</div>
-<div class="flex-1 text-center md:text-left">
-<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-<div>
-<h3 class="text-2xl font-bold text-on-surface">Adrian Voss</h3>
-<p class="text-primary font-medium tracking-wide">LEAD ARCHITECT</p>
-</div>
-<div class="bg-surface-container-lowest px-4 py-1.5 rounded-full text-xs font-semibold text-primary border border-primary/20">
-                ACTIVE • 100% ALLOCATED
-              </div>
-</div>
-<p class="text-on-surface-variant text-sm leading-relaxed mb-6 max-w-xl">
-              Driving the core infrastructure and scalability patterns for the Quantum Leap environment. Overseeing all sub-modules and integration protocols.
-            </p>
-<div class="flex gap-3 justify-center md:justify-start">
-<button class="bg-primary/10 text-primary px-4 py-2 rounded-lg text-sm font-bold hover:bg-primary/20 transition-all">Reassign</button>
-<button class="text-on-surface-variant hover:text-on-surface p-2 transition-colors">
-<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Small Card: UI Designer -->
-<div class="lg:col-span-4 obsidian-card rounded-xl p-6 border border-transparent hover:border-primary/10 flex flex-col">
-<div class="flex items-start justify-between mb-4">
-<div class="w-16 h-16 rounded-xl overflow-hidden border border-outline-variant/30">
-<img alt="Elena Chen" class="w-full h-full object-cover" data-alt="Portrait of a stylish young female designer with vibrant energy, bright eyes, and a minimalist aesthetic backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3HtjUShPN20mUfFsc5_eoWBW_XPs8qILeACt_GbEHo2OrkVbOR3LvqZTUcvgjLG4jbCGu7DnySt7jrxQ_uaOv9bx5dD7orF8V9qKO8P5dbj8pllb0B1p2sVCb7RQdqMmOlYvtMUn38OZTYTs9OSLs8toStDiS9BiiFn2ZzXGO-8KuIeab6OAKBvZmxbpWkkVXCbbfKQIPp-hD7c2sg-ZEwgU6sQOZbs7LkWgHiX0LyrdFYzpFFBb5N2mZqwcISFmL3Y9xIEawPJY"/>
-</div>
-<div class="flex h-8 items-center bg-surface-container-lowest px-3 rounded-full text-[10px] font-bold text-tertiary border border-tertiary/20">
-              AVAILABLE (20%)
+        <!-- ========= CONTENT CANVAS ========= -->
+        <div class="p-8 max-w-7xl mx-auto">
+            <!-- ========= SECTION HEADER ========= -->
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <h2 class="font-syne font-extrabold text-4xl text-on-surface tracking-tight mb-2">Quantum Leap Framework</h2>
+                    <div class="flex items-center gap-4 text-on-surface-variant">
+                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span> Oct 2024 - Jan 2025</span>
+                        <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="lock">lock</span> Internal Workspace</span>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <button class="bg-surface-container-highest px-6 py-2.5 rounded-xl text-on-surface font-medium border border-outline-variant/20 hover:bg-surface-container-high transition-colors">Manage Roles</button>
+                    <button class="indigo-glow-cta px-6 py-2.5 rounded-xl text-on-primary-container font-bold flex items-center gap-2">
+                        <span class="material-symbols-outlined text-xl" data-icon="person_add">person_add</span>
+                        Add Member
+                    </button>
+                </div>
             </div>
-</div>
-<h4 class="text-lg font-bold text-on-surface">Elena Chen</h4>
-<p class="text-on-surface-variant text-xs uppercase tracking-widest mb-4">UI Designer</p>
-<div class="mt-auto flex justify-between items-center">
-<div class="flex -space-x-2">
-<div class="w-6 h-6 rounded-full bg-surface-container-highest border border-outline-variant text-[8px] flex items-center justify-center font-bold">PS</div>
-<div class="w-6 h-6 rounded-full bg-surface-container-highest border border-outline-variant text-[8px] flex items-center justify-center font-bold">FI</div>
-</div>
-<button class="text-primary text-sm font-bold flex items-center gap-1 hover:underline">
-              Assign Task
-              <span class="material-symbols-outlined text-sm" data-icon="arrow_outward">arrow_outward</span>
-</button>
-</div>
-</div>
-<!-- Standard Card: Dev Ops -->
-<div class="lg:col-span-4 obsidian-card rounded-xl p-6 border border-transparent hover:border-primary/10 flex flex-col">
-<div class="flex items-start justify-between mb-4">
-<div class="w-16 h-16 rounded-xl overflow-hidden border border-outline-variant/30">
-<img alt="Marcus Thorne" class="w-full h-full object-cover" data-alt="Close up of a professional male developer with dark features, focused and intelligent gaze, in a dimly lit office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVFk4sgT1RxbP0uS_1ZddjHrKs2ZhFsmjqW_fJ4GWVb3I6KobpXNiC7zfX-GzsW4i0m7YlpRqM4_mpRR9aL6jyI7DPWIQ4mE6lQzHm7Hgcc5RqAng4VAYT94IqkY8IuhuhpHNIODfshgJQ2SwF3adHtktf35U7Q71uHpmyyiPVq6KCbgObeIjT3jYOJqa2PweR35DVheIuVQZjaRJzaYqUO_JuqwB15-x9jE3jhswTCAm5gq7a8VwIon9rYZst3krKxrrX318eBr8"/>
-</div>
-<div class="flex h-8 items-center bg-surface-container-lowest px-3 rounded-full text-[10px] font-bold text-secondary border border-secondary/20">
-              ON LEAVE
+
+            <!-- ========= BENTO GRID TEAM MEMBERS ========= -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
+                <!-- Large Card: Project Lead -->
+                <div class="lg:col-span-8 obsidian-card rounded-xl p-8 flex flex-col md:flex-row gap-8 items-center border border-transparent hover:border-primary/10">
+                    <div class="relative">
+                        <div class="w-32 h-32 rounded-2xl overflow-hidden ring-4 ring-primary/20">
+                            <img alt="Lead Architect" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5we9jWEGx6Kw5KrV4TolPjJeQw3UBTzpWnAAkhkDbixE--rP5ifnqLWB8KhDAX9w5ujpLexFvDFm9QZS2ZTh_NNtnr9-yaeC_rbu1skbvMuaEtIt4lrM_1LDAAjOkJzAG8tx6psnxmHWEpLKLhPmMhMMfqpV6wOrZHtw47H06sqV1z8wHrC93TAZAxAR4jrloqsGWaRj6Iz-ZY27RbqLLDSJbouKaqmotKCKcdSPDi26HSQq6B4oxD66KyXfohGtN1bBvCJUdiB4"/>
+                        </div>
+                        <div class="absolute -bottom-2 -right-2 bg-primary p-1.5 rounded-lg shadow-xl">
+                            <span class="material-symbols-outlined text-on-primary text-xl" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                        </div>
+                    </div>
+                    <div class="flex-1 text-center md:text-left">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-on-surface">Adrian Voss</h3>
+                                <p class="text-primary font-medium tracking-wide">LEAD ARCHITECT</p>
+                            </div>
+                            <div class="bg-surface-container-lowest px-4 py-1.5 rounded-full text-xs font-semibold text-primary border border-primary/20">
+                                ACTIVE • 100% ALLOCATED
+                            </div>
+                        </div>
+                        <p class="text-on-surface-variant text-sm leading-relaxed mb-6 max-w-xl">
+                            Driving the core infrastructure and scalability patterns for the Quantum Leap environment. Overseeing all sub-modules and integration protocols.
+                        </p>
+                        <div class="flex gap-3 justify-center md:justify-start">
+                            <button class="bg-primary/10 text-primary px-4 py-2 rounded-lg text-sm font-bold hover:bg-primary/20 transition-all">Reassign</button>
+                            <button class="text-on-surface-variant hover:text-on-surface p-2 transition-colors">
+                                <span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Card: UI Designer -->
+                <div class="lg:col-span-4 obsidian-card rounded-xl p-6 border border-transparent hover:border-primary/10 flex flex-col">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-16 h-16 rounded-xl overflow-hidden border border-outline-variant/30">
+                            <img alt="Elena Chen" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3HtjUShPN20mUfFsc5_eoWBW_XPs8qILeACt_GbEHo2OrkVbOR3LvqZTUcvgjLG4jbCGu7DnySt7jrxQ_uaOv9bx5dD7orF8V9qKO8P5dbj8pllb0B1p2sVCb7RQdqMmOlYvtMUn38OZTYTs9OSLs8toStDiS9BiiFn2ZzXGO-8KuIeab6OAKBvZmxbpWkkVXCbbfKQIPp-hD7c2sg-ZEwgU6sQOZbs7LkWgHiX0LyrdFYzpFFBb5N2mZqwcISFmL3Y9xIEawPJY"/>
+                        </div>
+                        <div class="flex h-8 items-center bg-surface-container-lowest px-3 rounded-full text-[10px] font-bold text-tertiary border border-tertiary/20">
+                            AVAILABLE (20%)
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-bold text-on-surface">Elena Chen</h4>
+                    <p class="text-on-surface-variant text-xs uppercase tracking-widest mb-4">UI Designer</p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <div class="flex -space-x-2">
+                            <div class="w-6 h-6 rounded-full bg-surface-container-highest border border-outline-variant text-[8px] flex items-center justify-center font-bold">PS</div>
+                            <div class="w-6 h-6 rounded-full bg-surface-container-highest border border-outline-variant text-[8px] flex items-center justify-center font-bold">FI</div>
+                        </div>
+                        <button class="text-primary text-sm font-bold flex items-center gap-1 hover:underline">
+                            Assign Task
+                            <span class="material-symbols-outlined text-sm" data-icon="arrow_outward">arrow_outward</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Standard Card: Dev Ops -->
+                <div class="lg:col-span-4 obsidian-card rounded-xl p-6 border border-transparent hover:border-primary/10 flex flex-col">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-16 h-16 rounded-xl overflow-hidden border border-outline-variant/30">
+                            <img alt="Marcus Thorne" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVFk4sgT1RxbP0uS_1ZddjHrKs2ZhFsmjqW_fJ4GWVb3I6KobpXNiC7zfX-GzsW4i0m7YlpRqM4_mpRR9aL6jyI7DPWIQ4mE6lQzHm7Hgcc5RqAng4VAYT94IqkY8IuhuhpHNIODfshgJQ2SwF3adHtktf35U7Q71uHpmyyiPVq6KCbgObeIjT3jYOJqa2PweR35DVheIuVQZjaRJzaYqUO_JuqwB15-x9jE3jhswTCAm5gq7a8VwIon9rYZst3krKxrrX318eBr8"/>
+                        </div>
+                        <div class="flex h-8 items-center bg-surface-container-lowest px-3 rounded-full text-[10px] font-bold text-secondary border border-secondary/20">
+                            ON LEAVE
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-bold text-on-surface">Marcus Thorne</h4>
+                    <p class="text-on-surface-variant text-xs uppercase tracking-widest mb-4">Dev Ops Lead</p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <div class="text-xs text-on-surface-variant">Returns Oct 22</div>
+                        <button class="bg-surface-container-highest p-2 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors">
+                            <span class="material-symbols-outlined text-xl" data-icon="mail">mail</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Standard Card: Backend Engineer -->
+                <div class="lg:col-span-4 obsidian-card rounded-xl p-6 border border-transparent hover:border-primary/10 flex flex-col">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-16 h-16 rounded-xl overflow-hidden border border-outline-variant/30">
+                            <img alt="Sarah J" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRNCWng-whSx3VBJrrOJGS5h4toMqPvitmWo1ajhoVv8xQjaRG6UPS5lPS_mDBD8citO6MxkhJpwGibNvfou1U1GwHi6pt7SbuKBuy-fNB-rkHOpFoVWGerCDNQEuiISTJZOoT7J6Bm6ogtJQwthyjj3JglIfydj4Clw9Q7-GUP_dAGJZjfaFqPFOJkEtPFl3V5ya7b-Afbml6WhKPJK_rX7jOdzjpFWlK0fqs5C_Jx6cWL1kO-dywBYvF5Sir777rptnfa2fddoY"/>
+                        </div>
+                        <div class="flex h-8 items-center bg-surface-container-lowest px-3 rounded-full text-[10px] font-bold text-[#c0c1ff] border border-primary/20">
+                            ACTIVE (80%)
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-bold text-on-surface">Sarah Jenkins</h4>
+                    <p class="text-on-surface-variant text-xs uppercase tracking-widest mb-4">Backend Engineer</p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <div class="flex gap-1">
+                            <div class="w-2 h-2 rounded-full bg-primary"></div>
+                            <div class="w-2 h-2 rounded-full bg-primary"></div>
+                            <div class="w-2 h-2 rounded-full bg-primary"></div>
+                            <div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+                        </div>
+                        <button class="text-primary text-sm font-bold flex items-center gap-1 hover:underline">
+                            View Profile
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Standard Card: QA Specialist -->
+                <div class="lg:col-span-4 obsidian-card rounded-xl p-6 border border-transparent hover:border-primary/10 flex flex-col">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-16 h-16 rounded-xl overflow-hidden border border-outline-variant/30">
+                            <img alt="Luka Mod" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfiwDewsxEk21Ms6A8c-Nh-Td631C2YmWi_y0XjwIjImed6nWrzcI5OMxaXTNFFitLlJ_2t7slpTR6hxQCWkyGtU0k-15023AJCqbc2IfkynCFGoJjguqv0RlbO7kz28aQN1FDF8klWfmrzOU5XETPYUS5SOeIhccBGZLGV_4I--X6B0kS3oC7RYZxl_AH0AzXAyXg0Rp8jiYdPJv4m3pm48_4evawHnjRUCAX4GLwHk3CpUXbt22osFy0Ck71Ve8akNT8cYz0f08"/>
+                        </div>
+                        <div class="flex h-8 items-center bg-surface-container-lowest px-3 rounded-full text-[10px] font-bold text-error border border-error/20">
+                            OVERLOADED
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-bold text-on-surface">Luka Modric</h4>
+                    <p class="text-on-surface-variant text-xs uppercase tracking-widest mb-4">QA Specialist</p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="text-xs text-error font-medium">6 Critical Tasks</span>
+                        <button class="bg-error/10 text-error px-4 py-1.5 rounded-lg text-xs font-bold hover:bg-error/20 transition-all">Relieve</button>
+                    </div>
+                </div>
+
+                <!-- Floating Analytics Card -->
+                <div class="lg:col-span-12 bg-surface-container-low rounded-2xl p-8 border border-outline-variant/10 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                    <div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
+                        <div class="text-center md:text-left">
+                            <h3 class="text-xl font-bold text-on-surface mb-2">Team Efficiency</h3>
+                            <p class="text-on-surface-variant text-sm">Overall capacity for Sprint 14 is at 84%. Team morale is trending upward.</p>
+                        </div>
+                        <div class="flex gap-12">
+                            <div class="text-center">
+                                <div class="text-3xl font-syne font-extrabold text-primary">12</div>
+                                <div class="text-xs uppercase tracking-tighter text-on-surface-variant font-bold mt-1">Total Members</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-syne font-extrabold text-tertiary">08</div>
+                                <div class="text-xs uppercase tracking-tighter text-on-surface-variant font-bold mt-1">Full-Time</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-syne font-extrabold text-on-surface">04</div>
+                                <div class="text-xs uppercase tracking-tighter text-on-surface-variant font-bold mt-1">External</div>
+                            </div>
+                        </div>
+                        <button class="bg-surface-container-highest px-6 py-3 rounded-xl text-on-surface font-bold border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all">
+                            Team Audit
+                        </button>
+                    </div>
+                </div>
             </div>
-</div>
-<h4 class="text-lg font-bold text-on-surface">Marcus Thorne</h4>
-<p class="text-on-surface-variant text-xs uppercase tracking-widest mb-4">Dev Ops Lead</p>
-<div class="mt-auto flex justify-between items-center">
-<div class="text-xs text-on-surface-variant">Returns Oct 22</div>
-<button class="bg-surface-container-highest p-2 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors">
-<span class="material-symbols-outlined text-xl" data-icon="mail">mail</span>
-</button>
-</div>
-</div>
-<!-- Standard Card: Backend Engineer -->
-<div class="lg:col-span-4 obsidian-card rounded-xl p-6 border border-transparent hover:border-primary/10 flex flex-col">
-<div class="flex items-start justify-between mb-4">
-<div class="w-16 h-16 rounded-xl overflow-hidden border border-outline-variant/30">
-<img alt="Sarah J" class="w-full h-full object-cover" data-alt="Studio portrait of a woman with curly hair, smiling confidently with soft lighting on a cool grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRNCWng-whSx3VBJrrOJGS5h4toMqPvitmWo1ajhoVv8xQjaRG6UPS5lPS_mDBD8citO6MxkhJpwGibNvfou1U1GwHi6pt7SbuKBuy-fNB-rkHOpFoVWGerCDNQEuiISTJZOoT7J6Bm6ogtJQwthyjj3JglIfydj4Clw9Q7-GUP_dAGJZjfaFqPFOJkEtPFl3V5ya7b-Afbml6WhKPJK_rX7jOdzjpFWlK0fqs5C_Jx6cWL1kO-dywBYvF5Sir777rptnfa2fddoY"/>
-</div>
-<div class="flex h-8 items-center bg-surface-container-lowest px-3 rounded-full text-[10px] font-bold text-[#c0c1ff] border border-primary/20">
-              ACTIVE (80%)
-            </div>
-</div>
-<h4 class="text-lg font-bold text-on-surface">Sarah Jenkins</h4>
-<p class="text-on-surface-variant text-xs uppercase tracking-widest mb-4">Backend Engineer</p>
-<div class="mt-auto flex justify-between items-center">
-<div class="flex gap-1">
-<div class="w-2 h-2 rounded-full bg-primary"></div>
-<div class="w-2 h-2 rounded-full bg-primary"></div>
-<div class="w-2 h-2 rounded-full bg-primary"></div>
-<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
-</div>
-<button class="text-primary text-sm font-bold flex items-center gap-1 hover:underline">
-              View Profile
-            </button>
-</div>
-</div>
-<!-- Standard Card: QA Specialist -->
-<div class="lg:col-span-4 obsidian-card rounded-xl p-6 border border-transparent hover:border-primary/10 flex flex-col">
-<div class="flex items-start justify-between mb-4">
-<div class="w-16 h-16 rounded-xl overflow-hidden border border-outline-variant/30">
-<img alt="Luka Mod" class="w-full h-full object-cover" data-alt="Portrait of a young man with sharp creative features, looking directly at the camera with a neutral and professional expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfiwDewsxEk21Ms6A8c-Nh-Td631C2YmWi_y0XjwIjImed6nWrzcI5OMxaXTNFFitLlJ_2t7slpTR6hxQCWkyGtU0k-15023AJCqbc2IfkynCFGoJjguqv0RlbO7kz28aQN1FDF8klWfmrzOU5XETPYUS5SOeIhccBGZLGV_4I--X6B0kS3oC7RYZxl_AH0AzXAyXg0Rp8jiYdPJv4m3pm48_4evawHnjRUCAX4GLwHk3CpUXbt22osFy0Ck71Ve8akNT8cYz0f08"/>
-</div>
-<div class="flex h-8 items-center bg-surface-container-lowest px-3 rounded-full text-[10px] font-bold text-error border border-error/20">
-              OVERLOADED
-            </div>
-</div>
-<h4 class="text-lg font-bold text-on-surface">Luka Modric</h4>
-<p class="text-on-surface-variant text-xs uppercase tracking-widest mb-4">QA Specialist</p>
-<div class="mt-auto flex justify-between items-center">
-<span class="text-xs text-error font-medium">6 Critical Tasks</span>
-<button class="bg-error/10 text-error px-4 py-1.5 rounded-lg text-xs font-bold hover:bg-error/20 transition-all">Relieve</button>
-</div>
-</div>
-<!-- Floating Analytics Card -->
-<div class="lg:col-span-12 bg-surface-container-low rounded-2xl p-8 border border-outline-variant/10 relative overflow-hidden">
-<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
-<div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
-<div class="text-center md:text-left">
-<h3 class="text-xl font-bold text-on-surface mb-2">Team Efficiency</h3>
-<p class="text-on-surface-variant text-sm">Overall capacity for Sprint 14 is at 84%. Team morale is trending upward.</p>
-</div>
-<div class="flex gap-12">
-<div class="text-center">
-<div class="text-3xl font-syne font-extrabold text-primary">12</div>
-<div class="text-xs uppercase tracking-tighter text-on-surface-variant font-bold mt-1">Total Members</div>
-</div>
-<div class="text-center">
-<div class="text-3xl font-syne font-extrabold text-tertiary">08</div>
-<div class="text-xs uppercase tracking-tighter text-on-surface-variant font-bold mt-1">Full-Time</div>
-</div>
-<div class="text-center">
-<div class="text-3xl font-syne font-extrabold text-on-surface">04</div>
-<div class="text-xs uppercase tracking-tighter text-on-surface-variant font-bold mt-1">External</div>
-</div>
-</div>
-<button class="bg-surface-container-highest px-6 py-3 rounded-xl text-on-surface font-bold border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all">
-              Team Audit
-            </button>
-</div>
-</div>
-</div>
-</div>
+        </div>
     </main>
-<!-- Mobile Bottom Nav -->
-<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface-container/80 backdrop-blur-xl border-t border-outline-variant/10 px-6 py-4 flex justify-between items-center z-50">
-<a class="text-on-surface-variant" href="#">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-</a>
-<a class="text-on-surface-variant" href="#">
-<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
-</a>
-<a class="text-primary bg-primary/10 p-2 rounded-xl" href="#">
-<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
-</a>
-<a class="text-on-surface-variant" href="#">
-<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
-</a>
-<a class="text-on-surface-variant" href="#">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
-</a>
-</nav></body></html>
+</body>
+</html>

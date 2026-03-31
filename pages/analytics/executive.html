@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Executive Analytics - System Admin</title>
-    
+    <title>Analytics - Executive | Admin Panel</title>
+
     <!-- Core Assets -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="../../assets/js/tailwind-config.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">
@@ -18,238 +18,245 @@
 <body class="flex min-h-screen bg-surface">
     <!-- Main Content -->
     <main class="flex-1 min-h-screen flex flex-col">
-        <!-- Main Scrollable Canvas -->
+        <!-- === CONTENT AREA === -->
+        <div class="p-8 max-w-[1600px] mx-auto space-y-12">
+            <!-- === HERO HEADER SECTION === -->
+            <section class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6">
+                <div>
+                    <span class="font-label text-xs font-bold tracking-[0.2em] text-tertiary uppercase mb-2 block">Performance Report</span>
+                    <h2 class="font-headline text-5xl font-light tracking-tight text-on-surface">Market Velocity</h2>
+                </div>
+                <div class="flex gap-4">
+                    <button class="px-6 py-3 rounded-full bg-surface-container-high text-on-surface font-label text-xs font-bold uppercase tracking-widest hover:bg-surface-bright transition-all">Export PDF</button>
+                    <button class="px-6 py-3 rounded-full bg-primary text-on-primary font-label text-xs font-bold uppercase tracking-widest shadow-lg shadow-primary/20 hover:scale-105 transition-all">New Initiative</button>
+                </div>
+            </section>
 
-<!-- Content Area -->
-<div class="p-8 max-w-[1600px] mx-auto space-y-12">
-<!-- Hero Header Section -->
-<section class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6">
-<div>
-<span class="font-label text-xs font-bold tracking-[0.2em] text-tertiary uppercase mb-2 block">Performance Report</span>
-<h2 class="font-headline text-5xl font-light tracking-tight text-on-surface">Market Velocity</h2>
-</div>
-<div class="flex gap-4">
-<button class="px-6 py-3 rounded-full bg-surface-container-high text-on-surface font-label text-xs font-bold uppercase tracking-widest hover:bg-surface-bright transition-all">Export PDF</button>
-<button class="px-6 py-3 rounded-full bg-primary text-on-primary font-label text-xs font-bold uppercase tracking-widest shadow-lg shadow-primary/20 hover:scale-105 transition-all">New Initiative</button>
-</div>
-</section>
-<!-- KPI Bento Grid -->
-<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-<!-- Total Revenue -->
-<div class="bg-surface-container-low p-6 rounded-xl border-l-2 border-primary-container relative overflow-hidden group">
-<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-3xl group-hover:bg-primary/10 transition-all duration-500"></div>
-<p class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-4">Total Revenue</p>
-<div class="flex items-baseline gap-2">
-<span class="font-headline text-3xl font-semibold text-on-surface">$4.82M</span>
-<span class="text-xs text-primary font-bold">+12.4%</span>
-</div>
-</div>
-<!-- Growth % -->
-<div class="bg-surface-container-low p-6 rounded-xl border-l-2 border-primary-container relative overflow-hidden group">
-<p class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-4">Growth Rate</p>
-<div class="flex items-baseline gap-2">
-<span class="font-headline text-3xl font-semibold text-on-surface">24.8%</span>
-<span class="text-xs text-tertiary font-bold">+2.1%</span>
-</div>
-</div>
-<!-- Active Users -->
-<div class="bg-surface-container-low p-6 rounded-xl border-l-2 border-primary-container relative overflow-hidden group">
-<p class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-4">Active Users</p>
-<div class="flex items-baseline gap-2">
-<span class="font-headline text-3xl font-semibold text-on-surface">84.2k</span>
-<span class="text-xs text-primary font-bold">+5.7%</span>
-</div>
-</div>
-<!-- Profit -->
-<div class="bg-surface-container-low p-6 rounded-xl border-l-2 border-primary-container relative overflow-hidden group">
-<p class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-4">Net Profit</p>
-<div class="flex items-baseline gap-2">
-<span class="font-headline text-3xl font-semibold text-on-surface">$1.24M</span>
-<span class="text-xs text-primary font-bold">+8.3%</span>
-</div>
-</div>
-</section>
-<!-- Visual Analytics Section -->
-<section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-<!-- Financial Trend Line Chart -->
-<div class="lg:col-span-2 bg-surface-container p-8 rounded-2xl relative">
-<div class="flex justify-between items-center mb-10">
-<h3 class="font-headline text-xl font-semibold text-on-surface">Financial Trend</h3>
-<div class="flex gap-2">
-<span class="w-3 h-3 rounded-full bg-primary inline-block"></span>
-<span class="w-3 h-3 rounded-full bg-surface-container-highest inline-block"></span>
-</div>
-</div>
-<div class="h-64 flex items-end justify-between gap-4 px-2">
-<!-- Simulated Chart Visualization -->
-<div class="flex-1 bg-surface-container-high h-[40%] rounded-t-lg relative group transition-all hover:h-[45%]">
-<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-surface-bright px-2 py-1 rounded text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">JAN</div>
-</div>
-<div class="flex-1 bg-surface-container-high h-[55%] rounded-t-lg relative group transition-all hover:h-[60%]"></div>
-<div class="flex-1 bg-primary h-[75%] rounded-t-lg relative group transition-all hover:h-[80%] shadow-[0_-4px_20px_rgba(192,193,255,0.2)]"></div>
-<div class="flex-1 bg-surface-container-high h-[65%] rounded-t-lg relative group transition-all hover:h-[70%]"></div>
-<div class="flex-1 bg-surface-container-high h-[85%] rounded-t-lg relative group transition-all hover:h-[90%]"></div>
-<div class="flex-1 bg-primary h-[95%] rounded-t-lg relative group transition-all hover:h-[100%] shadow-[0_-4px_20px_rgba(192,193,255,0.3)]"></div>
-<div class="flex-1 bg-surface-container-high h-[70%] rounded-t-lg relative group transition-all hover:h-[75%]"></div>
-</div>
-<div class="mt-4 flex justify-between px-2 text-[10px] text-outline uppercase font-bold tracking-widest">
-<span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span>
-</div>
-</div>
-<!-- Insights Panel -->
-<div class="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/10">
-<h3 class="font-headline text-xl font-semibold text-on-surface mb-6">Strategic Insights</h3>
-<div class="space-y-6">
-<div class="flex gap-4 items-start">
-<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-primary text-sm" data-icon="trending_up">trending_up</span>
-</div>
-<div>
-<p class="text-sm font-medium text-on-surface">Revenue Peak Detected</p>
-<p class="text-xs text-on-surface-variant mt-1">Global sales exceeded Q3 targets by 14.2% in the last 48 hours.</p>
-</div>
-</div>
-<div class="flex gap-4 items-start">
-<div class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-tertiary text-sm" data-icon="warning">warning</span>
-</div>
-<div>
-<p class="text-sm font-medium text-on-surface">Operational Lag</p>
-<p class="text-xs text-on-surface-variant mt-1">Infrastructure costs in APAC region rose by 4% due to energy surge.</p>
-</div>
-</div>
-<div class="flex gap-4 items-start">
-<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-primary text-sm" data-icon="bolt">bolt</span>
-</div>
-<div>
-<p class="text-sm font-medium text-on-surface">New Opportunity</p>
-<p class="text-xs text-on-surface-variant mt-1">User retention in Enterprise tier shows 98% correlation with new AI tools.</p>
-</div>
-</div>
-</div>
-<button class="mt-8 w-full py-4 border border-outline-variant/20 rounded-xl font-label text-[10px] font-bold uppercase tracking-widest text-primary hover:bg-surface-container transition-all">View All Alerts</button>
-</div>
-</section>
-<!-- Lower Grid: Charts & Activity -->
-<section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-<!-- Revenue vs Expenses Bar Chart -->
-<div class="bg-surface-container-high/40 p-8 rounded-2xl">
-<div class="flex justify-between items-center mb-8">
-<h3 class="font-headline text-xl font-semibold text-on-surface">Allocation Analysis</h3>
-<div class="flex items-center gap-4">
-<div class="flex items-center gap-2">
-<div class="w-2 h-2 rounded-full bg-primary"></div>
-<span class="text-[10px] text-outline font-bold uppercase">Revenue</span>
-</div>
-<div class="flex items-center gap-2">
-<div class="w-2 h-2 rounded-full bg-tertiary"></div>
-<span class="text-[10px] text-outline font-bold uppercase">Expenses</span>
-</div>
-</div>
-</div>
-<div class="space-y-6">
-<div>
-<div class="flex justify-between text-xs text-on-surface-variant mb-2">
-<span>Cloud Infrastructure</span>
-<span class="text-on-surface font-semibold">$240k / $180k</span>
-</div>
-<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden flex">
-<div class="h-full bg-primary w-[70%]"></div>
-<div class="h-full bg-tertiary w-[15%]"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between text-xs text-on-surface-variant mb-2">
-<span>Talent Acquisition</span>
-<span class="text-on-surface font-semibold">$510k / $420k</span>
-</div>
-<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden flex">
-<div class="h-full bg-primary w-[60%]"></div>
-<div class="h-full bg-tertiary w-[25%]"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between text-xs text-on-surface-variant mb-2">
-<span>R&amp;D Initiatives</span>
-<span class="text-on-surface font-semibold">$890k / $210k</span>
-</div>
-<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden flex">
-<div class="h-full bg-primary w-[80%]"></div>
-<div class="h-full bg-tertiary w-[10%]"></div>
-</div>
-</div>
-</div>
-</div>
-<!-- Recent Activity List -->
-<div class="bg-surface-container p-8 rounded-2xl">
-<div class="flex justify-between items-center mb-8">
-<h3 class="font-headline text-xl font-semibold text-on-surface">Recent Activity</h3>
-<a class="flex items-center gap-2 font-label text-[10px] font-bold text-primary uppercase tracking-widest group" href="#">
-<span class="w-1 h-1 rounded-full bg-primary group-hover:w-3 transition-all duration-200"></span>
+            <!-- === KPI BENTO GRID === -->
+            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Total Revenue -->
+                <div class="bg-surface-container-low p-6 rounded-xl border-l-2 border-primary-container relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-3xl group-hover:bg-primary/10 transition-all duration-500"></div>
+                    <p class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-4">Total Revenue</p>
+                    <div class="flex items-baseline gap-2">
+                        <span class="font-headline text-3xl font-semibold text-on-surface">$4.82M</span>
+                        <span class="text-xs text-primary font-bold">+12.4%</span>
+                    </div>
+                </div>
+
+                <!-- Growth % -->
+                <div class="bg-surface-container-low p-6 rounded-xl border-l-2 border-primary-container relative overflow-hidden group">
+                    <p class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-4">Growth Rate</p>
+                    <div class="flex items-baseline gap-2">
+                        <span class="font-headline text-3xl font-semibold text-on-surface">24.8%</span>
+                        <span class="text-xs text-tertiary font-bold">+2.1%</span>
+                    </div>
+                </div>
+
+                <!-- Active Users -->
+                <div class="bg-surface-container-low p-6 rounded-xl border-l-2 border-primary-container relative overflow-hidden group">
+                    <p class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-4">Active Users</p>
+                    <div class="flex items-baseline gap-2">
+                        <span class="font-headline text-3xl font-semibold text-on-surface">84.2k</span>
+                        <span class="text-xs text-primary font-bold">+5.7%</span>
+                    </div>
+                </div>
+
+                <!-- Profit -->
+                <div class="bg-surface-container-low p-6 rounded-xl border-l-2 border-primary-container relative overflow-hidden group">
+                    <p class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-4">Net Profit</p>
+                    <div class="flex items-baseline gap-2">
+                        <span class="font-headline text-3xl font-semibold text-on-surface">$1.24M</span>
+                        <span class="text-xs text-primary font-bold">+8.3%</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- === VISUAL ANALYTICS SECTION === -->
+            <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Financial Trend Line Chart -->
+                <div class="lg:col-span-2 bg-surface-container p-8 rounded-2xl relative">
+                    <div class="flex justify-between items-center mb-10">
+                        <h3 class="font-headline text-xl font-semibold text-on-surface">Financial Trend</h3>
+                        <div class="flex gap-2">
+                            <span class="w-3 h-3 rounded-full bg-primary inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-surface-container-highest inline-block"></span>
+                        </div>
+                    </div>
+                    <div class="h-64 flex items-end justify-between gap-4 px-2">
+                        <!-- Simulated Chart Visualization -->
+                        <div class="flex-1 bg-surface-container-high h-[40%] rounded-t-lg relative group transition-all hover:h-[45%]">
+                            <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-surface-bright px-2 py-1 rounded text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">JAN</div>
+                        </div>
+                        <div class="flex-1 bg-surface-container-high h-[55%] rounded-t-lg relative group transition-all hover:h-[60%]"></div>
+                        <div class="flex-1 bg-primary h-[75%] rounded-t-lg relative group transition-all hover:h-[80%] shadow-[0_-4px_20px_rgba(192,193,255,0.2)]"></div>
+                        <div class="flex-1 bg-surface-container-high h-[65%] rounded-t-lg relative group transition-all hover:h-[70%]"></div>
+                        <div class="flex-1 bg-surface-container-high h-[85%] rounded-t-lg relative group transition-all hover:h-[90%]"></div>
+                        <div class="flex-1 bg-primary h-[95%] rounded-t-lg relative group transition-all hover:h-[100%] shadow-[0_-4px_20px_rgba(192,193,255,0.3)]"></div>
+                        <div class="flex-1 bg-surface-container-high h-[70%] rounded-t-lg relative group transition-all hover:h-[75%]"></div>
+                    </div>
+                    <div class="mt-4 flex justify-between px-2 text-[10px] text-outline uppercase font-bold tracking-widest">
+                        <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span>
+                    </div>
+                </div>
+
+                <!-- Insights Panel -->
+                <div class="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/10">
+                    <h3 class="font-headline text-xl font-semibold text-on-surface mb-6">Strategic Insights</h3>
+                    <div class="space-y-6">
+                        <div class="flex gap-4 items-start">
+                            <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-primary text-sm">trending_up</span>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-on-surface">Revenue Peak Detected</p>
+                                <p class="text-xs text-on-surface-variant mt-1">Global sales exceeded Q3 targets by 14.2% in the last 48 hours.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-tertiary text-sm">warning</span>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-on-surface">Operational Lag</p>
+                                <p class="text-xs text-on-surface-variant mt-1">Infrastructure costs in APAC region rose by 4% due to energy surge.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-primary text-sm">bolt</span>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-on-surface">New Opportunity</p>
+                                <p class="text-xs text-on-surface-variant mt-1">User retention in Enterprise tier shows 98% correlation with new AI tools.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mt-8 w-full py-4 border border-outline-variant/20 rounded-xl font-label text-[10px] font-bold uppercase tracking-widest text-primary hover:bg-surface-container transition-all">View All Alerts</button>
+                </div>
+            </section>
+
+            <!-- === LOWER GRID: CHARTS & ACTIVITY === -->
+            <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Revenue vs Expenses Bar Chart -->
+                <div class="bg-surface-container-high/40 p-8 rounded-2xl">
+                    <div class="flex justify-between items-center mb-8">
+                        <h3 class="font-headline text-xl font-semibold text-on-surface">Allocation Analysis</h3>
+                        <div class="flex items-center gap-4">
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 rounded-full bg-primary"></div>
+                                <span class="text-[10px] text-outline font-bold uppercase">Revenue</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 rounded-full bg-tertiary"></div>
+                                <span class="text-[10px] text-outline font-bold uppercase">Expenses</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between text-xs text-on-surface-variant mb-2">
+                                <span>Cloud Infrastructure</span>
+                                <span class="text-on-surface font-semibold">$240k / $180k</span>
+                            </div>
+                            <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden flex">
+                                <div class="h-full bg-primary w-[70%]"></div>
+                                <div class="h-full bg-tertiary w-[15%]"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs text-on-surface-variant mb-2">
+                                <span>Talent Acquisition</span>
+                                <span class="text-on-surface font-semibold">$510k / $420k</span>
+                            </div>
+                            <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden flex">
+                                <div class="h-full bg-primary w-[60%]"></div>
+                                <div class="h-full bg-tertiary w-[25%]"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs text-on-surface-variant mb-2">
+                                <span>R&amp;D Initiatives</span>
+                                <span class="text-on-surface font-semibold">$890k / $210k</span>
+                            </div>
+                            <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden flex">
+                                <div class="h-full bg-primary w-[80%]"></div>
+                                <div class="h-full bg-tertiary w-[10%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity List -->
+                <div class="bg-surface-container p-8 rounded-2xl">
+                    <div class="flex justify-between items-center mb-8">
+                        <h3 class="font-headline text-xl font-semibold text-on-surface">Recent Activity</h3>
+                        <a class="flex items-center gap-2 font-label text-[10px] font-bold text-primary uppercase tracking-widest group" href="#">
+                            <span class="w-1 h-1 rounded-full bg-primary group-hover:w-3 transition-all duration-200"></span>
                             View All
                         </a>
-</div>
-<div class="space-y-2 max-h-[220px] overflow-y-auto custom-scrollbar pr-4">
-<!-- Transaction Item -->
-<div class="flex items-center justify-between p-4 rounded-xl hover:bg-surface-bright transition-all group cursor-pointer">
-<div class="flex items-center gap-4">
-<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
-<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="account_balance">account_balance</span>
-</div>
-<div>
-<p class="text-sm font-medium text-on-surface">Stripe Payout: Q2 Retail</p>
-<p class="text-[10px] text-outline uppercase tracking-wider">Today, 10:42 AM</p>
-</div>
-</div>
-<span class="text-sm font-bold text-primary">+$124,500.00</span>
-</div>
-<!-- Transaction Item -->
-<div class="flex items-center justify-between p-4 rounded-xl hover:bg-surface-bright transition-all group cursor-pointer">
-<div class="flex items-center gap-4">
-<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
-<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="shopping_cart">shopping_cart</span>
-</div>
-<div>
-<p class="text-sm font-medium text-on-surface">Nvidia GPU Cluster Lease</p>
-<p class="text-[10px] text-outline uppercase tracking-wider">Yesterday</p>
-</div>
-</div>
-<span class="text-sm font-bold text-tertiary">-$42,200.00</span>
-</div>
-<!-- Transaction Item -->
-<div class="flex items-center justify-between p-4 rounded-xl hover:bg-surface-bright transition-all group cursor-pointer">
-<div class="flex items-center gap-4">
-<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
-<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="person">person</span>
-</div>
-<div>
-<p class="text-sm font-medium text-on-surface">New Enterprise Client: Atlas Corp</p>
-<p class="text-[10px] text-outline uppercase tracking-wider">June 12, 2024</p>
-</div>
-</div>
-<span class="text-sm font-bold text-primary">+$88,000.00</span>
-</div>
-</div>
-</div>
-</section>
-</div>
+                    </div>
+                    <div class="space-y-2 max-h-[220px] overflow-y-auto custom-scrollbar pr-4">
+                        <!-- Transaction Item -->
+                        <div class="flex items-center justify-between p-4 rounded-xl hover:bg-surface-bright transition-all group cursor-pointer">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-on-surface-variant text-sm">account_balance</span>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-on-surface">Stripe Payout: Q2 Retail</p>
+                                    <p class="text-[10px] text-outline uppercase tracking-wider">Today, 10:42 AM</p>
+                                </div>
+                            </div>
+                            <span class="text-sm font-bold text-primary">+$124,500.00</span>
+                        </div>
+
+                        <!-- Transaction Item -->
+                        <div class="flex items-center justify-between p-4 rounded-xl hover:bg-surface-bright transition-all group cursor-pointer">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-on-surface-variant text-sm">shopping_cart</span>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-on-surface">Nvidia GPU Cluster Lease</p>
+                                    <p class="text-[10px] text-outline uppercase tracking-wider">Yesterday</p>
+                                </div>
+                            </div>
+                            <span class="text-sm font-bold text-tertiary">-$42,200.00</span>
+                        </div>
+
+                        <!-- Transaction Item -->
+                        <div class="flex items-center justify-between p-4 rounded-xl hover:bg-surface-bright transition-all group cursor-pointer">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-on-surface-variant text-sm">person</span>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-on-surface">New Enterprise Client: Atlas Corp</p>
+                                    <p class="text-[10px] text-outline uppercase tracking-wider">June 12, 2024</p>
+                                </div>
+                            </div>
+                            <span class="text-sm font-bold text-primary">+$88,000.00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-        <!-- Footer Placeholder -->
-    <!-- 
-  XenonOS Shared Component: Footer (v5.0 - New Typography System)
--->
-<footer class="mt-12 px-8 py-6 border-t border-[var(--color-outline-variant)]/15 bg-[var(--color-surface)] flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-300 outfit">
-    <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">© 2024 Obsidian Architect • System Status: <span class="text-[var(--color-success)]">Operational</span></p>
-    <div class="flex gap-4 items-center">
-        <span class="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse shadow-[0_0_10px_rgba(99,102,241,0.4)]"></span>
-        <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Region: Global-Alpha-1</span>
-    </div>
-</footer>
 
-</main>
+        <!-- === FOOTER === -->
+        <footer class="mt-12 px-8 py-6 border-t border-outline-variant/15 bg-surface flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-300 outfit">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">© 2024 Admin Panel • System Status: <span class="text-success">Operational</span></p>
+            <div class="flex gap-4 items-center">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(99,102,241,0.4)]"></span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Region: Global-Alpha-1</span>
+            </div>
+        </footer>
+    </main>
 
-    <script src="../../assets/js/app.js"></script></body>
+    <script src="../../assets/js/app.js"></script>
+</body>
 </html>
-
-

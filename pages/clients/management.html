@@ -1,320 +1,248 @@
 <!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Clients - Management | Admin Panel</title>
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "on-secondary-fixed-variant": "#404178",
-              "on-primary-fixed-variant": "#2f2ebe",
-              "inverse-primary": "#494bd6",
-              "error-container": "#93000a",
-              "on-primary-fixed": "#07006c",
-              "surface-dim": "#0f131d",
-              "secondary-container": "#42447b",
-              "secondary-fixed-dim": "#c0c1ff",
-              "tertiary-fixed-dim": "#ffb783",
-              "surface-container-high": "#262a35",
-              "surface-container-lowest": "#0a0e18",
-              "background": "#0f131d",
-              "surface-variant": "#313540",
-              "on-surface": "#dfe2f1",
-              "outline-variant": "#464554",
-              "on-error": "#690005",
-              "error": "#ffb4ab",
-              "on-tertiary-fixed-variant": "#703700",
-              "inverse-on-surface": "#2c303b",
-              "tertiary-fixed": "#ffdcc5",
-              "secondary-fixed": "#e1e0ff",
-              "surface-container": "#1c1f2a",
-              "surface-container-low": "#171b26",
-              "surface-container-highest": "#313540",
-              "outline": "#908fa0",
-              "on-error-container": "#ffdad6",
-              "on-secondary": "#292a60",
-              "secondary": "#c0c1ff",
-              "on-tertiary-fixed": "#301400",
-              "on-tertiary-container": "#452000",
-              "primary-fixed-dim": "#c0c1ff",
-              "on-surface-variant": "#c7c4d7",
-              "surface-tint": "#c0c1ff",
-              "primary-container": "#8083ff",
-              "surface": "#0f131d",
-              "on-secondary-fixed": "#13144a",
-              "surface-bright": "#353944",
-              "on-primary": "#1000a9",
-              "on-primary-container": "#0d0096",
-              "tertiary-container": "#d97721",
-              "on-tertiary": "#4f2500",
-              "on-background": "#dfe2f1",
-              "primary-fixed": "#e1e0ff",
-              "inverse-surface": "#dfe2f1",
-              "on-secondary-container": "#b2b3f2",
-              "primary": "#c0c1ff",
-              "tertiary": "#ffb783"
-            },
-            fontFamily: {
-              "headline": ["Syne", "sans-serif"],
-              "body": ["Outfit", "sans-serif"],
-              "label": ["Outfit", "sans-serif"]
-            },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1.5rem", "full": "9999px"},
-          },
-        },
-      }
-    </script>
-<style>
-      .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-      }
-      body {
-        background-color: #0f131d;
-        color: #dfe2f1;
-        font-family: 'Outfit', sans-serif;
-      }
-      .syne-headline {
-        font-family: 'Syne', sans-serif;
-        letter-spacing: -0.02em;
-      }
-      .indigo-glow-btn {
-        background: linear-gradient(135deg, #c0c1ff 0%, #8083ff 100%);
-      }
-      .indigo-glow-btn:hover {
-        box-shadow: 0 0 15px rgba(192, 193, 255, 0.4);
-      }
-      .glass-card {
-        background: rgba(28, 31, 42, 0.7);
-        backdrop-filter: blur(20px);
-      }
-    </style>
+    <!-- Core Assets -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="../../assets/js/tailwind-config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
 <body class="bg-background min-h-screen">
     <!-- Main Content Canvas -->
     <main class="pt-32 p-12 min-h-screen flex flex-col">
-        <!-- Header Section -->
-<div class="flex justify-between items-end mb-12">
-<div class="space-y-2">
-<h1 class="syne-headline text-5xl font-extrabold text-on-surface">Clients</h1>
-<p class="text-on-surface-variant text-lg">Manage and monitor all client relationships.</p>
-</div>
-<button class="indigo-glow-btn text-on-primary h-14 px-8 rounded-xl font-bold flex items-center gap-3 transition-all scale-100 hover:scale-[1.02]">
-<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
-            Add Client
-        </button>
-</div>
-<!-- Filter Bar -->
-<div class="bg-surface-container rounded-2xl p-4 flex flex-wrap items-center gap-4 mb-8 shadow-sm">
-<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-low rounded-xl text-on-surface-variant text-sm border border-outline-variant/10">
-<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
-            Status
-            <span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
-</div>
-<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-low rounded-xl text-on-surface-variant text-sm border border-outline-variant/10">
-            Project assignment
-            <span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
-</div>
-<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-low rounded-xl text-on-surface-variant text-sm border border-outline-variant/10">
-            Sort by: Recent
-            <span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
-</div>
-<div class="ml-auto flex items-center gap-4">
-<div class="flex items-center gap-2 text-on-surface-variant text-xs font-medium uppercase tracking-widest px-4">
-<input class="rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
-                Bulk Action
+        <!-- === HEADER SECTION === -->
+        <div class="flex justify-between items-end mb-12">
+            <div class="space-y-2">
+                <h1 class="syne-headline text-5xl font-extrabold text-on-surface">Clients</h1>
+                <p class="text-on-surface-variant text-lg">Manage and monitor all client relationships.</p>
             </div>
-<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
-<span class="material-symbols-outlined" data-icon="view_kanban">view_kanban</span>
-</button>
-<button class="p-2 text-primary bg-surface-container-highest rounded-lg transition-colors">
-<span class="material-symbols-outlined" data-icon="list">list</span>
-</button>
-</div>
-</div>
-<!-- Clients List Table -->
-<div class="space-y-4">
-<!-- Table Header -->
-<div class="grid grid-cols-12 gap-4 px-8 py-4 text-on-surface-variant text-xs font-bold uppercase tracking-widest">
-<div class="col-span-4">Client Name</div>
-<div class="col-span-2">Status</div>
-<div class="col-span-1 text-center">Projects</div>
-<div class="col-span-2">Last Activity</div>
-<div class="col-span-2 text-right pr-4">Revenue</div>
-<div class="col-span-1"></div>
-</div>
-<!-- Client Item 1 -->
-<div class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer border border-outline-variant/5 shadow-lg group">
-<div class="col-span-4 flex items-center gap-4">
-<input class="rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
-<img class="w-12 h-12 rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Professional man in a suit looking directly at camera against a blurred urban office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqIzLMh_qmoaZw__cT43Val75XA18ZmRJa_d1885RusTammKETIevHWpb9F7nZo2SlflQyA_snTs5PUuNPMIKkaSQ_Fwhzvvd0U8O1Ys_yJPl0FleyydKalvuUs1aIlYX873buk4jTZHIlsAuDZO5l_YyL0gyhKcT1BTGykGELSMlbMRBIlbV15p0mpmYDxvND-XIQbM6pZB77AMH2H9W2zy1ZmffenKUCXWk7nuKFI0J2-wRLgbfHE41muZ-0lVEQn59Z-40Nq5Y"/>
-<div>
-<div class="text-on-surface font-semibold text-lg">Nebula Dynamics</div>
-<div class="text-on-surface-variant text-xs font-medium">nebula@contact.io</div>
-</div>
-</div>
-<div class="col-span-2">
-<span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest rounded-full border border-primary/20">Active</span>
-</div>
-<div class="col-span-1 text-center">
-<div class="text-on-surface font-bold text-lg">14</div>
-</div>
-<div class="col-span-2 text-on-surface-variant text-sm">
-                2 hours ago
+            <button class="indigo-glow-btn text-on-primary h-14 px-8 rounded-xl font-bold flex items-center gap-3 transition-all scale-100 hover:scale-[1.02]">
+                <span class="material-symbols-outlined">person_add</span>
+                Add Client
+            </button>
+        </div>
+
+        <!-- === FILTER BAR === -->
+        <div class="bg-surface-container rounded-2xl p-4 flex flex-wrap items-center gap-4 mb-8 shadow-sm">
+            <div class="flex items-center gap-2 px-4 py-2 bg-surface-container-low rounded-xl text-on-surface-variant text-sm border border-outline-variant/10">
+                <span class="material-symbols-outlined text-sm">filter_list</span>
+                Status
+                <span class="material-symbols-outlined text-sm">expand_more</span>
             </div>
-<div class="col-span-2 text-right pr-4">
-<div class="text-on-surface font-headline font-bold">$124,500.00</div>
-<div class="text-on-surface-variant text-[10px] uppercase tracking-tighter">Annual Value</div>
-</div>
-<div class="col-span-1 flex justify-end gap-2">
-<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
-</button>
-</div>
-</div>
-<!-- Client Item 2 -->
-<div class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer border border-outline-variant/5 shadow-lg group">
-<div class="col-span-4 flex items-center gap-4">
-<input class="rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
-<img class="w-12 h-12 rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Modern tech office professional woman smiling confidently in a clean bright workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_tmp3fgkBo6lMoTdsxJVbA3tdN_8d8lPds3eskONXz68EsYrigSopqS8L8Op6Suwn-49EZk29YYsmASd0alOsuX_tKEqKjweN3HWDXYDqvsVvgyILuFhJ8K6KlGrL8bJpa8lz212-O3qlwEexPycNO4dx9ucDtbGTlp1OSKIhi-KcNh5rMdOt9Kz-Xwi6v5Ae30ChZez71T3BqHyeXXwnxzUnViM8Ktt3HksOyfP82n-ZMSTWsS4j7BJjhGgIBX7zFZ77EoC2Di4"/>
-<div>
-<div class="text-on-surface font-semibold text-lg">Aetherial Systems</div>
-<div class="text-on-surface-variant text-xs font-medium">ops@aetherial.tech</div>
-</div>
-</div>
-<div class="col-span-2">
-<span class="px-3 py-1 bg-tertiary/10 text-tertiary text-[10px] font-bold uppercase tracking-widest rounded-full border border-tertiary/20">Pending</span>
-</div>
-<div class="col-span-1 text-center">
-<div class="text-on-surface font-bold text-lg">03</div>
-</div>
-<div class="col-span-2 text-on-surface-variant text-sm">
-                Yesterday, 11:45 PM
+            <div class="flex items-center gap-2 px-4 py-2 bg-surface-container-low rounded-xl text-on-surface-variant text-sm border border-outline-variant/10">
+                Project assignment
+                <span class="material-symbols-outlined text-sm">expand_more</span>
             </div>
-<div class="col-span-2 text-right pr-4">
-<div class="text-on-surface font-headline font-bold">$42,200.00</div>
-<div class="text-on-surface-variant text-[10px] uppercase tracking-tighter">Project Value</div>
-</div>
-<div class="col-span-1 flex justify-end gap-2">
-<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
-</button>
-</div>
-</div>
-<!-- Client Item 3 -->
-<div class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer border border-outline-variant/5 shadow-lg group">
-<div class="col-span-4 flex items-center gap-4">
-<input class="rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
-<img class="w-12 h-12 rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Senior executive man sitting in an obsidian-toned boardroom at night with city lights reflecting in glass" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfcn3Fii_joxD8hvr5Ibz-M0R6VPtsey2vblR0bQ_QetVN365rdehC4x-XEIT7LFaLUg_r-xcItBTUPH6YeuiJJw-FO5qk4Hh2kr2BSre4trOglb6VRv56-gfai5w5z66h4xUueWGwGNJ8DAqCe17uCK08J_N_nY6Eg4oxJhE53ES8dvccxoBs6reP_w9cmddNgVRV1Q_X9B43a5_P-Xjp_fmE2ingrzxwW7iEePy4bxhdeyqipSMBYFXWWsUazq1ch7E9B16avJk"/>
-<div>
-<div class="text-on-surface font-semibold text-lg">Vortex Ventures</div>
-<div class="text-on-surface-variant text-xs font-medium">ceo@vortex.com</div>
-</div>
-</div>
-<div class="col-span-2">
-<span class="px-3 py-1 bg-on-surface-variant/10 text-on-surface-variant text-[10px] font-bold uppercase tracking-widest rounded-full border border-on-surface-variant/20">Inactive</span>
-</div>
-<div class="col-span-1 text-center">
-<div class="text-on-surface font-bold text-lg">08</div>
-</div>
-<div class="col-span-2 text-on-surface-variant text-sm">
-                Oct 24, 2023
+            <div class="flex items-center gap-2 px-4 py-2 bg-surface-container-low rounded-xl text-on-surface-variant text-sm border border-outline-variant/10">
+                Sort by: Recent
+                <span class="material-symbols-outlined text-sm">expand_more</span>
             </div>
-<div class="col-span-2 text-right pr-4">
-<div class="text-on-surface font-headline font-bold">$98,000.00</div>
-<div class="text-on-surface-variant text-[10px] uppercase tracking-tighter">Total Revenue</div>
-</div>
-<div class="col-span-1 flex justify-end gap-2">
-<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
-</button>
-</div>
-</div>
-<!-- Client Item 4 -->
-<div class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer border border-outline-variant/5 shadow-lg group">
-<div class="col-span-4 flex items-center gap-4">
-<input class="rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
-<img class="w-12 h-12 rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Young designer with creative accessories in a studio with atmospheric moody lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNRwaEzOJu4xpLGvYbcXh-nNTpqEsB0TyGV-UvH4aqx5Se0oj2bh5734AYDL8czzf6bISjvBIzgGf4TKWOkwqaDSrwlTcJ9goN9Whvkm1iscLDUOJHaa9B-TNyW8UbFahZMpSAhc0vJHsjQbbtzrtzTOsCez-JonzZC0hh-4U353egbMlJb1URlcfL742C35sytx4Z0H6peTycW68GEguDqgzsBcjU0gGknbcE7RxDBQgncu16QWRXvovBOnFkOKHeCFbJNEYu76o"/>
-<div>
-<div class="text-on-surface font-semibold text-lg">Prism Creative</div>
-<div class="text-on-surface-variant text-xs font-medium">hello@prism.studio</div>
-</div>
-</div>
-<div class="col-span-2">
-<span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest rounded-full border border-primary/20">Active</span>
-</div>
-<div class="col-span-1 text-center">
-<div class="text-on-surface font-bold text-lg">22</div>
-</div>
-<div class="col-span-2 text-on-surface-variant text-sm">
-                5 mins ago
-            </div>
-<div class="col-span-2 text-right pr-4">
-<div class="text-on-surface font-headline font-bold">$210,000.00</div>
-<div class="text-on-surface-variant text-[10px] uppercase tracking-tighter">Annual Value</div>
-</div>
-<div class="col-span-1 flex justify-end gap-2">
-<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Asymmetric Bento Insight Section -->
-<div class="mt-16 grid grid-cols-12 gap-6">
-<div class="col-span-8 bg-surface-container rounded-2xl p-8 relative overflow-hidden group border border-outline-variant/5">
-<div class="relative z-10 flex flex-col h-full justify-between">
-<div>
-<h3 class="syne-headline text-3xl font-bold text-primary mb-2">Revenue Growth</h3>
-<p class="text-on-surface-variant max-w-md">The client ecosystem has expanded by 12.4% this quarter with primary growth in Tech and Venture sectors.</p>
-</div>
-<div class="flex items-end gap-1 mt-8 h-32">
-<div class="w-full bg-surface-container-highest rounded-t-lg transition-all duration-500 group-hover:bg-primary/40" style="height: 40%"></div>
-<div class="w-full bg-surface-container-highest rounded-t-lg transition-all duration-500 group-hover:bg-primary/50" style="height: 60%"></div>
-<div class="w-full bg-surface-container-highest rounded-t-lg transition-all duration-500 group-hover:bg-primary/30" style="height: 45%"></div>
-<div class="w-full bg-surface-container-highest rounded-t-lg transition-all duration-500 group-hover:bg-primary/70" style="height: 85%"></div>
-<div class="w-full bg-surface-container-highest rounded-t-lg transition-all duration-500 group-hover:bg-primary/60" style="height: 70%"></div>
-<div class="w-full bg-primary/90 rounded-t-lg shadow-[0_0_20px_rgba(192,193,255,0.3)]" style="height: 100%"></div>
-</div>
-</div>
-<div class="absolute -right-10 -bottom-10 opacity-5">
-<span class="material-symbols-outlined text-[240px]" data-icon="monitoring">monitoring</span>
-</div>
-</div>
-<div class="col-span-4 bg-primary rounded-2xl p-8 text-on-primary shadow-[0_32px_32px_-12px_rgba(99,102,241,0.3)]">
-<span class="material-symbols-outlined text-4xl mb-4" data-icon="rocket_launch" data-weight="fill">rocket_launch</span>
-<h3 class="syne-headline text-2xl font-bold mb-4">Network Health</h3>
-<div class="space-y-6">
-<div>
-<div class="flex justify-between text-xs font-bold uppercase tracking-wider mb-2">
-<span>Engagement</span>
-<span>94%</span>
-</div>
-<div class="h-1 bg-on-primary/20 rounded-full overflow-hidden">
-<div class="h-full bg-on-primary w-[94%]"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between text-xs font-bold uppercase tracking-wider mb-2">
-<span>Retention</span>
-<span>88%</span>
-</div>
-<div class="h-1 bg-on-primary/20 rounded-full overflow-hidden">
-<div class="h-full bg-on-primary w-[88%]"></div>
-</div>
-</div>
-<button class="w-full py-4 mt-4 bg-on-primary text-primary font-bold rounded-xl hover:bg-white transition-colors">
-                    Export Full Report
+            <div class="ml-auto flex items-center gap-4">
+                <div class="flex items-center gap-2 text-on-surface-variant text-xs font-medium uppercase tracking-widest px-4">
+                    <input class="rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
+                    Bulk Action
+                </div>
+                <button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined">view_kanban</span>
                 </button>
-</div>
-</div>
-</div>
+                <button class="p-2 text-primary bg-surface-container-highest rounded-lg transition-colors">
+                    <span class="material-symbols-outlined">list</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- === CLIENTS LIST TABLE === -->
+        <div class="space-y-4">
+            <!-- Table Header -->
+            <div class="grid grid-cols-12 gap-4 px-8 py-4 text-on-surface-variant text-xs font-bold uppercase tracking-widest">
+                <div class="col-span-4">Client Name</div>
+                <div class="col-span-2">Status</div>
+                <div class="col-span-1 text-center">Projects</div>
+                <div class="col-span-2">Last Activity</div>
+                <div class="col-span-2 text-right pr-4">Revenue</div>
+                <div class="col-span-1"></div>
+            </div>
+
+            <!-- Client Item 1 -->
+            <div class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer border border-outline-variant/5 shadow-lg group">
+                <div class="col-span-4 flex items-center gap-4">
+                    <input class="rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
+                    <img class="w-12 h-12 rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqIzLMh_qmoaZw__cT43Val75XA18ZmRJa_d1885RusTammKETIevHWpb9F7nZo2SlflQyA_snTs5PUuNPMIKkaSQ_Fwhzvvd0U8O1Ys_yJPl0FleyydKalvuUs1aIlYX873buk4jTZHIlsAuDZO5l_YyL0gyhKcT1BTGykGELSMlbMRBIlbV15p0mpmYDxvND-XIQbM6pZB77AMH2H9W2zy1ZmffenKUCXWk7nuKFI0J2-wRLgbfHE41muZ-0lVEQn59Z-40Nq5Y"/>
+                    <div>
+                        <div class="text-on-surface font-semibold text-lg">Nebula Dynamics</div>
+                        <div class="text-on-surface-variant text-xs font-medium">nebula@contact.io</div>
+                    </div>
+                </div>
+                <div class="col-span-2">
+                    <span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest rounded-full border border-primary/20">Active</span>
+                </div>
+                <div class="col-span-1 text-center">
+                    <div class="text-on-surface font-bold text-lg">14</div>
+                </div>
+                <div class="col-span-2 text-on-surface-variant text-sm">
+                    2 hours ago
+                </div>
+                <div class="col-span-2 text-right pr-4">
+                    <div class="text-on-surface font-headline font-bold">$124,500.00</div>
+                    <div class="text-on-surface-variant text-[10px] uppercase tracking-tighter">Annual Value</div>
+                </div>
+                <div class="col-span-1 flex justify-end gap-2">
+                    <button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined text-lg">more_vert</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Client Item 2 -->
+            <div class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer border border-outline-variant/5 shadow-lg group">
+                <div class="col-span-4 flex items-center gap-4">
+                    <input class="rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
+                    <img class="w-12 h-12 rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_tmp3fgkBo6lMoTdsxJVbA3tdN_8d8lPds3eskONXz68EsYrigSopqS8L8Op6Suwn-49EZk29YYsmASd0alOsuX_tKEqKjweN3HWDXYDqvsVvgyILuFhJ8K6KlGrL8bJpa8lz212-O3qlwEexPycNO4dx9ucDtbGTlp1OSKIhi-KcNh5rMdOt9Kz-Xwi6v5Ae30ChZez71T3BqHyeXXwnxzUnViM8Ktt3HksOyfP82n-ZMSTWsS4j7BJjhGgIBX7zFZ77EoC2Di4"/>
+                    <div>
+                        <div class="text-on-surface font-semibold text-lg">Aetherial Systems</div>
+                        <div class="text-on-surface-variant text-xs font-medium">ops@aetherial.tech</div>
+                    </div>
+                </div>
+                <div class="col-span-2">
+                    <span class="px-3 py-1 bg-tertiary/10 text-tertiary text-[10px] font-bold uppercase tracking-widest rounded-full border border-tertiary/20">Pending</span>
+                </div>
+                <div class="col-span-1 text-center">
+                    <div class="text-on-surface font-bold text-lg">03</div>
+                </div>
+                <div class="col-span-2 text-on-surface-variant text-sm">
+                    Yesterday, 11:45 PM
+                </div>
+                <div class="col-span-2 text-right pr-4">
+                    <div class="text-on-surface font-headline font-bold">$42,200.00</div>
+                    <div class="text-on-surface-variant text-[10px] uppercase tracking-tighter">Project Value</div>
+                </div>
+                <div class="col-span-1 flex justify-end gap-2">
+                    <button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined text-lg">more_vert</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Client Item 3 -->
+            <div class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer border border-outline-variant/5 shadow-lg group">
+                <div class="col-span-4 flex items-center gap-4">
+                    <input class="rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
+                    <img class="w-12 h-12 rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfcn3Fii_joxD8hvr5Ibz-M0R6VPtsey2vblR0bQ_QetVN365rdehC4x-XEIT7LFaLUg_r-xcItBTUPH6YeuiJJw-FO5qk4Hh2kr2BSre4trOglb6VRv56-gfai5w5z66h4xUueWGwGNJ8DAqCe17uCK08J_N_nY6Eg4oxJhE53ES8dvccxoBs6reP_w9cmddNgVRV1Q_X9B43a5_P-Xjp_fmE2ingrzxwW7iEePy4bxhdeyqipSMBYFXWWsUazq1ch7E9B16avJk"/>
+                    <div>
+                        <div class="text-on-surface font-semibold text-lg">Vortex Ventures</div>
+                        <div class="text-on-surface-variant text-xs font-medium">ceo@vortex.com</div>
+                    </div>
+                </div>
+                <div class="col-span-2">
+                    <span class="px-3 py-1 bg-on-surface-variant/10 text-on-surface-variant text-[10px] font-bold uppercase tracking-widest rounded-full border border-on-surface-variant/20">Inactive</span>
+                </div>
+                <div class="col-span-1 text-center">
+                    <div class="text-on-surface font-bold text-lg">08</div>
+                </div>
+                <div class="col-span-2 text-on-surface-variant text-sm">
+                    Oct 24, 2023
+                </div>
+                <div class="col-span-2 text-right pr-4">
+                    <div class="text-on-surface font-headline font-bold">$98,000.00</div>
+                    <div class="text-on-surface-variant text-[10px] uppercase tracking-tighter">Total Revenue</div>
+                </div>
+                <div class="col-span-1 flex justify-end gap-2">
+                    <button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined text-lg">more_vert</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Client Item 4 -->
+            <div class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer border border-outline-variant/5 shadow-lg group">
+                <div class="col-span-4 flex items-center gap-4">
+                    <input class="rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
+                    <img class="w-12 h-12 rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNRwaEzOJu4xpLGvYbcXh-nNTpqEsB0TyGV-UvH4aqx5Se0oj2bh5734AYDL8czzf6bISjvBIzgGf4TKWOkwqaDSrwlTcJ9goN9Whvkm1iscLDUOJHaa9B-TNyW8UbFahZMpSAhc0vJHsjQbbtzrtzTOsCez-JonzZC0hh-4U353egbMlJb1URlcfL742C35sytx4Z0H6peTycW68GEguDqgzsBcjU0gGknbcE7RxDBQgncu16QWRXvovBOnFkOKHeCFbJNEYu76o"/>
+                    <div>
+                        <div class="text-on-surface font-semibold text-lg">Prism Creative</div>
+                        <div class="text-on-surface-variant text-xs font-medium">hello@prism.studio</div>
+                    </div>
+                </div>
+                <div class="col-span-2">
+                    <span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest rounded-full border border-primary/20">Active</span>
+                </div>
+                <div class="col-span-1 text-center">
+                    <div class="text-on-surface font-bold text-lg">22</div>
+                </div>
+                <div class="col-span-2 text-on-surface-variant text-sm">
+                    5 mins ago
+                </div>
+                <div class="col-span-2 text-right pr-4">
+                    <div class="text-on-surface font-headline font-bold">$210,000.00</div>
+                    <div class="text-on-surface-variant text-[10px] uppercase tracking-tighter">Annual Value</div>
+                </div>
+                <div class="col-span-1 flex justify-end gap-2">
+                    <button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined text-lg">more_vert</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- === ASYMMETRIC BENTO INSIGHT SECTION === -->
+        <div class="mt-16 grid grid-cols-12 gap-6">
+            <div class="col-span-8 bg-surface-container rounded-2xl p-8 relative overflow-hidden group border border-outline-variant/5">
+                <div class="relative z-10 flex flex-col h-full justify-between">
+                    <div>
+                        <h3 class="syne-headline text-3xl font-bold text-primary mb-2">Revenue Growth</h3>
+                        <p class="text-on-surface-variant max-w-md">The client ecosystem has expanded by 12.4% this quarter with primary growth in Tech and Venture sectors.</p>
+                    </div>
+                    <div class="flex items-end gap-1 mt-8 h-32">
+                        <div class="w-full bg-surface-container-highest rounded-t-lg transition-all duration-500 group-hover:bg-primary/40" style="height: 40%"></div>
+                        <div class="w-full bg-surface-container-highest rounded-t-lg transition-all duration-500 group-hover:bg-primary/50" style="height: 60%"></div>
+                        <div class="w-full bg-surface-container-highest rounded-t-lg transition-all duration-500 group-hover:bg-primary/30" style="height: 45%"></div>
+                        <div class="w-full bg-surface-container-highest rounded-t-lg transition-all duration-500 group-hover:bg-primary/70" style="height: 85%"></div>
+                        <div class="w-full bg-surface-container-highest rounded-t-lg transition-all duration-500 group-hover:bg-primary/60" style="height: 70%"></div>
+                        <div class="w-full bg-primary/90 rounded-t-lg shadow-[0_0_20px_rgba(192,193,255,0.3)]" style="height: 100%"></div>
+                    </div>
+                </div>
+                <div class="absolute -right-10 -bottom-10 opacity-5">
+                    <span class="material-symbols-outlined text-[240px]">monitoring</span>
+                </div>
+            </div>
+            <div class="col-span-4 bg-primary rounded-2xl p-8 text-on-primary shadow-[0_32px_32px_-12px_rgba(99,102,241,0.3)]">
+                <span class="material-symbols-outlined text-4xl mb-4">rocket_launch</span>
+                <h3 class="syne-headline text-2xl font-bold mb-4">Network Health</h3>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between text-xs font-bold uppercase tracking-wider mb-2">
+                            <span>Engagement</span>
+                            <span>94%</span>
+                        </div>
+                        <div class="h-1 bg-on-primary/20 rounded-full overflow-hidden">
+                            <div class="h-full bg-on-primary w-[94%]"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-xs font-bold uppercase tracking-wider mb-2">
+                            <span>Retention</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="h-1 bg-on-primary/20 rounded-full overflow-hidden">
+                            <div class="h-full bg-on-primary w-[88%]"></div>
+                        </div>
+                    </div>
+                    <button class="w-full py-4 mt-4 bg-on-primary text-primary font-bold rounded-xl hover:bg-white transition-colors">
+                        Export Full Report
+                    </button>
+                </div>
+            </div>
+        </div>
     </main>
-<!-- Navigation Suppression Logic Checklist (Hidden Reference) -->
-<!-- Page: Clients List - NOT Transactional - Shell Visible -->
-<!-- Active Tab: Clients (Exact Match) --></body></html>
+
+    <script src="../../assets/js/app.js"></script>
+</body>
+</html>

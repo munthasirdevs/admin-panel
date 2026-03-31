@@ -1,454 +1,391 @@
 <!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>XenonOS Reports - Q4 Performance Growth</title>
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>XenonOS Reports - Q4 Performance Growth</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "on-surface-variant": "#c7c4d7",
-              "inverse-on-surface": "#2c303b",
-              "primary-container": "#8083ff",
-              "tertiary": "#ffb783",
-              "outline": "#908fa0",
-              "on-surface": "#dfe2f1",
-              "surface-variant": "#313540",
-              "surface-container": "#1c1f2a",
-              "background": "#0f131d",
-              "secondary-fixed": "#e1e0ff",
-              "primary-fixed-dim": "#c0c1ff",
-              "outline-variant": "#464554",
-              "surface-container-lowest": "#0a0e18",
-              "surface-dim": "#0f131d",
-              "surface-container-low": "#171b26",
-              "primary-fixed": "#e1e0ff",
-              "secondary": "#c0c1ff",
-              "on-secondary-fixed": "#13144a",
-              "on-secondary-container": "#b2b3f2",
-              "on-secondary": "#292a60",
-              "surface-bright": "#353944",
-              "tertiary-fixed": "#ffdcc5",
-              "on-primary-fixed": "#07006c",
-              "secondary-fixed-dim": "#c0c1ff",
-              "on-secondary-fixed-variant": "#404178",
-              "surface-container-high": "#262a35",
-              "on-primary-fixed-variant": "#2f2ebe",
-              "surface-tint": "#c0c1ff",
-              "tertiary-fixed-dim": "#ffb783",
-              "on-error": "#690005",
-              "on-primary-container": "#0d0096",
-              "on-error-container": "#ffdad6",
-              "on-background": "#dfe2f1",
-              "error-container": "#93000a",
-              "surface-container-highest": "#313540",
-              "inverse-primary": "#494bd6",
-              "error": "#ffb4ab",
-              "primary": "#c0c1ff",
-              "on-tertiary-fixed-variant": "#703700",
-              "secondary-container": "#42447b",
-              "on-tertiary-container": "#452000",
-              "on-primary": "#1000a9",
-              "inverse-surface": "#dfe2f1",
-              "on-tertiary": "#4f2500",
-              "surface": "#0f131d",
-              "tertiary-container": "#d97721",
-              "on-tertiary-fixed": "#301400"
-            },
-            fontFamily: {
-              "headline": ["Space Grotesk"],
-              "body": ["Manrope"],
-              "label": ["Manrope"],
-              "syne": ["Syne"],
-              "outfit": ["Outfit"]
-            },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1.5rem", "full": "9999px"},
-          },
-        },
-      }
-    </script>
-<style>
-      .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-      }
-      .glass-panel {
-        background: rgba(28, 31, 42, 0.7);
-        backdrop-filter: blur(20px);
-      }
-      .indigo-gradient {
-        background: linear-gradient(135deg, #c0c1ff 0%, #8083ff 100%);
-      }
-      .bento-hover:hover {
-        transform: scale(1.02);
-        background-color: #262a35; /* surface-container-high */
-      }
+    <!-- === CORE ASSETS === -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="../../assets/js/tailwind-config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+    <!-- === CUSTOM STYLES === -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(28, 31, 42, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .indigo-gradient {
+            background: linear-gradient(135deg, #c0c1ff 0%, #8083ff 100%);
+        }
+        .bento-hover:hover {
+            transform: scale(1.02);
+            background-color: #262a35;
+        }
     </style>
 </head>
 <body class="bg-background text-on-surface font-outfit min-h-screen selection:bg-primary-container selection:text-on-primary-container">
-    <!-- Main Content Area -->
+
+    <!-- === MAIN CONTENT AREA === -->
     <main class="flex flex-col min-h-screen">
-        <!-- TopNavBar Anchor -->
-<header class="w-full sticky top-0 z-50 bg-[#0f131d]/70 backdrop-blur-xl shadow-[0_32px_32px_-4px_rgba(10,14,24,0.5)] flex justify-between items-center px-8 h-16 w-full">
-<div class="flex items-center gap-8">
-<div class="flex items-center gap-6">
-<span class="text-[#c7c4d7] hover:text-[#dfe2f1] cursor-pointer transition-colors">Dashboard</span>
-<span class="text-[#c0c1ff] font-bold border-b-2 border-[#6366f1] pb-1 cursor-pointer">Analytics</span>
-<span class="text-[#c7c4d7] hover:text-[#dfe2f1] cursor-pointer transition-colors">Templates</span>
-<span class="text-[#c7c4d7] hover:text-[#dfe2f1] cursor-pointer transition-colors">Exports</span>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<div class="flex items-center bg-surface-container-lowest px-4 py-2 rounded-full border border-outline-variant/10">
-<span class="material-symbols-outlined text-on-surface-variant text-sm mr-2">search</span>
-<input class="bg-transparent border-none focus:ring-0 text-sm text-on-surface placeholder-on-surface-variant w-48" placeholder="Search reports..." type="text"/>
-</div>
-<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
-<span class="material-symbols-outlined">notifications</span>
-</button>
-<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
-<span class="material-symbols-outlined">settings</span>
-</button>
-<div class="w-8 h-8 rounded-full overflow-hidden border border-primary/30">
-<img alt="User Profile" data-alt="close-up portrait of a professional male with a neutral expression against a dark studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgiMq7K4hSSBShhpFMiKCjugSdqPGgob6BkbAfIb-xdKc6v8v70u_p4e6nZHQ1Ax6stpIqBzz0G6fqs4oAsF9K5hhh0Z-osMefkOmuqHtCgEdD51sxJw2Mq3BbGrqJAmDn97lXHPLTXByj6-wjn9ZPsVeIkzbCcft3geCZHXDPprlPAyzAyYYkhm6Lwc2yNge-mUa2FiflaENG0Eeywn9MfqwMbCyq14lgL_szSQC2lH6mtqUWQeLyQbGm3fC67d5yukI8llDqVO0"/>
-</div>
-</div>
-</header>
-<!-- Content Canvas -->
-<div class="p-8 space-y-8">
-<!-- Report Header Section -->
-<section class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-<div>
-<div class="flex items-center gap-3 mb-2">
-<span class="px-3 py-1 bg-surface-container-highest text-primary-fixed-dim text-[10px] font-bold uppercase tracking-widest rounded-full">Quarterly Analysis</span>
-<span class="text-on-surface-variant text-sm flex items-center gap-1">
-<span class="material-symbols-outlined text-xs">calendar_today</span>
+
+        <!-- === CONTENT CANVAS === -->
+        <div class="p-8 space-y-8">
+
+            <!-- === REPORT HEADER SECTION === -->
+            <section class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div>
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="px-3 py-1 bg-surface-container-highest text-primary-fixed-dim text-[10px] font-bold uppercase tracking-widest rounded-full">Quarterly Analysis</span>
+                        <span class="text-on-surface-variant text-sm flex items-center gap-1">
+                            <span class="material-symbols-outlined text-xs">calendar_today</span>
                             Oct-Dec 2024
                         </span>
-</div>
-<h2 class="font-['Syne'] font-extrabold text-4xl text-on-surface tracking-tighter">Q4 Performance Growth</h2>
-</div>
-<div class="flex items-center gap-3">
-<button class="flex items-center gap-2 px-4 py-2.5 bg-surface-container border border-outline-variant/20 rounded-xl text-on-surface hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined text-lg">share</span>
-<span class="text-sm font-medium">Share</span>
-</button>
-<div class="flex rounded-xl overflow-hidden border border-outline-variant/20">
-<button class="px-4 py-2.5 bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors border-r border-outline-variant/20 flex items-center gap-2">
-<span class="material-symbols-outlined text-lg">download</span>
-<span class="text-sm font-medium">Export</span>
-</button>
-<select class="bg-surface-container text-on-surface-variant text-xs border-none focus:ring-0 px-2 cursor-pointer hover:bg-surface-container-high transition-colors">
-<option>PDF</option>
-<option>CSV</option>
-<option>Excel</option>
-</select>
-</div>
-</div>
-</section>
-<!-- KPI Summary Row (Bento Style) -->
-<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-<div class="bg-surface-container p-6 rounded-2xl bento-hover transition-all duration-400 border border-outline-variant/5">
-<div class="flex justify-between items-start mb-4">
-<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary">payments</span>
-</div>
-<span class="text-emerald-400 text-xs font-bold flex items-center">
-<span class="material-symbols-outlined text-xs">trending_up</span> 12.5%
+                    </div>
+                    <h2 class="font-['Syne'] font-extrabold text-4xl text-on-surface tracking-tighter">Q4 Performance Growth</h2>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button class="flex items-center gap-2 px-4 py-2.5 bg-surface-container border border-outline-variant/20 rounded-xl text-on-surface hover:bg-surface-container-high transition-colors">
+                        <span class="material-symbols-outlined text-lg">share</span>
+                        <span class="text-sm font-medium">Share</span>
+                    </button>
+                    <div class="flex rounded-xl overflow-hidden border border-outline-variant/20">
+                        <button class="px-4 py-2.5 bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors border-r border-outline-variant/20 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-lg">download</span>
+                            <span class="text-sm font-medium">Export</span>
+                        </button>
+                        <select class="bg-surface-container text-on-surface-variant text-xs border-none focus:ring-0 px-2 cursor-pointer hover:bg-surface-container-high transition-colors">
+                            <option>PDF</option>
+                            <option>CSV</option>
+                            <option>Excel</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- === KPI SUMMARY ROW (BENTO STYLE) === -->
+            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-surface-container p-6 rounded-2xl bento-hover transition-all duration-400 border border-outline-variant/5">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary">payments</span>
+                        </div>
+                        <span class="text-emerald-400 text-xs font-bold flex items-center">
+                            <span class="material-symbols-outlined text-xs">trending_up</span> 12.5%
                         </span>
-</div>
-<p class="text-on-surface-variant text-sm font-medium mb-1">Total Revenue</p>
-<h3 class="text-2xl font-bold font-syne">$1,284,500</h3>
-</div>
-<div class="bg-surface-container p-6 rounded-2xl bento-hover transition-all duration-400 border border-outline-variant/5">
-<div class="flex justify-between items-start mb-4">
-<div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center">
-<span class="material-symbols-outlined text-tertiary">speed</span>
-</div>
-<span class="text-emerald-400 text-xs font-bold flex items-center">
-<span class="material-symbols-outlined text-xs">trending_up</span> 8.2%
+                    </div>
+                    <p class="text-on-surface-variant text-sm font-medium mb-1">Total Revenue</p>
+                    <h3 class="text-2xl font-bold font-syne">$1,284,500</h3>
+                </div>
+
+                <div class="bg-surface-container p-6 rounded-2xl bento-hover transition-all duration-400 border border-outline-variant/5">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-tertiary">speed</span>
+                        </div>
+                        <span class="text-emerald-400 text-xs font-bold flex items-center">
+                            <span class="material-symbols-outlined text-xs">trending_up</span> 8.2%
                         </span>
-</div>
-<p class="text-on-surface-variant text-sm font-medium mb-1">Growth %</p>
-<h3 class="text-2xl font-bold font-syne">24.8%</h3>
-</div>
-<div class="bg-surface-container p-6 rounded-2xl bento-hover transition-all duration-400 border border-outline-variant/5">
-<div class="flex justify-between items-start mb-4">
-<div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center">
-<span class="material-symbols-outlined text-secondary">timer</span>
-</div>
-<span class="text-amber-400 text-xs font-bold flex items-center">
-<span class="material-symbols-outlined text-xs">trending_down</span> 4.1%
+                    </div>
+                    <p class="text-on-surface-variant text-sm font-medium mb-1">Growth %</p>
+                    <h3 class="text-2xl font-bold font-syne">24.8%</h3>
+                </div>
+
+                <div class="bg-surface-container p-6 rounded-2xl bento-hover transition-all duration-400 border border-outline-variant/5">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-secondary">timer</span>
+                        </div>
+                        <span class="text-amber-400 text-xs font-bold flex items-center">
+                            <span class="material-symbols-outlined text-xs">trending_down</span> 4.1%
                         </span>
-</div>
-<p class="text-on-surface-variant text-sm font-medium mb-1">Avg Task Time</p>
-<h3 class="text-2xl font-bold font-syne">18.4m</h3>
-</div>
-<div class="bg-surface-container p-6 rounded-2xl bento-hover transition-all duration-400 border border-outline-variant/5">
-<div class="flex justify-between items-start mb-4">
-<div class="w-10 h-10 rounded-lg bg-primary-container/10 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary-container">groups</span>
-</div>
-<span class="text-emerald-400 text-xs font-bold flex items-center">
-<span class="material-symbols-outlined text-xs">add</span> 2
+                    </div>
+                    <p class="text-on-surface-variant text-sm font-medium mb-1">Avg Task Time</p>
+                    <h3 class="text-2xl font-bold font-syne">18.4m</h3>
+                </div>
+
+                <div class="bg-surface-container p-6 rounded-2xl bento-hover transition-all duration-400 border border-outline-variant/5">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-primary-container/10 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary-container">groups</span>
+                        </div>
+                        <span class="text-emerald-400 text-xs font-bold flex items-center">
+                            <span class="material-symbols-outlined text-xs">add</span> 2
                         </span>
-</div>
-<p class="text-on-surface-variant text-sm font-medium mb-1">Active Projects</p>
-<h3 class="text-2xl font-bold font-syne">42</h3>
-</div>
-</section>
-<!-- Visualization Section -->
-<section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-<!-- Large Chart Card -->
-<div class="lg:col-span-2 bg-surface-container rounded-2xl p-8 border border-outline-variant/5 overflow-hidden relative">
-<div class="flex justify-between items-center mb-8">
-<div>
-<h4 class="text-lg font-bold text-on-surface font-syne mb-1">Financial Trends</h4>
-<p class="text-on-surface-variant text-sm">Monthly performance trajectory</p>
-</div>
-<div class="flex gap-2">
-<button class="px-3 py-1.5 bg-surface-container-highest rounded-lg text-xs font-bold text-primary">Daily</button>
-<button class="px-3 py-1.5 hover:bg-surface-container-highest rounded-lg text-xs font-bold text-on-surface-variant transition-colors">Weekly</button>
-<button class="px-3 py-1.5 hover:bg-surface-container-highest rounded-lg text-xs font-bold text-on-surface-variant transition-colors">Monthly</button>
-</div>
-</div>
-<div class="h-64 relative">
-<!-- Simulated Chart Grid -->
-<div class="absolute inset-0 flex flex-col justify-between opacity-10">
-<div class="border-b border-on-surface w-full h-px"></div>
-<div class="border-b border-on-surface w-full h-px"></div>
-<div class="border-b border-on-surface w-full h-px"></div>
-<div class="border-b border-on-surface w-full h-px"></div>
-</div>
-<!-- Simulated Line Chart -->
-<svg class="w-full h-full relative z-10" preserveaspectratio="none" viewbox="0 0 100 100">
-<defs>
-<lineargradient id="lineGrad" x1="0" x2="0" y1="0" y2="1">
-<stop offset="0%" stop-color="#c0c1ff" stop-opacity="0.5"></stop>
-<stop offset="100%" stop-color="#c0c1ff" stop-opacity="0"></stop>
-</lineargradient>
-</defs>
-<path d="M0,80 Q10,75 20,60 T40,65 T60,40 T80,30 T100,20 L100,100 L0,100 Z" fill="url(#lineGrad)"></path>
-<path d="M0,80 Q10,75 20,60 T40,65 T60,40 T80,30 T100,20" fill="none" stroke="#6366f1" stroke-width="2"></path>
-<!-- Data Points -->
-<circle cx="20" cy="60" fill="#c0c1ff" r="1.5"></circle>
-<circle cx="40" cy="65" fill="#c0c1ff" r="1.5"></circle>
-<circle cx="60" cy="40" fill="#c0c1ff" r="1.5"></circle>
-<circle cx="80" cy="30" fill="#c0c1ff" r="1.5"></circle>
-</svg>
-<!-- Chart Labels -->
-<div class="flex justify-between mt-4 text-[10px] text-on-surface-variant font-bold tracking-widest uppercase">
-<span>October</span>
-<span>November</span>
-<span>December</span>
-</div>
-</div>
-</div>
-<!-- Side Comparison Section -->
-<div class="flex flex-col gap-6">
-<div class="flex-1 bg-surface-container rounded-2xl p-6 border border-outline-variant/5">
-<h4 class="text-sm font-bold text-on-surface font-syne mb-4">Revenue vs Expenses</h4>
-<div class="space-y-4">
-<div>
-<div class="flex justify-between text-xs mb-1.5">
-<span class="text-on-surface-variant">Revenue</span>
-<span class="text-on-surface">$842k</span>
-</div>
-<div class="w-full h-2 bg-surface-container-lowest rounded-full overflow-hidden">
-<div class="h-full bg-primary rounded-full w-[75%]"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between text-xs mb-1.5">
-<span class="text-on-surface-variant">Expenses</span>
-<span class="text-on-surface">$442k</span>
-</div>
-<div class="w-full h-2 bg-surface-container-lowest rounded-full overflow-hidden">
-<div class="h-full bg-tertiary rounded-full w-[45%]"></div>
-</div>
-</div>
-</div>
-</div>
-<div class="flex-1 bg-surface-container rounded-2xl p-6 border border-outline-variant/5 flex flex-col">
-<h4 class="text-sm font-bold text-on-surface font-syne mb-4">Team Productivity</h4>
-<div class="flex-1 flex items-center justify-center relative">
-<!-- Circular Progress Simulation -->
-<div class="w-32 h-32 rounded-full border-[12px] border-surface-container-lowest flex items-center justify-center relative">
-<svg class="absolute inset-0 w-32 h-32 -rotate-90">
-<circle cx="64" cy="64" fill="none" r="58" stroke="#6366f1" stroke-dasharray="364" stroke-dashoffset="100" stroke-width="12"></circle>
-</svg>
-<div class="text-center">
-<p class="text-2xl font-bold font-syne">92%</p>
-<p class="text-[8px] text-on-surface-variant uppercase tracking-tighter">Efficiency</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Data Table Section -->
-<section class="bg-surface-container rounded-2xl border border-outline-variant/5 overflow-hidden">
-<div class="p-6 border-b border-outline-variant/10 flex flex-col md:flex-row md:items-center justify-between gap-4">
-<h4 class="text-lg font-bold text-on-surface font-syne">Detailed Breakdown</h4>
-<div class="flex items-center gap-3">
-<button class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-lowest border border-outline-variant/20 rounded-lg text-xs text-on-surface hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined text-sm">filter_list</span>
+                    </div>
+                    <p class="text-on-surface-variant text-sm font-medium mb-1">Active Projects</p>
+                    <h3 class="text-2xl font-bold font-syne">42</h3>
+                </div>
+            </section>
+
+            <!-- === VISUALIZATION SECTION === -->
+            <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Large Chart Card -->
+                <div class="lg:col-span-2 bg-surface-container rounded-2xl p-8 border border-outline-variant/5 overflow-hidden relative">
+                    <div class="flex justify-between items-center mb-8">
+                        <div>
+                            <h4 class="text-lg font-bold text-on-surface font-syne mb-1">Financial Trends</h4>
+                            <p class="text-on-surface-variant text-sm">Monthly performance trajectory</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="px-3 py-1.5 bg-surface-container-highest rounded-lg text-xs font-bold text-primary">Daily</button>
+                            <button class="px-3 py-1.5 hover:bg-surface-container-highest rounded-lg text-xs font-bold text-on-surface-variant transition-colors">Weekly</button>
+                            <button class="px-3 py-1.5 hover:bg-surface-container-highest rounded-lg text-xs font-bold text-on-surface-variant transition-colors">Monthly</button>
+                        </div>
+                    </div>
+
+                    <div class="h-64 relative">
+                        <!-- Simulated Chart Grid -->
+                        <div class="absolute inset-0 flex flex-col justify-between opacity-10">
+                            <div class="border-b border-on-surface w-full h-px"></div>
+                            <div class="border-b border-on-surface w-full h-px"></div>
+                            <div class="border-b border-on-surface w-full h-px"></div>
+                            <div class="border-b border-on-surface w-full h-px"></div>
+                        </div>
+
+                        <!-- Simulated Line Chart -->
+                        <svg class="w-full h-full relative z-10" preserveaspectratio="none" viewbox="0 0 100 100">
+                            <defs>
+                                <lineargradient id="lineGrad" x1="0" x2="0" y1="0" y2="1">
+                                    <stop offset="0%" stop-color="#c0c1ff" stop-opacity="0.5"></stop>
+                                    <stop offset="100%" stop-color="#c0c1ff" stop-opacity="0"></stop>
+                                </lineargradient>
+                            </defs>
+                            <path d="M0,80 Q10,75 20,60 T40,65 T60,40 T80,30 T100,20 L100,100 L0,100 Z" fill="url(#lineGrad)"></path>
+                            <path d="M0,80 Q10,75 20,60 T40,65 T60,40 T80,30 T100,20" fill="none" stroke="#6366f1" stroke-width="2"></path>
+                            <!-- Data Points -->
+                            <circle cx="20" cy="60" fill="#c0c1ff" r="1.5"></circle>
+                            <circle cx="40" cy="65" fill="#c0c1ff" r="1.5"></circle>
+                            <circle cx="60" cy="40" fill="#c0c1ff" r="1.5"></circle>
+                            <circle cx="80" cy="30" fill="#c0c1ff" r="1.5"></circle>
+                        </svg>
+
+                        <!-- Chart Labels -->
+                        <div class="flex justify-between mt-4 text-[10px] text-on-surface-variant font-bold tracking-widest uppercase">
+                            <span>October</span>
+                            <span>November</span>
+                            <span>December</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Side Comparison Section -->
+                <div class="flex flex-col gap-6">
+                    <div class="flex-1 bg-surface-container rounded-2xl p-6 border border-outline-variant/5">
+                        <h4 class="text-sm font-bold text-on-surface font-syne mb-4">Revenue vs Expenses</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-xs mb-1.5">
+                                    <span class="text-on-surface-variant">Revenue</span>
+                                    <span class="text-on-surface">$842k</span>
+                                </div>
+                                <div class="w-full h-2 bg-surface-container-lowest rounded-full overflow-hidden">
+                                    <div class="h-full bg-primary rounded-full w-[75%]"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs mb-1.5">
+                                    <span class="text-on-surface-variant">Expenses</span>
+                                    <span class="text-on-surface">$442k</span>
+                                </div>
+                                <div class="w-full h-2 bg-surface-container-lowest rounded-full overflow-hidden">
+                                    <div class="h-full bg-tertiary rounded-full w-[45%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 bg-surface-container rounded-2xl p-6 border border-outline-variant/5 flex flex-col">
+                        <h4 class="text-sm font-bold text-on-surface font-syne mb-4">Team Productivity</h4>
+                        <div class="flex-1 flex items-center justify-center relative">
+                            <!-- Circular Progress Simulation -->
+                            <div class="w-32 h-32 rounded-full border-[12px] border-surface-container-lowest flex items-center justify-center relative">
+                                <svg class="absolute inset-0 w-32 h-32 -rotate-90">
+                                    <circle cx="64" cy="64" fill="none" r="58" stroke="#6366f1" stroke-dasharray="364" stroke-dashoffset="100" stroke-width="12"></circle>
+                                </svg>
+                                <div class="text-center">
+                                    <p class="text-2xl font-bold font-syne">92%</p>
+                                    <p class="text-[8px] text-on-surface-variant uppercase tracking-tighter">Efficiency</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- === DATA TABLE SECTION === -->
+            <section class="bg-surface-container rounded-2xl border border-outline-variant/5 overflow-hidden">
+                <div class="p-6 border-b border-outline-variant/10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <h4 class="text-lg font-bold text-on-surface font-syne">Detailed Breakdown</h4>
+                    <div class="flex items-center gap-3">
+                        <button class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-lowest border border-outline-variant/20 rounded-lg text-xs text-on-surface hover:bg-surface-container-high transition-colors">
+                            <span class="material-symbols-outlined text-sm">filter_list</span>
                             Filter
                         </button>
-<button class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-lowest border border-outline-variant/20 rounded-lg text-xs text-on-surface hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined text-sm">sort</span>
+                        <button class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-lowest border border-outline-variant/20 rounded-lg text-xs text-on-surface hover:bg-surface-container-high transition-colors">
+                            <span class="material-symbols-outlined text-sm">sort</span>
                             Sort
                         </button>
-</div>
-</div>
-<div class="overflow-x-auto">
-<table class="w-full text-left border-collapse">
-<thead>
-<tr class="bg-surface-container-lowest/50">
-<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">ID</th>
-<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Client / Project</th>
-<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Category</th>
-<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Amount</th>
-<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Status</th>
-<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Date</th>
-<th class="px-6 py-4"></th>
-</tr>
-</thead>
-<tbody class="divide-y divide-outline-variant/5">
-<tr class="hover:bg-surface-container-high/50 transition-colors group">
-<td class="px-6 py-4 text-sm text-on-surface-variant">#9402</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-xs font-bold">NV</div>
-<div>
-<p class="text-sm font-semibold text-on-surface">Nova Dynamics</p>
-<p class="text-[10px] text-on-surface-variant">Cloud Migration</p>
-</div>
-</div>
-</td>
-<td class="px-6 py-4">
-<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold rounded">Infrastucture</span>
-</td>
-<td class="px-6 py-4 text-sm font-bold text-on-surface">$24,400.00</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-1.5">
-<div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
-<span class="text-xs text-on-surface">Completed</span>
-</div>
-</td>
-<td class="px-6 py-4 text-sm text-on-surface-variant">Oct 12, 2024</td>
-<td class="px-6 py-4 text-right">
-<button class="p-1.5 hover:bg-surface-container-highest rounded-lg text-on-surface-variant group-hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-lg">more_vert</span>
-</button>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-high/50 transition-colors group">
-<td class="px-6 py-4 text-sm text-on-surface-variant">#9408</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-lg bg-tertiary/20 flex items-center justify-center text-tertiary text-xs font-bold">SL</div>
-<div>
-<p class="text-sm font-semibold text-on-surface">Solaris Labs</p>
-<p class="text-[10px] text-on-surface-variant">AI Optimization</p>
-</div>
-</div>
-</td>
-<td class="px-6 py-4">
-<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold rounded">Software</span>
-</td>
-<td class="px-6 py-4 text-sm font-bold text-on-surface">$12,800.00</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-1.5">
-<div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div>
-<span class="text-xs text-on-surface">Pending</span>
-</div>
-</td>
-<td class="px-6 py-4 text-sm text-on-surface-variant">Oct 15, 2024</td>
-<td class="px-6 py-4 text-right">
-<button class="p-1.5 hover:bg-surface-container-highest rounded-lg text-on-surface-variant group-hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-lg">more_vert</span>
-</button>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-high/50 transition-colors group">
-<td class="px-6 py-4 text-sm text-on-surface-variant">#9412</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-lg bg-secondary/20 flex items-center justify-center text-secondary text-xs font-bold">QX</div>
-<div>
-<p class="text-sm font-semibold text-on-surface">Quantum X</p>
-<p class="text-[10px] text-on-surface-variant">Security Audit</p>
-</div>
-</div>
-</td>
-<td class="px-6 py-4">
-<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold rounded">Consultancy</span>
-</td>
-<td class="px-6 py-4 text-sm font-bold text-on-surface">$45,000.00</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-1.5">
-<div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
-<span class="text-xs text-on-surface">Completed</span>
-</div>
-</td>
-<td class="px-6 py-4 text-sm text-on-surface-variant">Nov 02, 2024</td>
-<td class="px-6 py-4 text-right">
-<button class="p-1.5 hover:bg-surface-container-highest rounded-lg text-on-surface-variant group-hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-lg">more_vert</span>
-</button>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-high/50 transition-colors group">
-<td class="px-6 py-4 text-sm text-on-surface-variant">#9421</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary-container text-xs font-bold">AL</div>
-<div>
-<p class="text-sm font-semibold text-on-surface">Apex Logistics</p>
-<p class="text-[10px] text-on-surface-variant">Route Automation</p>
-</div>
-</div>
-</td>
-<td class="px-6 py-4">
-<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold rounded">Logistics</span>
-</td>
-<td class="px-6 py-4 text-sm font-bold text-on-surface">$8,200.00</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-1.5">
-<div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
-<span class="text-xs text-on-surface">Completed</span>
-</div>
-</td>
-<td class="px-6 py-4 text-sm text-on-surface-variant">Nov 18, 2024</td>
-<td class="px-6 py-4 text-right">
-<button class="p-1.5 hover:bg-surface-container-highest rounded-lg text-on-surface-variant group-hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-lg">more_vert</span>
-</button>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="p-4 bg-surface-container-lowest/30 border-t border-outline-variant/10 flex items-center justify-between">
-<p class="text-xs text-on-surface-variant">Showing 4 of 128 entries</p>
-<div class="flex gap-2">
-<button class="w-8 h-8 rounded bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors">
-<span class="material-symbols-outlined text-sm">chevron_left</span>
-</button>
-<button class="w-8 h-8 rounded bg-primary text-on-primary text-xs font-bold">1</button>
-<button class="w-8 h-8 rounded bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors">2</button>
-<button class="w-8 h-8 rounded bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors">3</button>
-<button class="w-8 h-8 rounded bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors">
-<span class="material-symbols-outlined text-sm">chevron_right</span>
-</button>
-</div>
-</div>
-</section>
-</div>
-    </main></body></html>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-surface-container-lowest/50">
+                                <th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">ID</th>
+                                <th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Client / Project</th>
+                                <th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Category</th>
+                                <th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Amount</th>
+                                <th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Status</th>
+                                <th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Date</th>
+                                <th class="px-6 py-4"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-outline-variant/5">
+                            <tr class="hover:bg-surface-container-high/50 transition-colors group">
+                                <td class="px-6 py-4 text-sm text-on-surface-variant">#9402</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-xs font-bold">NV</div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-on-surface">Nova Dynamics</p>
+                                            <p class="text-[10px] text-on-surface-variant">Cloud Migration</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold rounded">Infrastucture</span>
+                                </td>
+                                <td class="px-6 py-4 text-sm font-bold text-on-surface">$24,400.00</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-1.5">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+                                        <span class="text-xs text-on-surface">Completed</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-on-surface-variant">Oct 12, 2024</td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="p-1.5 hover:bg-surface-container-highest rounded-lg text-on-surface-variant group-hover:text-primary transition-colors">
+                                        <span class="material-symbols-outlined text-lg">more_vert</span>
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr class="hover:bg-surface-container-high/50 transition-colors group">
+                                <td class="px-6 py-4 text-sm text-on-surface-variant">#9408</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-lg bg-tertiary/20 flex items-center justify-center text-tertiary text-xs font-bold">SL</div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-on-surface">Solaris Labs</p>
+                                            <p class="text-[10px] text-on-surface-variant">AI Optimization</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold rounded">Software</span>
+                                </td>
+                                <td class="px-6 py-4 text-sm font-bold text-on-surface">$12,800.00</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-1.5">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div>
+                                        <span class="text-xs text-on-surface">Pending</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-on-surface-variant">Oct 15, 2024</td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="p-1.5 hover:bg-surface-container-highest rounded-lg text-on-surface-variant group-hover:text-primary transition-colors">
+                                        <span class="material-symbols-outlined text-lg">more_vert</span>
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr class="hover:bg-surface-container-high/50 transition-colors group">
+                                <td class="px-6 py-4 text-sm text-on-surface-variant">#9412</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-lg bg-secondary/20 flex items-center justify-center text-secondary text-xs font-bold">QX</div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-on-surface">Quantum X</p>
+                                            <p class="text-[10px] text-on-surface-variant">Security Audit</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold rounded">Consultancy</span>
+                                </td>
+                                <td class="px-6 py-4 text-sm font-bold text-on-surface">$45,000.00</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-1.5">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+                                        <span class="text-xs text-on-surface">Completed</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-on-surface-variant">Nov 02, 2024</td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="p-1.5 hover:bg-surface-container-highest rounded-lg text-on-surface-variant group-hover:text-primary transition-colors">
+                                        <span class="material-symbols-outlined text-lg">more_vert</span>
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr class="hover:bg-surface-container-high/50 transition-colors group">
+                                <td class="px-6 py-4 text-sm text-on-surface-variant">#9421</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary-container text-xs font-bold">AL</div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-on-surface">Apex Logistics</p>
+                                            <p class="text-[10px] text-on-surface-variant">Route Automation</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold rounded">Logistics</span>
+                                </td>
+                                <td class="px-6 py-4 text-sm font-bold text-on-surface">$8,200.00</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-1.5">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+                                        <span class="text-xs text-on-surface">Completed</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-on-surface-variant">Nov 18, 2024</td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="p-1.5 hover:bg-surface-container-highest rounded-lg text-on-surface-variant group-hover:text-primary transition-colors">
+                                        <span class="material-symbols-outlined text-lg">more_vert</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="p-4 bg-surface-container-lowest/30 border-t border-outline-variant/10 flex items-center justify-between">
+                    <p class="text-xs text-on-surface-variant">Showing 4 of 128 entries</p>
+                    <div class="flex gap-2">
+                        <button class="w-8 h-8 rounded bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors">
+                            <span class="material-symbols-outlined text-sm">chevron_left</span>
+                        </button>
+                        <button class="w-8 h-8 rounded bg-primary text-on-primary text-xs font-bold">1</button>
+                        <button class="w-8 h-8 rounded bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors">2</button>
+                        <button class="w-8 h-8 rounded bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors">3</button>
+                        <button class="w-8 h-8 rounded bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors">
+                            <span class="material-symbols-outlined text-sm">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- === SCRIPTS === -->
+    <script src="../../assets/js/app.js"></script>
+</body>
+</html>

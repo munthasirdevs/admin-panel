@@ -4,304 +4,321 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Support Reports - System Admin</title>
-    
-    <!-- Core Assets -->
+
+    <!-- === CORE ASSETS === -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="../../assets/js/tailwind-config.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
-    <!-- Custom Styles --><link rel="stylesheet" href="../../assets/css/style.css">
+    <!-- === CUSTOM STYLES === -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
 <body class="flex min-h-screen bg-surface">
-    <!-- Main Content -->
-    <main class="flex-1 min-h-screen flex flex-col">
-        <!-- Main Scrollable Canvas -->
-        <div class="p-8">
-<!-- Header Section -->
-<section class="mb-12 flex justify-between items-end">
-<div>
-<p class="text-xs font-bold text-primary uppercase tracking-[0.2em] mb-2">Operational Overview</p>
-<h2 class="text-5xl font-headline font-light tracking-tight text-on-surface">Support Dashboard</h2>
-</div>
-<div class="flex gap-3">
-<button class="px-6 py-2.5 bg-surface-container hover:bg-surface-bright text-on-surface rounded-xl text-sm font-medium transition-all">Export Report</button>
-<button class="px-6 py-2.5 bg-primary text-on-primary-container rounded-xl text-sm font-bold shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all">New Ticket</button>
-</div>
-</section>
-<!-- KPI Bento Grid -->
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-<!-- Total Tickets -->
-<div class="relative overflow-hidden bg-surface-container-low rounded-3xl p-8 group">
-<div class="absolute top-0 left-0 w-1 h-full bg-primary/40"></div>
-<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/5 blur-3xl rounded-full"></div>
-<div class="flex justify-between items-start mb-4">
-<span class="p-3 bg-surface-container rounded-2xl text-primary">
-<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
-</span>
-<span class="text-[10px] font-bold py-1 px-2 bg-primary/10 text-primary rounded-lg">+12%</span>
-</div>
-<p class="text-[11px] font-bold text-slate-500 uppercase tracking-widest">Total Tickets</p>
-<h3 class="text-4xl font-headline font-bold mt-1">1,284</h3>
-<p class="text-xs text-slate-400 mt-4 flex items-center gap-1">
-<span class="material-symbols-outlined text-xs text-primary" data-icon="trending_up">trending_up</span>
-                    vs last 30 days
-                </p>
-</div>
-<!-- Avg Response Time -->
-<div class="relative overflow-hidden bg-surface-container-low rounded-3xl p-8 group">
-<div class="absolute top-0 left-0 w-1 h-full bg-tertiary/40"></div>
-<div class="flex justify-between items-start mb-4">
-<span class="p-3 bg-surface-container rounded-2xl text-tertiary">
-<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
-</span>
-<span class="text-[10px] font-bold py-1 px-2 bg-tertiary/10 text-tertiary rounded-lg">-2m</span>
-</div>
-<p class="text-[11px] font-bold text-slate-500 uppercase tracking-widest">Avg Response Time</p>
-<h3 class="text-4xl font-headline font-bold mt-1">14m</h3>
-<p class="text-xs text-slate-400 mt-4 flex items-center gap-1">
-<span class="material-symbols-outlined text-xs text-tertiary" data-icon="speed">speed</span>
-                    Optimized since yesterday
-                </p>
-</div>
-<!-- Resolution Rate -->
-<div class="relative overflow-hidden bg-surface-container-low rounded-3xl p-8 group">
-<div class="absolute top-0 left-0 w-1 h-full bg-primary-container/40"></div>
-<div class="flex justify-between items-start mb-4">
-<span class="p-3 bg-surface-container rounded-2xl text-primary-container">
-<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
-</span>
-<div class="flex -space-x-2">
-<img class="w-6 h-6 rounded-full border-2 border-surface-container-low" data-alt="Agent Avatar Small" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIALXI3XwgiSxfCrHqKeJYC5ltbpT1bEI816EE3xMsScNbhFjYl6udIhdWDVA_Xxyyx6MRPbr3DARftsKCd2anZHUYuGK-gEKDDSgNLYxGJUs_3AMBhMz9nH1MqBLpPv-GIQB1Ac39m5MjHrIslxQqmtxbFo0ax35Yosw0FwzD_Zc_LrAIX_UDypjCiIBaiZLWRf7-B4glR56ZRHEbBgkpdrRI7oZUHi7RX0FD1jQ_sLl2_e3BDAOl0nPbZkK15M6ewi4wpejJZTU"/>
-<img class="w-6 h-6 rounded-full border-2 border-surface-container-low" data-alt="Agent Avatar Small" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz8zrgZvDsl0pvPhSXFjQHj-VBVHsMQVTgI9HWHxiG-O7x3zW9nuXYtlMtcE-Ke0hpdsYadVSDY0P-zA7CrLCpkvk_FPSExPoWnAPlVH93ixj0KyLJleEn06JssumllorEPeEVWVrSiGkcdVsvjuQE2zUQlsPDcVxyrW1eOau4O3ycgLA68vCg0f43qDXHIyKRtbgXULOaJ1Po2TlPMvEn1ZHWwIACVFRAiEMT04Irempz650WjzEx2jyWB8v7Hn89oknBv8vON5A"/>
-</div>
-</div>
-<p class="text-[11px] font-bold text-slate-500 uppercase tracking-widest">Resolution Rate</p>
-<h3 class="text-4xl font-headline font-bold mt-1">94.2%</h3>
-<div class="w-full bg-surface-container-highest h-1.5 rounded-full mt-5 overflow-hidden">
-<div class="h-full bg-gradient-to-r from-primary to-primary-container w-[94.2%] drop-shadow-[0_0_8px_rgba(192,193,255,0.4)]"></div>
-</div>
-</div>
-</section>
-<!-- Kanban Board Section -->
-<section class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-<!-- Column: New -->
-<div class="space-y-6">
-<div class="flex items-center justify-between px-2">
-<div class="flex items-center gap-3">
-<div class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></div>
-<h4 class="font-headline font-bold text-lg">New</h4>
-<span class="px-2 py-0.5 bg-surface-container-highest rounded-lg text-[10px] font-bold text-slate-400">3</span>
-</div>
-<button class="text-slate-500 hover:text-on-surface">
-<span class="material-symbols-outlined text-xl" data-icon="more_horiz">more_horiz</span>
-</button>
-</div>
-<div class="space-y-4">
-<!-- Ticket Card 1 -->
-<div class="bg-surface-container hover:bg-surface-bright p-5 rounded-2xl transition-all cursor-pointer group border border-outline-variant/10">
-<div class="flex justify-between items-start mb-3">
-<span class="px-2 py-1 bg-tertiary/10 text-tertiary text-[9px] font-bold rounded uppercase tracking-wider">High Priority</span>
-<span class="text-[10px] text-slate-500 font-medium">5m ago</span>
-</div>
-<h5 class="font-semibold text-on-surface mb-2 group-hover:text-primary transition-colors">Login issue</h5>
-<div class="flex items-center gap-3 mt-4">
-<img class="w-6 h-6 rounded-full" data-alt="User Sarah Miller" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxivacoSAM4dVrHqvlrIVKp0TUE_ajzGZ_OLz121EvpKKUZIiGGLp7CaoY_0tVqIfDsH-UW7q3NjqHqZdBuutqOQx4l_a3Nefq5t_ZdCHD3HIdq3oF01Bjk3ifKSRlySo98U0YOs-zQSdSPf3hXcVD8ZUkWG6KHaUdQaq20fHwLygw0fiLWlvL9wgLqgjQH5ZA52H9oL-K8--G-nRbIRmbJ2ksQk_evj-7SPg0nILmcWYafZLjVPclks1FQ-JEw3oAztHS1B78mdw"/>
-<span class="text-xs font-medium text-slate-400">Sarah Miller</span>
-</div>
-</div>
-<!-- Ticket Card 2 -->
-<div class="bg-surface-container hover:bg-surface-bright p-5 rounded-2xl transition-all cursor-pointer group border border-outline-variant/10">
-<div class="flex justify-between items-start mb-3">
-<span class="px-2 py-1 bg-primary/10 text-primary text-[9px] font-bold rounded uppercase tracking-wider">Billing</span>
-<span class="text-[10px] text-slate-500 font-medium">12m ago</span>
-</div>
-<h5 class="font-semibold text-on-surface mb-2 group-hover:text-primary transition-colors">Payment failed</h5>
-<div class="flex items-center gap-3 mt-4">
-<img class="w-6 h-6 rounded-full" data-alt="User John Doe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhu1hUfn4oj6C52hdIC1_fKNrJMynNYaZcYrSKduYgI8YOoaTz4UEGBIhifO4uX1X2BLTVNAPMthdL1twCFYkbqWg8MZnfawd-UNBA-VoKxjB6naOU5FxbkCe2Ojkep-qITk6LahkVOwK-ri7uNIptJqWlFIErtFTS7neewpmijgKgNbXlPPVqB56n8YNITUGUoYgBSny-0wQ14ssHpdcX8RHZzosxPlSoVHPn4JvhSfhZ6LkC2yGIAvP-_hk-_ywT6Vq5E0Zn2ts"/>
-<span class="text-xs font-medium text-slate-400">John Doe</span>
-</div>
-</div>
-<!-- Ticket Card 3 -->
-<div class="bg-surface-container hover:bg-surface-bright p-5 rounded-2xl transition-all cursor-pointer group border border-outline-variant/10">
-<div class="flex justify-between items-start mb-3">
-<span class="px-2 py-1 bg-surface-container-highest text-slate-400 text-[9px] font-bold rounded uppercase tracking-wider">Technical</span>
-<span class="text-[10px] text-slate-500 font-medium">20m ago</span>
-</div>
-<h5 class="font-semibold text-on-surface mb-2 group-hover:text-primary transition-colors">Bug in dashboard</h5>
-<div class="flex items-center gap-3 mt-4">
-<img class="w-6 h-6 rounded-full" data-alt="User Elena Rossi" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp3UzlrxpaAN5kjmSPQpl-IiL8OJIUt3AkaTUqs1uVR_vBlvMbkrUnuSm4A2JE7_MWd2X4zMkPxZGjyol6sbHdUl9w2_JJ5cSDa6DakSoCXakzWi6FteXf8w2iSG1PWVbUA8mupEKOo8qBIpel0u-S3BYXUudbKat2-b3AdFwEtW6RBOZ44qOi47cqx5TpUpg0RheLEk5m-TuAsXSI11yr9oZNfbBed6ryrLAjvsEibabYVLLgk-zc65b2hzUzNhuVouKrDBM3hLI"/>
-<span class="text-xs font-medium text-slate-400">Elena Rossi</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Column: In Progress -->
-<div class="space-y-6">
-<div class="flex items-center justify-between px-2">
-<div class="flex items-center gap-3">
-<div class="w-2 h-2 rounded-full bg-primary"></div>
-<h4 class="font-headline font-bold text-lg">In Progress</h4>
-<span class="px-2 py-0.5 bg-surface-container-highest rounded-lg text-[10px] font-bold text-slate-400">2</span>
-</div>
-</div>
-<div class="space-y-4">
-<!-- Ticket Card 4 -->
-<div class="bg-surface-container hover:bg-surface-bright p-5 rounded-2xl transition-all cursor-pointer group border border-outline-variant/10 relative overflow-hidden">
-<div class="absolute top-0 right-0 p-2">
-<span class="material-symbols-outlined text-primary text-sm" data-icon="auto_mode">auto_mode</span>
-</div>
-<div class="flex justify-between items-start mb-3">
-<span class="px-2 py-1 bg-error/10 text-error text-[9px] font-bold rounded uppercase tracking-wider">Critical</span>
-<span class="text-[10px] text-slate-500 font-medium">Started 1h ago</span>
-</div>
-<h5 class="font-semibold text-on-surface mb-2 group-hover:text-primary transition-colors">API Timeout</h5>
-<div class="flex items-center justify-between mt-4">
-<div class="flex items-center gap-3">
-<img class="w-6 h-6 rounded-full" data-alt="User Marcus Thorne" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfEibBY48aHtBzvhHKMljyPfqg08JvvHacnIYmxAA7EjSlTqyfrQM5oIXoqOoeKBzn_9W-CNLlFVqlVUkYfBP-XeoNUdODGeEP0PXSx0pnWB9HxkjLK5E5Konvs7wI9RXknyJXY3Xg5gS5E5xGT6mmSSESTZAue-NtOhp7JFQ3N9VYvW3AlTsXJGTom16yvXVSX9NLXAwKwkms3h4RwhGOHqI0345BcfTdeQBXKNUUCHRJsjEknBdiwK1Dt6m9bHHmcD2W-rxtLNM"/>
-<span class="text-xs font-medium text-slate-400">Marcus Thorne</span>
-</div>
-<div class="flex -space-x-1">
-<img class="w-4 h-4 rounded-full border border-surface-container" data-alt="Assignee" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD89H6dfAEJRQd-Aejew-PkPKdw5LtwkOJj1uWhxsULbTG4ifg5iF8c1Ka8RtaPc2RnuX1bxrMOTnZaxzHt8rnznqag1emAVNYZlMPLOMJWlfZWnN7VzQ0xuRG3iNnkrHlK4RZl-SHJbBpdCdKkRFLB_Yz1JXLZkuJwTJU9eQP1Q_LOyHbI9CpGVYKOhwT0BBIT99fag4MCRTfdrCDXVgICpFYTqGsvRGms0PsgVP26cmeGJxNdVP8RqXvhO3jdHtLqLz9DY4hWLVY"/>
-</div>
-</div>
-</div>
-<!-- Ticket Card 5 -->
-<div class="bg-surface-container hover:bg-surface-bright p-5 rounded-2xl transition-all cursor-pointer group border border-outline-variant/10">
-<div class="flex justify-between items-start mb-3">
-<span class="px-2 py-1 bg-primary/10 text-primary text-[9px] font-bold rounded uppercase tracking-wider">UI/UX</span>
-<span class="text-[10px] text-slate-500 font-medium">Started 2h ago</span>
-</div>
-<h5 class="font-semibold text-on-surface mb-2 group-hover:text-primary transition-colors">UI Clipping issue</h5>
-<div class="flex items-center gap-3 mt-4">
-<img class="w-6 h-6 rounded-full" data-alt="User Lydia Chen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJHZMQOHV-aSMRxbGjmyz8Gbq39ntZdb_ULNQi5TmiypwHwp4oWtEV92iXGqadwZA6K7efFOOgBtoE4e7_I48Ia9IuBakNH-XnRIi7n4pC2cp-cyRAqKStPme6H_q71Bwj4Ql37Vcyqm1QoD8e4-B7E0ZZ8mFud6Tzqiy7Yfn9J90r6G8R--A7k9OsXc82ePpNdU2GmndILS_LjrIRu6hTYzveBJWGcwX9IRnyzJFlfa8kIH4I7ylay_EBEXA3qY7WBMX2dLMIFzE"/>
-<span class="text-xs font-medium text-slate-400">Lydia Chen</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Column: Resolved -->
-<div class="space-y-6">
-<div class="flex items-center justify-between px-2">
-<div class="flex items-center gap-3">
-<div class="w-2 h-2 rounded-full bg-emerald-400"></div>
-<h4 class="font-headline font-bold text-lg">Resolved</h4>
-<span class="px-2 py-0.5 bg-surface-container-highest rounded-lg text-[10px] font-bold text-slate-400">2</span>
-</div>
-</div>
-<div class="space-y-4 opacity-70">
-<!-- Ticket Card 6 -->
-<div class="bg-surface-container hover:bg-surface-bright p-5 rounded-2xl transition-all cursor-pointer group border border-outline-variant/10">
-<div class="flex justify-between items-start mb-3">
-<span class="px-2 py-1 bg-emerald-400/10 text-emerald-400 text-[9px] font-bold rounded uppercase tracking-wider">Success</span>
-<span class="text-[10px] text-slate-500 font-medium">1h ago</span>
-</div>
-<h5 class="font-semibold text-slate-400 mb-2 line-through">Reset Password</h5>
-<div class="flex items-center gap-3 mt-4">
-<img class="w-6 h-6 rounded-full" data-alt="User Alex Rivera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBONbTzBcteSsx_mYfmEuDMKo9zmoTulP_l7EO3y7cz4d815v80Ds3jYUPeDvGofaMh5ZGde4FMoZOThk2JzvodR2K8g_C2e1rPAWrDfn7lD9ydC5-WjcMKKdfCgtTwki2OlVkl83nk8oqDqMVhxxzGHKdeHNGSuS5yKCtnnh0aOjnKT0JPy7FwgkxtV_EAxm-qH1186DFBHLAEjZ-UBgiFFzdvgvvsTJOtqz2g2em5xKFb_jUUA8s5-prGpWX44M9Ku6ztvUBfIy8"/>
-<span class="text-xs font-medium text-slate-500">Alex Rivera</span>
-</div>
-</div>
-<!-- Ticket Card 7 -->
-<div class="bg-surface-container hover:bg-surface-bright p-5 rounded-2xl transition-all cursor-pointer group border border-outline-variant/10">
-<div class="flex justify-between items-start mb-3">
-<span class="px-2 py-1 bg-emerald-400/10 text-emerald-400 text-[9px] font-bold rounded uppercase tracking-wider">Onboarding</span>
-<span class="text-[10px] text-slate-500 font-medium">3h ago</span>
-</div>
-<h5 class="font-semibold text-slate-400 mb-2 line-through">New account setup</h5>
-<div class="flex items-center gap-3 mt-4">
-<img class="w-6 h-6 rounded-full" data-alt="User Chloe Smith" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRmsEuqzpbhz5ykMo11z3wiaNDhvTaF0zsEBnN0tz7xQ4WX7oNjrmui--RtiaUZvH3rbqiDhCGXqHn72lyEsaUTr8TqKpE0u1QSCmyuLLONLZGP49D3eqPcY6SAVJJ-iWZydamc6VhH8gucaBAiQxLxAN3Q5A_e5Jj3Z_wXbrI9T9zSjChtQDzAIm4Sqpg1YUsG7sqnTZpoHGKChBvAZQtx30jTvs6LGsv6bVwzLrcxXuft7aL3iloG0u3guQzvB-5Cfv7PMS7T7k"/>
-<span class="text-xs font-medium text-slate-500">Chloe Smith</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Bottom Detail Section: Mini Lists -->
-<section class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
-<div>
-<div class="flex items-center justify-between mb-8">
-<h3 class="font-headline font-bold text-xl">Recent Activity</h3>
-<div class="flex items-center gap-2">
-<div class="w-1 h-1 rounded-full bg-primary"></div>
-<a class="text-xs font-bold text-primary uppercase tracking-widest hover:underline" href="#">View All</a>
-</div>
-</div>
-<div class="space-y-4">
-<div class="flex items-center gap-4 p-4 hover:bg-surface-bright rounded-2xl transition-all cursor-pointer group">
-<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
-<span class="material-symbols-outlined" data-icon="forum">forum</span>
-</div>
-<div class="flex-1">
-<p class="text-sm font-semibold">New message from Marcus Thorne</p>
-<p class="text-[10px] text-slate-500">Regarding "API Timeout" ticket #842</p>
-</div>
-<span class="text-[10px] text-slate-500 font-bold">2m</span>
-</div>
-<div class="flex items-center gap-4 p-4 hover:bg-surface-bright rounded-2xl transition-all cursor-pointer group">
-<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-tertiary">
-<span class="material-symbols-outlined" data-icon="assignment_turned_in">assignment_turned_in</span>
-</div>
-<div class="flex-1">
-<p class="text-sm font-semibold">Alex Rivera resolved "Reset Password"</p>
-<p class="text-[10px] text-slate-500">Ticket completed in 4 minutes</p>
-</div>
-<span class="text-[10px] text-slate-500 font-bold">1h</span>
-</div>
-</div>
-</div>
-<!-- Team Performance -->
-<div class="bg-surface-container-low p-8 rounded-3xl">
-<h3 class="font-headline font-bold text-xl mb-8">Team Performance</h3>
-<div class="space-y-6">
-<div>
-<div class="flex justify-between items-center mb-2">
-<span class="text-xs font-bold text-on-surface">Alex Rivera</span>
-<span class="text-xs font-bold text-primary">48 Resolved</span>
-</div>
-<div class="w-full bg-surface-container-highest h-1 rounded-full">
-<div class="h-full bg-primary w-[85%] rounded-full shadow-[0_0_8px_rgba(192,193,255,0.4)]"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between items-center mb-2">
-<span class="text-xs font-bold text-on-surface">Lydia Chen</span>
-<span class="text-xs font-bold text-tertiary">32 Resolved</span>
-</div>
-<div class="w-full bg-surface-container-highest h-1 rounded-full">
-<div class="h-full bg-tertiary w-[60%] rounded-full shadow-[0_0_8px_rgba(255,183,131,0.4)]"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between items-center mb-2">
-<span class="text-xs font-bold text-on-surface">Marcus Thorne</span>
-<span class="text-xs font-bold text-primary-container">29 Resolved</span>
-</div>
-<div class="w-full bg-surface-container-highest h-1 rounded-full">
-<div class="h-full bg-primary-container w-[52%] rounded-full shadow-[0_0_8px_rgba(128,131,255,0.4)]"></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-    <!-- Footer Placeholder -->
-    <!-- 
-  XenonOS Shared Component: Footer (v5.0 - New Typography System)
--->
-<footer class="mt-12 px-8 py-6 border-t border-[var(--color-outline-variant)]/15 bg-[var(--color-surface)] flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-300 outfit">
-    <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">© 2024 Obsidian Architect • System Status: <span class="text-[var(--color-success)]">Operational</span></p>
-    <div class="flex gap-4 items-center">
-        <span class="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse shadow-[0_0_10px_rgba(99,102,241,0.4)]"></span>
-        <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Region: Global-Alpha-1</span>
-    </div>
-</footer>
 
-</main>
+    <!-- === MAIN CONTENT === -->
+    <main class="flex-1 min-h-screen flex flex-col">
+
+        <!-- === PAGE CONTENT === -->
+        <div class="p-8">
+
+            <!-- === HEADER SECTION === -->
+            <section class="mb-12 flex justify-between items-end">
+                <div>
+                    <p class="text-xs font-bold text-primary uppercase tracking-[0.2em] mb-2">Operational Overview</p>
+                    <h2 class="text-5xl font-headline font-light tracking-tight text-on-surface">Support Dashboard</h2>
+                </div>
+                <div class="flex gap-3">
+                    <button class="px-6 py-2.5 bg-surface-container hover:bg-surface-bright text-on-surface rounded-xl text-sm font-medium transition-all">Export Report</button>
+                    <button class="px-6 py-2.5 bg-primary text-on-primary-container rounded-xl text-sm font-bold shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all">New Ticket</button>
+                </div>
+            </section>
+
+            <!-- === KPI BENTO GRID === -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <!-- Total Tickets -->
+                <div class="relative overflow-hidden bg-surface-container-low rounded-3xl p-8 group">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-primary/40"></div>
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/5 blur-3xl rounded-full"></div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="p-3 bg-surface-container rounded-2xl text-primary">
+                            <span class="material-symbols-outlined">confirmation_number</span>
+                        </span>
+                        <span class="text-[10px] font-bold py-1 px-2 bg-primary/10 text-primary rounded-lg">+12%</span>
+                    </div>
+                    <p class="text-[11px] font-bold text-slate-500 uppercase tracking-widest">Total Tickets</p>
+                    <h3 class="text-4xl font-headline font-bold mt-1">1,284</h3>
+                    <p class="text-xs text-slate-400 mt-4 flex items-center gap-1">
+                        <span class="material-symbols-outlined text-xs text-primary">trending_up</span>
+                        vs last 30 days
+                    </p>
+                </div>
+
+                <!-- Avg Response Time -->
+                <div class="relative overflow-hidden bg-surface-container-low rounded-3xl p-8 group">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-tertiary/40"></div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="p-3 bg-surface-container rounded-2xl text-tertiary">
+                            <span class="material-symbols-outlined">schedule</span>
+                        </span>
+                        <span class="text-[10px] font-bold py-1 px-2 bg-tertiary/10 text-tertiary rounded-lg">-2m</span>
+                    </div>
+                    <p class="text-[11px] font-bold text-slate-500 uppercase tracking-widest">Avg Response Time</p>
+                    <h3 class="text-4xl font-headline font-bold mt-1">14m</h3>
+                    <p class="text-xs text-slate-400 mt-4 flex items-center gap-1">
+                        <span class="material-symbols-outlined text-xs text-tertiary">speed</span>
+                        Optimized since yesterday
+                    </p>
+                </div>
+
+                <!-- Resolution Rate -->
+                <div class="relative overflow-hidden bg-surface-container-low rounded-3xl p-8 group">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-primary-container/40"></div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="p-3 bg-surface-container rounded-2xl text-primary-container">
+                            <span class="material-symbols-outlined">task_alt</span>
+                        </span>
+                        <div class="flex -space-x-2">
+                            <img class="w-6 h-6 rounded-full border-2 border-surface-container-low" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIALXI3XwgiSxfCrHqKeJYC5ltbpT1bEI816EE3xMsScNbhFjYl6udIhdWDVA_Xxyyx6MRPbr3DARftsKCd2anZHUYuGK-gEKDDSgNLYxGJUs_3AMBhMz9nH1MqBLpPv-GIQB1Ac39m5MjHrIslxQqmtxbFo0ax35Yosw0FwzD_Zc_LrAIX_UDypjCiIBaiZLWRf7-B4glR56ZRHEbBgkpdrRI7oZUHi7RX0FD1jQ_sLl2_e3BDAOl0nPbZkK15M6ewi4wpejJZTU"/>
+                            <img class="w-6 h-6 rounded-full border-2 border-surface-container-low" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz8zrgZvDsl0pvPhSXFjQHj-VBVHsMQVTgI9HWHxiG-O7x3zW9nuXYtlMtcE-Ke0hpdsYadVSDY0P-zA7CrLCpkvk_FPSExPoWnAPlVH93ixj0KyLJleEn06JssumllorEPeEVWVrSiGkcdVsvjuQE2zUQlsPDcVxyrW1eOau4O3ycgLA68vCg0f43qDXHIyKRtbgXULOaJ1Po2TlPMvEn1ZHWwIACVFRAiEMT04Irempz650WjzEx2jyWB8v7Hn89oknBv8vON5A"/>
+                        </div>
+                    </div>
+                    <p class="text-[11px] font-bold text-slate-500 uppercase tracking-widest">Resolution Rate</p>
+                    <h3 class="text-4xl font-headline font-bold mt-1">94.2%</h3>
+                    <div class="w-full bg-surface-container-highest h-1.5 rounded-full mt-5 overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-primary to-primary-container w-[94.2%] drop-shadow-[0_0_8px_rgba(192,193,255,0.4)]"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- === KANBAN BOARD SECTION === -->
+            <section class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+
+                <!-- Column: New -->
+                <div class="space-y-6">
+                    <div class="flex items-center justify-between px-2">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></div>
+                            <h4 class="font-headline font-bold text-lg">New</h4>
+                            <span class="px-2 py-0.5 bg-surface-container-highest rounded-lg text-[10px] font-bold text-slate-400">3</span>
+                        </div>
+                        <button class="text-slate-500 hover:text-on-surface">
+                            <span class="material-symbols-outlined text-xl">more_horiz</span>
+                        </button>
+                    </div>
+                    <div class="space-y-4">
+                        <!-- Ticket Card 1 -->
+                        <div class="bg-surface-container hover:bg-surface-bright p-5 rounded-2xl transition-all cursor-pointer group border border-outline-variant/10">
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="px-2 py-1 bg-tertiary/10 text-tertiary text-[9px] font-bold rounded uppercase tracking-wider">High Priority</span>
+                                <span class="text-[10px] text-slate-500 font-medium">5m ago</span>
+                            </div>
+                            <h5 class="font-semibold text-on-surface mb-2 group-hover:text-primary transition-colors">Login issue</h5>
+                            <div class="flex items-center gap-3 mt-4">
+                                <img class="w-6 h-6 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxivacoSAM4dVrHqvlrIVKp0TUE_ajzGZ_OLz121EvpKKUZIiGGLp7CaoY_0tVqIfDsH-UW7q3NjqHqZdBuutqOQx4l_a3Nefq5t_ZdCHD3HIdq3oF01Bjk3ifKSRlySo98U0YOs-zQSdSPf3hXcVD8ZUkWG6KHaUdQaq20fHwLygw0fiLWlvL9wgLqgjQH5ZA52H9oL-K8--G-nRbIRmbJ2ksQk_evj-7SPg0nILmcWYafZLjVPclks1FQ-JEw3oAztHS1B78mdw"/>
+                                <span class="text-xs font-medium text-slate-400">Sarah Miller</span>
+                            </div>
+                        </div>
+
+                        <!-- Ticket Card 2 -->
+                        <div class="bg-surface-container hover:bg-surface-bright p-5 rounded-2xl transition-all cursor-pointer group border border-outline-variant/10">
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="px-2 py-1 bg-primary/10 text-primary text-[9px] font-bold rounded uppercase tracking-wider">Billing</span>
+                                <span class="text-[10px] text-slate-500 font-medium">12m ago</span>
+                            </div>
+                            <h5 class="font-semibold text-on-surface mb-2 group-hover:text-primary transition-colors">Payment failed</h5>
+                            <div class="flex items-center gap-3 mt-4">
+                                <img class="w-6 h-6 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhu1hUfn4oj6C52hdIC1_fKNrJMynNYaZcYrSKduYgI8YOoaTz4UEGBIhifO4uX1X2BLTVNAPMthdL1twCFYkbqWg8MZnfawd-UNBA-VoKxjB6naOU5FxbkCe2Ojkep-qITk6LahkVOwK-ri7uNIptJqWlFIErtFTS7neewpmijgKgNbXlPPVqB56n8YNITUGUoYgBSny-0wQ14ssHpdcX8RHZzosxPlSoVHPn4JvhSfhZ6LkC2yGIAvP-_hk-_ywT6Vq5E0Zn2ts"/>
+                                <span class="text-xs font-medium text-slate-400">John Doe</span>
+                            </div>
+                        </div>
+
+                        <!-- Ticket Card 3 -->
+                        <div class="bg-surface-container hover:bg-surface-bright p-5 rounded-2xl transition-all cursor-pointer group border border-outline-variant/10">
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="px-2 py-1 bg-surface-container-highest text-slate-400 text-[9px] font-bold rounded uppercase tracking-wider">Technical</span>
+                                <span class="text-[10px] text-slate-500 font-medium">20m ago</span>
+                            </div>
+                            <h5 class="font-semibold text-on-surface mb-2 group-hover:text-primary transition-colors">Bug in dashboard</h5>
+                            <div class="flex items-center gap-3 mt-4">
+                                <img class="w-6 h-6 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp3UzlrxpaAN5kjmSPQpl-IiL8OJIUt3AkaTUqs1uVR_vBlvMbkrUnuSm4A2JE7_MWd2X4zMkPxZGjyol6sbHdUl9w2_JJ5cSDa6DakSoCXakzWi6FteXf8w2iSG1PWVbUA8mupEKOo8qBIpel0u-S3BYXUudbKat2-b3AdFwEtW6RBOZ44qOi47cqx5TpUpg0RheLEk5m-TuAsXSI11yr9oZNfbBed6ryrLAjvsEibabYVLLgk-zc65b2hzUzNhuVouKrDBM3hLI"/>
+                                <span class="text-xs font-medium text-slate-400">Elena Rossi</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column: In Progress -->
+                <div class="space-y-6">
+                    <div class="flex items-center justify-between px-2">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-primary"></div>
+                            <h4 class="font-headline font-bold text-lg">In Progress</h4>
+                            <span class="px-2 py-0.5 bg-surface-container-highest rounded-lg text-[10px] font-bold text-slate-400">2</span>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <!-- Ticket Card 4 -->
+                        <div class="bg-surface-container hover:bg-surface-bright p-5 rounded-2xl transition-all cursor-pointer group border border-outline-variant/10 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 p-2">
+                                <span class="material-symbols-outlined text-primary text-sm">auto_mode</span>
+                            </div>
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="px-2 py-1 bg-error/10 text-error text-[9px] font-bold rounded uppercase tracking-wider">Critical</span>
+                                <span class="text-[10px] text-slate-500 font-medium">Started 1h ago</span>
+                            </div>
+                            <h5 class="font-semibold text-on-surface mb-2 group-hover:text-primary transition-colors">API Timeout</h5>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex items-center gap-3">
+                                    <img class="w-6 h-6 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfEibBY48aHtBzvhHKMljyPfqg08JvvHacnIYmxAA7EjSlTqyfrQM5oIXoqOoeKBzn_9W-CNLlFVqlVUkYfBP-XeoNUdODGeEP0PXSx0pnWB9HxkjLK5E5Konvs7wI9RXknyJXY3Xg5gS5E5xGT6mmSSESTZAue-NtOhp7JFQ3N9VYvW3AlTsXJGTom16yvXVSX9NLXAwKwkms3h4RwhGOHqI0345BcfTdeQBXKNUUCHRJsjEknBdiwK1Dt6m9bHHmcD2W-rxtLNM"/>
+                                    <span class="text-xs font-medium text-slate-400">Marcus Thorne</span>
+                                </div>
+                                <div class="flex -space-x-1">
+                                    <img class="w-4 h-4 rounded-full border border-surface-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD89H6dfAEJRQd-Aejew-PkPKdw5LtwkOJj1uWhxsULbTG4ifg5iF8c1Ka8RtaPc2RnuX1bxrMOTnZaxzHt8rnznqag1emAVNYZlMPLOMJWlfZWnN7VzQ0xuRG3iNnkrHlK4RZl-SHJbBpdCdKkRFLB_Yz1JXLZkuJwTJU9eQP1Q_LOyHbI9CpGVYKOhwT0BBIT99fag4MCRTfdrCDXVgICpFYTqGsvRGms0PsgVP26cmeGJxNdVP8RqXvhO3jdHtLqLz9DY4hWLVY"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ticket Card 5 -->
+                        <div class="bg-surface-container hover:bg-surface-bright p-5 rounded-2xl transition-all cursor-pointer group border border-outline-variant/10">
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="px-2 py-1 bg-primary/10 text-primary text-[9px] font-bold rounded uppercase tracking-wider">UI/UX</span>
+                                <span class="text-[10px] text-slate-500 font-medium">Started 2h ago</span>
+                            </div>
+                            <h5 class="font-semibold text-on-surface mb-2 group-hover:text-primary transition-colors">UI Clipping issue</h5>
+                            <div class="flex items-center gap-3 mt-4">
+                                <img class="w-6 h-6 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJHZMQOHV-aSMRxbGjmyz8Gbq39ntZdb_ULNQi5TmiypwHwp4oWtEV92iXGqadwZA6K7efFOOgBtoE4e7_I48Ia9IuBakNH-XnRIi7n4pC2cp-cyRAqKStPme6H_q71Bwj4Ql37Vcyqm1QoD8e4-B7E0ZZ8mFud6Tzqiy7Yfn9J90r6G8R--A7k9OsXc82ePpNdU2GmndILS_LjrIRu6hTYzveBJWGcwX9IRnyzJFlfa8kIH4I7ylay_EBEXA3qY7WBMX2dLMIFzE"/>
+                                <span class="text-xs font-medium text-slate-400">Lydia Chen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column: Resolved -->
+                <div class="space-y-6">
+                    <div class="flex items-center justify-between px-2">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
+                            <h4 class="font-headline font-bold text-lg">Resolved</h4>
+                            <span class="px-2 py-0.5 bg-surface-container-highest rounded-lg text-[10px] font-bold text-slate-400">2</span>
+                        </div>
+                    </div>
+                    <div class="space-y-4 opacity-70">
+                        <!-- Ticket Card 6 -->
+                        <div class="bg-surface-container hover:bg-surface-bright p-5 rounded-2xl transition-all cursor-pointer group border border-outline-variant/10">
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="px-2 py-1 bg-emerald-400/10 text-emerald-400 text-[9px] font-bold rounded uppercase tracking-wider">Success</span>
+                                <span class="text-[10px] text-slate-500 font-medium">1h ago</span>
+                            </div>
+                            <h5 class="font-semibold text-slate-400 mb-2 line-through">Reset Password</h5>
+                            <div class="flex items-center gap-3 mt-4">
+                                <img class="w-6 h-6 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBONbTzBcteSsx_mYfmEuDMKo9zmoTulP_l7EO3y7cz4d815v80Ds3jYUPeDvGofaMh5ZGde4FMoZOThk2JzvodR2K8g_C2e1rPAWrDfn7lD9ydC5-WjcMKKdfCgtTwki2OlVkl83nk8oqDqMVhxxzGHKdeHNGSuS5yKCtnnh0aOjnKT0JPy7FwgkxtV_EAxm-qH1186DFBHLAEjZ-UBgiFFzdvgvvsTJOtqz2g2em5xKFb_jUUA8s5-prGpWX44M9Ku6ztvUBfIy8"/>
+                                <span class="text-xs font-medium text-slate-500">Alex Rivera</span>
+                            </div>
+                        </div>
+
+                        <!-- Ticket Card 7 -->
+                        <div class="bg-surface-container hover:bg-surface-bright p-5 rounded-2xl transition-all cursor-pointer group border border-outline-variant/10">
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="px-2 py-1 bg-emerald-400/10 text-emerald-400 text-[9px] font-bold rounded uppercase tracking-wider">Onboarding</span>
+                                <span class="text-[10px] text-slate-500 font-medium">3h ago</span>
+                            </div>
+                            <h5 class="font-semibold text-slate-400 mb-2 line-through">New account setup</h5>
+                            <div class="flex items-center gap-3 mt-4">
+                                <img class="w-6 h-6 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRmsEuqzpbhz5ykMo11z3wiaNDhvTaF0zsEBnN0tz7xQ4WX7oNjrmui--RtiaUZvH3rbqiDhCGXqHn72lyEsaUTr8TqKpE0u1QSCmyuLLONLZGP49D3eqPcY6SAVJJ-iWZydamc6VhH8gucaBAiQxLxAN3Q5A_e5Jj3Z_wXbrI9T9zSjChtQDzAIm4Sqpg1YUsG7sqnTZpoHGKChBvAZQtx30jTvs6LGsv6bVwzLrcxXuft7aL3iloG0u3guQzvB-5Cfv7PMS7T7k"/>
+                                <span class="text-xs font-medium text-slate-500">Chloe Smith</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- === BOTTOM DETAIL SECTION: MINI LISTS === -->
+            <section class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="flex items-center justify-between mb-8">
+                        <h3 class="font-headline font-bold text-xl">Recent Activity</h3>
+                        <div class="flex items-center gap-2">
+                            <div class="w-1 h-1 rounded-full bg-primary"></div>
+                            <a class="text-xs font-bold text-primary uppercase tracking-widest hover:underline" href="#">View All</a>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 p-4 hover:bg-surface-bright rounded-2xl transition-all cursor-pointer group">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined">forum</span>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-semibold">New message from Marcus Thorne</p>
+                                <p class="text-[10px] text-slate-500">Regarding "API Timeout" ticket #842</p>
+                            </div>
+                            <span class="text-[10px] text-slate-500 font-bold">2m</span>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 hover:bg-surface-bright rounded-2xl transition-all cursor-pointer group">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-tertiary">
+                                <span class="material-symbols-outlined">assignment_turned_in</span>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-semibold">Alex Rivera resolved "Reset Password"</p>
+                                <p class="text-[10px] text-slate-500">Ticket completed in 4 minutes</p>
+                            </div>
+                            <span class="text-[10px] text-slate-500 font-bold">1h</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Performance -->
+                <div class="bg-surface-container-low p-8 rounded-3xl">
+                    <h3 class="font-headline font-bold text-xl mb-8">Team Performance</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-xs font-bold text-on-surface">Alex Rivera</span>
+                                <span class="text-xs font-bold text-primary">48 Resolved</span>
+                            </div>
+                            <div class="w-full bg-surface-container-highest h-1 rounded-full">
+                                <div class="h-full bg-primary w-[85%] rounded-full shadow-[0_0_8px_rgba(192,193,255,0.4)]"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-xs font-bold text-on-surface">Lydia Chen</span>
+                                <span class="text-xs font-bold text-tertiary">32 Resolved</span>
+                            </div>
+                            <div class="w-full bg-surface-container-highest h-1 rounded-full">
+                                <div class="h-full bg-tertiary w-[60%] rounded-full shadow-[0_0_8px_rgba(255,183,131,0.4)]"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-xs font-bold text-on-surface">Marcus Thorne</span>
+                                <span class="text-xs font-bold text-primary-container">29 Resolved</span>
+                            </div>
+                            <div class="w-full bg-surface-container-highest h-1 rounded-full">
+                                <div class="h-full bg-primary-container w-[52%] rounded-full shadow-[0_0_8px_rgba(128,131,255,0.4)]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
+
+        <!-- === FOOTER === -->
+        <footer class="mt-12 px-8 py-6 border-t border-outline-variant/15 bg-surface flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-300 outfit">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">© 2024 Obsidian Architect • System Status: <span class="text-success">Operational</span></p>
+            <div class="flex gap-4 items-center">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(99,102,241,0.4)]"></span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Region: Global-Alpha-1</span>
+            </div>
+        </footer>
+
     </main>
 
-    <script src="../../assets/js/app.js"></script></body>
+    <!-- === SCRIPTS === -->
+    <script src="../../assets/js/app.js"></script>
+</body>
 </html>
-
-
