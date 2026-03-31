@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>XenonOS | Profile</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script src="../../assets/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body class="bg-background text-on-surface">
+    <!-- ==================== MAIN CONTENT CANVAS ==================== -->
+    <main class="min-h-screen flex flex-col">
+        <!-- === TOP NAVIGATION BAR === -->
+        <header class="sticky top-0 w-full z-50 bg-[#1c1f2a]/70 backdrop-blur-xl flex justify-between items-center px-8 py-4">
+            <div class="flex items-center gap-4 flex-1">
+                <div class="relative w-full max-w-md">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+                    <input class="w-full bg-surface-container-lowest border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary/40 text-on-surface" placeholder="Search resources..." type="text"/>
+                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-4">
+                    <button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-colors">
+                        <span class="material-symbols-outlined">notifications</span>
+                    </button>
+                    <button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-colors">
+                        <span class="material-symbols-outlined">settings</span>
+                    </button>
+                </div>
+                <div class="h-8 w-[1px] bg-outline-variant/20"></div>
+                <div class="flex items-center gap-3">
+                    <div class="text-right">
+                        <p class="text-xs font-bold outfit">Alex Sterling</p>
+                        <p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Executive Admin</p>
+                    </div>
+                    <img alt="User profile avatar" class="w-10 h-10 rounded-full border-2 border-primary/20 object-cover" data-alt="Close up portrait of a professional man in a dark turtleneck with confident expression against a dark textured background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHgIq4oZjlZkGDOlT9vGAj43uTXYADSaxZFsXPcrerrMicPGoC1I2ICsWu1nmpgfIrJgz-vzxk5U0s0UG3RCm8bWjHDSjIRaKN9xn-5VM0Q7jUj2zGxDjZ2F_Trb9PyTJGsKkd0dTIJXOIIy6SwJoVfgrgpNiqeVyk8OZ81XmZzW0igPnBfN1NM7EOwqQBrEGI1yFoKmhtr-qP9n_SqzUIfbr-NWIa0thRM-wlJPuMYmahyxKH-gtc0tYew_1SjZsqj_c3Bq9Dzkc"/>
+                </div>
+            </div>
+        </header>
+
+        <!-- === PROFILE CONTENT GRID === -->
+        <section class="p-8 max-w-7xl mx-auto">
+            <!-- === HEADER IDENTITY SECTION === -->
+            <div class="relative rounded-[2rem] overflow-hidden mb-8 bg-surface-container-low p-8 flex flex-col md:flex-row items-end gap-8">
+                <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-r from-primary/10 to-transparent"></div>
+                <div class="relative group">
+                    <img alt="Profile picture" class="w-32 h-32 rounded-3xl object-cover border-4 border-surface shadow-2xl relative z-10" data-alt="Professional headshot of a creative executive with short hair, warm studio lighting, dark moody background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsU3ctmBybwKK14n-vmI9F3cskKcjLRTNs5LhZShBoZ5zIB5F59XXrC6dPaa6Fyx4fxoVVacaX3BWOKQ3NJ4i5Udj0ouRb9W9Dpqpg9OpiPcTu8NxrVdq8zL2rRU3_rUaNP9sS7yn5CBP12hF8rE8nEqSAzO7Ph2Bixj0tdis_YbuK_J_huGdeucA15UgkRezAo30uyY_fChhZSiHhfYUycn0Oc4zrz8QZ2WggJB7l4URo71jZsh3b9JhnC23OE8s7MyvQrdls-S0"/>
+                    <button class="absolute -bottom-2 -right-2 z-20 w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center text-on-primary shadow-lg border-2 border-surface">
+                        <span class="material-symbols-outlined text-lg">edit</span>
+                    </button>
+                </div>
+                <div class="flex-1 pb-2">
+                    <div class="flex items-center gap-3 mb-1">
+                        <h2 class="syne text-4xl font-extrabold tracking-tighter">Alex Sterling</h2>
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest rounded-full border border-primary/20 flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                            Active
+                        </span>
+                    </div>
+                    <p class="outfit text-on-surface-variant text-lg">Executive Admin • Product Strategy Lead</p>
+                </div>
+                <div class="flex gap-3 pb-2">
+                    <button class="px-6 py-2.5 rounded-xl bg-surface-container-highest border border-outline-variant/10 font-bold outfit text-sm hover:bg-surface-variant transition-all">View Public Profile</button>
+                    <button class="px-6 py-2.5 rounded-xl indigo-glow text-on-primary-fixed font-bold outfit text-sm shadow-[0_0_20px_rgba(99,102,241,0.3)]">Save Changes</button>
+                </div>
+            </div>
+
+            <!-- === MAIN BENTO GRID === -->
+            <div class="grid grid-cols-12 gap-6">
+                <!-- === LEFT COLUMN: PERSONAL INFORMATION === -->
+                <div class="col-span-12 lg:col-span-8 space-y-6">
+                    <!-- === BIO SECTION === -->
+                    <div class="bg-surface-container rounded-[1.5rem] p-8 border border-outline-variant/5">
+                        <h3 class="syne text-xl font-bold mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">description</span>
+                            Professional Summary
+                        </h3>
+                        <textarea class="w-full bg-surface-container-lowest border-none rounded-xl p-4 text-on-surface-variant outfit leading-relaxed focus:ring-1 focus:ring-primary/40 h-32 resize-none" placeholder="Write a short bio...">Driving excellence in cross-functional team coordination and product strategy. Specializing in high-scale infrastructure management and executive operations. Based in the San Francisco tech hub, currently managing XenonOS premium core systems.</textarea>
+                    </div>
+
+                    <!-- === PERSONAL INFORMATION FORM === -->
+                    <div class="bg-surface-container rounded-[1.5rem] p-8 border border-outline-variant/5">
+                        <h3 class="syne text-xl font-bold mb-8 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">badge</span>
+                            Personal Information
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="space-y-2">
+                                <label class="text-[11px] font-bold text-on-surface-variant uppercase tracking-widest pl-1">Full Name</label>
+                                <input class="w-full bg-surface-container-lowest border-none rounded-xl px-4 py-3 text-on-surface outfit focus:ring-1 focus:ring-primary/40" type="text" value="Alex Sterling"/>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[11px] font-bold text-on-surface-variant uppercase tracking-widest pl-1">Job Role</label>
+                                <input class="w-full bg-surface-container-lowest border-none rounded-xl px-4 py-3 text-on-surface outfit focus:ring-1 focus:ring-primary/40" type="text" value="Executive Admin"/>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[11px] font-bold text-on-surface-variant uppercase tracking-widest pl-1">Email Address</label>
+                                <div class="relative">
+                                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">mail</span>
+                                    <input class="w-full bg-surface-container-lowest border-none rounded-xl pl-10 pr-4 py-3 text-on-surface outfit focus:ring-1 focus:ring-primary/40" type="email" value="alex.sterling@xenonos.cloud"/>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[11px] font-bold text-on-surface-variant uppercase tracking-widest pl-1">Phone Number</label>
+                                <div class="relative">
+                                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">phone</span>
+                                    <input class="w-full bg-surface-container-lowest border-none rounded-xl pl-10 pr-4 py-3 text-on-surface outfit focus:ring-1 focus:ring-primary/40" type="tel" value="+1 (555) 942-0192"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- === RIGHT COLUMN: QUICK STATS BENTO === -->
+                <div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+                    <!-- === STATS CARD 1: PROJECTS === -->
+                    <div class="bento-card bg-surface-container rounded-[1.5rem] p-6 border border-outline-variant/5">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined" data-icon="folder">folder</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-primary px-2 py-1 bg-primary/10 rounded-md">MONTHLY</span>
+                        </div>
+                        <p class="text-on-surface-variant text-sm outfit font-medium">Projects Assigned</p>
+                        <h4 class="syne text-5xl font-extrabold tracking-tighter mt-1">12</h4>
+                        <div class="mt-4 flex items-center gap-2">
+                            <span class="text-xs text-primary font-bold outfit">↑ 14%</span>
+                            <span class="text-[10px] text-on-surface-variant uppercase tracking-widest">since last month</span>
+                        </div>
+                    </div>
+
+                    <!-- === STATS CARD 2: TASKS === -->
+                    <div class="bento-card bg-surface-container rounded-[1.5rem] p-6 border border-outline-variant/5">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 bg-tertiary/10 rounded-2xl flex items-center justify-center text-tertiary">
+                                <span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-tertiary px-2 py-1 bg-tertiary/10 rounded-md">LIFETIME</span>
+                        </div>
+                        <p class="text-on-surface-variant text-sm outfit font-medium">Tasks Completed</p>
+                        <h4 class="syne text-5xl font-extrabold tracking-tighter mt-1">842</h4>
+                        <div class="mt-4 w-full h-1 bg-surface-container-lowest rounded-full overflow-hidden">
+                            <div class="h-full bg-tertiary" style="width: 82%"></div>
+                        </div>
+                        <p class="mt-2 text-[10px] text-on-surface-variant uppercase tracking-widest">82% Efficiency Rating</p>
+                    </div>
+
+                    <!-- === STATS CARD 3: ACTIVITY LEVEL === -->
+                    <div class="bento-card bg-surface-container-high rounded-[1.5rem] p-6 border border-primary/20 relative overflow-hidden">
+                        <div class="absolute -right-8 -bottom-8 opacity-10 scale-150">
+                            <span class="material-symbols-outlined text-[120px] text-primary">bolt</span>
+                        </div>
+                        <p class="text-on-surface-variant text-sm outfit font-medium mb-1">Activity Level</p>
+                        <h4 class="syne text-3xl font-extrabold text-primary mb-6">High Density</h4>
+                        <div class="flex items-end gap-1.5 h-16">
+                            <div class="flex-1 bg-primary/20 h-[60%] rounded-t-sm"></div>
+                            <div class="flex-1 bg-primary/20 h-[40%] rounded-t-sm"></div>
+                            <div class="flex-1 bg-primary/20 h-[70%] rounded-t-sm"></div>
+                            <div class="flex-1 bg-primary/40 h-[90%] rounded-t-sm"></div>
+                            <div class="flex-1 bg-primary h-[100%] rounded-t-sm shadow-[0_0_15px_rgba(192,193,255,0.4)]"></div>
+                            <div class="flex-1 bg-primary/60 h-[80%] rounded-t-sm"></div>
+                            <div class="flex-1 bg-primary/30 h-[50%] rounded-t-sm"></div>
+                        </div>
+                        <p class="mt-4 text-[10px] text-on-surface uppercase tracking-widest font-bold">Peak Performance Window</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- === FOOTER META === -->
+            <div class="mt-12 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-on-surface-variant outfit">Last profile update: October 24, 2023 at 14:02 GMT</p>
+                <div class="flex gap-6">
+                    <a class="text-xs text-on-surface-variant hover:text-primary transition-colors outfit font-bold" href="#">Privacy Settings</a>
+                    <a class="text-xs text-on-surface-variant hover:text-primary transition-colors outfit font-bold" href="#">Connected Apps</a>
+                    <a class="text-xs text-on-surface-variant hover:text-primary transition-colors outfit font-bold" href="#">API Access</a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

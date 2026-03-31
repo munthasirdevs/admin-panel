@@ -5,7 +5,14 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Billing - Transactions | Admin Panel</title>
 
-    <!-- Core Assets -->
+    <!-- ===================================================================
+         CORE ASSETS
+         - Tailwind CSS (with forms & container queries plugins)
+         - Custom Tailwind Configuration
+         - Google Fonts (Syne, Outfit, Space Grotesk, Manrope)
+         - Material Symbols Icons
+         - Custom Stylesheets (style.css, responsive.css)
+         ================================================================== -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="../../assets/js/tailwind-config.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&amp;family=Outfit:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
@@ -16,10 +23,15 @@
     <link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary/30">
-    <!-- Main Content Canvas -->
+    <!-- ===================================================================
+         MAIN CONTENT CANVAS
+         - Full viewport height flex container
+         - Contains all page content within max-width constraint
+         ================================================================== -->
     <main class="min-h-screen flex flex-col">
         <section class="p-8 max-w-7xl mx-auto">
-            <!-- === PAGE HEADER & ACTIONS === -->
+            <!-- === PAGE HEADER === -->
+            <!-- Page title, description, and action buttons (Export PDF, CSV Export, New Transaction) -->
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
                 <div>
                     <h2 class="font-headline font-extrabold text-4xl text-on-surface tracking-tight mb-2">Transaction Ledger</h2>
@@ -41,7 +53,8 @@
                 </div>
             </div>
 
-            <!-- === DASHBOARD STATS (MINI BENTO) === -->
+            <!-- === DASHBOARD STATS === -->
+            <!-- Mini Bento grid: Total Volume, Pending Clearance, Primary Gateway stats -->
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
                 <div class="bg-surface-container p-6 rounded-2xl border-l-4 border-primary/40 hover:scale-[1.02] transition-transform duration-400 cursor-default">
                     <p class="text-xs text-on-surface-variant uppercase tracking-widest mb-1">Total Volume</p>
@@ -68,6 +81,7 @@
             </div>
 
             <!-- === FILTERS BAR === -->
+            <!-- Filter controls: Date Range, Payment Method, Status, Clear Filters button -->
             <div class="flex flex-wrap items-center gap-4 mb-8">
                 <div class="flex items-center gap-2 px-3 py-2 bg-surface-container rounded-xl border border-outline-variant/10">
                     <span class="material-symbols-outlined text-sm text-on-surface-variant">calendar_today</span>
@@ -99,10 +113,13 @@
                 <button class="ml-auto text-sm text-primary font-medium hover:underline">Clear all filters</button>
             </div>
 
-            <!-- === TRANSACTION TABLE CONTAINER === -->
+            <!-- === TRANSACTION TABLE === -->
+            <!-- Main transaction ledger table with rounded container and overflow handling -->
             <div class="bg-surface-container rounded-2xl overflow-hidden border border-outline-variant/5">
                 <div class="overflow-x-auto no-scrollbar">
                     <table class="w-full text-left border-collapse">
+                        <!-- === TABLE HEAD === -->
+                        <!-- Column headers: Transaction ID, Date, Client, Method, Status, Amount -->
                         <thead>
                             <tr class="border-b border-outline-variant/10">
                                 <th class="px-6 py-4 text-xs uppercase tracking-widest text-on-surface-variant font-semibold">Transaction ID</th>
@@ -113,8 +130,14 @@
                                 <th class="px-6 py-4 text-xs uppercase tracking-widest text-on-surface-variant font-semibold text-right">Amount</th>
                             </tr>
                         </thead>
+                        <!-- === TABLE BODY === -->
+                        <!-- Transaction rows with hover states and detailed client information -->
                         <tbody class="divide-y divide-outline-variant/5">
-                            <!-- Row 1 -->
+                            <!-- ===================================================================
+                                 TRANSACTION ROW 1
+                                 ID: #TXN-88219 | Status: Completed | Client: Nexus Labs Inc.
+                                 Method: Credit Card | Amount: $12,450.00 | Date: Oct 24, 2023
+                                 ================================================================== -->
                             <tr class="hover:bg-surface-container-high transition-colors group cursor-pointer">
                                 <td class="px-6 py-5">
                                     <span class="text-sm font-mono text-on-surface-variant group-hover:text-on-surface transition-colors">#TXN-88219</span>
@@ -142,7 +165,11 @@
                                 </td>
                             </tr>
 
-                            <!-- Row 2 -->
+                            <!-- ===================================================================
+                                 TRANSACTION ROW 2
+                                 ID: #TXN-88220 | Status: Pending | Client: Solaris Architecture
+                                 Method: Wire Transfer | Amount: $4,800.00 | Date: Oct 23, 2023
+                                 ================================================================== -->
                             <tr class="hover:bg-surface-container-high transition-colors group cursor-pointer">
                                 <td class="px-6 py-5">
                                     <span class="text-sm font-mono text-on-surface-variant group-hover:text-on-surface transition-colors">#TXN-88220</span>
@@ -170,7 +197,11 @@
                                 </td>
                             </tr>
 
-                            <!-- Row 3 -->
+                            <!-- ===================================================================
+                                 TRANSACTION ROW 3
+                                 ID: #TXN-88221 | Status: Completed | Client: Vanguard Estate
+                                 Method: USDC (Polygon) | Amount: $32,000.00 | Date: Oct 21, 2023
+                                 ================================================================== -->
                             <tr class="hover:bg-surface-container-high transition-colors group cursor-pointer">
                                 <td class="px-6 py-5">
                                     <span class="text-sm font-mono text-on-surface-variant group-hover:text-on-surface transition-colors">#TXN-88221</span>
@@ -198,7 +229,11 @@
                                 </td>
                             </tr>
 
-                            <!-- Row 4 -->
+                            <!-- ===================================================================
+                                 TRANSACTION ROW 4
+                                 ID: #TXN-88222 | Status: Failed | Client: Aura Kraft
+                                 Method: Credit Card | Amount: $920.00 | Date: Oct 20, 2023
+                                 ================================================================== -->
                             <tr class="hover:bg-surface-container-high transition-colors group cursor-pointer">
                                 <td class="px-6 py-5">
                                     <span class="text-sm font-mono text-on-surface-variant group-hover:text-on-surface transition-colors">#TXN-88222</span>
@@ -226,7 +261,11 @@
                                 </td>
                             </tr>
 
-                            <!-- Row 5 -->
+                            <!-- ===================================================================
+                                 TRANSACTION ROW 5
+                                 ID: #TXN-88223 | Status: Completed | Client: Quantum UI
+                                 Method: Wire Transfer | Amount: $7,250.00 | Date: Oct 19, 2023
+                                 ================================================================== -->
                             <tr class="hover:bg-surface-container-high transition-colors group cursor-pointer border-b-0">
                                 <td class="px-6 py-5">
                                     <span class="text-sm font-mono text-on-surface-variant group-hover:text-on-surface transition-colors">#TXN-88223</span>
@@ -276,7 +315,8 @@
                 </div>
             </div>
 
-            <!-- === FOCUS ELEMENT: AUDIT TRAIL ASYMMETRIC GRID === -->
+            <!-- === AUDIT TRAIL SECTION === -->
+            <!-- Asymmetric grid: Integrity Audit info card (2 cols) + Support card (1 col) -->
             <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="md:col-span-2 bg-surface-container p-8 rounded-2xl relative overflow-hidden group">
                     <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -309,6 +349,8 @@
         </section>
     </main>
 
+    <!-- === SCRIPTS === -->
+    <!-- Main application JavaScript bundle -->
     <script src="../../assets/js/app.js"></script>
 </body>
 </html>

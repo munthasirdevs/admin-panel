@@ -5,21 +5,29 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Billing - Invoices | Admin Panel</title>
 
-    <!-- Core Assets -->
+    <!-- =======================================================================
+         CORE ASSETS
+         ======================================================================= -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="../../assets/js/tailwind-config.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&amp;family=Outfit:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 
-    <!-- Custom Styles -->
+    <!-- =======================================================================
+         CUSTOM STYLES
+         ======================================================================= -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary/30">
-    <!-- Main Content -->
+    <!-- =======================================================================
+         MAIN CONTENT
+         ======================================================================= -->
     <main class="min-h-screen flex flex-col">
         <div class="px-10 py-8 max-w-7xl mx-auto">
-            <!-- === HEADER SECTION === -->
+            <!-- =======================================================================
+                 HEADER SECTION
+                 ======================================================================= -->
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
                 <div>
                     <h2 class="font-['Syne'] text-4xl font-extrabold tracking-tighter text-on-surface mb-2">Invoices</h2>
@@ -31,7 +39,9 @@
                 </button>
             </div>
 
-            <!-- === STATS OVERVIEW (ASYMMETRIC BENTO) === -->
+            <!-- =======================================================================
+                 STATS OVERVIEW (ASYMMETRIC BENTO)
+                 ======================================================================= -->
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
                 <div class="md:col-span-2 bg-surface-container p-8 rounded-xl relative overflow-hidden group border border-outline-variant/5">
                     <div class="absolute top-0 right-0 p-8 opacity-10">
@@ -56,7 +66,9 @@
                 </div>
             </div>
 
-            <!-- === FILTERS & SEARCH === -->
+            <!-- =======================================================================
+                 FILTERS & SEARCH
+                 ======================================================================= -->
             <div class="bg-surface-container-low p-6 rounded-t-2xl border-x border-t border-outline-variant/10 flex flex-wrap items-center gap-4">
                 <div class="flex items-center gap-2 bg-surface-container-highest/50 px-4 py-2 rounded-lg text-sm border border-outline-variant/20">
                     <span class="text-on-surface-variant font-medium">Status:</span>
@@ -94,7 +106,9 @@
                 </div>
             </div>
 
-            <!-- === INVOICE TABLE === -->
+            <!-- =======================================================================
+                 INVOICE TABLE
+                 ======================================================================= -->
             <div class="bg-surface-container overflow-hidden rounded-b-2xl border-x border-b border-outline-variant/10">
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border-collapse">
@@ -109,7 +123,11 @@
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-outline-variant/5">
-                            <!-- Row 1 -->
+                            <!-- =======================================================================
+                                 TABLE BODY
+                                 ======================================================================= -->
+
+                            <!-- Invoice Row 1: INV-9402 (Paid) - Aether Labs - $12,450.00 -->
                             <tr class="group hover:bg-surface-container-high/40 transition-colors">
                                 <td class="px-8 py-5">
                                     <span class="font-headline text-on-surface font-bold">INV-9402</span>
@@ -143,7 +161,7 @@
                                 </td>
                             </tr>
 
-                            <!-- Row 2 -->
+                            <!-- Invoice Row 2: INV-9398 (Pending) - Cyberdyne Systems - $8,200.00 -->
                             <tr class="group hover:bg-surface-container-high/40 transition-colors">
                                 <td class="px-8 py-5">
                                     <span class="font-headline text-on-surface font-bold">INV-9398</span>
@@ -178,7 +196,7 @@
                                 </td>
                             </tr>
 
-                            <!-- Row 3 -->
+                            <!-- Invoice Row 3: INV-9385 (Overdue) - Nexus Corp - $3,210.00 -->
                             <tr class="group hover:bg-surface-container-high/40 transition-colors">
                                 <td class="px-8 py-5">
                                     <span class="font-headline text-on-surface font-bold">INV-9385</span>
@@ -213,7 +231,7 @@
                                 </td>
                             </tr>
 
-                            <!-- Row 4 -->
+                            <!-- Invoice Row 4: INV-9382 (Paid) - Stark Tech - $25,000.00 -->
                             <tr class="group hover:bg-surface-container-high/40 transition-colors">
                                 <td class="px-8 py-5">
                                     <span class="font-headline text-on-surface font-bold">INV-9382</span>
@@ -247,10 +265,13 @@
                                 </td>
                             </tr>
                         </tbody>
+                        <!-- End TABLE BODY -->
                     </table>
                 </div>
 
-                <!-- === PAGINATION === -->
+                <!-- =======================================================================
+                     PAGINATION
+                     ======================================================================= -->
                 <div class="px-8 py-6 bg-surface-container-lowest/50 flex items-center justify-between border-t border-outline-variant/10">
                     <p class="text-xs text-on-surface-variant">Showing <span class="text-on-surface font-bold">1-4</span> of <span class="text-on-surface font-bold">128</span> invoices</p>
                     <div class="flex items-center gap-2">
@@ -267,8 +288,12 @@
                 </div>
             </div>
         </div>
+        <!-- End MAIN CONTENT -->
     </main>
 
+    <!-- =======================================================================
+         SCRIPTS
+         ======================================================================= -->
     <script src="../../assets/js/app.js"></script>
 </body>
 </html>

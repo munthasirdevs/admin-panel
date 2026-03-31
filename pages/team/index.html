@@ -18,35 +18,10 @@
 <body class="flex min-h-screen bg-surface">
     <!-- Main Content -->
     <main class="flex-1 min-h-screen flex flex-col">
-        <!-- Main Scrollable Canvas -->
-<div class="flex items-center gap-4 flex-1 max-w-xl">
-<div class="relative w-full group">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg group-focus-within:text-primary transition-colors">search</span>
-<input class="w-full bg-surface-container-low border-none rounded-lg py-2 pl-10 pr-4 text-sm text-on-surface placeholder:text-outline/60 focus:ring-1 focus:ring-primary/30 transition-all" placeholder="Search team, projects or assets..." type="text"/>
-</div>
-</div>
-<div class="flex items-center gap-6">
-<button class="relative text-outline hover:text-white transition-all">
-<span class="material-symbols-outlined">notifications</span>
-<span class="absolute top-0 right-0 w-2 h-2 bg-tertiary rounded-full border-2 border-surface-dim"></span>
-</button>
-<button class="text-outline hover:text-white transition-all">
-<span class="material-symbols-outlined">settings</span>
-</button>
-<div class="h-8 w-[1px] bg-outline-variant/20 mx-2"></div>
-<div class="flex items-center gap-3">
-<div class="text-right">
-<p class="text-xs font-bold text-on-surface leading-none">Alex Rivera</p>
-<p class="text-[10px] text-outline uppercase tracking-wider mt-1">Admin</p>
-</div>
-<img class="w-9 h-9 rounded-lg object-cover ring-2 ring-outline-variant/20" data-alt="Profile picture of Admin User" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF4Z2T2w3YiQoMixbdp5pEgt271Wc-tMLvsv8DqMdAxWWm-_16LLIS6hR8hB1AJUbrGSBE6ap4px2SyAomu93bRWrqE_w2cIKrtv13qyvtY4D3aORqa44VprPg5G21EmUtlLy4lo2tuDzuFF2PtqUbKb8HfqxglgIZhdbdDDqoRJkSzhVLU2Xn-4l5cuDW42C_kfpQvH8CVdezPCIJUcuZskoraKbfyJn3Lzn2sWoL8l1TxoHJD_9qWXTWiQaF_VjDnySfRi9yIFM"/>
-</div>
-</div>
-</header>
-<!-- Content Body -->
-<div class="pt-24 pb-12 px-8">
-<!-- Page Header Section -->
-<section class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <!-- ==================== MAIN CONTENT ==================== -->
+        <div class="pt-24 pb-12 px-8">
+            <!-- === PAGE HEADER SECTION === -->
+            <section class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
 <div>
 <h1 class="font-headline text-4xl font-light tracking-tight text-on-surface mb-2">Team Members</h1>
 <div class="flex items-center gap-2">
@@ -59,8 +34,9 @@
                     Add New Team Member
                 </button>
 </section>
-<!-- Filters & Bulk Selection -->
-<section class="mb-8 flex flex-wrap items-center gap-4">
+
+            <!-- === FILTERS & BULK SELECTION === -->
+            <section class="mb-8 flex flex-wrap items-center gap-4">
 <div class="flex items-center gap-2 bg-surface-container p-1 rounded-xl">
 <button class="px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest text-primary bg-surface-container-high shadow-sm">All</button>
 <button class="px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest text-outline hover:text-on-surface transition-colors">Designers</button>
@@ -95,8 +71,9 @@
 </button>
 </div>
 </section>
-<!-- Team Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+
+            <!-- === TEAM GRID === -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
 <!-- Member Card 1 -->
 <div class="group relative bg-surface-container rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40 indigo-glow">
 <div class="absolute top-4 left-4 z-10">
@@ -300,8 +277,9 @@
 <p class="text-[10px] text-outline uppercase tracking-widest mt-1">4 available slots</p>
 </button>
 </div>
-<!-- Stats Footer (Optional Bento Style) -->
-<section class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6">
+
+            <!-- === STATS FOOTER === -->
+            <section class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6">
 <div class="bg-surface-container-low p-6 rounded-xl border-l-2 border-primary-container">
 <p class="text-[10px] font-bold uppercase tracking-widest text-outline mb-1">Retention</p>
 <p class="text-2xl font-light text-on-surface">98.4%</p>

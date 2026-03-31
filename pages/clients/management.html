@@ -5,20 +5,20 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Clients - Management | Admin Panel</title>
 
-    <!-- Core Assets -->
+    <!-- === CORE ASSETS === -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="../../assets/js/tailwind-config.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 
-    <!-- Custom Styles -->
+    <!-- === CUSTOM STYLES === -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
 <body class="bg-background min-h-screen">
-    <!-- Main Content Canvas -->
+    <!-- === MAIN CONTENT CANVAS === -->
     <main class="pt-32 p-12 min-h-screen flex flex-col">
-        <!-- === HEADER SECTION === -->
+        <!-- === PAGE HEADER === -->
         <div class="flex justify-between items-end mb-12">
             <div class="space-y-2">
                 <h1 class="syne-headline text-5xl font-extrabold text-on-surface">Clients</h1>
@@ -29,6 +29,7 @@
                 Add Client
             </button>
         </div>
+        <!-- === END PAGE HEADER === -->
 
         <!-- === FILTER BAR === -->
         <div class="bg-surface-container rounded-2xl p-4 flex flex-wrap items-center gap-4 mb-8 shadow-sm">
@@ -58,6 +59,7 @@
                 </button>
             </div>
         </div>
+        <!-- === END FILTER BAR === -->
 
         <!-- === CLIENTS LIST TABLE === -->
         <div class="space-y-4">
@@ -71,7 +73,7 @@
                 <div class="col-span-1"></div>
             </div>
 
-            <!-- Client Item 1 -->
+            <!-- Client Item 1: Nebula Dynamics - Active -->
             <div class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer border border-outline-variant/5 shadow-lg group">
                 <div class="col-span-4 flex items-center gap-4">
                     <input class="rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
@@ -101,7 +103,7 @@
                 </div>
             </div>
 
-            <!-- Client Item 2 -->
+            <!-- Client Item 2: Aetherial Systems - Pending -->
             <div class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer border border-outline-variant/5 shadow-lg group">
                 <div class="col-span-4 flex items-center gap-4">
                     <input class="rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
@@ -131,7 +133,7 @@
                 </div>
             </div>
 
-            <!-- Client Item 3 -->
+            <!-- Client Item 3: Vortex Ventures - Inactive -->
             <div class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer border border-outline-variant/5 shadow-lg group">
                 <div class="col-span-4 flex items-center gap-4">
                     <input class="rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
@@ -161,7 +163,7 @@
                 </div>
             </div>
 
-            <!-- Client Item 4 -->
+            <!-- Client Item 4: Prism Creative - Active -->
             <div class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer border border-outline-variant/5 shadow-lg group">
                 <div class="col-span-4 flex items-center gap-4">
                     <input class="rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
@@ -191,9 +193,12 @@
                 </div>
             </div>
         </div>
+        <!-- === END CLIENTS LIST TABLE === -->
 
         <!-- === ASYMMETRIC BENTO INSIGHT SECTION === -->
         <div class="mt-16 grid grid-cols-12 gap-6">
+            <!-- === STATS/CONTENT SECTION === -->
+            <!-- Revenue Growth Card -->
             <div class="col-span-8 bg-surface-container rounded-2xl p-8 relative overflow-hidden group border border-outline-variant/5">
                 <div class="relative z-10 flex flex-col h-full justify-between">
                     <div>
@@ -213,10 +218,13 @@
                     <span class="material-symbols-outlined text-[240px]">monitoring</span>
                 </div>
             </div>
+
+            <!-- Network Health Card -->
             <div class="col-span-4 bg-primary rounded-2xl p-8 text-on-primary shadow-[0_32px_32px_-12px_rgba(99,102,241,0.3)]">
                 <span class="material-symbols-outlined text-4xl mb-4">rocket_launch</span>
                 <h3 class="syne-headline text-2xl font-bold mb-4">Network Health</h3>
                 <div class="space-y-6">
+                    <!-- Engagement Progress -->
                     <div>
                         <div class="flex justify-between text-xs font-bold uppercase tracking-wider mb-2">
                             <span>Engagement</span>
@@ -226,6 +234,8 @@
                             <div class="h-full bg-on-primary w-[94%]"></div>
                         </div>
                     </div>
+
+                    <!-- Retention Progress -->
                     <div>
                         <div class="flex justify-between text-xs font-bold uppercase tracking-wider mb-2">
                             <span>Retention</span>
@@ -235,14 +245,20 @@
                             <div class="h-full bg-on-primary w-[88%]"></div>
                         </div>
                     </div>
+
                     <button class="w-full py-4 mt-4 bg-on-primary text-primary font-bold rounded-xl hover:bg-white transition-colors">
                         Export Full Report
                     </button>
                 </div>
             </div>
+            <!-- === END STATS/CONTENT SECTION === -->
         </div>
+        <!-- === END ASYMMETRIC BENTO INSIGHT SECTION === -->
     </main>
+    <!-- === END MAIN CONTENT CANVAS === -->
 
+    <!-- === SCRIPTS === -->
     <script src="../../assets/js/app.js"></script>
+    <!-- === END SCRIPTS === -->
 </body>
 </html>

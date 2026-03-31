@@ -5,19 +5,20 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Client Activity Log | Admin Panel</title>
 
-    <!-- Core Assets -->
+    <!-- === CORE ASSETS === -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="../../assets/js/tailwind-config.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Outfit:wght@300;400;500;600&amp;family=Space+Grotesk:wght@700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 
-    <!-- Custom Styles -->
+    <!-- === CUSTOM STYLES === -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-primary/30">
-    <!-- Main Content -->
+    <!-- === MAIN CONTENT === -->
     <main class="pt-28 pb-12 px-12 max-w-7xl flex flex-col">
+        <!-- === PAGE HEADER === -->
         <!-- === CLIENT HEADER === -->
         <section class="mb-10 animate-fade-in">
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -67,13 +68,15 @@
                     Financials
                 </a>
             </div>
+            <!-- === END TAB NAVIGATION === -->
         </section>
+        <!-- === END PAGE HEADER === -->
 
         <!-- === ACTIVITY CONTENT AREA === -->
         <div class="grid grid-cols-12 gap-8">
-            <!-- Filters & Timeline Feed -->
+            <!-- === MAIN TIMELINE FEED (LEFT) === -->
             <div class="col-span-12 lg:col-span-8 space-y-8">
-                <!-- Filter Bar -->
+                <!-- === FILTER BAR === -->
                 <div class="p-6 bg-surface-container rounded-xl flex flex-wrap items-center justify-between gap-4">
                     <div class="flex flex-wrap items-center gap-4">
                         <div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-lowest rounded-lg border border-outline-variant/10 text-xs">
@@ -96,13 +99,14 @@
                         142 Total Events
                     </div>
                 </div>
+                <!-- === END FILTER BAR === -->
 
-                <!-- Timeline Feed -->
+                <!-- === TIMELINE FEED === -->
                 <div class="relative pl-8">
                     <!-- Vertical Line -->
                     <div class="absolute left-4 top-0 bottom-0 w-[1px] bg-gradient-to-b from-primary/40 via-outline-variant/20 to-transparent"></div>
 
-                    <!-- Timeline Item: Task Status -->
+                    <!-- Timeline Item 1: Task Status Update -->
                     <div class="relative mb-12 group">
                         <div class="absolute -left-[25px] top-2 w-4 h-4 rounded-full bg-surface border-2 border-primary z-10"></div>
                         <div class="bg-surface-container rounded-xl p-6 border border-outline-variant/5 hover:border-primary/20 transition-all duration-400">
@@ -126,7 +130,7 @@
                         </div>
                     </div>
 
-                    <!-- Timeline Item: File Upload -->
+                    <!-- Timeline Item 2: File Upload -->
                     <div class="relative mb-12 group">
                         <div class="absolute -left-[25px] top-2 w-4 h-4 rounded-full bg-surface border-2 border-secondary-container z-10"></div>
                         <div class="bg-surface-container rounded-xl p-6 border border-outline-variant/5 hover:border-primary/20 transition-all duration-400">
@@ -142,6 +146,7 @@
                                 </div>
                             </div>
                             <div class="ml-11 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                                <!-- File Item 1 -->
                                 <div class="bg-surface-container-lowest p-3 rounded-lg border border-outline-variant/10 flex items-center gap-3 hover:bg-surface-container-highest transition-colors cursor-pointer group/file">
                                     <span class="material-symbols-outlined text-primary">image</span>
                                     <div class="overflow-hidden">
@@ -149,6 +154,7 @@
                                         <p class="text-[9px] text-on-surface-variant">4.2 MB</p>
                                     </div>
                                 </div>
+                                <!-- File Item 2 -->
                                 <div class="bg-surface-container-lowest p-3 rounded-lg border border-outline-variant/10 flex items-center gap-3 hover:bg-surface-container-highest transition-colors cursor-pointer group/file">
                                     <span class="material-symbols-outlined text-primary">description</span>
                                     <div class="overflow-hidden">
@@ -160,7 +166,7 @@
                         </div>
                     </div>
 
-                    <!-- Timeline Item: Comment -->
+                    <!-- Timeline Item 3: Comment on Billing Inquiry -->
                     <div class="relative mb-12 group">
                         <div class="absolute -left-[25px] top-2 w-4 h-4 rounded-full bg-surface border-2 border-tertiary-container z-10"></div>
                         <div class="bg-surface-container rounded-xl p-6 border border-outline-variant/5 hover:border-primary/20 transition-all duration-400">
@@ -187,14 +193,14 @@
                         </div>
                     </div>
 
-                    <!-- Date Marker -->
+                    <!-- Date Marker: OCT 24 -->
                     <div class="relative mb-12">
                         <div class="absolute -left-[38px] top-1 px-3 py-1 bg-surface-container-highest rounded-full border border-outline-variant/20">
                             <span class="text-[10px] font-black uppercase text-on-surface-variant tracking-tighter">OCT 24</span>
                         </div>
                     </div>
 
-                    <!-- Timeline Item: Project Milestone -->
+                    <!-- Timeline Item 4: Project Milestone Reached -->
                     <div class="relative mb-12 group">
                         <div class="absolute -left-[25px] top-2 w-4 h-4 rounded-full bg-surface border-2 border-primary z-10 active-pill"></div>
                         <div class="bg-surface-container rounded-xl p-6 border border-outline-variant/5 hover:border-primary/20 transition-all duration-400">
@@ -213,18 +219,22 @@
                         </div>
                     </div>
 
-                    <!-- Load More -->
+                    <!-- === LOAD MORE BUTTON === -->
                     <div class="flex justify-center mt-12">
                         <button class="px-8 py-3 bg-surface-container-highest text-on-surface text-xs font-bold uppercase tracking-widest rounded-full border border-outline-variant/20 hover:bg-surface-variant transition-colors flex items-center gap-3">
                             <span class="material-symbols-outlined text-lg">history</span>
                             Load Older Activity
                         </button>
                     </div>
+                    <!-- === END LOAD MORE BUTTON === -->
                 </div>
+                <!-- === END TIMELINE FEED === -->
             </div>
+            <!-- === END MAIN TIMELINE FEED (LEFT) === -->
 
-            <!-- === SIDEBAR WIDGETS === -->
+            <!-- === SIDEBAR WIDGETS (RIGHT) === -->
             <div class="col-span-12 lg:col-span-4 space-y-8">
+                <!-- === STATS/CONTENT SECTION === -->
                 <!-- Quick Search / Jump to Date -->
                 <div class="p-6 bg-surface-container rounded-xl border border-outline-variant/5">
                     <h3 class="text-sm font-headline font-bold text-on-surface mb-4 uppercase tracking-wider">Search History</h3>
@@ -234,10 +244,11 @@
                     </div>
                 </div>
 
-                <!-- Activity Statistics -->
+                <!-- Activity Distribution Statistics -->
                 <div class="p-6 bg-surface-container rounded-xl border border-outline-variant/5">
                     <h3 class="text-sm font-headline font-bold text-on-surface mb-6 uppercase tracking-wider">Activity Distribution</h3>
                     <div class="space-y-4">
+                        <!-- Project Updates Progress -->
                         <div class="group cursor-help">
                             <div class="flex justify-between text-xs mb-2">
                                 <span class="text-on-surface-variant">Project Updates</span>
@@ -247,6 +258,8 @@
                                 <div class="h-full bg-primary rounded-full transition-all duration-1000" style="width: 45%"></div>
                             </div>
                         </div>
+
+                        <!-- File Management Progress -->
                         <div class="group cursor-help">
                             <div class="flex justify-between text-xs mb-2">
                                 <span class="text-on-surface-variant">File Management</span>
@@ -256,6 +269,8 @@
                                 <div class="h-full bg-secondary rounded-full transition-all duration-1000" style="width: 30%"></div>
                             </div>
                         </div>
+
+                        <!-- Client Communication Progress -->
                         <div class="group cursor-help">
                             <div class="flex justify-between text-xs mb-2">
                                 <span class="text-on-surface-variant">Client Communication</span>
@@ -268,10 +283,11 @@
                     </div>
                 </div>
 
-                <!-- Active Members -->
+                <!-- Recent Collaborators -->
                 <div class="p-6 bg-surface-container rounded-xl border border-outline-variant/5">
                     <h3 class="text-sm font-headline font-bold text-on-surface mb-6 uppercase tracking-wider">Recent Collaborators</h3>
                     <div class="space-y-4">
+                        <!-- Collaborator Row 1: Sarah Jenkins -->
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-3">
                                 <img alt="Sarah Jenkins" class="w-8 h-8 rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvwweBWYfFBjzVaPgVBSWinEKbjYnW5GHw27ztiIRzHm5YKGlvjd283l9peR1tDcg48y_3P6Z-htT7-BHi_DVoRwY2hEaYAlhgib5Fs9as-4WqdyiCG0aapl4sBtHuKvpNSqSnQ-0lsnWnPODFQQGU0-_uhGJEG0uNLLL4LM7_xFVWxiS3hMpJoZ3gmNV4rLfKjvOZUkFj3aN3xDhCI8dmffFGkxvLsTAN1Trbzy8DHEuUNTGk8-g73bGrXA-wm_8dSmajQzy39ok"/>
@@ -282,6 +298,8 @@
                             </div>
                             <span class="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.4)]"></span>
                         </div>
+
+                        <!-- Collaborator Row 2: Michael Chen -->
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-3">
                                 <img alt="Michael Chen" class="w-8 h-8 rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN0rRD2ey1rQEsAgbH5TS9Nm192gq40-_IyIOBQCWwvnlQQyomIMguZRB0RMxqwHKBmZx5MxtEfS_Zjreb9Z6wOdIOuoJ3grUBvegRSSDgnzZcWwHgNR4A55a5QuorsVyOtMR9h4Jt1OjbkqyFEQ8g6krGOu-wZoJzNMW3YDRm4ReOiudbagOCb2WApQ-nxIvy5Rkn2FozQNu5fZi7jnnKq6ZKwXIu5LEPbPnx2Du9eoyZHW-5GqAajkejPrMcuuTOqXmb-3Iv3us"/>
@@ -292,6 +310,8 @@
                             </div>
                             <span class="w-2 h-2 rounded-full bg-on-surface-variant/30"></span>
                         </div>
+
+                        <!-- Collaborator Row 3: David Miller -->
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-3">
                                 <img alt="David Miller" class="w-8 h-8 rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7xSuuU2SEiSSSJkUj1RpKFTUHscStiPmvqPmebwjTljRA8VxJHlrtRpt24a6EAmQrSHbCG8wkVL6zBteRbmeEJkFg56fwWqT4bStyifYXsBOfNJZcp9cWQoZociDJSk9uGXBRNdzRJm5Y907Akw2q4qIduKpEcEQxw2aCabvjlimUHvKxjpbbVBG6llTX6jlfvEZpo5JjoKm6_mA0kFvjOADMU6PxxRy-smF8-8zv3dWay7zPyAxDbfKo0CZVK-RMvYHkud2AL0s"/>
@@ -319,10 +339,16 @@
                         Generate Report
                     </button>
                 </div>
+                <!-- === END STATS/CONTENT SECTION === -->
             </div>
+            <!-- === END SIDEBAR WIDGETS (RIGHT) === -->
         </div>
+        <!-- === END ACTIVITY CONTENT AREA === -->
     </main>
+    <!-- === END MAIN CONTENT === -->
 
+    <!-- === SCRIPTS === -->
     <script src="../../assets/js/app.js"></script>
+    <!-- === END SCRIPTS === -->
 </body>
 </html>
