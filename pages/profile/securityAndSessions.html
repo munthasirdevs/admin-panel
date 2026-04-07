@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Profile - Sessions | Admin Panel</title>
+    <title>Profile - Security and Sessions | Admin Panel</title>
 
     <!-- Core Assets -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -27,31 +27,123 @@
         <!-- === HERO / HEADER SECTION === -->
         <section class="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div class="space-y-2">
-                <div
-                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10  -primary/20">
                     <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
                     <span class="text-[10px] font-bold uppercase tracking-widest text-primary">Live Protection
                         Active</span>
                 </div>
-                <h1 class="font-['Syne'] text-4xl font-extrabold tracking-tight">Active Sessions</h1>
+                <h1 class="font-['Syne'] text-4xl font-extrabold tracking-tight">Security and Active Sessions</h1>
                 <p class="text-on-surface-variant max-w-xl text-sm leading-relaxed">
                     Manage and secure your account across all logged-in devices. If you see an unfamiliar session, we
                     recommend logging out immediately and updating your security keys.
                 </p>
             </div>
-            <button
-                class="indigo-glow px-6 py-3 rounded-xl text-on-primary font-bold text-sm shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform flex items-center gap-2">
-                <span class="material-symbols-outlined text-sm">lock_reset</span>
-                Logout all sessions
-            </button>
         </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- Change Password (Spans 2 cols) -->
+            <div class="lg:col-span-2 bg-[#111827]/50 border border-white/5 rounded-3xl p-8 shadow-xl">
+                <div class="flex items-center gap-3 text-[#6366F1] mb-8">
+                    <h3 class="text-xl font-bold text-white font-headline">Change Password</h3>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="space-y-2">
+                        <label
+                            class="text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-1 ubuntu">Current
+                            Password</label>
+                        <input type="password" placeholder="••••••••••••"
+                            class="w-full bg-[#1F2937] border border-white/5 rounded-xl px-5 py-3.5 text-white focus:outline-none focus:ring-2 focus:ring-[#6366F1]/50 transition-all font-mono tracking-[0.2em]" />
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label
+                                class="text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-1 ubuntu">New
+                                Password</label>
+                            <input type="password" placeholder="••••••••••••"
+                                class="w-full bg-[#1F2937] border border-white/5 rounded-xl px-5 py-3.5 text-white focus:outline-none focus:ring-2 focus:ring-[#6366F1]/50 transition-all font-mono tracking-[0.2em]" />
+                        </div>
+                        <div class="space-y-2">
+                            <label
+                                class="text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-1 ubuntu">Confirm
+                                New Password</label>
+                            <input type="password" placeholder="••••••••••••"
+                                class="w-full bg-[#1F2937] border border-white/5 rounded-xl px-5 py-3.5 text-white focus:outline-none focus:ring-2 focus:ring-[#6366F1]/50 transition-all font-mono tracking-[0.2em]" />
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <button
+                            class="bg-[#6366F1] text-white px-8 py-3.5 rounded-xl font-bold text-[10px] uppercase tracking-widest shadow-[0_0_20px_rgba(99,102,241,0.2)] hover:shadow-[0_0_30px_rgba(99,102,241,0.3)] transition-all hover:bg-[#5355e1] active:scale-95 ubuntu">
+                            Update Password
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2FA & SSO Auth (Spans 1 col) -->
+            <div class="space-y-8">
+
+                <!-- 2FA -->
+                <div class="bg-[#111827]/50 border border-white/5 rounded-3xl p-8 shadow-xl">
+                    <div class="flex items-center gap-3 text-[#6366F1] mb-6">
+                        <i data-lucide="shield" class="w-6 h-6"></i>
+                        <h3 class="text-xl font-bold text-white font-headline">Two-Factor Auth</h3>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div
+                            class="flex items-center justify-between p-4 rounded-2xl bg-[#0B0F19] border border-white/5 hover:border-[#6366F1]/30 transition-all cursor-pointer shadow-inner">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="smartphone" class="w-5 h-5 text-slate-400"></i>
+                                <div>
+                                    <p class="text-sm font-bold text-white outfit">Authenticator App</p>
+                                    <p
+                                        class="text-[9px] text-[#6366F1] font-bold uppercase tracking-widest mt-0.5 ubuntu">
+                                        Recommended</p>
+                                </div>
+                            </div>
+                            <!-- Toggle switch active -->
+                            <div
+                                class="w-11 h-6 bg-[#6366F1] rounded-full relative transition-colors border border-white/5">
+                                <div
+                                    class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full shadow-sm transition-all shadow-[0_0_5px_rgba(0,0,0,0.3)]">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-center justify-between p-4 rounded-2xl bg-[#0B0F19] border border-white/5 hover:border-slate-500/30 transition-all cursor-pointer opacity-70">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="mail" class="w-5 h-5 text-slate-400"></i>
+                                <div>
+                                    <p class="text-sm font-bold text-white outfit">SMS Authentication</p>
+                                    <p
+                                        class="text-[9px] text-slate-500 font-bold uppercase tracking-widest mt-0.5 space-font">
+                                        +1 (555) ••• 42</p>
+                                </div>
+                            </div>
+                            <!-- Toggle switch inactive -->
+                            <div
+                                class="w-11 h-6 bg-[#1F2937] rounded-full relative transition-colors border border-white/5 shadow-inner">
+                                <div
+                                    class="absolute left-1 top-1 w-4 h-4 bg-white/50 rounded-full shadow-sm transition-all">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- === GRID GRID LAYOUT === -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <!-- Main Session Table (Spans 2 columns) -->
             <div class="lg:col-span-2 space-y-6">
-                <div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/10">
-                    <div class="px-6 py-4 border-b border-outline-variant/10 flex justify-between items-center">
+                <div class="bg-surface-container rounded-xl overflow-hidden">
+                    <div class="px-6 py-4   flex justify-between items-center">
                         <h3 class="font-['Outfit'] font-semibold text-base">Active Logins</h3>
                         <span class="text-xs text-on-surface-variant outfit">3 active devices</span>
                     </div>
@@ -73,14 +165,14 @@
                                     <td class="px-6 py-5">
                                         <div class="flex items-center gap-3">
                                             <div
-                                                class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center text-primary border border-primary/10">
+                                                class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center text-primary  -primary/10">
                                                 <span class="material-symbols-outlined">laptop_mac</span>
                                             </div>
                                             <div>
                                                 <div class="text-sm font-semibold flex items-center gap-2">
                                                     MacBook Pro 16"
                                                     <span
-                                                        class="px-1.5 py-0.5 rounded text-[9px] bg-green-500/10 text-green-400 border border-green-500/20">Active
+                                                        class="px-1.5 py-0.5 rounded text-[9px] bg-green-500/10 text-green-400  -green-500/20">Active
                                                         Now</span>
                                                 </div>
                                                 <div class="text-[11px] text-on-surface-variant">Chrome v122.0.1</div>
@@ -106,7 +198,7 @@
                                     <td class="px-6 py-5">
                                         <div class="flex items-center gap-3">
                                             <div
-                                                class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant border border-outline-variant/10">
+                                                class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant  ">
                                                 <span class="material-symbols-outlined">smartphone</span>
                                             </div>
                                             <div>
@@ -134,7 +226,7 @@
                                     <td class="px-6 py-5">
                                         <div class="flex items-center gap-3">
                                             <div
-                                                class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant border border-outline-variant/10">
+                                                class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant  ">
                                                 <span class="material-symbols-outlined">desktop_windows</span>
                                             </div>
                                             <div>
@@ -162,15 +254,15 @@
                 </div>
 
                 <!-- === HISTORY LOGS SECTION === -->
-                <div class="bg-surface-container rounded-xl border border-outline-variant/10 overflow-hidden">
-                    <div class="px-6 py-4 border-b border-outline-variant/10">
+                <div class="bg-surface-container rounded-xl   overflow-hidden">
+                    <div class="px-6 py-4  ">
                         <h3 class="font-['Outfit'] font-semibold text-base">Device History Logs</h3>
                     </div>
                     <div class="p-6 space-y-6">
                         <div class="flex gap-4 relative">
                             <div class="absolute left-[19px] top-8 bottom-[-24px] w-px bg-outline-variant/20"></div>
                             <div
-                                class="z-10 w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant/10 flex items-center justify-center shrink-0">
+                                class="z-10 w-10 h-10 rounded-full bg-surface-container-highest   flex items-center justify-center shrink-0">
                                 <span class="material-symbols-outlined text-sm text-primary">login</span>
                             </div>
                             <div class="space-y-1">
@@ -183,7 +275,7 @@
                         <div class="flex gap-4 relative">
                             <div class="absolute left-[19px] top-8 bottom-[-24px] w-px bg-outline-variant/20"></div>
                             <div
-                                class="z-10 w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant/10 flex items-center justify-center shrink-0">
+                                class="z-10 w-10 h-10 rounded-full bg-surface-container-highest   flex items-center justify-center shrink-0">
                                 <span class="material-symbols-outlined text-sm text-tertiary">key</span>
                             </div>
                             <div class="space-y-1">
@@ -196,7 +288,7 @@
 
                         <div class="flex gap-4">
                             <div
-                                class="z-10 w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant/10 flex items-center justify-center shrink-0">
+                                class="z-10 w-10 h-10 rounded-full bg-surface-container-highest   flex items-center justify-center shrink-0">
                                 <span class="material-symbols-outlined text-sm text-error">gpp_maybe</span>
                             </div>
                             <div class="space-y-1">
@@ -212,8 +304,7 @@
             <!-- === SIDE GRID COLUMN === -->
             <div class="space-y-6">
                 <!-- Security Score Card -->
-                <div
-                    class="bg-surface-container rounded-xl p-6 border border-outline-variant/10 relative overflow-hidden group">
+                <div class="bg-surface-container rounded-xl p-6   relative overflow-hidden group">
                     <div
                         class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110 duration-500">
                     </div>
@@ -231,27 +322,8 @@
                     </div>
                 </div>
 
-                <!-- Map Location Card -->
-                <div
-                    class="bg-surface-container rounded-xl border border-outline-variant/10 overflow-hidden h-64 relative group">
-                    <img alt="Geographic map showing login locations across different countries" class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuArIQNoicSlSmJVo8rgkSA55z9cefTEl4ydT3o0zLJMQOT1KtB3wGGeeOua71uxGiCCDaw2H2CqAS_vMSwklKRvpKQNV-MgdwGa9C3zAoHcjJg2uGQ8ou1XycP0iIg9h8LKWxCdGcAuP5YnZvbzk9oP7NOqqBlY-yDnNhPE_mKLIJ0VoMteBAz7jOuR0uEPdR9i_xoCYOp8oAXy8an5F97GrFZbSAnEuMtGFl20OXPUYSWz8sS3aO3KtoCh2NfPvI8pwo_17z-MFD0" />
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/20 to-transparent">
-                    </div>
-                    <div class="absolute bottom-4 left-4 right-4">
-                        <div class="flex items-center gap-2 mb-1">
-                            <span class="material-symbols-outlined text-xs text-primary">location_on</span>
-                            <span class="text-xs font-bold outfit tracking-wider uppercase">Live Coverage</span>
-                        </div>
-                        <p class="text-sm font-semibold">Recent logins detected in 2 countries</p>
-                    </div>
-                    <img alt="Geographic map showing login locations across different countries" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuArIQNoicSlSmJVo8rgkSA55z9cefTEl4ydT3o0zLJMQOT1KtB3wGGeeOua71uxGiCCDaw2H2CqAS_vMSwklKRvpKQNV-MgdwGa9C3zAoHcjJg2uGQ8ou1XycP0iIg9h8LKWxCdGcAuP5YnZvbzk9oP7NOqqBlY-yDnNhPE_mKLIJ0VoMteBAz7jOuR0uEPdR9i_xoCYOp8oAXy8an5F97GrFZbSAnEuMtGFl20OXPUYSWz8sS3aO3KtoCh2NfPvI8pwo_17z-MFD0" />
-                </div>
-
                 <!-- Trusted Devices Quick Look -->
-                <div class="bg-surface-container-highest rounded-xl p-6 border border-primary/20">
+                <div class="bg-surface-container-highest rounded-xl p-6  -primary/20">
                     <h4 class="font-['Outfit'] font-bold text-base mb-4 flex items-center gap-2">
                         <span class="material-symbols-outlined text-primary text-sm">verified</span>
                         Trusted Devices
@@ -272,32 +344,72 @@
                             <span class="text-[10px] text-on-surface-variant font-mono">Trusted</span>
                         </div>
                         <button
-                            class="w-full mt-4 py-2 border border-outline-variant/20 rounded-lg text-[11px] font-bold uppercase tracking-widest hover:bg-surface-container-low transition-colors">
+                            class="mt-4 p-3  border border-outline-variant/20 rounded-lg text-[11px] font-bold uppercase tracking-widest hover:bg-surface-container-low transition-colors">
                             Manage Trusted List
                         </button>
+                    </div>
+                </div>
+
+                <!-- === WARNING CARD === -->
+                <div class="bg-surface-container rounded-xl p-6   relative overflow-hidden group">
+                    <div class="relative z-10">
+                        <div class="rounded-2xl bg-error/10 flex items-center shrink-0 gap-4 mb-6">
+                            <span class="material-symbols-outlined text-error text-3xl">report</span>
+                            <h4 class="font-['Outfit'] font-bold text-lg text-error">Unrecognized session?</h4>
+                        </div>
+                        <p class="text-xs text-on-surface-variant mb-6 leading-relaxed">If you don't recognize a device
+                            or location, logout
+                            immediately. Your account security might be compromised. Your account security might be
+                            compromised.
+                            We also recommend enabling 2FA if you haven't already.</p>
+                        <div class="shrink-0">
+                            <button
+                                class="px-6 py-3  border rounded-xl text-error text-sm font-bold hover:bg-error/10 transition-colors">
+                                Logout From All Devices
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- === WARNING CARD === -->
-        <section class="bg-error/5 border border-error/20 rounded-2xl p-6 flex flex-col md:flex-row items-center gap-6">
-            <div class="w-16 h-16 rounded-2xl bg-error/10 flex items-center justify-center shrink-0">
-                <span class="material-symbols-outlined text-error text-3xl">report</span>
+        
+        <!-- === ASYMMETRIC CARD === -->
+        <div class="lg:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div
+                class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 flex items-center gap-4 group">
+                <div
+                    class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-primary">history_edu</span>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm">Security Policy</h4>
+                    <p class="text-xs text-on-surface-variant">Read our encryption standards</p>
+                </div>
             </div>
-            <div class="flex-1 space-y-1 text-center md:text-left">
-                <h4 class="font-['Outfit'] font-bold text-lg text-error">Unrecognized session?</h4>
-                <p class="text-sm text-on-surface-variant">If you don't recognize a device or location, logout
-                    immediately. Your account security might be compromised. Your account security might be compromised.
-                    We also recommend enabling 2FA if you haven't already.</p>
+            <div
+                class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 flex items-center gap-4 group">
+                <div
+                    class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-tertiary">emergency</span>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm">Panic Mode</h4>
+                    <p class="text-xs text-on-surface-variant">Instantly sign out all devices</p>
+                </div>
             </div>
-            <div class="shrink-0">
-                <button
-                    class="px-6 py-3 border border-error/30 rounded-xl text-error text-sm font-bold hover:bg-error/10 transition-colors">
-                    Reset Security Keys
-                </button>
+            <div
+                class="bg-surface-container p-6 rounded-xl border border-outline-variant/10 flex items-center gap-4 group">
+                <div
+                    class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-green-400">privacy_tip</span>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm">Privacy Audit</h4>
+                    <p class="text-xs text-on-surface-variant">Run automated vulnerability scan</p>
+                </div>
             </div>
-        </section>
+        </div>
     </main>
 
     <!-- === FOOTER META === -->

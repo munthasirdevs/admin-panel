@@ -20,158 +20,252 @@
 <body class="bg-background text-on-surface">
     <!-- ==================== MAIN CONTENT CANVAS ==================== -->
     <main class="min-h-screen flex flex-col">
-        <!-- === TOP NAVIGATION BAR === -->
-        <header
-            class="sticky top-0 w-full z-50 bg-[#1c1f2a]/70 backdrop-blur-xl flex justify-between items-center px-8 py-4">
-            <div class="flex items-center gap-4 flex-1">
-                <div class="relative w-full max-w-md">
-                    <span
-                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
-                    <input
-                        aria-label="Search resources"
-                        class="w-full bg-surface-container-lowest border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary/40 text-on-surface"
-                        placeholder="Search resources..." type="text" name="search_resources" />
-                </div>
-            </div>
-            <div class="flex items-center gap-6">
-                <div class="flex items-center gap-4">
-                    <button
-                        aria-label="Notifications"
-                        class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-colors">
-                        <span class="material-symbols-outlined">notifications</span>
-                    </button>
-                    <button
-                        aria-label="Settings"
-                        class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-colors">
-                        <span class="material-symbols-outlined">settings</span>
-                    </button>
-                </div>
-                <div class="h-8 w-[1px] bg-outline-variant/20"></div>
-                <div class="flex items-center gap-3">
-                    <div class="text-right">
-                        <p class="text-xs font-bold outfit">Alex Sterling</p>
-                        <p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Executive Admin</p>
-                    </div>
-                    <img alt="Close up portrait of a professional man in a dark turtleneck with confident expression against a dark textured background"
-                        class="w-10 h-10 rounded-full border-2 border-primary/20 object-cover"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHgIq4oZjlZkGDOlT9vGAj43uTXYADSaxZFsXPcrerrMicPGoC1I2ICsWu1nmpgfIrJgz-vzxk5U0s0UG3RCm8bWjHDSjIRaKN9xn-5VM0Q7jUj2zGxDjZ2F_Trb9PyTJGsKkd0dTIJXOIIy6SwJoVfgrgpNiqeVyk8OZ81XmZzW0igPnBfN1NM7EOwqQBrEGI1yFoKmhtr-qP9n_SqzUIfbr-NWIa0thRM-wlJPuMYmahyxKH-gtc0tYew_1SjZsqj_c3Bq9Dzkc" />
-                </div>
-            </div>
-        </header>
 
         <!-- === PROFILE CONTENT GRID === -->
         <section class="p-8 max-w-7xl mx-auto">
-            <!-- === HEADER IDENTITY SECTION === -->
-            <div
-                class="relative rounded-[2rem] overflow-hidden mb-8 bg-surface-container-low p-8 flex flex-col md:flex-row items-end gap-8">
-                <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-r from-primary/10 to-transparent"></div>
-                <div class="relative group">
-                    <img alt="Professional headshot of Alex Sterling, Executive Admin"
-                        class="w-32 h-32 rounded-3xl object-cover border-4 border-surface shadow-2xl relative z-10"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsU3ctmBybwKK14n-vmI9F3cskKcjLRTNs5LhZShBoZ5zIB5F59XXrC6dPaa6Fyx4fxoVVacaX3BWOKQ3NJ4i5Udj0ouRb9W9Dpqpg9OpiPcTu8NxrVdq8zL2rRU3_rUaNP9sS7yn5CBP12hF8rE8nEqSAzO7Ph2Bixj0tdis_YbuK_J_huGdeucA15UgkRezAo30uyY_fChhZSiHhfYUycn0Oc4zrz8QZ2WggJB7l4URo71jZsh3b9JhnC23OE8s7MyvQrdls-S0" />
-                    <button
-                        aria-label="Edit profile picture"
-                        class="absolute -bottom-2 -right-2 z-20 w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center text-on-primary shadow-lg border-2 border-surface">
-                        <span class="material-symbols-outlined text-lg">edit</span>
-                    </button>
-                </div>
-                <div class="flex-1 pb-2">
-                    <div class="flex items-center gap-3 mb-1">
-                        <h2 class="syne text-4xl font-extrabold tracking-tighter">Alex Sterling</h2>
-                        <span
-                            class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest rounded-full border border-primary/20 flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                            Active
-                        </span>
-                    </div>
-                    <p class="outfit text-on-surface-variant text-lg">Executive Admin • Product Strategy Lead</p>
-                </div>
-                <div class="flex gap-3 pb-2">
-                    <button
-                        class="px-6 py-2.5 rounded-xl bg-surface-container-highest border border-outline-variant/10 font-bold outfit text-sm hover:bg-surface-variant transition-all">View
-                        Public Profile</button>
-                    <button
-                        class="px-6 py-2.5 rounded-xl indigo-glow text-on-primary-fixed font-bold outfit text-sm shadow-[0_0_20px_rgba(99,102,241,0.3)]">Save
-                        Changes</button>
-                </div>
-            </div>
+            <!-- Dynamic Content Area -->
+            <div class="pb-12 pt-8">
+                <div class="max-w-6xl mx-auto space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
 
-            <!-- === MAIN GRID GRID === -->
-            <div class="grid grid-cols-12 gap-6">
-                <!-- === LEFT COLUMN: PERSONAL INFORMATION === -->
-                <div class="col-span-12 lg:col-span-8 space-y-6">
-                    <!-- === BIO SECTION === -->
-                    <div class="bg-surface-container rounded-[1.5rem] p-8 border border-outline-variant/5">
-                        <h3 class="syne text-xl font-bold mb-6 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-primary">description</span>
-                            Professional Summary
-                        </h3>
-                        <textarea
-                            id="professional_summary"
-                            aria-label="Write your professional summary"
-                            class="w-full bg-surface-container-lowest border-none rounded-xl p-4 text-on-surface-variant outfit leading-relaxed focus:ring-1 focus:ring-primary/40 h-32 resize-none"
-                            placeholder="Write a short bio...">Driving excellence in cross-functional team coordination and product strategy. Specializing in high-scale infrastructure management and executive operations. Based in the San Francisco tech hub, currently managing XenonOS premium core systems.</textarea>
+                    <!-- Header Area -->
+                    <div
+                        class="relative rounded-[2rem] overflow-hidden mb-8 bg-surface-container-low p-8 flex flex-col md:flex-row items-end gap-8">
+                        <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-r from-primary/10 to-transparent">
+                        </div>
+                        <div class="relative group">
+                            <img alt="Professional headshot of Alex Sterling, Executive Admin"
+                                class="w-32 h-32 rounded-3xl object-cover border-4 border-surface shadow-2xl relative z-10"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsU3ctmBybwKK14n-vmI9F3cskKcjLRTNs5LhZShBoZ5zIB5F59XXrC6dPaa6Fyx4fxoVVacaX3BWOKQ3NJ4i5Udj0ouRb9W9Dpqpg9OpiPcTu8NxrVdq8zL2rRU3_rUaNP9sS7yn5CBP12hF8rE8nEqSAzO7Ph2Bixj0tdis_YbuK_J_huGdeucA15UgkRezAo30uyY_fChhZSiHhfYUycn0Oc4zrz8QZ2WggJB7l4URo71jZsh3b9JhnC23OE8s7MyvQrdls-S0" />
+                            <button aria-label="Edit profile picture"
+                                class="absolute -bottom-2 -right-2 z-20 w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center text-on-primary shadow-lg border-2 border-surface">
+                                <span class="material-symbols-outlined text-lg p-2">edit</span>
+                            </button>
+                        </div>
+                        <div class="flex-1 pb-2">
+                            <div class="flex items-center gap-3 mb-1">
+                                <h2 class="syne text-4xl font-extrabold tracking-tighter">Alex Sterling</h2>
+                                <span
+                                    class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest rounded-full border border-primary/20 flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                    Active
+                                </span>
+                            </div>
+                            <p class="outfit text-on-surface-variant text-lg">Executive Admin • Product Strategy
+                                Lead</p>
+                        </div>
+                        <div class="flex gap-3 pb-2">
+                            <button
+                                class="px-6 py-2.5 rounded-xl bg-surface-container-highest border border-outline-variant/10 font-bold outfit text-sm hover:bg-surface-variant transition-all">View
+                                Public Profile</button>
+                            <button
+                                class="px-6 py-2.5 rounded-xl indigo-glow text-on-primary-fixed font-bold outfit text-sm shadow-[0_0_20px_rgba(99,102,241,0.3)]">Save
+                                Changes</button>
+                        </div>
                     </div>
 
-                    <!-- === PERSONAL INFORMATION FORM === -->
-                    <div class="bg-surface-container rounded-[1.5rem] p-8 border border-outline-variant/5">
-                        <h3 class="syne text-xl font-bold mb-8 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-primary">badge</span>
-                            Personal Information
-                        </h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div class="space-y-2">
-                                <label for="full_name"
-                                    class="text-[11px] font-bold text-on-surface-variant uppercase tracking-widest pl-1">Full
-                                    Name</label>
-                                <input
-                                    id="full_name"
-                                    class="w-full bg-surface-container-lowest border-none rounded-xl px-4 py-3 text-on-surface outfit focus:ring-1 focus:ring-primary/40"
-                                    type="text" value="Alex Sterling" name="full_name" placeholder="Enter your full name" />
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+                        <!-- Personal Information -->
+                        <div
+                            class="lg:col-span-7 bg-[#111827]/50 border border-white/5 rounded-3xl p-8 md:p-10 space-y-8 shadow-xl">
+                            <div class="flex items-center gap-3 text-[#6366F1] mb-2">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-[#6366F1]/10 flex items-center justify-center border border-[#6366F1]/20">
+                                    <i data-lucide="user" class="w-6 h-6"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white tracking-tight font-headline">Personal Info
+                                </h3>
                             </div>
-                            <div class="space-y-2">
-                                <label for="job_role"
-                                    class="text-[11px] font-bold text-on-surface-variant uppercase tracking-widest pl-1">Job
-                                    Role</label>
-                                <input
-                                    id="job_role"
-                                    class="w-full bg-surface-container-lowest border-none rounded-xl px-4 py-3 text-on-surface outfit focus:ring-1 focus:ring-primary/40"
-                                    type="text" value="Executive Admin" name="job_role" placeholder="Enter your job role" />
-                            </div>
-                            <div class="space-y-2">
-                                <label for="email_address"
-                                    class="text-[11px] font-bold text-on-surface-variant uppercase tracking-widest pl-1">Email
-                                    Address</label>
-                                <div class="relative">
-                                    <span
-                                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">mail</span>
-                                    <input
-                                        id="email_address"
-                                        class="w-full bg-surface-container-lowest border-none rounded-xl pl-10 pr-4 py-3 text-on-surface outfit focus:ring-1 focus:ring-primary/40"
-                                        type="email" value="alex.sterling@xenonos.cloud" name="email_address" placeholder="your.email@example.com" />
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-1 ubuntu">First
+                                        Name</label>
+                                    <input type="text" value="Alex"
+                                        class="w-full bg-[#1F2937] border border-white/5 rounded-xl px-5 py-3.5 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#6366F1]/50 transition-all placeholder:text-slate-600 outfit font-medium" />
+                                </div>
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-1 ubuntu">Last
+                                        Name</label>
+                                    <input type="text" value="Rivers"
+                                        class="w-full bg-[#1F2937] border border-white/5 rounded-xl px-5 py-3.5 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#6366F1]/50 transition-all placeholder:text-slate-600 outfit font-medium" />
                                 </div>
                             </div>
+
                             <div class="space-y-2">
-                                <label for="phone_number"
-                                    class="text-[11px] font-bold text-on-surface-variant uppercase tracking-widest pl-1">Phone
+                                <label
+                                    class="text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-1 ubuntu">Email
+                                    Address</label>
+                                <input type="email" value="alex.rivers@luminaprojects.com"
+                                    class="w-full bg-[#1F2937] border border-white/5 rounded-xl px-5 py-3.5 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#6366F1]/50 transition-all placeholder:text-slate-600 outfit font-medium" />
+                            </div>
+
+                            <div class="space-y-2">
+                                <label
+                                    class="text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-1 ubuntu">Phone
                                     Number</label>
-                                <div class="relative">
-                                    <span
-                                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">phone</span>
-                                    <input
-                                        id="phone_number"
-                                        class="w-full bg-surface-container-lowest border-none rounded-xl pl-10 pr-4 py-3 text-on-surface outfit focus:ring-1 focus:ring-primary/40"
-                                        type="tel" value="+1 (555) 942-0192" name="phone_number" placeholder="+1 (555) 000-0000" />
+                                <input type="tel" value="+1 (555) 123-4567"
+                                    class="w-full bg-[#1F2937] border border-white/5 rounded-xl px-5 py-3.5 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#6366F1]/50 transition-all placeholder:text-slate-600 outfit font-medium space-font tracking-widest" />
+                            </div>
+                        </div>
+
+                        <!-- Additional Information -->
+                        <div
+                            class="lg:col-span-5 bg-[#111827]/50 border border-white/5 rounded-3xl p-8 md:p-10 space-y-8 shadow-xl flex flex-col">
+                            <div class="flex items-center gap-3 text-[#6366F1] mb-2">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-[#6366F1]/10 flex items-center justify-center border border-[#6366F1]/20">
+                                    <i data-lucide="info" class="w-6 h-6"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white tracking-tight font-headline">Account Details
+                                </h3>
+                            </div>
+
+                            <div class="space-y-8 flex-grow">
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-1 ubuntu">Username</label>
+                                    <div
+                                        class="bg-[#0B0F19] border border-white/5 rounded-xl px-5 py-4 text-white text-sm font-medium outfit shadow-inner">
+                                        arivers_lead
+                                    </div>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-1 ubuntu">User
+                                        ID</label>
+                                    <div
+                                        class="flex items-center justify-between bg-[#0B0F19] border border-white/5 rounded-xl px-5 py-4 text-white text-sm font-bold space-font tracking-wide shadow-inner">
+                                        <span class="text-[#6366F1]">#LUM-9921-X9</span>
+                                        <button class="text-slate-500 hover:text-white transition-colors p-1"
+                                            title="Copy ID">
+                                            <i data-lucide="copy" class="w-4 h-4"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-4 pt-4 mt-auto">
+                                    <div class="flex justify-between items-end">
+                                        <p
+                                            class="text-[10px] uppercase tracking-widest text-slate-500 font-bold ubuntu">
+                                            Profile Completion</p>
+                                        <p class="text-xs font-bold text-[#6366F1] space-font">85%</p>
+                                    </div>
+                                    <div
+                                        class="h-2.5 w-full bg-[#0B0F19] rounded-full overflow-hidden p-[1px] border border-white/5 shadow-inner">
+                                        <div class="h-full bg-gradient-to-r from-[#6366F1] to-[#818cf8] rounded-full shadow-[0_0_10px_rgba(99,102,241,0.5)] relative overflow-hidden"
+                                            style="width: 85%">
+                                            <div
+                                                class="absolute inset-0 bg-white/20 w-full h-full skew-x-12 animate-[shimmer_2s_infinite]">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- === RIGHT COLUMN: QUICK STATS GRID === -->
-                <div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+                    <!-- === BIO SECTION === -->
+                    <div class="bg-surface-container rounded-[1.5rem] p-8 ">
+                        <h3 class="syne text-xl font-bold mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">description</span>
+                            Professional Summary
+                        </h3>
+                        <textarea id="professional_summary" aria-label="Write your professional summary"
+                            class="w-full bg-[#1F2937] border-none rounded-xl p-4 text-on-surface-variant outfit leading-relaxed focus:ring-1 focus:ring-primary/40 h-32 resize-none"
+                            placeholder="Write a short bio...">Driving excellence in cross-functional team coordination and product strategy. Specializing in high-scale infrastructure management and executive operations. Based in the San Francisco tech hub, currently managing XenonOS premium core systems.</textarea>
+                    </div>
+
+                    <!-- Billing Address -->
+                    <div class="bg-[#111827]/50 border border-white/5 rounded-3xl p-8 md:p-10 space-y-10 shadow-xl">
+                        <div class="flex items-center gap-3 text-[#6366F1] mb-2">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-[#6366F1]/10 flex items-center justify-center border border-[#6366F1]/20">
+                                <i data-lucide="credit-card" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white tracking-tight font-headline">Billing Address</h3>
+                        </div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div class="space-y-2">
+                                <label
+                                    class="text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-1 ubuntu">Company
+                                    Name</label>
+                                <input type="text" placeholder="Optional"
+                                    class="w-full bg-[#1F2937] border border-white/5 rounded-xl px-5 py-3.5 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#6366F1]/50 transition-all placeholder:text-slate-600 outfit font-medium" />
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-1 ubuntu">Payment
+                                    Method</label>
+                                <div class="relative group">
+                                    <select
+                                        class="w-full bg-[#1F2937] border border-white/5 rounded-xl px-5 py-3.5 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#6366F1]/50 transition-all appearance-none cursor-pointer outfit font-medium">
+                                        <option>Visa ending in 4242</option>
+                                        <option>Mastercard ending in 8891</option>
+                                        <option>PayPal (arivers@gmail.com)</option>
+                                    </select>
+                                    <i data-lucide="chevron-down"
+                                        class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 group-hover:text-white transition-colors pointer-events-none w-5 h-5"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div class="space-y-2">
+                                <label
+                                    class="text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-1 ubuntu">Address
+                                    1</label>
+                                <input type="text" value="742 Evergreen Terrace"
+                                    class="w-full bg-[#1F2937] border border-white/5 rounded-xl px-5 py-3.5 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#6366F1]/50 transition-all placeholder:text-slate-600 outfit font-medium" />
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-1 ubuntu">Address
+                                    2</label>
+                                <input type="text" placeholder="Apt, Suite..."
+                                    class="w-full bg-[#1F2937] border border-white/5 rounded-xl px-5 py-3.5 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#6366F1]/50 transition-all placeholder:text-slate-600 outfit font-medium" />
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div class="space-y-2">
+                                <label
+                                    class="text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-1 ubuntu">City</label>
+                                <input type="text" value="San Francisco"
+                                    class="w-full bg-[#1F2937] border border-white/5 rounded-xl px-5 py-3.5 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#6366F1]/50 transition-all placeholder:text-slate-600 outfit font-medium" />
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-1 ubuntu">State/Region</label>
+                                <input type="text" value="California"
+                                    class="w-full bg-[#1F2937] border border-white/5 rounded-xl px-5 py-3.5 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#6366F1]/50 transition-all placeholder:text-slate-600 outfit font-medium" />
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-1 ubuntu">Zip
+                                    Code</label>
+                                <input type="text" value="94103"
+                                    class="w-full bg-[#1F2937] border border-white/5 rounded-xl px-5 py-3.5 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#6366F1]/50 transition-all placeholder:text-slate-600 space-font tracking-widest font-medium" />
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-1 ubuntu">Country</label>
+                                <input type="text" value="United States"
+                                    class="w-full bg-[#1F2937] border border-white/5 rounded-xl px-5 py-3.5 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#6366F1]/50 transition-all placeholder:text-slate-600 outfit font-medium" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- === MAIN GRID GRID === -->
+                <div class="flex gap-6">
                     <!-- === STATS CARD 1: PROJECTS === -->
-                    <div class="GRID-card bg-surface-container rounded-[1.5rem] p-6 border border-outline-variant/5">
+                    <div class="GRID-card bg-surface-container rounded-[1.5rem] p-6 w-full">
                         <div class="flex justify-between items-start mb-4">
                             <div
                                 class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
@@ -190,7 +284,7 @@
                     </div>
 
                     <!-- === STATS CARD 2: TASKS === -->
-                    <div class="GRID-card bg-surface-container rounded-[1.5rem] p-6 border border-outline-variant/5">
+                    <div class="GRID-card bg-surface-container rounded-[1.5rem] p-6 w-full">
                         <div class="flex justify-between items-start mb-4">
                             <div
                                 class="w-12 h-12 bg-tertiary/10 rounded-2xl flex items-center justify-center text-tertiary">
@@ -207,45 +301,25 @@
                         <p class="mt-2 text-[10px] text-on-surface-variant uppercase tracking-widest">82% Efficiency
                             Rating</p>
                     </div>
-
-                    <!-- === STATS CARD 3: ACTIVITY LEVEL === -->
-                    <div
-                        class="GRID-card bg-surface-container-high rounded-[1.5rem] p-6 border border-primary/20 relative overflow-hidden">
-                        <div class="absolute -right-8 -bottom-8 opacity-10 scale-150">
-                            <span class="material-symbols-outlined text-[120px] text-primary">bolt</span>
-                        </div>
-                        <p class="text-on-surface-variant text-sm outfit font-medium mb-1">Activity Level</p>
-                        <h4 class="syne text-3xl font-extrabold text-primary mb-6">High Density</h4>
-                        <div class="flex items-end gap-1.5 h-16">
-                            <div class="flex-1 bg-primary/20 h-[60%] rounded-t-sm"></div>
-                            <div class="flex-1 bg-primary/20 h-[40%] rounded-t-sm"></div>
-                            <div class="flex-1 bg-primary/20 h-[70%] rounded-t-sm"></div>
-                            <div class="flex-1 bg-primary/40 h-[90%] rounded-t-sm"></div>
+                    
+                    <!-- === STATS CARD 3: BALANCE === -->
+                    <div class="GRID-card bg-surface-container rounded-[1.5rem] p-6 w-full">
+                        <div class="flex justify-between items-start mb-4">
                             <div
-                                class="flex-1 bg-primary h-[100%] rounded-t-sm shadow-[0_0_15px_rgba(192,193,255,0.4)]">
+                                class="w-12 h-12 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary">
+                                <span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
                             </div>
-                            <div class="flex-1 bg-primary/60 h-[80%] rounded-t-sm"></div>
-                            <div class="flex-1 bg-primary/30 h-[50%] rounded-t-sm"></div>
+                            <span
+                                class="text-[10px] font-bold text-secondary px-2 py-1 bg-secondary/10 rounded-md">CURRENT</span>
                         </div>
-                        <p class="mt-4 text-[10px] text-on-surface uppercase tracking-widest font-bold">Peak Performance
-                            Window</p>
+                        <p class="text-on-surface-variant text-sm outfit font-medium">Total Balance</p>
+                        <h4 class="syne text-5xl font-extrabold tracking-tighter mt-1">$4,250</h4>
+                        <div class="mt-4 flex items-center gap-2">
+                            <span class="text-xs text-secondary font-bold outfit">↑ 8.4%</span>
+                            <span class="text-[10px] text-on-surface-variant uppercase tracking-widest">Growth this month</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- === FOOTER META === -->
-            <div
-                class="mt-12 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-xs text-on-surface-variant outfit">Last profile update: October 24, 2023 at 14:02 GMT</p>
-                <div class="flex gap-6">
-                    <a class="text-xs text-on-surface-variant hover:text-primary transition-colors outfit font-bold"
-                        href="#">Privacy Settings</a>
-                    <a class="text-xs text-on-surface-variant hover:text-primary transition-colors outfit font-bold"
-                        href="#">Connected Apps</a>
-                    <a class="text-xs text-on-surface-variant hover:text-primary transition-colors outfit font-bold"
-                        href="#">API Access</a>
-                </div>
-            </div>
         </section>
     </main>
 </body>

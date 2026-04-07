@@ -37,7 +37,7 @@
                     <button
                         class="bg-primary text-on-primary font-bold px-8 py-4 rounded-xl flex items-center gap-3 shadow-lg shadow-primary/10 hover:shadow-primary/20 transition-all active:scale-95">
                         <span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
-                        Add Payment
+                        Request Payment
                     </button>
                 </section>
                 <!-- Quick Stats: GRID Layout -->
@@ -91,193 +91,152 @@
                         </div>
                     </div>
                 </section>
-                <!-- Main Workspace Grid -->
-                <div class="grid grid-cols-12 gap-8 items-start">
-                    <!-- Left: Recent Transactions -->
-                    <div class="col-span-8 bg-surface-container rounded-2xl overflow-hidden shadow-2xl shadow-black/20">
-                        <div class="p-6 flex items-center justify-between border-b border-outline-variant/10">
-                            <h4 class="text-lg font-headline font-bold text-white">Recent Transactions</h4>
-                            <div class="flex items-center gap-4">
-                                <div class="flex items-center gap-2 bg-surface-container-low rounded-lg px-3 py-1.5">
-                                    <span class="material-symbols-outlined text-sm text-slate-500"
-                                        data-icon="filter_list">filter_list</span>
-                                    <span class="text-xs font-bold text-on-surface-variant">Filters</span>
-                                </div>
-                                <button class="text-primary text-xs font-bold flex items-center gap-1 group">
-                                    <div
-                                        class="w-1 h-1 bg-primary rounded-full group-hover:w-3 transition-all duration-300">
-                                    </div>
-                                    View All
-                                </button>
+                <!-- Left: Recent Transactions -->
+                <div class="col-span-8 bg-surface-container rounded-2xl overflow-hidden shadow-2xl shadow-black/20">
+                    <div class="p-6 flex items-center justify-between border-b border-outline-variant/10">
+                        <h4 class="text-lg font-headline font-bold text-white">Recent Transactions</h4>
+                        <div class="flex items-center gap-4">
+                            <div class="flex items-center gap-2 bg-surface-container-low rounded-lg px-3 py-1.5">
+                                <span class="material-symbols-outlined text-sm text-slate-500"
+                                    data-icon="filter_list">filter_list</span>
+                                <span class="text-xs font-bold text-on-surface-variant">Filters</span>
                             </div>
-                        </div>
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-left border-collapse">
-                                <thead>
-                                    <tr class="bg-surface-container-low/50">
-                                        <th
-                                            class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">
-                                            Client</th>
-                                        <th
-                                            class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">
-                                            Transaction ID</th>
-                                        <th
-                                            class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">
-                                            Amount</th>
-                                        <th
-                                            class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">
-                                            Status</th>
-                                        <th
-                                            class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant text-right">
-                                            Method</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-outline-variant/5">
-                                    <tr class="hover:bg-surface-bright/30 transition-colors">
-                                        <td class="px-6 py-4">
-                                            <div class="flex items-center gap-3">
-                                                <div
-                                                    class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-xs">
-                                                    NL</div>
-                                                <div>
-                                                    <p class="text-sm font-bold text-white">Nova Labs</p>
-                                                    <p class="text-[10px] text-on-surface-variant">Web Architecture</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="px-6 py-4 font-mono text-xs text-on-surface-variant">#TXN-90210</td>
-                                        <td class="px-6 py-4 font-bold text-white">$4,500.00</td>
-                                        <td class="px-6 py-4">
-                                            <span
-                                                class="px-2 py-1 rounded-md bg-indigo-500/10 text-indigo-400 text-[10px] font-black uppercase tracking-wider">Completed</span>
-                                        </td>
-                                        <td class="px-6 py-4 text-right">
-                                            <div class="flex items-center justify-end gap-2 text-slate-400">
-                                                <span class="material-symbols-outlined text-sm"
-                                                    data-icon="credit_card">credit_card</span>
-                                                <span class="text-xs font-medium">Visa •••• 4242</span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover:bg-surface-bright/30 transition-colors">
-                                        <td class="px-6 py-4">
-                                            <div class="flex items-center gap-3">
-                                                <div
-                                                    class="w-8 h-8 rounded-lg bg-tertiary/20 text-tertiary flex items-center justify-center font-bold text-xs">
-                                                    SV</div>
-                                                <div>
-                                                    <p class="text-sm font-bold text-white">Solar Ventures</p>
-                                                    <p class="text-[10px] text-on-surface-variant">Branding Package</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="px-6 py-4 font-mono text-xs text-on-surface-variant">#TXN-88432</td>
-                                        <td class="px-6 py-4 font-bold text-white">$12,000.00</td>
-                                        <td class="px-6 py-4">
-                                            <span
-                                                class="px-2 py-1 rounded-md bg-tertiary/10 text-tertiary text-[10px] font-black uppercase tracking-wider">Pending</span>
-                                        </td>
-                                        <td class="px-6 py-4 text-right">
-                                            <div class="flex items-center justify-end gap-2 text-slate-400">
-                                                <span class="material-symbols-outlined text-sm"
-                                                    data-icon="account_balance">account_balance</span>
-                                                <span class="text-xs font-medium">Bank Transfer</span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover:bg-surface-bright/30 transition-colors">
-                                        <td class="px-6 py-4">
-                                            <div class="flex items-center gap-3">
-                                                <div
-                                                    class="w-8 h-8 rounded-lg bg-secondary/20 text-secondary flex items-center justify-center font-bold text-xs">
-                                                    KM</div>
-                                                <div>
-                                                    <p class="text-sm font-bold text-white">Kinetic Media</p>
-                                                    <p class="text-[10px] text-on-surface-variant">Ad Campaign</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="px-6 py-4 font-mono text-xs text-on-surface-variant">#TXN-77321</td>
-                                        <td class="px-6 py-4 font-bold text-white">$850.00</td>
-                                        <td class="px-6 py-4">
-                                            <span
-                                                class="px-2 py-1 rounded-md bg-indigo-500/10 text-indigo-400 text-[10px] font-black uppercase tracking-wider">Completed</span>
-                                        </td>
-                                        <td class="px-6 py-4 text-right">
-                                            <div class="flex items-center justify-end gap-2 text-slate-400">
-                                                <span class="material-symbols-outlined text-sm"
-                                                    data-icon="payments">payments</span>
-                                                <span class="text-xs font-medium">PayPal</span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover:bg-surface-bright/30 transition-colors">
-                                        <td class="px-6 py-4">
-                                            <div class="flex items-center gap-3">
-                                                <div
-                                                    class="w-8 h-8 rounded-lg bg-error/20 text-error flex items-center justify-center font-bold text-xs">
-                                                    AH</div>
-                                                <div>
-                                                    <p class="text-sm font-bold text-white">Aero Health</p>
-                                                    <p class="text-[10px] text-on-surface-variant">UI Audit</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="px-6 py-4 font-mono text-xs text-on-surface-variant">#TXN-76551</td>
-                                        <td class="px-6 py-4 font-bold text-white">$3,200.00</td>
-                                        <td class="px-6 py-4">
-                                            <span
-                                                class="px-2 py-1 rounded-md bg-error/10 text-error text-[10px] font-black uppercase tracking-wider">Failed</span>
-                                        </td>
-                                        <td class="px-6 py-4 text-right">
-                                            <div class="flex items-center justify-end gap-2 text-slate-400">
-                                                <span class="material-symbols-outlined text-sm"
-                                                    data-icon="credit_card">credit_card</span>
-                                                <span class="text-xs font-medium">Mastercard •••• 9012</span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <button class="text-primary text-xs font-bold flex items-center gap-1 group">
+                                <div
+                                    class="w-1 h-1 bg-primary rounded-full group-hover:w-3 transition-all duration-300">
+                                </div>
+                                View All
+                            </button>
                         </div>
                     </div>
-                    <!-- Right: Methods & Performance -->
-                    <div class="col-span-4 space-y-8">
-                        <!-- Performance Mini-Chart (Visual Representation) -->
-                        <div class="bg-surface-container rounded-2xl p-6 shadow-2xl shadow-black/20">
-                            <h4 class="font-headline font-bold text-white mb-2">Monthly Target</h4>
-                            <div class="flex items-end gap-2 mb-4">
-                                <span class="text-2xl font-bold text-white">74%</span>
-                                <span class="text-xs text-on-surface-variant mb-1">of $200k goal reached</span>
-                            </div>
-                            <div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
-                                <div
-                                    class="h-full progress-bar progress-bar-primary-gradient progress-bar-drop-shadow progress-width-74">
-                                </div>
-                            </div>
-                            <div class="mt-6 space-y-3">
-                                <div class="flex items-center justify-between">
-                                    <span
-                                        class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Last
-                                        30 Days</span>
-                                    <span class="text-[10px] font-bold text-indigo-400">+$24,100</span>
-                                </div>
-                                <!-- Mini-graph placeholder using CSS bars -->
-                                <div class="flex items-end justify-between h-12 pt-2">
-                                    <div class="w-2 bg-indigo-500/20 rounded-full h-3"></div>
-                                    <div class="w-2 bg-indigo-500/20 rounded-full h-6"></div>
-                                    <div class="w-2 bg-indigo-500/40 rounded-full h-4"></div>
-                                    <div class="w-2 bg-indigo-500/60 rounded-full h-8"></div>
-                                    <div
-                                        class="w-2 bg-indigo-500 rounded-full h-10 shadow-[0_0_10px_rgba(99,102,241,0.5)]">
-                                    </div>
-                                    <div class="w-2 bg-indigo-500/20 rounded-full h-5"></div>
-                                    <div class="w-2 bg-indigo-500/20 rounded-full h-7"></div>
-                                    <div class="w-2 bg-indigo-500/30 rounded-full h-4"></div>
-                                    <div class="w-2 bg-indigo-500/50 rounded-full h-9"></div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-surface-container-low/50">
+                                    <th
+                                        class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">
+                                        Client</th>
+                                    <th
+                                        class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">
+                                        Transaction ID</th>
+                                    <th
+                                        class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">
+                                        Amount</th>
+                                    <th
+                                        class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">
+                                        Status</th>
+                                    <th
+                                        class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant text-right">
+                                        Method</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-outline-variant/5">
+                                <tr class="hover:bg-surface-bright/30 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-xs">
+                                                NL</div>
+                                            <div>
+                                                <p class="text-sm font-bold text-white">Nova Labs</p>
+                                                <p class="text-[10px] text-on-surface-variant">Web Architecture</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 font-mono text-xs text-on-surface-variant">#TXN-90210</td>
+                                    <td class="px-6 py-4 font-bold text-white">$4,500.00</td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="px-2 py-1 rounded-md bg-indigo-500/10 text-indigo-400 text-[10px] font-black uppercase tracking-wider">Completed</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right">
+                                        <div class="flex items-center justify-end gap-2 text-slate-400">
+                                            <span class="material-symbols-outlined text-sm"
+                                                data-icon="credit_card">credit_card</span>
+                                            <span class="text-xs font-medium">Visa •••• 4242</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-surface-bright/30 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="w-8 h-8 rounded-lg bg-tertiary/20 text-tertiary flex items-center justify-center font-bold text-xs">
+                                                SV</div>
+                                            <div>
+                                                <p class="text-sm font-bold text-white">Solar Ventures</p>
+                                                <p class="text-[10px] text-on-surface-variant">Branding Package</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 font-mono text-xs text-on-surface-variant">#TXN-88432</td>
+                                    <td class="px-6 py-4 font-bold text-white">$12,000.00</td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="px-2 py-1 rounded-md bg-tertiary/10 text-tertiary text-[10px] font-black uppercase tracking-wider">Pending</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right">
+                                        <div class="flex items-center justify-end gap-2 text-slate-400">
+                                            <span class="material-symbols-outlined text-sm"
+                                                data-icon="account_balance">account_balance</span>
+                                            <span class="text-xs font-medium">Bank Transfer</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-surface-bright/30 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="w-8 h-8 rounded-lg bg-secondary/20 text-secondary flex items-center justify-center font-bold text-xs">
+                                                KM</div>
+                                            <div>
+                                                <p class="text-sm font-bold text-white">Kinetic Media</p>
+                                                <p class="text-[10px] text-on-surface-variant">Ad Campaign</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 font-mono text-xs text-on-surface-variant">#TXN-77321</td>
+                                    <td class="px-6 py-4 font-bold text-white">$850.00</td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="px-2 py-1 rounded-md bg-indigo-500/10 text-indigo-400 text-[10px] font-black uppercase tracking-wider">Completed</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right">
+                                        <div class="flex items-center justify-end gap-2 text-slate-400">
+                                            <span class="material-symbols-outlined text-sm"
+                                                data-icon="payments">payments</span>
+                                            <span class="text-xs font-medium">PayPal</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-surface-bright/30 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="w-8 h-8 rounded-lg bg-error/20 text-error flex items-center justify-center font-bold text-xs">
+                                                AH</div>
+                                            <div>
+                                                <p class="text-sm font-bold text-white">Aero Health</p>
+                                                <p class="text-[10px] text-on-surface-variant">UI Audit</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 font-mono text-xs text-on-surface-variant">#TXN-76551</td>
+                                    <td class="px-6 py-4 font-bold text-white">$3,200.00</td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="px-2 py-1 rounded-md bg-error/10 text-error text-[10px] font-black uppercase tracking-wider">Failed</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right">
+                                        <div class="flex items-center justify-end gap-2 text-slate-400">
+                                            <span class="material-symbols-outlined text-sm"
+                                                data-icon="credit_card">credit_card</span>
+                                            <span class="text-xs font-medium">Mastercard •••• 9012</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

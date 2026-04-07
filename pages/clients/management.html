@@ -31,7 +31,7 @@
                 <p class="text-on-surface-variant text-lg">Manage and monitor all client relationships.</p>
             </div>
             <button
-                class="indigo-glow-btn text-on-primary h-14 px-8 rounded-xl font-bold flex items-center gap-3 transition-all scale-100 hover:scale-[1.02]">
+                class="border border-white indigo-glow-btn text-on-primary h-14 px-8 rounded-xl font-bold flex items-center gap-3 transition-all scale-100 hover:scale-[1.02]">
                 <span class="material-symbols-outlined">person_add</span>
                 Add Client
             </button>
@@ -92,7 +92,7 @@
 
             <!-- Client Item 1: Nebula Dynamics - Active -->
             <div
-                class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer border border-outline-variant/5 shadow-lg group">
+                class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer  shadow-lg group">
                 <div class="col-span-4 flex items-center gap-4">
                     <input id="select-nebula-dynamics"
                         class="rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary/20"
@@ -130,7 +130,7 @@
 
             <!-- Client Item 2: Ethereal Systems - Pending -->
             <div
-                class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer border border-outline-variant/5 shadow-lg group">
+                class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer  shadow-lg group">
                 <div class="col-span-4 flex items-center gap-4">
                     <input id="select-ethereal-systems"
                         class="rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary/20"
@@ -168,7 +168,7 @@
 
             <!-- Client Item 3: Vortex Ventures - Inactive -->
             <div
-                class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer border border-outline-variant/5 shadow-lg group">
+                class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer  shadow-lg group">
                 <div class="col-span-4 flex items-center gap-4">
                     <input id="select-vortex-ventures"
                         class="rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary/20"
@@ -206,7 +206,7 @@
 
             <!-- Client Item 4: Prism Creative - Active -->
             <div
-                class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer border border-outline-variant/5 shadow-lg group">
+                class="grid grid-cols-12 gap-4 items-center px-8 py-5 bg-surface-container rounded-2xl transition-all duration-400 hover:scale-[1.01] hover:bg-surface-container-high cursor-pointer  shadow-lg group">
                 <div class="col-span-4 flex items-center gap-4">
                     <input id="select-prism-creative"
                         class="rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary/20"
@@ -242,88 +242,10 @@
                 </div>
             </div>
         </div>
-        <!-- === END CLIENTS LIST TABLE === -->
-
-        <!-- === ASYMMETRIC GRID INSIGHT SECTION === -->
-        <div class="mt-16 grid grid-cols-12 gap-6">
-            <!-- === STATS/CONTENT SECTION === -->
-            <!-- Revenue Growth Card -->
-            <div
-                class="col-span-8 bg-surface-container rounded-2xl p-8 relative overflow-hidden group border border-outline-variant/5">
-                <div class="relative z-10 flex flex-col h-full justify-between">
-                    <div>
-                        <h3 class="syne-headline text-3xl font-bold text-primary mb-2">Revenue Growth</h3>
-                        <p class="text-on-surface-variant max-w-md">The client ecosystem has expanded by 12.4% this
-                            quarter with primary growth in Tech and Venture sectors.</p>
-                    </div>
-                    <div class="flex items-end gap-1 mt-8 h-32">
-                        <div
-                            class="w-full bg-surface-container-highest rounded-t-lg transition-all duration-500 group-hover:bg-primary/40 h-2/5">
-                        </div>
-                        <div
-                            class="w-full bg-surface-container-highest rounded-t-lg transition-all duration-500 group-hover:bg-primary/50 h-3/5">
-                        </div>
-                        <div
-                            class="w-full bg-surface-container-highest rounded-t-lg transition-all duration-500 group-hover:bg-primary/30 h-[45%]">
-                        </div>
-                        <div
-                            class="w-full bg-surface-container-highest rounded-t-lg transition-all duration-500 group-hover:bg-primary/70 h-[85%]">
-                        </div>
-                        <div
-                            class="w-full bg-surface-container-highest rounded-t-lg transition-all duration-500 group-hover:bg-primary/60 h-[70%]">
-                        </div>
-                        <div class="w-full bg-primary/90 rounded-t-lg shadow-[0_0_20px_rgba(192,193,255,0.3)] h-full">
-                        </div>
-                    </div>
-                </div>
-                <div class="absolute -right-10 -bottom-10 opacity-5">
-                    <span class="material-symbols-outlined text-[240px]">monitoring</span>
-                </div>
-            </div>
-
-            <!-- Network Health Card -->
-            <div
-                class="col-span-4 bg-primary rounded-2xl p-8 text-on-primary shadow-[0_32px_32px_-12px_rgba(99,102,241,0.3)]">
-                <span class="material-symbols-outlined text-4xl mb-4">rocket_launch</span>
-                <h3 class="syne-headline text-2xl font-bold mb-4">Network Health</h3>
-                <div class="space-y-6">
-                    <!-- Engagement Progress -->
-                    <div>
-                        <div class="flex justify-between text-xs font-bold uppercase tracking-wider mb-2">
-                            <span>Engagement</span>
-                            <span>94%</span>
-                        </div>
-                        <div class="h-1 bg-on-primary/20 rounded-full overflow-hidden">
-                            <div class="h-full bg-on-primary w-[94%]"></div>
-                        </div>
-                    </div>
-
-                    <!-- Retention Progress -->
-                    <div>
-                        <div class="flex justify-between text-xs font-bold uppercase tracking-wider mb-2">
-                            <span>Retention</span>
-                            <span>88%</span>
-                        </div>
-                        <div class="h-1 bg-on-primary/20 rounded-full overflow-hidden">
-                            <div class="h-full bg-on-primary w-[88%]"></div>
-                        </div>
-                    </div>
-
-                    <button
-                        class="w-full py-4 mt-4 bg-on-primary text-primary font-bold rounded-xl hover:bg-white transition-colors">
-                        Export Full Report
-                    </button>
-                </div>
-            </div>
-            <!-- === END STATS/CONTENT SECTION === -->
-        </div>
-        <!-- === END ASYMMETRIC GRID INSIGHT SECTION === -->
     </main>
-    <!-- === END MAIN CONTENT CANVAS === -->
-
+    
     <!-- === SCRIPTS === -->
     <script src="../../assets/js/app.js"></script>
-    <!-- === END SCRIPTS === -->
 </body>
 
 </html>
