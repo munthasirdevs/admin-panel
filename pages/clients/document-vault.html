@@ -21,75 +21,12 @@
     <link rel="stylesheet" href="../../assets/css/responsive.css">
 
     <!-- === PAGE-SPECIFIC STYLES === -->
-    <style>
-        /* Tab scroll indicator gradient */
-        .tab-scroll-fade::after {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            width: 48px;
-            background: linear-gradient(to right, transparent, var(--color-surface));
-            pointer-events: none;
-        }
-
-        /* Drag-and-drop zone active state */
-        .upload-zone.drag-over {
-            border-color: var(--color-primary);
-            background-color: rgba(99, 102, 241, 0.08);
-        }
-
-        .upload-zone.drag-over .upload-glow {
-            opacity: 0.6;
-        }
-
-        /* File card hover overlay */
-        .file-card-actions {
-            opacity: 0;
-            transition: opacity 0.2s ease;
-        }
-
-        .file-card:hover .file-card-actions {
-            opacity: 1;
-        }
-
-        /* Image file card overlay */
-        .image-file-card .image-overlay {
-            background: linear-gradient(to top, rgba(11, 15, 25, 0.95) 0%, rgba(11, 15, 25, 0.5) 40%, transparent 100%);
-        }
-
-        /* Focus-visible for keyboard navigation */
-        *:focus-visible {
-            outline: 2px solid var(--color-primary);
-            outline-offset: 2px;
-        }
-
-        /* Smooth scroll for tab navigation */
-        .tab-scroll {
-            scroll-behavior: smooth;
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        .tab-scroll::-webkit-scrollbar {
-            display: none;
-        }
-
-        /* Sort select custom arrow */
-        .sort-select {
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23c7c4d7' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 12px center;
-            padding-right: 36px;
-        }
-    </style>
 </head>
 
 <body class="bg-background text-on-surface font-body selection:bg-primary/30">
     <!-- === MAIN CONTENT CANVAS === -->
-    <main class="pt-8 sm:pt-12 md:pt-16 lg:pt-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pb-8 sm:pb-12 md:pb-16 min-h-screen flex flex-col">
+    <main
+        class="pt-8 sm:pt-12 md:pt-16 lg:pt-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pb-8 sm:pb-12 md:pb-16 min-h-screen flex flex-col">
 
         <!-- ========================================== -->
         <!-- === CLIENT HEADER                        -->
@@ -99,7 +36,8 @@
                 <!-- Client Info -->
                 <div class="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 md:gap-8 flex-1 min-w-0">
                     <!-- Logo -->
-                    <div class="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-xl bg-surface-container border border-outline-variant/10 overflow-hidden shadow-2xl flex-shrink-0">
+                    <div
+                        class="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-xl bg-surface-container border border-outline-variant/10 overflow-hidden shadow-2xl flex-shrink-0">
                         <img class="w-full h-full object-cover"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAKYJUAhFtfspwONe6t0o_xnf_IUsqf4d3mRY827sNgSerVi0jy8mR9uOyFBreb6P1XNNgC0wbpnxkJqyhydGEfUeYZb3ch237GIaZsK7zEe1vXuDeDoME5tvZWEqgBsd6sSDV1GxcLQ1dl4ixGPDQvBpps2nCm06vhjwsGFoFGcqYuB1eH3jz7ce_IqzgoD288J6-iEDfg0VdMbDr7dfFvK5umF8KpzHgi5nA03L-Gk1BjCK2Xxn3ZcrMrQ83msER9S5SqMDWndI"
                             alt="Vanguard Dynamics company logo" />
@@ -108,25 +46,32 @@
                     <div class="min-w-0 flex-1">
                         <!-- Tier & ID -->
                         <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-2">
-                            <span class="px-2 py-0.5 sm:px-3 sm:py-1 rounded text-[10px] sm:text-xs font-bold tracking-widest bg-primary/10 text-primary uppercase whitespace-nowrap">Premium Tier</span>
+                            <span
+                                class="px-2 py-0.5 sm:px-3 sm:py-1 rounded text-[10px] sm:text-xs font-bold tracking-widest bg-primary/10 text-primary uppercase whitespace-nowrap">Premium
+                                Tier</span>
                             <span class="text-on-surface-variant text-xs sm:text-sm font-medium">ID: CL-99201</span>
                         </div>
                         <!-- Name -->
-                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-headline font-extrabold tracking-tight text-on-surface leading-tight break-words">Vanguard Dynamics</h2>
+                        <h2
+                            class="text-3xl sm:text-4xl md:text-5xl font-headline font-extrabold tracking-tight text-on-surface leading-tight break-words">
+                            Vanguard Dynamics</h2>
                         <!-- Description -->
-                        <p class="text-on-surface-variant mt-2 max-w-xl font-light text-sm sm:text-base leading-relaxed">Global logistics and autonomous freight systems. Scaling operations across Europe and Asia-Pacific regions for Q4 expansion.</p>
+                        <p
+                            class="text-on-surface-variant mt-2 max-w-xl font-light text-sm sm:text-base leading-relaxed">
+                            Global logistics and autonomous freight systems. Scaling operations across Europe and
+                            Asia-Pacific regions for Q4 expansion.</p>
                     </div>
                 </div>
                 <!-- Action Buttons -->
                 <div class="flex flex-row sm:flex-col lg:flex-row gap-3 flex-shrink-0 w-full sm:w-auto">
                     <button
-                        class="min-h-[44px] flex-1 sm:flex-none lg:flex-1 px-4 sm:px-6 py-3 rounded-xl bg-surface-container border border-outline-variant/20 text-on-surface font-medium text-sm hover:bg-surface-container-high hover:border-outline-variant/30 active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2"
+                        class="min-h-[44px] sm:flex-none px-4 sm:px-6 py-3 rounded-xl bg-surface-container border border-outline-variant/20 text-on-surface font-medium text-sm hover:bg-surface-container-high hover:border-outline-variant/30 active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2"
                         aria-label="Send message to client">
                         <span class="material-symbols-outlined text-sm" aria-hidden="true">mail</span>
                         <span class="hidden sm:inline">Message</span>
                     </button>
                     <button
-                        class="min-h-[44px] flex-1 sm:flex-none lg:flex-1 px-4 sm:px-6 py-3 rounded-xl bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold text-sm shadow-lg shadow-primary/20 hover:shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2"
+                        class="min-h-[44px] sm:flex-none px-6 py-3 rounded-xl bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold text-sm shadow-lg shadow-primary/20 hover:shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2"
                         aria-label="Create new task for client">
                         <span class="material-symbols-outlined text-sm" aria-hidden="true">add</span>
                         <span class="hidden sm:inline">Create Task</span>
@@ -167,22 +112,8 @@
             <!-- ========================================== -->
             <section class="relative group" aria-label="File upload area">
                 <!-- Glow effect -->
-                <div class="upload-glow absolute -inset-0.5 bg-gradient-to-r from-primary/20 to-tertiary/20 rounded-xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-1000 pointer-events-none"></div>
-                <!-- Drop zone -->
-                <div id="uploadZone"
-                    class="upload-zone relative bg-surface-container-low border-2 border-dashed border-outline-variant/30 rounded-xl p-6 sm:p-8 md:p-12 flex flex-col items-center justify-center min-h-[140px] sm:min-h-[160px] md:min-h-[180px] transition-all duration-300 hover:bg-surface-container/40 cursor-pointer"
-                    role="button"
-                    tabindex="0"
-                    aria-label="Drag and drop files here or click to browse">
-                    <!-- Icon -->
-                    <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-surface-container flex items-center justify-center mb-3 sm:mb-4 shadow-inner flex-shrink-0">
-                        <span class="material-symbols-outlined text-primary text-2xl sm:text-3xl" aria-hidden="true">cloud_upload</span>
-                    </div>
-                    <!-- Text -->
-                    <h3 class="text-base sm:text-lg md:text-xl font-headline font-bold text-on-surface text-center">Upload Client Assets</h3>
-                    <p class="text-on-surface-variant mt-1 text-center max-w-md text-xs sm:text-sm">Drag and drop your files here, or <span class="text-primary cursor-pointer hover:underline font-medium">browse files</span>. Supported: PDF, DOCX, XLSX, PNG (Max 50MB).</p>
-                    <!-- Hidden file input -->
-                    <input type="file" id="fileInput" class="sr-only" multiple aria-label="Select files to upload" />
+                <div
+                    class="upload-glow absolute -inset-0.5 bg-gradient-to-r from-primary/20 to-tertiary/20 rounded-xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-1000 pointer-events-none">
                 </div>
             </section>
             <!-- === END UPLOAD ZONE === -->
@@ -190,38 +121,50 @@
             <!-- ========================================== -->
             <!-- === FILE MANAGER CONTROLS                -->
             <!-- ========================================== -->
-            <section class="flex flex-col sm:flex-row sm:items-center justify-between gap-4" aria-label="File manager controls">
+            <section class="flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                aria-label="File manager controls">
                 <!-- Title & Count -->
                 <div class="flex items-center gap-3 sm:gap-4">
                     <h4 class="font-headline font-bold text-base sm:text-lg text-on-surface">Central Repository</h4>
-                    <span class="px-2.5 py-1 sm:px-3 sm:py-1 bg-surface-container-highest text-on-surface-variant text-[10px] sm:text-xs rounded-full font-medium flex-shrink-0">24 Files</span>
+                    <span
+                        class="px-2.5 py-1 sm:px-3 sm:py-1 bg-surface-container-highest text-on-surface-variant text-[10px] sm:text-xs rounded-full font-medium flex-shrink-0">24
+                        Files</span>
                 </div>
                 <!-- View Toggle & Sort -->
                 <div class="flex items-center gap-2 sm:gap-3">
                     <!-- View Toggle -->
-                    <div class="flex bg-surface-container-lowest rounded-lg p-1 border border-outline-variant/10 flex-shrink-0" role="radiogroup" aria-label="File view mode">
-                        <button class="min-w-[36px] min-h-[36px] sm:min-w-[40px] sm:min-h-[40px] p-1.5 sm:p-2 rounded-md bg-surface-container-high text-primary shadow-sm flex items-center justify-center transition-colors"
-                            role="radio"
-                            aria-checked="true"
-                            aria-label="Grid view">
-                            <span class="material-symbols-outlined text-sm sm:text-base" aria-hidden="true">grid_view</span>
+                    <div class="flex bg-surface-container-lowest rounded-lg p-1 border border-outline-variant/10 flex-shrink-0"
+                        role="radiogroup" aria-label="File view mode">
+                        <button
+                            class="min-w-[36px] min-h-[36px] sm:min-w-[40px] sm:min-h-[40px] p-1.5 sm:p-2 rounded-md bg-surface-container-high text-primary shadow-sm flex items-center justify-center transition-colors"
+                            role="radio" aria-checked="true" aria-label="Grid view">
+                            <span class="material-symbols-outlined text-sm sm:text-base"
+                                aria-hidden="true">grid_view</span>
                         </button>
-                        <button class="min-w-[36px] min-h-[36px] sm:min-w-[40px] sm:min-h-[40px] p-1.5 sm:p-2 rounded-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface flex items-center justify-center transition-colors"
-                            role="radio"
-                            aria-checked="false"
-                            aria-label="List view">
-                            <span class="material-symbols-outlined text-sm sm:text-base" aria-hidden="true">format_list_bulleted</span>
+                        <button
+                            class="min-w-[36px] min-h-[36px] sm:min-w-[40px] sm:min-h-[40px] p-1.5 sm:p-2 rounded-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface flex items-center justify-center transition-colors"
+                            role="radio" aria-checked="false" aria-label="List view">
+                            <span class="material-symbols-outlined text-sm sm:text-base"
+                                aria-hidden="true">format_list_bulleted</span>
                         </button>
                     </div>
                     <!-- Divider -->
                     <div class="hidden sm:block h-8 w-px bg-outline-variant/20 flex-shrink-0" aria-hidden="true"></div>
                     <!-- Sort Dropdown -->
-                    <select class="sort-select min-h-[44px] bg-surface-container border border-outline-variant/20 rounded-lg text-sm px-3 sm:px-4 py-2 text-on-surface focus:ring-2 focus:ring-primary focus:ring-offset-1 focus:ring-offset-surface focus:border-primary cursor-pointer w-full sm:w-auto"
+                    <select
+                        class="sort-select min-h-[44px] bg-surface-container border border-outline-variant/20 rounded-lg text-sm px-3 sm:px-4 py-2 text-on-surface focus:ring-2 focus:ring-primary focus:ring-offset-1 focus:ring-offset-surface focus:border-primary cursor-pointer w-full sm:w-auto"
                         aria-label="Sort files by">
                         <option>Sort by: Newest First</option>
                         <option>Sort by: Name (A-Z)</option>
                         <option>Sort by: File Size</option>
                     </select>
+
+                    <!-- Add File Button -->
+                    <button
+                        class="p-3 bg-surface-container-lowest border border-outline-variant/10 hover:bg-primary/10 hover:text-primary rounded-lg transition-colors flex items-center justify-center"
+                        aria-label="Add file">
+                        <a class="text-sm" aria-hidden="true">Add Files</a>
+                    </button>
                 </div>
             </section>
             <!-- === END FILE MANAGER CONTROLS === -->
@@ -229,33 +172,43 @@
             <!-- ========================================== -->
             <!-- === FILE GRID                            -->
             <!-- ========================================== -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6" role="list" aria-label="Client files and folders">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6"
+                role="list" aria-label="Client files and folders">
 
                 <!-- File Card 01: Q4_Operational_Strategy_V2.pdf (PDF) -->
-                <article class="file-card group bg-surface-container rounded-xl p-5 sm:p-6 border border-outline-variant/10 hover:border-outline-variant/20 hover:bg-surface-container-high transition-all duration-300 flex flex-col" role="listitem">
+                <article
+                    class="file-card group bg-surface-container rounded-xl p-5 sm:p-6 border border-outline-variant/10 hover:border-outline-variant/20 hover:bg-surface-container-high transition-all duration-300 flex flex-col"
+                    role="listitem">
                     <!-- Header -->
                     <div class="flex justify-between items-start mb-4 sm:mb-6">
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-red-500/10 flex items-center justify-center text-red-400 flex-shrink-0">
-                            <span class="material-symbols-outlined text-xl sm:text-2xl" aria-hidden="true">picture_as_pdf</span>
+                        <div
+                            class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-red-500/10 flex items-center justify-center text-red-400 flex-shrink-0">
+                            <span class="material-symbols-outlined text-xl sm:text-2xl"
+                                aria-hidden="true">picture_as_pdf</span>
                         </div>
-                        <button class="file-card-actions min-w-[36px] min-h-[36px] p-1.5 sm:p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all"
+                        <button
+                            class="file-card-actions min-w-[36px] min-h-[36px] p-1.5 sm:p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all"
                             aria-label="More options for Q4_Operational_Strategy_V2.pdf">
-                            <span class="material-symbols-outlined text-sm sm:text-base" aria-hidden="true">more_vert</span>
+                            <span class="material-symbols-outlined text-sm sm:text-base"
+                                aria-hidden="true">more_vert</span>
                         </button>
                     </div>
                     <!-- Info -->
                     <div class="flex-1 min-w-0">
-                        <h5 class="font-headline font-bold text-sm sm:text-base mb-1 truncate text-on-surface" title="Q4_Operational_Strategy_V2.pdf">Q4_Operational_Strategy_V2.pdf</h5>
+                        <h5 class="font-headline font-bold text-sm sm:text-base mb-1 truncate text-on-surface"
+                            title="Q4_Operational_Strategy_V2.pdf">Q4_Operational_Strategy_V2.pdf</h5>
                         <p class="text-xs text-on-surface-variant">Modified 2 hours ago &#8226; 14.2 MB</p>
                     </div>
                     <!-- Actions -->
                     <div class="mt-4 sm:mt-6 flex gap-2">
-                        <button class="flex-1 min-h-[36px] py-2 bg-surface-container-lowest hover:bg-primary/10 hover:text-primary rounded-lg text-xs font-semibold transition-colors flex items-center justify-center gap-1.5"
+                        <button
+                            class="flex-1 min-h-[36px] py-2 bg-surface-container-lowest hover:bg-primary/10 hover:text-primary rounded-lg text-xs font-semibold transition-colors flex items-center justify-center gap-1.5"
                             aria-label="Preview Q4_Operational_Strategy_V2.pdf">
                             <span class="material-symbols-outlined text-sm" aria-hidden="true">visibility</span>
                             Preview
                         </button>
-                        <button class="min-w-[36px] min-h-[36px] p-2 bg-surface-container-lowest hover:bg-primary/10 hover:text-primary rounded-lg transition-colors flex items-center justify-center"
+                        <button
+                            class="min-w-[36px] min-h-[36px] p-2 bg-surface-container-lowest hover:bg-primary/10 hover:text-primary rounded-lg transition-colors flex items-center justify-center"
                             aria-label="Download Q4_Operational_Strategy_V2.pdf">
                             <span class="material-symbols-outlined text-sm" aria-hidden="true">download</span>
                         </button>
@@ -263,30 +216,39 @@
                 </article>
 
                 <!-- File Card 02: Financial_Projections_2024.xlsx (Spreadsheet) -->
-                <article class="file-card group bg-surface-container rounded-xl p-5 sm:p-6 border border-outline-variant/10 hover:border-outline-variant/20 hover:bg-surface-container-high transition-all duration-300 flex flex-col" role="listitem">
+                <article
+                    class="file-card group bg-surface-container rounded-xl p-5 sm:p-6 border border-outline-variant/10 hover:border-outline-variant/20 hover:bg-surface-container-high transition-all duration-300 flex flex-col"
+                    role="listitem">
                     <!-- Header -->
                     <div class="flex justify-between items-start mb-4 sm:mb-6">
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-green-500/10 flex items-center justify-center text-green-400 flex-shrink-0">
-                            <span class="material-symbols-outlined text-xl sm:text-2xl" aria-hidden="true">table_chart</span>
+                        <div
+                            class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-green-500/10 flex items-center justify-center text-green-400 flex-shrink-0">
+                            <span class="material-symbols-outlined text-xl sm:text-2xl"
+                                aria-hidden="true">table_chart</span>
                         </div>
-                        <button class="file-card-actions min-w-[36px] min-h-[36px] p-1.5 sm:p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all"
+                        <button
+                            class="file-card-actions min-w-[36px] min-h-[36px] p-1.5 sm:p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all"
                             aria-label="More options for Financial_Projections_2024.xlsx">
-                            <span class="material-symbols-outlined text-sm sm:text-base" aria-hidden="true">more_vert</span>
+                            <span class="material-symbols-outlined text-sm sm:text-base"
+                                aria-hidden="true">more_vert</span>
                         </button>
                     </div>
                     <!-- Info -->
                     <div class="flex-1 min-w-0">
-                        <h5 class="font-headline font-bold text-sm sm:text-base mb-1 truncate text-on-surface" title="Financial_Projections_2024.xlsx">Financial_Projections_2024.xlsx</h5>
+                        <h5 class="font-headline font-bold text-sm sm:text-base mb-1 truncate text-on-surface"
+                            title="Financial_Projections_2024.xlsx">Financial_Projections_2024.xlsx</h5>
                         <p class="text-xs text-on-surface-variant">Modified Yesterday &#8226; 2.8 MB</p>
                     </div>
                     <!-- Actions -->
                     <div class="mt-4 sm:mt-6 flex gap-2">
-                        <button class="flex-1 min-h-[36px] py-2 bg-surface-container-lowest hover:bg-primary/10 hover:text-primary rounded-lg text-xs font-semibold transition-colors flex items-center justify-center gap-1.5"
+                        <button
+                            class="flex-1 min-h-[36px] py-2 bg-surface-container-lowest hover:bg-primary/10 hover:text-primary rounded-lg text-xs font-semibold transition-colors flex items-center justify-center gap-1.5"
                             aria-label="Share Financial_Projections_2024.xlsx">
                             <span class="material-symbols-outlined text-sm" aria-hidden="true">share</span>
                             Share
                         </button>
-                        <button class="min-w-[36px] min-h-[36px] p-2 bg-surface-container-lowest hover:bg-primary/10 hover:text-primary rounded-lg transition-colors flex items-center justify-center"
+                        <button
+                            class="min-w-[36px] min-h-[36px] p-2 bg-surface-container-lowest hover:bg-primary/10 hover:text-primary rounded-lg transition-colors flex items-center justify-center"
                             aria-label="Download Financial_Projections_2024.xlsx">
                             <span class="material-symbols-outlined text-sm" aria-hidden="true">download</span>
                         </button>
@@ -294,7 +256,9 @@
                 </article>
 
                 <!-- File Card 03: Analytics_Dashboard_UI.png (Image Preview) -->
-                <article class="file-card image-file-card relative group rounded-xl overflow-hidden border border-outline-variant/10 hover:border-outline-variant/20 transition-all duration-300 h-[200px] sm:h-[220px] md:h-[240px] lg:h-auto lg:aspect-[4/3]" role="listitem">
+                <article
+                    class="file-card image-file-card relative group rounded-xl overflow-hidden border border-outline-variant/10 hover:border-outline-variant/20 transition-all duration-300 h-[200px] sm:h-[220px] md:h-[240px] lg:h-auto lg:aspect-[4/3]"
+                    role="listitem">
                     <!-- Image -->
                     <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP0Q_TmVXEfSvpEDEpoZLhNO6PKktgWf652j4DusPaMzsMJbOD_YagnGTHEXXnIoFcbOHK_MO9CgMhXQh3ax3QsaNgkK6VxTidwRiY0jW2JJUwbGyxspgHpuj-yGQD74rKHbMbsDmOwntdQYwp4oH7y2dv8uklZiBILARMDAE244XN4dDry-TWTY1hgq66MxTY3v2gtV_efrvvZuKWNoipEafsNpgUb4C7L2BZApX7poXcMGTH940yrgMvemfG4f3psVrCdJqp7U"
@@ -304,19 +268,24 @@
                     <!-- Content -->
                     <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6">
                         <div class="flex items-center gap-2 mb-1.5 sm:mb-2">
-                            <span class="material-symbols-outlined text-primary text-sm sm:text-base" aria-hidden="true">image</span>
-                            <span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">Visual Asset</span>
+                            <span class="material-symbols-outlined text-primary text-sm sm:text-base"
+                                aria-hidden="true">image</span>
+                            <span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">Visual
+                                Asset</span>
                         </div>
-                        <h5 class="font-headline font-bold text-sm sm:text-base text-on-surface truncate" title="Analytics_Dashboard_UI.png">Analytics_Dashboard_UI.png</h5>
+                        <h5 class="font-headline font-bold text-sm sm:text-base text-on-surface truncate"
+                            title="Analytics_Dashboard_UI.png">Analytics_Dashboard_UI.png</h5>
                         <p class="text-xs text-on-surface-variant opacity-80 mt-0.5">Sep 12, 2023 &#8226; 8.4 MB</p>
                         <!-- Hover actions -->
                         <div class="file-card-actions flex gap-2 mt-3">
-                            <button class="flex-1 min-h-[36px] py-2 bg-surface-container-lowest/90 hover:bg-primary/10 hover:text-primary rounded-lg text-xs font-semibold transition-colors flex items-center justify-center gap-1.5 backdrop-blur-sm"
+                            <button
+                                class="flex-1 min-h-[36px] py-2 bg-surface-container-lowest/90 hover:bg-primary/10 hover:text-primary rounded-lg text-xs font-semibold transition-colors flex items-center justify-center gap-1.5 backdrop-blur-sm"
                                 aria-label="Preview Analytics_Dashboard_UI.png">
                                 <span class="material-symbols-outlined text-sm" aria-hidden="true">visibility</span>
                                 Preview
                             </button>
-                            <button class="min-w-[36px] min-h-[36px] p-2 bg-surface-container-lowest/90 hover:bg-primary/10 hover:text-primary rounded-lg transition-colors flex items-center justify-center backdrop-blur-sm"
+                            <button
+                                class="min-w-[36px] min-h-[36px] p-2 bg-surface-container-lowest/90 hover:bg-primary/10 hover:text-primary rounded-lg transition-colors flex items-center justify-center backdrop-blur-sm"
                                 aria-label="Download Analytics_Dashboard_UI.png">
                                 <span class="material-symbols-outlined text-sm" aria-hidden="true">download</span>
                             </button>
@@ -325,13 +294,18 @@
                 </article>
 
                 <!-- File Card 04: Contract Archives (Folder) -->
-                <article class="file-card group bg-surface-container rounded-xl p-5 sm:p-6 border border-outline-variant/10 hover:border-outline-variant/20 hover:bg-surface-container-high transition-all duration-300" role="listitem">
+                <article
+                    class="file-card group bg-surface-container rounded-xl p-5 sm:p-6 border border-outline-variant/10 hover:border-outline-variant/20 hover:bg-surface-container-high transition-all duration-300"
+                    role="listitem">
                     <!-- Header -->
                     <div class="flex justify-between items-center mb-4 sm:mb-6">
-                        <div class="w-10 h-10 sm:w-10 sm:h-10 rounded bg-indigo-500/10 flex items-center justify-center text-indigo-400 flex-shrink-0">
+                        <div
+                            class="w-10 h-10 sm:w-10 sm:h-10 rounded bg-indigo-500/10 flex items-center justify-center text-indigo-400 flex-shrink-0">
                             <span class="material-symbols-outlined text-xl sm:text-2xl" aria-hidden="true">folder</span>
                         </div>
-                        <span class="text-xs font-bold text-on-surface-variant bg-surface-container-lowest px-2 py-1 rounded">12 Items</span>
+                        <span
+                            class="text-xs font-bold text-on-surface-variant bg-surface-container-lowest px-2 py-1 rounded">12
+                            Items</span>
                     </div>
                     <!-- Info -->
                     <h5 class="font-headline font-bold text-sm sm:text-base mb-1 text-on-surface">Contract Archives</h5>
@@ -339,27 +313,37 @@
                 </article>
 
                 <!-- File Card 05: Service_Agreement.docx (Document) -->
-                <article class="file-card group bg-surface-container rounded-xl p-5 sm:p-6 border border-outline-variant/10 hover:border-outline-variant/20 hover:bg-surface-container-high transition-all duration-300" role="listitem">
+                <article
+                    class="file-card group bg-surface-container rounded-xl p-5 sm:p-6 border border-outline-variant/10 hover:border-outline-variant/20 hover:bg-surface-container-high transition-all duration-300"
+                    role="listitem">
                     <!-- Header -->
                     <div class="flex justify-between items-center mb-4 sm:mb-6">
-                        <div class="w-10 h-10 sm:w-10 sm:h-10 rounded bg-blue-500/10 flex items-center justify-center text-blue-400 flex-shrink-0">
-                            <span class="material-symbols-outlined text-xl sm:text-2xl" aria-hidden="true">description</span>
+                        <div
+                            class="w-10 h-10 sm:w-10 sm:h-10 rounded bg-blue-500/10 flex items-center justify-center text-blue-400 flex-shrink-0">
+                            <span class="material-symbols-outlined text-xl sm:text-2xl"
+                                aria-hidden="true">description</span>
                         </div>
                         <span class="text-xs text-on-surface-variant font-medium">DOCX</span>
                     </div>
                     <!-- Info -->
-                    <h5 class="font-headline font-bold text-sm sm:text-base mb-1 text-on-surface truncate" title="Service_Agreement.docx">Service_Agreement.docx</h5>
+                    <h5 class="font-headline font-bold text-sm sm:text-base mb-1 text-on-surface truncate"
+                        title="Service_Agreement.docx">Service_Agreement.docx</h5>
                     <p class="text-xs text-on-surface-variant">420 KB &#8226; Sep 08</p>
                 </article>
 
                 <!-- File Card 06: Brand Guidelines (Folder) -->
-                <article class="file-card group bg-surface-container rounded-xl p-5 sm:p-6 border border-outline-variant/10 hover:border-outline-variant/20 hover:bg-surface-container-high transition-all duration-300" role="listitem">
+                <article
+                    class="file-card group bg-surface-container rounded-xl p-5 sm:p-6 border border-outline-variant/10 hover:border-outline-variant/20 hover:bg-surface-container-high transition-all duration-300"
+                    role="listitem">
                     <!-- Header -->
                     <div class="flex justify-between items-center mb-4 sm:mb-6">
-                        <div class="w-10 h-10 sm:w-10 sm:h-10 rounded bg-indigo-500/10 flex items-center justify-center text-indigo-400 flex-shrink-0">
+                        <div
+                            class="w-10 h-10 sm:w-10 sm:h-10 rounded bg-indigo-500/10 flex items-center justify-center text-indigo-400 flex-shrink-0">
                             <span class="material-symbols-outlined text-xl sm:text-2xl" aria-hidden="true">folder</span>
                         </div>
-                        <span class="text-xs font-bold text-on-surface-variant bg-surface-container-lowest px-2 py-1 rounded">5 Items</span>
+                        <span
+                            class="text-xs font-bold text-on-surface-variant bg-surface-container-lowest px-2 py-1 rounded">5
+                            Items</span>
                     </div>
                     <!-- Info -->
                     <h5 class="font-headline font-bold text-sm sm:text-base mb-1 text-on-surface">Brand Guidelines</h5>
@@ -367,33 +351,41 @@
                 </article>
 
                 <!-- File Card 07: Q4_Deck_vFINAL.pptx (Presentation) -->
-                <article class="file-card group bg-surface-container rounded-xl p-5 sm:p-6 border border-outline-variant/10 hover:border-outline-variant/20 hover:bg-surface-container-high transition-all duration-300" role="listitem">
+                <article
+                    class="file-card group bg-surface-container rounded-xl p-5 sm:p-6 border border-outline-variant/10 hover:border-outline-variant/20 hover:bg-surface-container-high transition-all duration-300"
+                    role="listitem">
                     <!-- Header -->
                     <div class="flex justify-between items-center mb-4 sm:mb-6">
-                        <div class="w-10 h-10 sm:w-10 sm:h-10 rounded bg-amber-500/10 flex items-center justify-center text-amber-400 flex-shrink-0">
-                            <span class="material-symbols-outlined text-xl sm:text-2xl" aria-hidden="true">present_to_all</span>
+                        <div
+                            class="w-10 h-10 sm:w-10 sm:h-10 rounded bg-amber-500/10 flex items-center justify-center text-amber-400 flex-shrink-0">
+                            <span class="material-symbols-outlined text-xl sm:text-2xl"
+                                aria-hidden="true">present_to_all</span>
                         </div>
                         <span class="text-xs text-on-surface-variant font-medium">PPTX</span>
                     </div>
                     <!-- Info -->
-                    <h5 class="font-headline font-bold text-sm sm:text-base mb-1 text-on-surface truncate" title="Q4_Deck_vFINAL.pptx">Q4_Deck_vFINAL.pptx</h5>
+                    <h5 class="font-headline font-bold text-sm sm:text-base mb-1 text-on-surface truncate"
+                        title="Q4_Deck_vFINAL.pptx">Q4_Deck_vFINAL.pptx</h5>
                     <p class="text-xs text-on-surface-variant">32.1 MB &#8226; Aug 29</p>
                 </article>
-
             </div>
             <!-- === END FILE GRID === -->
 
             <!-- ========================================== -->
             <!-- === RECENTLY SHARED SECTION              -->
             <!-- ========================================== -->
-            <section class="bg-surface-container-low rounded-xl p-4 sm:p-6 md:p-8 border border-outline-variant/10" aria-label="Recently shared access">
+            <section class="bg-surface-container-low rounded-xl p-4 sm:p-6 md:p-8 border border-outline-variant/10"
+                aria-label="Recently shared access">
                 <!-- Section Header -->
                 <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4 sm:mb-6 md:mb-8">
                     <div>
-                        <h4 class="font-headline font-bold text-lg sm:text-xl text-on-surface">Recently Shared Access</h4>
-                        <p class="text-on-surface-variant text-xs sm:text-sm mt-1">Manage external stakeholders who can view these documents.</p>
+                        <h4 class="font-headline font-bold text-lg sm:text-xl text-on-surface">Recently Shared Access
+                        </h4>
+                        <p class="text-on-surface-variant text-xs sm:text-sm mt-1">Manage external stakeholders who can
+                            view these documents.</p>
                     </div>
-                    <button class="text-primary text-sm font-bold hover:text-primary/80 hover:underline transition-colors self-start sm:self-auto min-h-[44px] px-4 flex items-center"
+                    <button
+                        class="text-primary text-sm font-bold hover:text-primary/80 hover:underline transition-colors self-start sm:self-auto min-h-[44px] px-4 flex items-center"
                         aria-label="Manage all access permissions">
                         Manage All Access
                     </button>
@@ -403,7 +395,8 @@
                 <div class="space-y-3" role="list" aria-label="Shared users">
 
                     <!-- Access Row 1: Marcus Thornton -->
-                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 sm:p-4 bg-surface-container-lowest rounded-lg  gap-3 sm:gap-4" role="listitem">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 sm:p-4 bg-surface-container-lowest rounded-lg  gap-3 sm:gap-4"
+                        role="listitem">
                         <!-- User Info -->
                         <div class="flex items-center gap-3 sm:gap-4 min-w-0">
                             <div class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-surface-container">
@@ -413,16 +406,19 @@
                             </div>
                             <div class="min-w-0">
                                 <h6 class="text-sm font-bold text-on-surface truncate">Marcus Thornton</h6>
-                                <p class="text-xs text-on-surface-variant truncate">marcus.t@vanguard.io &#8226; External Partner</p>
+                                <p class="text-xs text-on-surface-variant truncate">marcus.t@vanguard.io &#8226;
+                                    External Partner</p>
                             </div>
                         </div>
                         <!-- Access Info & Actions -->
                         <div class="flex items-center justify-between sm:justify-end gap-4 sm:gap-6 pl-[52px] sm:pl-0">
                             <div class="text-right">
                                 <p class="text-xs font-bold text-primary">Full Access</p>
-                                <p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Active until Dec 2024</p>
+                                <p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Active until
+                                    Dec 2024</p>
                             </div>
-                            <button class="min-w-[44px] min-h-[44px] p-2 text-on-surface-variant hover:text-error transition-colors flex items-center justify-center rounded-lg hover:bg-error/10"
+                            <button
+                                class="min-w-[44px] min-h-[44px] p-2 text-on-surface-variant hover:text-error transition-colors flex items-center justify-center rounded-lg hover:bg-error/10"
                                 aria-label="Remove Marcus Thornton access">
                                 <span class="material-symbols-outlined" aria-hidden="true">person_remove</span>
                             </button>
@@ -430,7 +426,8 @@
                     </div>
 
                     <!-- Access Row 2: Elena Rodriguez -->
-                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 sm:p-4 bg-surface-container-lowest rounded-lg  gap-3 sm:gap-4" role="listitem">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 sm:p-4 bg-surface-container-lowest rounded-lg  gap-3 sm:gap-4"
+                        role="listitem">
                         <!-- User Info -->
                         <div class="flex items-center gap-3 sm:gap-4 min-w-0">
                             <div class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-surface-container">
@@ -440,16 +437,19 @@
                             </div>
                             <div class="min-w-0">
                                 <h6 class="text-sm font-bold text-on-surface truncate">Elena Rodriguez</h6>
-                                <p class="text-xs text-on-surface-variant truncate">e.rod@vanguard.io &#8226; Senior Analyst</p>
+                                <p class="text-xs text-on-surface-variant truncate">e.rod@vanguard.io &#8226; Senior
+                                    Analyst</p>
                             </div>
                         </div>
                         <!-- Access Info & Actions -->
                         <div class="flex items-center justify-between sm:justify-end gap-4 sm:gap-6 pl-[52px] sm:pl-0">
                             <div class="text-right">
                                 <p class="text-xs font-bold text-on-surface-variant">View Only</p>
-                                <p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Permanent Access</p>
+                                <p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Permanent
+                                    Access</p>
                             </div>
-                            <button class="min-w-[44px] min-h-[44px] p-2 text-on-surface-variant hover:text-error transition-colors flex items-center justify-center rounded-lg hover:bg-error/10"
+                            <button
+                                class="min-w-[44px] min-h-[44px] p-2 text-on-surface-variant hover:text-error transition-colors flex items-center justify-center rounded-lg hover:bg-error/10"
                                 aria-label="Remove Elena Rodriguez access">
                                 <span class="material-symbols-outlined" aria-hidden="true">person_remove</span>
                             </button>

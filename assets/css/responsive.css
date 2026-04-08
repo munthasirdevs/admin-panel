@@ -1,42 +1,17 @@
-/*
-   ==================================================================
-   RESPONSIVE.CSS - Optimized Minimal Responsive Design System
-   Admin Panel - Essential Overrides Only
-   ==================================================================
-   
-   This file contains ONLY rules that cannot be handled by Tailwind's
-   built-in responsive utilities (sm:, md:, lg:, xl: prefixes).
-   
-   Breakpoints (matching Tailwind):
-   - Mobile:    < 640px
-   - Tablet:    640px - 768px
-   - Desktop:   768px - 1024px
-   - Large:     1024px - 1280px
-   - XL:        1280px - 1536px
-   ==================================================================
-*/
-
-/* ================================================================
-   BASE STYLES - Mobile-First Foundation
-   ================================================================ */
+/* RESPONSIVE.CSS - Optimized Minimal Responsive Design System */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-
 body {
   overflow-x: hidden;
   width: 100%;
   min-width: 320px;
 }
-
-/* ================================================================
-   ACCESSIBILITY - Touch Targets (Mobile Only)
-   Minimum 44px touch targets for WCAG compliance
-   ================================================================ */
+/* Mobile < 640px */
 @media (max-width: 639px) {
-  /* Interactive elements minimum touch target */
+  /* Touch targets */
   button,
   a,
   input[type="button"],
@@ -50,36 +25,24 @@ body {
     min-height: 44px !important;
     min-width: 44px !important;
   }
-
-  /* Icon-only buttons need explicit sizing */
   button.p-2,
   button.p-3,
   button[class*="p-2"]:not([class*="px-"]),
   button[class*="p-3"]:not([class*="px-"]) {
     padding: 0.75rem !important;
   }
-
-  /* Ensure clickable areas in tables */
   table button,
-  table a {
-    min-width: 44px !important;
-    min-height: 44px !important;
-  }
-
-  /* Pagination buttons */
+  table a,
   .flex.items-center.gap-2 > button.px-4.py-2,
   [class*="pagination"] button {
     min-width: 44px !important;
     min-height: 44px !important;
+  }
+  .flex.items-center.gap-2 > button.px-4.py-2,
+  [class*="pagination"] button {
     padding: 0.75rem !important;
   }
-}
-
-/* ================================================================
-   iOS ZOOM PREVENTION - Form Elements
-   Font-size 16px prevents unwanted iOS zoom on focus
-   ================================================================ */
-@media (max-width: 639px) {
+  /* iOS form zoom prevention */
   input[type="text"],
   input[type="email"],
   input[type="password"],
@@ -93,68 +56,34 @@ body {
   textarea,
   select {
     font-size: 16px !important;
-  }
-}
-
-/* ================================================================
-   FORM ELEMENTS - Mobile Full Width
-   ================================================================ */
-@media (max-width: 639px) {
-  /* Full width inputs on mobile */
-  input[type="text"],
-  input[type="email"],
-  input[type="password"],
-  input[type="search"],
-  input[type="number"],
-  input[type="tel"],
-  input[type="url"],
-  input[type="date"],
-  input[type="time"],
-  input[type="datetime-local"],
-  textarea,
-  select {
     width: 100% !important;
     max-width: 100% !important;
   }
-
-  /* Search inputs with icons */
   .relative > input[type="search"],
   .relative > input[type="text"] {
     padding-left: 2.75rem !important;
   }
-
-  /* Textarea minimum height */
   textarea {
     min-height: 120px !important;
     resize: vertical !important;
   }
-
-  /* Select dropdowns */
   select.appearance-none,
   select[class*="appearance-none"] {
     padding-right: 2.5rem !important;
   }
-
-  /* File inputs */
   input[type="file"] {
     width: 100% !important;
     padding: 0.75rem !important;
   }
-
-  /* Color inputs */
   input[type="color"] {
     min-width: 44px !important;
     min-height: 44px !important;
     width: 44px !important;
     height: 44px !important;
   }
-
-  /* Range inputs */
   input[type="range"] {
     min-height: 44px !important;
   }
-
-  /* Checkbox and radio minimum sizes */
   input[type="checkbox"],
   input[type="radio"] {
     min-width: 20px !important;
@@ -162,13 +91,7 @@ body {
     width: 1.25rem !important;
     height: 1.25rem !important;
   }
-}
-
-/* ================================================================
-   BUTTONS - Mobile Full Width & Stacking
-   ================================================================ */
-@media (max-width: 639px) {
-  /* Primary action buttons full width */
+  /* Buttons full width & stacking */
   button.bg-primary,
   button.bg-secondary,
   button.bg-tertiary,
@@ -177,8 +100,6 @@ body {
     max-width: 100% !important;
     justify-content: center !important;
   }
-
-  /* Action button containers stack vertically */
   .flex.items-center.justify-end.gap-6,
   .flex.items-center.justify-end[class*="gap-"],
   div[class*="space-y-"] + .flex.items-center.justify-end,
@@ -187,90 +108,41 @@ body {
     gap: 0.75rem !important;
     padding-top: 1rem !important;
   }
-
-  /* Buttons in action rows */
   .flex.items-center.justify-end.gap-6 > button,
   .flex.items-center.justify-end.gap-6 > a[class*="px-"],
   .flex.items-center.justify-end > button,
-  .flex.items-center.justify-end > a {
-    width: 100% !important;
-    margin-left: 0 !important;
-    margin-top: 0.5rem !important;
-  }
-
-  /* Header action buttons */
+  .flex.items-center.justify-end > a,
   header .flex.items-center.gap-4 > button,
   header .flex.items-center.gap-6 > button,
-  section .flex.items-end.justify-between > div:last-child > button {
+  section .flex.items-end.justify-between > div:last-child > button,
+  [role="dialog"] .flex.justify-end > button,
+  [class*="modal"] .flex.justify-end > button {
     width: 100% !important;
     margin-top: 0.5rem !important;
   }
-
-  /* Filter bar buttons - wrap and center */
+  .flex.items-center.justify-end.gap-6 > button,
+  .flex.items-center.justify-end.gap-6 > a[class*="px-"],
+  [role="dialog"] .flex.justify-end > button,
+  [class*="modal"] .flex.justify-end > button {
+    margin-left: 0 !important;
+  }
   .flex.flex-wrap.items-center.gap-3 > button,
   .flex.flex-wrap.items-center.gap-4 > button {
     flex: 0 1 auto !important;
     min-width: calc(50% - 0.5rem) !important;
   }
-
-  /* Modal/dialog action buttons */
-  [role="dialog"] .flex.justify-end > button,
-  [class*="modal"] .flex.justify-end > button {
-    width: 100% !important;
-    margin-left: 0 !important;
-    margin-top: 0.5rem !important;
-  }
-
-  /* Sidebar and panel buttons */
   aside button,
   [class*="sidebar"] button {
     width: 100% !important;
   }
-
-  /* Button text alignment */
   button.text-left {
     text-align: center !important;
   }
-}
-
-/* Tablet button refinements */
-@media (min-width: 640px) and (max-width: 1023px) {
-  button.px-10,
-  button.px-8 {
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
-  }
-
-  button.py-4 {
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
-  }
-}
-
-/* Desktop restoration */
-@media (min-width: 1024px) {
-  button,
-  a[class*="px-"] {
-    width: auto !important;
-    max-width: none !important;
-  }
-
-  .flex.items-center.justify-end {
-    flex-direction: row !important;
-  }
-}
-
-/* ================================================================
-   IMAGES - Responsive Scaling
-   ================================================================ */
-@media (max-width: 639px) {
-  /* All images responsive */
+  /* Images */
   img {
     max-width: 100% !important;
     height: auto !important;
   }
-
-  /* Avatar sizing */
   img.w-8,
   img.w-10,
   img.w-12 {
@@ -279,24 +151,18 @@ body {
     min-width: 2rem !important;
     min-height: 2rem !important;
   }
-
-  /* Profile images */
   img.w-20,
   img.w-24,
   img.w-32 {
     width: 4rem !important;
     height: 4rem !important;
   }
-
-  /* Large profile images */
   img.w-40,
   img.w-48,
   img.w-64 {
     width: 6rem !important;
     height: 6rem !important;
   }
-
-  /* Table avatars */
   table img.w-10,
   table img.w-12 {
     width: 2.5rem !important;
@@ -304,142 +170,76 @@ body {
     min-width: 2.5rem !important;
     min-height: 2.5rem !important;
   }
-
-  /* Logo images */
   img.h-8,
   img.h-10,
   img.h-12 {
     height: 2rem !important;
     width: auto !important;
   }
-
-  /* Header images */
   header img {
     max-height: 2.5rem !important;
   }
-
-  /* Rounded corners */
   img[class*="rounded"] {
     border-radius: 0.5rem !important;
   }
-}
-
-/* Tablet image refinements */
-@media (min-width: 640px) and (max-width: 1023px) {
-  img {
-    max-width: 100% !important;
-  }
-
-  img.w-32,
-  img.w-40 {
-    width: 5rem !important;
-    height: 5rem !important;
-  }
-}
-
-/* ================================================================
-   TABLES - Horizontal Scroll & Text Sizing
-   ================================================================ */
-@media (max-width: 639px) {
-  /* Enable smooth horizontal scroll */
+  /* Tables */
   .overflow-x-auto {
     scroll-behavior: smooth;
   }
-
-  /* Minimum table width for scroll */
   table {
     min-width: 700px;
   }
-
-  /* Smaller table text */
   table th,
   table td {
     padding: 0.5rem !important;
     font-size: 0.75rem !important;
   }
-
   table th {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
   }
-
-  /* Hide less important columns */
   .hide-mobile {
     display: none !important;
   }
-}
-
-/* Tablet table refinements */
-@media (min-width: 640px) and (max-width: 1023px) {
-  table th,
-  table td {
-    padding: 0.75rem !important;
-    font-size: 0.8125rem !important;
-  }
-}
-
-/* ================================================================
-   CARDS - Mobile Padding & Radius
-   ================================================================ */
-@media (max-width: 639px) {
+  /* Cards */
   .glass-card,
   .bg-surface-container,
   .bg-surface-container-low,
   .bg-surface-container-lowest {
     padding: 1rem !important;
   }
-
   .rounded-2xl,
   .rounded-3xl {
     border-radius: 1rem !important;
   }
-
-  /* Card images */
   .w-20,
   .w-16,
   .w-12 {
     width: 2.5rem !important;
     height: 2.5rem !important;
   }
-}
-
-/* ================================================================
-   CHARTS & VISUALIZATIONS - Mobile Sizing
-   ================================================================ */
-@media (max-width: 639px) {
-  /* Chart containers */
+  /* Charts */
   .h-64,
   .h-56,
   .h-48 {
     height: 200px !important;
   }
-
   .h-16 {
     height: 80px !important;
   }
-
-  /* Pie/donut charts */
   .w-48.h-48,
   [class*="w-4"][class*="h-4"].rounded-full {
     width: 160px !important;
     height: 160px !important;
   }
-
-  /* Chart bars minimum width */
   .flex-1 {
     min-width: 24px !important;
   }
-}
-
-/* ================================================================
-   MODALS & DIALOGS - Mobile Padding
-   ================================================================ */
-@media (max-width: 639px) {
+  /* Modals */
   .fixed.inset-0,
   [class*="fixed"] {
     padding: 1rem !important;
   }
-
   .max-w-md,
   .max-w-lg,
   .max-w-xl,
@@ -448,230 +248,167 @@ body {
     width: 100% !important;
     max-width: 100% !important;
   }
-}
-
-/* ================================================================
-   BADGES & STATUS INDICATORS - Mobile Sizing
-   ================================================================ */
-@media (max-width: 639px) {
+  /* Badges */
   .badge,
   .status-badge,
   [class*="rounded-full"].px-3.py-1 {
     padding: 0.25rem 0.5rem !important;
     font-size: 0.625rem !important;
   }
-
   .text-\[10px\] {
     font-size: 0.625rem !important;
   }
-}
-
-/* ================================================================
-   AVATAR GROUPS - Mobile Spacing
-   ================================================================ */
-@media (max-width: 639px) {
+  /* Avatar groups */
   .-space-x-2,
   .-space-x-3 {
     margin-left: 0 !important;
     gap: 0.25rem !important;
   }
-}
-
-/* ================================================================
-   NAVIGATION - Mobile Visibility
-   ================================================================ */
-@media (max-width: 639px) {
-  /* Hide desktop nav */
+  /* Navigation */
   .hidden-mobile,
   .lg\:block:not(.lg\:block\.md) {
     display: none !important;
   }
-
-  /* Show mobile nav */
   .mobile\:block,
   .lg\:hidden {
     display: block !important;
   }
-
-  /* Header padding */
   .modern-header {
     padding: 0.75rem 1rem !important;
   }
-}
-
-/* ================================================================
-   SECTIONS - Mobile Full Width & Padding
-   ================================================================ */
-@media (max-width: 639px) {
-  /* All sections full width */
+  /* Sections */
   section {
     width: 100% !important;
     max-width: 100% !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    padding: 0 1rem 1rem !important;
   }
-
-  /* Section padding overrides */
   section[class*="p-8"],
   section[class*="p-10"],
   section[class*="p-12"] {
     padding: 1rem !important;
   }
-
   section[class*="px-8"],
   section[class*="px-10"],
   section[class*="px-12"] {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
   }
-
   section[class*="py-8"],
   section[class*="py-10"],
   section[class*="py-12"] {
     padding-top: 1.5rem !important;
     padding-bottom: 1.5rem !important;
   }
-
-  /* Section margins */
   section[class*="mb-8"],
   section[class*="mb-10"],
   section[class*="mb-12"] {
     margin-bottom: 1.5rem !important;
   }
-
   section[class*="mt-8"],
   section[class*="mt-10"],
   section[class*="mt-12"] {
     margin-top: 1.5rem !important;
   }
-
-  /* Sections with flex headers */
   section > .flex.justify-between,
   section > .flex.items-center.justify-between {
     flex-wrap: wrap !important;
     gap: 1rem !important;
   }
-
-  /* Sections with borders */
   section[class*="border"],
   section[class*="rounded"] {
     border-radius: 1rem !important;
   }
-}
-
-/* Tablet section refinements */
-@media (min-width: 640px) and (max-width: 1023px) {
-  section {
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
-  }
-
-  section[class*="p-8"] {
-    padding: 1.5rem !important;
-  }
-}
-
-/* Desktop section restoration */
-@media (min-width: 1024px) {
-  section {
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
-  }
-}
-
-/* ================================================================
-   PAGE-SPECIFIC LAYOUTS
-   ================================================================ */
-
-/* Settings grid - mobile full width */
-@media (max-width: 639px) {
+  /* Page-specific */
   .settings-grid .col-span-5,
   .settings-grid .col-span-7 {
     grid-column: span 1 !important;
   }
-
   .toggle-card {
     width: 100% !important;
   }
-}
-
-/* Reports Builder - 3 column layout responsive */
-@media (max-width: 1023px) {
-  .col-span-3.report-builder-sidebar {
-    grid-column: span 12 !important;
-    order: 2;
-  }
-
-  .col-span-6.report-builder-main {
-    grid-column: span 12 !important;
-    order: 1;
-  }
-
-  .col-span-3.report-builder-settings {
-    grid-column: span 12 !important;
-    order: 3;
-  }
-}
-
-/* Dashboard specific */
-@media (max-width: 639px) {
   .indigo-glow {
     padding: 1rem !important;
   }
+  .stack-mobile {
+    flex-direction: column !important;
+  }
 }
-
-/* ================================================================
-   UTILITY CLASSES
-   ================================================================ */
-
-/* Hide on mobile */
+/* Tablet 640px-1023px */
+@media (min-width: 640px) and (max-width: 1023px) {
+  button.px-10,
+  button.px-8 {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+  button.py-4 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  img.w-32,
+  img.w-40 {
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+  table th,
+  table td {
+    padding: 0.75rem !important;
+    font-size: 0.8125rem !important;
+  }
+  section {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+  section[class*="p-8"] {
+    padding: 1.5rem !important;
+  }
+  .hide-on-tablet {
+    display: none !important;
+  }
+}
+/* Desktop 1024px+ */
+@media (min-width: 1024px) {
+  button,
+  a[class*="px-"] {
+    width: auto !important;
+    max-width: none !important;
+  }
+  .flex.items-center.justify-end {
+    flex-direction: row !important;
+  }
+  section {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+  .hide-on-desktop {
+    display: none !important;
+  }
+  .hide-on-mobile {
+    display: block !important;
+  }
+}
+/* Utility visibility */
 .hide-on-mobile {
   display: none !important;
 }
-
+.hide-on-tablet {
+  display: block !important;
+}
+.hide-on-desktop {
+  display: block !important;
+}
+.stack-mobile {
+  display: flex;
+  flex-direction: row;
+}
 @media (min-width: 640px) {
   .hide-on-mobile {
     display: block !important;
   }
 }
-
-/* Hide on tablet */
-.hide-on-tablet {
-  display: block !important;
-}
-
-@media (min-width: 640px) and (max-width: 1023px) {
-  .hide-on-tablet {
-    display: none !important;
-  }
-}
-
-/* Hide on desktop */
-.hide-on-desktop {
-  display: block !important;
-}
-
-@media (min-width: 1024px) {
-  .hide-on-desktop {
-    display: none !important;
-  }
-}
-
-/* Stack on mobile */
-.stack-mobile {
-  display: flex;
-  flex-direction: row;
-}
-
-@media (max-width: 639px) {
-  .stack-mobile {
-    flex-direction: column !important;
-  }
-}
-
-/* ================================================================
-   ACCESSIBILITY - Reduced Motion
-   ================================================================ */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -681,102 +418,76 @@ body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-
-  /* Disable progress bar animations */
   .progress-bar {
     transition: none !important;
   }
 }
-
-/* ================================================================
-   HIGH CONTRAST MODE SUPPORT
-   ================================================================ */
+/* High contrast */
 @media (prefers-contrast: high) {
   .glass-card {
     border-width: 2px !important;
   }
-
   .text-on-surface-variant {
     color: inherit !important;
   }
 }
-
-/* ================================================================
-   PROGRESS BAR BASE STYLES
-   (Width utilities replaced with inline styles or Tailwind w-* classes)
-   ================================================================ */
-
-/* Progress Bar Base */
+/* Progress Bar Base & Variants */
 .progress-bar {
   height: 100%;
   border-radius: 9999px;
   transition: width 0.3s ease-in-out;
 }
-
-/* Progress Bar Variants */
 .progress-bar-primary {
   background-color: var(--color-primary);
 }
-
 .progress-bar-primary-container {
   background-color: var(--color-surface-container-highest);
 }
-
 .progress-bar-primary-gradient {
-  background: linear-gradient(to right, var(--color-primary), var(--color-primary-container));
+  background: linear-gradient(
+    to right,
+    var(--color-primary),
+    var(--color-primary-container)
+  );
 }
-
 .progress-bar-secondary {
   background-color: var(--color-secondary);
 }
-
 .progress-bar-tertiary {
   background-color: var(--color-tertiary);
 }
-
 .progress-bar-success {
   background-color: #10b981;
 }
-
 .progress-bar-emerald {
   background-color: #34d399;
 }
-
-/* Progress Bar Glow Effects */
 .progress-bar-glow {
   box-shadow: 0 0 8px rgba(192, 193, 255, 0.4);
 }
-
 .progress-bar-indigo-glow {
   box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
 }
-
 .progress-bar-drop-shadow {
   filter: drop-shadow(0 0 8px rgba(192, 193, 255, 0.4));
 }
-
-/* ================================================================
-   PRINT STYLES
-   ================================================================ */
+/* Print */
 @media print {
   .modern-header,
   .header-action-btn,
   .no-print {
     display: none !important;
   }
-
   body {
-    background: white !important;
-    color: black !important;
+    background: #fff !important;
+    color: #000 !important;
     font-size: 12pt;
   }
-
   .glass-card {
-    background: white !important;
+    background: #fff !important;
     border: 1px solid #ddd !important;
     box-shadow: none !important;
   }
-
   a[href]:after {
     content: " (" attr(href) ")";
   }

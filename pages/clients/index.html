@@ -17,103 +17,6 @@
     <!-- === CUSTOM STYLES === -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">
-
-    <style>
-        /* Page-specific styles that cannot be handled by Tailwind utilities */
-
-        /* Smooth horizontal scroll for table on mobile */
-        .table-scroll-wrapper {
-            -webkit-overflow-scrolling: touch;
-            scroll-snap-type: x proximity;
-        }
-
-        /* Table row hover highlight effect */
-        .client-row {
-            position: relative;
-            transition: background-color 0.15s ease;
-        }
-
-        .client-row::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: transparent;
-            border-radius: 0 2px 2px 0;
-            transition: background-color 0.15s ease;
-        }
-
-        .client-row:hover::before {
-            background: var(--color-primary);
-        }
-
-        /* Status badge pulse animation for active status */
-        @keyframes status-pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
-        }
-
-        .status-active-dot {
-            animation: status-pulse 2s ease-in-out infinite;
-        }
-
-        /* Filter input focus ring */
-        .filter-input:focus {
-            box-shadow: 0 0 0 1px var(--color-primary);
-        }
-
-        /* Stat card accent bar gradient overlay */
-        .stat-accent-primary {
-            background: linear-gradient(180deg, var(--color-primary), rgba(99, 102, 241, 0.4));
-        }
-
-        .stat-accent-tertiary {
-            background: linear-gradient(180deg, var(--color-tertiary), rgba(255, 183, 131, 0.4));
-        }
-
-        /* Activity feed icon container shimmer */
-        .activity-icon-container {
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Right sidebar sticky on desktop */
-        @media (min-width: 1280px) {
-            .sidebar-sticky {
-                position: sticky;
-                top: 2rem;
-            }
-        }
-
-        /* Ensure proper gap between table card and pagination */
-        .table-card > .table-scroll-wrapper + .pagination-bar {
-            border-top: 1px solid rgba(70, 69, 84, 0.2);
-        }
-
-        /* Avatar image fallback background */
-        .client-avatar {
-            background-color: var(--color-surface-container-high);
-        }
-
-        /* Pagination current page indicator */
-        .pagination-current {
-            position: relative;
-        }
-
-        .pagination-current::after {
-            content: '';
-            position: absolute;
-            bottom: 4px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 16px;
-            height: 2px;
-            background: var(--color-primary);
-            border-radius: 1px;
-        }
-    </style>
 </head>
 
 <body class="flex min-h-screen bg-surface">
@@ -127,16 +30,17 @@
             <!-- ========================================== -->
             <header class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6 sm:mb-8 md:mb-10">
                 <div class="space-y-1.5 sm:space-y-2">
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-headline font-light tracking-tighter text-on-surface">
+                    <h1
+                        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-headline font-light tracking-tighter text-on-surface">
                         Clients
                     </h1>
                     <p class="text-on-surface-variant text-xs sm:text-sm md:text-base max-w-lg leading-relaxed">
-                        Manage and monitor your global agency clients, project health, and financial cycles from one central dashboard.
+                        Manage and monitor your global agency clients, project health, and financial cycles from one
+                        central dashboard.
                     </p>
                 </div>
                 <div class="shrink-0">
-                    <button
-                        type="button"
+                    <button type="button"
                         class="bg-primary hover:bg-primary/90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface text-on-primary font-semibold px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl sm:rounded-2xl inline-flex items-center justify-center gap-2 transition-all duration-150 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 w-full sm:w-auto min-h-[44px] text-sm sm:text-base"
                         aria-label="Add a new client">
                         <span class="material-symbols-outlined text-lg sm:text-xl" aria-hidden="true">add</span>
@@ -157,8 +61,7 @@
                 <div class="xl:col-span-9 space-y-5 sm:space-y-6">
 
                     <!-- === FILTER BAR === -->
-                    <section
-                        class="bg-surface-container-low p-3 sm:p-4 md:p-5 rounded-2xl sm:rounded-3xl shadow-sm"
+                    <section class="bg-surface-container-low p-3 sm:p-4 md:p-5 rounded-2xl sm:rounded-3xl shadow-sm"
                         aria-label="Client filters">
                         <div class="flex flex-wrap items-center gap-3 sm:gap-4">
                             <!-- Search Input -->
@@ -166,18 +69,14 @@
                                 <span
                                     class="material-symbols-outlined absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 text-on-surface-muted text-sm sm:text-base pointer-events-none"
                                     aria-hidden="true">search</span>
-                                <input
-                                    id="client-search"
-                                    type="search"
-                                    placeholder="Filter by Name, Email, or Company"
+                                <input id="client-search" type="search" placeholder="Filter by Name, Email, or Company"
                                     class="filter-input w-full bg-surface-container text-on-surface placeholder-on-surface-muted text-sm rounded-xl sm:rounded-2xl py-2.5 sm:py-3 pl-10 sm:pl-12 pr-4 border-0 focus:ring-2 focus:ring-primary transition-all min-h-[44px]"
                                     aria-label="Search clients by name, email, or company" />
                             </div>
 
                             <!-- Status Dropdown -->
                             <label for="client-status-filter" class="sr-only">Filter clients by status</label>
-                            <select
-                                id="client-status-filter"
+                            <select id="client-status-filter"
                                 class="bg-surface-container text-on-surface text-sm rounded-xl sm:rounded-2xl py-2.5 sm:py-3 pl-4 pr-8 border-0 focus:ring-2 focus:ring-primary appearance-none cursor-pointer min-h-[44px] min-w-[130px]"
                                 aria-label="Filter clients by status">
                                 <option value="all">Status: All</option>
@@ -187,58 +86,54 @@
                             </select>
 
                             <!-- Date Filter Button -->
-                            <button
-                                type="button"
+                            <button type="button"
                                 class="bg-surface-container hover:bg-surface-container-high active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary text-on-surface-variant hover:text-on-surface p-2.5 sm:p-3 rounded-xl sm:rounded-2xl transition-all duration-150 min-h-[44px] min-w-[44px] flex items-center justify-center"
                                 aria-label="Filter by date range">
-                                <span class="material-symbols-outlined text-sm sm:text-base" aria-hidden="true">calendar_today</span>
+                                <span class="material-symbols-outlined text-sm sm:text-base"
+                                    aria-hidden="true">calendar_today</span>
                             </button>
 
                             <!-- Advanced Filter Button -->
-                            <button
-                                type="button"
+                            <button type="button"
                                 class="bg-surface-container hover:bg-surface-container-high active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary text-on-surface-variant hover:text-on-surface p-2.5 sm:p-3 rounded-xl sm:rounded-2xl transition-all duration-150 min-h-[44px] min-w-[44px] flex items-center justify-center"
                                 aria-label="Open advanced filters">
-                                <span class="material-symbols-outlined text-sm sm:text-base" aria-hidden="true">filter_list</span>
+                                <span class="material-symbols-outlined text-sm sm:text-base"
+                                    aria-hidden="true">filter_list</span>
                             </button>
                         </div>
                     </section>
                     <!-- === END FILTER BAR === -->
 
                     <!-- === CLIENT TABLE CARD === -->
-                    <div class="table-card bg-surface-container-low rounded-2xl sm:rounded-3xl shadow-xl overflow-hidden">
+                    <div
+                        class="table-card bg-surface-container-low rounded-2xl sm:rounded-3xl shadow-xl overflow-hidden">
                         <div class="table-scroll-wrapper overflow-x-auto">
-                            <table class="w-full text-left border-collapse min-w-[720px]" role="table" aria-label="Clients list">
+                            <table class="w-full text-left border-collapse min-w-[720px]" role="table"
+                                aria-label="Clients list">
                                 <!-- === TABLE HEADER === -->
                                 <thead>
                                     <tr class="border-b border-outline-variant/10">
-                                        <th
-                                            scope="col"
+                                        <th scope="col"
                                             class="px-4 sm:px-6 py-4 sm:py-5 font-label text-[10px] sm:text-xs uppercase tracking-[0.15em] text-on-surface-muted whitespace-nowrap">
                                             Client
                                         </th>
-                                        <th
-                                            scope="col"
+                                        <th scope="col"
                                             class="px-4 sm:px-6 py-4 sm:py-5 font-label text-[10px] sm:text-xs uppercase tracking-[0.15em] text-on-surface-muted whitespace-nowrap hidden md:table-cell">
                                             Company
                                         </th>
-                                        <th
-                                            scope="col"
+                                        <th scope="col"
                                             class="px-4 sm:px-6 py-4 sm:py-5 font-label text-[10px] sm:text-xs uppercase tracking-[0.15em] text-on-surface-muted whitespace-nowrap">
                                             Status
                                         </th>
-                                        <th
-                                            scope="col"
+                                        <th scope="col"
                                             class="px-4 sm:px-6 py-4 sm:py-5 font-label text-[10px] sm:text-xs uppercase tracking-[0.15em] text-on-surface-muted whitespace-nowrap hidden md:table-cell">
                                             Projects
                                         </th>
-                                        <th
-                                            scope="col"
+                                        <th scope="col"
                                             class="px-4 sm:px-6 py-4 sm:py-5 font-label text-[10px] sm:text-xs uppercase tracking-[0.15em] text-on-surface-muted whitespace-nowrap text-right">
                                             Revenue
                                         </th>
-                                        <th
-                                            scope="col"
+                                        <th scope="col"
                                             class="px-4 sm:px-6 py-4 sm:py-5 font-label text-[10px] sm:text-xs uppercase tracking-[0.15em] text-on-surface-muted w-[52px]">
                                             <span class="sr-only">Actions</span>
                                         </th>
@@ -251,18 +146,15 @@
 
                                     <!-- === Client Row 1: Sarah Jenkins - Active === -->
                                     <tr class="client-row group hover:bg-surface-container/60 cursor-pointer transition-colors"
-                                        tabindex="0"
-                                        role="row"
-                                        aria-label="Sarah Jenkins, Lumina Design, Active">
+                                        tabindex="0" role="row" aria-label="Sarah Jenkins, Lumina Design, Active">
                                         <td class="px-4 sm:px-6 py-4 sm:py-5">
                                             <div class="flex items-center gap-3 sm:gap-4">
-                                                <img
-                                                    class="client-avatar w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl object-cover shrink-0"
+                                                <img class="client-avatar w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl object-cover shrink-0"
                                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvBk-dWxsAR-fROI2pu8jRz-u-Ivvi44ovtdo5NmbHZUiJRECZbBmqz-LoiLdwHWY_d9Yjh8bsxT9jW6-VT-RVYY-ul-mYQ_L5yjmEkI7STW4QhiMEDBVsTRNw8JaqdsXrs2pfRIPoMOselno9RP_nFIl9ILpXHLmt4Yn7fJTHZlKCaSbLoQHH80iTxWFgKO3UXFd2TYNDYKAnNMVpKfz0XAIDcrdmt5Zwrnm5XZl4Cx5qsiBmUfsoX6KIzJ5G7g6vsHsowuza0ec"
-                                                    alt="Avatar of Sarah Jenkins"
-                                                    loading="lazy" />
+                                                    alt="Avatar of Sarah Jenkins" loading="lazy" />
                                                 <div class="min-w-0">
-                                                    <p class="font-bold text-on-surface group-hover:text-primary transition-colors text-sm sm:text-base truncate">
+                                                    <p
+                                                        class="font-bold text-on-surface group-hover:text-primary transition-colors text-sm sm:text-base truncate">
                                                         Sarah Jenkins
                                                     </p>
                                                     <p class="text-xs text-on-surface-muted truncate">
@@ -271,52 +163,55 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5 text-on-surface-variant font-medium text-sm whitespace-nowrap hidden md:table-cell">
+                                        <td
+                                            class="px-4 sm:px-6 py-4 sm:py-5 text-on-surface-variant font-medium text-sm whitespace-nowrap hidden md:table-cell">
                                             Lumina Design
                                         </td>
                                         <td class="px-4 sm:px-6 py-4 sm:py-5">
-                                            <span class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 whitespace-nowrap">
-                                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 status-active-dot" aria-hidden="true"></span>
+                                            <span
+                                                class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 whitespace-nowrap">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 status-active-dot"
+                                                    aria-hidden="true"></span>
                                                 Active
                                             </span>
                                         </td>
                                         <td class="px-4 sm:px-6 py-4 sm:py-5 hidden md:table-cell">
                                             <div class="flex -space-x-2">
-                                                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-primary/20 flex items-center justify-center text-[9px] sm:text-[10px] font-bold text-primary shrink-0" aria-label="12 active projects">
+                                                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-primary/20 flex items-center justify-center text-[9px] sm:text-[10px] font-bold text-primary shrink-0"
+                                                    aria-label="12 active projects">
                                                     12
                                                 </div>
-                                                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-tertiary/20 flex items-center justify-center text-[9px] sm:text-[10px] font-bold text-tertiary shrink-0" aria-label="4 pending projects">
+                                                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-tertiary/20 flex items-center justify-center text-[9px] sm:text-[10px] font-bold text-tertiary shrink-0"
+                                                    aria-label="4 pending projects">
                                                     4
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5 text-right font-headline font-semibold text-on-surface whitespace-nowrap text-sm sm:text-base">
+                                        <td
+                                            class="px-4 sm:px-6 py-4 sm:py-5 text-right font-headline font-semibold text-on-surface whitespace-nowrap text-sm sm:text-base">
                                             $128,400
                                         </td>
                                         <td class="px-4 sm:px-6 py-4 sm:py-5 text-right">
-                                            <button
-                                                type="button"
+                                            <button type="button"
                                                 class="text-on-surface-muted hover:text-on-surface active:text-on-surface p-1.5 rounded-lg hover:bg-surface-container-high transition-all min-h-[44px] min-w-[44px] inline-flex items-center justify-center"
                                                 aria-label="More options for Sarah Jenkins">
-                                                <span class="material-symbols-outlined text-lg sm:text-xl" aria-hidden="true">more_vert</span>
+                                                <span class="material-symbols-outlined text-lg sm:text-xl"
+                                                    aria-hidden="true">more_vert</span>
                                             </button>
                                         </td>
                                     </tr>
 
                                     <!-- === Client Row 2: Marcus Thornton - Pending === -->
                                     <tr class="client-row group hover:bg-surface-container/60 cursor-pointer transition-colors"
-                                        tabindex="0"
-                                        role="row"
-                                        aria-label="Marcus Thornton, Vector Global, Pending">
+                                        tabindex="0" role="row" aria-label="Marcus Thornton, Vector Global, Pending">
                                         <td class="px-4 sm:px-6 py-4 sm:py-5">
                                             <div class="flex items-center gap-3 sm:gap-4">
-                                                <img
-                                                    class="client-avatar w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl object-cover shrink-0"
+                                                <img class="client-avatar w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl object-cover shrink-0"
                                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuBORhezdeI5mdJ6irqO9PckGMh9lX5oL_SsevFjo9awCWf3_Y3yHGkGVoez6m7ICDFdMrrZ0LLcvvnNLj8_RCe8tfHP6PzFIJ6dfc4i2mOtEqet90FYWXN8R8joVBJuxtJLnMPUNFhR8w8Tes0MS3RgiqUlzcAm0o_IwFDtYvQqa1dyhRKNF0KR61-pfVwfiWThMtp0HnelCyLmi4GAKN4mvs3hjekKlBruacYGn-cLHosU9B38ZeNKYUWp4cM3pLDeELV6l5A8Tg"
-                                                    alt="Avatar of Marcus Thornton"
-                                                    loading="lazy" />
+                                                    alt="Avatar of Marcus Thornton" loading="lazy" />
                                                 <div class="min-w-0">
-                                                    <p class="font-bold text-on-surface group-hover:text-primary transition-colors text-sm sm:text-base truncate">
+                                                    <p
+                                                        class="font-bold text-on-surface group-hover:text-primary transition-colors text-sm sm:text-base truncate">
                                                         Marcus Thornton
                                                     </p>
                                                     <p class="text-xs text-on-surface-muted truncate">
@@ -325,49 +220,51 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5 text-on-surface-variant font-medium text-sm whitespace-nowrap hidden md:table-cell">
+                                        <td
+                                            class="px-4 sm:px-6 py-4 sm:py-5 text-on-surface-variant font-medium text-sm whitespace-nowrap hidden md:table-cell">
                                             Vector Global
                                         </td>
                                         <td class="px-4 sm:px-6 py-4 sm:py-5">
-                                            <span class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/20 whitespace-nowrap">
-                                                <span class="w-1.5 h-1.5 rounded-full bg-amber-400" aria-hidden="true"></span>
+                                            <span
+                                                class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/20 whitespace-nowrap">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-amber-400"
+                                                    aria-hidden="true"></span>
                                                 Pending
                                             </span>
                                         </td>
                                         <td class="px-4 sm:px-6 py-4 sm:py-5 hidden md:table-cell">
                                             <div class="flex -space-x-2">
-                                                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-primary/20 flex items-center justify-center text-[9px] sm:text-[10px] font-bold text-primary shrink-0" aria-label="3 active projects">
+                                                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-primary/20 flex items-center justify-center text-[9px] sm:text-[10px] font-bold text-primary shrink-0"
+                                                    aria-label="3 active projects">
                                                     3
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5 text-right font-headline font-semibold text-on-surface whitespace-nowrap text-sm sm:text-base">
+                                        <td
+                                            class="px-4 sm:px-6 py-4 sm:py-5 text-right font-headline font-semibold text-on-surface whitespace-nowrap text-sm sm:text-base">
                                             $45,200
                                         </td>
                                         <td class="px-4 sm:px-6 py-4 sm:py-5 text-right">
-                                            <button
-                                                type="button"
+                                            <button type="button"
                                                 class="text-on-surface-muted hover:text-on-surface active:text-on-surface p-1.5 rounded-lg hover:bg-surface-container-high transition-all min-h-[44px] min-w-[44px] inline-flex items-center justify-center"
                                                 aria-label="More options for Marcus Thornton">
-                                                <span class="material-symbols-outlined text-lg sm:text-xl" aria-hidden="true">more_vert</span>
+                                                <span class="material-symbols-outlined text-lg sm:text-xl"
+                                                    aria-hidden="true">more_vert</span>
                                             </button>
                                         </td>
                                     </tr>
 
                                     <!-- === Client Row 3: Elena Ross - Blocked === -->
                                     <tr class="client-row group hover:bg-surface-container/60 cursor-pointer transition-colors"
-                                        tabindex="0"
-                                        role="row"
-                                        aria-label="Elena Ross, Skyline Dev, Blocked">
+                                        tabindex="0" role="row" aria-label="Elena Ross, Skyline Dev, Blocked">
                                         <td class="px-4 sm:px-6 py-4 sm:py-5">
                                             <div class="flex items-center gap-3 sm:gap-4">
-                                                <img
-                                                    class="client-avatar w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl object-cover shrink-0"
+                                                <img class="client-avatar w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl object-cover shrink-0"
                                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwn0lzJs_rEmL4AMihUIVDNyJ5roSctD1ZdojVWgfJjHtJvwhuU0_gA9pklh1g5OD54l8wP5F1MNQTxK3bMNV0ub5Ao0TqYz9esEAspE3bvnpaOSRSfdeQre14CuNbMLF8wP3MTrDieYXsGu10HjDWk3go9eDZh_G43_9TwdSFRiCDI1-jfZzn9SlOjLA9JCe22eF_WaoWXAjm1B5z-knrMJZa5bUbnuSuGZ1-l8iyrc4pU7PRSk7tr8dJXwGVqUTNb8op73jaqNI"
-                                                    alt="Avatar of Elena Ross"
-                                                    loading="lazy" />
+                                                    alt="Avatar of Elena Ross" loading="lazy" />
                                                 <div class="min-w-0">
-                                                    <p class="font-bold text-on-surface group-hover:text-primary transition-colors text-sm sm:text-base truncate">
+                                                    <p
+                                                        class="font-bold text-on-surface group-hover:text-primary transition-colors text-sm sm:text-base truncate">
                                                         Elena Ross
                                                     </p>
                                                     <p class="text-xs text-on-surface-muted truncate">
@@ -376,49 +273,51 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5 text-on-surface-variant font-medium text-sm whitespace-nowrap hidden md:table-cell">
+                                        <td
+                                            class="px-4 sm:px-6 py-4 sm:py-5 text-on-surface-variant font-medium text-sm whitespace-nowrap hidden md:table-cell">
                                             Skyline Dev
                                         </td>
                                         <td class="px-4 sm:px-6 py-4 sm:py-5">
-                                            <span class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-wider bg-red-500/10 text-red-400 border border-red-500/20 whitespace-nowrap">
-                                                <span class="w-1.5 h-1.5 rounded-full bg-red-400" aria-hidden="true"></span>
+                                            <span
+                                                class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-wider bg-red-500/10 text-red-400 border border-red-500/20 whitespace-nowrap">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-red-400"
+                                                    aria-hidden="true"></span>
                                                 Blocked
                                             </span>
                                         </td>
                                         <td class="px-4 sm:px-6 py-4 sm:py-5 hidden md:table-cell">
                                             <div class="flex -space-x-2">
-                                                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-surface-container-highest/50 flex items-center justify-center text-[9px] sm:text-[10px] font-bold text-on-surface-muted shrink-0" aria-label="0 projects">
+                                                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-surface-container-highest/50 flex items-center justify-center text-[9px] sm:text-[10px] font-bold text-on-surface-muted shrink-0"
+                                                    aria-label="0 projects">
                                                     0
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5 text-right font-headline font-semibold text-on-surface whitespace-nowrap text-sm sm:text-base">
+                                        <td
+                                            class="px-4 sm:px-6 py-4 sm:py-5 text-right font-headline font-semibold text-on-surface whitespace-nowrap text-sm sm:text-base">
                                             $12,000
                                         </td>
                                         <td class="px-4 sm:px-6 py-4 sm:py-5 text-right">
-                                            <button
-                                                type="button"
+                                            <button type="button"
                                                 class="text-on-surface-muted hover:text-on-surface active:text-on-surface p-1.5 rounded-lg hover:bg-surface-container-high transition-all min-h-[44px] min-w-[44px] inline-flex items-center justify-center"
                                                 aria-label="More options for Elena Ross">
-                                                <span class="material-symbols-outlined text-lg sm:text-xl" aria-hidden="true">more_vert</span>
+                                                <span class="material-symbols-outlined text-lg sm:text-xl"
+                                                    aria-hidden="true">more_vert</span>
                                             </button>
                                         </td>
                                     </tr>
 
                                     <!-- === Client Row 4: Julian Banks - Active === -->
                                     <tr class="client-row group hover:bg-surface-container/60 cursor-pointer transition-colors"
-                                        tabindex="0"
-                                        role="row"
-                                        aria-label="Julian Banks, Apex Media, Active">
+                                        tabindex="0" role="row" aria-label="Julian Banks, Apex Media, Active">
                                         <td class="px-4 sm:px-6 py-4 sm:py-5">
                                             <div class="flex items-center gap-3 sm:gap-4">
-                                                <img
-                                                    class="client-avatar w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl object-cover shrink-0"
+                                                <img class="client-avatar w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl object-cover shrink-0"
                                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2xOIzY1GyvY8SC0myflC3oJViTN316KKCLQsENgFN3X8fctm4-b49mlENk2l71GUNPxUNK5kGfWLST5xTTzTICpS34_BJik_tKVU_emu-chmvcS37Xbzb-h1d4gtqJF_mociBIg6uoDvQnmEiE9xN4t4Oaqi4TnU_am6Ba1zMOFQ2ej37QGrHmSaUGfrzcIAft1FZqXYHfpX0fqnvT91m9ai01v-rA2XC_EZ2OOECaANf5o7ayZK6dL8lh8CCNCklRVkpIJ6xUWM"
-                                                    alt="Avatar of Julian Banks"
-                                                    loading="lazy" />
+                                                    alt="Avatar of Julian Banks" loading="lazy" />
                                                 <div class="min-w-0">
-                                                    <p class="font-bold text-on-surface group-hover:text-primary transition-colors text-sm sm:text-base truncate">
+                                                    <p
+                                                        class="font-bold text-on-surface group-hover:text-primary transition-colors text-sm sm:text-base truncate">
                                                         Julian Banks
                                                     </p>
                                                     <p class="text-xs text-on-surface-muted truncate">
@@ -427,34 +326,40 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5 text-on-surface-variant font-medium text-sm whitespace-nowrap hidden md:table-cell">
+                                        <td
+                                            class="px-4 sm:px-6 py-4 sm:py-5 text-on-surface-variant font-medium text-sm whitespace-nowrap hidden md:table-cell">
                                             Apex Media
                                         </td>
                                         <td class="px-4 sm:px-6 py-4 sm:py-5">
-                                            <span class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 whitespace-nowrap">
-                                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 status-active-dot" aria-hidden="true"></span>
+                                            <span
+                                                class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 whitespace-nowrap">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 status-active-dot"
+                                                    aria-hidden="true"></span>
                                                 Active
                                             </span>
                                         </td>
                                         <td class="px-4 sm:px-6 py-4 sm:py-5 hidden md:table-cell">
                                             <div class="flex -space-x-2">
-                                                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-primary/20 flex items-center justify-center text-[9px] sm:text-[10px] font-bold text-primary shrink-0" aria-label="8 active projects">
+                                                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-primary/20 flex items-center justify-center text-[9px] sm:text-[10px] font-bold text-primary shrink-0"
+                                                    aria-label="8 active projects">
                                                     8
                                                 </div>
-                                                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-tertiary/20 flex items-center justify-center text-[9px] sm:text-[10px] font-bold text-tertiary shrink-0" aria-label="1 pending project">
+                                                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-surface-container-low bg-tertiary/20 flex items-center justify-center text-[9px] sm:text-[10px] font-bold text-tertiary shrink-0"
+                                                    aria-label="1 pending project">
                                                     1
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="px-4 sm:px-6 py-4 sm:py-5 text-right font-headline font-semibold text-on-surface whitespace-nowrap text-sm sm:text-base">
+                                        <td
+                                            class="px-4 sm:px-6 py-4 sm:py-5 text-right font-headline font-semibold text-on-surface whitespace-nowrap text-sm sm:text-base">
                                             $92,750
                                         </td>
                                         <td class="px-4 sm:px-6 py-4 sm:py-5 text-right">
-                                            <button
-                                                type="button"
+                                            <button type="button"
                                                 class="text-on-surface-muted hover:text-on-surface active:text-on-surface p-1.5 rounded-lg hover:bg-surface-container-high transition-all min-h-[44px] min-w-[44px] inline-flex items-center justify-center"
                                                 aria-label="More options for Julian Banks">
-                                                <span class="material-symbols-outlined text-lg sm:text-xl" aria-hidden="true">more_vert</span>
+                                                <span class="material-symbols-outlined text-lg sm:text-xl"
+                                                    aria-hidden="true">more_vert</span>
                                             </button>
                                         </td>
                                     </tr>
@@ -465,46 +370,22 @@
                         <!-- === END TABLE SCROLL WRAPPER === -->
 
                         <!-- === PAGINATION === -->
-                        <nav
-                            class="pagination-bar px-4 sm:px-6 py-4 sm:py-5 bg-surface-container-low/50 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0"
+                        <nav class="pagination-bar px-4 sm:px-6 py-4 sm:py-5 bg-surface-container-low/50 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0"
                             aria-label="Client list pagination">
                             <p class="text-xs text-on-surface-muted text-center sm:text-left order-2 sm:order-1">
-                                Showing <span class="text-on-surface-variant font-medium">4</span> of <span class="text-on-surface-variant font-medium">128</span> clients
+                                Showing <span class="text-on-surface-variant font-medium">4</span> of <span
+                                    class="text-on-surface-variant font-medium">128</span> clients
                             </p>
                             <div class="flex items-center gap-2 order-1 sm:order-2 flex-wrap justify-center">
-                                <!-- Previous Page -->
-                                <button
-                                    type="button"
-                                    class="p-2 rounded-xl bg-surface-container text-on-surface-muted hover:text-on-surface hover:bg-surface-container-high active:scale-[0.95] transition-all duration-150 min-h-[44px] min-w-[44px] inline-flex items-center justify-center disabled:opacity-40 disabled:pointer-events-none"
-                                    aria-label="Previous page"
-                                    disabled>
-                                    <span class="material-symbols-outlined text-lg sm:text-xl" aria-hidden="true">chevron_left</span>
-                                </button>
 
-                                <!-- Page 1 (Current) -->
-                                <button
-                                    type="button"
-                                    class="pagination-current px-4 py-2 rounded-xl bg-primary/20 text-primary font-bold text-sm min-h-[44px] min-w-[44px]"
-                                    aria-label="Page 1, current page"
-                                    aria-current="page">
-                                    1
-                                </button>
-
-                                <!-- Page 2 -->
-                                <button
-                                    type="button"
-                                    class="px-4 py-2 rounded-xl text-on-surface-muted hover:bg-surface-container hover:text-on-surface active:scale-[0.96] transition-all duration-150 text-sm font-bold min-h-[44px] min-w-[44px]"
-                                    aria-label="Go to page 2">
-                                    2
-                                </button>
-
-                                <!-- Next Page -->
-                                <button
-                                    type="button"
-                                    class="p-2 rounded-xl bg-surface-container text-on-surface-muted hover:text-on-surface hover:bg-surface-container-high active:scale-[0.95] transition-all duration-150 min-h-[44px] min-w-[44px] inline-flex items-center justify-center"
-                                    aria-label="Next page">
-                                    <span class="material-symbols-outlined text-lg sm:text-xl" aria-hidden="true">chevron_right</span>
-                                </button>
+                                <div class="pagination-bar flex items-center justify-between">
+                                    <!-- Add File Button -->
+                                    <button
+                                        class="px-4 py-2 bg-surface-container-lowest border border-outline-variant/10 hover:bg-primary/10 hover:text-primary rounded-lg transition-colors flex items-center justify-center"
+                                        aria-label="Add file">
+                                        <a class="text-sm" aria-hidden="true">See All Clients</a>
+                                    </button>
+                                </div>
                             </div>
                         </nav>
                         <!-- === END PAGINATION === -->
@@ -521,18 +402,24 @@
 
                         <!-- === STAT CARDS === -->
                         <!-- Stat Card 1: Total Clients -->
-                        <div class="stat-card bg-surface-container-low p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl relative overflow-hidden group hover:shadow-lg hover:shadow-primary/5 transition-all duration-200">
-                            <div class="absolute top-0 left-0 w-1 h-full stat-accent-primary shadow-[0_0_15px_rgba(99,102,241,0.3)]"></div>
+                        <div
+                            class="stat-card bg-surface-container-low p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl relative overflow-hidden group hover:shadow-lg hover:shadow-primary/5 transition-all duration-200">
+                            <div
+                                class="absolute top-0 left-0 w-1 h-full stat-accent-primary shadow-[0_0_15px_rgba(99,102,241,0.3)]">
+                            </div>
                             <div class="pl-2">
-                                <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1.5">
+                                <p
+                                    class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1.5">
                                     Total Clients
                                 </p>
                                 <div class="flex items-end justify-between">
-                                    <h3 class="text-3xl sm:text-4xl font-headline font-semibold text-on-surface leading-none">
+                                    <h3
+                                        class="text-3xl sm:text-4xl font-headline font-semibold text-on-surface leading-none">
                                         1,284
                                     </h3>
                                     <div class="flex items-center text-emerald-400 text-xs font-bold gap-1 mb-1">
-                                        <span class="material-symbols-outlined text-sm" aria-hidden="true">trending_up</span>
+                                        <span class="material-symbols-outlined text-sm"
+                                            aria-hidden="true">trending_up</span>
                                         <span>12%</span>
                                     </div>
                                 </div>
@@ -540,18 +427,24 @@
                         </div>
 
                         <!-- Stat Card 2: Active Now -->
-                        <div class="stat-card bg-surface-container-low p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl relative overflow-hidden group hover:shadow-lg hover:shadow-tertiary/5 transition-all duration-200">
-                            <div class="absolute top-0 left-0 w-1 h-full stat-accent-tertiary shadow-[0_0_15px_rgba(255,183,131,0.3)]"></div>
+                        <div
+                            class="stat-card bg-surface-container-low p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl relative overflow-hidden group hover:shadow-lg hover:shadow-tertiary/5 transition-all duration-200">
+                            <div
+                                class="absolute top-0 left-0 w-1 h-full stat-accent-tertiary shadow-[0_0_15px_rgba(255,183,131,0.3)]">
+                            </div>
                             <div class="pl-2">
-                                <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1.5">
+                                <p
+                                    class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1.5">
                                     Active Now
                                 </p>
                                 <div class="flex items-end justify-between">
-                                    <h3 class="text-3xl sm:text-4xl font-headline font-semibold text-on-surface leading-none">
+                                    <h3
+                                        class="text-3xl sm:text-4xl font-headline font-semibold text-on-surface leading-none">
                                         942
                                     </h3>
                                     <div class="flex items-center text-on-surface-muted text-xs font-bold gap-1 mb-1">
-                                        <span class="material-symbols-outlined text-sm" aria-hidden="true">horizontal_rule</span>
+                                        <span class="material-symbols-outlined text-sm"
+                                            aria-hidden="true">horizontal_rule</span>
                                         <span>0%</span>
                                     </div>
                                 </div>
@@ -559,18 +452,24 @@
                         </div>
 
                         <!-- Stat Card 3: New This Month -->
-                        <div class="stat-card bg-surface-container-low p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl relative overflow-hidden group hover:shadow-lg hover:shadow-primary/5 transition-all duration-200">
-                            <div class="absolute top-0 left-0 w-1 h-full stat-accent-primary shadow-[0_0_15px_rgba(99,102,241,0.3)]"></div>
+                        <div
+                            class="stat-card bg-surface-container-low p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl relative overflow-hidden group hover:shadow-lg hover:shadow-primary/5 transition-all duration-200">
+                            <div
+                                class="absolute top-0 left-0 w-1 h-full stat-accent-primary shadow-[0_0_15px_rgba(99,102,241,0.3)]">
+                            </div>
                             <div class="pl-2">
-                                <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1.5">
+                                <p
+                                    class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1.5">
                                     New This Month
                                 </p>
                                 <div class="flex items-end justify-between">
-                                    <h3 class="text-3xl sm:text-4xl font-headline font-semibold text-on-surface leading-none">
+                                    <h3
+                                        class="text-3xl sm:text-4xl font-headline font-semibold text-on-surface leading-none">
                                         48
                                     </h3>
                                     <div class="flex items-center text-emerald-400 text-xs font-bold gap-1 mb-1">
-                                        <span class="material-symbols-outlined text-sm" aria-hidden="true">trending_up</span>
+                                        <span class="material-symbols-outlined text-sm"
+                                            aria-hidden="true">trending_up</span>
                                         <span>5%</span>
                                     </div>
                                 </div>
@@ -582,14 +481,15 @@
                         <div class="bg-surface-container-low p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl">
                             <!-- Feed Header -->
                             <div class="flex justify-between items-center mb-4 sm:mb-5">
-                                <h3 class="text-xs sm:text-sm font-bold uppercase tracking-widest text-on-surface-variant">
+                                <h3
+                                    class="text-xs sm:text-sm font-bold uppercase tracking-widest text-on-surface-variant">
                                     Recent Events
                                 </h3>
-                                <button
-                                    type="button"
+
+                                <!-- View All Button -->
+                                <button type="button"
                                     class="text-xs text-primary font-bold flex items-center gap-1.5 group hover:text-primary/80 transition-colors min-h-[44px] py-1"
                                     aria-label="View all recent events">
-                                    <span class="w-1 h-1 bg-primary rounded-full group-hover:w-3 transition-all duration-200" aria-hidden="true"></span>
                                     View All
                                 </button>
                             </div>
@@ -598,14 +498,18 @@
                             <ul class="space-y-4 sm:space-y-5" role="list">
                                 <!-- Activity Item 1: Lumina Design - New Retainer -->
                                 <li class="flex gap-3 sm:gap-4 group">
-                                    <div class="activity-icon-container w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-surface-container-high flex items-center justify-center shrink-0 group-hover:bg-surface-container-high/80 transition-colors">
-                                        <span class="material-symbols-outlined text-primary text-base sm:text-lg" aria-hidden="true">description</span>
+                                    <div
+                                        class="activity-icon-container w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-surface-container-high flex items-center justify-center shrink-0 group-hover:bg-surface-container-high/80 transition-colors">
+                                        <span class="material-symbols-outlined text-primary text-base sm:text-lg"
+                                            aria-hidden="true">description</span>
                                     </div>
                                     <div class="min-w-0 flex-1">
                                         <p class="text-xs sm:text-sm text-on-surface leading-snug">
-                                            <strong class="font-semibold text-on-surface">Lumina Design</strong> signed a new retainer agreement.
+                                            <strong class="font-semibold text-on-surface">Lumina Design</strong> signed
+                                            a new retainer agreement.
                                         </p>
-                                        <time class="block text-[10px] sm:text-xs text-on-surface-muted mt-1.5" datetime="2024-10-14T10:00:00">
+                                        <time class="block text-[10px] sm:text-xs text-on-surface-muted mt-1.5"
+                                            datetime="2024-10-14T10:00:00">
                                             2 hours ago
                                         </time>
                                     </div>
@@ -613,14 +517,18 @@
 
                                 <!-- Activity Item 2: Marcus Thornton - Payment Complete -->
                                 <li class="flex gap-3 sm:gap-4 group">
-                                    <div class="activity-icon-container w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-surface-container-high flex items-center justify-center shrink-0 group-hover:bg-surface-container-high/80 transition-colors">
-                                        <span class="material-symbols-outlined text-tertiary text-base sm:text-lg" aria-hidden="true">payments</span>
+                                    <div
+                                        class="activity-icon-container w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-surface-container-high flex items-center justify-center shrink-0 group-hover:bg-surface-container-high/80 transition-colors">
+                                        <span class="material-symbols-outlined text-tertiary text-base sm:text-lg"
+                                            aria-hidden="true">payments</span>
                                     </div>
                                     <div class="min-w-0 flex-1">
                                         <p class="text-xs sm:text-sm text-on-surface leading-snug">
-                                            <strong class="font-semibold text-on-surface">Marcus Thornton</strong> completed payment for Project X.
+                                            <strong class="font-semibold text-on-surface">Marcus Thornton</strong>
+                                            completed payment for Project X.
                                         </p>
-                                        <time class="block text-[10px] sm:text-xs text-on-surface-muted mt-1.5" datetime="2024-10-14T07:00:00">
+                                        <time class="block text-[10px] sm:text-xs text-on-surface-muted mt-1.5"
+                                            datetime="2024-10-14T07:00:00">
                                             5 hours ago
                                         </time>
                                     </div>
@@ -628,14 +536,18 @@
 
                                 <!-- Activity Item 3: Skyline Dev - Account Flagged -->
                                 <li class="flex gap-3 sm:gap-4 group">
-                                    <div class="activity-icon-container w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-surface-container-high flex items-center justify-center shrink-0 group-hover:bg-surface-container-high/80 transition-colors">
-                                        <span class="material-symbols-outlined text-error text-base sm:text-lg" aria-hidden="true">report</span>
+                                    <div
+                                        class="activity-icon-container w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-surface-container-high flex items-center justify-center shrink-0 group-hover:bg-surface-container-high/80 transition-colors">
+                                        <span class="material-symbols-outlined text-error text-base sm:text-lg"
+                                            aria-hidden="true">report</span>
                                     </div>
                                     <div class="min-w-0 flex-1">
                                         <p class="text-xs sm:text-sm text-on-surface leading-snug">
-                                            <strong class="font-semibold text-on-surface">Skyline Dev</strong> account has been flagged for review.
+                                            <strong class="font-semibold text-on-surface">Skyline Dev</strong> account
+                                            has been flagged for review.
                                         </p>
-                                        <time class="block text-[10px] sm:text-xs text-on-surface-muted mt-1.5" datetime="2024-10-13T00:00:00">
+                                        <time class="block text-[10px] sm:text-xs text-on-surface-muted mt-1.5"
+                                            datetime="2024-10-13T00:00:00">
                                             Yesterday
                                         </time>
                                     </div>
