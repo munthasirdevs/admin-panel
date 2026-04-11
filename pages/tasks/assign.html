@@ -2,6 +2,7 @@
 <html class="dark" lang="en">
 
 <head>
+    <!-- Section 1: Page Metadata & Asset Layer Interface -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Assign Task - System Admin</title>
@@ -21,13 +22,13 @@
 
 <body class="flex min-h-screen bg-surface">
 
-    <!-- === MAIN CONTENT === -->
+    <!-- Section 2: Command Assignment Canvas -->
     <main class="flex-1 min-h-screen flex flex-col">
 
         <!-- === PAGE CONTENT === -->
         <div class="p-12">
 
-            <!-- === HEADER & BREADCRUMBS === -->
+            <!-- Section 3: Branding & Strategic Resource Deployment -->
             <div class="mb-10 flex justify-between items-end">
                 <div>
                     <nav
@@ -48,7 +49,7 @@
                 </div>
             </div>
 
-            <!-- === STEP INDICATOR === -->
+            <!-- Section 4: Operational Workflow Progression -->
             <div class="mb-12">
                 <div class="flex items-center justify-between relative max-w-4xl">
                     <div class="absolute top-5 left-0 w-full h-[2px] bg-surface-container-highest z-0"></div>
@@ -86,7 +87,7 @@
                 <!-- === FORM SECTIONS (LEFT) === -->
                 <div class="col-span-8 space-y-8">
 
-                    <!-- === SECTION 1: TASK INFORMATION === -->
+                    <!-- Section 5: Task Semantics & Architectural Scope -->
                     <section class="bg-surface-container-low rounded-3xl p-8 relative overflow-hidden group">
                         <div
                             class="absolute top-0 left-0 w-[2px] h-full bg-primary/40 group-hover:bg-primary transition-colors">
@@ -100,8 +101,7 @@
                                 <label for="task_name"
                                     class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Task
                                     Name</label>
-                                <input
-                                    id="task_name"
+                                <input id="task_name"
                                     class="w-full bg-surface-container rounded-xl border-outline-variant/15 py-3 px-4 focus:ring-1 focus:ring-primary focus:border-primary"
                                     placeholder="e.g., Q3 Financial Audit Review" type="text" />
                             </div>
@@ -126,8 +126,7 @@
                                     class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Due
                                     Date</label>
                                 <div class="relative">
-                                    <input
-                                        id="due_date"
+                                    <input id="due_date"
                                         class="w-full bg-surface-container rounded-xl border-outline-variant/15 py-3 px-4 focus:ring-1 focus:ring-primary"
                                         type="date" />
                                     <span
@@ -138,8 +137,7 @@
                                 <label for="task_description"
                                     class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Short
                                     Description</label>
-                                <textarea
-                                    id="task_description"
+                                <textarea id="task_description"
                                     class="w-full bg-surface-container rounded-xl border-outline-variant/15 py-3 px-4 focus:ring-1 focus:ring-primary"
                                     placeholder="Briefly describe the task objectives..." rows="4"></textarea>
                             </div>
@@ -173,7 +171,7 @@
                         </div>
                     </section>
 
-                    <!-- === SECTION 2: ASSIGN TEAM === -->
+                    <!-- Section 6: Strategic Force Distribution -->
                     <section class="bg-surface-container-low rounded-3xl p-8 relative overflow-hidden group">
                         <div
                             class="absolute top-0 left-0 w-[2px] h-full bg-primary/40 group-hover:bg-primary transition-colors">
@@ -210,7 +208,8 @@
                                             <option>Observer</option>
                                         </select>
                                     </div>
-                                    <button class="text-slate-500 hover:text-error transition-colors" aria-label="Remove team member">
+                                    <button class="text-slate-500 hover:text-error transition-colors"
+                                        aria-label="Remove team member">
                                         <span class="material-symbols-outlined text-lg">close</span>
                                     </button>
                                 </div>
@@ -235,7 +234,8 @@
                                             <option selected="">Observer</option>
                                         </select>
                                     </div>
-                                    <button class="text-slate-500 hover:text-error transition-colors" aria-label="Remove team member">
+                                    <button class="text-slate-500 hover:text-error transition-colors"
+                                        aria-label="Remove team member">
                                         <span class="material-symbols-outlined text-lg">close</span>
                                     </button>
                                 </div>
@@ -249,7 +249,7 @@
                         </div>
                     </section>
 
-                    <!-- === SECTION 3: SUB-TASKS === -->
+                    <!-- Section 7: Granular Operational Decomposition -->
                     <section class="bg-surface-container-low rounded-3xl p-8 relative overflow-hidden group">
                         <div
                             class="absolute top-0 left-0 w-[2px] h-full bg-primary/40 group-hover:bg-primary transition-colors">
@@ -297,7 +297,7 @@
                         </div>
                     </section>
 
-                    <!-- === SECTION 4: FILES / REFERENCES === -->
+                    <!-- Section 8: Asset Vault & Reference Lattice -->
                     <section class="bg-surface-container-low rounded-3xl p-8 relative overflow-hidden group">
                         <div
                             class="absolute top-0 left-0 w-[2px] h-full bg-primary/40 group-hover:bg-primary transition-colors">
@@ -320,7 +320,7 @@
                         </div>
                     </section>
 
-                    <!-- === SECTION 5: NOTIFICATIONS === -->
+                    <!-- Section 9: Temporal Audit Surveillance -->
                     <section class="bg-surface-container-low rounded-3xl p-8 relative overflow-hidden group">
                         <div
                             class="absolute top-0 left-0 w-[2px] h-full bg-primary/40 group-hover:bg-primary transition-colors">
@@ -368,7 +368,7 @@
                     </section>
                 </div>
 
-                <!-- === REVIEW SUMMARY CARD (RIGHT) === -->
+                <!-- Section 10: Live Command Summary -->
                 <div class="col-span-4 sticky top-24">
                     <div
                         class="bg-surface-container-highest rounded-3xl overflow-hidden shadow-2xl shadow-black/40 border border-outline-variant/5">
@@ -449,24 +449,10 @@
                 </div>
             </div>
         </div>
-
-        <!-- === FOOTER === -->
-        <footer
-            class="mt-12 px-8 py-6 border-t border-outline-variant/15 bg-surface flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-300 outfit">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">© 2024 Obsidian Architect • System
-                Status: <span class="text-success">Operational</span></p>
-            <div class="flex gap-4 items-center">
-                <span
-                    class="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(99,102,241,0.4)]"></span>
-                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Region:
-                    Global-Alpha-1</span>
-            </div>
-        </footer>
-
     </main>
 
     <!-- === SCRIPTS === -->
-    <script src="../../assets/js/app.js"></script>
+    <script src="../../assets/js/main.js"></script>
 </body>
 
 </html>

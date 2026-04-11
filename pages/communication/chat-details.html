@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <!-- Section 1: Page Metadata & Asset Layer Interface -->
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Chat Details Control - System Admin</title>
+    <!-- Core Assets -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="../../assets/js/tailwind-config.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+
+<body class="flex flex-col min-h-screen bg-surface min-h-screen">
+    <!-- Section 2: Communication Workspace Canvas -->
+    <main class="max-w-[1600px] mx-auto p-6 lg:p-10">
+        <!-- Section 3: Chat Header & Context Protocol -->
+        <header class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-6">
+            <div class="flex items-center gap-5">
+                <div class="relative">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-600 to-violet-800 flex items-center justify-center text-2xl font-bold shadow-lg shadow-indigo-500/20">
+                        <span class="material-symbols-outlined text-3xl">hub</span>
+                    </div>
+                    <div
+                        class="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 border-4 border-[#0B0F19] rounded-full">
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center gap-3">
+                        <h1 class="font-headline text-3xl tracking-tight">Alpha-Node Core</h1>
+                        <span
+                            class="px-2 py-0.5 rounded-md bg-indigo-500/10 text-indigo-400 text-xs font-label uppercase tracking-widest border border-indigo-500/20">P2P
+                            Hub</span>
+                    </div>
+                    <div class="flex items-center gap-4 mt-2 text-sm text-on-surface-variant font-label">
+                        <span class="flex items-center gap-1.5"><span
+                                class="material-symbols-outlined text-sm">group</span> 12 Participants</span>
+                        <span class="flex items-center gap-1.5"><span
+                                class="material-symbols-outlined text-sm">schedule</span> Active 2m ago</span>
+                        <span class="flex items-center gap-1.5 text-green-400"><span
+                                class="material-symbols-outlined text-sm">check_circle</span> Encrypted</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <button
+                    class="bg-surface-container-low border border-outline-variant hover:bg-outline-variant/50 px-4 py-2.5 rounded-xl transition-all flex items-center gap-2 font-label">
+                    <span class="material-symbols-outlined text-lg">settings</span> Control Settings
+                </button>
+                <button
+                    class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-xl transition-all flex items-center gap-2 font-label font-bold">
+                    <span class="material-symbols-outlined text-lg">terminal</span> New Protocol
+                </button>
+            </div>
+        </header>
+        <!-- Section 4: Collaborative Context Architecture -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 h-full">
+            <!-- Left Sidebar: Collaborative Context -->
+            <aside class="lg:col-span-3 space-y-6">
+                <!-- Section 5: Active Participants Node -->
+                <section class="bg-surface-container rounded-2xl p-5 shadow-sm">
+                    <h3 class="font-label font-bold text-sm mb-4 tracking-wider text-indigo-300">PARTICIPANTS</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between group">
+                            <div class="flex items-center gap-3">
+                                <img class="w-9 h-9 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all"
+                                    data-alt="professional male headshot with neutral background, soft studio lighting, sharp focus"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXnV0cIZ1QP2jdJDVUNb9H7GZAwPVQqJD12WSgg-zvpepWhi_YaEpKfI64-clq3wDGL6fwQEhb8Jcxxt6qiz7TvCxzhveBZxdQHY1x1wbpUw3bUqepDp3WD6DTqt9AqxxWzaGgWf5YA1O45PXv_eBRLClr9yqS0A0516nnLTw9RJXZMJvVrUFiVouqCMafXYuFxYVsWUgLU953wDfV3SqJYYbTX1jpPNA8w9I-zxu6IkKF5QkDzNCCR5qq4ekCfKdhLyjjXfbBgGA" />
+                                <div>
+                                    <p class="text-sm font-semibold">Admin_Xenon</p>
+                                    <p class="text-[10px] text-indigo-400 font-label">Lead Architect</p>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-on-surface-variant text-sm"
+                                data-weight="fill">verified</span>
+                        </div>
+                        <div class="flex items-center justify-between group">
+                            <div class="flex items-center gap-3">
+                                <img class="w-9 h-9 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all"
+                                    data-alt="young woman headshot with artistic blue lighting, modern aesthetic, professional portrait"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF8Fq01qblPguk57OKbQAJXyP2USjmlmEZxN_DeYSbgdWjJvEZ7xezzfXcWbWDpomqFNjNUIdb5wcFkqVEQ7mA8ITl2njzZfdtgni-DaYsvduKL4VIA3XqJcX-sXpA1Rn9rge78ZuVMgFnjETuoxZH1U0WytDW_C7l0soC-KP7OsTfCcj-NThC5KWSM6gVp-Y0TPlx5K6shiAqMgWsbOFdNus109DelmTrS2q8qlq6YqHGNTMy2C10rY5Qjvpficny2wN45tgbZtQ" />
+                                <div>
+                                    <p class="text-sm font-semibold">Nova_Protocol</p>
+                                    <p class="text-[10px] text-on-surface-variant font-label">Read/Write</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between group opacity-60">
+                            <div class="flex items-center gap-3">
+                                <img class="w-9 h-9 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all"
+                                    data-alt="bearded man professional portrait, high contrast dark studio lighting, moody atmosphere"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGI8ojpXuVfqxwD-SkuYkrRC-UZBmm2e7sGGa8p89w3UXv0OZI2gjhpRxn0NBI13K9mtazzk5P3SDIY825gC2v8IVEp5Eua6v9X50fh_PiZ9_z-UqyigC1MPYv26SJ2k4FHQluCyqreYsalIipspp0WmUEckI-vMfX3zln4jq4YCzdfsmmy7vJeV6DHKQkjUIIf8co1L8FqP7XPTOF_c4BGg18XmlP2ebHeioCgU5YFVT_90k2Jy1BQ5SQMXmUNwBv-5wlPdKuwBA" />
+                                <div>
+                                    <p class="text-sm font-semibold">Void_Walker</p>
+                                    <p class="text-[10px] text-red-400 font-label">Muted</p>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-red-500 text-sm">volume_off</span>
+                        </div>
+                    </div>
+                    <button <button
+                        class="w-full mt-6 py-2 border-t border-outline-variant/10 text-xs font-label text-on-surface-variant hover:text-indigo-400 transition-colors">Manage
+                        Permissions</button>
+                </section>
+                <!-- Section 6: Protocol & Governance Rules -->
+                <section class="bg-surface-container rounded-2xl p-5 relative overflow-hidden shadow-sm">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-indigo-600/5 blur-2xl -mr-12 -mt-12"></div>
+                    <h3 class="font-label font-bold text-sm mb-4 tracking-wider text-indigo-300">PROTOCOL RULES</h3>
+                    <div class="space-y-4">
+                        <div class="p-3 rounded-xl bg-surface-container-low">
+                            <p class="text-xs font-label text-indigo-300 mb-1">Access Level</p>
+                            <p class="text-sm font-medium">Restricted: Xenon-42</p>
+                        </div>
+                        <div class="p-3 rounded-xl bg-surface-container-low">
+                            <p class="text-xs font-label text-on-surface-variant mb-1">Expiry Date</p>
+                            <p class="text-sm font-medium">Infinite Session</p>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-on-surface-variant">
+                            <span class="material-symbols-outlined text-sm text-green-400">link</span>
+                            Linked to Project: <span
+                                class="text-indigo-300 font-medium italic underline underline-offset-4 cursor-pointer">X-Gate-24</span>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+            <!-- Section 7: Synchronous Communication Stream -->
+            <div class="lg:col-span-6 space-y-6">
+                <!-- Section 8: Functional Message Actions -->
+                <nav class="flex items-center justify-between bg-surface-container/60 backdrop-blur-md p-2 rounded-2xl">
+                    <div class="flex items-center gap-1">
+                        <button
+                            class="p-3 hover:bg-surface-container-low rounded-xl text-on-surface-variant hover:text-indigo-400 transition-all flex items-center gap-2 text-sm font-label">
+                            <span class="material-symbols-outlined">delete</span> Delete
+                        </button>
+                        <button
+                            class="p-3 hover:bg-surface-container-low rounded-xl text-on-surface-variant hover:text-indigo-400 transition-all flex items-center gap-2 text-sm font-label">
+                            <span class="material-symbols-outlined">visibility_off</span> Hide
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <button
+                            class="p-3 hover:bg-surface-container-low rounded-xl text-on-surface-variant hover:text-red-400 transition-all flex items-center gap-2 text-sm font-label">
+                            <span class="material-symbols-outlined">flag</span> Flag
+                        </button>
+                        <button
+                            class="p-3 hover:bg-surface-container-low rounded-xl text-on-surface-variant hover:text-green-400 transition-all flex items-center gap-2 text-sm font-label">
+                            <span class="material-symbols-outlined">restore_from_trash</span> Restore
+                        </button>
+                    </div>
+                </nav>
+                <!-- Section 9: Secure Message Timeline -->
+                <section class="bg-surface-container rounded-2xl p-6 min-h-[500px] flex flex-col shadow-sm">
+                    <div class="flex-1 space-y-8">
+                        <!-- Message 1 -->
+                        <div class="flex gap-4">
+                            <img class="w-10 h-10 rounded-xl object-cover shrink-0"
+                                data-alt="professional male headshot, soft lighting"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy_HZEPJ4_m-HfVDBNHdf1oBwOG3Oly72BjZ2S927cH3KuPtSVEpDDBF5d5xqb4kOo4VbdHxvigXP-OY1kePc5e9vIJBYPtOp8-KT3FVjyExI98NVADD2E3yOx9mszywMJbKduRrPti31SHD0kz559sUP7UW3i3s8wXUP4j7NS6d2s4-iGwrKcT634mpaS7NNyD8ojyyTEnOUL5vRG4fye34Nc-9-FmT5oTXl9YhSumF1ak6qoxwfAdlAqV2MsJOGocpIS-pwLB2k" />
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="text-sm font-bold text-indigo-300">Admin_Xenon</span>
+                                    <span class="text-[10px] text-on-surface-variant/60 font-label">14:22:18 ·
+                                        DELIVERED</span>
+                                </div>
+                                <div class="bg-surface-container-low p-4 rounded-2xl rounded-tl-none max-w-[85%]">
+                                    <p class="text-sm leading-relaxed">System scan complete. Initializing node cluster
+                                        04. Please verify the integrity hashes before proceeding with the P2P handshake.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Message 2 -->
+                        <div class="flex gap-4 flex-row-reverse">
+                            <img class="w-10 h-10 rounded-xl object-cover shrink-0"
+                                data-alt="modern female portrait, blue studio lighting"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeTyq87k_V80WNRS84EhH5bJE_lD_fm8raIlj-MR8aqVpOoO9AjQ4umkOdHXOHLBiG4cpHUI1jodJRKCIAjICrZZr6YSjImphSM99dG6T0dRACF-8gYLCgH2qupKBzImnQ7iMW8o1f-ic_Kyg1M2EePW8xfKYa8TB14f7-gObLS0mCaxVv2cYBLi9KRExHNJbiJFgfZvHJibUw5PD4ojlqVl-NIuL2vq80RUDAF6ruvC9Ot9kvyS8tAFVG5tKVrwZmul7Zp7TOSzk" />
+                            <div class="flex-1">
+                                <div class="flex items-center flex-row-reverse justify-between mb-1">
+                                    <span class="text-sm font-bold text-on-surface">Nova_Protocol</span>
+                                    <span class="text-[10px] text-on-surface-variant/60 font-label">14:24:05 ·
+                                        READ</span>
+                                </div>
+                                <div
+                                    class="bg-primary/10 ml-auto p-4 rounded-2xl rounded-tr-none border border-primary/20 max-w-[85%]">
+                                    <p class="text-sm leading-relaxed">Copy that. Running hash verification now. Node
+                                        04-A is reporting stable telemetry.</p>
+                                    <div
+                                        class="mt-3 flex items-center gap-3 bg-surface-container-high p-2.5 rounded-lg">
+                                        <span class="material-symbols-outlined text-indigo-400">description</span>
+                                        <div class="flex-1">
+                                            <p class="text-[10px] font-bold">hash_report_v2.log</p>
+                                            <p class="text-[9px] text-on-surface-variant">1.4 MB · JSON</p>
+                                        </div>
+                                        <span
+                                            class="material-symbols-outlined text-sm cursor-pointer hover:text-indigo-400">download</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- System Notification -->
+                        <div class="flex justify-center">
+                            <div class="px-4 py-1.5 bg-surface-container-low rounded-full flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-yellow-500 rounded-full"></span>
+                                <span
+                                    class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Protocol
+                                    Override by Void_Walker</span>
+                            </div>
+                        </div>
+                        <!-- Message 3 -->
+                        <div class="flex gap-4">
+                            <img class="w-10 h-10 rounded-xl object-cover shrink-0 opacity-40"
+                                data-alt="moody bearded man portrait, dark studio lighting"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPbaPfU7FG4GBxYlLhwwDCtC0HrzIP2fqKoR_3Exg_hXq13lZW2sZkTU0LKUBnp2MYPP0JRW_Jbhj3ZWE9IRFTuFLOFgjGt0_k5hkvOBad49vpLfljifM7_ovLLPQfCxe_Hz9dJYQ_k_Qonf-LkCIHunye9_8TdCEl-0ZLVkYE8Zzoqw3aJCZJwYmGmc6u6enLPZa0k0lEwK69Lrr5jJfiWD5G4dggthSJsjL682uSZM7pirDAPv4I7JGcMHgUKZDCYteOKuniUaI" />
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="text-sm font-bold text-red-400">Void_Walker (MUTED)</span>
+                                    <span class="text-[10px] text-on-surface-variant/60 font-label">14:30:12 ·
+                                        FLAG_PENDING</span>
+                                </div>
+                                <div
+                                    class="bg-error-container/10 p-4 rounded-2xl rounded-tl-none max-w-[85%] blur-[0.5px]">
+                                    <p class="text-sm italic text-on-surface-variant">Message flagged for rule
+                                        violation: Unauthorized script injection attempt detected.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Section 10: Interaction Terminal & Logic Handlers -->
+                    <div class="mt-8 pt-4 border-t border-outline-variant/10">
+                        <div class="flex items-center gap-4 bg-surface-container-low p-2 rounded-xl">
+                            <button class="p-2 hover:text-indigo-400 transition-colors">
+                                <span class="material-symbols-outlined">add_circle</span>
+                            </button>
+                            <input class="bg-transparent border-none focus:ring-0 w-full text-sm font-label"
+                                placeholder="Send system command or message..." type="text" />
+                            <button class="bg-indigo-600 p-2 px-4 rounded-lg hover:bg-indigo-500 transition-colors">
+                                <span class="material-symbols-outlined text-white">send</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Section 11: Insight & Security Matrix -->
+            <aside class="lg:col-span-3 space-y-6">
+                <!-- Section 12: Interaction Visibility Matrix -->
+                <section class="bg-surface-container rounded-2xl p-5 shadow-sm">
+                    <h3 class="font-label font-bold text-sm mb-4 tracking-wider text-indigo-300">VISIBILITY MATRIX</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-on-surface-variant">public</span>
+                                <span class="text-xs font-label">Public View</span>
+                            </div>
+                            <div class="w-8 h-4 bg-surface-container-highest rounded-full relative cursor-pointer">
+                                <div class="absolute top-0.5 left-0.5 w-3 h-3 bg-on-surface-variant rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3 text-indigo-400">
+                                <span class="material-symbols-outlined">shield</span>
+                                <span class="text-xs font-label font-bold">Encrypted Archive</span>
+                            </div>
+                            <div class="w-8 h-4 bg-indigo-600 rounded-full relative cursor-pointer">
+                                <div class="absolute top-0.5 right-0.5 w-3 h-3 bg-white rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-on-surface-variant">edit_note</span>
+                                <span class="text-xs font-label">Write Access</span>
+                            </div>
+                            <div class="w-8 h-4 bg-indigo-600 rounded-full relative cursor-pointer">
+                                <div class="absolute top-0.5 right-0.5 w-3 h-3 bg-white rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Section 13: Historical Event Sequence -->
+                <section class="bg-surface-container rounded-2xl p-5 shadow-sm">
+                    <h3 class="font-label font-bold text-sm mb-4 tracking-wider text-indigo-300">ACTIVITY LOG</h3>
+                    <div class="space-y-5">
+                        <div class="flex gap-3">
+                            <div class="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0"></div>
+                            <div>
+                                <p class="text-xs font-medium">Chat name modified</p>
+                                <p class="text-[10px] text-on-surface-variant font-label">Admin_Xenon · 45m ago</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-1.5 h-1.5 rounded-full bg-red-500 mt-1.5 shrink-0"></div>
+                            <div>
+                                <p class="text-xs font-medium text-red-400">Security breach attempt</p>
+                                <p class="text-[10px] text-on-surface-variant font-label">IP: 192.168.1.1 · 2h ago</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 shrink-0"></div>
+                            <div>
+                                <p class="text-xs font-medium">New participant added</p>
+                                <p class="text-[10px] text-on-surface-variant font-label">Nova_Protocol · 5h ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full mt-6 flex items-center justify-center gap-2 text-[10px] font-label font-bold uppercase tracking-widest text-indigo-400 hover:text-indigo-300">
+                        View Full History <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </section>
+                <!-- Section 14: Telemetry & Network Flux Stats -->
+                <section class="bg-surface-container-high rounded-2xl p-5 shadow-sm">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="material-symbols-outlined text-indigo-400" data-weight="fill">analytics</span>
+                        <h3 class="font-label font-bold text-xs tracking-wider">NETWORK IMPACT</h3>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <p class="text-lg font-bold">1.2 TB</p>
+                            <p class="text-[9px] text-on-surface-variant font-label uppercase">Data Flow</p>
+                        </div>
+                        <div>
+                            <p class="text-lg font-bold">99.9%</p>
+                            <p class="text-[9px] text-on-surface-variant font-label uppercase">Uptime</p>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </main>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

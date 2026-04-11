@@ -2,13 +2,14 @@
 <html class="dark" lang="en">
 
 <head>
+    <!-- Section 1: Page Meta & Core Environment Assets -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>{PAGE_TITLE} - Obsidian Admin</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script src="../../assets/js/tailwind-config.js"></script>
+    <script src="../assets/js/tailwind-config.js"></script>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap"
@@ -17,30 +18,30 @@
         rel="stylesheet" />
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
 </head>
 
 <body class="flex min-h-screen bg-surface">
-    <!-- ==================== MAIN CONTENT ==================== -->
+    <!-- Section 2: Page Architecture (Main Shell) -->
     <main class="flex-1 min-h-screen flex flex-col">
-        <!-- === PAGE HEADER === -->
+        <!-- Section 3: Page Branding & Context Identity -->
         <div class="p-8 space-y-12 flex-1">
-            <!-- Page Header -->
+            <!-- Header Metadata -->
             <section class="flex flex-col gap-1">
                 <h2 class="text-on-surface font-headline font-light text-5xl tracking-tight">{PAGE_TITLE}</h2>
                 <p class="text-on-surface-variant font-body text-sm">{PAGE_DESCRIPTION}</p>
             </section>
 
-            <!-- === PAGE CONTENT === -->
+            <!-- Section 4: Dynamic Content Canvas (Workspace Area) -->
             <section class="bg-surface-container rounded-2xl p-8 border border-outline-variant/5">
                 <!-- Your content goes here -->
             </section>
         </div>
     </main>
 
-    <!-- === SCRIPTS === -->
-    <script src="../../assets/js/main.js"></script>
+    <!-- Section 5: Application Intelligence & Interaction Scripts -->
+    <script src="../assets/js/main.js"></script>
 </body>
 
 </html>

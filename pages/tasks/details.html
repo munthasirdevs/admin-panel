@@ -2,6 +2,7 @@
 <html class="dark" lang="en">
 
 <head>
+    <!-- Section 1: Page Metadata & Asset Layer Interface -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Task Details - System Admin</title>
@@ -20,12 +21,12 @@
 </head>
 
 <body class="flex min-h-screen bg-surface">
-    <!-- ==================== MAIN CONTENT ==================== -->
+    <!-- Section 2: Command Assignment Canvas -->
     <main class="flex-1 min-h-screen flex flex-col">
         <!-- ==================== PAGE CONTENT ==================== -->
         <div class="p-8">
             <div class="max-w-7xl mx-auto">
-                <!-- ==================== HEADER SECTION ==================== -->
+                <!-- Section 3: Branding & Strategic Resource Deployment -->
                 <div class="mb-12">
                     <nav class="flex items-center gap-2 text-sm text-on-surface-variant mb-4">
                         <span>Tasks</span>
@@ -77,12 +78,12 @@
                     </div>
                 </div>
 
-                <!-- ==================== GRID GRID LAYOUT ==================== -->
+                <!-- Section 4: Operational Data Lattice -->
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                    <!-- ==================== MAIN CONTENT (LEFT COL) ==================== -->
+                    <!-- Section 5: Task Semantics & Architectural Scope -->
                     <div class="lg:col-span-8 space-y-6">
                         <!-- Description Card -->
-                        <section class="bg-surface-container rounded-2xl p-8 border border-outline-variant/10">
+                        <section class="bg-surface-container rounded-2xl p-8 ">
                             <h3 class="font-headline text-xl mb-6 flex items-center gap-2">
                                 <span class="material-symbols-outlined text-primary">subject</span> Task Description
                             </h3>
@@ -102,7 +103,7 @@
                         </section>
 
                         <!-- Attachments Grid -->
-                        <section class="bg-surface-container rounded-2xl p-8 border border-outline-variant/10">
+                        <section class="bg-surface-container rounded-2xl p-8 ">
                             <div class="flex justify-between items-center mb-6">
                                 <h3 class="font-headline text-xl flex items-center gap-2">
                                     <span class="material-symbols-outlined text-primary">attachment</span> Attachments
@@ -149,7 +150,7 @@
                         </section>
 
                         <!-- Comments Section -->
-                        <section class="bg-surface-container rounded-2xl p-8 border border-outline-variant/10">
+                        <section class="bg-surface-container rounded-2xl p-8 ">
                             <h3 class="font-headline text-xl mb-6 flex items-center gap-2">
                                 <span class="material-symbols-outlined text-primary">chat_bubble</span> Discussion
                             </h3>
@@ -164,7 +165,7 @@
                                             <span class="text-xs text-on-surface-variant">2 hours ago</span>
                                         </div>
                                         <p
-                                            class="text-on-surface-variant bg-surface-container-low p-4 rounded-xl rounded-tl-none border border-outline-variant/10">
+                                            class="text-on-surface-variant bg-surface-container-low p-4 rounded-xl rounded-tl-none ">
                                             The gRPC prototypes are looking solid. I've uploaded the initial benchmarks
                                             for the service-to-service calls. Let me know if you want to review the
                                             protobuf definitions tomorrow.</p>
@@ -195,10 +196,10 @@
                         </section>
                     </div>
 
-                    <!-- ==================== SIDEBAR (RIGHT COL) ==================== -->
+                    <!-- Section 6: Local Analytics Strategy -->
                     <div class="lg:col-span-4 space-y-6">
                         <!-- Task Stats / Metadata -->
-                        <section class="bg-surface-container rounded-2xl p-6 border border-outline-variant/10">
+                        <section class="bg-surface-container rounded-2xl p-6 ">
                             <h4 class="font-headline text-sm uppercase tracking-widest text-on-surface-variant mb-6">
                                 Task Details</h4>
                             <div class="space-y-6">
@@ -233,7 +234,7 @@
                         </section>
 
                         <!-- Activity Timeline -->
-                        <section class="bg-surface-container rounded-2xl p-6 border border-outline-variant/10">
+                        <section class="bg-surface-container rounded-2xl p-6 ">
                             <h4 class="font-headline text-sm uppercase tracking-widest text-on-surface-variant mb-6">
                                 Activity Log</h4>
                             <div
@@ -279,29 +280,16 @@
                                 </div>
                             </div>
                             <button
-                                class="w-full mt-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors border border-outline-variant/10 rounded-lg">View
+                                class="w-full mt-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors  rounded-lg">View
                                 Full History</button>
                         </section>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- ==================== FOOTER ==================== -->
-        <footer
-            class="mt-12 px-8 py-6 border-t border-[var(--color-outline-variant)]/15 bg-[var(--color-surface)] flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-300 outfit">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">© 2024 Obsidian Architect • System
-                Status: <span class="text-[var(--color-success)]">Operational</span></p>
-            <div class="flex gap-4 items-center">
-                <span
-                    class="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse shadow-[0_0_10px_rgba(99,102,241,0.4)]"></span>
-                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Region:
-                    Global-Alpha-1</span>
-            </div>
-        </footer>
     </main>
 
-    <script src="../../assets/js/app.js"></script>
+    <script src="../../assets/js/main.js"></script>
 </body>
 
 </html>

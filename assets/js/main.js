@@ -113,7 +113,7 @@
         href &&
         (currentPage === href.split("/").pop() ||
           currentPage.replace(".html", "") ===
-          href.split("/").pop().replace(".html", ""))
+            href.split("/").pop().replace(".html", ""))
       ) {
         addClass(item, "active");
       } else {
@@ -542,7 +542,7 @@
    Tab switching, toggle switches, form validation, and interactions
    ================================================================== */
 
-(function() {
+(function () {
   "use strict";
 
   // ================================================================
@@ -553,35 +553,35 @@
    * Switch to a specific tab in the settings page
    * @param {string} tabName - Name of the tab to switch to
    */
-  window.switchTab = function(tabName) {
+  window.switchTab = function (tabName) {
     // Hide all tab contents
-    const tabContents = document.querySelectorAll('.settings-content');
-    tabContents.forEach(content => {
-      content.classList.remove('active');
+    const tabContents = document.querySelectorAll(".settings-content");
+    tabContents.forEach((content) => {
+      content.classList.remove("active");
     });
 
     // Remove active state from all tab buttons
-    const tabButtons = document.querySelectorAll('.settings-tab-btn');
-    tabButtons.forEach(btn => {
-      btn.classList.remove('active');
-      btn.setAttribute('aria-selected', 'false');
+    const tabButtons = document.querySelectorAll(".settings-tab-btn");
+    tabButtons.forEach((btn) => {
+      btn.classList.remove("active");
+      btn.setAttribute("aria-selected", "false");
     });
 
     // Show selected tab content
     const selectedContent = document.getElementById(`panel-${tabName}`);
     if (selectedContent) {
-      selectedContent.classList.add('active');
+      selectedContent.classList.add("active");
     }
 
     // Set active state on selected tab button
     const selectedBtn = document.getElementById(`tab-${tabName}`);
     if (selectedBtn) {
-      selectedBtn.classList.add('active');
-      selectedBtn.setAttribute('aria-selected', 'true');
+      selectedBtn.classList.add("active");
+      selectedBtn.setAttribute("aria-selected", "true");
     }
 
     // Scroll to top of content smoothly
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   // ================================================================
@@ -592,26 +592,26 @@
    * Initialize all toggle switches on the page
    */
   const initToggleSwitches = () => {
-    const toggleSwitches = document.querySelectorAll('.toggle-switch');
+    const toggleSwitches = document.querySelectorAll(".toggle-switch");
 
-    toggleSwitches.forEach(toggle => {
+    toggleSwitches.forEach((toggle) => {
       // Click handler
-      toggle.addEventListener('click', function() {
-        const isActive = this.classList.contains('active');
+      toggle.addEventListener("click", function () {
+        const isActive = this.classList.contains("active");
         if (isActive) {
-          this.classList.remove('active');
-          this.classList.add('inactive');
-          this.setAttribute('aria-checked', 'false');
+          this.classList.remove("active");
+          this.classList.add("inactive");
+          this.setAttribute("aria-checked", "false");
         } else {
-          this.classList.remove('inactive');
-          this.classList.add('active');
-          this.setAttribute('aria-checked', 'true');
+          this.classList.remove("inactive");
+          this.classList.add("active");
+          this.setAttribute("aria-checked", "true");
         }
       });
 
       // Keyboard support (Enter and Space keys)
-      toggle.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
+      toggle.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
           this.click();
         }
@@ -627,17 +627,17 @@
    * Initialize custom radio buttons
    */
   const initCustomRadioButtons = () => {
-    const radioButtons = document.querySelectorAll('.custom-radio');
+    const radioButtons = document.querySelectorAll(".custom-radio");
 
-    radioButtons.forEach(radio => {
-      radio.addEventListener('change', function() {
+    radioButtons.forEach((radio) => {
+      radio.addEventListener("change", function () {
         if (this.checked) {
           const name = this.name;
           // Uncheck all radios with the same name
-          document.querySelectorAll(`input[name="${name}"]`).forEach(r => {
-            r.classList.remove('checked');
+          document.querySelectorAll(`input[name="${name}"]`).forEach((r) => {
+            r.classList.remove("checked");
           });
-          this.classList.add('checked');
+          this.classList.add("checked");
         }
       });
     });
@@ -651,42 +651,42 @@
    * Initialize password form validation and submission
    */
   const initPasswordForm = () => {
-    const passwordForm = document.getElementById('password-form');
+    const passwordForm = document.getElementById("password-form");
     if (!passwordForm) return;
 
-    passwordForm.addEventListener('submit', function(e) {
+    passwordForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      const currentPassword = document.getElementById('current_password').value;
-      const newPassword = document.getElementById('new_password').value;
-      const confirmPassword = document.getElementById('confirm_password').value;
+      const currentPassword = document.getElementById("current_password").value;
+      const newPassword = document.getElementById("new_password").value;
+      const confirmPassword = document.getElementById("confirm_password").value;
 
       // Validation: Check if all fields are filled
       if (!currentPassword || !newPassword || !confirmPassword) {
-        showToast('All password fields are required', 'error');
+        showToast("All password fields are required", "error");
         return;
       }
 
       // Validation: Check if new passwords match
       if (newPassword !== confirmPassword) {
-        showToast('New passwords do not match', 'error');
+        showToast("New passwords do not match", "error");
         return;
       }
 
       // Validation: Check minimum password length
       if (newPassword.length < 8) {
-        showToast('Password must be at least 8 characters', 'error');
+        showToast("Password must be at least 8 characters", "error");
         return;
       }
 
       // Simulate API call with loading state
       const submitBtn = this.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
-      submitBtn.textContent = 'Updating...';
+      submitBtn.textContent = "Updating...";
       submitBtn.disabled = true;
 
       setTimeout(() => {
-        showToast('Password updated successfully', 'success');
+        showToast("Password updated successfully", "success");
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
         this.reset();
@@ -702,20 +702,26 @@
    * Initialize confirmation dialogs for dangerous actions
    */
   const initDangerZoneConfirmation = () => {
-    const dangerButtons = document.querySelectorAll('#panel-advanced button');
+    const dangerButtons = document.querySelectorAll("#panel-advanced button");
 
-    dangerButtons.forEach(btn => {
-      if (btn.textContent.includes('Delete') || btn.textContent.includes('Purge')) {
-        btn.addEventListener('click', function(e) {
+    dangerButtons.forEach((btn) => {
+      if (
+        btn.textContent.includes("Delete") ||
+        btn.textContent.includes("Purge")
+      ) {
+        btn.addEventListener("click", function (e) {
           e.preventDefault();
           const action = this.textContent.trim();
           const confirmed = confirm(
-            `⚠️ WARNING: ${action}\n\nThis action cannot be undone. Are you absolutely sure you want to proceed?`
+            `⚠️ WARNING: ${action}\n\nThis action cannot be undone. Are you absolutely sure you want to proceed?`,
           );
           if (!confirmed) return;
 
           // Simulate action
-          showToast(`${action} initiated. This may take a moment...`, 'warning');
+          showToast(
+            `${action} initiated. This may take a moment...`,
+            "warning",
+          );
         });
       }
     });
@@ -751,18 +757,21 @@
    * Initialize audit log search with debounce
    */
   const initAuditLogSearch = () => {
-    const searchInput = document.getElementById('audit-log-search');
+    const searchInput = document.getElementById("audit-log-search");
     if (!searchInput) return;
 
-    searchInput.addEventListener('input', debounce((e) => {
-      const searchTerm = e.target.value.toLowerCase();
-      const tableRows = document.querySelectorAll('#panel-security tbody tr');
+    searchInput.addEventListener(
+      "input",
+      debounce((e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        const tableRows = document.querySelectorAll("#panel-security tbody tr");
 
-      tableRows.forEach(row => {
-        const text = row.textContent.toLowerCase();
-        row.style.display = text.includes(searchTerm) ? '' : 'none';
-      });
-    }, 300));
+        tableRows.forEach((row) => {
+          const text = row.textContent.toLowerCase();
+          row.style.display = text.includes(searchTerm) ? "" : "none";
+        });
+      }, 300),
+    );
   };
 
   // ================================================================
@@ -773,13 +782,16 @@
    * Initialize export button handlers
    */
   const initExportButtons = () => {
-    const exportButtons = document.querySelectorAll('button');
+    const exportButtons = document.querySelectorAll("button");
 
-    exportButtons.forEach(btn => {
-      if (btn.textContent.includes('Export as')) {
-        btn.addEventListener('click', function() {
-          const format = this.textContent.includes('PDF') ? 'PDF' : 'JSON';
-          showToast(`Preparing ${format} export... Download will start shortly`, 'info');
+    exportButtons.forEach((btn) => {
+      if (btn.textContent.includes("Export as")) {
+        btn.addEventListener("click", function () {
+          const format = this.textContent.includes("PDF") ? "PDF" : "JSON";
+          showToast(
+            `Preparing ${format} export... Download will start shortly`,
+            "info",
+          );
         });
       }
     });
@@ -793,14 +805,19 @@
    * Initialize force logout button handlers
    */
   const initLogoutButtons = () => {
-    const logoutButtons = document.querySelectorAll('button');
+    const logoutButtons = document.querySelectorAll("button");
 
-    logoutButtons.forEach(btn => {
-      if (btn.textContent.includes('Force Logout') || btn.textContent.includes('Sign Out')) {
-        btn.addEventListener('click', function() {
-          const confirmed = confirm('Are you sure you want to sign out of this session?');
+    logoutButtons.forEach((btn) => {
+      if (
+        btn.textContent.includes("Force Logout") ||
+        btn.textContent.includes("Sign Out")
+      ) {
+        btn.addEventListener("click", function () {
+          const confirmed = confirm(
+            "Are you sure you want to sign out of this session?",
+          );
           if (confirmed) {
-            showToast('Session signed out successfully', 'success');
+            showToast("Session signed out successfully", "success");
           }
         });
       }
@@ -816,32 +833,32 @@
    * Arrow keys, Home, and End support
    */
   const initTabKeyboardNavigation = () => {
-    const tabButtons = document.querySelectorAll('.settings-tab-btn');
+    const tabButtons = document.querySelectorAll(".settings-tab-btn");
 
     tabButtons.forEach((btn, index, buttons) => {
-      btn.addEventListener('keydown', (e) => {
+      btn.addEventListener("keydown", (e) => {
         // Right arrow - move to next tab
-        if (e.key === 'ArrowRight') {
+        if (e.key === "ArrowRight") {
           e.preventDefault();
           const nextIndex = (index + 1) % buttons.length;
           buttons[nextIndex].focus();
           buttons[nextIndex].click();
         }
         // Left arrow - move to previous tab
-        else if (e.key === 'ArrowLeft') {
+        else if (e.key === "ArrowLeft") {
           e.preventDefault();
           const prevIndex = (index - 1 + buttons.length) % buttons.length;
           buttons[prevIndex].focus();
           buttons[prevIndex].click();
         }
         // Home - move to first tab
-        else if (e.key === 'Home') {
+        else if (e.key === "Home") {
           e.preventDefault();
           buttons[0].focus();
           buttons[0].click();
         }
         // End - move to last tab
-        else if (e.key === 'End') {
+        else if (e.key === "End") {
           e.preventDefault();
           buttons[buttons.length - 1].focus();
           buttons[buttons.length - 1].click();
@@ -859,7 +876,7 @@
    */
   const initSettingsPage = () => {
     // Only initialize if we're on the settings page
-    const settingsContent = document.querySelector('.settings-content');
+    const settingsContent = document.querySelector(".settings-content");
     if (!settingsContent) return;
 
     initToggleSwitches();
@@ -878,5 +895,4 @@
   } else {
     initSettingsPage();
   }
-
 })();

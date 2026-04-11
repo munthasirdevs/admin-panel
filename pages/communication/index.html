@@ -2,6 +2,7 @@
 <html class="dark" lang="en">
 
 <head>
+    <!-- Section 1: Page Metadata & Asset Layer Interface -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Chat Control - System Admin</title>
@@ -23,9 +24,8 @@
     <!-- Main Content -->
     <main class="flex-1 min-h-screen flex flex-col">
         <!-- Main Scrollable Canvas -->
-        <!-- Page Content -->
-        <div class="p-8 space-y-12 max-w-7xl mx-auto w-full">
-            <!-- Header Section -->
+        <div class="pt-24 px-8 pb-12 overflow-y-auto flex flex-col gap-8">
+            <!-- Section 3: Branding & Strategic Resource Deployment -->
             <section class="flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div>
                     <span class="text-primary font-bold tracking-widest text-[10px] uppercase">Governance &amp;
@@ -47,10 +47,11 @@
                     </button>
                 </div>
             </section>
-            <!-- Stats Grid (GRID) -->
-            <section class="grid grid-cols-1 md:grid-cols-4 gap-4">
+
+            <!-- Section 4: Performance Insights Strategy -->
+            <section class="grid grid-cols-1 md:grid-cols-12 gap-8">
                 <div
-                    class="col-span-1 bg-surface-container-low rounded-2xl p-6 glass-glow relative overflow-hidden group">
+                    class="col-span-1 md:col-span-4 bg-surface-container-low rounded-2xl p-6 glass-glow relative overflow-hidden group">
                     <div class="absolute left-0 top-1/4 bottom-1/4 w-[2px] bg-primary"></div>
                     <p class="text-[10px] font-bold text-on-surface-variant tracking-widest uppercase">Live Threads</p>
                     <h3 class="text-3xl font-light text-on-surface mt-2">1,284</h3>
@@ -59,7 +60,7 @@
                         12% vs last week
                     </div>
                 </div>
-                <div class="col-span-1 bg-surface-container-low rounded-2xl p-6 relative overflow-hidden">
+                <div class="col-span-1 md:col-span-4 bg-surface-container-low rounded-2xl p-6 relative overflow-hidden">
                     <div class="absolute left-0 top-1/4 bottom-1/4 w-[2px] bg-tertiary"></div>
                     <p class="text-[10px] font-bold text-on-surface-variant tracking-widest uppercase">Flagged Messages
                     </p>
@@ -69,7 +70,8 @@
                         priority
                     </div>
                 </div>
-                <div class="col-span-2 bg-surface-container-low rounded-2xl p-6 flex flex-col justify-between">
+                <div
+                    class="col-span-1 md:col-span-4 bg-surface-container-low rounded-2xl p-6 flex flex-col justify-between">
                     <div class="flex justify-between items-center mb-4">
                         <p class="text-[10px] font-bold text-on-surface-variant tracking-widest uppercase">Chat
                             Frequency (24h)</p>
@@ -87,10 +89,11 @@
                     </div>
                 </div>
             </section>
-            <!-- Two-Column Layout for Main Content -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <!-- Left: Conversations & Moderation -->
-                <div class="lg:col-span-2 space-y-8">
+
+            <!-- Main Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Left Column: Tables & Data -->
+                <div class="lg:col-span-8 space-y-8">
                     <!-- Active Conversations Table -->
                     <div class="bg-surface-container-low rounded-[24px] overflow-hidden">
                         <div class="px-8 py-6 flex justify-between items-center border-b border-outline-variant/5">
@@ -158,6 +161,7 @@
                             </table>
                         </div>
                     </div>
+
                     <!-- Moderation Queue -->
                     <div class="bg-surface-container-low rounded-[24px] overflow-hidden">
                         <div class="px-8 py-6 flex justify-between items-center bg-error-container/10">
@@ -199,10 +203,53 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Top Communicators -->
+                    <div class="bg-surface-container-low rounded-[24px] p-8">
+                        <h2 class="text-[10px] font-bold text-on-surface-variant tracking-widest uppercase mb-6">Top
+                            Communicators</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-highest">
+                                        <img alt="Avatar of Sarah Chen"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnSWQgVxhutiSM6sTTmG_Bca2sYIhW2t4UTtefputtlXMfCMl8s7ccK2lAgY6K8Iad2Q48qm0aP_4XHoyKlKpIpw4bMXRUkVweTjo2pKxyZj8j2ialiT_uzUTr1HvqS9ztCX42Mg2PSXSgfAobNXWub6glxjz2VID5tqDhk9tm0e11RkaDfpMr4C0JQIIGJPERY9AeFF5KhBTekNAy6ib-G-yFMUHi8qXttbR2BU7AN4i7ozQHoIYcBG41XuqEAIZYfKexAZLv8bk" />
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold">Sarah Chen</p>
+                                        <p class="text-[10px] text-on-surface-variant">428 messages/wk</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="w-24 h-1 bg-surface-container-highest rounded-full overflow-hidden">
+                                        <div class="bg-primary h-full w-[85%]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-highest">
+                                        <img alt="Avatar of Jordan Lee"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBANS6AJhi_m30Xq7Ussnt8jvgtAlcAs_ZFlTGWjbov-5TdLBeWBrXW6AA5ntSl7P2UJy_upcRv_JQhfW6y1cRf3M9NF4O8V1lumWClEH" />
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold">Jordan Lee</p>
+                                        <p class="text-[10px] text-on-surface-variant">312 messages/wk</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="w-24 h-1 bg-surface-container-highest rounded-full overflow-hidden">
+                                        <div class="bg-primary h-full w-[60%]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Right: Permissions & Summary -->
-                <div class="space-y-8">
-                    <!-- Messaging Permissions Card -->
+
+                <!-- Right Column: Security & Role Protocols -->
+                <div class="lg:col-span-4 space-y-8">
+                    <!-- Role Permissions -->
                     <div class="bg-surface-container-low rounded-[24px] p-8 space-y-6">
                         <h2 class="text-xl font-semibold text-on-surface">Role Permissions</h2>
                         <div class="space-y-4">
@@ -268,10 +315,12 @@
                             </div>
                         </div>
                         <button
-                            class="w-full py-3 border border-outline-variant/20 rounded-xl text-xs font-bold tracking-widest text-on-surface-variant hover:bg-surface-bright transition-all">MANAGE
-                            OVERRIDES</button>
+                            class="p-3 border border-outline-variant/20 rounded-xl text-xs font-bold tracking-widest text-on-surface-variant hover:bg-surface-bright transition-all">
+                            MANAGE OVERRIDES
+                        </button>
                     </div>
-                    <!-- Review & Apply Summary -->
+
+                    <!-- Review Changes -->
                     <div
                         class="bg-surface-container-low rounded-[24px] p-8 border border-primary/20 relative overflow-hidden">
                         <div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/10 blur-3xl rounded-full"></div>
@@ -304,47 +353,6 @@
                             </button>
                         </div>
                     </div>
-                    <!-- Top Communicators -->
-                    <div class="bg-surface-container-low rounded-[24px] p-8">
-                        <h2 class="text-[10px] font-bold text-on-surface-variant tracking-widest uppercase mb-6">Top
-                            Communicators</h2>
-                        <div class="space-y-6">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-highest">
-                                        <img alt="Avatar of Sarah Chen"
-                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnSWQgVxhutiSM6sTTmG_Bca2sYIhW2t4UTtefputtlXMfCMl8s7ccK2lAgY6K8Iad2Q48qm0aP_4XHoyKlKpIpw4bMXRUkVweTjo2pKxyZj8j2ialiT_uzUTr1HvqS9ztCX42Mg2PSXSgfAobNXWub6glxjz2VID5tqDhk9tm0e11RkaDfpMr4C0JQIIGJPERY9AeFF5KhBTekNAy6ib-G-yFMUHi8qXttbR2BU7AN4i7ozQHoIYcBG41XuqEAIZYfKexAZLv8bk" />
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-bold">Sarah Chen</p>
-                                        <p class="text-[10px] text-on-surface-variant">428 messages/wk</p>
-                                    </div>
-                                </div>
-                                <div class="text-right">
-                                    <div class="w-24 h-1 bg-surface-container-highest rounded-full overflow-hidden">
-                                        <div class="bg-primary h-full w-[85%]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-highest">
-                                        <img alt="Avatar of Jordan Lee"
-                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBANS6AJhi_m30Xq7Ussnt8jvgtAlcAs_ZFlTGWjbov-5TdLBeWBrXW6AA5ntSl7P2UJy_upcRv_JQhfW6y1cRf3M9NF4O8V1lumWClEHyZUQaL5-00uFnYbkJWsf8Z4-QDvTc706daK4_pWESn4ytEs-EAz6JpRNWiYN_YeGSvh5vpRYWpP-JzTmgTLRmdLyGmaPp7vqNKIqHBhMqzMeF9eiOiGK-KX4mZCSFpOxh-Th4HPoNPVYUiPZLwDTBBjYWYPi8DdlFgFuM" />
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-bold">Jordan Lee</p>
-                                        <p class="text-[10px] text-on-surface-variant">312 messages/wk</p>
-                                    </div>
-                                </div>
-                                <div class="text-right">
-                                    <div class="w-24 h-1 bg-surface-container-highest rounded-full overflow-hidden">
-                                        <div class="bg-primary h-full w-[60%]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -352,7 +360,7 @@
         <div class="h-20"></div>
     </main>
 
-    <script src="../../assets/js/app.js"></script>
+    <script src="../../assets/js/main.js"></script>
 </body>
 
 </html>

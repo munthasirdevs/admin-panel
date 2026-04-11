@@ -2,6 +2,7 @@
 <html class="dark" lang="en">
 
 <head>
+    <!-- Section 1: Page Metadata & Asset Layer Interface -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>All Projects - System Admin</title>
@@ -20,12 +21,12 @@
 </head>
 
 <body class="flex min-h-screen bg-surface">
-    <!-- Main Content -->
+    <!-- Section 2: Main Scrollable Content Canvas -->
     <main class="flex-1 min-h-screen flex flex-col">
         <!-- Main Scrollable Canvas -->
         <!-- Scrollable Content -->
         <div class="pt-24 px-8 pb-12 overflow-y-auto flex flex-col gap-8">
-            <!-- Page Header Section -->
+            <!-- Section 3: Branding & Strategic Project Controls -->
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div class="space-y-1">
                     <h1 class="text-5xl font-headline font-light text-white tracking-tight">Projects</h1>
@@ -40,7 +41,7 @@
             <div class="grid grid-cols-12 gap-8">
                 <!-- Main Grid Column -->
                 <div class="col-span-12 lg:col-span-9 space-y-6">
-                    <!-- Filter Bar -->
+                    <!-- Section 4: Operational Data Governance (Filter Bar) -->
                     <div class="bg-surface-container-low p-4 rounded-3xl flex flex-wrap items-center gap-4">
                         <div class="flex items-center gap-2 bg-surface-container px-4 py-2 rounded-2xl">
                             <span
@@ -82,7 +83,7 @@
                             </button>
                         </div>
                     </div>
-                    <!-- Projects Table Container -->
+                    <!-- Section 5: Strategic Project Registry (Table) -->
                     <div class="bg-surface-container-low rounded-3xl overflow-hidden">
                         <div class="overflow-x-auto">
                             <table class="w-full text-left border-collapse">
@@ -265,53 +266,51 @@
                         </div>
                     </div>
                 </div>
-                <!-- Right Side Panel: Stats -->
+                <!-- Right Side Panel: Stats & Actions -->
                 <div class="col-span-12 lg:col-span-3 space-y-8">
-                    <div class="space-y-4">
-                        <h3 class="text-xs font-label text-on-surface-variant uppercase tracking-[0.2em]">Live Insights
-                        </h3>
-                        <!-- Minimal Stat Card 1 -->
-                        <div class="bg-surface-container-low p-6 rounded-3xl relative overflow-hidden group">
-                            <div class="absolute left-0 top-0 w-1 h-full bg-primary-container"></div>
-                            <div class="relative z-10 flex flex-col gap-1">
-                                <span
-                                    class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Total
-                                    Projects</span>
-                                <span class="text-4xl font-headline font-light text-white">48</span>
-                                <div class="mt-4 flex items-center gap-1 text-[10px] text-primary">
-                                    <span class="material-symbols-outlined text-xs">trending_up</span>
-                                    <span>12% from last month</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Minimal Stat Card 2 -->
-                        <div class="bg-surface-container-low p-6 rounded-3xl relative overflow-hidden group">
-                            <div class="absolute left-0 top-0 w-1 h-full bg-emerald-400/50"></div>
-                            <div class="relative z-10 flex flex-col gap-1">
-                                <span
-                                    class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Completed</span>
-                                <span class="text-4xl font-headline font-light text-white">24</span>
-                                <div class="mt-4 flex items-center gap-1 text-[10px] text-emerald-400">
-                                    <span class="material-symbols-outlined text-xs">check_circle</span>
-                                    <span>On target</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Minimal Stat Card 3 -->
-                        <div class="bg-surface-container-low p-6 rounded-3xl relative overflow-hidden group">
-                            <div class="absolute left-0 top-0 w-1 h-full bg-tertiary/50"></div>
-                            <div class="relative z-10 flex flex-col gap-1">
-                                <span
-                                    class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Delayed</span>
-                                <span class="text-4xl font-headline font-light text-white">03</span>
-                                <div class="mt-4 flex items-center gap-1 text-[10px] text-tertiary">
-                                    <span class="material-symbols-outlined text-xs">warning</span>
-                                    <span>Requires attention</span>
-                                </div>
+                    <!-- Section 6: Live Portfolio Insights -->
+                    <h3 class="text-xs font-label text-on-surface-variant uppercase tracking-[0.2em]">Live Insights
+                    </h3>
+                    <!-- Minimal Stat Card 1 -->
+                    <div class="bg-surface-container-low p-6 rounded-3xl relative overflow-hidden group">
+                        <div class="absolute left-0 top-0 w-1 h-full bg-primary-container"></div>
+                        <div class="relative z-10 flex flex-col gap-1">
+                            <span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Total
+                                Projects</span>
+                            <span class="text-4xl font-headline font-light text-white">48</span>
+                            <div class="mt-4 flex items-center gap-1 text-[10px] text-primary">
+                                <span class="material-symbols-outlined text-xs">trending_up</span>
+                                <span>12% from last month</span>
                             </div>
                         </div>
                     </div>
-                    <!-- Client Spotlight / Quick View Component -->
+                    <!-- Minimal Stat Card 2 -->
+                    <div class="bg-surface-container-low p-6 rounded-3xl relative overflow-hidden group">
+                        <div class="absolute left-0 top-0 w-1 h-full bg-emerald-400/50"></div>
+                        <div class="relative z-10 flex flex-col gap-1">
+                            <span
+                                class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Completed</span>
+                            <span class="text-4xl font-headline font-light text-white">24</span>
+                            <div class="mt-4 flex items-center gap-1 text-[10px] text-emerald-400">
+                                <span class="material-symbols-outlined text-xs">check_circle</span>
+                                <span>On target</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Minimal Stat Card 3 -->
+                    <div class="bg-surface-container-low p-6 rounded-3xl relative overflow-hidden group">
+                        <div class="absolute left-0 top-0 w-1 h-full bg-tertiary/50"></div>
+                        <div class="relative z-10 flex flex-col gap-1">
+                            <span
+                                class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Delayed</span>
+                            <span class="text-4xl font-headline font-light text-white">03</span>
+                            <div class="mt-4 flex items-center gap-1 text-[10px] text-tertiary">
+                                <span class="material-symbols-outlined text-xs">warning</span>
+                                <span>Requires attention</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Section 7: Critical Operational Flux -->
                     <div class="bg-surface-container-low p-6 rounded-3xl space-y-6">
                         <div class="flex justify-between items-center">
                             <h3 class="text-xs font-label text-on-surface-variant uppercase tracking-widest">Priority
@@ -354,9 +353,10 @@
                 </div>
             </div>
         </div>
+        </div>
     </main>
 
-    <script src="../../assets/js/app.js"></script>
+    <script src="../../assets/js/main.js"></script>
 </body>
 
 </html>

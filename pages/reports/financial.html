@@ -2,6 +2,7 @@
 <html class="dark" lang="en">
 
 <head>
+    <!-- Section 1: Page Metadata & Asset Layer Interface -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Financial Reports - System Admin</title>
@@ -21,13 +22,13 @@
 
 <body class="flex min-h-screen bg-surface">
 
-    <!-- === MAIN CONTENT === -->
+    <!-- Section 2: Command Assignment Canvas -->
     <main class="flex-1 min-h-screen flex flex-col">
 
         <!-- === PAGE CONTENT === -->
         <div class="p-8">
 
-            <!-- === HERO SECTION / KPIs === -->
+            <!-- Section 3: Branding & Strategic Resource Deployment -->
             <div class="mb-10">
                 <div class="flex justify-between items-end mb-8">
                     <div>
@@ -43,7 +44,7 @@
                     </button>
                 </div>
 
-                <!-- === KPI GRID GRID === -->
+                <!-- Section 4: Operational Data Lattice -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Revenue -->
                     <div class="bg-surface-container-low p-6 rounded-xl relative overflow-hidden group">
@@ -113,9 +114,9 @@
                 </div>
             </div>
 
-            <!-- === VISUALIZATION ROW === -->
+            <!-- Section 5: Local Analytics Strategy -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-                
+
                 <!-- Monthly Revenue Bar Chart -->
                 <div class="lg:col-span-2 bg-surface-container p-8 rounded-2xl border border-outline-variant/5">
                     <div class="flex justify-between items-center mb-6">
@@ -125,7 +126,9 @@
                         </div>
                         <div class="flex items-center space-x-3">
                             <div class="flex items-center space-x-2">
-                                <div class="w-3 h-3 rounded-full bg-gradient-to-r from-primary to-primary-container shadow-[0_0_8px_rgba(192,193,255,0.4)]"></div>
+                                <div
+                                    class="w-3 h-3 rounded-full bg-gradient-to-r from-primary to-primary-container shadow-[0_0_8px_rgba(192,193,255,0.4)]">
+                                </div>
                                 <span class="text-xs text-on-surface-variant">Revenue</span>
                             </div>
                             <div class="flex items-center space-x-2">
@@ -206,8 +209,8 @@
                 </div>
             </div>
 
-            <!-- === TRANSACTIONS TABLE === -->
-            <div class="bg-surface-container p-8 rounded-2xl border border-outline-variant/5">
+            <!-- Section 6: Mission Command Registry -->
+            <div class="bg-surface-container p-8 rounded-2xl">
                 <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
                     <div>
                         <h5 class="font-headline font-semibold text-lg">Recent Transactions</h5>
@@ -218,7 +221,8 @@
                         <div
                             class="bg-surface-container-low border border-outline-variant/15 rounded-lg flex items-center px-3 py-2 w-64">
                             <span class="material-symbols-outlined text-on-surface-variant text-sm mr-2">search</span>
-                            <input aria-label="Search transactions" class="bg-transparent border-none text-xs focus:ring-0 text-on-surface w-full"
+                            <input aria-label="Search transactions"
+                                class="bg-transparent border-none text-xs focus:ring-0 text-on-surface w-full"
                                 placeholder="Search transactions..." type="text" name="search_transactions" />
                         </div>
                         <button class="p-2 bg-surface-container-low border border-outline-variant/15 rounded-lg">
@@ -362,7 +366,7 @@
     </main>
 
     <!-- === SCRIPTS === -->
-    <script src="../../assets/js/app.js"></script>
+    <script src="../../assets/js/main.js"></script>
     <script src="../../assets/js/financial-chart.js"></script>
 </body>
 

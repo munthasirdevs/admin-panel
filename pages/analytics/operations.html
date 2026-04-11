@@ -2,6 +2,7 @@
 <html class="dark" lang="en">
 
 <head>
+    <!-- Section 1: Page Metadata & Asset Layer Interface -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Analytics - Operations | Admin Panel</title>
@@ -20,354 +21,369 @@
 </head>
 
 <body class="flex min-h-screen bg-surface">
-    <!-- Main Content -->
-    <main class="flex-1 min-h-screen flex flex-col">
-        <!-- === DASHBOARD CONTENT === -->
-        <div class="p-8 space-y-12">
-            <!-- === HERO HEADER SECTION === -->
-            <section class="flex flex-col md:flex-row justify-between items-end gap-6">
-                <div>
-                    <span
-                        class="label-sm text-primary font-bold tracking-widest uppercase text-[10px] mb-2 block">System
-                        Overview</span>
-                    <h2 class="font-headline text-5xl font-light text-on-surface tracking-tight">Operations <span
-                            class="text-primary font-semibold">Pulse</span></h2>
-                </div>
-                <div class="flex gap-3">
-                    <button
-                        class="bg-surface-container-high hover:bg-surface-bright text-on-surface px-6 py-2.5 rounded-full text-sm font-semibold transition-all">Export
-                        Logs</button>
-                    <button
-                        class="bg-primary text-on-primary px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all">New
-                        Workflow</button>
-                </div>
-            </section>
+    <!-- Section 2: Operations Pulse Canvas -->
+    <main class="flex-1 min-h-screen flex flex-col" role="main">
+        <div class="flex-1 w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 py-6 sm:py-8 md:py-10 lg:py-12">
 
-            <!-- === KPI ROW: GRID STYLE === -->
-            <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- KPI 1 -->
-                <div class="bg-surface-container-low glass-accent p-8 rounded-xl relative overflow-hidden group">
-                    <div class="absolute top-0 left-0 w-1 h-full bg-primary-container"></div>
-                    <div class="flex justify-between items-start mb-6">
+            <!-- Section 3: Branding & System Overview -->
+            <header class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6 sm:mb-8 md:mb-10">
+                <div class="space-y-1.5 sm:space-y-2">
+                    <span class="text-[10px] font-bold tracking-widest text-primary uppercase block">System
+                        Overview</span>
+                    <h1
+                        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-headline font-light tracking-tighter text-on-surface">
+                        Operations <span class="text-primary font-semibold">Pulse</span>
+                    </h1>
+                </div>
+                <div class="flex flex-wrap gap-2 sm:gap-3 w-full sm:w-auto">
+                    <button type="button"
+                        class="bg-surface-container-high hover:bg-surface-container-highest active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface text-on-surface px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-semibold transition-all w-full sm:w-auto min-h-[44px]">
+                        Export Logs
+                    </button>
+                    <button type="button"
+                        class="bg-primary hover:bg-primary/90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface text-on-primary px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-bold shadow-lg shadow-primary/20 transition-all w-full sm:w-auto min-h-[44px]">
+                        New Workflow
+                    </button>
+                </div>
+            </header>
+
+            <!-- Section 4: Operations Key Performance Indicators (KPIs) -->
+            <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8"
+                aria-label="Operations key performance indicators">
+                <!-- Total Revenue -->
+                <div
+                    class="bg-surface-container-low rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 relative overflow-hidden shadow-sm group">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-primary-container" aria-hidden="true"></div>
+                    <div class="flex justify-between items-start mb-4 sm:mb-6">
                         <span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">Total
                             Revenue</span>
-                        <span class="material-symbols-outlined text-primary">payments</span>
+                        <span class="material-symbols-outlined text-primary" aria-hidden="true">payments</span>
                     </div>
                     <div class="space-y-1">
-                        <p class="font-headline text-4xl font-light text-on-surface">$1,248,500</p>
+                        <p class="text-2xl sm:text-3xl md:text-4xl font-headline font-light text-on-surface">$1,248,500
+                        </p>
                         <div class="flex items-center gap-2 text-tertiary text-xs font-bold">
-                            <span class="material-symbols-outlined text-sm">trending_up</span>
+                            <span class="material-symbols-outlined text-sm" aria-hidden="true">trending_up</span>
                             <span>+12.4% vs last month</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- KPI 2 -->
-                <div class="bg-surface-container-low glass-accent p-8 rounded-xl relative overflow-hidden group">
-                    <div class="absolute top-0 left-0 w-1 h-full bg-primary-container"></div>
-                    <div class="flex justify-between items-start mb-6">
+                <!-- Active Automated Metrics -->
+                <div
+                    class="bg-surface-container-low rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 relative overflow-hidden shadow-sm group">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-primary-container" aria-hidden="true"></div>
+                    <div class="flex justify-between items-start mb-4 sm:mb-6">
                         <span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">Active
                             Automated Metrics</span>
-                        <span class="material-symbols-outlined text-primary">bolt</span>
+                        <span class="material-symbols-outlined text-primary" aria-hidden="true">bolt</span>
                     </div>
                     <div class="space-y-1">
-                        <p class="font-headline text-4xl font-light text-on-surface">42 <span
-                                class="text-xl text-on-surface-variant">Active</span></p>
+                        <p class="text-2xl sm:text-3xl md:text-4xl font-headline font-light text-on-surface">42 <span
+                                class="text-base sm:text-xl text-on-surface-variant">Active</span></p>
                         <div class="flex items-center gap-2 text-primary text-xs font-bold">
-                            <span class="material-symbols-outlined text-sm">check_circle</span>
+                            <span class="material-symbols-outlined text-sm" aria-hidden="true">check_circle</span>
                             <span>92% execution rate</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- KPI 3 -->
-                <div class="bg-surface-container-low glass-accent p-8 rounded-xl relative overflow-hidden group">
-                    <div class="absolute top-0 left-0 w-1 h-full bg-primary-container"></div>
-                    <div class="flex justify-between items-start mb-6">
+                <!-- System Health -->
+                <div
+                    class="bg-surface-container-low rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 relative overflow-hidden shadow-sm group sm:col-span-2 lg:col-span-1">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-primary-container" aria-hidden="true"></div>
+                    <div class="flex justify-between items-start mb-4 sm:mb-6">
                         <span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">System
                             Health %</span>
-                        <span class="material-symbols-outlined text-primary">lan</span>
+                        <span class="material-symbols-outlined text-primary" aria-hidden="true">lan</span>
                     </div>
                     <div class="space-y-1">
-                        <p class="font-headline text-4xl font-light text-on-surface">99.98%</p>
+                        <p class="text-2xl sm:text-3xl md:text-4xl font-headline font-light text-on-surface">99.98%</p>
                         <div class="flex items-center gap-2 text-tertiary text-xs font-bold">
-                            <span class="material-symbols-outlined text-sm">electric_bolt</span>
+                            <span class="material-symbols-outlined text-sm" aria-hidden="true">electric_bolt</span>
                             <span>Ultra-low latency</span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- === CHARTS SECTION === -->
-            <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- Bar Chart: Success Rates -->
-                <div class="bg-surface-container-low p-8 rounded-xl">
-                    <div class="flex justify-between items-center mb-8">
+            <!-- Section 5: Optimization & Load Visualizations -->
+            <section class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8">
+                <!-- Section 5.1: Automation Success Metrics -->
+                <div class="bg-surface-container-low rounded-2xl sm:rounded-3xl shadow-sm p-4 sm:p-6 md:p-8"
+                    aria-label="Automation success rate chart">
+                    <div
+                        class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6 sm:mb-8">
                         <div>
-                            <h3 class="font-headline text-xl font-semibold text-on-surface">Automation Success</h3>
+                            <h3 class="font-headline text-lg sm:text-xl font-semibold text-on-surface">Automation
+                                Success</h3>
                             <p class="text-xs text-on-surface-variant">Success rates by weekday</p>
                         </div>
-                        <div class="flex gap-2">
-                            <div class="w-3 h-3 rounded-full bg-primary"></div>
+                        <div class="flex gap-2 items-center">
+                            <div class="w-3 h-3 rounded-full bg-primary" aria-hidden="true"></div>
                             <span class="text-[10px] font-bold uppercase text-on-surface-variant">Success %</span>
                         </div>
                     </div>
-                    <div class="flex items-end justify-between h-48 gap-4 px-2">
-                        <!-- Monday -->
-                        <div class="flex flex-col items-center gap-3 flex-1 group">
-                            <div
-                                class="w-full bg-surface-container-highest rounded-full overflow-hidden flex flex-col justify-end h-40">
-                                <div
-                                    class="bg-primary group-hover:bg-primary-container transition-all h-[95%] w-full rounded-t-full">
-                                </div>
-                            </div>
-                            <span class="text-[10px] font-bold text-on-surface-variant">MON</span>
-                        </div>
-                        <!-- Tuesday -->
-                        <div class="flex flex-col items-center gap-3 flex-1 group">
-                            <div
-                                class="w-full bg-surface-container-highest rounded-full overflow-hidden flex flex-col justify-end h-40">
-                                <div
-                                    class="bg-primary group-hover:bg-primary-container transition-all h-[98%] w-full rounded-t-full">
-                                </div>
-                            </div>
-                            <span class="text-[10px] font-bold text-on-surface-variant">TUE</span>
-                        </div>
-                        <!-- Wednesday -->
-                        <div class="flex flex-col items-center gap-3 flex-1 group">
-                            <div
-                                class="w-full bg-surface-container-highest rounded-full overflow-hidden flex flex-col justify-end h-40">
-                                <div
-                                    class="bg-primary group-hover:bg-primary-container transition-all h-[94%] w-full rounded-t-full">
-                                </div>
-                            </div>
-                            <span class="text-[10px] font-bold text-on-surface-variant">WED</span>
-                        </div>
-                        <!-- Thursday -->
-                        <div class="flex flex-col items-center gap-3 flex-1 group">
-                            <div
-                                class="w-full bg-surface-container-highest rounded-full overflow-hidden flex flex-col justify-end h-40">
-                                <div
-                                    class="bg-primary group-hover:bg-primary-container transition-all h-[99%] w-full rounded-t-full shadow-[0_0_12px_rgba(192,193,255,0.4)]">
-                                </div>
-                            </div>
-                            <span class="text-[10px] font-bold text-primary">THU</span>
-                        </div>
-                        <!-- Friday -->
-                        <div class="flex flex-col items-center gap-3 flex-1 group">
-                            <div
-                                class="w-full bg-surface-container-highest rounded-full overflow-hidden flex flex-col justify-end h-40">
-                                <div
-                                    class="bg-primary group-hover:bg-primary-container transition-all h-[92%] w-full rounded-t-full">
-                                </div>
-                            </div>
-                            <span class="text-[10px] font-bold text-on-surface-variant">FRI</span>
-                        </div>
-                        <!-- Saturday -->
-                        <div class="flex flex-col items-center gap-3 flex-1 group">
-                            <div
-                                class="w-full bg-surface-container-highest rounded-full overflow-hidden flex flex-col justify-end h-40">
-                                <div
-                                    class="bg-primary group-hover:bg-primary-container transition-all h-[85%] w-full rounded-t-full">
-                                </div>
-                            </div>
-                            <span class="text-[10px] font-bold text-on-surface-variant">SAT</span>
-                        </div>
-                        <!-- Sunday -->
-                        <div class="flex flex-col items-center gap-3 flex-1 group">
-                            <div
-                                class="w-full bg-surface-container-highest rounded-full overflow-hidden flex flex-col justify-end h-40">
-                                <div
-                                    class="bg-primary group-hover:bg-primary-container transition-all h-[80%] w-full rounded-t-full">
-                                </div>
-                            </div>
-                            <span class="text-[10px] font-bold text-on-surface-variant">SUN</span>
-                        </div>
+                    <!-- SVG Bar Chart -->
+                    <div class="w-full" role="img"
+                        aria-label="Bar chart showing automation success rates Monday through Sunday">
+                        <svg viewBox="0 0 700 240" class="w-full h-auto" preserveAspectRatio="xMidYMid meet">
+                            <!-- Grid Lines -->
+                            <line x1="50" y1="20" x2="50" y2="200" stroke="var(--color-outline-variant, #334155)"
+                                stroke-width="0.5" opacity="0.3" />
+                            <line x1="50" y1="200" x2="680" y2="200" stroke="var(--color-outline-variant, #334155)"
+                                stroke-width="0.5" opacity="0.3" />
+                            <line x1="50" y1="155" x2="680" y2="155" stroke="var(--color-outline-variant, #334155)"
+                                stroke-width="0.5" opacity="0.15" stroke-dasharray="4,4" />
+                            <line x1="50" y1="110" x2="680" y2="110" stroke="var(--color-outline-variant, #334155)"
+                                stroke-width="0.5" opacity="0.15" stroke-dasharray="4,4" />
+                            <line x1="50" y1="65" x2="680" y2="65" stroke="var(--color-outline-variant, #334155)"
+                                stroke-width="0.5" opacity="0.15" stroke-dasharray="4,4" />
+                            <line x1="50" y1="20" x2="680" y2="20" stroke="var(--color-outline-variant, #334155)"
+                                stroke-width="0.5" opacity="0.15" stroke-dasharray="4,4" />
+
+                            <!-- Y-axis Labels -->
+                            <text x="40" y="204" text-anchor="end" fill="var(--color-on-surface-variant, #94a3b8)"
+                                font-size="9">80%</text>
+                            <text x="40" y="159" text-anchor="end" fill="var(--color-on-surface-variant, #94a3b8)"
+                                font-size="9">85%</text>
+                            <text x="40" y="114" text-anchor="end" fill="var(--color-on-surface-variant, #94a3b8)"
+                                font-size="9">90%</text>
+                            <text x="40" y="69" text-anchor="end" fill="var(--color-on-surface-variant, #94a3b8)"
+                                font-size="9">95%</text>
+                            <text x="40" y="24" text-anchor="end" fill="var(--color-on-surface-variant, #94a3b8)"
+                                font-size="9">100%</text>
+
+                            <!-- Bars -->
+                            <rect x="80" y="38" width="60" height="162" rx="8" fill="var(--color-primary, #c0c1ff)"
+                                opacity="0.7" />
+                            <rect x="170" y="20" width="60" height="180" rx="8" fill="var(--color-primary, #c0c1ff)"
+                                opacity="0.8" />
+                            <rect x="260" y="47" width="60" height="153" rx="8" fill="var(--color-primary, #c0c1ff)"
+                                opacity="0.7" />
+                            <rect x="350" y="29" width="60" height="171" rx="8" fill="var(--color-primary, #c0c1ff)"
+                                opacity="0.9" />
+                            <rect x="440" y="56" width="60" height="144" rx="8" fill="var(--color-primary, #c0c1ff)"
+                                opacity="0.7" />
+                            <rect x="530" y="74" width="60" height="126" rx="8" fill="var(--color-primary, #c0c1ff)"
+                                opacity="0.6" />
+                            <rect x="620" y="92" width="60" height="108" rx="8" fill="var(--color-primary, #c0c1ff)"
+                                opacity="0.5" />
+
+                            <!-- X-axis Labels -->
+                            <text x="110" y="220" text-anchor="middle" fill="var(--color-on-surface-variant, #94a3b8)"
+                                font-size="11" font-weight="600">MON</text>
+                            <text x="200" y="220" text-anchor="middle" fill="var(--color-on-surface-variant, #94a3b8)"
+                                font-size="11" font-weight="600">TUE</text>
+                            <text x="290" y="220" text-anchor="middle" fill="var(--color-on-surface-variant, #94a3b8)"
+                                font-size="11" font-weight="600">WED</text>
+                            <text x="380" y="220" text-anchor="middle" fill="var(--color-primary, #c0c1ff)"
+                                font-size="11" font-weight="700">THU</text>
+                            <text x="470" y="220" text-anchor="middle" fill="var(--color-on-surface-variant, #94a3b8)"
+                                font-size="11" font-weight="600">FRI</text>
+                            <text x="560" y="220" text-anchor="middle" fill="var(--color-on-surface-variant, #94a3b8)"
+                                font-size="11" font-weight="600">SAT</text>
+                            <text x="650" y="220" text-anchor="middle" fill="var(--color-on-surface-variant, #94a3b8)"
+                                font-size="11" font-weight="600">SUN</text>
+                        </svg>
                     </div>
                 </div>
 
-                <!-- Line Chart: System Load -->
-                <div class="bg-surface-container-low p-8 rounded-xl relative overflow-hidden">
-                    <div class="flex justify-between items-center mb-4 relative z-10">
+                <!-- Section 5.2: Real-time Resource Utilization -->
+                <div class="bg-surface-container-low rounded-2xl sm:rounded-3xl shadow-sm p-4 sm:p-6 md:p-8 relative overflow-hidden"
+                    aria-label="System load chart">
+                    <div class="flex justify-between items-center mb-4 sm:mb-6 relative z-10">
                         <div>
-                            <h3 class="font-headline text-xl font-semibold text-on-surface">System Load</h3>
+                            <h3 class="font-headline text-lg sm:text-xl font-semibold text-on-surface">System Load</h3>
                             <p class="text-xs text-on-surface-variant">Real-time resource utilization</p>
                         </div>
                         <div
                             class="bg-surface-container-highest text-primary text-[10px] font-bold py-1 px-3 rounded-full border border-primary/20">
-                            LIVE</div>
+                            LIVE
+                        </div>
                     </div>
-                    <div class="h-48 w-full mt-6 relative">
-                        <!-- Simulated Load Chart with SVG -->
-                        <svg class="w-full h-full drop-shadow-[0_0_8px_rgba(192,193,255,0.4)]" viewBox="0 0 400 100">
+                    <!-- SVG Line Chart -->
+                    <div class="w-full mt-4 sm:mt-6" role="img" aria-label="Line chart showing system load over time">
+                        <svg viewBox="0 0 400 120" class="w-full h-auto" preserveAspectRatio="xMidYMid meet">
                             <defs>
-                                <linearGradient id="lineGrad" x1="0" x2="0" y1="0" y2="1">
-                                    <stop offset="0%" stop-color="var(--color-secondary)" stop-opacity="0.8" />
-                                    <stop offset="100%" stop-color="var(--color-secondary)" stop-opacity="0" />
+                                <linearGradient id="sysLoadGrad" x1="0" x2="0" y1="0" y2="1">
+                                    <stop offset="0%" stop-color="var(--color-secondary, #a8b4ff)" stop-opacity="0.3" />
+                                    <stop offset="100%" stop-color="var(--color-secondary, #a8b4ff)" stop-opacity="0" />
                                 </linearGradient>
                             </defs>
+                            <!-- Grid -->
+                            <line x1="0" y1="30" x2="400" y2="30" stroke="var(--color-outline-variant, #334155)"
+                                stroke-width="0.5" opacity="0.15" stroke-dasharray="4,4" />
+                            <line x1="0" y1="60" x2="400" y2="60" stroke="var(--color-outline-variant, #334155)"
+                                stroke-width="0.5" opacity="0.15" stroke-dasharray="4,4" />
+                            <line x1="0" y1="90" x2="400" y2="90" stroke="var(--color-outline-variant, #334155)"
+                                stroke-width="0.5" opacity="0.15" stroke-dasharray="4,4" />
+                            <!-- Fill Area -->
+                            <path d="M0,80 Q50,20 100,50 T200,30 T300,70 T400,10 V120 H0 Z" fill="url(#sysLoadGrad)" />
+                            <!-- Line -->
                             <path d="M0,80 Q50,20 100,50 T200,30 T300,70 T400,10" fill="none"
-                                stroke="var(--color-secondary)" stroke-linecap="round" stroke-width="2" />
-                            <path d="M0,80 Q50,20 100,50 T200,30 T300,70 T400,10 V100 H0 Z" fill="url(#lineGrad)" />
+                                stroke="var(--color-secondary, #a8b4ff)" stroke-linecap="round" stroke-width="2" />
+                            <!-- Time Labels -->
+                            <text x="0" y="115" fill="var(--color-on-surface-variant, #94a3b8)" font-size="8"
+                                font-weight="600">12:00</text>
+                            <text x="100" y="115" text-anchor="middle" fill="var(--color-on-surface-variant, #94a3b8)"
+                                font-size="8" font-weight="600">13:00</text>
+                            <text x="200" y="115" text-anchor="middle" fill="var(--color-on-surface-variant, #94a3b8)"
+                                font-size="8" font-weight="600">14:00</text>
+                            <text x="300" y="115" text-anchor="middle" fill="var(--color-on-surface-variant, #94a3b8)"
+                                font-size="8" font-weight="600">15:00</text>
+                            <text x="400" y="115" text-anchor="end" fill="var(--color-on-surface-variant, #94a3b8)"
+                                font-size="8" font-weight="600">16:00</text>
                         </svg>
-                        <div
-                            class="absolute bottom-0 left-0 w-full flex justify-between px-2 pt-4 border-t border-outline-variant/10">
-                            <span class="text-[9px] font-bold text-on-surface-variant">12:00</span>
-                            <span class="text-[9px] font-bold text-on-surface-variant">13:00</span>
-                            <span class="text-[9px] font-bold text-on-surface-variant">14:00</span>
-                            <span class="text-[9px] font-bold text-on-surface-variant">15:00</span>
-                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- === LOWER SECTION: FAILURES & ACTIVITY === -->
-            <section class="grid grid-cols-1 xl:grid-cols-3 gap-8">
-                <!-- Failures Panel (2/3 width) -->
-                <div class="xl:col-span-2 bg-surface-container-low p-8 rounded-xl">
-                    <div class="flex justify-between items-center mb-8">
-                        <h3 class="font-headline text-xl font-semibold text-on-surface flex items-center gap-3">
+            <!-- Section 6: Critical System Incident & Activity Ledger -->
+            <section class="grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+                <!-- Section 6.1: Recent System Failures -->
+                <div class="xl:col-span-2 bg-surface-container-low rounded-2xl sm:rounded-3xl shadow-sm p-4 sm:p-6 md:p-8"
+                    aria-label="Recent system failures">
+                    <div
+                        class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6 sm:mb-8">
+                        <h3
+                            class="font-headline text-lg sm:text-xl font-semibold text-on-surface flex items-center gap-2 sm:gap-3">
                             Recent Failures
                             <span
-                                class="bg-error-container text-on-error-container text-[10px] px-2 py-0.5 rounded-full font-bold">3
+                                class="bg-error-container text-on-error-container text-[10px] px-2 py-0.5 rounded-full font-bold shrink-0">3
                                 UNRESOLVED</span>
                         </h3>
-                        <a class="text-primary text-xs font-bold flex items-center gap-1 group" href="#">
-                            <span class="w-1 h-1 bg-primary rounded-full group-hover:w-3 transition-all"></span>
+                        <a class="text-primary text-xs font-bold flex items-center gap-1.5 group min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded transition-all"
+                            href="#" aria-label="View incident logs">
+                            <span class="w-1.5 h-1.5 bg-primary rounded-full group-hover:w-3 transition-all"
+                                aria-hidden="true"></span>
                             View Incident Logs
                         </a>
                     </div>
-                    <div class="space-y-4">
-                        <!-- Failure Item -->
+                    <div class="space-y-3 sm:space-y-4">
+                        <!-- Failure 1: Critical -->
                         <div
-                            class="flex items-center justify-between p-4 bg-surface-container rounded-xl hover:bg-surface-bright transition-all">
-                            <div class="flex items-center gap-4">
+                            class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-3 sm:p-4 bg-surface-container rounded-xl hover:bg-surface-container-high transition-all min-h-[44px]">
+                            <div class="flex items-center gap-3 sm:gap-4">
                                 <div
-                                    class="w-10 h-10 rounded-lg bg-error-container/20 flex items-center justify-center text-error">
-                                    <span class="material-symbols-outlined text-xl">error</span>
+                                    class="w-10 h-10 rounded-lg bg-error-container/20 flex items-center justify-center text-error shrink-0">
+                                    <span class="material-symbols-outlined text-xl" aria-hidden="true">error</span>
                                 </div>
-                                <div>
-                                    <p class="text-sm font-semibold">API Timeout: Payment Gateway</p>
-                                    <p class="text-[10px] text-on-surface-variant">System: checkout-api-v2 • 2 mins ago
-                                    </p>
-                                </div>
-                            </div>
-                            <span
-                                class="text-[10px] font-bold px-3 py-1 rounded-full border border-error/30 text-error bg-error/5 uppercase">Critical</span>
-                        </div>
-
-                        <!-- Failure Item -->
-                        <div
-                            class="flex items-center justify-between p-4 bg-surface-container rounded-xl hover:bg-surface-bright transition-all">
-                            <div class="flex items-center gap-4">
-                                <div
-                                    class="w-10 h-10 rounded-lg bg-tertiary-container/20 flex items-center justify-center text-tertiary">
-                                    <span class="material-symbols-outlined text-xl">warning</span>
-                                </div>
-                                <div>
-                                    <p class="text-sm font-semibold">DB Connection Refused: Warehouse-2</p>
-                                    <p class="text-[10px] text-on-surface-variant">System: db-cluster-west • 15 mins ago
-                                    </p>
-                                </div>
-                            </div>
-                            <span
-                                class="text-[10px] font-bold px-3 py-1 rounded-full border border-tertiary/30 text-tertiary bg-tertiary/5 uppercase">Warning</span>
-                        </div>
-
-                        <!-- Failure Item -->
-                        <div
-                            class="flex items-center justify-between p-4 bg-surface-container rounded-xl hover:bg-surface-bright transition-all">
-                            <div class="flex items-center gap-4">
-                                <div
-                                    class="w-10 h-10 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary">
-                                    <span class="material-symbols-outlined text-xl">info</span>
-                                </div>
-                                <div>
-                                    <p class="text-sm font-semibold">Workflow Error: User-Sync</p>
-                                    <p class="text-[10px] text-on-surface-variant">System: auth-node-primary • 1 hour
+                                <div class="min-w-0">
+                                    <p class="text-xs sm:text-sm font-semibold text-on-surface">API Timeout: Payment
+                                        Gateway</p>
+                                    <p class="text-[10px] text-on-surface-variant">System: checkout-api-v2 &bull; 2 mins
                                         ago</p>
                                 </div>
                             </div>
                             <span
-                                class="text-[10px] font-bold px-3 py-1 rounded-full border border-primary/30 text-primary bg-primary/5 uppercase">Info</span>
+                                class="text-[10px] font-bold px-3 py-1.5 rounded-full border border-error/30 text-error bg-error/5 uppercase whitespace-nowrap self-start sm:self-auto">Critical</span>
+                        </div>
+                        <!-- Failure 2: Warning -->
+                        <div
+                            class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-3 sm:p-4 bg-surface-container rounded-xl hover:bg-surface-container-high transition-all min-h-[44px]">
+                            <div class="flex items-center gap-3 sm:gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-tertiary-container/20 flex items-center justify-center text-tertiary shrink-0">
+                                    <span class="material-symbols-outlined text-xl" aria-hidden="true">warning</span>
+                                </div>
+                                <div class="min-w-0">
+                                    <p class="text-xs sm:text-sm font-semibold text-on-surface">DB Connection Refused:
+                                        Warehouse-2</p>
+                                    <p class="text-[10px] text-on-surface-variant">System: db-cluster-west &bull; 15
+                                        mins
+                                        ago</p>
+                                </div>
+                            </div>
+                            <span
+                                class="text-[10px] font-bold px-3 py-1.5 rounded-full border border-tertiary/30 text-tertiary bg-tertiary/5 uppercase whitespace-nowrap self-start sm:self-auto">Warning</span>
+                        </div>
+                        <!-- Failure 3: Info -->
+                        <div
+                            class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-3 sm:p-4 bg-surface-container rounded-xl hover:bg-surface-container-high transition-all min-h-[44px]">
+                            <div class="flex items-center gap-3 sm:gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary shrink-0">
+                                    <span class="material-symbols-outlined text-xl" aria-hidden="true">info</span>
+                                </div>
+                                <div class="min-w-0">
+                                    <p class="text-xs sm:text-sm font-semibold text-on-surface">Workflow Error:
+                                        User-Sync</p>
+                                    <p class="text-[10px] text-on-surface-variant">System: auth-node-primary &bull; 1
+                                        hour
+                                        ago</p>
+                                </div>
+                            </div>
+                            <span
+                                class="text-[10px] font-bold px-3 py-1.5 rounded-full border border-primary/30 text-primary bg-primary/5 uppercase whitespace-nowrap self-start sm:self-auto">Info</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Activity Log (1/3 width) -->
-                <div class="bg-surface-container-low p-8 rounded-xl">
-                    <h3 class="font-headline text-xl font-semibold text-on-surface mb-8">Activity Flow</h3>
+                <!-- Section 6.2: Activity Flow Timeline -->
+                <div class="bg-surface-container-low rounded-2xl sm:rounded-3xl shadow-sm p-4 sm:p-6 md:p-8"
+                    aria-label="Activity flow timeline">
+                    <h3 class="font-headline text-lg sm:text-xl font-semibold text-on-surface mb-6 sm:mb-8">Activity
+                        Flow</h3>
                     <div
-                        class="relative space-y-8 before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-outline-variant/10">
-                        <!-- Activity Item -->
-                        <div class="relative pl-8">
+                        class="relative space-y-5 sm:space-y-6 before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-outline-variant/10">
+                        <!-- Activity 1 -->
+                        <div class="relative pl-7 sm:pl-8">
                             <div
-                                class="absolute left-0 top-1 w-6 h-6 rounded-full bg-primary flex items-center justify-center shadow-[0_0_8px_rgba(192,193,255,0.4)]">
-                                <span class="material-symbols-outlined text-[14px] text-on-primary">rocket_launch</span>
+                                class="absolute left-0 top-1 w-6 h-6 rounded-full bg-primary flex items-center justify-center shadow-sm shrink-0">
+                                <span class="material-symbols-outlined text-sm text-on-primary"
+                                    aria-hidden="true">rocket_launch</span>
                             </div>
                             <div>
-                                <p class="text-sm font-semibold">Auto-scaling event triggered</p>
-                                <p class="text-[10px] text-on-surface-variant">Capacity increased to 12 nodes • 4:20 PM
+                                <p class="text-xs sm:text-sm font-semibold text-on-surface">Auto-scaling event triggered
                                 </p>
+                                <p class="text-[10px] text-on-surface-variant">Capacity increased to 12 nodes &bull;
+                                    4:20
+                                    PM</p>
                             </div>
                         </div>
-
-                        <!-- Activity Item -->
-                        <div class="relative pl-8">
+                        <!-- Activity 2 -->
+                        <div class="relative pl-7 sm:pl-8">
                             <div
-                                class="absolute left-0 top-1 w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center">
-                                <span class="material-symbols-outlined text-[14px] text-primary">sync</span>
+                                class="absolute left-0 top-1 w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-sm text-primary"
+                                    aria-hidden="true">sync</span>
                             </div>
                             <div>
-                                <p class="text-sm font-semibold">User sync completed</p>
-                                <p class="text-[10px] text-on-surface-variant">1,402 records updated • 3:45 PM</p>
+                                <p class="text-xs sm:text-sm font-semibold text-on-surface">User sync completed</p>
+                                <p class="text-[10px] text-on-surface-variant">1,402 records updated &bull; 3:45 PM</p>
                             </div>
                         </div>
-
-                        <!-- Activity Item -->
-                        <div class="relative pl-8">
+                        <!-- Activity 3 -->
+                        <div class="relative pl-7 sm:pl-8">
                             <div
-                                class="absolute left-0 top-1 w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center">
-                                <span class="material-symbols-outlined text-[14px] text-primary">cloud_done</span>
+                                class="absolute left-0 top-1 w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-sm text-primary"
+                                    aria-hidden="true">cloud_done</span>
                             </div>
                             <div>
-                                <p class="text-sm font-semibold">Backup successful</p>
-                                <p class="text-[10px] text-on-surface-variant">Global region snapshot R-492 • 2:30 PM
-                                </p>
+                                <p class="text-xs sm:text-sm font-semibold text-on-surface">Backup successful</p>
+                                <p class="text-[10px] text-on-surface-variant">Global region snapshot R-492 &bull; 2:30
+                                    PM</p>
                             </div>
                         </div>
-
-                        <!-- Activity Item -->
-                        <div class="relative pl-8 opacity-60">
+                        <!-- Activity 4 -->
+                        <div class="relative pl-7 sm:pl-8 opacity-60">
                             <div
-                                class="absolute left-0 top-1 w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center">
-                                <span class="material-symbols-outlined text-[14px] text-primary">person_add</span>
+                                class="absolute left-0 top-1 w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-sm text-primary"
+                                    aria-hidden="true">person_add</span>
                             </div>
                             <div>
-                                <p class="text-sm font-semibold">New team member joined</p>
-                                <p class="text-[10px] text-on-surface-variant">Sarah Miller (DevOps) • 1:15 PM</p>
+                                <p class="text-xs sm:text-sm font-semibold text-on-surface">New team member joined</p>
+                                <p class="text-[10px] text-on-surface-variant">Sarah Miller (DevOps) &bull; 1:15 PM</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
-
-        <!-- === FOOTER === -->
-        <footer
-            class="mt-12 px-8 py-6 border-t border-outline-variant/15 bg-surface flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-300 outfit">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">© 2024 Admin Panel • System
-                Status: <span class="text-success">Operational</span></p>
-            <div class="flex gap-4 items-center">
-                <span
-                    class="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(99,102,241,0.4)]"></span>
-                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Region:
-                    Global-Alpha-1</span>
-            </div>
-        </footer>
     </main>
 
-    <script src="../../assets/js/app.js"></script>
+    <script src="../../assets/js/main.js"></script>
 </body>
 
 </html>

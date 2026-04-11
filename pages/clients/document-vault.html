@@ -2,6 +2,7 @@
 <html class="dark" lang="en">
 
 <head>
+    <!-- Section 1: Page Metadata & Asset Layer Interface -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>XenonOS | Client Documents</title>
@@ -25,12 +26,11 @@
 
 <body class="bg-background text-on-surface font-body selection:bg-primary/30">
     <!-- === MAIN CONTENT CANVAS === -->
+    <!-- Section 2: Vault Canvas Architecture (Main Shell) -->
     <main
         class="pt-8 sm:pt-12 md:pt-16 lg:pt-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pb-8 sm:pb-12 md:pb-16 min-h-screen flex flex-col">
 
-        <!-- ========================================== -->
-        <!-- === CLIENT HEADER                        -->
-        <!-- ========================================== -->
+        <!-- Section 3: Branding & Strategic Client Context -->
         <section class="mb-6 sm:mb-8 md:mb-10" aria-label="Client information">
             <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 sm:gap-8">
                 <!-- Client Info -->
@@ -81,9 +81,7 @@
         </section>
         <!-- === END CLIENT HEADER === -->
 
-        <!-- ========================================== -->
-        <!-- === TAB NAVIGATION                       -->
-        <!-- ========================================== -->
+        <!-- Section 4: Domain Navigation & Tab Layer -->
         <nav class="mb-6 sm:mb-8 md:mb-10 border-b border-outline-variant/10" aria-label="Client sections">
             <div class="relative tab-scroll-fade">
                 <div class="flex gap-4 sm:gap-6 md:gap-8 overflow-x-auto tab-scroll pb-1" role="tablist">
@@ -107,9 +105,7 @@
         <!-- ========================================== -->
         <div class="space-y-6 sm:space-y-8 md:space-y-10 flex-1">
 
-            <!-- ========================================== -->
-            <!-- === UPLOAD ZONE                          -->
-            <!-- ========================================== -->
+            <!-- Section 5: Intelligence Upload Zone (Drag & Drop) -->
             <section class="relative group" aria-label="File upload area">
                 <!-- Glow effect -->
                 <div
@@ -118,9 +114,7 @@
             </section>
             <!-- === END UPLOAD ZONE === -->
 
-            <!-- ========================================== -->
-            <!-- === FILE MANAGER CONTROLS                -->
-            <!-- ========================================== -->
+            <!-- Section 6: File Registry & Sort Logic Engine -->
             <section class="flex flex-col sm:flex-row sm:items-center justify-between gap-4"
                 aria-label="File manager controls">
                 <!-- Title & Count -->
@@ -169,9 +163,7 @@
             </section>
             <!-- === END FILE MANAGER CONTROLS === -->
 
-            <!-- ========================================== -->
-            <!-- === FILE GRID                            -->
-            <!-- ========================================== -->
+            <!-- Section 7: Centralized Portfolio Asset Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6"
                 role="list" aria-label="Client files and folders">
 
@@ -371,9 +363,7 @@
             </div>
             <!-- === END FILE GRID === -->
 
-            <!-- ========================================== -->
-            <!-- === RECENTLY SHARED SECTION              -->
-            <!-- ========================================== -->
+            <!-- Section 8: Stakeholder Access & Security Audit -->
             <section class="bg-surface-container-low rounded-xl p-4 sm:p-6 md:p-8 border border-outline-variant/10"
                 aria-label="Recently shared access">
                 <!-- Section Header -->
@@ -467,9 +457,9 @@
     <!-- === END MAIN CONTENT CANVAS === -->
 
     <!-- === SCRIPTS === -->
-    <script src="../../assets/js/app.js"></script>
+    <script src="../../assets/js/main.js"></script>
 
-    <!-- === PAGE-SPECIFIC SCRIPTS === -->
+    <!-- Section 9: Interaction Logic & Asset Handlers -->
     <script>
         // Drag-and-drop upload zone
         document.addEventListener('DOMContentLoaded', () => {

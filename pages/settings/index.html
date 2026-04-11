@@ -2,6 +2,7 @@
 <html class="dark" lang="en">
 
 <head>
+    <!-- Section 1: Page Metadata & Asset Layer Interface -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Settings - System Admin</title>
@@ -21,12 +22,13 @@
 
 <body class="flex min-h-screen bg-surface">
     <!-- Main Content -->
+    <!-- Section 2: Command Assignment Canvas -->
     <main class="flex-1 min-h-screen flex flex-col">
         <!-- Main Scrollable Canvas -->
         <div class="p-4 sm:p-6 md:p-8 lg:p-10">
             <div class="max-w-7xl mx-auto space-y-8 md:space-y-10 lg:space-y-12">
 
-                <!-- === PAGE HEADER === -->
+                <!-- Section 3: Branding & Strategic Resource Deployment -->
                 <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6">
                     <div>
                         <p class="text-primary font-bold tracking-[0.2em] text-[11px] uppercase mb-2">System
@@ -40,7 +42,7 @@
                         Manage your account, security, and system preferences.</p>
                 </div>
 
-                <!-- === TAB NAVIGATION === -->
+                <!-- Section 4: Performance Insights Strategy -->
                 <nav class="flex flex-wrap gap-2 sm:gap-3 border-b border-white/5 pb-1" role="tablist"
                     aria-label="Settings navigation">
                     <button onclick="switchTab('security')" id="tab-security"
@@ -70,9 +72,8 @@
                     </button>
                 </nav>
 
-                <!-- ==================== SECURITY TAB ==================== -->
-                <div id="panel-security" class="settings-content active" role="tabpanel"
-                    aria-labelledby="tab-security">
+                <!-- Section 5: Operational Data Lattice -->
+                <div id="panel-security" class="settings-content active" role="tabpanel" aria-labelledby="tab-security">
                     <div class="space-y-6 sm:space-y-8">
 
                         <!-- Security Stats Dashboard -->
@@ -85,7 +86,8 @@
                                 </div>
                                 <div>
                                     <p class="text-lg sm:text-xl font-bold text-on-surface font-headline">2 Devices</p>
-                                    <p class="text-[9px] text-on-surface-variant uppercase tracking-widest font-bold mt-0.5 ubuntu">
+                                    <p
+                                        class="text-[9px] text-on-surface-variant uppercase tracking-widest font-bold mt-0.5 ubuntu">
                                         Active sessions</p>
                                 </div>
                             </div>
@@ -96,8 +98,10 @@
                                     <span class="material-symbols-outlined">shield</span>
                                 </div>
                                 <div>
-                                    <p class="text-lg sm:text-xl font-bold text-on-surface font-headline">2FA Enabled</p>
-                                    <p class="text-[9px] text-on-surface-variant uppercase tracking-widest font-bold mt-0.5 ubuntu">
+                                    <p class="text-lg sm:text-xl font-bold text-on-surface font-headline">2FA Enabled
+                                    </p>
+                                    <p
+                                        class="text-[9px] text-on-surface-variant uppercase tracking-widest font-bold mt-0.5 ubuntu">
                                         Authenticator app</p>
                                 </div>
                             </div>
@@ -114,14 +118,15 @@
                                     <p
                                         class="text-lg sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-success to-teal-400 font-headline">
                                         Score: 98%</p>
-                                    <p class="text-[9px] text-on-surface-variant uppercase tracking-widest font-bold mt-0.5 ubuntu">
+                                    <p
+                                        class="text-[9px] text-on-surface-variant uppercase tracking-widest font-bold mt-0.5 ubuntu">
                                         Top protection</p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
-                            <!-- Change Password (5 cols) -->
+                            <!-- Section 6: Local Analytics Strategy -->
                             <section
                                 class="col-span-1 lg:col-span-5 bg-surface-container rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 glass-card border-l-2 border-primary/20">
                                 <div class="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
@@ -135,11 +140,8 @@
                                             Password</label>
                                         <input id="current_password"
                                             class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-primary/40 transition-all min-h-[44px]"
-                                            placeholder="••••••••" type="password" name="current_password"
-                                            required
-                                            minlength="8"
-                                            autocomplete="current-password"
-                                            aria-required="true" />
+                                            placeholder="••••••••" type="password" name="current_password" required
+                                            minlength="8" autocomplete="current-password" aria-required="true" />
                                     </div>
                                     <div class="space-y-2">
                                         <label for="new_password"
@@ -147,15 +149,13 @@
                                             Password</label>
                                         <input id="new_password"
                                             class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-primary/40 transition-all min-h-[44px]"
-                                            placeholder="••••••••" type="password" name="new_password"
-                                            required
-                                            minlength="8"
-                                            pattern="(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*]).{8,}"
+                                            placeholder="••••••••" type="password" name="new_password" required
+                                            minlength="8" pattern="(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*]).{8,}"
                                             title="Must contain at least 8 characters, one letter, one number, and one special character"
-                                            autocomplete="new-password"
-                                            aria-required="true" />
+                                            autocomplete="new-password" aria-required="true" />
                                         <div class="pt-2">
-                                            <div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                                            <div
+                                                class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
                                                 <div
                                                     class="h-full bg-gradient-to-r from-primary to-primary-container w-2/3 shadow-[0_0_8px_rgba(192,193,255,0.4)]">
                                                 </div>
@@ -172,11 +172,8 @@
                                             New Password</label>
                                         <input id="confirm_password"
                                             class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-primary/40 transition-all min-h-[44px]"
-                                            placeholder="••••••••" type="password" name="confirm_password"
-                                            required
-                                            minlength="8"
-                                            autocomplete="new-password"
-                                            aria-required="true" />
+                                            placeholder="••••••••" type="password" name="confirm_password" required
+                                            minlength="8" autocomplete="new-password" aria-required="true" />
                                     </div>
                                     <button
                                         class="w-full p-3 bg-primary text-on-primary rounded-xl font-bold text-sm tracking-wide hover:opacity-90 transition-opacity active:scale-[0.98] mt-4 min-h-[44px]"
@@ -189,8 +186,7 @@
                             <!-- 2FA & Authentication (7 cols) -->
                             <div class="col-span-1 lg:col-span-7 space-y-4 sm:space-y-6">
                                 <!-- Two-Factor Auth -->
-                                <section
-                                    class="bg-surface-container rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
+                                <section class="bg-surface-container rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
                                     <div class="flex items-center gap-2 sm:gap-3 mb-6">
                                         <span class="material-symbols-outlined text-primary">verified_user</span>
                                         <h2 class="font-headline text-lg sm:text-xl font-semibold">Two-Factor
@@ -206,7 +202,8 @@
                                                 </div>
                                                 <div>
                                                     <p class="font-semibold text-sm">Authenticator App</p>
-                                                    <p class="text-[9px] text-primary font-bold uppercase tracking-widest mt-0.5 ubuntu">
+                                                    <p
+                                                        class="text-[9px] text-primary font-bold uppercase tracking-widest mt-0.5 ubuntu">
                                                         Recommended</p>
                                                 </div>
                                             </div>
@@ -236,8 +233,7 @@
                                 </section>
 
                                 <!-- Authentication Rules -->
-                                <section
-                                    class="bg-surface-container-low rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
+                                <section class="bg-surface-container-low rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
                                     <div class="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
                                         <span class="material-symbols-outlined text-tertiary">policy</span>
                                         <h2 class="font-headline text-lg sm:text-xl font-semibold">Authentication
@@ -264,8 +260,7 @@
                                                     all team members.</p>
                                             </div>
                                             <div role="switch" aria-checked="true" tabindex="0"
-                                                class="toggle-switch active"
-                                                aria-label="Enable 2FA enforcement">
+                                                class="toggle-switch active" aria-label="Enable 2FA enforcement">
                                             </div>
                                         </div>
                                         <div
@@ -285,9 +280,8 @@
                             </div>
                         </div>
 
-                        <!-- Active Sessions -->
-                        <section
-                            class="bg-surface-container rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
+                        <!-- Section 7: Mission Command Registry -->
+                        <section class="bg-surface-container rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
                             <div
                                 class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 mb-4 sm:mb-6">
                                 <div class="flex items-center gap-2 sm:gap-3">
@@ -336,13 +330,13 @@
                         </section>
 
                         <!-- Audit Activity Logs -->
-                        <section
-                            class="bg-surface-container-low rounded-2xl sm:rounded-3xl p-4 sm:p-5 md:p-6">
+                        <section class="bg-surface-container-low rounded-2xl sm:rounded-3xl p-4 sm:p-5 md:p-6">
                             <div
                                 class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-4 sm:mb-5">
                                 <div class="flex items-center gap-2">
                                     <span class="material-symbols-outlined text-primary text-2xl">history</span>
-                                    <h2 class="font-headline text-base sm:text-lg font-semibold">Audit Activity Logs</h2>
+                                    <h2 class="font-headline text-base sm:text-lg font-semibold">Audit Activity Logs
+                                    </h2>
                                 </div>
                                 <div class="flex flex-wrap items-center gap-2 sm:gap-3">
                                     <div class="relative group flex-grow sm:flex-grow-0">
@@ -363,7 +357,8 @@
                                 <table class="w-full text-left border-separate border-spacing-y-1.5 min-w-[600px]"
                                     role="table">
                                     <thead>
-                                        <tr class="text-[9px] text-on-surface-variant font-bold uppercase tracking-widest px-3">
+                                        <tr
+                                            class="text-[9px] text-on-surface-variant font-bold uppercase tracking-widest px-3">
                                             <th scope="col" class="pb-3 pl-3 whitespace-nowrap">Timestamp</th>
                                             <th scope="col" class="pb-3 whitespace-nowrap">User</th>
                                             <th scope="col" class="pb-3 whitespace-nowrap">Action</th>
@@ -448,15 +443,14 @@
                     </div>
                 </div>
 
-                <!-- ==================== NOTIFICATIONS TAB ==================== -->
+                <!-- Section 8: System Status Summary -->
                 <div id="panel-notifications" class="settings-content" role="tabpanel"
                     aria-labelledby="tab-notifications">
                     <div class="space-y-6 sm:space-y-8">
 
                         <!-- Global Activities -->
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-                            <section
-                                class="bg-surface-container rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
+                            <section class="bg-surface-container rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
                                 <div class="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
                                     <span class="material-symbols-outlined text-primary">notifications</span>
                                     <h2 class="font-headline text-lg sm:text-xl font-semibold">Global Activities</h2>
@@ -469,8 +463,8 @@
                                             <p class="text-xs text-on-surface-variant">Receive alerts for new
                                                 milestones and tasks.</p>
                                         </div>
-                                        <div role="switch" aria-checked="true" tabindex="0"
-                                            class="toggle-switch active" aria-label="Enable project updates">
+                                        <div role="switch" aria-checked="true" tabindex="0" class="toggle-switch active"
+                                            aria-label="Enable project updates">
                                         </div>
                                     </div>
                                     <div
@@ -480,8 +474,8 @@
                                             <p class="text-xs text-on-surface-variant">Notify when a client uploads new
                                                 assets.</p>
                                         </div>
-                                        <div role="switch" aria-checked="true" tabindex="0"
-                                            class="toggle-switch active" aria-label="Enable file upload notifications">
+                                        <div role="switch" aria-checked="true" tabindex="0" class="toggle-switch active"
+                                            aria-label="Enable file upload notifications">
                                         </div>
                                     </div>
                                     <div
@@ -499,8 +493,7 @@
                             </section>
 
                             <!-- Chat Channels -->
-                            <section
-                                class="bg-surface-container rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
+                            <section class="bg-surface-container rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
                                 <div class="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
                                     <span class="material-symbols-outlined text-primary">chat</span>
                                     <h2 class="font-headline text-lg sm:text-xl font-semibold">Chat Channels</h2>
@@ -509,23 +502,25 @@
                                     <div
                                         class="flex items-center justify-between p-4 rounded-xl sm:rounded-2xl bg-surface-container-low border border-primary/20">
                                         <div class="flex items-center gap-3">
-                                            <div class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(99,102,241,0.5)]">
+                                            <div
+                                                class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(99,102,241,0.5)]">
                                             </div>
                                             <span class="text-sm font-bold space-font">#general</span>
                                         </div>
-                                        <div role="switch" aria-checked="true" tabindex="0"
-                                            class="toggle-switch active" aria-label="Enable #general notifications">
+                                        <div role="switch" aria-checked="true" tabindex="0" class="toggle-switch active"
+                                            aria-label="Enable #general notifications">
                                         </div>
                                     </div>
                                     <div
                                         class="flex items-center justify-between p-4 rounded-xl sm:rounded-2xl bg-surface-container-low border border-primary/20">
                                         <div class="flex items-center gap-3">
-                                            <div class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(99,102,241,0.5)]">
+                                            <div
+                                                class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(99,102,241,0.5)]">
                                             </div>
                                             <span class="text-sm font-bold space-font">#design</span>
                                         </div>
-                                        <div role="switch" aria-checked="true" tabindex="0"
-                                            class="toggle-switch active" aria-label="Enable #design notifications">
+                                        <div role="switch" aria-checked="true" tabindex="0" class="toggle-switch active"
+                                            aria-label="Enable #design notifications">
                                         </div>
                                     </div>
                                     <div
@@ -533,7 +528,8 @@
                                         <div class="flex items-center gap-3">
                                             <div class="w-2 h-2 rounded-full bg-on-surface-variant">
                                             </div>
-                                            <span class="text-sm font-bold space-font text-on-surface-variant">#feedback</span>
+                                            <span
+                                                class="text-sm font-bold space-font text-on-surface-variant">#feedback</span>
                                         </div>
                                         <div role="switch" aria-checked="false" tabindex="0"
                                             class="toggle-switch inactive" aria-label="Enable #feedback notifications">
@@ -542,12 +538,13 @@
                                     <div
                                         class="flex items-center justify-between p-4 rounded-xl sm:rounded-2xl bg-surface-container-low border border-primary/20">
                                         <div class="flex items-center gap-3">
-                                            <div class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(99,102,241,0.5)]">
+                                            <div
+                                                class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(99,102,241,0.5)]">
                                             </div>
                                             <span class="text-sm font-bold space-font">#dev</span>
                                         </div>
-                                        <div role="switch" aria-checked="true" tabindex="0"
-                                            class="toggle-switch active" aria-label="Enable #dev notifications">
+                                        <div role="switch" aria-checked="true" tabindex="0" class="toggle-switch active"
+                                            aria-label="Enable #dev notifications">
                                         </div>
                                     </div>
                                 </div>
@@ -603,8 +600,7 @@
                         </section>
 
                         <!-- Notification Preferences Matrix -->
-                        <section
-                            class="bg-surface-container rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
+                        <section class="bg-surface-container rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
                             <div class="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
                                 <span class="material-symbols-outlined text-primary">grid_view</span>
                                 <h2 class="font-headline text-lg sm:text-xl font-semibold">Notification Matrix</h2>
@@ -612,7 +608,8 @@
                             <div class="overflow-x-auto">
                                 <table class="w-full text-left min-w-[500px]">
                                     <thead>
-                                        <tr class="text-[9px] text-on-surface-variant font-bold uppercase tracking-widest">
+                                        <tr
+                                            class="text-[9px] text-on-surface-variant font-bold uppercase tracking-widest">
                                             <th class="pb-3 pl-3">Event Type</th>
                                             <th class="pb-3 text-center">In-App</th>
                                             <th class="pb-3 text-center">Email</th>
@@ -621,7 +618,8 @@
                                     </thead>
                                     <tbody class="text-xs space-y-2">
                                         <tr class="group">
-                                            <td class="bg-surface-container-low first:rounded-l-xl py-3 pl-3 font-medium">
+                                            <td
+                                                class="bg-surface-container-low first:rounded-l-xl py-3 pl-3 font-medium">
                                                 Project Updates</td>
                                             <td class="bg-surface-container-low text-center">
                                                 <div role="switch" aria-checked="true" tabindex="0"
@@ -643,7 +641,8 @@
                                             </td>
                                         </tr>
                                         <tr class="group">
-                                            <td class="bg-surface-container-low first:rounded-l-xl py-3 pl-3 font-medium">
+                                            <td
+                                                class="bg-surface-container-low first:rounded-l-xl py-3 pl-3 font-medium">
                                                 File Uploads</td>
                                             <td class="bg-surface-container-low text-center">
                                                 <div role="switch" aria-checked="true" tabindex="0"
@@ -665,7 +664,8 @@
                                             </td>
                                         </tr>
                                         <tr class="group">
-                                            <td class="bg-surface-container-low first:rounded-l-xl py-3 pl-3 font-medium">
+                                            <td
+                                                class="bg-surface-container-low first:rounded-l-xl py-3 pl-3 font-medium">
                                                 Billing Alerts</td>
                                             <td class="bg-surface-container-low text-center">
                                                 <div role="switch" aria-checked="true" tabindex="0"
@@ -687,7 +687,8 @@
                                             </td>
                                         </tr>
                                         <tr class="group">
-                                            <td class="bg-surface-container-low first:rounded-l-xl py-3 pl-3 font-medium">
+                                            <td
+                                                class="bg-surface-container-low first:rounded-l-xl py-3 pl-3 font-medium">
                                                 Team Mentions</td>
                                             <td class="bg-surface-container-low text-center">
                                                 <div role="switch" aria-checked="true" tabindex="0"
@@ -715,9 +716,8 @@
                     </div>
                 </div>
 
-                <!-- ==================== PREFERENCES TAB ==================== -->
-                <div id="panel-preferences" class="settings-content" role="tabpanel"
-                    aria-labelledby="tab-preferences">
+                <!-- Section 9: Strategic Buffer Layer -->
+                <div id="panel-preferences" class="settings-content" role="tabpanel" aria-labelledby="tab-preferences">
                     <div class="space-y-6 sm:space-y-8">
 
                         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
@@ -754,8 +754,10 @@
                                                 class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low border border-primary/30 cursor-pointer hover:border-primary/50 transition-all group shadow-inner">
                                                 <input type="radio" name="date_format" value="dd_mm_yyyy" checked
                                                     class="custom-radio appearance-none w-5 h-5 border-2 border-primary rounded-full flex items-center justify-center shrink-0" />
-                                                <div class="flex flex-col sm:flex-row sm:items-center w-full justify-between">
-                                                    <span class="text-sm font-bold space-font tracking-wide">DD/MM/YYYY</span>
+                                                <div
+                                                    class="flex flex-col sm:flex-row sm:items-center w-full justify-between">
+                                                    <span
+                                                        class="text-sm font-bold space-font tracking-wide">DD/MM/YYYY</span>
                                                     <span
                                                         class="text-[9px] text-primary uppercase tracking-widest font-bold ubuntu">(International)</span>
                                                 </div>
@@ -764,8 +766,10 @@
                                                 class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low border border-white/5 cursor-pointer hover:border-on-surface-variant/30 transition-all group opacity-70 hover:opacity-100">
                                                 <input type="radio" name="date_format" value="mm_dd_yyyy"
                                                     class="custom-radio appearance-none w-5 h-5 border-2 border-on-surface-variant rounded-full flex items-center justify-center shrink-0" />
-                                                <div class="flex flex-col sm:flex-row sm:items-center w-full justify-between">
-                                                    <span class="text-sm font-bold space-font tracking-wide">MM/DD/YYYY</span>
+                                                <div
+                                                    class="flex flex-col sm:flex-row sm:items-center w-full justify-between">
+                                                    <span
+                                                        class="text-sm font-bold space-font tracking-wide">MM/DD/YYYY</span>
                                                     <span
                                                         class="text-[9px] text-on-surface-variant uppercase tracking-widest font-bold ubuntu">(US
                                                         Standard)</span>
@@ -812,8 +816,7 @@
 
                         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
                             <!-- Help & Support -->
-                            <section
-                                class="bg-surface-container rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
+                            <section class="bg-surface-container rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
                                 <div class="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
                                     <span class="material-symbols-outlined text-primary">help</span>
                                     <h2 class="font-headline text-lg sm:text-xl font-semibold">Help & Support</h2>
@@ -828,7 +831,8 @@
                                             </div>
                                             <span class="text-sm font-bold font-headline">Knowledge Base</span>
                                         </div>
-                                        <span class="material-symbols-outlined text-on-surface-variant group-hover:text-tertiary transition-colors">chevron_right</span>
+                                        <span
+                                            class="material-symbols-outlined text-on-surface-variant group-hover:text-tertiary transition-colors">chevron_right</span>
                                     </button>
                                     <button
                                         class="w-full flex items-center justify-between p-4 rounded-xl bg-surface-container-low border border-white/5 hover:border-primary/50 transition-all group shadow-inner">
@@ -839,7 +843,8 @@
                                             </div>
                                             <span class="text-sm font-bold font-headline">Live Support</span>
                                         </div>
-                                        <span class="material-symbols-outlined text-on-surface-variant group-hover:text-success transition-colors">chevron_right</span>
+                                        <span
+                                            class="material-symbols-outlined text-on-surface-variant group-hover:text-success transition-colors">chevron_right</span>
                                     </button>
                                 </div>
                             </section>
@@ -857,21 +862,25 @@
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 relative z-10">
                                     <div class="space-y-6">
                                         <div class="space-y-2">
-                                            <p class="text-[9px] uppercase tracking-widest text-on-surface-variant font-bold ubuntu">
+                                            <p
+                                                class="text-[9px] uppercase tracking-widest text-on-surface-variant font-bold ubuntu">
                                                 App Version</p>
                                             <p class="text-2xl font-bold font-mono tracking-wider">v2.4.12-stable</p>
                                         </div>
                                         <div class="space-y-2">
-                                            <p class="text-[9px] uppercase tracking-widest text-on-surface-variant font-bold ubuntu">
+                                            <p
+                                                class="text-[9px] uppercase tracking-widest text-on-surface-variant font-bold ubuntu">
                                                 Build ID</p>
-                                            <p class="text-2xl font-bold text-success font-mono tracking-wider">0x7F42A9B1
+                                            <p class="text-2xl font-bold text-success font-mono tracking-wider">
+                                                0x7F42A9B1
                                             </p>
                                         </div>
                                     </div>
                                     <div class="flex flex-col justify-end items-start md:items-end">
                                         <button
                                             class="flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl bg-primary/10 border border-primary/20 text-primary hover:bg-primary hover:text-on-primary transition-all font-bold text-[10px] uppercase tracking-widest ubuntu group/btn">
-                                            <span class="material-symbols-outlined text-sm group-hover/btn:rotate-180 transition-transform duration-500">refresh</span>
+                                            <span
+                                                class="material-symbols-outlined text-sm group-hover/btn:rotate-180 transition-transform duration-500">refresh</span>
                                             Release Notes
                                         </button>
                                     </div>
@@ -880,8 +889,7 @@
                         </div>
 
                         <!-- Communication Options -->
-                        <section
-                            class="bg-surface-container rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
+                        <section class="bg-surface-container rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
                             <div class="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
                                 <span class="material-symbols-outlined text-primary">mail</span>
                                 <h2 class="font-headline text-lg sm:text-xl font-semibold">Communication Options</h2>
@@ -894,8 +902,8 @@
                                         <p class="text-xs text-on-surface-variant">Receive updates about new features
                                             and ecosystem news.</p>
                                     </div>
-                                    <div role="switch" aria-checked="true" tabindex="0"
-                                        class="toggle-switch active" aria-label="Enable email marketing">
+                                    <div role="switch" aria-checked="true" tabindex="0" class="toggle-switch active"
+                                        aria-label="Enable email marketing">
                                     </div>
                                 </div>
                                 <div
@@ -905,8 +913,8 @@
                                         <p class="text-xs text-on-surface-variant">Invites to help us shape the future
                                             of the platform.</p>
                                     </div>
-                                    <div role="switch" aria-checked="false" tabindex="0"
-                                        class="toggle-switch inactive" aria-label="Enable product surveys">
+                                    <div role="switch" aria-checked="false" tabindex="0" class="toggle-switch inactive"
+                                        aria-label="Enable product surveys">
                                     </div>
                                 </div>
                             </div>
@@ -914,9 +922,8 @@
                     </div>
                 </div>
 
-                <!-- ==================== PRIVACY & DATA TAB ==================== -->
-                <div id="panel-privacy" class="settings-content" role="tabpanel"
-                    aria-labelledby="tab-privacy">
+                <!-- Section 10: Intelligence Oversight -->
+                <div id="panel-privacy" class="settings-content" role="tabpanel" aria-labelledby="tab-privacy">
                     <div class="space-y-6 sm:space-y-8">
 
                         <!-- GDPR & Compliance -->
@@ -945,13 +952,13 @@
 
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                             <!-- Data Export -->
-                            <section
-                                class="bg-surface-container rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
+                            <section class="bg-surface-container rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
                                 <div class="flex items-center gap-2 sm:gap-3 mb-6">
                                     <span class="material-symbols-outlined text-primary">download</span>
                                     <h2 class="font-headline text-lg sm:text-xl font-semibold">Data Export</h2>
                                 </div>
-                                <p class="text-xs text-on-surface-variant mb-6 leading-relaxed">Download a compiled local
+                                <p class="text-xs text-on-surface-variant mb-6 leading-relaxed">Download a compiled
+                                    local
                                     copy of your account activity, project history, and billing records for your
                                     personal archives.</p>
                                 <div class="space-y-3 sm:space-y-4 mb-6">
@@ -998,8 +1005,7 @@
                             </section>
 
                             <!-- Connected Devices Summary -->
-                            <section
-                                class="bg-surface-container rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
+                            <section class="bg-surface-container rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
                                 <div class="flex items-center gap-2 sm:gap-3 mb-6">
                                     <span class="material-symbols-outlined text-primary">devices</span>
                                     <h2 class="font-headline text-lg sm:text-xl font-semibold">Connected Devices</h2>
@@ -1043,9 +1049,8 @@
                     </div>
                 </div>
 
-                <!-- ==================== ADVANCED TAB ==================== -->
-                <div id="panel-advanced" class="settings-content" role="tabpanel"
-                    aria-labelledby="tab-advanced">
+                <!-- Section 11: Final Command Directive -->
+                <div id="panel-advanced" class="settings-content" role="tabpanel" aria-labelledby="tab-advanced">
                     <div class="space-y-6 sm:space-y-8">
 
                         <!-- Cache Management -->
@@ -1079,8 +1084,7 @@
                                 class="absolute inset-0 bg-gradient-to-b from-transparent to-error/[0.03] pointer-events-none">
                             </div>
                             <div class="flex items-center gap-2 sm:gap-3 mb-6 relative z-10">
-                                <div
-                                    class="p-2 rounded-lg bg-error/10 border border-error/20">
+                                <div class="p-2 rounded-lg bg-error/10 border border-error/20">
                                     <span class="material-symbols-outlined text-error">warning</span>
                                 </div>
                                 <h2 class="font-headline text-lg sm:text-xl font-semibold text-error">Danger Zone</h2>
@@ -1115,8 +1119,10 @@
         </div>
     </main>
 
-    <!-- Main JavaScript (includes settings page functionality) -->
+    <!-- Core UI & Global Logic -->
     <script src="../../assets/js/main.js"></script>
+    <!-- Page Specific: Settings & Configuration -->
+    <script src="../../assets/js/settings.js"></script>
 </body>
 
 </html>

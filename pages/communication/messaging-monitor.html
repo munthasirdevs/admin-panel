@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <!-- Section 1: Page Metadata & Asset Layer Interface -->
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Messaging Monitor - System Admin</title>
+    <!-- Core Assets -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="../../assets/js/tailwind-config.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+
+<body class="flex flex-col min-h-screen bg-surface antialiased">
+    <div class="pt-24 px-8 pb-12 overflow-y-auto flex flex-col gap-8">
+        <!-- Section 2: Command Assignment Canvas -->
+        <header class="flex justify-between items-end">
+            <!-- Section 1: Page Branding & Presence Indicator -->
+            <div>
+                <h1 class="font-headline text-4xl font-extrabold tracking-tighter text-primary">Monitor</h1>
+                <p class="font-display text-on-surface-variant text-sm mt-1">Real-time communication intelligence hub
+                </p>
+            </div>
+            <div class="flex gap-4">
+                <div class="flex items-center gap-2 px-4 py-2 rounded-full glass-panel border-l-4 border-primary">
+                    <span class="relative flex h-3 w-3">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+                    </span>
+                    <span class="text-xs font-bold font-label uppercase tracking-widest">System Live</span>
+                </div>
+            </div>
+        </header>
+        <!-- Main Grid Layout -->
+        <main class="grid grid-cols-12 gap-8">
+            <!-- Section 3: Branding & Strategic Resource Deployment -->
+            <div class="col-span-12">
+                <div class="flex flex-wrap gap-3 items-center">
+                    <button
+                        class="bg-primary text-white px-6 py-2.5 rounded-xl font-bold flex items-center gap-2 hover:opacity-90 transition-all">
+                        <span class="material-symbols-outlined text-sm">chat</span> Active
+                    </button>
+                    <button
+                        class="glass-panel text-on-surface-variant px-6 py-2.5 rounded-xl font-medium flex items-center gap-2 hover:bg-surface-container transition-all">
+                        <span class="material-symbols-outlined text-sm">pause_circle</span> Paused
+                    </button>
+                    <button
+                        class="glass-panel text-on-surface-variant px-6 py-2.5 rounded-xl font-medium flex items-center gap-2 hover:bg-surface-container transition-all">
+                        <span class="material-symbols-outlined text-sm">block</span> Blocked
+                    </button>
+                    <button
+                        class="glass-panel text-on-surface-variant px-6 py-2.5 rounded-xl font-medium flex items-center gap-2 hover:bg-surface-container transition-all">
+                        <span class="material-symbols-outlined text-sm">visibility_off</span> Read-only
+                    </button>
+                    <button
+                        class="glass-panel text-on-surface-variant px-6 py-2.5 rounded-xl font-medium flex items-center gap-2 hover:bg-surface-container transition-all">
+                        <span class="material-symbols-outlined text-sm">inventory_2</span> Hidden
+                    </button>
+                </div>
+            </div>
+            <!-- Section 4: Performance Insights Strategy -->
+            <div class="col-span-12 lg:col-span-8 bg-surface-container rounded-2xl p-6 border border-white/5">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-headline text-xl font-bold flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary" data-weight="fill">forum</span>
+                        Active Conversations
+                    </h3>
+                    <span
+                        class="text-xs font-label bg-indigo-500/10 text-primary px-3 py-1 rounded-full border border-primary/20">42
+                        Live Threads</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr
+                                class="text-on-surface-variant text-xs uppercase tracking-widest font-label border-b border-white/5">
+                                <th class="pb-4 font-semibold">User A</th>
+                                <th class="pb-4 font-semibold">User B</th>
+                                <th class="pb-4 font-semibold">Type</th>
+                                <th class="pb-4 font-semibold">Status</th>
+                                <th class="pb-4 font-semibold">Last Message</th>
+                                <th class="pb-4 text-right">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/5 text-sm">
+                            <tr class="group hover:bg-white/[0.02] transition-colors">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="h-8 w-8 rounded-lg overflow-hidden">
+                                            <img class="h-full w-full object-cover"
+                                                data-alt="professional male profile avatar headshot against a neutral gray background with soft lighting"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmkDiEC0B88hq0VANFxb9SWLfRyMlOQJaledt-2wJ2IwgRCItj91pX7T9lsgVK70b8OKUnZ6BYrs1WWRb5Jtei3a_cju-O4KTa0hJm6o1hPa3BNvFJFYSO2JTlEHXN8MKzsD8Z2fojaWb0GQCtEYMp0zcHQYhCjiLuzHopzQiR14j8VFC4ZM_jOvs1AldWKzhCpnGIXu9GTFIg_t088rPopu0OZb5OX9hhKS9PkzRs4mcn6T45M2ULqARPhPeN4IZc3cRDPKEWOuI" />
+                                        </div>
+                                        <span class="font-medium">Alex Rivera</span>
+                                    </div>
+                                </td>
+                                <td class="py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="h-8 w-8 rounded-lg overflow-hidden">
+                                            <img class="h-full w-full object-cover"
+                                                data-alt="vibrant young woman profile photo with warm sunset lighting and blurred natural background"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNmgL1M3-byybDeCz7kEjL4sN7IgIlcP1uCh8zwHr_PgCjLOwlHprHiGDe0CxqhrLW314J6ELRHO6nW2VH-Rwh90C3mn3abPVIJoFcd4uLrm-yFRR3z8m0XYEEafPSgz5jb8KE2ty6AbEhltQcLQjJY8FJ3K1owdSW6_SderZvEKHLj_C6EEv0J28XpB_za9N68cLyRut5l5L68QJvbkf0TMB51KX0aCHfkN1RdtWbDso3xuprKKiBunJNLTC65pv5qRlIAymLRIQ" />
+                                        </div>
+                                        <span class="font-medium">Sarah Kim</span>
+                                    </div>
+                                </td>
+                                <td class="py-4"><span
+                                        class="px-2 py-1 bg-white/5 rounded text-[10px] uppercase font-bold">Direct
+                                        Message</span></td>
+                                <td class="py-4 text-emerald-400 font-medium flex items-center gap-1.5">
+                                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> Active
+                                </td>
+                                <td class="py-4 text-on-surface-variant truncate max-w-[150px]">Can you review the
+                                    design?</td>
+                                <td class="py-4 text-right">
+                                    <button class="text-primary font-bold hover:underline">Open</button>
+                                </td>
+                            </tr>
+                            <tr class="group hover:bg-white/[0.02] transition-colors">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="h-8 w-8 rounded-lg overflow-hidden">
+                                            <img class="h-full w-full object-cover"
+                                                data-alt="vibrant young woman profile photo with warm sunset lighting and blurred natural background"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNmgL1M3-byybDeCz7kEjL4sN7IgIlcP1uCh8zwHr_PgCjLOwlHprHiGDe0CxqhrLW314J6ELRHO6nW2VH-Rwh90C3mn3abPVIJoFcd4uLrm-yFRR3z8m0XYEEafPSgz5jb8KE2ty6AbEhltQcLQjJY8FJ3K1owdSW6_SderZvEKHLj_C6EEv0J28XpB_za9N68cLyRut5l5L68QJvbkf0TMB51KX0aCHfkN1RdtWbDso3xuprKKiBunJNLTC65pv5qRlIAymLRIQ" />
+                                        </div>
+                                        <span class="font-medium">Elena Chen</span>
+                                    </div>
+                                </td>
+                                <td class="py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="h-8 w-8 rounded-lg overflow-hidden">
+                                            <img class="h-full w-full object-cover"
+                                                data-alt="professional headshot of a young man with confident expression"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYKgkfDnld_T1eGaGIVSzHAcsLWqxCBxa4h1ToO3sbTB7NS8bFNGR7HgrvEZuEPpE5wqVufRpgw63Ox3YAcxwZg6TfzCgboTGTo0Vgfl5bhJY6gVguFIPvorU07X6svP-wlwgBnYUqmAjCDfWrNPSbM0f6DDWP3okjsihsSS-EiZHvpYRCpOR7xXLSIFE_67uAxEabyDz10ZNXXfPjE2J2dBukNHD2dZaN9sn_9_DPNuxuVOW5g5gNZx5Pz_Zn2crm9AR_LuVD8oc" />
+                                        </div>
+                                        <span class="font-medium">David Park</span>
+                                    </div>
+                                </td>
+                                <td class="py-4"><span
+                                        class="px-2 py-1 bg-white/5 rounded text-[10px] uppercase font-bold">Encrypted
+                                        P2P</span></td>
+                                <td class="py-4 text-emerald-400 font-medium flex items-center gap-1.5">
+                                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> Active
+                                </td>
+                                <td class="py-4 text-on-surface-variant truncate max-w-[150px]">Payload verification
+                                    complete...</td>
+                                <td class="py-4 text-right">
+                                    <button class="text-primary font-bold hover:underline">Open</button>
+                                </td>
+                            </tr>
+                            <tr class="group hover:bg-white/[0.02] transition-colors">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="h-8 w-8 rounded-lg overflow-hidden">
+                                            <img class="h-full w-full object-cover"
+                                                data-alt="professional headshot of a young man with confident expression"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYKgkfDnld_T1eGaGIVSzHAcsLWqxCBxa4h1ToO3sbTB7NS8bFNGR7HgrvEZuEPpE5wqVufRpgw63Ox3YAcxwZg6TfzCgboTGTo0Vgfl5bhJY6gVguFIPvorU07X6svP-wlwgBnYUqmAjCDfWrNPSbM0f6DDWP3okjsihsSS-EiZHvpYRCpOR7xXLSIFE_67uAxEabyDz10ZNXXfPjE2J2dBukNHD2dZaN9sn_9_DPNuxuVOW5g5gNZx5Pz_Zn2crm9AR_LuVD8oc" />
+                                        </div>
+                                        <span class="font-medium">Marc Solis</span>
+                                    </div>
+                                </td>
+                                <td class="py-4">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                            <span class="material-symbols-outlined text-sm">smart_toy</span>
+                                        </div>
+                                        <span class="font-medium">Support-Bot_04</span>
+                                    </div>
+                                </td>
+                                <td class="py-4"><span
+                                        class="px-2 py-1 bg-white/5 rounded text-[10px] uppercase font-bold">Relay
+                                        Chat</span></td>
+                                <td class="py-4 text-amber-400 font-medium flex items-center gap-1.5">
+                                    <span class="h-1.5 w-1.5 rounded-full bg-amber-400"></span> Idle
+                                </td>
+                                <td class="py-4 text-on-surface-variant truncate max-w-[150px]">Requesting system log
+                                    access...</td>
+                                <td class="py-4 text-right">
+                                    <button class="text-primary font-bold hover:underline">Open</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Sidebar Panel: System Health & Urgent Responses -->
+            <div class="col-span-12 lg:col-span-4 flex flex-col gap-8">
+                <!-- Section 5: Operational Data Lattice -->
+                <div class="bg-surface-container rounded-2xl p-6 border border-white/5">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="font-headline text-xl font-bold flex items-center gap-2">
+                            <span class="material-symbols-outlined text-rose-500" data-weight="fill">warning</span>
+                            Alerts Panel
+                        </h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-rose-500/5 rounded-xl border-l-4 border-rose-500">
+                            <div
+                                class="flex justify-between text-xs font-bold text-rose-500 mb-1 uppercase tracking-tighter">
+                                <span>Suspicious Activity</span>
+                                <span>2m ago</span>
+                            </div>
+                            <p class="text-sm">Multiple rapid login attempts from masked IP on Node 7.</p>
+                        </div>
+                        <div class="p-4 bg-amber-500/5 rounded-xl border-l-4 border-amber-500">
+                            <div
+                                class="flex justify-between text-xs font-bold text-amber-500 mb-1 uppercase tracking-tighter">
+                                <span>Spam Detection</span>
+                                <span>14m ago</span>
+                            </div>
+                            <p class="text-sm">Bulk messaging trigger detected in #general-global.</p>
+                        </div>
+                        <div class="p-4 bg-blue-500/5 rounded-xl border-l-4 border-blue-500">
+                            <div
+                                class="flex justify-between text-xs font-bold text-blue-500 mb-1 uppercase tracking-tighter">
+                                <span>Block Attempt</span>
+                                <span>45m ago</span>
+                            </div>
+                            <p class="text-sm">Admin 2 restricted user ID: 8829 for TOS violations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Section 7: Mission Command Registry -->
+            <div class="col-span-12 lg:col-span-6 bg-surface-container rounded-2xl p-6 border border-white/5">
+                <h3 class="font-headline text-xl font-bold mb-6 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">groups</span>
+                    Group Monitor
+                </h3>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between p-4 bg-white/[0.03] rounded-xl border border-white/5">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="h-10 w-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center font-bold text-xs">
+                                HQ</div>
+                            <div>
+                                <p class="font-bold text-sm">Strategic Operations</p>
+                                <p class="text-xs text-on-surface-variant">24 Members • Secure Relay</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span
+                                class="block text-xs font-bold text-emerald-400 uppercase tracking-tighter mb-1">Encrypted</span>
+                            <div class="flex -space-x-2">
+                                <div class="h-6 w-6 rounded-full border-2 border-surface-container overflow-hidden">
+                                    <img class="h-full w-full object-cover"
+                                        data-alt="smiling mature man profile shot with warm office lighting"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdImKPSSiNQ5BaALgcE9h6NrS6NjtrMb5nXlXhptjF8ZMCg1bGu3HqrnPbb5D1z3VYi3pIfDrJ37PcUUWwMwgrEXTzQt2B-hywEwCZY-9td19uO4AFr3eHXbniZxVhTmPtN3Sc-d3aXq_Q6I3YpN53FNn1s9AfJPrSvwfnz08jkGXxHHFfURviLjIRcLM6_ro-WM7VhKzfk6XD0L9M5Rf6KSv6GFlGptZ-Cr8mgjzEjwzNnuD5z_O8WcpS_JiaZkM27lzewAu9tD8" />
+                                </div>
+                                <div class="h-6 w-6 rounded-full border-2 border-surface-container overflow-hidden">
+                                    <img class="h-full w-full object-cover"
+                                        data-alt="professional woman in corporate attire with confident expression"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6AdQhMXSDzkMvhOf6FCGaxPRYW-TWtzC8KRVQXESZaGhhZIO7VkwhIv_30fwzGC7nLLat_C2rmtcZOCDYTeZpjGhYsIve7KBn5FR1eeIu6HUK8nJpX2OUShEIuVQn6eqv4iXKlh8uhhLT5F-M8pyRgAMR0oid-MLkcTJfWk-ULFiEeSg5dOM1oco7xtitdGxHVwptyERXobORyfMmQbJPYVpwOY56RZGSlJFRqneH9edJVRpQNiamEqOa6HNRHZGon4NDGBDoj5g" />
+                                </div>
+                                <div
+                                    class="h-6 w-6 rounded-full border-2 border-surface-container bg-primary flex items-center justify-center text-[8px] font-bold">
+                                    +22</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center justify-between p-4 bg-white/[0.03] rounded-xl border border-white/5 opacity-80">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="h-10 w-10 rounded-full bg-slate-700 flex items-center justify-center font-bold text-xs">
+                                MKT</div>
+                            <div>
+                                <p class="font-bold text-sm">Marketing Broadcast</p>
+                                <p class="text-xs text-on-surface-variant">1,204 Members • Open Channel</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span
+                                class="block text-xs font-bold text-amber-400 uppercase tracking-tighter mb-1">Paused</span>
+                            <span class="material-symbols-outlined text-on-surface-variant text-lg">pause_circle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Section 8: Final Project Review & Cleanup -->
+            <div class="col-span-12 lg:col-span-6 bg-surface-container rounded-2xl p-6 border border-white/5">
+                <h3 class="font-headline text-xl font-bold mb-6 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">podcasts</span>
+                    Channel Monitor
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 rounded-xl border border-white/5 bg-white/[0.02]">
+                        <div class="flex justify-between items-start mb-3">
+                            <p class="font-display font-bold text-sm">#emergency-dispatch</p>
+                            <span class="h-2 w-2 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.6)]"></span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="text-[10px] bg-indigo-500/10 text-indigo-300 px-2 py-0.5 rounded border border-indigo-500/20">Critical</span>
+                            <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Restricted</span>
+                        </div>
+                        <p
+                            class="text-[10px] text-on-surface-variant mb-2 font-label uppercase tracking-widest font-semibold">
+                            Assigned Admins</p>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs font-medium">Chief_01</span>
+                            <span class="text-xs font-medium">Admin_X</span>
+                        </div>
+                    </div>
+                    <div class="p-4 rounded-xl border border-white/5 bg-white/[0.02]">
+                        <div class="flex justify-between items-start mb-3">
+                            <p class="font-display font-bold text-sm">#network-logs</p>
+                            <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="text-[10px] bg-indigo-500/10 text-indigo-300 px-2 py-0.5 rounded border border-indigo-500/20">System</span>
+                            <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Internal</span>
+                        </div>
+                        <p
+                            class="text-[10px] text-on-surface-variant mb-2 font-label uppercase tracking-widest font-semibold">
+                            Assigned Admins</p>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs font-medium">Bot_Scanner</span>
+                            <span class="text-xs font-medium">Ops_Lead</span>
+                        </div>
+                    </div>
+                </div>
+                <button
+                    class="mt-6 p-3 border border-dashed border-white/10 rounded-xl text-on-surface-variant text-sm font-bold hover:bg-white/5 hover:border-primary/50 transition-all">
+                    + Create New Surveillance Channel
+                </button>
+            </div>
+            <!-- Section 6: Quick Actions -->
+            <div class="col-span-12 bg-primary rounded-2xl p-6 text-white overflow-hidden relative">
+                <div class="relative z-10">
+                    <h3 class="font-headline text-lg font-bold mb-4">Quick Actions</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <button
+                            class="bg-white/10 hover:bg-white/20 backdrop-blur py-3 px-2 rounded-xl text-xs font-bold flex flex-col items-center gap-2 transition-all">
+                            <span class="material-symbols-outlined">person_off</span> Block/Mute
+                        </button>
+                        <button
+                            class="bg-white/10 hover:bg-white/20 backdrop-blur py-3 px-2 rounded-xl text-xs font-bold flex flex-col items-center gap-2 transition-all">
+                            <span class="material-symbols-outlined">cancel_schedule_send</span> Disable Chat
+                        </button>
+                        <button
+                            class="bg-white/10 hover:bg-white/20 backdrop-blur py-3 px-2 rounded-xl text-xs font-bold flex flex-col items-center gap-2 transition-all">
+                            <span class="material-symbols-outlined">lock</span> Lock Channel
+                        </button>
+                        <button
+                            class="bg-black/20 hover:bg-black/30 backdrop-blur py-3 px-2 rounded-xl text-xs font-bold flex flex-col items-center gap-2 transition-all">
+                            <span class="material-symbols-outlined">emergency</span> Lockdown
+                        </button>
+                    </div>
+                </div>
+                <div class="absolute -right-4 -bottom-4 opacity-10">
+                    <span class="material-symbols-outlined text-[120px]"
+                        style="font-variation-settings: 'FILL' 1;">security</span>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- Background Decorative Elements -->
+    <div class="fixed top-0 left-0 w-full h-full -z-50 pointer-events-none overflow-hidden">
+        <div class="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-indigo-900/10 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-900/10 blur-[100px] rounded-full"></div>
+    </div>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

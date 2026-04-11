@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <!-- Section 1: Page Metadata & Asset Layer Interface -->
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Create Conversation - System Admin</title>
+    <!-- Core Assets -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="../../assets/js/tailwind-config.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+
+<body class="flex flex-col min-h-screen bg-surface text-on-surface font-body selection:bg-primary-container/30">
+    <div class="pt-24 px-8 pb-12 overflow-y-auto flex flex-col gap-8">
+        <!-- Header Section -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <!-- Section 3: Branding & Creative Objective -->
+            <div>
+                <h1 class="font-headline font-extrabold text-4xl tracking-tighter text-on-surface mb-2">Create
+                    Conversation</h1>
+                <p class="text-on-surface-variant max-w-xl">Architect a new communication hub. Define participants,
+                    permissions, and broadcast rules for your enterprise suite.</p>
+            </div>
+            <div
+                class="flex items-center gap-4 bg-surface-container-low p-1.5 rounded-2xl border border-outline-variant/10">
+                <button
+                    class="px-6 py-2.5 rounded-xl text-sm font-semibold bg-primary text-on-primary shadow-lg transition-all duration-300">Create</button>
+                <button
+                    class="px-6 py-2.5 rounded-xl text-sm font-semibold text-on-surface-variant hover:bg-surface-container-highest transition-all duration-300">Edit
+                    Existing</button>
+            </div>
+        </div>
+        <!-- Section 4: Hub Architecture (Architecting the Flow) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <!-- Left Column: Architecting the conversation flow -->
+            <div class="lg:col-span-8 space-y-8">
+                <!-- Section 5: Conversation Identity & Workspace Integration -->
+                <section class="bg-surface-container rounded-2xl p-8 shadow-sm">
+                    <div class="grid grid-cols-3 gap-4 mb-10">
+                        <label class="relative cursor-pointer group">
+                            <input checked="" class="peer sr-only" name="conv_type" type="radio" />
+                            <div
+                                class="p-4 rounded-xl border border-outline-variant/20 bg-surface-container-low peer-checked:border-primary peer-checked:bg-primary/5 transition-all flex flex-col items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">person</span>
+                                <span class="text-xs font-bold uppercase tracking-widest">P2P</span>
+                            </div>
+                        </label>
+                        <label class="relative cursor-pointer group">
+                            <input class="peer sr-only" name="conv_type" type="radio" />
+                            <div
+                                class="p-4 rounded-xl border border-outline-variant/20 bg-surface-container-low peer-checked:border-primary peer-checked:bg-primary/5 transition-all flex flex-col items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">group</span>
+                                <span class="text-xs font-bold uppercase tracking-widest">Group</span>
+                            </div>
+                        </label>
+                        <label class="relative cursor-pointer group">
+                            <input class="peer sr-only" name="conv_type" type="radio" />
+                            <div
+                                class="p-4 rounded-xl border border-outline-variant/20 bg-surface-container-low peer-checked:border-primary peer-checked:bg-primary/5 transition-all flex flex-col items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">podcasts</span>
+                                <span class="text-xs font-bold uppercase tracking-widest">Channel</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-on-surface-variant ml-1">Conversation
+                                Name</label>
+                            <input
+                                class="w-full bg-surface border-none rounded-xl px-4 py-3.5 focus:ring-2 focus:ring-primary/40 text-on-surface placeholder:text-on-surface-variant/50"
+                                placeholder="e.g. Q4 Strategy Sync" type="text" />
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-on-surface-variant ml-1">Description</label>
+                            <textarea
+                                class="w-full bg-surface border-none rounded-xl px-4 py-3.5 focus:ring-2 focus:ring-primary/40 text-on-surface placeholder:text-on-surface-variant/50"
+                                placeholder="Define the objective of this space..." rows="3"></textarea>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium text-on-surface-variant ml-1">Linked
+                                    Project</label>
+                                <select
+                                    class="w-full bg-surface border-none rounded-xl px-4 py-3.5 focus:ring-2 focus:ring-primary/40 text-on-surface appearance-none">
+                                    <option>Select Project</option>
+                                    <option>Project Xenon</option>
+                                    <option>Alpha Ops</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium text-on-surface-variant ml-1">Tags</label>
+                                <input
+                                    class="w-full bg-surface border-none rounded-xl px-4 py-3.5 focus:ring-2 focus:ring-primary/40 text-on-surface placeholder:text-on-surface-variant/50"
+                                    placeholder="urgent, strategy, internal" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 6: Participant Discovery & Enrollment -->
+                <div class="space-y-6">
+                    <div class="relative">
+                        <span
+                            class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+                        <input type="text" placeholder="Search workers, teams, or clients..."
+                            class="w-full bg-surface-container-low border-none rounded-2xl pl-14 pr-4 py-4 focus:ring-2 focus:ring-primary/40 text-on-surface placeholder:text-on-surface-variant/50 shadow-sm transition-all" />
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-surface-container rounded-2xl p-6 flex flex-col h-[400px]">
+                            <h3 class="font-headline font-bold text-lg mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">engineering</span>
+                                Workers / Team
+                            </h3>
+                            <div class="overflow-y-auto custom-scrollbar space-y-3 flex-1 pr-2">
+                                <div
+                                    class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer group">
+                                    <img class="w-10 h-10 rounded-full bg-surface-container-highest"
+                                        data-alt="Portrait of a male software engineer with glasses and a friendly expression"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfmKsyqVx9Fka0tUWhcSa48Acg0__RAXhEhc0btaxP89q-nUSjWmqcxvbuNF7_i7XC0N4sljU85OdxcZOGC86wJbCPpUxELPThV9l5O7jUkADOSr_9YshRJXTLtzbL51KYiyzXXdHG8oSGBNhvU8HSADEWBWbwSOPjOZATGMZS2UCDtFXYSMhq8Cnh3yW_niCPoqD2detOY6GULKv1HMAmpfb5Vd4VcaKzrrYuJI_7_YzNFTf-CoJUPSpVXckTw2flgPXo4NjN14E" />
+                                    <div>
+                                        <p class="text-sm font-semibold">Erik Johansson</p>
+                                        <p class="text-xs text-on-surface-variant">Lead Architect</p>
+                                    </div>
+                                    <span
+                                        class="material-symbols-outlined ml-auto opacity-0 group-hover:opacity-100 text-primary">add_circle</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer group">
+                                    <img class="w-10 h-10 rounded-full bg-surface-container-highest"
+                                        data-alt="Portrait of a professional woman with brown hair and a blazer, smiling confidently"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPuv_4Yu4xOlqYDJs_KHGMflunQQ8N8zE9jpF4CQ9wwJq-HX9NKDx-M2ePmyGZ7Lo5wa1-h2BRsBjNzSedhTJz2n1ZcSSzzTfdYVnq8KfR-RViqty_ru-pewXt30BdxSgfYDpwc1EF4HmwcVJJLRcJhJ-KEfHU_7D6I33ml82zFYenbh9VjUkf36VL-t7Q_RdANNaLmKXa-Z_MojKfjltT8g8OwwQiCBwbftdFb2ZoT8CB24Or05bgEGtyiTUFk0-bWxL4W3nxL5M" />
+                                    <div>
+                                        <p class="text-sm font-semibold">Sarah Chen</p>
+                                        <p class="text-xs text-on-surface-variant">Senior UI Designer</p>
+                                    </div>
+                                    <span
+                                        class="material-symbols-outlined ml-auto opacity-0 group-hover:opacity-100 text-primary">add_circle</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer group">
+                                    <img class="w-10 h-10 rounded-full bg-surface-container-highest"
+                                        data-alt="Portrait of a creative man with short hair and modern tech wear"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc3g6Q60huGXPAIRONUhS2Y60IpL4r99VMNvBfYaWM8-R4EUG72Szk_yBPUQbe3jiPY4vV-qlAzRHR1j5_a40sVhSN4u0RRkDca7ye5oOddbaZXzV6K4PM-dsYe38UFPi_GGzX6qrKvCURraT0cZtZHqRf0UrcILg39cUM3U2xE7l8ZSfHEYiPfs9VzNUZAR0hpNl6lvtuC7ZN15CfoyFMLzRcRl8AWca-ohwuCLyVQ_p8VwAEx0IiZgTbp_SPWLKWEb9nMunZG0Y" />
+                                    <div>
+                                        <p class="text-sm font-semibold">Marcus Wright</p>
+                                        <p class="text-xs text-on-surface-variant">DevOps Engineer</p>
+                                    </div>
+                                    <span
+                                        class="material-symbols-outlined ml-auto opacity-0 group-hover:opacity-100 text-primary">add_circle</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-surface-container rounded-2xl p-6 flex flex-col h-[400px]">
+                            <h3 class="font-headline font-bold text-lg mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">groups</span>
+                                Clients
+                            </h3>
+                            <div class="overflow-y-auto custom-scrollbar space-y-3 flex-1 pr-2">
+                                <div
+                                    class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer group">
+                                    <img class="w-10 h-10 rounded-full bg-surface-container-highest"
+                                        data-alt="Corporate representative in a formal business suit against a minimalist background"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyRdf-YAeguHw9c76I7WL-CskWCH0jgwIldwYtDG9ijyhIOagNTcf31S6JQxWtBacUwxfbYeyHVeLCnoYyflD6uK75Zdf7OZpVwY_s_tBLu8iPixNKO9NlilU6jsZGlB_zgEAwpGVWBv8p3d-nKMyr4tN2Seq9yjoiux7CJvzHf-duUbTvcnS9tN7s03oTg5Luvf0il8YZajgQtkR9cSrRk8Yo513UCs1KDepYpouq_UMYC3appDXILxYaTsd2y7jTDF5ffSjYRzU" />
+                                    <div>
+                                        <p class="text-sm font-semibold">Elena Rodriguez</p>
+                                        <p class="text-xs text-on-surface-variant">Nexus Corp</p>
+                                    </div>
+                                    <span
+                                        class="material-symbols-outlined ml-auto opacity-0 group-hover:opacity-100 text-primary">add_circle</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer group">
+                                    <img class="w-10 h-10 rounded-full bg-surface-container-highest"
+                                        data-alt="Modern business woman with short hair and professional demeanor"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuMUI-fEu8QD01YATNc931MO9z127tGMlvex5924bznJFWo6hZpWT4pnoYxPKE62BMGNvtQaF-U_cPXvOI9_bQrk_ZLwnQwArqogVQ1g6Ub3sCrSooPGVtlG7H-fkpPry4yBP8q5kzfPPZAwJprFgxOURqQ-rGeK3GBN2nD3ZC20VFWKBYq0v2GJQkOQE7xZV3frzUOFY0-3nZ_FZBRqhC4LmA9Q3kx-_M5TIDLIW2DEKJ_64wcz6dUui19txlnqLLxKeMInZFcro" />
+                                    <div>
+                                        <p class="text-sm font-semibold">David Foster</p>
+                                        <p class="text-xs text-on-surface-variant">Quantum Labs</p>
+                                    </div>
+                                    <span
+                                        class="material-symbols-outlined ml-auto opacity-0 group-hover:opacity-100 text-primary">add_circle</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 7: Advanced Participant Permissions & Status Grid -->
+                <section class="bg-surface-container rounded-2xl overflow-hidden shadow-sm">
+                    <div class="p-6 border-b border-outline-variant/10 flex justify-between items-center">
+                        <h3 class="font-headline font-bold text-lg">Selected People Control</h3>
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">4
+                            Active</span>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm">
+                            <thead class="bg-surface-container-low text-on-surface-variant font-medium">
+                                <tr>
+                                    <th class="px-6 py-4">User</th>
+                                    <th class="px-6 py-4">Type</th>
+                                    <th class="px-6 py-4">Role</th>
+                                    <th class="px-6 py-4 text-center">Permissions</th>
+                                    <th class="px-6 py-4 text-center">Status</th>
+                                    <th class="px-6 py-4"></th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-outline-variant/5">
+                                <tr class="hover:bg-surface-container-high transition-colors">
+                                    <td class="px-6 py-4 flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xs">
+                                            EJ</div>
+                                        Erik Johansson
+                                    </td>
+                                    <td class="px-6 py-4"><span class="text-xs text-on-surface-variant">Worker</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <select
+                                            class="bg-surface border-none rounded-lg text-xs py-1.5 focus:ring-1 focus:ring-primary">
+                                            <option>Admin</option>
+                                            <option selected="">Member</option>
+                                            <option>Viewer</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex justify-center gap-3">
+                                            <span class="material-symbols-outlined text-primary scale-75"
+                                                title="View">visibility</span>
+                                            <span class="material-symbols-outlined text-primary scale-75"
+                                                title="Message">chat</span>
+                                            <span class="material-symbols-outlined text-primary scale-75"
+                                                title="Reply">reply</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <div class="w-8 h-4 bg-primary/40 rounded-full relative mx-auto">
+                                            <div class="absolute right-0.5 top-0.5 w-3 h-3 bg-white rounded-full">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <button class="text-error/60 hover:text-error transition-colors"><span
+                                                class="material-symbols-outlined">delete</span></button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-surface-container-high transition-colors">
+                                    <td class="px-6 py-4 flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center text-secondary font-bold text-xs">
+                                            ER</div>
+                                        Elena Rodriguez
+                                    </td>
+                                    <td class="px-6 py-4"><span class="text-xs text-on-surface-variant">Client</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <select
+                                            class="bg-surface border-none rounded-lg text-xs py-1.5 focus:ring-1 focus:ring-primary">
+                                            <option>Admin</option>
+                                            <option>Member</option>
+                                            <option selected="">Client</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex justify-center gap-3">
+                                            <span
+                                                class="material-symbols-outlined text-primary scale-75">visibility</span>
+                                            <span class="material-symbols-outlined text-primary scale-75">chat</span>
+                                            <span
+                                                class="material-symbols-outlined text-on-surface-variant/20 scale-75">reply</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <div class="w-8 h-4 bg-outline-variant/30 rounded-full relative mx-auto">
+                                            <div class="absolute left-0.5 top-0.5 w-3 h-3 bg-white/40 rounded-full">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <button class="text-error/60 hover:text-error transition-colors"><span
+                                                class="material-symbols-outlined">delete</span></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <!-- Section 8: Interaction Protocols & Secure Governance -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <section class="bg-surface-container rounded-2xl p-6">
+                        <h3 class="font-headline font-bold text-lg mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">security</span>
+                            Global Permissions
+                        </h3>
+                        <div class="space-y-5">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm">Allow messages</span>
+                                <div class="w-10 h-5 bg-primary/40 rounded-full relative cursor-pointer">
+                                    <div class="absolute right-1 top-1 w-3 h-3 bg-white rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm">Allow replies</span>
+                                <div class="w-10 h-5 bg-primary/40 rounded-full relative cursor-pointer">
+                                    <div class="absolute right-1 top-1 w-3 h-3 bg-white rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm">File uploads</span>
+                                <div class="w-10 h-5 bg-outline-variant/30 rounded-full relative cursor-pointer">
+                                    <div class="absolute left-1 top-1 w-3 h-3 bg-white/40 rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm">External links</span>
+                                <div class="w-10 h-5 bg-primary/40 rounded-full relative cursor-pointer">
+                                    <div class="absolute right-1 top-1 w-3 h-3 bg-white rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm">Mentions (@all)</span>
+                                <div class="w-10 h-5 bg-outline-variant/30 rounded-full relative cursor-pointer">
+                                    <div class="absolute left-1 top-1 w-3 h-3 bg-white/40 rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="bg-surface-container rounded-2xl p-6">
+                        <h3 class="font-headline font-bold text-lg mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">visibility_off</span>
+                            Visibility Control
+                        </h3>
+                        <div class="space-y-4">
+                            <div
+                                class="p-3 rounded-xl bg-surface-container-low border border-primary/20 flex items-center gap-4 cursor-pointer">
+                                <span class="material-symbols-outlined text-primary">public</span>
+                                <div>
+                                    <p class="text-sm font-semibold">Public</p>
+                                    <p class="text-xs text-on-surface-variant">Visible to entire workspace</p>
+                                </div>
+                            </div>
+                            <div
+                                class="p-3 rounded-xl bg-surface-container-low border border-transparent flex items-center gap-4 cursor-pointer">
+                                <span class="material-symbols-outlined text-on-surface-variant">lock</span>
+                                <div>
+                                    <p class="text-sm font-semibold">Private</p>
+                                    <p class="text-xs text-on-surface-variant">Only invited members</p>
+                                </div>
+                            </div>
+                            <div
+                                class="p-3 rounded-xl bg-surface-container-low border border-transparent flex items-center gap-4 cursor-pointer">
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant">admin_panel_settings</span>
+                                <div>
+                                    <p class="text-sm font-semibold">Restricted</p>
+                                    <p class="text-xs text-on-surface-variant">Admin approval required</p>
+                                </div>
+                            </div>
+                            <div class="pt-4 mt-4 border-t border-outline-variant/10 flex items-center justify-between">
+                                <span class="text-xs font-bold uppercase text-on-surface-variant">Hidden Mode</span>
+                                <div class="w-10 h-5 bg-outline-variant/30 rounded-full relative">
+                                    <div class="absolute left-1 top-1 w-3 h-3 bg-white/40 rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- Section 9: Standard Operating Procedures & Extended Type Options -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <section class="bg-surface-container rounded-2xl p-6">
+                        <h3 class="font-headline font-bold text-lg mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">gavel</span>
+                            Conversation Rules
+                        </h3>
+                        <div class="space-y-5">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm">Project-only focus</span>
+                                <div class="w-10 h-5 bg-primary/40 rounded-full relative cursor-pointer">
+                                    <div class="absolute right-1 top-1 w-3 h-3 bg-white rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm">Working hours only</span>
+                                <div class="w-10 h-5 bg-outline-variant/30 rounded-full relative cursor-pointer">
+                                    <div class="absolute left-1 top-1 w-3 h-3 bg-white/40 rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm">Auto-disable (30d inactive)</span>
+                                <div class="w-10 h-5 bg-outline-variant/30 rounded-full relative cursor-pointer">
+                                    <div class="absolute left-1 top-1 w-3 h-3 bg-white/40 rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="bg-surface-container rounded-2xl p-6 border-2 border-primary/10">
+                        <h3 class="font-headline font-bold text-lg mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">settings_input_component</span>
+                            Type-Specific Settings
+                        </h3>
+                        <div class="space-y-6">
+                            <div>
+                                <label
+                                    class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-3">Channel
+                                    Mode</label>
+                                <select class="w-full bg-surface border-none rounded-xl px-4 py-2.5 text-sm">
+                                    <option>Broadcast Only (Admins)</option>
+                                    <option>Open Discussion</option>
+                                    <option>Moderated QA</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label
+                                    class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-3">Member
+                                    Limit</label>
+                                <input class="w-full bg-surface border-none rounded-xl px-4 py-2.5 text-sm"
+                                    type="number" value="500" />
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- Section 10: Genesis Message (Initial Workspace Seed) -->
+                <section class="bg-surface-container rounded-2xl p-8">
+                    <h3 class="font-headline font-bold text-lg mb-4 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">first_page</span>
+                        Initial Message
+                    </h3>
+                    <div class="relative">
+                        <textarea
+                            class="w-full bg-surface border-none rounded-xl px-4 py-4 focus:ring-2 focus:ring-primary/40 text-on-surface placeholder:text-on-surface-variant/40"
+                            placeholder="Type the first message to kick off the conversation..." rows="4"></textarea>
+                        <div class="absolute bottom-4 right-4 flex gap-2">
+                            <button
+                                class="p-2 rounded-lg bg-surface-container-highest text-on-surface-variant hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined">alternate_email</span>
+                            </button>
+                            <button
+                                class="p-2 rounded-lg bg-surface-container-highest text-on-surface-variant hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined">sentiment_satisfied</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Right Column: Final Workspace Validation & Intelligence -->
+            <div class="lg:col-span-4 sticky top-12 space-y-6">
+                <!-- Section 11: Configuration Summary & Creation Terminal -->
+                <div class="bg-surface-container-high rounded-2xl p-6 shadow-2xl border border-outline-variant/10">
+                    <h2 class="font-headline font-bold text-xl mb-6">Configuration Summary</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between p-4 bg-surface-container rounded-xl">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary">person_add</span>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold">Total Participants</p>
+                                    <p class="text-xs text-on-surface-variant">4 Active Members</p>
+                                </div>
+                            </div>
+                            <span class="font-headline font-extrabold text-2xl text-primary">04</span>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Applied
+                                Rules</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-center gap-3 text-sm text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                    Broadcast only mode active
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                    Public visibility enabled
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                    Project-only focus restricted
+                                </li>
+                                <li class="flex items-center gap-3 text-sm text-on-surface-variant">
+                                    <span
+                                        class="material-symbols-outlined text-on-surface-variant/30 text-sm">radio_button_unchecked</span>
+                                    No automatic archiving
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pt-6 border-t border-outline-variant/10 space-y-3">
+                            <button
+                                class="w-full bg-primary text-on-primary font-bold p-4 rounded-xl shadow-lg active:scale-[0.98] transition-transform">
+                                Create Conversation
+                            </button>
+                            <button
+                                class="w-full bg-surface text-on-surface font-bold p-4 rounded-xl border border-outline-variant/20 hover:bg-surface-container-highest transition-colors">
+                                Save as Draft
+                            </button>
+                            <button
+                                class="w-full text-on-surface-variant font-semibold py-3 hover:text-error transition-colors">
+                                Cancel &amp; Discard
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 12: Xenon AI Hub (Dynamic Workspace Intelligence) -->
+                <div class="bg-surface-container-highest/40 rounded-2xl p-6 border border-primary/20">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="material-symbols-outlined text-primary">auto_awesome</span>
+                        <span class="text-sm font-bold">Xenon AI Suggestion</span>
+                    </div>
+                    <p class="text-xs leading-relaxed text-on-surface-variant">
+                        Based on your linked project "Xenon OS", we suggest adding the <strong>Quality
+                            Assurance</strong> team to ensure smooth internal communication flow.
+                    </p>
+                    <button class="mt-4 text-xs font-bold text-primary hover:underline">Apply
+                        Recommendation</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

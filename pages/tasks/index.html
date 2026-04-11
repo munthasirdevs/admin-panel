@@ -2,6 +2,7 @@
 <html class="dark" lang="en">
 
 <head>
+    <!-- Section 1: Page Metadata & Asset Layer Interface -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Task List - System Admin</title>
@@ -20,11 +21,11 @@
 </head>
 
 <body class="flex min-h-screen bg-surface">
-    <!-- Main Content -->
+    <!-- Section 2: Command Assignment Canvas -->
     <main class="flex-1 min-h-screen flex flex-col">
         <!-- Main Scrollable Canvas -->
         <div class="p-8">
-            <!-- Hero Section -->
+            <!-- Section 3: Branding & Strategic Resource Deployment -->
             <header class="mb-12">
                 <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
                     <div>
@@ -48,10 +49,10 @@
                     </div>
                 </div>
             </header>
-            <!-- Sticky Filter Bar -->
+
+            <!-- Section 4: Operational Filter Infrastructure -->
             <section class="sticky top-[0.5rem] z-30 bg-surface/95 backdrop-blur-md mb-8 py-4 rounded-xl">
-                <div
-                    class="bg-surface-container-low p-4 rounded-xl shadow-lg flex flex-wrap items-center gap-4 border border-outline-variant/10">
+                <div class="bg-surface-container-low p-4 rounded-xl shadow-lg flex flex-wrap items-center gap-4">
                     <!-- Search -->
                     <div class="relative flex-grow min-w-[240px]">
                         <span
@@ -100,221 +101,235 @@
                     </button>
                 </div>
             </section>
-            <!-- Bulk Action Bar (Contextual) -->
-            <div class="mb-4 flex items-center justify-between px-2">
-                <div class="flex items-center gap-4">
-                    <input id="select-all-tasks"
-                        class="rounded bg-surface-container border-outline-variant/30 text-primary focus:ring-primary h-5 w-5"
-                        type="checkbox" aria-label="Select all tasks" />
-                    <label for="select-all-tasks" class="text-sm text-outline font-medium">Select All Tasks</label>
-                </div>
-                <div class="flex items-center gap-2">
-                    <button
-                        class="text-xs font-bold text-outline uppercase tracking-wider hover:text-on-surface px-3 py-1 transition-colors">Bulk
-                        Archive</button>
-                    <button
-                        class="text-xs font-bold text-error uppercase tracking-wider hover:brightness-110 px-3 py-1 transition-colors">Bulk
-                        Delete</button>
-                </div>
-            </div>
-            <!-- Task Table Layout -->
-            <div class="bg-surface-container-low rounded-xl overflow-hidden border border-outline-variant/5 shadow-2xl">
-                <div class="overflow-x-auto no-scrollbar">
-                    <table class="w-full text-left border-collapse">
-                        <thead>
-                            <tr
-                                class="bg-surface-container-high/50 text-[0.6875rem] uppercase tracking-widest font-bold text-outline">
-                                <th class="px-6 py-4 w-12"></th>
-                                <th class="px-6 py-4">Task Details</th>
-                                <th class="px-6 py-4">Assigned</th>
-                                <th class="px-6 py-4">Status</th>
-                                <th class="px-6 py-4">Priority</th>
-                                <th class="px-6 py-4">Due Date</th>
-                                <th class="px-6 py-4 text-right">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-outline-variant/5">
-                            <!-- Task Item 1 -->
-                            <tr class="group hover:bg-surface-bright/30 transition-colors">
-                                <td class="px-6 py-5">
-                                    <input id="task-1"
-                                        class="rounded bg-surface-container border-outline-variant/30 text-primary focus:ring-primary h-4 w-4"
-                                        type="checkbox" aria-label="Select task: Design System Refresh" />
-                                    <label for="task-1" class="sr-only">Select task: Design System Refresh</label>
-                                </td>
-                                <td class="px-6 py-5">
-                                    <div class="flex flex-col">
-                                        <span
-                                            class="text-on-surface font-semibold text-sm group-hover:text-primary transition-colors cursor-pointer">Design
-                                            System Refresh</span>
-                                        <span class="text-xs text-outline cursor-pointer hover:underline">Obsidian
-                                            UI</span>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-5">
-                                    <div class="flex -space-x-2">
-                                        <img alt="Emma's profile picture" class="h-7 w-7 rounded-full border border-surface shadow-sm"
-                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuADZc3x6jdM6ABFtbVK41RCsbLpJDPBnyF_2DlV29M-fg-GBtlgFSHF6K3QfsXmN4ne7OsDhI7Z3rQ2-Hkkoj7eTpJv_6-dRZ-7h9UH2zcNiqYgRYWvHbjCUsxJ0hURISh2_v0JF9y9Cs18_n-99MGQVl9VDlw8_EyEaEI5R7qjq8NP7diH7u6lcebowBCf5w0P3VU_OeunW8ZFCVYjiQmOAuv-ZGOUIElu9oEAhu_Vu3LV1OD30eBAlY3708egJtMQNGzTqaO5sak" />
-                                        <img alt="James's profile picture" class="h-7 w-7 rounded-full border border-surface shadow-sm"
-                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY-LJlpqZAWD5PlmVu9-ZYEZzxAB4-eZJ-Vgojwh-L4LcveYwVoqc6kR9I1B1iVFe2v7cBMyC_J125JQnVZzQAIQw_PdjsilGXmJ-83dz86ZKZL0rnSYZ4bLfCvici2lseng-CPCB6kxATrIW-Gbfrg2fKOYJrL8nVWOjklVqX7zzrm3S-6es_TfBeonD3yKo6WTeU0rKloP5mg6HpmSGocKtSbe1uNOusUZsFdKcuasElmCWPOmxJSo0x6m6drPdnkwworkhNtR8" />
-                                    </div>
-                                </td>
-                                <td class="px-6 py-5">
-                                    <span
-                                        class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary-container/30 text-secondary">
-                                        <span class="h-1.5 w-1.5 rounded-full bg-secondary"></span>
-                                        In Progress
-                                    </span>
-                                </td>
-                                <td class="px-6 py-5">
-                                    <span
-                                        class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-error-container/20 text-error">
-                                        High
-                                    </span>
-                                </td>
-                                <td class="px-6 py-5">
-                                    <span class="text-sm text-on-surface-variant">Oct 24, 2023</span>
-                                </td>
-                                <td class="px-6 py-5 text-right">
-                                    <div
-                                        class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                        <button class="p-2 text-outline hover:text-primary transition-colors"><span
-                                                class="material-symbols-outlined text-lg"
-                                                data-icon="edit">edit</span></button>
-                                        <button class="p-2 text-outline hover:text-on-surface transition-colors"><span
-                                                class="material-symbols-outlined text-lg"
-                                                data-icon="more_vert">more_vert</span></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <!-- Task Item 2 -->
-                            <tr class="group hover:bg-surface-bright/30 transition-colors">
-                                <td class="px-6 py-5">
-                                    <input aria-label="Select task: Onboarding Flows"
-                                        class="rounded bg-surface-container border-outline-variant/30 text-primary focus:ring-primary h-4 w-4"
-                                        type="checkbox" />
-                                </td>
-                                <td class="px-6 py-5">
-                                    <div class="flex flex-col">
-                                        <span
-                                            class="text-on-surface font-semibold text-sm group-hover:text-primary transition-colors cursor-pointer">Onboarding
-                                            Flows</span>
-                                        <span class="text-xs text-outline cursor-pointer hover:underline">Nike
-                                            Campaign</span>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-5">
-                                    <div class="flex -space-x-2">
-                                        <img alt="Kim's profile picture" class="h-7 w-7 rounded-full border border-surface shadow-sm"
-                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWSq-eogd3OMujZRE_RzVHJop7OBMYdYxGHjN69OBwVi_OyBnDSf3rnQXlCTTaAsuxrOTic1ZBdgyi42yJr4GA3ktzbBMOR0PV00Iy8Vw9opJk_s8X8MGEZZo6hNWf0VUZ-hZavsFcdgasIKJUULYt00QUHbDyJt4ODhcX86p0JRzP1cscDi7b4FsLzob1OSPRzu-frLb_zqqNAHd_qJdBjqHFW9xRYrzetCJXktWyJDZ0SqRPM-viXmFxuh5Mzw1eBUynGtOhmdc" />
-                                    </div>
-                                </td>
-                                <td class="px-6 py-5">
-                                    <span
-                                        class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-tertiary-container/20 text-tertiary">
-                                        <span class="h-1.5 w-1.5 rounded-full bg-tertiary"></span>
-                                        Pending
-                                    </span>
-                                </td>
-                                <td class="px-6 py-5">
-                                    <span
-                                        class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-tertiary-container/20 text-tertiary">
-                                        Medium
-                                    </span>
-                                </td>
-                                <td class="px-6 py-5">
-                                    <span class="text-sm text-on-surface-variant">Nov 02, 2023</span>
-                                </td>
-                                <td class="px-6 py-5 text-right">
-                                    <div
-                                        class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                        <button class="p-2 text-outline hover:text-primary transition-colors"><span
-                                                class="material-symbols-outlined text-lg"
-                                                data-icon="edit">edit</span></button>
-                                        <button class="p-2 text-outline hover:text-on-surface transition-colors"><span
-                                                class="material-symbols-outlined text-lg"
-                                                data-icon="more_vert">more_vert</span></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <!-- Task Item 3 -->
-                            <tr class="group hover:bg-surface-bright/30 transition-colors">
-                                <td class="px-6 py-5">
-                                    <input aria-label="Select task: Competitor Audit"
-                                        class="rounded bg-surface-container border-outline-variant/30 text-primary focus:ring-primary h-4 w-4"
-                                        type="checkbox" />
-                                </td>
-                                <td class="px-6 py-5">
-                                    <div class="flex flex-col">
-                                        <span
-                                            class="text-on-surface font-semibold text-sm group-hover:text-primary transition-colors cursor-pointer">Competitor
-                                            Audit</span>
-                                        <span class="text-xs text-outline cursor-pointer hover:underline">Tesla
-                                            Rebrand</span>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-5">
-                                    <div class="flex -space-x-2">
-                                        <img alt="Dan's profile picture" class="h-7 w-7 rounded-full border border-surface shadow-sm"
-                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnJZuVMGbj5UJ-ZLOemFVhXZLvC-m6LFvuhimaXEHvmRprBa6DAa2x9aXRyEQ0ntJ7hd-03kx_y47lFDWCfI7bAwt-NONIYT8je893Z5rg4QANor0jOVgq6mrfQPfVjPg6Lv7ruAbw-LfEUWnhpyNA3p4tA-rZ4DwR7gfTwQoarZf1o261xzb7tjrs7lV2GSO1dIm9sbVdUqhYQprKN7cW1UE-uAl87lrB4itATl3yYLcg4UGYzRzMdD1Gy1q7OJt46q36ryxjg7A" />
-                                        <img alt="Moe's profile picture" class="h-7 w-7 rounded-full border border-surface shadow-sm"
-                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrOhGxynT8PQR2KCDKCWvJx9SGekVi5o4HrebZ0NYeHrZjaLu83HTgFZBHvPGxdGPTUfIDYgfDJc9f6ZVU0Q5AxN5O8rL90GnJeHZzehjeOm9LycV7HpkEg6jqCJhAMaHxxjdmqoE3VGz_ifl-mghbNQEAjuKHPzzeUvRi9iz84NQkeNckKpVIzuK01x_6UUlSyfipOVul7CXUHMMAiYnieHKZye1GkFGQFtFldJSZgQYo0ETNTYcB5a7QKfW8YLknrEIKfdXsZio" />
-                                    </div>
-                                </td>
-                                <td class="px-6 py-5">
-                                    <span
-                                        class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-primary-container/20 text-primary">
-                                        <span class="h-1.5 w-1.5 rounded-full bg-primary"></span>
-                                        Completed
-                                    </span>
-                                </td>
-                                <td class="px-6 py-5">
-                                    <span
-                                        class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-container-highest text-outline">
-                                        Low
-                                    </span>
-                                </td>
-                                <td class="px-6 py-5">
-                                    <span class="text-sm text-on-surface-variant">Oct 12, 2023</span>
-                                </td>
-                                <td class="px-6 py-5 text-right">
-                                    <div
-                                        class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                        <button class="p-2 text-outline hover:text-primary transition-colors"><span
-                                                class="material-symbols-outlined text-lg"
-                                                data-icon="edit">edit</span></button>
-                                        <button class="p-2 text-outline hover:text-on-surface transition-colors"><span
-                                                class="material-symbols-outlined text-lg"
-                                                data-icon="more_vert">more_vert</span></button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <!-- Pagination / Footer -->
-                <div
-                    class="px-6 py-4 bg-surface-container-high/20 border-t border-outline-variant/5 flex items-center justify-between">
-                    <span class="text-xs text-outline font-medium">Showing 1 to 3 of 42 tasks</span>
-                    <div class="flex items-center gap-1">
+
+            <section>
+                <!-- Section 5: Bulk Dynamic Action Interface -->
+                <div class="mb-4 flex items-center justify-between px-2">
+                    <div class="flex items-center gap-4">
+                        <input id="select-all-tasks"
+                            class="rounded bg-surface-container border-outline-variant/30 text-primary focus:ring-primary h-5 w-5"
+                            type="checkbox" aria-label="Select all tasks" />
+                        <label for="select-all-tasks" class="text-sm text-outline font-medium">Select All Tasks</label>
+                    </div>
+                    <div class="flex items-center gap-2">
                         <button
-                            class="p-1.5 rounded-lg hover:bg-surface-container-highest text-outline disabled:opacity-30"
-                            disabled="">
-                            <span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
-                        </button>
-                        <button class="h-8 w-8 rounded-lg bg-primary/20 text-primary font-bold text-xs">1</button>
+                            class="text-xs font-bold text-outline uppercase tracking-wider hover:text-on-surface px-3 py-1 transition-colors">Bulk
+                            Archive</button>
                         <button
-                            class="h-8 w-8 rounded-lg hover:bg-surface-container-highest text-outline font-medium text-xs">2</button>
-                        <button
-                            class="h-8 w-8 rounded-lg hover:bg-surface-container-highest text-outline font-medium text-xs">3</button>
-                        <button class="p-1.5 rounded-lg hover:bg-surface-container-highest text-outline">
-                            <span class="material-symbols-outlined text-sm"
-                                data-icon="chevron_right">chevron_right</span>
-                        </button>
+                            class="text-xs font-bold text-error uppercase tracking-wider hover:brightness-110 px-3 py-1 transition-colors">Bulk
+                            Delete</button>
                     </div>
                 </div>
-            </div>
-            <!-- Secondary Stats Grid (GRID Style) -->
+
+                <!-- Section 6: Mission Command Registry -->
+                <div class="bg-surface-container-low rounded-xl overflow-hidden shadow-2xl">
+                    <div class="overflow-x-auto no-scrollbar">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr
+                                    class="bg-surface-container-high/50 text-[0.6875rem] uppercase tracking-widest font-bold text-outline">
+                                    <th class="px-6 py-4 w-12"></th>
+                                    <th class="px-6 py-4">Task Details</th>
+                                    <th class="px-6 py-4">Assigned</th>
+                                    <th class="px-6 py-4">Status</th>
+                                    <th class="px-6 py-4">Priority</th>
+                                    <th class="px-6 py-4">Due Date</th>
+                                    <th class="px-6 py-4 text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-outline-variant/5">
+                                <!-- Task Item 1 -->
+                                <tr class="group hover:bg-surface-bright/30 transition-colors">
+                                    <td class="px-6 py-5">
+                                        <input id="task-1"
+                                            class="rounded bg-surface-container border-outline-variant/30 text-primary focus:ring-primary h-4 w-4"
+                                            type="checkbox" aria-label="Select task: Design System Refresh" />
+                                        <label for="task-1" class="sr-only">Select task: Design System Refresh</label>
+                                    </td>
+                                    <td class="px-6 py-5">
+                                        <div class="flex flex-col">
+                                            <span
+                                                class="text-on-surface font-semibold text-sm group-hover:text-primary transition-colors cursor-pointer">Design
+                                                System Refresh</span>
+                                            <span class="text-xs text-outline cursor-pointer hover:underline">Obsidian
+                                                UI</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-5">
+                                        <div class="flex -space-x-2">
+                                            <img alt="Emma's profile picture"
+                                                class="h-7 w-7 rounded-full border border-surface shadow-sm"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuADZc3x6jdM6ABFtbVK41RCsbLpJDPBnyF_2DlV29M-fg-GBtlgFSHF6K3QfsXmN4ne7OsDhI7Z3rQ2-Hkkoj7eTpJv_6-dRZ-7h9UH2zcNiqYgRYWvHbjCUsxJ0hURISh2_v0JF9y9Cs18_n-99MGQVl9VDlw8_EyEaEI5R7qjq8NP7diH7u6lcebowBCf5w0P3VU_OeunW8ZFCVYjiQmOAuv-ZGOUIElu9oEAhu_Vu3LV1OD30eBAlY3708egJtMQNGzTqaO5sak" />
+                                            <img alt="James's profile picture"
+                                                class="h-7 w-7 rounded-full border border-surface shadow-sm"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY-LJlpqZAWD5PlmVu9-ZYEZzxAB4-eZJ-Vgojwh-L4LcveYwVoqc6kR9I1B1iVFe2v7cBMyC_J125JQnVZzQAIQw_PdjsilGXmJ-83dz86ZKZL0rnSYZ4bLfCvici2lseng-CPCB6kxATrIW-Gbfrg2fKOYJrL8nVWOjklVqX7zzrm3S-6es_TfBeonD3yKo6WTeU0rKloP5mg6HpmSGocKtSbe1uNOusUZsFdKcuasElmCWPOmxJSo0x6m6drPdnkwworkhNtR8" />
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-5">
+                                        <span
+                                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary-container/30 text-secondary">
+                                            <span class="h-1.5 w-1.5 rounded-full bg-secondary"></span>
+                                            In Progress
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-5">
+                                        <span
+                                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-error-container/20 text-error">
+                                            High
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-5">
+                                        <span class="text-sm text-on-surface-variant">Oct 24, 2023</span>
+                                    </td>
+                                    <td class="px-6 py-5 text-right">
+                                        <div
+                                            class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <button class="p-2 text-outline hover:text-primary transition-colors"><span
+                                                    class="material-symbols-outlined text-lg"
+                                                    data-icon="edit">edit</span></button>
+                                            <button
+                                                class="p-2 text-outline hover:text-on-surface transition-colors"><span
+                                                    class="material-symbols-outlined text-lg"
+                                                    data-icon="more_vert">more_vert</span></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Task Item 2 -->
+                                <tr class="group hover:bg-surface-bright/30 transition-colors">
+                                    <td class="px-6 py-5">
+                                        <input aria-label="Select task: Onboarding Flows"
+                                            class="rounded bg-surface-container border-outline-variant/30 text-primary focus:ring-primary h-4 w-4"
+                                            type="checkbox" />
+                                    </td>
+                                    <td class="px-6 py-5">
+                                        <div class="flex flex-col">
+                                            <span
+                                                class="text-on-surface font-semibold text-sm group-hover:text-primary transition-colors cursor-pointer">Onboarding
+                                                Flows</span>
+                                            <span class="text-xs text-outline cursor-pointer hover:underline">Nike
+                                                Campaign</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-5">
+                                        <div class="flex -space-x-2">
+                                            <img alt="Kim's profile picture"
+                                                class="h-7 w-7 rounded-full border border-surface shadow-sm"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWSq-eogd3OMujZRE_RzVHJop7OBMYdYxGHjN69OBwVi_OyBnDSf3rnQXlCTTaAsuxrOTic1ZBdgyi42yJr4GA3ktzbBMOR0PV00Iy8Vw9opJk_s8X8MGEZZo6hNWf0VUZ-hZavsFcdgasIKJUULYt00QUHbDyJt4ODhcX86p0JRzP1cscDi7b4FsLzob1OSPRzu-frLb_zqqNAHd_qJdBjqHFW9xRYrzetCJXktWyJDZ0SqRPM-viXmFxuh5Mzw1eBUynGtOhmdc" />
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-5">
+                                        <span
+                                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-tertiary-container/20 text-tertiary">
+                                            <span class="h-1.5 w-1.5 rounded-full bg-tertiary"></span>
+                                            Pending
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-5">
+                                        <span
+                                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-tertiary-container/20 text-tertiary">
+                                            Medium
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-5">
+                                        <span class="text-sm text-on-surface-variant">Nov 02, 2023</span>
+                                    </td>
+                                    <td class="px-6 py-5 text-right">
+                                        <div
+                                            class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <button class="p-2 text-outline hover:text-primary transition-colors"><span
+                                                    class="material-symbols-outlined text-lg"
+                                                    data-icon="edit">edit</span></button>
+                                            <button
+                                                class="p-2 text-outline hover:text-on-surface transition-colors"><span
+                                                    class="material-symbols-outlined text-lg"
+                                                    data-icon="more_vert">more_vert</span></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Task Item 3 -->
+                                <tr class="group hover:bg-surface-bright/30 transition-colors">
+                                    <td class="px-6 py-5">
+                                        <input aria-label="Select task: Competitor Audit"
+                                            class="rounded bg-surface-container border-outline-variant/30 text-primary focus:ring-primary h-4 w-4"
+                                            type="checkbox" />
+                                    </td>
+                                    <td class="px-6 py-5">
+                                        <div class="flex flex-col">
+                                            <span
+                                                class="text-on-surface font-semibold text-sm group-hover:text-primary transition-colors cursor-pointer">Competitor
+                                                Audit</span>
+                                            <span class="text-xs text-outline cursor-pointer hover:underline">Tesla
+                                                Rebrand</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-5">
+                                        <div class="flex -space-x-2">
+                                            <img alt="Dan's profile picture"
+                                                class="h-7 w-7 rounded-full border border-surface shadow-sm"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnJZuVMGbj5UJ-ZLOemFVhXZLvC-m6LFvuhimaXEHvmRprBa6DAa2x9aXRyEQ0ntJ7hd-03kx_y47lFDWCfI7bAwt-NONIYT8je893Z5rg4QANor0jOVgq6mrfQPfVjPg6Lv7ruAbw-LfEUWnhpyNA3p4tA-rZ4DwR7gfTwQoarZf1o261xzb7tjrs7lV2GSO1dIm9sbVdUqhYQprKN7cW1UE-uAl87lrB4itATl3yYLcg4UGYzRzMdD1Gy1q7OJt46q36ryxjg7A" />
+                                            <img alt="Moe's profile picture"
+                                                class="h-7 w-7 rounded-full border border-surface shadow-sm"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrOhGxynT8PQR2KCDKCWvJx9SGekVi5o4HrebZ0NYeHrZjaLu83HTgFZBHvPGxdGPTUfIDYgfDJc9f6ZVU0Q5AxN5O8rL90GnJeHZzehjeOm9LycV7HpkEg6jqCJhAMaHxxjdmqoE3VGz_ifl-mghbNQEAjuKHPzzeUvRi9iz84NQkeNckKpVIzuK01x_6UUlSyfipOVul7CXUHMMAiYnieHKZye1GkFGQFtFldJSZgQYo0ETNTYcB5a7QKfW8YLknrEIKfdXsZio" />
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-5">
+                                        <span
+                                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-primary-container/20 text-primary">
+                                            <span class="h-1.5 w-1.5 rounded-full bg-primary"></span>
+                                            Completed
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-5">
+                                        <span
+                                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-container-highest text-outline">
+                                            Low
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-5">
+                                        <span class="text-sm text-on-surface-variant">Oct 12, 2023</span>
+                                    </td>
+                                    <td class="px-6 py-5 text-right">
+                                        <div
+                                            class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <button class="p-2 text-outline hover:text-primary transition-colors"><span
+                                                    class="material-symbols-outlined text-lg"
+                                                    data-icon="edit">edit</span></button>
+                                            <button
+                                                class="p-2 text-outline hover:text-on-surface transition-colors"><span
+                                                    class="material-symbols-outlined text-lg"
+                                                    data-icon="more_vert">more_vert</span></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Pagination / Footer -->
+                    <div
+                        class="px-6 py-4 bg-surface-container-high/20 border-t border-outline-variant/5 flex items-center justify-between">
+                        <span class="text-xs text-outline font-medium">Showing 1 to 3 of 42 tasks</span>
+                        <div class="flex items-center gap-1">
+                            <button
+                                class="p-1.5 rounded-lg hover:bg-surface-container-highest text-outline disabled:opacity-30"
+                                disabled="">
+                                <span class="material-symbols-outlined text-sm"
+                                    data-icon="chevron_left">chevron_left</span>
+                            </button>
+                            <button class="h-8 w-8 rounded-lg bg-primary/20 text-primary font-bold text-xs">1</button>
+                            <button
+                                class="h-8 w-8 rounded-lg hover:bg-surface-container-highest text-outline font-medium text-xs">2</button>
+                            <button
+                                class="h-8 w-8 rounded-lg hover:bg-surface-container-highest text-outline font-medium text-xs">3</button>
+                            <button class="p-1.5 rounded-lg hover:bg-surface-container-highest text-outline">
+                                <span class="material-symbols-outlined text-sm"
+                                    data-icon="chevron_right">chevron_right</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 7: Multi-Dimensional Velocity Analytics -->
             <section class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="bg-surface-container-low p-6 rounded-xl border-l-2 border-primary">
                     <p class="font-label text-[0.6875rem] font-bold text-outline tracking-wider uppercase mb-1">Weekly
@@ -367,7 +382,7 @@
             </section>
     </main>
 
-    <script src="../../assets/js/app.js"></script>
+    <script src="../../assets/js/main.js"></script>
 </body>
 
 </html>

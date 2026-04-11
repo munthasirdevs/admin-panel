@@ -2,6 +2,7 @@
 <html class="dark" lang="en">
 
 <head>
+    <!-- Section 1: Page Metadata & Asset Layer Interface -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Analytics - Marketing | Admin Panel</title>
@@ -20,306 +21,372 @@
 </head>
 
 <body class="flex min-h-screen bg-surface">
-    <!-- Main Content -->
-    <main class="flex-1 min-h-screen flex flex-col">
-        <!-- === DASHBOARD CONTENT === -->
-        <div class="p-8 max-w-[1600px] mx-auto space-y-12">
-            <!-- === HERO SECTION / HEADER === -->
-            <section class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-                <div>
-                    <h1 class="text-5xl font-headline font-light tracking-tight text-white mb-2">Performance <span
-                            class="text-primary font-semibold">Pulse</span></h1>
-                    <p class="text-on-surface-variant font-body max-w-md">Real-time data synchronization with your
-                        active marketing funnels.</p>
+    <!-- Section 2: Performance Pulse Canvas -->
+    <main class="flex-1 min-h-screen flex flex-col" role="main">
+        <div class="flex-1 w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 py-6 sm:py-8 md:py-10 lg:py-12">
+
+            <!-- Section 3: Branding & Synchronization Context -->
+            <header class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6 sm:mb-8 md:mb-10">
+                <div class="space-y-1.5 sm:space-y-2">
+                    <h1
+                        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-headline font-light tracking-tighter text-on-surface">
+                        Performance <span class="text-primary font-semibold">Pulse</span>
+                    </h1>
+                    <p class="text-on-surface-variant text-xs sm:text-sm md:text-base max-w-lg leading-relaxed">
+                        Real-time data synchronization with your active marketing funnels.
+                    </p>
                 </div>
-                <div class="flex gap-3">
+                <div class="flex flex-wrap gap-2 sm:gap-3 w-full sm:w-auto">
                     <div
-                        class="bg-surface-container-low px-4 py-2 rounded-xl flex items-center gap-2 border border-white/5">
-                        <span class="material-symbols-outlined text-primary text-sm">calendar_today</span>
+                        class="bg-surface-container-low px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl flex items-center gap-2 border border-outline-variant/10 min-h-[44px]">
+                        <span class="material-symbols-outlined text-primary text-sm flex-shrink-0"
+                            aria-hidden="true">calendar_today</span>
                         <span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Last 30
                             Days</span>
                     </div>
-                    <button
-                        class="bg-primary text-on-primary px-6 py-2 rounded-xl font-manrope text-sm font-bold hover:brightness-110 transition-all">Export
-                        PDF</button>
+                    <button type="button"
+                        class="bg-primary hover:bg-primary/90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface text-on-primary px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-bold transition-all w-full sm:w-auto min-h-[44px]">
+                        Export PDF
+                    </button>
                 </div>
-            </section>
+            </header>
 
-            <!-- === KPI GRID GRID === -->
-            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Total Users -->
-                <div class="bg-surface-container-low rounded-xl p-6 relative overflow-hidden group">
-                    <div class="absolute left-0 top-0 bottom-0 w-0.5 bg-primary-container"></div>
-                    <div class="flex justify-between items-start mb-4">
+            <!-- Section 4: Marketing Metric Registry (KPIs) -->
+            <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8"
+                aria-label="Marketing key performance indicators">
+                <!-- Total Traffic -->
+                <div
+                    class="bg-surface-container-low rounded-2xl sm:rounded-3xl p-4 sm:p-6 relative overflow-hidden shadow-sm group">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container" aria-hidden="true"></div>
+                    <div class="flex justify-between items-start mb-3 sm:mb-4">
                         <span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.1em]">Total
                             Traffic</span>
-                        <span class="text-xs font-bold text-emerald-400 flex items-center gap-1">+12.4% <span
-                                class="material-symbols-outlined text-xs">trending_up</span></span>
+                        <span class="text-xs font-bold text-emerald-400 flex items-center gap-1 shrink-0">+12.4% <span
+                                class="material-symbols-outlined text-xs" aria-hidden="true">trending_up</span></span>
                     </div>
-                    <h3 class="text-3xl font-manrope font-bold text-white tracking-tight">842,910</h3>
-                    <p class="text-xs text-slate-500 mt-1">Unique visitors this month</p>
-                    <div class="mt-6 h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
-                        <div
-                            class="h-full w-3/4 bg-gradient-to-r from-primary to-primary-container shadow-[0_0_8px_rgba(192,193,255,0.4)]">
+                    <h3 class="text-2xl sm:text-3xl font-headline font-bold text-on-surface tracking-tight">842,910</h3>
+                    <p class="text-xs text-on-surface-variant mt-1">Unique visitors this month</p>
+                    <div class="mt-4 sm:mt-6 h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                        <div class="h-full w-3/4 bg-primary rounded-full shadow-sm transition-all duration-700"
+                            role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                            aria-hidden="true">
                         </div>
                     </div>
                 </div>
-
-                <!-- Sign-ups -->
-                <div class="bg-surface-container-low rounded-xl p-6 relative overflow-hidden group">
-                    <div class="absolute left-0 top-0 bottom-0 w-0.5 bg-tertiary"></div>
-                    <div class="flex justify-between items-start mb-4">
+                <!-- New Sign-ups -->
+                <div
+                    class="bg-surface-container-low rounded-2xl sm:rounded-3xl p-4 sm:p-6 relative overflow-hidden shadow-sm group">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-tertiary" aria-hidden="true"></div>
+                    <div class="flex justify-between items-start mb-3 sm:mb-4">
                         <span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.1em]">New
                             Sign-ups</span>
-                        <span class="text-xs font-bold text-emerald-400 flex items-center gap-1">+8.1% <span
-                                class="material-symbols-outlined text-xs">trending_up</span></span>
+                        <span class="text-xs font-bold text-emerald-400 flex items-center gap-1 shrink-0">+8.1% <span
+                                class="material-symbols-outlined text-xs" aria-hidden="true">trending_up</span></span>
                     </div>
-                    <h3 class="text-3xl font-manrope font-bold text-white tracking-tight">12,402</h3>
-                    <p class="text-xs text-slate-500 mt-1">Conversion from landing page</p>
-                    <div class="mt-6 h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
-                        <div
-                            class="h-full w-1/2 bg-gradient-to-r from-tertiary to-tertiary-container shadow-[0_0_8px_rgba(255,183,131,0.4)]">
+                    <h3 class="text-2xl sm:text-3xl font-headline font-bold text-on-surface tracking-tight">12,402</h3>
+                    <p class="text-xs text-on-surface-variant mt-1">Conversion from landing page</p>
+                    <div class="mt-4 sm:mt-6 h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                        <div class="h-full w-1/2 bg-tertiary rounded-full shadow-sm transition-all duration-700"
+                            role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"
+                            aria-hidden="true">
                         </div>
                     </div>
                 </div>
-
-                <!-- CTR (%) -->
-                <div class="bg-surface-container-low rounded-xl p-6 relative overflow-hidden group">
-                    <div class="absolute left-0 top-0 bottom-0 w-0.5 bg-primary-container"></div>
-                    <div class="flex justify-between items-start mb-4">
+                <!-- Avg. CTR -->
+                <div
+                    class="bg-surface-container-low rounded-2xl sm:rounded-3xl p-4 sm:p-6 relative overflow-hidden shadow-sm group">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container" aria-hidden="true"></div>
+                    <div class="flex justify-between items-start mb-3 sm:mb-4">
                         <span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.1em]">Avg.
                             CTR</span>
-                        <span class="text-xs font-bold text-rose-400 flex items-center gap-1">-1.2% <span
-                                class="material-symbols-outlined text-xs">trending_down</span></span>
+                        <span class="text-xs font-bold text-rose-400 flex items-center gap-1 shrink-0">-1.2% <span
+                                class="material-symbols-outlined text-xs" aria-hidden="true">trending_down</span></span>
                     </div>
-                    <h3 class="text-3xl font-manrope font-bold text-white tracking-tight">4.82%</h3>
-                    <p class="text-xs text-slate-500 mt-1">Global ad engagement</p>
-                    <div class="mt-6 h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
-                        <div
-                            class="h-full w-2/5 bg-gradient-to-r from-primary to-primary-container shadow-[0_0_8px_rgba(192,193,255,0.4)]">
+                    <h3 class="text-2xl sm:text-3xl font-headline font-bold text-on-surface tracking-tight">4.82%</h3>
+                    <p class="text-xs text-on-surface-variant mt-1">Global ad engagement</p>
+                    <div class="mt-4 sm:mt-6 h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                        <div class="h-full w-2/5 bg-primary rounded-full shadow-sm transition-all duration-700"
+                            role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                            aria-hidden="true">
                         </div>
                     </div>
                 </div>
-
                 <!-- Conversion Rate -->
-                <div class="bg-surface-container-low rounded-xl p-6 relative overflow-hidden group">
-                    <div class="absolute left-0 top-0 bottom-0 w-0.5 bg-tertiary"></div>
-                    <div class="flex justify-between items-start mb-4">
+                <div
+                    class="bg-surface-container-low rounded-2xl sm:rounded-3xl p-4 sm:p-6 relative overflow-hidden shadow-sm group">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-tertiary" aria-hidden="true"></div>
+                    <div class="flex justify-between items-start mb-3 sm:mb-4">
                         <span
                             class="text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.1em]">Conversion
                             Rate</span>
-                        <span class="text-xs font-bold text-emerald-400 flex items-center gap-1">+4.9% <span
-                                class="material-symbols-outlined text-xs">trending_up</span></span>
+                        <span class="text-xs font-bold text-emerald-400 flex items-center gap-1 shrink-0">+4.9% <span
+                                class="material-symbols-outlined text-xs" aria-hidden="true">trending_up</span></span>
                     </div>
-                    <h3 class="text-3xl font-manrope font-bold text-white tracking-tight">18.5%</h3>
-                    <p class="text-xs text-slate-500 mt-1">Lead to customer flow</p>
-                    <div class="mt-6 h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
-                        <div
-                            class="h-full w-2/3 bg-gradient-to-r from-tertiary to-tertiary-container shadow-[0_0_8px_rgba(255,183,131,0.4)]">
+                    <h3 class="text-2xl sm:text-3xl font-headline font-bold text-on-surface tracking-tight">18.5%</h3>
+                    <p class="text-xs text-on-surface-variant mt-1">Lead to customer flow</p>
+                    <div class="mt-4 sm:mt-6 h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                        <div class="h-full w-2/3 bg-tertiary rounded-full shadow-sm transition-all duration-700"
+                            role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100"
+                            aria-hidden="true">
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- === CHARTS SECTION === -->
-            <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <!-- Website Traffic (Main Chart) -->
-                <div class="lg:col-span-2 bg-surface-container rounded-xl p-8 relative overflow-hidden">
-                    <div class="absolute top-0 left-0 w-32 h-32 bg-primary/5 blur-[80px] rounded-full"></div>
-                    <div class="flex justify-between items-start mb-10">
+            <!-- Section 5: Audience Engagement Visualization -->
+            <section class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8">
+                <!-- Website Traffic Chart -->
+                <div class="lg:col-span-2 bg-surface-container-low rounded-2xl sm:rounded-3xl shadow-sm p-4 sm:p-6 md:p-8 relative overflow-hidden"
+                    aria-label="Website traffic chart">
+                    <div
+                        class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6 sm:mb-8">
                         <div>
-                            <h4 class="text-xl font-headline font-semibold text-white">Website Traffic</h4>
-                            <p class="text-sm text-slate-500">Global sessions vs. Page views</p>
+                            <h4 class="text-lg sm:text-xl font-headline font-semibold text-on-surface">Website Traffic
+                            </h4>
+                            <p class="text-xs sm:text-sm text-on-surface-variant">Global sessions vs. Page views</p>
                         </div>
-                        <div class="flex gap-2">
-                            <button
-                                class="px-3 py-1 text-[10px] font-bold uppercase rounded-md bg-surface-bright text-primary border border-primary/20">Daily</button>
-                            <button
-                                class="px-3 py-1 text-[10px] font-bold uppercase rounded-md text-slate-500 hover:text-white transition-colors">Weekly</button>
+                        <div class="flex gap-2" role="tablist" aria-label="Chart time period">
+                            <button type="button" role="tab" aria-selected="true"
+                                class="px-3 py-2 text-[10px] font-bold uppercase rounded-md bg-surface-container-high text-primary border border-primary/20 min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-all">Daily</button>
+                            <button type="button" role="tab" aria-selected="false"
+                                class="px-3 py-2 text-[10px] font-bold uppercase rounded-md text-on-surface-variant hover:text-on-surface min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-all">Weekly</button>
                         </div>
                     </div>
-                    <div class="h-[300px] flex items-end justify-between gap-4">
-                        <!-- Visual placeholder for a complex line chart using custom shapes -->
-                        <div class="flex-1 flex flex-col items-center gap-2 group cursor-pointer">
-                            <div
-                                class="w-full h-24 bg-surface-container-highest rounded-t-lg relative group-hover:bg-primary/20 transition-all">
-                                <div class="absolute bottom-0 left-0 right-0 h-12 bg-primary/40 rounded-t-lg"></div>
-                            </div>
-                            <span class="text-[10px] font-bold text-slate-600">MON</span>
-                        </div>
-                        <div class="flex-1 flex flex-col items-center gap-2 group cursor-pointer">
-                            <div
-                                class="w-full h-32 bg-surface-container-highest rounded-t-lg relative group-hover:bg-primary/20 transition-all">
-                                <div class="absolute bottom-0 left-0 right-0 h-20 bg-primary/40 rounded-t-lg"></div>
-                            </div>
-                            <span class="text-[10px] font-bold text-slate-600">TUE</span>
-                        </div>
-                        <div class="flex-1 flex flex-col items-center gap-2 group cursor-pointer">
-                            <div
-                                class="w-full h-48 bg-surface-container-highest rounded-t-lg relative group-hover:bg-primary/20 transition-all">
-                                <div class="absolute bottom-0 left-0 right-0 h-32 bg-primary/40 rounded-t-lg"></div>
-                            </div>
-                            <span class="text-[10px] font-bold text-slate-600">WED</span>
-                        </div>
-                        <div class="flex-1 flex flex-col items-center gap-2 group cursor-pointer">
-                            <div
-                                class="w-full h-40 bg-surface-container-highest rounded-t-lg relative group-hover:bg-primary/20 transition-all">
-                                <div class="absolute bottom-0 left-0 right-0 h-24 bg-primary/40 rounded-t-lg"></div>
-                            </div>
-                            <span class="text-[10px] font-bold text-slate-600">THU</span>
-                        </div>
-                        <div class="flex-1 flex flex-col items-center gap-2 group cursor-pointer">
-                            <div
-                                class="w-full h-56 bg-surface-container-highest rounded-t-lg relative group-hover:bg-primary/20 transition-all">
-                                <div class="absolute bottom-0 left-0 right-0 h-44 bg-primary/40 rounded-t-lg"></div>
-                            </div>
-                            <span class="text-[10px] font-bold text-slate-600">FRI</span>
-                        </div>
-                        <div class="flex-1 flex flex-col items-center gap-2 group cursor-pointer">
-                            <div
-                                class="w-full h-64 bg-surface-container-highest rounded-t-lg relative group-hover:bg-primary/20 transition-all">
-                                <div
-                                    class="absolute bottom-0 left-0 right-0 h-52 bg-primary rounded-t-lg shadow-lg shadow-primary/20">
-                                </div>
-                            </div>
-                            <span class="text-[10px] font-bold text-primary">SAT</span>
-                        </div>
-                        <div class="flex-1 flex flex-col items-center gap-2 group cursor-pointer">
-                            <div
-                                class="w-full h-36 bg-surface-container-highest rounded-t-lg relative group-hover:bg-primary/20 transition-all">
-                                <div class="absolute bottom-0 left-0 right-0 h-16 bg-primary/40 rounded-t-lg"></div>
-                            </div>
-                            <span class="text-[10px] font-bold text-slate-600">SUN</span>
-                        </div>
+                    <!-- SVG Bar Chart -->
+                    <div class="w-full" role="img" aria-label="Bar chart showing website traffic from Monday to Sunday">
+                        <svg viewBox="0 0 700 320" class="w-full h-auto" preserveAspectRatio="xMidYMid meet">
+                            <!-- Grid Lines -->
+                            <line x1="50" y1="20" x2="50" y2="280" stroke="var(--color-outline-variant, #334155)"
+                                stroke-width="0.5" opacity="0.3" />
+                            <line x1="50" y1="280" x2="680" y2="280" stroke="var(--color-outline-variant, #334155)"
+                                stroke-width="0.5" opacity="0.3" />
+                            <line x1="50" y1="215" x2="680" y2="215" stroke="var(--color-outline-variant, #334155)"
+                                stroke-width="0.5" opacity="0.15" stroke-dasharray="4,4" />
+                            <line x1="50" y1="150" x2="680" y2="150" stroke="var(--color-outline-variant, #334155)"
+                                stroke-width="0.5" opacity="0.15" stroke-dasharray="4,4" />
+                            <line x1="50" y1="85" x2="680" y2="85" stroke="var(--color-outline-variant, #334155)"
+                                stroke-width="0.5" opacity="0.15" stroke-dasharray="4,4" />
+
+                            <!-- Page Views (lighter bars) -->
+                            <rect x="70" y="176" width="45" height="104" rx="6"
+                                fill="var(--color-surface-container-highest, #475569)" opacity="0.4" />
+                            <rect x="160" y="150" width="45" height="130" rx="6"
+                                fill="var(--color-surface-container-highest, #475569)" opacity="0.4" />
+                            <rect x="250" y="100" width="45" height="180" rx="6"
+                                fill="var(--color-surface-container-highest, #475569)" opacity="0.4" />
+                            <rect x="340" y="124" width="45" height="156" rx="6"
+                                fill="var(--color-surface-container-highest, #475569)" opacity="0.4" />
+                            <rect x="430" y="70" width="45" height="210" rx="6"
+                                fill="var(--color-surface-container-highest, #475569)" opacity="0.4" />
+                            <rect x="520" y="36" width="45" height="244" rx="6" fill="var(--color-primary, #c0c1ff)"
+                                opacity="0.5" />
+                            <rect x="610" y="140" width="45" height="140" rx="6"
+                                fill="var(--color-surface-container-highest, #475569)" opacity="0.4" />
+
+                            <!-- Sessions (primary overlay bars) -->
+                            <rect x="70" y="214" width="45" height="66" rx="6" fill="var(--color-primary, #c0c1ff)"
+                                opacity="0.4" />
+                            <rect x="160" y="196" width="45" height="84" rx="6" fill="var(--color-primary, #c0c1ff)"
+                                opacity="0.4" />
+                            <rect x="250" y="152" width="45" height="128" rx="6" fill="var(--color-primary, #c0c1ff)"
+                                opacity="0.4" />
+                            <rect x="340" y="176" width="45" height="104" rx="6" fill="var(--color-primary, #c0c1ff)"
+                                opacity="0.4" />
+                            <rect x="430" y="124" width="45" height="156" rx="6" fill="var(--color-primary, #c0c1ff)"
+                                opacity="0.5" />
+                            <rect x="520" y="80" width="45" height="200" rx="6" fill="var(--color-primary, #c0c1ff)"
+                                opacity="0.6" />
+                            <rect x="610" y="192" width="45" height="88" rx="6" fill="var(--color-primary, #c0c1ff)"
+                                opacity="0.4" />
+
+                            <!-- X-axis Labels -->
+                            <text x="92" y="300" text-anchor="middle" fill="var(--color-on-surface-variant, #94a3b8)"
+                                font-size="11" font-weight="600">MON</text>
+                            <text x="182" y="300" text-anchor="middle" fill="var(--color-on-surface-variant, #94a3b8)"
+                                font-size="11" font-weight="600">TUE</text>
+                            <text x="272" y="300" text-anchor="middle" fill="var(--color-on-surface-variant, #94a3b8)"
+                                font-size="11" font-weight="600">WED</text>
+                            <text x="362" y="300" text-anchor="middle" fill="var(--color-on-surface-variant, #94a3b8)"
+                                font-size="11" font-weight="600">THU</text>
+                            <text x="452" y="300" text-anchor="middle" fill="var(--color-on-surface-variant, #94a3b8)"
+                                font-size="11" font-weight="600">FRI</text>
+                            <text x="542" y="300" text-anchor="middle" fill="var(--color-primary, #c0c1ff)"
+                                font-size="11" font-weight="700">SAT</text>
+                            <text x="632" y="300" text-anchor="middle" fill="var(--color-on-surface-variant, #94a3b8)"
+                                font-size="11" font-weight="600">SUN</text>
+                        </svg>
                     </div>
                 </div>
 
-                <!-- Campaign Performance (Bar Chart) -->
-                <div class="bg-surface-container rounded-xl p-8">
-                    <div class="flex justify-between items-start mb-8">
-                        <div>
-                            <h4 class="text-xl font-headline font-semibold text-white">Campaigns</h4>
-                            <p class="text-sm text-slate-500">Reach per platform</p>
-                        </div>
+                <!-- Section 6: Cross-Platform Campaign Reach -->
+                <div class="bg-surface-container-low rounded-2xl sm:rounded-3xl shadow-sm p-4 sm:p-6 md:p-8"
+                    aria-label="Campaign performance">
+                    <div class="mb-6 sm:mb-8">
+                        <h4 class="text-lg sm:text-xl font-headline font-semibold text-on-surface">Campaigns</h4>
+                        <p class="text-xs sm:text-sm text-on-surface-variant">Reach per platform</p>
                     </div>
-                    <div class="space-y-6">
-                        <div class="space-y-2">
-                            <div class="flex justify-between text-xs">
+                    <div class="space-y-4 sm:space-y-6">
+                        <!-- Instagram Ads -->
+                        <div>
+                            <div class="flex justify-between text-xs mb-2">
                                 <span class="text-on-surface font-bold uppercase tracking-wider">Instagram Ads</span>
                                 <span class="text-primary font-bold">88%</span>
                             </div>
                             <div class="h-2 bg-surface-container-highest rounded-full overflow-hidden">
-                                <div class="h-full w-[88%] bg-primary rounded-full"></div>
+                                <div class="h-full w-[88%] bg-primary rounded-full transition-all duration-700"
+                                    role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"
+                                    aria-hidden="true"></div>
                             </div>
                         </div>
-                        <div class="space-y-2">
-                            <div class="flex justify-between text-xs">
+                        <!-- Google Search -->
+                        <div>
+                            <div class="flex justify-between text-xs mb-2">
                                 <span class="text-on-surface font-bold uppercase tracking-wider">Google Search</span>
                                 <span class="text-primary font-bold">64%</span>
                             </div>
                             <div class="h-2 bg-surface-container-highest rounded-full overflow-hidden">
-                                <div class="h-full w-[64%] bg-primary rounded-full opacity-70"></div>
+                                <div class="h-full w-[64%] bg-primary rounded-full opacity-70 transition-all duration-700"
+                                    role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100"
+                                    aria-hidden="true"></div>
                             </div>
                         </div>
-                        <div class="space-y-2">
-                            <div class="flex justify-between text-xs">
+                        <!-- LinkedIn Promo -->
+                        <div>
+                            <div class="flex justify-between text-xs mb-2">
                                 <span class="text-on-surface font-bold uppercase tracking-wider">LinkedIn Promo</span>
                                 <span class="text-tertiary font-bold">42%</span>
                             </div>
                             <div class="h-2 bg-surface-container-highest rounded-full overflow-hidden">
-                                <div class="h-full w-[42%] bg-tertiary rounded-full"></div>
+                                <div class="h-full w-[42%] bg-tertiary rounded-full transition-all duration-700"
+                                    role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"
+                                    aria-hidden="true"></div>
                             </div>
                         </div>
-                        <div class="space-y-2">
-                            <div class="flex justify-between text-xs">
+                        <!-- X Campaigns -->
+                        <div>
+                            <div class="flex justify-between text-xs mb-2">
                                 <span class="text-on-surface font-bold uppercase tracking-wider">X Campaigns</span>
                                 <span class="text-primary font-bold">31%</span>
                             </div>
                             <div class="h-2 bg-surface-container-highest rounded-full overflow-hidden">
-                                <div class="h-full w-[31%] bg-primary rounded-full opacity-40"></div>
+                                <div class="h-full w-[31%] bg-primary rounded-full opacity-40 transition-all duration-700"
+                                    role="progressbar" aria-valuenow="31" aria-valuemin="0" aria-valuemax="100"
+                                    aria-hidden="true"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="mt-8 pt-6 border-t border-white/5">
-                        <button
-                            class="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group">
-                            <div
-                                class="w-1 h-1 bg-primary rounded-full group-hover:w-3 group-hover:h-3 transition-all duration-300">
-                            </div>
+                    <div class="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-outline-variant/10">
+                        <button type="button"
+                            class="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded transition-all">
+                            <span
+                                class="w-1.5 h-1.5 bg-primary rounded-full group-hover:w-3 group-hover:h-3 transition-all duration-300"
+                                aria-hidden="true"></span>
                             View Analytics
                         </button>
                     </div>
                 </div>
             </section>
 
-            <!-- === TABLES AND LISTS === -->
-            <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <!-- Top Pages -->
-                <div class="lg:col-span-2 bg-surface-container rounded-xl overflow-hidden">
-                    <div class="p-8 border-b border-white/5 flex justify-between items-center">
-                        <h4 class="text-xl font-headline font-semibold text-white">Top Converting Pages</h4>
-                        <button class="text-primary font-bold text-xs uppercase tracking-widest">View All</button>
+            <!-- Section 7: Strategic Conversion Ledger (Top Pages) -->
+            <section class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+                <!-- Top Converting Pages Table -->
+                <div
+                    class="lg:col-span-2 bg-surface-container-low rounded-2xl sm:rounded-3xl shadow-sm overflow-hidden">
+                    <div
+                        class="p-4 sm:p-6 md:p-8 border-b border-outline-variant/10 flex flex-wrap justify-between items-center gap-3">
+                        <h4 class="text-lg sm:text-xl font-headline font-semibold text-on-surface">Top Converting
+                            Pages</h4>
+                        <button type="button"
+                            class="text-primary font-bold text-xs uppercase tracking-widest hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded min-h-[44px] inline-flex items-center">
+                            View All
+                        </button>
                     </div>
                     <div class="overflow-x-auto">
-                        <table class="w-full text-left border-collapse">
+                        <table class="w-full text-left border-collapse min-w-[550px]" role="table"
+                            aria-label="Top converting pages">
                             <thead>
-                                <tr class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">
-                                    <th class="px-8 py-4">Page Path</th>
-                                    <th class="px-8 py-4">Visits</th>
-                                    <th class="px-8 py-4">Bounce Rate</th>
-                                    <th class="px-8 py-4">Conversion</th>
+                                <tr class="border-b border-outline-variant/10">
+                                    <th scope="col"
+                                        class="px-4 sm:px-6 md:px-8 py-3 sm:py-4 font-label text-[10px] sm:text-xs uppercase tracking-[0.15em] text-on-surface-muted whitespace-nowrap">
+                                        Page Path</th>
+                                    <th scope="col"
+                                        class="px-4 sm:px-6 md:px-8 py-3 sm:py-4 font-label text-[10px] sm:text-xs uppercase tracking-[0.15em] text-on-surface-muted whitespace-nowrap text-right">
+                                        Visits</th>
+                                    <th scope="col"
+                                        class="px-4 sm:px-6 md:px-8 py-3 sm:py-4 font-label text-[10px] sm:text-xs uppercase tracking-[0.15em] text-on-surface-muted whitespace-nowrap text-right hidden sm:table-cell">
+                                        Bounce Rate</th>
+                                    <th scope="col"
+                                        class="px-4 sm:px-6 md:px-8 py-3 sm:py-4 font-label text-[10px] sm:text-xs uppercase tracking-[0.15em] text-on-surface-muted whitespace-nowrap">
+                                        Conversion</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-sm font-body">
-                                <tr class="border-b border-white/5 hover:bg-surface-bright/30 transition-colors">
-                                    <td class="px-8 py-5">
+                            <tbody class="divide-y divide-outline-variant/5">
+                                <tr class="hover:bg-surface-container-high/60 transition-colors">
+                                    <td class="px-4 sm:px-6 md:px-8 py-4 sm:py-5">
                                         <div class="flex items-center gap-3">
                                             <div
-                                                class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
-                                                <span class="material-symbols-outlined text-sm">home</span>
+                                                class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary shrink-0">
+                                                <span class="material-symbols-outlined text-sm"
+                                                    aria-hidden="true">home</span>
                                             </div>
-                                            <span class="text-on-surface font-medium">/home</span>
+                                            <span class="text-xs sm:text-sm text-on-surface font-medium">/home</span>
                                         </div>
                                     </td>
-                                    <td class="px-8 py-5 text-on-surface-variant">42,012</td>
-                                    <td class="px-8 py-5 text-on-surface-variant">24.5%</td>
-                                    <td class="px-8 py-5">
+                                    <td
+                                        class="px-4 sm:px-6 md:px-8 py-4 sm:py-5 text-on-surface-variant text-right text-xs sm:text-sm">
+                                        42,012</td>
+                                    <td
+                                        class="px-4 sm:px-6 md:px-8 py-4 sm:py-5 text-on-surface-variant text-right text-xs sm:text-sm hidden sm:table-cell">
+                                        24.5%</td>
+                                    <td class="px-4 sm:px-6 md:px-8 py-4 sm:py-5">
                                         <span
-                                            class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold">4.2%</span>
+                                            class="bg-primary/10 text-primary px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold whitespace-nowrap">4.2%</span>
                                     </td>
                                 </tr>
-                                <tr class="border-b border-white/5 hover:bg-surface-bright/30 transition-colors">
-                                    <td class="px-8 py-5">
+                                <tr class="hover:bg-surface-container-high/60 transition-colors">
+                                    <td class="px-4 sm:px-6 md:px-8 py-4 sm:py-5">
                                         <div class="flex items-center gap-3">
                                             <div
-                                                class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-tertiary">
-                                                <span class="material-symbols-outlined text-sm">shopping_cart</span>
+                                                class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-tertiary shrink-0">
+                                                <span class="material-symbols-outlined text-sm"
+                                                    aria-hidden="true">shopping_cart</span>
                                             </div>
-                                            <span class="text-on-surface font-medium">/product-pro-plan</span>
+                                            <span
+                                                class="text-xs sm:text-sm text-on-surface font-medium truncate max-w-[150px] sm:max-w-none">/product-pro-plan</span>
                                         </div>
                                     </td>
-                                    <td class="px-8 py-5 text-on-surface-variant">28,550</td>
-                                    <td class="px-8 py-5 text-on-surface-variant">18.2%</td>
-                                    <td class="px-8 py-5">
+                                    <td
+                                        class="px-4 sm:px-6 md:px-8 py-4 sm:py-5 text-on-surface-variant text-right text-xs sm:text-sm">
+                                        28,550</td>
+                                    <td
+                                        class="px-4 sm:px-6 md:px-8 py-4 sm:py-5 text-on-surface-variant text-right text-xs sm:text-sm hidden sm:table-cell">
+                                        18.2%</td>
+                                    <td class="px-4 sm:px-6 md:px-8 py-4 sm:py-5">
                                         <span
-                                            class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full text-xs font-bold">12.8%</span>
+                                            class="bg-tertiary/10 text-tertiary px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold whitespace-nowrap">12.8%</span>
                                     </td>
                                 </tr>
-                                <tr class="border-b border-white/5 hover:bg-surface-bright/30 transition-colors">
-                                    <td class="px-8 py-5">
+                                <tr class="hover:bg-surface-container-high/60 transition-colors">
+                                    <td class="px-4 sm:px-6 md:px-8 py-4 sm:py-5">
                                         <div class="flex items-center gap-3">
                                             <div
-                                                class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
-                                                <span class="material-symbols-outlined text-sm">sell</span>
+                                                class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary shrink-0">
+                                                <span class="material-symbols-outlined text-sm"
+                                                    aria-hidden="true">sell</span>
                                             </div>
-                                            <span class="text-on-surface font-medium">/pricing-enterprise</span>
+                                            <span
+                                                class="text-xs sm:text-sm text-on-surface font-medium truncate max-w-[150px] sm:max-w-none">/pricing-enterprise</span>
                                         </div>
                                     </td>
-                                    <td class="px-8 py-5 text-on-surface-variant">15,221</td>
-                                    <td class="px-8 py-5 text-on-surface-variant">32.1%</td>
-                                    <td class="px-8 py-5">
+                                    <td
+                                        class="px-4 sm:px-6 md:px-8 py-4 sm:py-5 text-on-surface-variant text-right text-xs sm:text-sm">
+                                        15,221</td>
+                                    <td
+                                        class="px-4 sm:px-6 md:px-8 py-4 sm:py-5 text-on-surface-variant text-right text-xs sm:text-sm hidden sm:table-cell">
+                                        32.1%</td>
+                                    <td class="px-4 sm:px-6 md:px-8 py-4 sm:py-5">
                                         <span
-                                            class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold">8.4%</span>
+                                            class="bg-primary/10 text-primary px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold whitespace-nowrap">8.4%</span>
                                     </td>
                                 </tr>
                             </tbody>
@@ -327,81 +394,76 @@
                     </div>
                 </div>
 
-                <!-- Activity Feed -->
-                <div class="bg-surface-container rounded-xl p-8">
-                    <h4 class="text-xl font-headline font-semibold text-white mb-8">Team Updates</h4>
-                    <div class="space-y-8">
-                        <div class="flex gap-4 group">
-                            <div class="relative">
+                <!-- Section 8: Team Operational Stream (Activity) -->
+                <div class="bg-surface-container-low rounded-2xl sm:rounded-3xl shadow-sm p-4 sm:p-6 md:p-8"
+                    aria-label="Team activity updates">
+                    <h4 class="text-lg sm:text-xl font-headline font-semibold text-on-surface mb-4 sm:mb-6">Team Updates
+                    </h4>
+                    <div class="space-y-5 sm:space-y-6">
+                        <!-- Activity 1 -->
+                        <div class="flex gap-3 sm:gap-4 group">
+                            <div class="relative shrink-0">
                                 <img alt="Sarah Jenkins"
-                                    class="w-10 h-10 rounded-full grayscale group-hover:grayscale-0 transition-all"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuClNvkiBzAkAoVYgQcPO-qF-wQ8HtZJEKlrW7ABPxRlju2RpEgg2LD1yAabViz8HZ1WmOFb0ELvSaBPFwCFTBY6aPF5WfnVo5GSZrb_WoxO3DjcHZzMGCNJdE4s34Z_2BrRHVmD_NAQKFrZwLOpAwUsQBWP8VJkWKvau1XWe8V6fyJ31Zg5Br-FVkkYexYErZAFdluLk5ze_x0E2C-idfcRHR5eYnaZfOI5kx447GkA6uid0L0w_h5k9mDfIImBFtLIv_N4jP8kzWM" />
-                                <div
-                                    class="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 border-2 border-surface-container rounded-full">
-                                </div>
+                                    class="w-10 h-10 rounded-full grayscale group-hover:grayscale-0 transition-all object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuClNvkiBzAkAoVYgQcPO-qF-wQ8HtZJEKlrW7ABPxRlju2RpEgg2LD1yAabViz8HZ1WmOFb0ELvSu2Hn0PeXxhDJk3Owb7H0oXrAziNmwkdUBhiPC8ufd34gUtTHojGObN72l3ehqnxu6Jna4iF2_nJRfoRNpvUyrUlBOXGgCGWcEKj-y7x71PtQhuacEwF1_V9EIxPOQ1AMsS3MHtT1nTBs6gMGhJZOqALSmFS5DsIYi4ptp-tY8MxXDKpEikaCfkj4aGuYLqasQ0SL5Ns"
+                                    loading="lazy" />
+                                <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 border-2 border-surface rounded-full"
+                                    aria-hidden="true"></div>
                             </div>
-                            <div class="flex flex-col">
-                                <p class="text-sm text-on-surface"><span class="font-bold">Sarah Jenkins</span> updated
-                                    <span class="text-primary font-medium">Q4 Roadmap</span>
-                                </p>
-                                <span class="text-[10px] text-slate-500 uppercase mt-1 font-bold">14 minutes ago</span>
+                            <div class="min-w-0">
+                                <p class="text-xs sm:text-sm text-on-surface"><span class="font-bold">Sarah
+                                        Jenkins</span>
+                                    updated <span class="text-primary font-medium">Q4 Roadmap</span></p>
+                                <span class="text-[10px] text-on-surface-variant uppercase mt-1 font-bold">14 minutes
+                                    ago</span>
                             </div>
                         </div>
-
-                        <div class="flex gap-4 group">
-                            <div class="relative">
+                        <!-- Activity 2 -->
+                        <div class="flex gap-3 sm:gap-4 group">
+                            <div class="relative shrink-0">
                                 <img alt="Marcus Thornton"
-                                    class="w-10 h-10 rounded-full grayscale group-hover:grayscale-0 transition-all"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPRmUXvwtmXMIt8AOMd4fKWs1HjkeCcZQA_jRxBwkB9h5WTZHFaHgv0bO78aF_ZaOwVeuU9PWusC_OxTAm1T3Fj5KzHVkFTMpNmuRhZ2nvIbgBCAhpM7P1x9HgGCjuCOy922cwE-78XAU2xbFq2gwP3cGhnUXUbNfodkIU1huv-NcpPia86zLLzMRNUd4pETzZio2a2ao2c_4BA4qTqh1mDb0EElFUgifk-ewokSTwejQTJ9yiR6hVWgSryrac1gB8ZYUnzqiZEQI" />
-                                <div
-                                    class="absolute -bottom-1 -right-1 w-4 h-4 bg-amber-500 border-2 border-surface-container rounded-full">
-                                </div>
+                                    class="w-10 h-10 rounded-full grayscale group-hover:grayscale-0 transition-all object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPRmUXvwtmXMIt8AOMd4fKWs1HjkeCcZQA_jRxBwkB9h5WTZHFaHgv0bO78aF_ZaOwVeuU9PWusC_OxTAm1T3Fj5KzHVkFTMpNnu2nvIbgBCAhpM7P1x9HgGCjuCOy922cwE-78XAU2xbFq2gwP3cGhnUXUbNfodkIU1huv-NcpPpia86zLLzMRNUd4pETzZio2a2ao2c_4BA4qTqh1mDb0EElFUgifk-ewokSTwejQTJ9yiR6hVWgSryrac1gB8ZYUnzqiZEQI"
+                                    loading="lazy" />
+                                <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-amber-500 border-2 border-surface rounded-full"
+                                    aria-hidden="true"></div>
                             </div>
-                            <div class="flex flex-col">
-                                <p class="text-sm text-on-surface"><span class="font-bold">Marcus Thornton</span> pushed
-                                    new creatives to <span class="text-tertiary font-medium">Google Ads</span></p>
-                                <span class="text-[10px] text-slate-500 uppercase mt-1 font-bold">2 hours ago</span>
+                            <div class="min-w-0">
+                                <p class="text-xs sm:text-sm text-on-surface"><span class="font-bold">Marcus
+                                        Thornton</span> pushed new creatives to <span
+                                        class="text-tertiary font-medium">Google Ads</span></p>
+                                <span class="text-[10px] text-on-surface-variant uppercase mt-1 font-bold">2 hours
+                                    ago</span>
                             </div>
                         </div>
-
-                        <div class="flex gap-4 group">
-                            <div class="relative">
+                        <!-- Activity 3 -->
+                        <div class="flex gap-3 sm:gap-4 group">
+                            <div class="relative shrink-0">
                                 <img alt="Lydia Chen"
-                                    class="w-10 h-10 rounded-full grayscale group-hover:grayscale-0 transition-all"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3x6TzQ_OlpCAgkAIW0cPTnLu6ne63BptVYo1nHZH5QN75UUbc61Srrc0PcbNhvhykqYkuk0xsPBwM6bLoeKIP9koFRQziXs2RpCYlwpDpfNe2e5lP8iVZ6d_Q0c7wYqzQGQWBzTXccvhi-3EGqE-uXManNTWXWIRcfTUf0xFeHUbtjTjHsIa9R96AKxYAWh4dDnQTSUHbeZxei9O6pGUJjkHMJivx6RFH5aC1KFmA18R-ixqAt9LvyADOFHpn5ytjI6tni19UW5o" />
-                                <div
-                                    class="absolute -bottom-1 -right-1 w-4 h-4 bg-indigo-500 border-2 border-surface-container rounded-full">
-                                </div>
+                                    class="w-10 h-10 rounded-full grayscale group-hover:grayscale-0 transition-all object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3x6TzQ_OlpCAgkAIW0cPTnLu6ne63BptVYo1nHZH5QN75UUbc61Srrc0PcbNhvhykqYkuk0xsPBwM6bLoeKIP9koFRQziXs2RpCYlwpDpfNe2e5lP8iVZ6d_Q0c7wYqzQGQWBzTXccvhi-3EGqE-uXManNTWXWIRcfTUf0xFeHUbtjTjHsIa9R96AKxYAWh4dDnQTSUHbeZxei9O6pGUJjkHMJivx6RFH5aC1KFmA18R-ixqAt9LvyADOFHpn5ytjI6tni19UW5o"
+                                    loading="lazy" />
+                                <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-indigo-500 border-2 border-surface rounded-full"
+                                    aria-hidden="true"></div>
                             </div>
-                            <div class="flex flex-col">
-                                <p class="text-sm text-on-surface"><span class="font-bold">Lydia Chen</span> exported
-                                    monthly <span class="text-primary font-medium">KPI Report</span></p>
-                                <span class="text-[10px] text-slate-500 uppercase mt-1 font-bold">5 hours ago</span>
+                            <div class="min-w-0">
+                                <p class="text-xs sm:text-sm text-on-surface"><span class="font-bold">Lydia Chen</span>
+                                    exported monthly <span class="text-primary font-medium">KPI Report</span></p>
+                                <span class="text-[10px] text-on-surface-variant uppercase mt-1 font-bold">5 hours
+                                    ago</span>
                             </div>
                         </div>
                     </div>
-                    <button
-                        class="w-full mt-10 py-3 rounded-xl border border-white/5 hover:bg-white/5 text-slate-400 text-xs font-bold uppercase tracking-widest transition-all">View
-                        All Activity</button>
+                    <button type="button"
+                        class="mt-6 sm:mt-8 p-3 rounded-xl border border-outline-variant/10 hover:bg-surface-container-high text-on-surface-variant text-xs font-bold uppercase tracking-widest transition-all min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+                        View All Activity
+                    </button>
                 </div>
             </section>
         </div>
-
-        <!-- === FOOTER === -->
-        <footer
-            class="mt-12 px-8 py-6 border-t border-outline-variant/15 bg-surface flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-300 outfit">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">© 2024 Admin Panel • System
-                Status: <span class="text-success">Operational</span></p>
-            <div class="flex gap-4 items-center">
-                <span
-                    class="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(99,102,241,0.4)]"></span>
-                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Region:
-                    Global-Alpha-1</span>
-            </div>
-        </footer>
     </main>
 
-    <script src="../../assets/js/app.js"></script>
+    <script src="../../assets/js/main.js"></script>
 </body>
 
 </html>
